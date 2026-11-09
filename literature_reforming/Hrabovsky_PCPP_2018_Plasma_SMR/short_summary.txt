@@ -1,0 +1,121 @@
+Hrabovsky et al. (2018) - steam and dry methane reforming in a ~100 kW water/argon-stabilized DC arc plasma
+Source ID: SRC007. Plasma Chem. Plasma Process. 38, 743-758. Experimental results only;
+equilibrium calculations excluded. No catalyst. No ESI located.
+
+Scale: Plasma scale 88-136 kW arc power (torch electrical input); 120 kW
+in the steam reforming run, 89-116 kW in the dry reforming run. Plasma jet
+power is 57-60% of arc power (torch efficiency). CH4 75-150 slm (3.3-6.7
+mol/min) into a 200 L reactor. No external furnace or steam generator:
+water is fed liquid and evaporated by the plasma, so arc power is the
+total process heat. Supply losses and auxiliaries not reported.
+
+Conversion (our calculations from Figs. 7-8, argon tracer): SMR 91.3% at
+150 slm CH4 to 99.1% at 75 slm, all at 120 kW; DRM 83-95% CH4 and 89-92%
+CO2 at 89-116 kW. Author maxima 99.5% CH4, CO2 at most 93%. H2/CO 2.9-3.3
+(SMR) and 1.1-1.25 (DRM). S/C about 1. Composition near equilibrium.
+
+Energy (power basis = arc power; no external heat to add):
+- EC_CH4 1179 kJ/mol (SMR, 150 slm) to 2172 (75 slm); DRM 1149-1309.
+  About 5-10 times the reaction enthalpy (206 SMR, 247 DRM); hot product
+  gas (1200-1400 K) is water-quenched without heat recovery.
+- EC_H2 198-369 MJ/kg (SMR), ~297 MJ/kg (DRM); EY_H2 9.8-18.2 g/kWh;
+  eta_P,LHV 33-49%.
+- Author metric: H2 energy cost on "process enthalpy" basis (arc power
+  minus torch and reactor losses): minimum 79 MJ/kg (steam; 86 in the
+  Results text) and 116 MJ/kg (dry). On arc power: minimum 192 MJ/kg
+  (steam); our OP001 gives 198 MJ/kg on the same basis.
+- eta_HHV (partial: excludes supply losses and auxiliaries) 36-51%.
+
+Duration: steady segments of 2-5 min in two ~17 min test runs; composition
+responds within 30 s. Total time on stream and torch electrode life not
+reported. Not an endurance test.
+
+System information: torch, 200 L reactor, water quench, filter, scrubber,
+water ejector, afterburner. Torch needs cooling water and argon. Reactor
+loss per point, mass/carbon balance, solid carbon mass, calibration and
+costs not reported.
+
+Reporting quality: conversion/product results moderate confidence
+(matched feeds and power, tracer flow, our readings reproduce the authors'
+plotted conversions; all graph-read, no balance closure); energy results
+moderate confidence (point-matched arc power; slm reference and per-point
+losses not reported).
+
+Traceability: manuscript.pdf pp. 7-14 (printed 749-756), Table 1, Figs.
+7-16; SRC007-E001-E039. Calculations SRC007-C001-C008, E041-E052;
+outputs/calculations.py. Details: outputs/extraction.md and
+outputs/evidence.csv.
+
+Prepared 2026-11-05 by Claude (AI); ai_checked by same extractor; human
+verification pending.
+
+Comparison tables (experimental conditions)
+NR = not reported; NA = not applicable; ~ = approximate. Human verification pending.
+
+1. Route and scale
+Source / OP          | Route             | Reactor / activation / catalyst         | CH4 feed (mol/min) | Scale as reported
+Hrabovsky 2018 OP001 | SMR               | 200 L reactor / DC arc torch / none [1] | 6.69 [2]           | 150 slm CH4; 120 kW arc
+Hrabovsky 2018 OP002 | SMR               | 200 L reactor / DC arc torch / none [1] | 3.35 [2]           | 75 slm CH4; 120 kW arc
+Hrabovsky 2018 OP005 | DRM (+plasma H2O) | 200 L reactor / DC arc torch / none [1] | 5.58 [2]           | 125 slm CH4; 116 kW arc
+Hrabovsky 2018 OP008 | DRM (+plasma H2O) | 200 L reactor / DC arc torch / none [1] | 5.58 [2]           | 125 slm CH4; 89 kW arc
+[1] Hybrid argon/water-vortex stabilized DC arc; plasma jet injected into
+    a 200 L reactor with water quench. SRC007-E001, E008, E011.
+[2] slm converted at 0 degC, 1 atm (reference NR); 7% lower at 20 degC.
+    SRC007-E009, E015-E016; C001.
+
+2. Operating conditions
+Source / OP          | T (degC; location/type) | p (bar; abs/gauge) | CH4:CO2:H2O (molar) | Other feed / ratio
+Hrabovsky 2018 OP001 | ~927-1127; reactor [3]  | ~1.01 abs [4]      | 1:0:0.78 [5]        | Ar 50 slm tracer + plasma Ar
+Hrabovsky 2018 OP002 | ~927-1127; reactor [3]  | ~1.01 abs [4]      | 1:0:0.63 [5]        | Ar 50 slm tracer + plasma Ar
+Hrabovsky 2018 OP005 | ~927-1127; reactor [3]  | ~1.01 abs [4]      | 1:0.81:0.18 [5]     | Ar 50 slm tracer + plasma Ar
+Hrabovsky 2018 OP008 | ~927-1127; reactor [3]  | ~1.01 abs [4]      | 1:0.81:0.18 [5]     | Ar 50 slm tracer + plasma Ar
+[3] 1200-1400 K stated as the controlled reactor range; not point-specific,
+    location/method NR. SRC007-E010.
+[4] Reactor held a few hundred Pa below ambient. SRC007-E011.
+[5] Added liquid water only. Plasma steam (~1 mol/min) probably adds
+    ~0.15-0.3, giving SMR H2O/CH4 ~0.93 (reviewer interpretation). DRM
+    water 18 g/min is probably plasma steam. SRC007-E015-E016; C001.
+
+3. Mass balance
+Source / OP          | X_CH4 (%) | X_CO2 (%) | Products (value; units/basis)       | Balance closure | Duration (h; basis)   | Conv. conf.
+Hrabovsky 2018 OP001 | 91.3 [6]  | NA        | H2 68.0, CO 21.2% dry; 2.18 kg/h H2 | C 97% (ours)    | ~0.07; steady segment | moderate
+Hrabovsky 2018 OP002 | 99.1 [6]  | NA        | H2 63.4, CO 21.7% dry; 1.17 kg/h H2 | C 101% (ours)   | ~0.07; steady segment | moderate
+Hrabovsky 2018 OP005 | 95.3 [6]  | 91.0 [6]  | H2 48.7, CO 39.1% dry; 1.40 kg/h H2 | C 99% (ours)    | ~0.03; steady segment | moderate
+Hrabovsky 2018 OP008 | 83.3 [6]  | 89.0 [6]  | H2 43.2, CO 39.0% dry; 1.08 kg/h H2 | C 94% (ours)    | ~0.1; steady segment  | moderate
+[6] Reviewer calculations from digitised MS traces (Figs. 7-8) and the
+    argon-tracer outlet flow; authors give conversions only against
+    process enthalpy (Figs. 9-10), which our values match. Up to 2.4
+    points lower if the 50 slm Ar excludes plasma argon. Solid carbon
+    small, not quantified. SRC007-E017-E024, E041-E045; C001-C003, C007.
+
+4. Energy balance
+Source / OP          | Energy input (boundary) | EC_CH4 (kJ/mol) | EC basis                | Other metrics                  | eta_HHV (%)   | Energy conf.
+Hrabovsky 2018 OP001 | 120 kW arc [7]          | 1179 [8]        | arc power; no ext. heat | EC_H2 198 MJ/kg; EY 18.2 g/kWh | 51.3 part.[9] | moderate
+Hrabovsky 2018 OP002 | 120 kW arc [7]          | 2172 [8]        | arc power; no ext. heat | EC_H2 369 MJ/kg; EY 9.8 g/kWh  | 36.4 part.[9] | moderate
+Hrabovsky 2018 OP005 | 116 kW arc [7]          | 1309 [8]        | arc power; no ext. heat | EC_H2 299 MJ/kg; EY 12.1 g/kWh | 49.7 part.[9] | moderate
+Hrabovsky 2018 OP008 | 89 kW arc [7]           | 1149 [8]        | arc power; no ext. heat | EC_H2 297 MJ/kg; EY 12.1 g/kWh | 46.9 part.[9] | moderate
+[7] Torch electrical (arc) power, point-matched in Figs. 7-8; supply
+    losses NR. Water is evaporated by the plasma, so no external heat.
+    SRC007-E003, E015-E016, E038.
+[8] Plasma jet basis (x torch efficiency 0.57-0.60): 672-707 (OP001),
+    1238-1303, 746-786, 655-689 kJ/mol. Author process-enthalpy basis
+    (excludes torch and reactor losses): ~525-926 (SMR), ~429-994 (DRM)
+    kJ/mol from Figs. 9-10. eta_P,LHV 49.3/33.3/48.3/48.9%. Author H2
+    energy cost minima: 79 MJ/kg process basis, 192 MJ/kg arc basis
+    (steam). SRC007-E030-E031, E046-E051; C004-C005, C008.
+[9] (H2 + CO HHV)/(arc power + CH4 HHV); partial: supply losses and
+    auxiliaries excluded; reformer outlet, no shift/PSA. f_electric
+    0.52-0.71. SRC007-E052; C006.
+
+5. Plasma parameters (plasma-on rows only)
+Source / OP          | Discharge / regime              | Supply / frequency | Voltage           | P_plasma (W; method)    | SEI_CH4 (kJ/mol) | Diagnostics reported
+Hrabovsky 2018 OP001 | DC arc, water/Ar stab.; thermal | DC; 400 A          | ~300 V (P/I) [10] | 120,000; arc power [11] | 1076             | jet T, enthalpy [12]
+Hrabovsky 2018 OP002 | DC arc, water/Ar stab.; thermal | DC; 400 A          | ~300 V (P/I) [10] | 120,000; arc power [11] | 2152             | jet T, enthalpy [12]
+Hrabovsky 2018 OP005 | DC arc, water/Ar stab.; thermal | DC; 400 A          | ~290 V (P/I) [10] | 116,000; arc power [11] | 1248             | jet T, enthalpy [12]
+Hrabovsky 2018 OP008 | DC arc, water/Ar stab.; thermal | DC; 325 A          | ~274 V (P/I) [10] | 89,000; arc power [11]  | 958              | jet T, enthalpy [12]
+[10] Not reported; reviewer arc power / current.
+[11] Measurement method not described; torch losses by cooling-water
+     calorimetry. SRC007-E002-E005.
+[12] Torch-exit bulk plasma temperature 15,400-16,300 K and mean enthalpy
+     136-186 MJ/kg (ranges, method NR); no optical diagnostics. See
+     outputs/extraction.md section "Plasma characteristics". SRC007-E006.

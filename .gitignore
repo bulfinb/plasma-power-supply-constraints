@@ -1,0 +1,25 @@
+# Source documents are not distributed (copyright); extraction.md records their SHA-256 hashes
+# Any PDF, spreadsheet or archive inside literature folders is a source document
+literature_*/**/*.pdf
+literature_*/**/*.PDF
+literature_*/**/*.xlsx
+literature_*/**/*.xls
+literature_*/**/*.zip
+**/*.docx
+
+# Local copies of manufacturer and web sources (not redistributable); power_systems/source_register.csv records hashes and archive snapshots
+power_systems/source_archive/
+
+# Private planning notes
+notes_private/
+
+# Local environment and build artefacts
+power_systems/.venv/
+**/__pycache__/
+*.aux
+*.log
+*.out
+tmp/
+
+# IDE settings
+**/.idea/

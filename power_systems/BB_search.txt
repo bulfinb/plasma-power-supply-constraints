@@ -1,0 +1,94 @@
+BB_search.txt - sources that need a human to retrieve them
+Prepared by Claude (AI) on 2026-11-09. Status of every source is in source_register.csv.
+
+Save each file into power_systems/source_archive/<FOLDER>/ under the name given, keeping the original
+file as downloaded (PDF, or browser "Save page as... > Web page, HTML only", or print to PDF).
+Then tell Claude, who will hash the file and update source_register.csv (local_copy_origin = "manual download by BB").
+If a source cannot be found, say so and it will be marked unverifiable or replaced.
+
+------------------------------------------------------------------------------------------------
+A. MANUFACTURER / NON-ACADEMIC SOURCES (power_systems/)
+------------------------------------------------------------------------------------------------
+
+1. D5 - Muegge MH015KS-310CN, 2.45 GHz 15 kW microwave generator
+   Cited for: largest commercial 2.45 GHz unit found (~15 kW)    [supply_maturity_niche.md]
+   URL:       https://www.everythingrf.com/products/microwave-generators/muegge-gmbh/854-551-mh015ks-310cn
+   Problem:   Cloudflare bot check (HTTP 403); Wayback save failed.
+   Try:       open in a browser and save; better, find the official Muegge/CoberMuegge
+              datasheet for the 15 kW 2.45 GHz generator (muegge.de or cobermuegge.com) and save that.
+   Save as:   D5/manual_page.html  or  D5/datasheet.pdf
+
+2. D11 - MIT PSFC report 99ja008 (1999), microwave torch capital cost (< US$1/W above 75 kW)
+   Cited for: capex table, supply_maturity_niche.md
+   URL:       https://dspace.mit.edu/bitstream/1721.1/95389/1/99ja008_full.pdf
+   Problem:   MIT DSpace returned HTTP 429 (rate limit) twice; Wayback save failed.
+   Try:       open the URL in a browser; also note the authors and title for the register.
+   Save as:   D11/original.pdf
+
+3. D12 - Machineseeker listing, Muegge 30 kW 915 MHz magnetron head (EUR 109,000 list price)
+   Cited for: capex table (low quality)
+   URL:       https://www.machineseeker.co.uk/muegge-wr975/i-20729582
+   Problem:   listing removed (HTTP 410); no Wayback snapshot exists.
+   Try:       nothing to download. Decide: drop D12, or replace it with a vendor price quote
+              or published magnetron price (a quote from Muegge/Sairem for a 915 MHz 30-100 kW
+              generator would be much better evidence).
+
+4. S10 - SAIREM, "MW technology guide for lab-grown diamonds applications" (2021)
+   Cited for: GMP100 10 kW 2450 MHz, 85% power efficiency, printed page 7   [sources.md]
+   URL:       https://www.sairem.com/wp-content/uploads/2021/01/SAIREM-MW-technology-guide-for-lab-grown-diamonds-applications.pdf
+   Problem:   now HTTP 404; no Wayback snapshot.
+   Try:       search sairem.com for the guide or the GMP 100 kW/10 kW generator datasheet.
+   Save as:   S10/original.pdf
+
+5. S14 - CPI VPS3499 klystron transmitter datasheet (12-19-24)
+   Cited for: 2.7-3.0 GHz, 1 MW peak, duty 0.002   [sources.md]
+   URL:       https://www.cpi-edb.com/docs/datasheets/163/VPS3499%20KLYSTRON%20TRANS%20%20NF%20FINAL%2012-19-24.pdf
+   Problem:   now HTTP 404; no Wayback snapshot.
+   Try:       search cpi-edb.com (or cpii.com) for VPS3499.
+   Save as:   S14/original.pdf
+
+6. T18 - PyroGenesis, TMS 2013 publications extract (local copy OK)
+   Only the Wayback snapshot failed (HTTP 520). Optional: submit the URL at
+   https://web.archive.org/save and send Claude the snapshot link.
+   URL:       https://www.pyrogenesis.com/wp-content/uploads/2019/09/1.-TMS-2013-publications_Pyro-extract.pdf
+
+------------------------------------------------------------------------------------------------
+B. ACADEMIC SOURCES USED IN power_systems/ (paywalled or bot-blocked)
+------------------------------------------------------------------------------------------------
+
+7. T06 - Koponen et al., LUT, comparison of rectifier topologies for a 3 MW electrolyser
+   Cited for: converter ~15% of electrolyser capex   [scaleup_sources.md]
+   URL:       https://lutpub.lut.fi/bitstream/10024/162276/1/koponen_et_al_comparison_of_finaldraft.pdf
+   Problem:   bot check page. Also record the journal version (DOI) if you find it.
+   Save as:   T06/original.pdf
+
+8. T10 - IEEE, "Analysis and Assessment of Use of Voltage and Current Inverters Applied to the
+   Ozone Generation in High Frequency" (91% max inverter efficiency)
+   URL:       https://bvbvf1.bib-bvb.de/vufind/PrimoRecord/cdi_ieee_primary_9386269 (catalogue record)
+   Problem:   catalogue page timed out; full text is on IEEE Xplore (document 9386269?), needs UCC access.
+   Save as:   T10/manuscript.pdf  (and note the DOI)
+
+9. T11 - IEEE Open Journal of Power Electronics (2022), Class E DBD supply, 91.5% peak, 600 W, 12-15 MHz
+   URL:       https://doaj.org/article/b984cca08c5c4d7aa7c3612b384ef606
+   Problem:   Cloudflare bot check. Journal is open access: follow the DOAJ link to IEEE Xplore.
+   Save as:   T11/manuscript.pdf  (and note the DOI)
+
+10. T14 - van Rooij et al., microwave plasma CO2 (microwave supplies ~0.1 EUR/W)
+   URL:       https://core.ac.uk/download/43597104.pdf
+   Problem:   Cloudflare bot check. Note the exact paper and DOI; it may be a different paper from
+              van Rooij 2018 PPCF (RV017, already downloaded in literature_reviews/).
+   Save as:   T14/original.pdf
+
+------------------------------------------------------------------------------------------------
+C. ACADEMIC PAPERS FOR literature_plasma_powersupply/ (TEA, supply capex)
+------------------------------------------------------------------------------------------------
+
+11. PS003 - Lamberts-Van Assche, Thomassen & Compernolle (2022) J. CO2 Util. 64, 102156
+    DOI https://doi.org/10.1016/j.jcou.2022.102156 (Elsevier; UCC access)
+    Save as: literature_plasma_powersupply/LambertsVanAssche_JCOU_2022_DBD_TEA/manuscript.pdf (+ ESI)
+
+12. PS004 - Kaufmann et al. (2023) Appl. Sci. 13, 4839 (open access, CC BY)
+    DOI https://doi.org/10.3390/app13084839 (MDPI blocks scripted download)
+    Save as: literature_plasma_powersupply/Kaufmann_ApplSci_2023_PlasmaCO2_PtL_TEA/manuscript.pdf
+
+(The review PDFs still marked "to download" are listed in literature_reviews/reviews_shortlist.md.)

@@ -1,0 +1,81 @@
+Wismann et al. (2019) - Joule-heated steam methane reforming
+Source ID: SRC001. Experimental results only; industrial modelling excluded.
+Role: lab-scale Joule-heating benchmark; From 2024 (SRC005) is the primary, pilot-scale one.
+
+Scale: Electrical input power not reported. Total wet feed of 340-1700
+Nml/min, containing 30 mol% CH4, corresponds to methane input of 102-510
+Nml/min. Normal-flow reference temperature and pressure unspecified.
+
+Conversion: Labelled experimental conditions span 50.9-92.7% CH4 conversion.
+Highest: 92.7% at 102 Nml/min CH4 input (340 Nml/min total feed). At the
+largest feed, 510 Nml/min CH4, the highest labelled conversion is 85.0%.
+These are different operating points.
+
+Energy: EC_CH4 and the other power-basis metrics cannot be calculated
+because no point-matched electrical power or product flows are reported.
+No author energy efficiency. eta_HHV not calculable. Compare with plasma
+sources on conversion and conditions only.
+
+Duration: At least four consecutive GC measurements per condition, GC
+every 15 min; model fitting describes averaging over at least 45 min.
+Total time on stream not reported. No discernible activity loss between
+initial and final measurements; elapsed time unspecified.
+
+System information: Lab boundary is the insulated resistance-heated tube;
+power supply, preheat and steam generation duties not reported. Industrial
+volume comparison with a side-fired reformer (SRC001-OP013) is a design
+projection and excludes power supply and furnace auxiliaries.
+
+Reporting quality: conversion/product results moderate confidence; energy
+results lower confidence (no electrical power or thermal duties reported).
+
+Traceability:
+- Feed composition: manuscript.pdf, PDF p. 2; SRC001-E038.
+- Feed flows and conversion labels: supplementary.pdf, PDF pp. 11-13,
+  Figs. S2-S4; SRC001-E050-E085. Methane flow calculated as 0.30 times
+  total normal feed; see SRC001-C006 in outputs/calculations.md.
+- Power/efficiency gaps: SRC001-E014-E015, E127-E130; SRC001-C003.
+- Sampling and averaging: supplementary.pdf, PDF pp. 2, 6-7;
+  SRC001-E041-E042. Activity comparison: PDF p. 16, Fig. S7; SRC001-E086.
+- Reporting quality: outputs/extraction.md, "Reporting quality".
+- Full records: outputs/extraction.md, outputs/evidence.csv, outputs/operating_points.csv.
+
+Prepared 2026-10-28; updated to the new summary format 2026-10-30.
+Extraction AI-checked; reporting-quality appraisal unreviewed; human
+verification pending.
+Comparison tables reformatted to the five-table layout 2026-11-04.
+
+Comparison tables (experimental conditions)
+NR = not reported; NA = not applicable; ~ = approximate. Human verification pending.
+
+1. Route and scale
+Source / OP        | Route | Reactor / activation / catalyst           | CH4 feed (mol/min) | Scale as reported
+Wismann 2019 OP004 | SMR   | FeCrAl tube / Joule heating / Ni washcoat | 4.6e-3 [1]         | 102 Nml/min CH4 (340 total); power NR
+Wismann 2019 OP012 | SMR   | FeCrAl tube / Joule heating / Ni washcoat | 2.3e-2 [1]         | 510 Nml/min CH4 (1700 total); power NR
+[1] 0.30 x total normal feed (SRC001-C006), converted at 0 degC, 1 atm;
+    the normal reference is NR (4.2e-3 and 2.1e-2 mol/min at 25 degC).
+    SRC001-E038, E045, E050-E085.
+
+2. Operating conditions
+Source / OP        | T (degC; location/type) | p (bar; abs/gauge) | CH4:CO2:H2O (molar) | Other feed / ratio
+Wismann 2019 OP004 | ~750; wall exit [2]     | +0.050 gauge       | 1:0:2               | H2 10 mol% of feed
+Wismann 2019 OP012 | ~780; wall exit [2]     | +0.050 gauge       | 1:0:2               | H2 10 mol% of feed
+[2] Wall temperature read from figures, not gas temperature; inlet 100 degC.
+    Feed CH4/H2O/H2 = 30/60/10. SRC001-E038-E040, E059-E061, E083-E085.
+
+3. Mass balance
+Source / OP        | X_CH4 (%) | X_CO2 (%) | Products (value; units/basis) | Balance closure | Duration (h; basis) | Conv. conf.
+Wismann 2019 OP004 | 92.7      | NA        | NR (not tabulated)            | NR              | NR [3]              | moderate
+Wismann 2019 OP012 | 85.0      | NA        | NR (not tabulated)            | NR              | NR [3]              | moderate
+[3] At least four GC measurements per condition at 15 min intervals; total
+    time on stream NR; not an endurance test. SRC001-E041-E042, E086.
+
+4. Energy balance
+Source / OP        | Energy input (boundary) | EC_CH4 (kJ/mol) | EC basis | Other metrics        | eta_HHV (%) | Energy conf.
+Wismann 2019 OP004 | NR [4]                  | NR [4]          | NA       | NR; no author metric | NR          | lower
+Wismann 2019 OP012 | NR [4]                  | NR [4]          | NA       | NR; no author metric | NR          | lower
+[4] No point-matched electrical power or thermal duties reported, so no
+    power-basis metric. Compare on conversion and conditions only.
+    SRC001-E014-E015, E127-E130; SRC001-C003.
+
+5. Plasma parameters: not applicable (Joule-heated source).

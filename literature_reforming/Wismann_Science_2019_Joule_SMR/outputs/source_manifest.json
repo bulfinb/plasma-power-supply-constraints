@@ -1,0 +1,20 @@
+{
+  "source_id": "SRC001",
+  "protocol_version": "0.1",
+  "extraction_date": "2026-10-28",
+  "retrieval_date": "unknown",
+  "documents": [
+    {
+      "filename": "manuscript.pdf",
+      "pages": 5,
+      "sha256": "3ab1991aa15a589446b52f2e1c5139666764876d8681212ba0dd2c40c34f3865",
+      "version": "Supplied local published article PDF"
+    },
+    {
+      "filename": "supplementary.pdf",
+      "pages": 25,
+      "sha256": "dab5db62e1c0e423633eeb2b90ed9fdf83405ef1820cfbef5ed65bfc182cb04e",
+      "version": "Supplied local supplementary PDF; contains references pages labelled Submitted Manuscript: Confidential"
+    }
+  ]
+}

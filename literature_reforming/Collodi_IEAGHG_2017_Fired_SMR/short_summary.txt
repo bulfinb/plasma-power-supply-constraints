@@ -1,0 +1,82 @@
+IEAGHG (2017) - fired steam methane reforming merchant H2 plant (Base Case)
+Source ID: SRC004. Role: fired SMR benchmark (second reference system).
+Data type: Amec Foster Wheeler engineering design with heat and material
+balance; not measured plant data. IEAGHG Technical Report 2017-02.
+Only the Base Case (no CO2 capture) extracted.
+
+Scale: 100,000 Nm3/h H2 (8,994 kg/h), 99.99+% at 2.5 MPa (PSA outlet, no
+compression). Natural gas 437 MW HHV (395 MW LHV), feed plus fuel. No grid
+import; steam turbine exports 9.9 MWe.
+
+Conversion: 84.6% CH4 (87.1% hydrocarbon carbon) across pre-reformer and
+Terrace Wall reformer; S/C about 2.7-2.8; outlet CH4 3.4% dry.
+
+Energy (heat basis; radiant duty stated, rest our calculations):
+- Radiant duty Q_abs 96.1 MW; burner fuel Q_fired 158 MW LHV (175 MW
+  HHV), mostly PSA tail gas; radiant efficiency 0.61 LHV.
+- EC_CH4,abs 315 kJ/mol CH4 converted (256 per mol hydrocarbon carbon);
+  EC_CH4,fired 574 kJ/mol HHV (518 LHV). Reaction enthalpy 206 kJ/mol.
+- No author efficiency stated; LHV ratio 75.9% (78.4% with export power).
+  Ours: eta_HHV 81.1% (83.4% with export power); f_electric 0.
+- 175 MJ NG (HHV) per kg H2; 1.10 kWh exported per kg H2.
+
+Duration: not applicable (design basis; 95% availability assumed).
+
+System information: whole-plant boundary (H2 plant, cogen, utilities);
+stream table without enthalpies; no overall energy balance. Reformer
+radiant duty stated; tube count and furnace size not given. Direct CO2
+0.81 kg/Nm3 H2 (about 9.0 kg/kg H2); LCOH 11.4 euro cent/Nm3 (4Q2014 EUR).
+
+Reporting quality (R1-R4): design basis; plant boundary and LHV/HHV basis
+stated; prepared by the reformer licensor (Amec Foster Wheeler) under
+IEAGHG management with independent review. Confidence higher for stated
+values, moderate for our derived fired duty and EC values.
+
+Comparison with NETL (SRC003): radiant duty here vs derived process-gas
+uptake there; power export here vs uncredited steam export and H2
+compression there. State these boundary differences when comparing.
+
+Traceability: PDF pp. 16-18, 32-58, 236, 254-256; SRC004-E001-E030.
+Calculations SRC004-C001-C006, E041-E050; outputs/calculations.py.
+Details: outputs/extraction.md and outputs/evidence.csv.
+
+Prepared 2026-10-30 by Claude (AI); ai_checked by same extractor; human
+verification pending.
+Comparison tables reformatted to the five-table layout 2026-11-04.
+
+Comparison tables (reference design, not experimental)
+NR = not reported; NA = not applicable; ~ = approximate. Human verification pending.
+
+1. Route and scale
+Source / OP        | Route | Reactor / activation / catalyst                | CH4 feed (mol/min) | Scale as reported
+Collodi 2017 OP001 | SMR   | Terrace Wall tubular / fired / catalyst NR [1] | 2.2e4 [2]          | 8,994 kg/h H2; 437 MW NG HHV
+[1] Fired with PSA tail gas and NG; with pre-reformer, HT shift and PSA.
+    Engineering design by the reformer licensor, not measured.
+[2] 1,295.8 kmol/h CH4 at pre-reformer inlet. SRC004-E003, E011, E014.
+
+2. Operating conditions
+Source / OP        | T (degC; location/type)   | p (bar; abs/gauge)  | CH4:CO2:H2O (molar)      | Other feed / ratio
+Collodi 2017 OP001 | ~900-950; tube outlet [3] | 28.0 abs, HTS inlet | NG + steam; S/C ~2.7-2.8 | NG 89.0% CH4, 7.0% C2H6
+[3] General statement, not a stream value; pre-reformer inlet 500 degC.
+    SRC004-E006, E011-E012, E017.
+
+3. Mass balance
+Source / OP        | X_CH4 (%) | X_CO2 (%) | Products (value; units/basis)   | Balance closure              | Duration (h; basis) | Conv. conf.
+Collodi 2017 OP001 | 84.6 [4]  | NA        | 8,994 kg/h H2; 99.99+%; 2.5 MPa | stream table; energy bal. NR | NA (design)         | higher
+[4] Pre-reformer and reformer combined; 87.1% of hydrocarbon carbon;
+    reformer outlet CH4 3.4% dry. SRC004-C003; E011-E012, E014.
+
+4. Energy balance
+Source / OP        | Energy input (boundary) | EC_CH4 (kJ/mol)         | EC basis       | Other metrics         | eta_HHV (%)    | Energy conf.
+Collodi 2017 OP001 | 175 MW fired HHV [5]    | 574 fired; 315 abs. [5] | heat; reformer | radiant eff. 0.61 LHV | 81.1 plant [6] | higher / moderate [5]
+[5] Burner fuel 175 MW HHV (158 LHV), mostly PSA tail gas; no grid
+    import. EC_CH4,fired 574 kJ/mol HHV (518 LHV); EC_CH4,abs from the
+    stated radiant duty, 82.63 Mkcal/h = 96.1 MW (4.1868 kJ/kcal assumed);
+    256 kJ/mol per hydrocarbon carbon. Heat basis, not electrical.
+    Confidence higher for stated values, moderate for derived duty and EC
+    values. SRC004-C002-C005; E013, E042-E049.
+[6] Whole plant, H2 only; 83.4% including the 9.918 MWe export;
+    f_electric 0. Ours 175 MJ NG HHV per kg H2; author metric 14.212 MJ
+    NG LHV/Nm3 H2. SRC004-C006; E015-E016, E018, E050.
+
+5. Plasma parameters: not applicable (fired reference).

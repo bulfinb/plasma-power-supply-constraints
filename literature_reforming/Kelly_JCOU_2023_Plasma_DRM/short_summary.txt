@@ -1,0 +1,99 @@
+Kelly et al. (2023) - dry reforming of methane in a 1 kW, 2.45 GHz atmospheric-pressure microwave plasma
+Source ID: SRC011. J. CO2 Util. 75, 102564 (open access). Experimental results only.
+No catalyst. No ESI located.
+
+Scale: Plasma scale 1 kW absorbed microwave power (six-port reflectometer;
+reflected < 1%). 10 nL/min CO2+CH4 (CH4 0.13-0.19 mol/min); SEI 6 kJ/L.
+No external heating, so absorbed power is the whole process input apart
+from the (unreported) wall-plug efficiency of the solid-state source.
+
+Conversion: CO2 46-49% and CH4 55-67% (total weighted 50-54%) at 30-45%
+CH4, corrected for gas expansion with a measured probe-gas factor. CO and
+H2 are the main products (H2/CO 0.56 to 1.01); water 7-14% (O balance);
+C2H2 0.7-1.6%. Carbon formation limits CH4 to 45% (50/50 extinguishes);
+the carbon is amorphous carbon black, 21 nm primary particles.
+
+Energy (power basis = absorbed microwave power; no external heat):
+- EC_CH4 581-723 kJ/mol CH4 converted; per mol CH4+CO2 converted 270-291
+  kJ/mol (2.8-3.0 eV), reproducing the authors' energy cost.
+- EC_H2 330-522 kJ/mol; EY_H2 14-22 g/kWh; eta_P,LHV ~66-68% (end points).
+- Author metric: energy cost = SEI / total conversion, 2.8-3.0 eV/molecule
+  (11.1-11.9 kJ/L), below the 4.27 eV competitiveness target; syngas
+  energy cost 1.7-1.9 eV.
+- eta_HHV (partial; source losses excluded) 45-53%.
+
+Duration: steady state after ~15 min; total time on stream not reported.
+
+System information: solid-state 2.45 GHz source, 16 mm quartz tube, swirl
+flow, electrode-free. Exhaust ~680-730 K at 15 cm. Solid carbon, C2H4/C2H6
+and wall-plug power not reported. Table 1 identifies Chun et al. (2017, 6
+kW) and Sun et al. (2021, 2 kW) as further MW DRM candidates.
+
+Reporting quality: conversion/product results higher confidence (calibrated
+analysers, measured gas expansion, stated uncertainties, atom balances);
+energy results higher confidence (absorbed power measured, no external
+heat; wall-plug boundary missing).
+
+Traceability: manuscript.pdf pp. 3-9, Table 1, Figs. 1-6; SRC011-E001-E022.
+Calculations SRC011-C001-C002, E041-E045; outputs/calculations.py. Details:
+outputs/extraction.md and outputs/evidence.csv.
+
+Prepared 2026-11-05 by Claude (AI); human_verified by BB 2026-11-05.
+
+Comparison tables (experimental conditions)
+NR = not reported; NA = not applicable; ~ = approximate. Human verified (BB, 2026-11-05).
+
+1. Route and scale
+Source / OP      | Route | Reactor / activation / catalyst            | CH4 feed (mol/min) | Scale as reported
+Kelly 2023 OP001 | DRM   | 16 mm quartz tube / 2.45 GHz MW / none [1] | 0.125 [2]          | 10 nL/min; 1 kW absorbed
+Kelly 2023 OP002 | DRM   | 16 mm quartz tube / 2.45 GHz MW / none [1] | 0.146 [2]          | 10 nL/min; 1 kW absorbed
+Kelly 2023 OP003 | DRM   | 16 mm quartz tube / 2.45 GHz MW / none [1] | 0.166 [2]          | 10 nL/min; 1 kW absorbed
+Kelly 2023 OP004 | DRM   | 16 mm quartz tube / 2.45 GHz MW / none [1] | 0.187 [2]          | 10 nL/min; 1 kW absorbed
+[1] Surface-wave microwave plasma, swirl flow, electrode-free.
+    SRC011-E001, E005.
+[2] Authors' molar volume 24.05 L/mol (20 degC). SRC011-E004, E009.
+
+2. Operating conditions
+Source / OP      | T (degC; location/type) | p (bar; abs/gauge) | CH4:CO2:H2O (molar) | Other feed / ratio
+Kelly 2023 OP001 | ~453; exhaust 15 cm [3] | ~1.01 abs          | 1:2.33:0            | none
+Kelly 2023 OP002 | NR                      | ~1.01 abs          | 1:1.86:0            | none
+Kelly 2023 OP003 | ~414; exhaust 15 cm [3] | ~1.01 abs          | 1:1.5:0             | none
+Kelly 2023 OP004 | ~404; exhaust 15 cm [3] | ~1.01 abs          | 1:1.22:0            | none
+[3] 726 / 687 / 677 K by K-type thermocouple in the exhaust plume; not
+    the plasma temperature. SRC011-E017.
+
+3. Mass balance
+Source / OP      | X_CH4 (%) | X_CO2 (%) | Products (value; units/basis)         | Balance closure    | Duration (h; basis)       | Conv. conf.
+Kelly 2023 OP001 | 66.5      | 49.4      | CO 41.0, H2 23.0% dry; H2O ~13.6% [4] | C 0.94, H 1.04 [5] | ~0.25 to steady state [6] | higher
+Kelly 2023 OP002 | 63        | 49        | H2O ~12.1% [4]                        | NR                 | ~0.25 to steady state [6] | higher
+Kelly 2023 OP003 | 58.0      | 46.2      | H2O ~7.2% [4]                         | C 0.97 [5]         | ~0.25 to steady state [6] | higher
+Kelly 2023 OP004 | 55.2      | 45.8      | H2/CO 1.01; H2O ~6.7%; C2H2 ~1.6%     | C 0.94, H 1.04 [5] | ~0.25 to steady state [6] | higher
+[4] Water inferred from the O balance (not measured). SRC011-E010, E014.
+[5] Cumulative atom selectivities (large errors); solid carbon, C2H4,
+    C2H6 not measured. SRC011-E015, E018.
+[6] Sampling after ~15 min steady state; total time on stream NR.
+    SRC011-E006.
+
+4. Energy balance
+Source / OP      | Energy input (boundary) | EC_CH4 (kJ/mol) | EC basis                  | Other metrics                 | eta_HHV (%)    | Energy conf.
+Kelly 2023 OP001 | 1 kW absorbed MW [7]    | 723 [8]         | absorbed MW; no ext. heat | 2.80 eV/molec.; EY 13.9 g/kWh | 53.1 part. [9] | higher
+Kelly 2023 OP002 | 1 kW absorbed MW [7]    | 654 [8]         | absorbed MW; no ext. heat | 2.82 eV/molec.                | NR             | higher
+Kelly 2023 OP003 | 1 kW absorbed MW [7]    | 622 [8]         | absorbed MW; no ext. heat | 2.99 eV/molec.                | NR             | higher
+Kelly 2023 OP004 | 1 kW absorbed MW [7]    | 581 [8]         | absorbed MW; no ext. heat | 3.02 eV/molec.; EY 22.0 g/kWh | 45.4 part. [9] | higher
+[7] Six-port reflectometer; reflected < 1%; wall-plug efficiency NR.
+    SRC011-E002-E003.
+[8] Per mol CH4 converted. Per mol CH4+CO2 converted 270/272/289/291
+    kJ/mol (author 2.8-3.0 eV). eta_P,LHV 67.8% (OP001), 66.4% (OP004).
+    SRC011-E041-E043; C001-C002.
+[9] (H2+CO HHV)/(P + CH4 HHV); excludes source losses. SRC011-E044.
+
+5. Plasma parameters (plasma-on rows only)
+Source / OP      | Discharge / regime             | Supply / frequency   | Voltage | P_plasma (W; method)     | SEI_CH4 (kJ/mol) | Diagnostics reported
+Kelly 2023 OP001 | Surface-wave MW; warm filament | 2.45 GHz solid-state | NA      | 1,000; six-port reflect. | 481              | exhaust T; carbon SEM/Raman [10]
+Kelly 2023 OP002 | Surface-wave MW; warm filament | 2.45 GHz solid-state | NA      | 1,000; six-port reflect. | 412              | carbon SEM/Raman [10]
+Kelly 2023 OP003 | Surface-wave MW; warm filament | 2.45 GHz solid-state | NA      | 1,000; six-port reflect. | 361              | exhaust T; carbon SEM/Raman [10]
+Kelly 2023 OP004 | Surface-wave MW; warm filament | 2.45 GHz solid-state | NA      | 1,000; six-port reflect. | 321              | exhaust T; carbon SEM/Raman [10]
+[10] No plasma temperature or electron diagnostics; incandescent carbon
+     > 1500 K inferred from colour. See outputs/extraction.md, "Plasma
+     characteristics". SRC011-E017-E018, E021.
+

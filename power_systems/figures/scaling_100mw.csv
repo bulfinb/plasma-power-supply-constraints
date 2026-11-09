@@ -1,0 +1,10 @@
+id,label,source_ids,published_output_kw,arithmetic_units_for_100mw,caveat
+A,ABP installed supply,S1,16000.0,7,Arithmetic only; no redundancy or downstream losses; family ratings need confirmation
+B,SMS LLC family,S2,4000.0,25,Arithmetic only; no redundancy or downstream losses; family ratings need confirmation
+C,Meltech Pulsar family,S3,750.0,134,Arithmetic only; no redundancy or downstream losses; family ratings need confirmation
+D,TRUMPF MF 7240 G2,S4,240.0,417,Arithmetic only; no redundancy or downstream losses; family ratings need confirmation
+F,TRUMPF HF 7000 family,S7,500.0,200,Arithmetic only; no redundancy or downstream losses; family ratings need confirmation
+G,Comet Synertia 50/13,S8,5.0,20000,Arithmetic only; no redundancy or downstream losses; family ratings need confirmation
+H,Comet Synertia 50/27,S8,5.0,20000,Arithmetic only; no redundancy or downstream losses; family ratings need confirmation
+I,Microwave Techniques MTX100,S9,100.0,1000,Arithmetic only; no redundancy or downstream losses; family ratings need confirmation
+J,SAIREM GMP100,S10,10.0,10000,Arithmetic only; no redundancy or downstream losses; family ratings need confirmation

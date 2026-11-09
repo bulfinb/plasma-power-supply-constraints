@@ -1,0 +1,120 @@
+Wanten et al. (2022) - dry reforming in a confined atmospheric pressure glow discharge, ~0.1 kW
+Source ID: SRC015. J. CO2 Util. 56, 101869; ESI sections 1-3.
+Experimental results only (kinetic model excluded). No catalyst.
+
+Scale: Plasma scale 97-145 W (SEI x flow; SEI 3.4-12.5 kJ/L read from
+Fig. 4), 20-35 mA, 0.5-2 L/min CO2/CH4 (15-35% CH4), no diluent.
+Single glow in a 5 mm ceramic tube. HV DC supply with a 300 kOhm series
+ballast resistor; wall power not reported.
+
+Conversion: confining the glow pushes most gas through the plasma: at
+25% CH4, 25 mA, 0.5 L/min X_CH4 94.3%, X_CO2 63.7% (X_tot 71%); best
+X_tot 74% at 35% CH4. CO-rich syngas (H2/CO 0.31-0.63) with much of the
+hydrogen as water (H-based S_H2O 26-71%); C-based S_CO 95-100%, C2 <4%.
+CH4 >35% gives carbon and unstable plasma; higher power damaged the
+tube, cathode and resistor.
+
+Energy (power basis = plasma power; no external heat; 24.05 L/mol):
+- EC_CH4 813-1194 kJ/mol CH4 converted; 3.38-4.24 eV per CH4+CO2
+  converted (author 3.5-4.2 eV, reproduced). ~7% lower at 0 degC litres.
+- EC_H2 560-1339 kJ/mol; EY_H2 5.4-13.0 g/kWh; eta_P,LHV 51.6-62.3%.
+- Author EC (13.9-17 kJ/L, per CH4+CO2 converted) looks low partly
+  because feeds are 65-85% CO2; EC_CH4 is the comparable metric.
+- Ballast resistor: I^2R 188-368 W, 1.6-2.6x the plasma power, so the
+  plasma receives only 28-39% of the supply output; EC_CH4 at supply
+  output 2392-3490 kJ/mol. A lab stabilisation method, not intrinsic,
+  but every parallel glow needs current limiting at scale.
+- eta_HHV (partial; ballast and supply losses excluded) 31.7-53.4%.
+
+Duration: blank + three plasma measurements per condition; run
+duration and time on stream not reported.
+
+System information: lab single-glow reactor, Macor tube, 310S
+electrodes. No temperature measurements (model assumes 2000-3000 K).
+Wall power, supply efficiency, heat losses, costs NR.
+
+Reporting quality: conversion/product results higher confidence
+(N2 internal standard, calibrated GC, triplicates, headline values in
+text); energy results moderate confidence (plasma-power method not
+described, SEI figure-read, litre reference implied by 24.05 L/mol).
+
+Traceability: manuscript.pdf pp. 1-9, Figs. 3-7; ESI.pdf pp. 1-4, 7-8,
+12-13; SRC015-E001-E027. Calculations SRC015-C001-C006, E041-E046;
+outputs/calculations.py. Details: outputs/extraction.md and
+outputs/evidence.csv.
+
+Prepared 2026-11-05 by Claude (AI); ai_checked by same extractor; human
+verification pending.
+
+Comparison tables (experimental conditions)
+NR = not reported; NA = not applicable; ~ = approximate. Human verification pending.
+
+1. Route and scale
+Source / OP       | Route | Reactor / activation / catalyst        | CH4 feed (mol/min) | Scale as reported
+Wanten 2022 OP001 | DRM   | Ceramic-confined tube / DC APGD / none | 0.0104 [1]         | 1.0 L/min; 25 mA; 118 W [2]
+Wanten 2022 OP002 | DRM   | Ceramic-confined tube / DC APGD / none | 0.0104 [1]         | 1.0 L/min; 35 mA; 143 W [2]
+Wanten 2022 OP003 | DRM   | Ceramic-confined tube / DC APGD / none | 0.0052 [1]         | 0.5 L/min; 25 mA; 97 W [2]
+Wanten 2022 OP004 | DRM   | Ceramic-confined tube / DC APGD / none | 0.0073 [1]         | 0.5 L/min; 25 mA; 104 W [2]
+Wanten 2022 OP005 | DRM   | Ceramic-confined tube / DC APGD / none | 0.0208 [1]         | 2.0 L/min; 25 mA; 113 W [2]
+Wanten 2022 OP006 | DRM   | Ceramic-confined tube / DC APGD / none | 0.0146 [1]         | 1.0 L/min; 35 mA; 145 W [2]
+[1] Litres at 24.05 L/mol (authors' "normal conditions"). SRC015-E007.
+[2] Plasma power = SEI (Fig. 4) x flow; not reported as values.
+    SRC015-E012, E042; C002.
+
+2. Operating conditions
+Source / OP       | T (degC; location/type) | p (bar; abs/gauge) | CH4:CO2:H2O (molar) | Other feed / ratio
+Wanten 2022 OP001 | NR [3]                  | ~1.01 abs [4]      | 1:3:0               | none
+Wanten 2022 OP002 | NR [3]                  | ~1.01 abs [4]      | 1:3:0               | none
+Wanten 2022 OP003 | NR [3]                  | ~1.01 abs [4]      | 1:3:0               | none
+Wanten 2022 OP004 | NR [3]                  | ~1.01 abs [4]      | 1:1.86:0            | none
+Wanten 2022 OP005 | NR [3]                  | ~1.01 abs [4]      | 1:3:0               | none
+Wanten 2022 OP006 | NR [3]                  | ~1.01 abs [4]      | 1:1.86:0            | none
+[3] Not measured; model assumes 2000-3000 K in the plasma. SRC015-E023.
+[4] "Atmospheric pressure"; value not stated. SRC015-E006.
+
+3. Mass balance
+Source / OP       | X_CH4 (%) | X_CO2 (%) | Products (value; units/basis)           | Balance closure | Duration (h; basis) | Conv. conf.
+Wanten 2022 OP001 | ~73.0     | ~45.5     | H2/CO ~0.36; Y_H2 37% H-based [5]       | C ~100% [6]     | NR [7]              | higher
+Wanten 2022 OP002 | ~85.3     | ~55.1     | H2/CO ~0.33; Y_H2 40% H-based [5]       | C ~100% [6]     | NR [7]              | higher
+Wanten 2022 OP003 | 94.28     | 63.7      | H2/CO ~0.31; Y_H2 ~42%, S_CO,C ~95% [5] | C ~100% [6]     | NR [7]              | higher
+Wanten 2022 OP004 | ~86.8     | ~66.4     | H2/CO 0.60; Y_H2 ~60%, S_H2O 26% H [5]  | C ~100% [6]     | NR [7]              | higher
+Wanten 2022 OP005 | ~36.3     | ~19.6     | H2/CO ~0.475; Y_H2 22% H-based [5]      | C ~100% [6]     | NR [7]              | higher
+Wanten 2022 OP006 | ~73.5     | ~54.8     | H2/CO 0.628; Y_H2 53% H-based [5]       | C ~100% [6]     | NR [7]              | higher
+[5] H2/CO from Fig. 6 (text for OP004, OP006); Y_H2 read from Fig. 7
+    (OP003-OP004) or calculated from H2/CO and S_CO,C. Conversions
+    figure-read except OP003. SRC015-E010-E011, E016-E018, E043.
+[6] "Always very close to 1"; not tabulated. H2O by O balance.
+    SRC015-E019, E021.
+[7] Blank + three plasma measurements per condition. SRC015-E022.
+
+4. Energy balance
+Source / OP       | Energy input (boundary) | EC_CH4 (kJ/mol) | EC basis             | Other metrics                              | eta_HHV (%)     | Energy conf.
+Wanten 2022 OP001 | 118 W plasma [8]        | 936 [9]         | plasma; no ext. heat | 3.38 eV/molec.; eta_P,LHV 59.3% [10]       | 49.8 part. [11] | moderate
+Wanten 2022 OP002 | 143 W plasma [8]        | 970 [9]         | plasma; no ext. heat | author 3.5 eV/molec.; eta_P,LHV 58.3% [10] | 53.4 part. [11] | moderate
+Wanten 2022 OP003 | 97 W plasma [8]         | 1194 [9]        | plasma; no ext. heat | 4.09 eV/molec.; eta_P,LHV 51.6% [10]       | 50.0 part. [11] | moderate
+Wanten 2022 OP004 | 104 W plasma [8]        | 990 [9]         | plasma; no ext. heat | author 4.2 eV/molec.; eta_P,LHV 54.9% [10] | 51.9 part. [11] | moderate
+Wanten 2022 OP005 | 113 W plasma [8]        | 901 [9]         | plasma; no ext. heat | 3.56 eV/molec.; eta_P,LHV 59.4% [10]       | 31.7 part. [11] | moderate
+Wanten 2022 OP006 | 145 W plasma [8]        | 813 [9]         | plasma; no ext. heat | 3.54 eV/molec.; eta_P,LHV 62.3% [10]       | 52.8 part. [11] | moderate
+[8] Method not described; excludes the 300 kOhm ballast (188 W at
+    25 mA, 368 W at 35 mA). Plasma 28-39% of supply output; EC_CH4 at
+    supply output 2392-3490 kJ/mol. Wall power NR. SRC015-E003-E004,
+    E045; C005.
+[9] Per mol CH4 converted; ~7% lower if litres are at 0 degC.
+    SRC015-E042; C002.
+[10] eV per CH4+CO2 converted (author definition, reproduced).
+     eta_P,LHV = (H2+CO LHV)/(P + CH4 converted LHV). SRC015-E013, E043.
+[11] (H2+CO HHV)/(P + CH4 HHV); f_electric 0.27-0.56. SRC015-E044; C004.
+
+5. Plasma parameters (plasma-on rows only)
+Source / OP       | Discharge / regime  | Supply / frequency    | Voltage             | P_plasma (W; method) | SEI_CH4 (kJ/mol) | Diagnostics reported
+Wanten 2022 OP001 | Confined APGD; warm | DC + 300 kOhm ballast | ~4.7 kV plasma [12] | 118; SEI x flow      | 683              | supply V, I; model [13]
+Wanten 2022 OP002 | Confined APGD; warm | DC + 300 kOhm ballast | ~4.1 kV plasma [12] | 143; SEI x flow      | 827              | supply V, I; model [13]
+Wanten 2022 OP003 | Confined APGD; warm | DC + 300 kOhm ballast | ~3.9 kV plasma [12] | 97; SEI x flow       | 1126             | supply V, I; model [13]
+Wanten 2022 OP004 | Confined APGD; warm | DC + 300 kOhm ballast | ~4.2 kV plasma [12] | 104; SEI x flow      | 859              | supply V, I; model [13]
+Wanten 2022 OP005 | Confined APGD; warm | DC + 300 kOhm ballast | ~4.5 kV plasma [12] | 113; SEI x flow      | 327              | supply V, I; model [13]
+Wanten 2022 OP006 | Confined APGD; warm | DC + 300 kOhm ballast | ~4.1 kV plasma [12] | 145; SEI x flow      | 598              | supply V, I; model [13]
+[12] Reviewer: P/I. Supply voltage ~10-15 kV reported as a range; the
+     implied 11.4-14.6 kV matches. SRC015-E003; C005.
+[13] No measured gas or electron temperature; model Te ~0.8 eV, E/N
+     ~45 Td, Tgas 2000-3000 K assumed. See outputs/extraction.md,
+     "Plasma characteristics". SRC015-E023-E024.

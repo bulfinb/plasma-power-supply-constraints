@@ -1,0 +1,6 @@
+id,label,frequency_hz,average_power_kw,peak_power_kw,efficiency_percent,scope,source_ids,notes
+L,Canon E37705 CW,325000000,600,600,60,commercial_tube,S13,Typical CW tube rating; efficiency is tube conversion not complete generator efficiency
+M,Canon E3732 CW,508600000,1200,1200,63,commercial_tube,S13,508.6 or 508.9 MHz variant; 508.6 plotted; tube needs power supply and auxiliaries
+N,Canon E3718 CW,1250000000,1200,1200,63,commercial_tube,S13,Typical CW tube rating; complete installation not implied
+O,CPI VPS3499 pulsed,2850000000,2,1000,,commercial_transmitter,S14,2.7-3.0 GHz band plotted at midpoint; 2 kW average calculated from 1 MW peak times specified 0.002 RF duty
+P,CPI XL series pulsed,12000000000,20,50000,40,manufacturer_report,S15,Representative 12 GHz point from manufacturer report discussing XL4/XL5; average reported 18-20 kW and 20 kW plotted; tube efficiency approximate

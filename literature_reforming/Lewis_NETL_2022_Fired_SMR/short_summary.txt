@@ -1,0 +1,79 @@
+NETL (2022) - fired steam methane reforming reference plant (Case 1)
+Source ID: SRC003. Role: fired SMR benchmark. Data type: Aspen Plus design
+model of a commercial single-train plant; not measured plant data.
+DOE/NETL-2022/3241. Only Case 1 (SMR without CO2 capture) extracted.
+
+Scale: 20,126 kg/h H2 (222 kNm3/h), 99.90 vol% at 6.48 MPa. Natural gas
+1,031 MW HHV (feed plus fuel). Grid electricity 12.65 MWe for auxiliaries,
+79% of it for H2 compression. No electrical reactor heating.
+
+Conversion: primary reformer 77.7% CH4 conversion (S/C 2.56, 871 degC
+outlet, 2.8 MPa); 76.6% at plant level after shift.
+
+Energy (heat basis, reformer level; our calculations from stream table):
+- Process-gas heat uptake Q_abs 264 MW; burner fuel Q_fired 448 MW HHV
+  (397 MW LHV), mostly recycled PSA off-gas.
+- EC_CH4,abs 340 kJ/mol and EC_CH4,fired 577 kJ/mol HHV (510 LHV), per
+  mol CH4 converted in the reformer; reaction enthalpy 206 kJ/mol.
+- Author: HHV effective thermal efficiency 75.4%, cold gas 76.7%
+  (LHV 70.5% / 71.9%). Ours: eta_HHV 75.7%, f_electric 1.2%; export steam
+  (about 143 MW) excluded and not credited.
+- 184 MJ NG (HHV) and 0.63 kWh electricity per kg H2.
+
+Duration: not applicable (design basis; 90% capacity factor assumed).
+
+System information: full plant boundary with stream table, closed carbon
+balance and energy balance (1.3 GJ/h unaccounted). Reformer duties, tube
+count and reformer volume not stated. Stack 9.3 kg CO2/kg H2; LCOH
+$1.06/kg (Dec 2018 USD, 73% fuel).
+
+Reporting quality (R1-R4): design basis; plant boundary and HHV/LHV basis
+stated; independent government source, peer reviewed. Confidence higher
+for plant-level values, moderate for our derived reformer duties.
+
+Traceability: PDF pp. 69-95 (printed 51-77), Exhibits 3-1 to 3-16;
+SRC003-E001-E040. Calculations SRC003-C001-C006, E041-E050. Details:
+outputs/extraction.md and outputs/evidence.csv.
+
+Prepared 2026-10-30 by Claude (AI); ai_checked by same extractor; human
+verification pending.
+Comparison tables reformatted to the five-table layout 2026-11-04.
+
+Comparison tables (reference design, not experimental)
+NR = not reported; NA = not applicable. Human verification pending.
+
+1. Route and scale
+Source / OP      | Route | Reactor / activation / catalyst                       | CH4 feed (mol/min) | Scale as reported
+Lewis 2022 OP001 | SMR   | Side-fired tubular / NG + PSA off-gas firing / Ni [1] | 6.0e4 [2]          | 20,126 kg/h H2; 1,031 MW NG HHV
+[1] With prereformer, HT shift and PSA. Aspen design model, not measured.
+    SRC003-E001, E018, E024.
+[2] 3,598 kmol/h CH4 at reformer inlet (3,433 kmol/h in process NG).
+    SRC003-E004, E009, E015.
+
+2. Operating conditions
+Source / OP      | T (degC; location/type)      | p (bar; abs/gauge)        | CH4:CO2:H2O (molar)  | Other feed / ratio
+Lewis 2022 OP001 | 871; reformer outlet gas [3] | 28.3 abs, reformer outlet | NG + steam; S/C 2.56 | NG 93.1% CH4
+[3] Reformer inlet 395 degC. SRC003-E006, E015-E017.
+
+3. Mass balance
+Source / OP      | X_CH4 (%) | X_CO2 (%) | Products (value; units/basis)        | Balance closure   | Duration (h; basis) | Conv. conf.
+Lewis 2022 OP001 | 77.7 [4]  | NA        | 20,126 kg/h H2; 99.90 vol%; 6.48 MPa | carbon closed [4] | NA (design)         | higher
+[4] Reformer; 76.6% at plant level after shift. Full stream table with
+    closed carbon balance; energy balance has 1.3 GJ/h unaccounted.
+    SRC003-E004-E005, E015-E016, E029-E030; C003, E043, E050.
+
+4. Energy balance
+Source / OP      | Energy input (boundary) | EC_CH4 (kJ/mol)         | EC basis       | Other metrics              | eta_HHV (%)    | Energy conf.
+Lewis 2022 OP001 | 448 MW fired HHV [5]    | 577 fired; 340 abs. [5] | heat; reformer | ETE 75.4% HHV (author) [6] | 75.7 plant [6] | higher / moderate [5]
+[5] Burner fuel 448 MW HHV (397 LHV), mostly PSA off-gas. EC_CH4,fired
+    577 kJ/mol HHV (510 LHV); EC_CH4,abs from Q_abs 264 MW, derived from
+    Aspen stream enthalpies. Per mol CH4 converted in the reformer; heat
+    basis, not electrical. Confidence higher for stated plant values,
+    moderate for these derived reformer duties. SRC003-C002-C005; E021,
+    E038, E042-E047.
+[6] Whole plant; 12.65 MWe grid for auxiliaries (f_electric 1.2%); export
+    steam (~143 MW) excluded and not credited. Author CGE 76.7% HHV; ours
+    184 MJ NG HHV and 0.63 kWh per kg H2. SRC003-C006; E025, E027-E028,
+    E032, E048-E049.
+
+5. Plasma parameters: not applicable (fired reference).

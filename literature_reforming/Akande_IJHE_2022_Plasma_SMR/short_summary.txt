@@ -1,0 +1,117 @@
+Akande and Lee (2022) - steam methane reforming in a 915 MHz microwave plasma torch, 15-50 kW
+Source ID: SRC008. Int. J. Hydrogen Energy 47, 2874-2884, with corrigendum (47, 25876).
+Experimental results only; ASPEN Plus simulations excluded. No catalyst.
+
+CAUTION: the headline results are internally inconsistent. The reported
+2247 g H2/h and 70 g H2/kWh at 32 kW are 1.7 times the stoichiometric
+maximum for the stated 60 lpm CH4 (1295 g/h; 40.5 g/kWh). The corrigendum
+does not address this; its completed outlet composition implies 83% CH4
+conversion, not the 96.6% reported. Do not use the H2 rate or energy
+yield as demonstrated performance.
+
+Scale: Plasma scale 15-50 kW absorbed microwave power (incident minus
+reflected; 75 kW generator rating). CH4 60 lpm (~2.7 mol/min) with 180-360
+lpm steam from a separate steam generator (duty not reported; reviewer
+indicative estimate 4-6 kW at 180 lpm). Reformer 0.28 m x 2.27 m (~140 L),
+500-650 degC gradient. Generator wall power not reported.
+
+Conversion (as reported): 74.6% at 17 kW rising to 97.7% at 47 kW (S/C 3);
+96.6-99.8% at 32 kW for S/C 3-5. Conflicts: corrigendum composition gives
+83%, and Fig. 10 outlet CH4 fractions imply about 30-90% across 27-42 kW.
+No soot observed (qualitative).
+
+Energy (power basis = absorbed microwave power; steam generation excluded):
+- EC_CH4 511 kJ/mol (17 kW) to 1078 (47 kW); 742 at the 32 kW author
+  optimum, or ~835 if conversion is the 83% implied by the composition.
+- EC_H2/EY_H2 from the corrigendum composition (carbon-balance flows):
+  ~220 kJ/mol, ~33 g H2/kWh, eta_P,LHV ~67%. Author H2 rate not used.
+- Author metric: energy yield = H2 rate / absorbed MW power, max 70
+  g/kWh at 32 kW (exceeds the stoichiometric limit, see above).
+- eta_HHV: partial only, ~66% at the composition point (steam generation
+  and generator losses excluded); lower confidence.
+
+Duration: not reported. "Steady plasma flame" and start-up under 10 min
+are qualitative claims.
+
+System information: torch, reformer and heat exchanger tested; separator,
+compressor and PSA shown but not used. Outlet flow measurement, analyser
+calibration, balances, steam-generator duty, generator efficiency,
+lifetime and costs not reported. Corresponding author also affiliated
+with Green Science Corporation.
+
+Reporting quality: conversion/product results lower confidence (H2 rate
+above stoichiometric limit; three conflicting conversion indications);
+energy results lower confidence (absorbed power measured properly, but
+energy yield depends on the impossible H2 rate; steam heat unreported).
+
+Traceability: manuscript.pdf pp. 4-9 (printed 2877-2882), Figs. 6-10;
+erratum.pdf p. 1; SRC008-E001-E030. Calculations SRC008-C001-C007,
+E041-E048; outputs/calculations.py. Details: outputs/extraction.md and
+outputs/evidence.csv.
+
+Prepared 2026-11-05 by Claude (AI); ai_checked by same extractor; human
+verification pending.
+
+Comparison tables (experimental conditions)
+NR = not reported; NA = not applicable; ~ = approximate. Human verification pending.
+
+1. Route and scale
+Source / OP       | Route | Reactor / activation / catalyst                | CH4 feed (mol/min) | Scale as reported
+Akande 2022 OP001 | SMR   | MW torch + 140 L reformer / 915 MHz / none [1] | 2.68 [2]           | 60 lpm CH4; 17 kW absorbed
+Akande 2022 OP003 | SMR   | MW torch + 140 L reformer / 915 MHz / none [1] | 2.68 [2]           | 60 lpm CH4; 32 kW absorbed
+Akande 2022 OP006 | SMR   | MW torch + 140 L reformer / 915 MHz / none [1] | 2.68 [2]           | 60 lpm CH4; 47 kW absorbed
+Akande 2022 OP008 | SMR   | MW torch + 140 L reformer / 915 MHz / none [1] | 2.77 [2]           | 62 lpm CH4; 32 kW absorbed
+[1] Electrode-free microwave steam-plasma torch (79 mm quartz tube);
+    CH4 added at the reformer inlet; 75 kW generator. SRC008-E001, E005,
+    E007, E009.
+[2] lpm converted at 0 degC, 1 atm (reference NR). SRC008-E011-E012, E020.
+
+2. Operating conditions
+Source / OP       | T (degC; location/type) | p (bar; abs/gauge) | CH4:CO2:H2O (molar) | Other feed / ratio
+Akande 2022 OP001 | 500-650; reformer [3]   | ~1.01 abs          | 1:0:3               | none
+Akande 2022 OP003 | 500-650; reformer [3]   | ~1.01 abs          | 1:0:3               | none
+Akande 2022 OP006 | 500-650; reformer [3]   | ~1.01 abs          | 1:0:3               | none
+Akande 2022 OP008 | 500-650; reformer [3]   | ~1.01 abs          | 1:0:2.9             | none
+[3] Gradient along the reformer (thermocouples); not point-specific;
+    plasma gas temperature NR. SRC008-E010.
+
+3. Mass balance
+Source / OP       | X_CH4 (%) | X_CO2 (%) | Products (value; units/basis)                 | Balance closure            | Duration (h; basis) | Conv. conf.
+Akande 2022 OP001 | 74.6      | NA        | NR                                            | NR                         | NR                  | lower
+Akande 2022 OP003 | 96.6 [4]  | NA        | 2247 g/h H2 [5]; H2 0.63 mol frac.            | NR; H2 > stoich. limit [5] | NR                  | lower
+Akande 2022 OP006 | 97.7      | NA        | NR                                            | NR                         | NR                  | lower
+Akande 2022 OP008 | 83.1 [6]  | NA        | H2 63.4, CO 10.4, CO2 6.3, CH4 3.4, H2O 16.5% | H 88%, O 68% (ours) [6]    | NR                  | lower
+[4] Fig. 9 / text, S/C 3. Fig. 10 at 32 kW (CH4 0.14, H2 0.63) implies
+    ~53-60%. SRC008-E014, E022, E045; C003.
+[5] Author value; 1.73 x the 1295 g/h stoichiometric ceiling for 60 lpm
+    CH4. Not usable as demonstrated output. SRC008-E015-E016, E041; C001.
+[6] Corrigendum composition (wet); X_CH4 from carbon basis, no soot
+    assumed. Reviewer calculation. SRC008-E019-E021, E043; C002.
+
+4. Energy balance
+Source / OP       | Energy input (boundary) | EC_CH4 (kJ/mol) | EC basis                | Other metrics                     | eta_HHV (%)      | Energy conf.
+Akande 2022 OP001 | 17 kW absorbed MW [7]   | 511             | absorbed MW; heat excl. | NR                                | NR               | lower
+Akande 2022 OP003 | 32 kW absorbed MW [7]   | 742 [8]         | absorbed MW; heat excl. | author EY 70 g/kWh [9]            | NR               | lower
+Akande 2022 OP006 | 47 kW absorbed MW [7]   | 1078            | absorbed MW; heat excl. | NR                                | NR               | lower
+Akande 2022 OP008 | 32 kW absorbed MW [7]   | 835             | absorbed MW; heat excl. | EY ~33 g/kWh; eta_P,LHV ~67% [10] | ~66 partial [10] | lower
+[7] Incident minus reflected power. Steam generator (external heat) NR;
+    indicative reviewer estimate 4-6 kW at 180 lpm, which would raise
+    OP003 EC_CH4 to ~840-890 kJ/mol. SRC008-E002, E006, E047; C005.
+[8] From the reported conversion; ~835 if conversion is 83% (OP008).
+    SRC008-E046; C004.
+[9] Author energy yield = H2 rate / absorbed power; exceeds the 40.5
+    g/kWh stoichiometric maximum. SRC008-E016-E017, E041; C001.
+[10] From corrigendum composition with carbon-balance flows; EC_H2 ~220
+    kJ/mol. eta_HHV excludes steam generation and generator losses.
+    SRC008-E044, E048; C002, C006.
+
+5. Plasma parameters (plasma-on rows only)
+Source / OP       | Discharge / regime        | Supply / frequency  | Voltage | P_plasma (W; method) | SEI_CH4 (kJ/mol) | Diagnostics reported
+Akande 2022 OP001 | MW steam torch; warm [11] | 915 MHz; 75 kW gen. | NA      | 17,000; P_I - P_R    | 381              | none
+Akande 2022 OP003 | MW steam torch; warm [11] | 915 MHz; 75 kW gen. | NA      | 32,000; P_I - P_R    | 717              | none
+Akande 2022 OP006 | MW steam torch; warm [11] | 915 MHz; 75 kW gen. | NA      | 47,000; P_I - P_R    | 1053             | none
+Akande 2022 OP008 | MW steam torch; warm [11] | 915 MHz; 75 kW gen. | NA      | 32,000; P_I - P_R    | 694              | none
+[11] Authors' general description of microwave plasma (~3000 K), not
+     measured in this study. SRC008-E028. See outputs/extraction.md,
+     "Plasma characteristics".
+

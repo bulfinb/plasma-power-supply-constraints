@@ -1,0 +1,93 @@
+From et al. (2024) - electrified (Joule-heated) SMR of biogas, pilot plant
+Source ID: SRC005. Role: Joule-heating benchmark at pilot scale (primary;
+Wismann 2019, SRC001, is the lab-scale complement). Experimental results
+only; scale-up modelling excluded. Topsoe eSMR/eREACT, Aarhus University.
+
+Scale: Biogas 15-27 Nm3/h in the energy tests, about 5.6-15.1 mol/min CH4
+(CH4 content 50-75%, point values NR; SRC005-C002). Electrical power not
+tabulated; Fig. 5 capacity axis about 0.024-0.035 MW, undefined (if it is
+power input, roughly 24-35 kW).
+
+Conversion: 97% CH4 at 900 degC, 10 barg, S/C 2.7, at equilibrium. 94% at
+950 degC, 20 barg, S/C 2.1, unchanged between 485 h and 1535 h. Feed
+contains CO2, so the chemistry is mixed steam/CO2 reforming.
+
+Energy: Author reactor efficiency 72-80% (Q_reaction/Q_in, includes
+heating gas 400 to 900 degC; rest is heat loss) at 900 degC, 10 barg.
+EC_CH4 and other power-basis metrics not calculable (no point-matched
+power, feed composition or conversion). eta_HHV not calculable (preheat,
+steam, compression and supply losses not reported). Modelled 99% and
+1.0 kWh/Nm3 at >=1 MW excluded.
+
+Duration: close to 2000 h total; matched stability points 1050 h apart.
+Start-up from idle to 900 degC in 2.6 h; heating up to 330 degC/h.
+
+System information: pilot train described (sulfur guards, compressor,
+electric boiler, preheat, prereformer, eSMR, waste heat boiler), but
+auxiliary duties, reactor size and balance closure not reported.
+
+Reporting quality: conversion/product results moderate confidence (GC,
+1050 h matched comparison; feed composition and closure NR); energy
+results moderate confidence for the author efficiency (measured, defined
+in SI, graph-read, reactor boundary only). Topsoe (technology owner)
+co-authored.
+
+Traceability: manuscript.pdf pp. 1-7, Figs. 3-5, Table 1;
+supplementary.docx Eqs. S4-S12; SRC005-E001-E031. Calculations
+SRC005-C001-C003, E041-E042; outputs/calculations.py. Details:
+outputs/extraction.md and outputs/evidence.csv.
+
+Prepared 2026-11-04 by Claude (AI); ai_checked by same extractor; human
+verification pending.
+
+Comparison tables (experimental conditions)
+NR = not reported; NA = not applicable; ~ = approximate. Human verification pending.
+
+1. Route and scale
+Source / OP     | Route              | Reactor / activation / catalyst            | CH4 feed (mol/min) | Scale as reported
+From 2024 OP001 | mixed (biogas SMR) | eSMR pilot / Joule heating / eREACT Ni [1] | NR                 | biogas flow NR
+From 2024 OP003 | mixed (biogas SMR) | eSMR pilot / Joule heating / eREACT Ni [1] | NR                 | biogas flow NR
+From 2024 OP004 | mixed (biogas SMR) | eSMR pilot / Joule heating / eREACT Ni [1] | 5.6-8.4 [2]        | 15 Nm3/h biogas; ~0.024 MW [3]
+From 2024 OP007 | mixed (biogas SMR) | eSMR pilot / Joule heating / eREACT Ni [1] | 10.0-15.1 [2]      | 27 Nm3/h biogas; ~0.035 MW [3]
+[1] Direct electrically heated catalytic structure, Ni active; prereformer
+    upstream. Reactor size NR. SRC005-E003, E007, E029.
+[2] Biogas flow x 50-75% CH4 (general range), 0 degC normal reference
+    assumed (SRC005-C002; E010, E018, E041). Lowest flow assumed to match
+    the lowest-capacity point (reviewer interpretation).
+[3] Fig. 5 "Capacity" axis, undefined (SRC005-E024).
+
+2. Operating conditions
+Source / OP     | T (degC; location/type) | p (bar; abs/gauge) | CH4:CO2:H2O (molar) | Other feed / ratio
+From 2024 OP001 | 900; catalyst exit [4]  | 10 gauge           | biogas; S/C 2.7     | CH4 50-75%, CO2 25-50% [5]
+From 2024 OP003 | 950; catalyst exit [4]  | 20 gauge           | biogas; S/C 2.1     | CH4 50-75%, CO2 25-50% [5]
+From 2024 OP004 | 900; catalyst exit [4]  | 10 gauge           | biogas; S/C 2-2.2   | CH4 50-75%, CO2 25-50% [5]
+From 2024 OP007 | 900; catalyst exit [4]  | 10 gauge           | biogas; S/C 2-2.2   | CH4 50-75%, CO2 25-50% [5]
+[4] K-type thermocouples at catalyst exit; inlet 400 degC (OP001, OP004,
+    OP007), NR for OP003. SRC005-E008, E012, E016-E018.
+[5] General raw-biogas range; composition at each point NR. SRC005-E010.
+
+3. Mass balance
+Source / OP     | X_CH4 (%)    | X_CO2 (%) | Products (value; units/basis) | Balance closure | Duration (h; basis)       | Conv. conf.
+From 2024 OP001 | 97 [6]       | NR        | NR (GC: CO, CO2, CH4, N2, H2) | NR              | ~1 h at steady state      | moderate
+From 2024 OP003 | 94 +/- 1 [7] | NR        | NR                            | NR              | 1535 TOS; ~2000 total [7] | moderate
+From 2024 OP004 | NR           | NR        | NR                            | NR              | NR                        | NA
+From 2024 OP007 | NR           | NR        | NR                            | NR              | NR                        | NA
+[6] At thermodynamic equilibrium; from carbon balance. SRC005-E009, E013.
+[7] Same 94 +/- 1% at TOS 485 h (OP002); no deactivation over 1050 h.
+    SRC005-E011, E016-E017.
+
+4. Energy balance
+Source / OP     | Energy input (boundary) | EC_CH4 (kJ/mol) | EC basis | Other metrics         | eta_HHV (%) | Energy conf.
+From 2024 OP001 | NR                      | NR [8]          | NA       | NR                    | NR [10]     | NA
+From 2024 OP003 | NR                      | NR [8]          | NA       | NR                    | NR [10]     | NA
+From 2024 OP004 | ~0.024 MW? [3]; PSU I*V | NR [8]          | NA       | author eta ~71.5% [9] | NR [10]     | moderate
+From 2024 OP007 | ~0.035 MW? [3]; PSU I*V | NR [8]          | NA       | author eta ~79.5% [9] | NR [10]     | moderate
+[8] Point-matched power, CH4 feed, composition and conversion NR.
+    SRC005-C003; E042.
+[9] eta = Q_reaction/Q_in, reactor level; Q_reaction includes reaction
+    heat and sensible heating 400 to 900 degC; graph-read from Fig. 5
+    (text: 72-80%). Not eta_P,LHV. SRC005-C001; E005-E006, E019-E023.
+[10] Preheat, steam generation, compression and supply losses NR.
+    SRC005-E028.
+
+5. Plasma parameters: not applicable (Joule-heated source).

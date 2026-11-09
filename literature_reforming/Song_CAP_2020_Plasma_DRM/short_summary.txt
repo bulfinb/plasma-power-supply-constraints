@@ -1,0 +1,111 @@
+Song et al. (2020) - dry reforming of methane with a 20-30 kW, 400 kHz inductively coupled plasma torch
+Source ID: SRC009. Curr. Appl. Phys. 20, 196-204. Experimental results only;
+CHEMKIN-PRO simulations excluded. No catalyst. No ESI located.
+
+Scale: Plasma scale 17-27 kW RF power (generator "input/applied" power;
+the text calls the plotted value "delivered, not absorbed" while figure
+captions say "absorbed"; boundary unclear). CO2 20-30 SLM (plasma gas,
+with Ar at ignition) and CH4 20-36 SLM (0.9-1.6 mol/min) injected into the
+plasma tail. No external heating; generator wall power not reported.
+
+Conversion: CO2/CH4 up to 94/94% at 27 kW with 30/30 SLM (abstract: "95%
+for both"); 98% CH4 at 22 kW with 30/20 SLM. At 22 kW, raising CH4 from 20
+to 36 SLM lowers CH4 conversion 98 to 79% and raises C2 hydrocarbons
+(C2H2 up to 3.3 SLM). Carbon balance 96-99.9% (reported). Water not
+measured. No temperature measured.
+
+Energy (power basis = RF generator power; no external heat):
+- EC_CH4 1036-1510 kJ/mol (22 kW points) and 1148-1288 (30/30 SLM,
+  21-27 kW); per mol CH4+CO2 converted 541-778 kJ/mol (5.6-8.1 eV).
+- EC_H2 606-1143 kJ/mol; EY_H2 6-12 g/kWh; eta_P,LHV (H2+CO) 35-51%.
+- Author metric: energy conversion efficiency = LHV of H2, CO and C2
+  products / (input power + LHV of CH4 converted); 47-57% at 22 kW, best
+  57% at 30/36 SLM CO2/CH4 (CH4 conversion 79% there, not 95%). Our
+  recalculation reproduces it to within 0.2 points.
+- eta_HHV (partial, H2+CO; generator losses excluded) 27-52%.
+
+Duration: not reported (10 min GC analysis per sample). No stability or
+lifetime data.
+
+System information: torch and 80 x 267 mm quartz tube; CO2 throughput
+capacity ~1.6 SLM/kW. Product flow method, Ar flow during reforming,
+water, temperatures, generator efficiency and cooling not reported.
+Co-author/funder EN2CORE Technology Inc.
+
+Reporting quality: conversion/product results moderate confidence
+(carbon balance reported and reproducible; no temperatures, repeats or
+water); energy results moderate confidence (point-matched power and
+reproducible author efficiency, but power boundary contradictory and wall
+power missing).
+
+Traceability: manuscript.pdf pp. 2-9 (printed 197-204), Figs. 3-9,
+Eqs. (1)-(15); SRC009-E001-E027. Calculations SRC009-C001-C006,
+E041-E047; outputs/calculations.py. Details: outputs/extraction.md and
+outputs/evidence.csv.
+
+Prepared 2026-11-05 by Claude (AI); ai_checked by same extractor; human
+verification pending.
+
+Comparison tables (experimental conditions)
+NR = not reported; NA = not applicable; ~ = approximate. Human verification pending.
+
+1. Route and scale
+Source / OP     | Route | Reactor / activation / catalyst            | CH4 feed (mol/min) | Scale as reported
+Song 2020 OP007 | DRM   | Quartz tube / ICP torch 400 kHz / none [1] | 1.34 [2]           | 30/30 SLM CO2/CH4; 21 kW
+Song 2020 OP009 | DRM   | Quartz tube / ICP torch 400 kHz / none [1] | 1.34 [2]           | 30/30 SLM CO2/CH4; 27 kW
+Song 2020 OP010 | DRM   | Quartz tube / ICP torch 400 kHz / none [1] | 0.89 [2]           | 30/20 SLM CO2/CH4; 22 kW
+Song 2020 OP013 | DRM   | Quartz tube / ICP torch 400 kHz / none [1] | 1.61 [2]           | 30/36 SLM CO2/CH4; 22 kW
+[1] CO2 (with Ar at ignition) is the swirl plasma gas; CH4 injected into
+    the plasma tail; 80 mm x 267 mm quartz tube. SRC009-E001, E005-E006.
+[2] SLM converted at 0 degC, 1 atm (reference NR; this reproduces the
+    authors' efficiency). SRC009-E007; C001-C002.
+
+2. Operating conditions
+Source / OP     | T (degC; location/type) | p (bar; abs/gauge) | CH4:CO2:H2O (molar) | Other feed / ratio
+Song 2020 OP007 | NR [3]                  | ~1.01 abs          | 1:1:0               | Ar NR during reforming [4]
+Song 2020 OP009 | NR [3]                  | ~1.01 abs          | 1:1:0               | Ar NR during reforming [4]
+Song 2020 OP010 | NR [3]                  | ~1.01 abs          | 1:1.5:0             | Ar NR during reforming [4]
+Song 2020 OP013 | NR [3]                  | ~1.01 abs          | 1:0.83:0            | Ar NR during reforming [4]
+[3] No measurement; "900-1000 degC" is a general statement. SRC009-E006.
+[4] 30 SLM Ar used to ignite; flow during measurements not stated.
+    SRC009-E008.
+
+3. Mass balance
+Source / OP     | X_CH4 (%) | X_CO2 (%) | Products (value; units/basis)   | Balance closure | Duration (h; basis) | Conv. conf.
+Song 2020 OP007 | 82        | 86        | H2 42.3, CO 45.1 SLM [5]        | C 96.7%         | NR                  | moderate
+Song 2020 OP009 | 94        | 94        | H2 58.8, CO 55.5 SLM [5]        | C 99.9% [6]     | NR                  | moderate
+Song 2020 OP010 | 98.0      | 88.7      | H2 33.3, CO 44.4, C2H2 0.32 SLM | C 98.0%         | NR                  | moderate
+Song 2020 OP013 | 79.3      | 87.1      | H2 48.8, CO 45.7, C2H2 3.32 SLM | C 98.3%         | NR                  | moderate
+[5] Graph-read (Figs. 4-6, 9); C2 products at OP007/OP009 NR. Water not
+    measured: O deficit 6.6-8.8 SLM at 22 kW (likely H2O). SRC009-E012-E017,
+    E046; C002.
+[6] Text gives 98.9% for the highest power; Fig. 9(C) ~99.9%. SRC009-E020.
+
+4. Energy balance
+Source / OP     | Energy input (boundary) | EC_CH4 (kJ/mol) | EC basis                   | Other metrics                  | eta_HHV (%)    | Energy conf.
+Song 2020 OP007 | 21 kW RF [7]            | 1148 [8]        | RF generator; no ext. heat | EY 10.9 g/kWh; eta_P,LHV 47.9% | 45.2 part. [9] | moderate
+Song 2020 OP009 | 27 kW RF [7]            | 1288 [8]        | RF generator; no ext. heat | EY 11.8 g/kWh; eta_P,LHV 50.8% | 51.6 part. [9] | moderate
+Song 2020 OP010 | 22 kW RF [7]            | 1510 [8]        | RF generator; no ext. heat | author ECE 46.6% [10]          | 46.6 part. [9] | moderate
+Song 2020 OP013 | 22 kW RF [7]            | 1036 [8]        | RF generator; no ext. heat | author ECE 56.7% [10]          | 43.6 part. [9] | moderate
+[7] Generator "input/applied" power; text says plotted power is delivered,
+    not absorbed; captions say absorbed. Wall power NR. SRC009-E002-E003.
+[8] Per mol CH4 converted; per mol CH4+CO2 converted 560/644/640/541
+    kJ/mol. +7% at 20 degC SLM. SRC009-E041-E043; C001, C006.
+[9] (H2+CO HHV)/(RF power + CH4 HHV); excludes generator losses, cooling
+    and C2 products. SRC009-E047; C001.
+[10] Author Eq. (5) includes C2 products' LHV; reproduced within 0.2
+    points. eta_P,LHV (H2+CO only) 45.5% (OP010), 47.1% (OP013).
+    SRC009-E010, E018, E045; C002.
+
+5. Plasma parameters (plasma-on rows only)
+Source / OP     | Discharge / regime        | Supply / frequency | Voltage | P_plasma (W; method)   | SEI_CH4 (kJ/mol) | Diagnostics reported
+Song 2020 OP007 | ICP torch; regime NR [11] | RF; 400 kHz        | NR      | 21,000; generator [12] | 941              | none
+Song 2020 OP009 | ICP torch; regime NR [11] | RF; 400 kHz        | NR      | 27,000; generator [12] | 1210             | none
+Song 2020 OP010 | ICP torch; regime NR [11] | RF; 400 kHz        | NR      | 22,000; generator [12] | 1479             | none
+Song 2020 OP013 | ICP torch; regime NR [11] | RF; 400 kHz        | NR      | 22,000; generator [12] | 822              | none
+[11] Not stated by the authors; atmospheric-pressure ICP torches of this
+     power are normally thermal (reviewer note). See outputs/extraction.md,
+     "Plasma characteristics".
+[12] Absorbed power from an antenna circuit model is described but not
+     reported; plotted boundary contradictory. SRC009-E002-E003.
+

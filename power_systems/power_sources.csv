@@ -1,0 +1,12 @@
+id,label,technology,frequency_min_hz,frequency_max_hz,power_kw,efficiency_percent,efficiency_qualifier,scope,source_ids,notes
+A,ABP installed supply,Induction,250,250,16000,,,installation,S1,Documented 16 MW 250 Hz Twin-Power supply; not a single semiconductor module
+B,SMS LLC family,Induction,1000,10000,4000,,,family,S2,Family spans 400-4000 kW and 1-10 kHz; not a guaranteed rectangular operating envelope
+C,Meltech Pulsar family,Induction,200,10000,750,98,approximate,family,S3,Family spans 75-750 kW; efficiency boundary and test conditions not fully specified
+D,TRUMPF MF 7240 G2,Induction,1000,200000,240,91,stated,model,S4,Model table 1-200 kHz supersedes general headline 0.5 kHz; no frequency-resolved efficiency curve
+E,CEIA SA400 50 kW input,Induction,100000,400000,50,96,greater_than,input_rating,S5;S6;S16,50 kW is input rating in detailed table; excluded from output power plots and scaling counts; efficiency is family claim
+F,TRUMPF HF 7000 family,Induction tube,400000,3000000,500,,,family,S7,Headline family maximum; individual table models differ; do not interpret as full power at every frequency
+G,Comet Synertia 50/13,RF solid state,13560000,13560000,5,70,greater_than,model,S8,Family-level power efficiency claim; semiconductor plasma application
+H,Comet Synertia 50/27,RF solid state,27120000,27120000,5,70,greater_than,model,S8,Family-level power efficiency claim; semiconductor plasma application
+I,Microwave Techniques MTX100,Microwave magnetron,915000000,915000000,100,80,approaching,model,S9,Generator operation approaches 80%; distinct from magnetron-only efficiency
+J,SAIREM GMP100,Microwave magnetron,2450000000,2450000000,10,85,stated,model,S10,Power efficiency reported in manufacturer application guide; boundary needs confirmation
+K,QST ITER gyrotron,Fusion gyrotron,170000000000,170000000000,1050,50.6,measured_300s,research,S11,300 s acceptance-test result; gyrotron efficiency not full grid-to-output efficiency; excluded from main industrial chart

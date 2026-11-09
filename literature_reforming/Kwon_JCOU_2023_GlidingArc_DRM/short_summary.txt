@@ -1,0 +1,107 @@
+Kwon, Kim & Song (2023) - dry reforming in a rotating gliding arc with product quenching, ~1.7 kW
+Source ID: SRC014. J. CO2 Util. 70, 102448 (open access); ESI section S1.
+Experimental results only (equilibrium modelling excluded). No catalyst.
+
+Scale: Plasma scale 0.92-1.67 kW discharge power (V x I on oscilloscope;
+measured SEI 2.3-4.2 kJ/L). Feed 24 SLPM of which 12 SLPM N2; CH4 3-6
+SLPM (0.13-0.27 mol/min). No external heating; supply wall power and
+cooling-water duties (electrode and quenching rod) not reported.
+
+Conversion: at CH4/CO2 5/7 and SEI 4.2 kJ/L, quenching lowers conversion
+slightly (CH4 ~52 to 51.1%, CO2 ~40.6 to 40.2%) but raises H2 selectivity
+from 81 to 85% and cuts water from 13.9 to 8.6% by suppressing reverse
+water-gas shift; H2/CO 0.91 to 0.95. At CH4/CO2 = 1 (quenched) H2/CO
+1.26, but carbon deposits (C balance 97%). Conversion roughly halves at
+SEI 2.3 kJ/L. N2 internal standard; C balance 97-100%.
+
+Energy (power basis = discharge power; no external heat; 0 degC SLPM):
+- EC_CH4 740-948 kJ/mol CH4 converted; 4.3-4.7 eV per CH4+CO2 molecule
+  converted. ~7% higher if SLPM is at 20 degC.
+- EC_H2 425-533 kJ/mol; EY_H2 13.6-17.1 g/kWh; eta_P,LHV 52.7-54.7%.
+- Author eta (same definition as eta_P,LHV): 55.3% at 5/7 quenched (55.6%
+  elsewhere in the text), 53.2% at 1/1; reproduced within ~0.6 points.
+  Author conversion cost 18.5-20.4 kJ/L and syngas cost 10.2-11.9 kJ/L are
+  per litre of total flow and include the 50% N2 dilution.
+- eta_HHV (partial; cooling and supply losses excluded) 35.5-38.0%.
+
+Duration: ~10 min stabilisation per sample, three repeats; electrodes
+need a 3 min CO2 burn-off of carbon between runs. No time-on-stream test.
+
+System information: lab RGA, swirl flow, water-cooled Cu inner electrode,
+water-cooled quenching rod. Only off-axis thermocouples (not the gas
+temperature). Wall power, cooling duties, pressure, costs NR.
+
+Reporting quality: conversion/product results higher confidence
+(calibrated GC, N2 expansion correction, triplicates, matched quench and
+uncooled-rod controls); energy results higher confidence (measured
+discharge power per point, no external heat, author efficiency matches
+our definition; SLPM reference and supply losses unknown).
+
+Traceability: manuscript.pdf pp. 3-12, Table 1, Figs. 2, 6-12; ESI.pdf
+pp. 1-2; SRC014-E001-E022. Calculations SRC014-C001-C005, E041-E046;
+outputs/calculations.py. Details: outputs/extraction.md and
+outputs/evidence.csv.
+
+Prepared 2026-11-05 by Claude (AI); ai_checked by same extractor; human
+verification pending.
+
+Comparison tables (experimental conditions)
+NR = not reported; NA = not applicable; ~ = approximate. Human verification pending.
+
+1. Route and scale
+Source / OP     | Route | Reactor / activation / catalyst             | CH4 feed (mol/min) | Scale as reported
+Kwon 2023 OP001 | DRM   | Swirl reactor / rotating gliding arc / none | 0.223 [1]          | 24 SLPM (50% N2); 1.67 kW
+Kwon 2023 OP002 | DRM   | Swirl reactor / RGA + quench rod / none     | 0.223 [1]          | 24 SLPM (50% N2); 1.67 kW
+Kwon 2023 OP003 | DRM   | Swirl reactor / RGA + quench rod / none     | 0.268 [1]          | 24 SLPM (50% N2); 1.67 kW
+Kwon 2023 OP004 | DRM   | Swirl reactor / RGA + quench rod / none     | 0.223 [1]          | 24 SLPM (50% N2); 0.92 kW
+[1] SLPM at 0 degC (reference not stated; 0 degC reproduces the author
+    efficiency). SRC014-E004; C002-C003.
+
+2. Operating conditions
+Source / OP     | T (degC; location/type)    | p (bar; abs/gauge) | CH4:CO2:H2O (molar) | Other feed / ratio
+Kwon 2023 OP001 | 536 / 246; TC1 / TC2 [2]   | ~1.01 abs [3]      | 1:1.4:0             | N2 12 SLPM (50%)
+Kwon 2023 OP002 | ~360 / ~101; TC1 / TC2 [2] | ~1.01 abs [3]      | 1:1.4:0             | N2 12 SLPM (50%)
+Kwon 2023 OP003 | ~370 / ~105; TC1 / TC2 [2] | ~1.01 abs [3]      | 1:1:0               | N2 12 SLPM (50%)
+Kwon 2023 OP004 | ~233 / ~80; TC1 / TC2 [2]  | ~1.01 abs [3]      | 1:1.4:0             | N2 12 SLPM (50%)
+[2] Off-axis thermocouples before (TC1) and after (TC2) the quenching
+    rod; not the gas temperature. Fig. 2 read by eye. SRC014-E008.
+[3] Not stated; atmospheric assumed. SRC014-E021.
+
+3. Mass balance
+Source / OP     | X_CH4 (%) | X_CO2 (%) | Products (value; units/basis)         | Balance closure | Duration (h; basis)  | Conv. conf.
+Kwon 2023 OP001 | ~52.0     | ~40.6     | H2/CO 0.91; S_H2 81, S_H2O 13.9% [4]  | C ~100% [5]     | ~0.2; per sample [6] | higher
+Kwon 2023 OP002 | 51.1      | 40.2      | H2/CO 0.95; S_H2 85.4, S_H2O 8.6% [4] | C ~100% [5]     | ~0.2; per sample [6] | higher
+Kwon 2023 OP003 | 50.5      | 40.3      | H2/CO 1.26; S_H2 87.4, S_H2O 4.6% [4] | C 97% [5]       | ~0.2; per sample [6] | higher
+Kwon 2023 OP004 | ~26.1     | ~20.0     | NR                                    | C ~100% [5]     | ~0.2; per sample [6] | higher
+[4] H-based selectivities; C-based CO ~90%, C2H2 ~5% at 5/7. OP001 and
+    OP004 conversions read from Fig. 9. SRC014-E011, E013-E015.
+[5] C-selectivity sums; H and O close ~100% but water is calculated by
+    balance. N2 internal standard. SRC014-E006, E009.
+[6] ~10 min stabilisation then sampling; carbon burn-off with CO2
+    between runs. SRC014-E005.
+
+4. Energy balance
+Source / OP     | Energy input (boundary) | EC_CH4 (kJ/mol) | EC basis                | Other metrics                        | eta_HHV (%)      | Energy conf.
+Kwon 2023 OP001 | 1.67 kW discharge [7]   | 865 [8]         | discharge; no ext. heat | author eta ~54.3%; EY 13.6 g/kWh [9] | ~37.6 part. [10] | higher
+Kwon 2023 OP002 | 1.67 kW discharge [7]   | 880 [8]         | discharge; no ext. heat | author eta 55.3%; EY 14.1 g/kWh [9]  | ~38.0 part. [10] | higher
+Kwon 2023 OP003 | 1.67 kW discharge [7]   | 740 [8]         | discharge; no ext. heat | author eta 53.2%; EY 17.1 g/kWh [9]  | ~35.5 part. [10] | higher
+Kwon 2023 OP004 | 0.92 kW discharge [7]   | 948 [8]         | discharge; no ext. heat | author eta ~51.5% [9]                | NR               | higher
+[7] V x I integrated; wall power and cooling-water duties NR.
+    SRC014-E002-E003, E022.
+[8] Per mol CH4 converted; 4.27-4.74 eV per CH4+CO2 converted; ~7%
+    higher at 20 degC SLPM. SRC014-E042-E043; C002.
+[9] Author eta = (H2+CO LHV)/(P + CH4 converted LHV) = our eta_P,LHV;
+    recalculated 53.8/54.7/52.7%. Author conversion cost 18.5-20.4 and
+    syngas cost 10.2-11.9 kJ/L include N2. SRC014-E007, E012, E016, E044.
+[10] (H2+CO HHV)/(P + CH4 HHV); f_electric 0.30-0.34. SRC014-E045; C004.
+
+5. Plasma parameters (plasma-on rows only)
+Source / OP     | Discharge / regime         | Supply / frequency | Voltage         | P_plasma (W; method) | SEI_CH4 (kJ/mol) | Diagnostics reported
+Kwon 2023 OP001 | Rotating gliding arc; warm | AC / ~20 kHz       | several kV [11] | 1672; V x I          | 450              | V-I waveforms; TCs [12]
+Kwon 2023 OP002 | Rotating gliding arc; warm | AC / ~20 kHz       | several kV [11] | 1672; V x I          | 450              | V-I waveforms; TCs [12]
+Kwon 2023 OP003 | Rotating gliding arc; warm | AC / ~20 kHz       | several kV [11] | 1668; V x I          | 374              | V-I waveforms; TCs [12]
+Kwon 2023 OP004 | Rotating gliding arc; warm | AC / ~20 kHz       | several kV [11] | 920; V x I           | 247              | V-I waveforms; TCs [12]
+[11] Supply rating ("several kV, several hundred mA"); point values not
+     tabulated. Fig. 3 shows waveforms at 1800 W set. SRC014-E002.
+[12] No gas or electron temperature measured. See outputs/extraction.md,
+     "Plasma characteristics". SRC014-E008, E020.

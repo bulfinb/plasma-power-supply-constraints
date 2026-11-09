@@ -1,0 +1,84 @@
+From et al. (2025) - electrified (Joule-heated) SMR of biogas with feed-forward control, pilot plant
+Source ID: SRC006. Role: Joule-heating benchmark, pilot scale; companion to
+From 2024 (SRC005, same plant). Experimental results only; thermodynamic
+simulations excluded. Topsoe eSMR/eREACT, Aarhus University.
+
+Scale: Biogas 6-6.4 Nm3/h plus steam and co-fed H2; CH4 feed about
+2.5-2.7 mol/min (SRC006-C001). Electrical power not reported.
+
+Conversion: Authors report syngas composition, not conversion. At 900 degC,
+6 barg, 80 h average, the outlet is at equilibrium (CH4 0.24% wet); our
+calculation gives X_CH4 about 98% and X_CO2 about 42-54% (SRC006-C002).
+Syngas module 1.99 +/- 0.01 with control vs 1.93-2.06 without. Stable down
+to normalized S/HC 1.31 and up to 1050 degC.
+
+Energy: none reported (no power, efficiency or energy consumption; data
+stated confidential). EC_CH4 and eta_HHV not calculable. Use From 2024
+(SRC005) for eSMR energy data.
+
+Duration: 80 h controlled test; about 1000 h in this work.
+
+System information: same pilot train as SRC005, plus real-time CH4
+analyser and PLC control of steam and H2. Added CO2 flow, Table 2 steam and
+H2 flows, outlet flows and reactor size not reported.
+
+Reporting quality: conversion/product results moderate confidence
+(equilibrium composition, elemental ratios close within 0.3%; conversion
+is ours and inlet split graph-read); energy results not available. Topsoe
+co-authors develop the technology; one has a related patent pending.
+
+Traceability: Manuscript.pdf pp. 4-8, Figs. 4-5, Tables 1-2; ESI.docx
+S1-S5; SRC006-E001-E021. Calculations SRC006-C001-C004, E041-E044;
+outputs/calculations.py. Details: outputs/extraction.md and
+outputs/evidence.csv.
+
+Prepared 2026-11-04 by Claude (AI); ai_checked by same extractor; human
+verification pending.
+
+Comparison tables (experimental conditions)
+NR = not reported; NA = not applicable; ~ = approximate. Human verification pending.
+
+1. Route and scale
+Source / OP     | Route               | Reactor / activation / catalyst            | CH4 feed (mol/min) | Scale as reported
+From 2025 OP001 | mixed (biogas + H2) | eSMR pilot / Joule heating / eREACT Ni [1] | 2.67 [2]           | 6.3 Nm3/h biogas; power NR
+From 2025 OP002 | mixed (biogas + H2) | eSMR pilot / Joule heating / eREACT Ni [1] | ~2.5-2.6 [2]       | 6.4 Nm3/h biogas; power NR
+From 2025 OP005 | mixed (biogas + H2) | eSMR pilot / Joule heating / eREACT Ni [1] | 2.2-3.3 [2]        | 6 Nm3/h biogas; power NR
+From 2025 OP008 | mixed (biogas + H2) | eSMR pilot / Joule heating / eREACT Ni [1] | 2.2-3.3 [2]        | 6 Nm3/h biogas; power NR
+[1] Same pilot plant as From 2024 (SRC005); prereformer upstream; reactor
+    size NR. SRC006-E001, E020.
+[2] Biogas flow x CH4 fraction, 0 degC normal reference assumed. OP001 57.1%
+    CH4; OP002 52-55% from the Fig. 5C ratio; OP005/OP008 50-75% range.
+    SRC006-C001; E008, E010-E011, E015, E041.
+
+2. Operating conditions
+Source / OP     | T (degC; location/type)  | p (bar; abs/gauge) | CH4:CO2:H2O (molar)             | Other feed / ratio
+From 2025 OP001 | 950; exit gas [3]        | 10 gauge           | 1.33:1 CH4/CO2; S/HC 2.1-2.3    | steam 7.9, H2 4.4 Nm3/h
+From 2025 OP002 | 900 +/- 1; exit gas [3]  | 6 gauge            | 0.78-1.22 CH4/CO2 [4]; S/HC 2.3 | O/C 2.22, H/C 6.46; H2 co-fed
+From 2025 OP005 | 1050 +/- 2; exit gas [3] | 10 gauge           | biogas NR; S/HC 2.00            | O/C 2.00, H/C 6.01; H2 co-fed
+From 2025 OP008 | 950 +/- 3; exit gas [3]  | 10 gauge           | biogas NR; S/HC 1.31            | O/C 1.47, H/C 5.10; H2 co-fed
+[3] Exit gas temperature used for power control. SRC006-E012, E015, E018.
+[4] Graph-read; includes CO2 added to simulate swings (flow NR); steam
+    ~7.7-8.6 and H2 ~5.2-10.1 Nm3/h set by the controller. SRC006-E010-E011.
+
+3. Mass balance
+Source / OP     | X_CH4 (%) | X_CO2 (%)  | Products (value; units/basis)                | Balance closure          | Duration (h; basis) | Conv. conf.
+From 2025 OP001 | NR        | NR         | module 1.93-2.06                             | NR                       | 20; unregulated     | NA
+From 2025 OP002 | ~98 [5]   | ~42-54 [5] | H2 53.0, CO 17.3, CO2 6.2, CH4 0.24% wet [6] | O/C, H/C within 0.3% [7] | 80; ~1000 total     | moderate
+From 2025 OP005 | NR        | NR         | module 2.00 +/- 0.01                         | NR                       | NR                  | NA
+From 2025 OP008 | NR        | NR         | module 2.02 +/- 0.02                         | NR                       | NR                  | NA
+[5] Reviewer calculation from Table 1 and the Fig. 5C inlet ratio range;
+    authors report no conversion. SRC006-C002; E042.
+[6] 80 h average, within 0.4 points of equilibrium; GC relative errors up
+    to 9% (CH4). SRC006-E013.
+[7] Our elemental check; authors report no closure. SRC006-C003; E019, E043.
+
+4. Energy balance
+Source / OP     | Energy input (boundary) | EC_CH4 (kJ/mol) | EC basis | Other metrics | eta_HHV (%) | Energy conf.
+From 2025 OP001 | NR [8]                  | NR              | NA       | NR            | NR          | NA
+From 2025 OP002 | NR [8]                  | NR              | NA       | NR            | NR          | NA
+From 2025 OP005 | NR [8]                  | NR              | NA       | NR            | NR          | NA
+From 2025 OP008 | NR [8]                  | NR              | NA       | NR            | NR          | NA
+[8] No power or energy metric reported; data stated confidential.
+    SRC006-E003, E005, E044.
+
+5. Plasma parameters: not applicable (Joule-heated source).

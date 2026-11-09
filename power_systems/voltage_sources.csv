@@ -1,0 +1,20 @@
+id,parent_id,label,frequency_min_hz,frequency_max_hz,rated_output_kw,max_output_v_rms,max_output_a_rms,voltage_status,source_ids,notes
+D,D,TRUMPF MF 7240 G2,1000,200000,240,1200,1120,published_maximum,S4,Separate maxima; not simultaneously available at rated real power; voltage at manufacturer output boundary
+F1,F,TRUMPF HF 7100,400000,3000000,100,6600,,published_maximum,S7,Specific 100 kW model; do not assign its voltage to the 500 kW family maximum
+F2,F,TRUMPF HF 7030,400000,3000000,30,6300,,published_maximum,S7,Specific 30 kW model; not a full frequency-power-voltage envelope
+F3,F,TRUMPF HF 7060,400000,3000000,60,6300,,published_maximum,S7,Specific 60 kW model; current limit not given in cited table
+F4,F,TRUMPF HF 7010,400000,3000000,10,5000,,published_maximum,S7,Specific 10 kW model
+A,A,ABP installed supply,250,250,16000,,,not_reported,S1,Output voltage not established by cited source
+B,B,SMS LLC family,1000,10000,4000,,,not_reported,S2,Output voltage and current operating envelope require supplier data
+C,C,Meltech Pulsar family,200,10000,750,,,not_reported,S3,Do not substitute mains voltage for output voltage
+E,E,CEIA SA400,100000,400000,,,,not_reported,S5;S6;S16,50 kW is input rating in detailed specification; output kVAR is reactive rating not delivered heat
+G,G,Comet Synertia 50/13,13560000,13560000,5,,,not_reported,S8,Need model-specific output impedance and voltage limits; do not assume 50 ohms from other products
+H,H,Comet Synertia 50/27,27120000,27120000,5,,,not_reported,S8,Need model-specific output impedance and voltage limits
+I,I,MTX100,915000000,915000000,100,,,waveguide_port,S9,Reactor field requires waveguide mode and applicator model; magnetron anode voltage is not reactor voltage
+J,J,SAIREM GMP100,2450000000,2450000000,10,,,waveguide_port,S10,No unique geometry-independent reactor terminal voltage
+K,K,QST gyrotron,170000000000,170000000000,1050,,,waveguide_port,S11,Beam voltage must not be used as reactor RF voltage
+L,L,Canon E37705,325000000,325000000,600,,,not_reported,S13,71 kV beam voltage is internal DC not output RF voltage
+M,M,Canon E3732,508600000,508600000,1200,,,not_reported,S13,93 kV beam voltage is internal DC not output RF voltage
+N,N,Canon E3718,1250000000,1250000000,1200,,,not_reported,S13,85 kV beam voltage is internal DC not output RF voltage
+O,O,CPI VPS3499,2700000000,3000000000,2,,,not_reported,S14,Average power 2 kW; pulse voltage depends on RF output port and waveform
+P,P,CPI XL series,12000000000,12000000000,20,,,not_reported,S15,Tube beam voltage does not establish field at reactor

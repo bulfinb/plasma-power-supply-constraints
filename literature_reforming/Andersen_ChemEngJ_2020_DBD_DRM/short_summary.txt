@@ -1,0 +1,116 @@
+Andersen et al. (2020) - plasma-catalytic dry reforming in a coaxial packed-bed DBD, 45 W
+Source ID: SRC013. Chem. Eng. J. 397, 125519; ESI Tables S.1-S.3, Figs. S.1-S.5.
+Experimental results only.
+
+Scale: Plasma scale 45 W plasma power (oscilloscope: HV probe, Rogowski coil,
+charge capacitor), 3 kHz, fixed for all runs. Feed 25 + 25 Nml/min CH4/CO2
+(CH4 ~1.0 mmol/min), SEI 54 J/ml. No external heating or steam, so plasma
+power is the whole process input apart from unreported amplifier losses.
+Non-thermal DBD; discharge gap packed with ~11 g catalyst beads.
+
+Conversion: plasma only 33% CH4, 22% CO2. Packing does not help: Al2O3 and
+Ag/Al2O3 lower CH4 to 27%; Pt matches plasma only; Cu lowers CO2 to 16%.
+Catalyst-only (plasma off) ~0%. H2/CO 0.84-1.04. Ethane ~11%, propane ~4%,
+methanol up to 3.2% (Cu). C/H/O balances 83-92%; 39-48% of converted
+carbon is unidentified. No synergy between plasma and catalysts.
+
+Energy (power basis = plasma power; no external heat):
+- EC_CH4 8100-9700 kJ/mol CH4 converted (~33x the DRM enthalpy); 50-56 eV
+  per CH4+CO2 molecule converted. ~9% lower if Nml is at 0 degC.
+- EC_H2 13,000-16,000 kJ/mol; EY_H2 ~0.5 g/kWh; eta_P,LHV 2.9-3.8%.
+- Author metrics: E = 0.183-0.206 mmol/kJ (CH4+CO2 converted per kJ) and
+  eta = 3.4-4.4% (DRM + ethane enthalpy / SEI); reproduced (C001). Authors
+  state only ~4% of the plasma power goes into conversion.
+- eta_HHV (partial; amplifier losses excluded) 2.6-3.4%.
+
+Duration: 5 h cumulative per packing as 5 x 1 h plasma on/off cycles, 1 h
+stabilisation before each sample; plasma only 1 h. CH4 conversion steady.
+
+System information: lab coaxial DBD, 17.7 cm3 discharge volume. Carbon
+deposits on metal-containing packings; inner-electrode metal (Fe, Cr, Ni)
+migrates onto the beads. Gas/bed temperature, applied voltage, wall power
+and costs not reported.
+
+Reporting quality: conversion/product results moderate confidence
+(internal standard, triplicates, plasma-only and catalyst-only controls,
+but 39-48% of converted carbon unidentified); energy results higher
+confidence (plasma power measured continuously, no external heat, author
+metrics reproducible; Nml reference and supply losses unknown).
+
+Traceability: manuscript.pdf pp. 2-7, Tables 1, 3, 4, Fig. 1; ESI.pdf pp.
+4-6, Table S.2, Fig. S.2; SRC013-E001-E026. Calculations SRC013-C001-C005,
+E041-E046; outputs/calculations.py. Details: outputs/extraction.md and
+outputs/evidence.csv.
+
+Prepared 2026-11-05 by Claude (AI); ai_checked by same extractor; human
+verification pending.
+
+Comparison tables (experimental conditions)
+NR = not reported; NA = not applicable; ~ = approximate. Human verification pending.
+
+1. Route and scale
+Source / OP         | Route | Reactor / activation / catalyst                    | CH4 feed (mol/min) | Scale as reported
+Andersen 2020 OP001 | DRM   | Coaxial DBD / AC 3 kHz / none                      | 0.00102 [1]        | 50 Nml/min; 45 W
+Andersen 2020 OP002 | DRM   | Coaxial packed-bed DBD / AC 3 kHz / Al2O3 [2]      | 0.00102 [1]        | 50 Nml/min; 45 W
+Andersen 2020 OP003 | DRM   | Coaxial packed-bed DBD / AC 3 kHz / Ag/Al2O3 [2]   | 0.00102 [1]        | 50 Nml/min; 45 W
+Andersen 2020 OP004 | DRM   | Coaxial packed-bed DBD / AC 3 kHz / Pt/Al2O3 [2]   | 0.00102 [1]        | 50 Nml/min; 45 W
+Andersen 2020 OP005 | DRM   | Coaxial packed-bed DBD / AC 3 kHz / Cu/Al2O3 [2]   | 0.00102 [1]        | 50 Nml/min; 45 W
+Andersen 2020 OP006 | DRM   | Coaxial packed-bed DBD / plasma off / catalyst [3] | 0.00102 [1]        | 50 Nml/min; 0 W
+[1] 25 Nml/min CH4 at the authors' 24.46 L/mol (25 degC, from Eq. 7);
+    Nml reference not stated (0 degC gives 0.00112). SRC013-E004, E009.
+[2] ~11 g of 3.5-4.4 mm gamma-Al2O3 beads filling the 17.7 cm3
+    discharge volume; 10 wt% Ag, 10 wt% Cu, 1 wt% Pt. SRC013-E003, E018.
+[3] Packing used for the blank not stated. SRC013-E010.
+
+2. Operating conditions
+Source / OP         | T (degC; location/type)  | p (bar; abs/gauge) | CH4:CO2:H2O (molar) | Other feed / ratio
+Andersen 2020 OP001 | NR; no external heat [4] | ~1.18 abs          | 1:1:0               | none
+Andersen 2020 OP002 | NR; no external heat [4] | ~1.18 abs          | 1:1:0               | none
+Andersen 2020 OP003 | NR; no external heat [4] | ~1.18 abs          | 1:1:0               | none
+Andersen 2020 OP004 | NR; no external heat [4] | ~1.18 abs          | 1:1:0               | none
+Andersen 2020 OP005 | NR; no external heat [4] | ~1.18 abs          | 1:1:0               | none
+Andersen 2020 OP006 | ambient; no heat         | ~1.18 abs          | 1:1:0               | none
+[4] Reported as "ambient (no external heating)"; no temperature measured
+    under plasma. ~1.16 atm. SRC013-E005, E026.
+
+3. Mass balance
+Source / OP         | X_CH4 (%) | X_CO2 (%) | Products (value; units/basis)      | Balance closure  | Duration (h; basis)   | Conv. conf.
+Andersen 2020 OP001 | 32.6      | 22.4      | H2/CO 0.90; S_CO 40, C2H6 12% [5]  | C/H/O 83-92% [6] | 1; plasma-on          | moderate
+Andersen 2020 OP002 | 27.2      | 21.8      | H2/CO 0.88; S_CO 41, C2H6 12% [5]  | C/H/O 83-92% [6] | 5; 5 x 1 h cycles [7] | moderate
+Andersen 2020 OP003 | 27.3      | 21.4      | H2/CO 0.85; S_CO 42, C2H6 12% [5]  | C/H/O 83-92% [6] | 5; 5 x 1 h cycles [7] | moderate
+Andersen 2020 OP004 | 32.5      | 22.1      | H2/CO 0.84; S_CO 37, C2H6 11% [5]  | C/H/O 83-92% [6] | 5; 5 x 1 h cycles [7] | moderate
+Andersen 2020 OP005 | 32.6      | 16.1      | H2/CO 1.04; S_CO 32, MeOH 3.2% [5] | C/H/O 83-92% [6] | 5; 5 x 1 h cycles [7] | moderate
+Andersen 2020 OP006 | ~1.5      | ~1        | NR                                 | NR               | 1; plasma off         | moderate
+[5] C-based selectivities; S_H2 (H-based) 26-33%; unidentified carbon
+    39-48%. SRC013-E013-E017, E019.
+[6] Ranges across runs (ESI Fig. S.2): C 88-90, H 83-88, O 88-92%.
+    No gas expansion seen on the N2 standard. SRC013-E020-E021.
+[7] Cumulative plasma-on time with on/off cycling; sampled after each
+    1 h. SRC013-E008, E011.
+
+4. Energy balance
+Source / OP         | Energy input (boundary) | EC_CH4 (kJ/mol) | EC basis             | Other metrics                          | eta_HHV (%)     | Energy conf.
+Andersen 2020 OP001 | 45 W plasma [8]         | 8103 [9]        | plasma; no ext. heat | author E 0.206 mmol/kJ, eta 4.44% [10] | ~3.4 part. [11] | higher
+Andersen 2020 OP002 | 45 W plasma [8]         | 9712 [9]        | plasma; no ext. heat | author E 0.185 mmol/kJ, eta 4.16% [10] | ~3.1 part. [11] | higher
+Andersen 2020 OP003 | 45 W plasma [8]         | 9676 [9]        | plasma; no ext. heat | author E 0.183 mmol/kJ, eta 4.14% [10] | ~3.1 part. [11] | higher
+Andersen 2020 OP004 | 45 W plasma [8]         | 8128 [9]        | plasma; no ext. heat | author E 0.205 mmol/kJ, eta 4.39% [10] | ~3.0 part. [11] | higher
+Andersen 2020 OP005 | 45 W plasma [8]         | 8103 [9]        | plasma; no ext. heat | author E 0.185 mmol/kJ, eta 3.43% [10] | ~2.6 part. [11] | higher
+Andersen 2020 OP006 | 0 W; no heat            | NA              | NA                   | NA                                     | NA              | NA
+[8] Oscilloscope plasma power (V, I, Q); amplifier wall power NR.
+    SRC013-E001-E002, E006.
+[9] 25 degC basis (~9% lower at 0 degC). 49.8-56.2 eV per CH4+CO2
+    converted. EC_H2 13,000-16,000 kJ/mol; EY_H2 0.46-0.55 g/kWh;
+    eta_P,LHV 2.9-3.8%. SRC013-E042-E044; C002-C003.
+[10] E = (CH4+CO2 converted)/P; eta = DRM + ethane enthalpy / SEI.
+     Reproduced. SRC013-E009, E041; C001.
+[11] (H2+CO HHV)/(P + CH4 HHV); f_electric 0.75. SRC013-E045; C004.
+
+5. Plasma parameters (plasma-on rows only)
+Source / OP         | Discharge / regime          | Supply / frequency   | Voltage | P_plasma (W; method)     | SEI_CH4 (kJ/mol) | Diagnostics reported
+Andersen 2020 OP001 | DBD; non-thermal            | HV amplifier / 3 kHz | NR      | 45; V, I, Q oscilloscope | 2642             | V, I, Q only [12]
+Andersen 2020 OP002 | Packed-bed DBD; non-thermal | HV amplifier / 3 kHz | NR      | 45; V, I, Q oscilloscope | 2642             | V, I, Q only [12]
+Andersen 2020 OP003 | Packed-bed DBD; non-thermal | HV amplifier / 3 kHz | NR      | 45; V, I, Q oscilloscope | 2642             | V, I, Q only [12]
+Andersen 2020 OP004 | Packed-bed DBD; non-thermal | HV amplifier / 3 kHz | NR      | 45; V, I, Q oscilloscope | 2642             | V, I, Q only [12]
+Andersen 2020 OP005 | Packed-bed DBD; non-thermal | HV amplifier / 3 kHz | NR      | 45; V, I, Q oscilloscope | 2642             | V, I, Q only [12]
+[12] No temperature, optical or electron diagnostics. See
+     outputs/extraction.md, "Plasma characteristics". SRC013-E001, E025.

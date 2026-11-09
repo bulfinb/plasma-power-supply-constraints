@@ -1,0 +1,101 @@
+Zhu et al. (2019) - gliding arc plasma catalytic steam methane reforming, ~250 W
+Source ID: SRC012. Catal. Today 337, 69-75; ESI Figs. S1-S3. Experimental results only.
+
+Scale: Plasma scale 149-246 W DC discharge power (resistor-corrected V x I).
+Feed 2.5-3 SLM CH4+steam (CH4 ~0.034-0.037 mol/min), S/C 2-3. Insulated
+reactor with no extra heating; Ni/CeO2/Al2O3 bed after the arc. Steam from
+an external vaporizer (duty not reported; reviewer indicative ~78 W, ~1/3
+of P). Ballast-resistor and supply losses not reported.
+
+Conversion: plasma alone 40-65% CH4; with the catalyst 90% CH4 and 42% H2O
+at the same 246 W (S/C 3, 3 SLM), close to equilibrium at the 651 degC bed
+exit. Catalyst removes C2Hx and shifts CO to CO2. C and H balances ~100 +/-
+3%. Bed temperature 977 to 651 degC, set by plasma heat alone.
+
+Energy (power basis = discharge power; vaporizer heat excluded):
+- EC_CH4 490 kJ/mol with catalyst vs 679 plasma alone at the same power;
+  594-601 for plasma alone at S/C 2. ~646 with the indicative steam duty.
+- EC_H2 ~144 kJ/mol, EY_H2 ~50 g/kWh, eta_P,LHV ~75% with catalyst
+  (H2 reconstructed from selectivities).
+- Author metric: efficiency of CH4 to "total H2" (H2 + CO), 75% with
+  catalyst vs 59% plasma alone; energy cost 1.5 vs 2.3 kWh/Nm3 t-H2.
+  Reproduced within ~2 points.
+- eta_HHV (partial; vaporizer and losses excluded) ~76% with catalyst.
+
+Duration: 6 h steady at the optimum (ESI Fig. S2); catalyst reduced in
+situ, unchanged element distribution after the test.
+
+System information: lab-scale insulated reactor; two GCs with internal
+standards. Plasma gas temperature, wall power, vaporizer duty, repeats
+and costs not reported.
+
+Reporting quality: conversion/product results higher confidence (internal
+standards, closed C/H balances, matched plasma-alone control, equilibrium
+comparison, 6 h test); energy results moderate confidence (discharge
+power measured, but steam generation ~1/3 of P and ballast losses omitted;
+author efficiency counts CO as H2).
+
+Traceability: manuscript.pdf pp. 2-5 (printed 70-73), Table 1, Figs. 1-5;
+ESI.pdf pp. 2-3; SRC012-E001-E021. Calculations SRC012-C001-C005,
+E041-E045; outputs/calculations.py. Details: outputs/extraction.md and
+outputs/evidence.csv.
+
+Prepared 2026-11-05 by Claude (AI); ai_checked by same extractor; human
+verification pending.
+
+Comparison tables (experimental conditions)
+NR = not reported; NA = not applicable; ~ = approximate. Human verification pending.
+
+1. Route and scale
+Source / OP    | Route | Reactor / activation / catalyst                     | CH4 feed (mol/min) | Scale as reported
+Zhu 2019 OP001 | SMR   | Insulated tube / DC gliding arc / none              | 0.037 [1]          | 2.5 SLM CH4+H2O; 149 W
+Zhu 2019 OP002 | SMR   | Insulated tube / DC gliding arc / none              | 0.037 [1]          | 2.5 SLM CH4+H2O; 206 W
+Zhu 2019 OP003 | SMR   | Insulated tube / DC gliding arc / none              | 0.033 [1]          | 3 SLM CH4+H2O; 246 W
+Zhu 2019 OP004 | SMR   | Insulated tube / DC gliding arc / Ni/CeO2/Al2O3 [2] | 0.033 [1]          | 3 SLM CH4+H2O; 246 W
+[1] SLM at 0 degC (reproduces author SEI). SRC012-E007, E011; C001.
+[2] 10 g, 11 wt% Ni, 8 wt% Ce, 4 cm after the arc; GHSV 18,000 ml/g/h.
+    SRC012-E002-E003.
+
+2. Operating conditions
+Source / OP    | T (degC; location/type)   | p (bar; abs/gauge) | CH4:CO2:H2O (molar) | Other feed / ratio
+Zhu 2019 OP001 | NR                        | ~1.01 abs          | 1:0:2               | none
+Zhu 2019 OP002 | NR                        | ~1.01 abs          | 1:0:2               | none
+Zhu 2019 OP003 | NR                        | ~1.01 abs          | 1:0:3               | none
+Zhu 2019 OP004 | 977-651; catalyst bed [3] | ~1.01 abs          | 1:0:3               | none
+[3] Axial bed-centre thermocouple, entry to exit; wall ~605 degC. Plasma
+    zone not measured. SRC012-E012.
+
+3. Mass balance
+Source / OP    | X_CH4 (%) | X_CO2 (%) | Products (value; units/basis)        | Balance closure | Duration (h; basis)  | Conv. conf.
+Zhu 2019 OP001 | 40        | NA        | sel. CO 69, CO2 4, C2Hx 26%          | C ~100 +/- 3%   | NR                   | higher
+Zhu 2019 OP002 | 56        | NA        | sel. CO 74, CO2 7, C2Hx 17%          | C ~100 +/- 3%   | NR                   | higher
+Zhu 2019 OP003 | 65        | NA        | sel. CO 77, CO2 10%                  | ~100%           | NR                   | higher
+Zhu 2019 OP004 | 90        | NA        | t-H2 2.7 SLM; dry H2 76%, CO 11% [4] | ~100%           | 6; TOS at this point | higher
+[4] H2O conversion 42%; C2Hx fully converted; steady over 6 h.
+    SRC012-E013-E017; ESI Fig. S2.
+
+4. Energy balance
+Source / OP    | Energy input (boundary) | EC_CH4 (kJ/mol) | EC basis               | Other metrics                    | eta_HHV (%)   | Energy conf.
+Zhu 2019 OP001 | 149 W discharge [5]     | 601             | discharge; steam excl. | NR                               | NR            | moderate
+Zhu 2019 OP002 | 206 W discharge [5]     | 594             | discharge; steam excl. | NR                               | NR            | moderate
+Zhu 2019 OP003 | 246 W discharge [5]     | 679             | discharge; steam excl. | author eta 59%; 2.3 kWh/Nm3 [6]  | ~48 part. [7] | moderate
+Zhu 2019 OP004 | 246 W discharge [5]     | 490 [8]         | discharge; steam excl. | author eta 75%; EY ~50 g/kWh [6] | ~76 part. [7] | moderate
+[5] Resistor-corrected V x I; ballast and supply losses and vaporizer
+    duty NR. SRC012-E001, E004, E007.
+[6] Author efficiency and energy cost count H2 + CO ("total H2").
+    eta_P,LHV ~59% (OP003), ~75% (OP004). SRC012-E015, E042-E043; C003.
+[7] (H2+CO HHV)/(P + CH4 HHV); excludes vaporizer and losses; f_electric
+    0.33. SRC012-E044; C004.
+[8] ~646 kJ/mol with indicative steam duty (~78 W). SRC012-E045; C005.
+
+5. Plasma parameters (plasma-on rows only)
+Source / OP    | Discharge / regime | Supply / frequency | Voltage     | P_plasma (W; method) | SEI_CH4 (kJ/mol) | Diagnostics reported
+Zhu 2019 OP001 | Gliding arc; warm  | DC                 | ~2.8 kV     | 149; V x I           | 240              | none
+Zhu 2019 OP002 | Gliding arc; warm  | DC                 | ~2.7 kV     | 206; V x I           | 332              | none
+Zhu 2019 OP003 | Gliding arc; warm  | DC                 | ~2.6 kV [9] | 246; V x I           | 441              | none
+Zhu 2019 OP004 | Gliding arc; warm  | DC                 | ~2.6 kV [9] | 246; V x I           | 441              | bed T profile [10]
+[9] Value for the Ft series at 110 kJ/mol (Table 1); optimum voltage not
+    stated separately. SRC012-E007.
+[10] Catalyst-bed thermocouples only; no plasma diagnostics. See
+     outputs/extraction.md, "Plasma characteristics". SRC012-E012, E020.
+

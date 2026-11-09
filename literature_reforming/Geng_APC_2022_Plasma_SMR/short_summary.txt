@@ -1,0 +1,99 @@
+Geng et al. (2022) - nonthermal DBD plasma-assisted catalytic SMR
+SRC002. Experimental results only. Thermal background retained.
+
+Scale: 10-20 W reported discharge power, usually 15 W. Not total system
+electricity. Methane feed about 1.0e-3 mol/min (about 25 mL/min), derived
+from the water feed at S/C 4.4 (SRC002-C003; reviewer interpretation of
+the unclear feed wording, needs human confirmation).
+Thermal background: 300-440 degC; reactor heating and steam-generation
+duties not reported. Plasma-off controls remain heated.
+
+Conversion: Ni catalyst gives about 7% with plasma off versus 60% at 15 W,
+both at 300 degC and S/C 4.4. Nearly 80% at 15 W and 440 degC; about 74%
+at 20 W and 300 degC in a separate power sweep. Do not combine 20 W with
+the 80% result.
+
+Energy (power basis; furnace and steam heat excluded, not reported):
+- EC_CH4 about 1490 kJ/mol (15.5 eV/molecule) at 300 degC, 15 W, and
+  about 1120 kJ/mol (11.6 eV/molecule) at 440 degC, 15 W. Both are far
+  above the 206 kJ/mol SMR reaction enthalpy.
+- EC_H2 about 450-490 kJ/mol H2 and EY_H2 about 15-16 g H2/kWh at
+  300 degC; about 340-370 kJ/mol and 20-22 g/kWh at 440 degC.
+- No author energy efficiency (88-90% H2 selectivity is not one).
+  eta_P,LHV and eta_HHV not calculable.
+
+Duration: About 2 h demonstration; Ni time series reaches about 130 min
+after plasma ignition. A separate stepped-power series reaches about
+225 min with changing settings; not a single-condition endurance test.
+No long-term durability demonstration.
+
+System information: Boundary is the DBD reactor; heater type and duty,
+steam generator duty, supply efficiency and wall power not reported.
+
+Reporting quality: conversion/product results moderate confidence
+(strong matched controls; unclear feed wording and carbon-balance
+definition); energy results lower confidence (discharge power only, not
+reconstructable; unquantified furnace heat).
+
+Traceability: manuscript.pdf pp. 2-6, Figs. 2-6; SRC002-E003, E005-E007,
+E017, E020-E022, E026-E028, E033-E048, E054-E055, E058, E061. Energy
+metrics: SRC002-C003-C005, E065-E070. Detailed records, calculations and
+reporting quality: outputs/extraction.md and outputs/evidence.csv.
+
+Prepared 2026-10-28; updated to the new summary format 2026-10-30.
+Original extraction AI-checked; new calculations and appraisal unreviewed;
+human verification pending.
+Comparison tables reformatted to the five-table layout 2026-11-04.
+
+Comparison tables (experimental conditions)
+NR = not reported; NA = not applicable; ~ = approximate. Human verification pending.
+
+1. Route and scale
+Source / OP     | Route | Reactor / activation / catalyst                        | CH4 feed (mol/min) | Scale as reported
+Geng 2022 OP001 | SMR   | Packed quartz tube / plasma off / Ni-CaAl4O7 + alumina | 1.0e-3 [1]         | ~25 mL/min CH4; 0 W discharge
+Geng 2022 OP002 | SMR   | Packed quartz tube / AC DBD / Ni-CaAl4O7 + alumina     | 1.0e-3 [1]         | ~25 mL/min CH4; 15 W discharge
+Geng 2022 OP008 | SMR   | Packed quartz tube / AC DBD / Ni-CaAl4O7 + alumina     | 1.0e-3 [1]         | ~25 mL/min CH4; 15 W discharge
+[1] Derived from 0.08 mL/min liquid water at S/C 4.4 (SRC002-C003); reviewer
+    reading of unclear feed wording, needs human confirmation. SRC002-E020-E023.
+
+2. Operating conditions
+Source / OP     | T (degC; location/type) | p (bar; abs/gauge) | CH4:CO2:H2O (molar) | Other feed / ratio
+Geng 2022 OP001 | 300; bulk gas [2]       | ambient; value NR  | 1:0:4.4             | none
+Geng 2022 OP002 | 300; bulk gas [2]       | ambient; value NR  | 1:0:4.4             | none
+Geng 2022 OP008 | 440; bulk gas [2]       | ambient; value NR  | 1:0:4.4             | none
+[2] Thermocouple 1.5 cm below the catalyst bed; catalyst surface and hot
+    spots not measured. Plasma-off control is heated to the same temperature.
+    SRC002-E017, E020-E023.
+
+3. Mass balance
+Source / OP     | X_CH4 (%) | X_CO2 (%) | Products (value; units/basis)   | Balance closure | Duration (h; basis)          | Conv. conf.
+Geng 2022 OP001 | ~7        | NA        | NR                              | ~90% C [3]      | NR                           | moderate
+Geng 2022 OP002 | ~60       | NA        | H2 ~45 mL/min [4]; H2 sel. ~88% | ~90% C [3]      | NR; ~2.2 separate series [5] | moderate
+Geng 2022 OP008 | ~80       | NA        | H2 ~60 mL/min [4]               | ~90% C [3]      | NR                           | moderate
+[3] Carbon balance about 90%, not point-specific; printed equation
+    inconsistent. SRC002-E032.
+[4] From the temperature series at the same nominal conditions; flow
+    reference conditions NR. H2 selectivity uses the author's definition.
+    SRC002-E054, E058.
+[5] Ni time series reaches ~130 min after ignition; not an endurance test
+    at this point. Conversions: SRC002-E033-E036, E047-E048.
+
+4. Energy balance
+Source / OP     | Energy input (boundary) | EC_CH4 (kJ/mol) | EC basis              | Other metrics         | eta_HHV (%) | Energy conf.
+Geng 2022 OP001 | 0 W discharge [6]       | NA              | NA                    | NR                    | NR [7]      | lower
+Geng 2022 OP002 | 15 W discharge [6]      | ~1490 (15.5 eV) | discharge; heat excl. | EY_H2 14.8-16.2 g/kWh | NR [7]      | lower
+Geng 2022 OP008 | 15 W discharge [6]      | ~1120 (11.6 eV) | discharge; heat excl. | EY_H2 19.8-21.6 g/kWh | NR [7]      | lower
+[6] Author's Q-V loop discharge power; frequency NR, so not
+    reconstructable; not wall power. Furnace heat NR. SRC002-E001-E003.
+[7] Furnace, steam-generator and supply-loss duties NR, so eta_HHV and a
+    heat-included EC_CH4 cannot be calculated. No author energy metric
+    (SRC002-E061). EC_H2 448-489 kJ/mol (OP002) and 336-367 kJ/mol
+    (OP008); ranges span 0-25 degC H2 flow references. Reviewer
+    calculations SRC002-C003-C005; E065-E070.
+
+5. Plasma parameters (plasma-on rows only)
+Source / OP     | Discharge / regime             | Supply / frequency  | Voltage             | P_plasma (W; method) | SEI_CH4 (kJ/mol) | Diagnostics reported
+Geng 2022 OP002 | AC DBD, packed bed; nonthermal | AC PMV500; freq. NR | ~+/-4.6 kV peak [8] | 15; Q-V loop         | ~894             | none
+Geng 2022 OP008 | AC DBD, packed bed; nonthermal | AC PMV500; freq. NR | ~+/-4.6 kV peak [8] | 15; Q-V loop         | ~894             | none
+[8] Example Q-V loop only, not assigned to an operating point. SRC002-E001-
+    E004. SEI_CH4 per mol CH4 fed (SRC002-C004).
