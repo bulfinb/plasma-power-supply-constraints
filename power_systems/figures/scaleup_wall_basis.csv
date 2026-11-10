@@ -1,13 +1,13 @@
 source,route,paper_power_boundary,EC_CH4_low,EC_CH4_high,supply_id,representative_supply,eta_low,eta_high,EC_CH4_wall_low,EC_CH4_wall_high
-Hrabovsky 2018 (SRC007),SMR/DRM,arc power,1149,2172,A1,12-pulse thyristor or diode + DC-DC converter,0.9,0.98,1172,2413
-Song 2020 (SRC009),DRM,RF generator output,1036,1510,R1,Triode/pentode oscillator with tank circuit,0.6,0.6,1727,2517
+Hrabovsky 2018 (SRC007),SMR/DRM,arc power,1149,2172,A1,"IGBT or thyristor rectifier + DC-DC/buck converter, current-controlled",0.9,0.98,1172,2413
+Song 2020 (SRC009),DRM,RF generator output,1036,1510,R1,Triode/tetrode oscillator with tank circuit,0.53,0.6,1727,2849
 Song 2020 (SRC009),DRM,RF generator output,1036,1510,R2,Solid-state RF generator,0.7,0.8,1295,2157
-Akande 2022 (SRC008),SMR,absorbed MW,511,1078,M1,100 kW CW magnetron generator,0.8,0.86,594,1348
-Hrycak 2023 (SRC010),mixed,absorbed MW (lower bounds),238,471,M1,100 kW CW magnetron generator,0.8,0.86,277,589
-Kelly 2023 (SRC011),DRM,absorbed MW,581,723,M2,6-30 kW magnetron head + switch-mode supply,0.8,0.85,684,904
+Akande 2022 (SRC008),SMR,absorbed MW,511,1078,M1,75-100 kW CW magnetron generator,0.8,0.86,594,1348
+Hrycak 2023 (SRC010),mixed,absorbed MW (lower bounds),238,471,M1,75-100 kW CW magnetron generator,0.8,0.86,277,589
+Kelly 2023 (SRC011),DRM,absorbed MW,581,723,M2,6-15 kW magnetron head + switch-mode supply,0.65,0.85,684,1112
 Kelly 2023 (SRC011),DRM,absorbed MW,581,723,M3,GaN SSPA generator,0.56,0.7,830,1291
-Kwon 2023 (SRC014),DRM,discharge,740,948,K1,Series/LCLC resonant or current-fed inverter with HV transformer,0.9,0.92,804,1053
-Zhu 2019 (SRC012),SMR,discharge (steam excl.),490,679,K1,Series/LCLC resonant or current-fed inverter with HV transformer,0.9,0.92,533,754
-Geng 2022 (SRC002),SMR,discharge (furnace excl.),1120,1490,K1,Series/LCLC resonant or current-fed inverter with HV transformer,0.9,0.92,1217,1656
-Wanten 2022 (SRC015),DRM,plasma (300 kOhm lab ballast excl.),813,1194,A1,12-pulse thyristor or diode + DC-DC converter,0.9,0.98,830,1327
-Andersen 2020 (SRC013),DRM,discharge,8103,9712,K1,Series/LCLC resonant or current-fed inverter with HV transformer,0.9,0.92,8808,10791
+Kwon 2023 (SRC014),DRM,discharge,740,948,K1,Series/parallel resonant or current-fed inverter with HV transformer,0.9,0.92,804,1053
+Zhu 2019 (SRC012),SMR,discharge (steam excl.),490,679,K1,Series/parallel resonant or current-fed inverter with HV transformer,0.9,0.92,533,754
+Geng 2022 (SRC002),SMR,discharge (furnace excl.),1120,1490,K1,Series/parallel resonant or current-fed inverter with HV transformer,0.9,0.92,1217,1656
+Wanten 2022 (SRC015),DRM,plasma (300 kOhm lab ballast excl.),813,1194,A1,"IGBT or thyristor rectifier + DC-DC/buck converter, current-controlled",0.9,0.98,830,1327
+Andersen 2020 (SRC013),DRM,discharge,8103,9712,K1,Series/parallel resonant or current-fed inverter with HV transformer,0.9,0.92,8808,10791

@@ -69,7 +69,7 @@ Do not rank across routes or power boundaries. Do not convert electricity and fu
 
 Assess scale-up potential using a combined system boundary containing the reactor, reactor peripherals and power electronics. Evaluate net mass and energy balances across that boundary, together with hardware cost, complexity, durability and utility requirements, as technical indicators of potential industrial deployment. Identify incomplete boundaries and missing flows rather than treating discharge performance as whole-system performance.
 
-Use representative industrially available power supplies for each reactor type, not the laboratory supplies used in the experiments. The supply data, their sources and the efficiency chain from wall to reaction are kept in [../power_systems/scaleup_sources.md](../power_systems/scaleup_sources.md) and [../power_systems/scaleup_supplies.csv](../power_systems/scaleup_supplies.csv). Apply supply efficiencies only to the stages outside each paper's stated power boundary, and keep wall-basis results labelled as indicative.
+Use representative industrially available power supplies for each reactor type, not the laboratory supplies used in the experiments. The supply data, their sources and the efficiency chain from wall to reaction are kept in [../power_systems/notes/scaleup_assessment.md](../power_systems/notes/scaleup_assessment.md) and [../power_systems/supply_classes.csv](../power_systems/supply_classes.csv) (built from the value table [../power_systems/supply_values.csv](../power_systems/supply_values.csv)). Apply supply efficiencies only to the stages outside each paper's stated power boundary, and keep wall-basis results labelled as indicative.
 
 Steps, in order of priority:
 

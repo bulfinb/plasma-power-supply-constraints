@@ -1,0 +1,17 @@
+# Processing log: power_systems
+
+Record of the AI tools, model versions and human reviewers that processed the power-systems sources and values ([workflow.md](workflow.md) section 7). Notes and data files say only "Claude (AI)"; this log carries the versions. Session details are in [../literature_reforming/processing_log.md](../literature_reforming/processing_log.md) (Sessions table).
+
+Rows before 2026-11-10 (restructure) are copied from the reforming log, where they were first recorded, and use the IDs of the time (S, T, D series; see aliases in source_register.csv).
+
+| Date | Scope | Files | Event | Tool and version | Model ID | Session | Human reviewer |
+|---|---|---|---|---|---|---|---|
+| 2026-11-05 | (power_systems) | power_systems/scaleup_supplies.csv, scaleup_sources.md, scaleup_wall_basis.py | web search and representative supply table | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | |
+| 2026-11-09 | (power supply) | literature_plasma_powersupply/README.md | discussion point on supply "niche product" claim (RV015); from general knowledge plus power_systems table, items to source | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | |
+| 2026-11-09 | (power supply) | literature_plasma_powersupply/README.md (D1-D10) | web search for to-source items (ozone, magnetron, solid-state, capex); D1 and D10 checked in full text | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | |
+| 2026-11-09 | (power supply) | literature_plasma_powersupply/README.md; power_systems/supply_maturity_niche.md | restructure: manufacturer data and niche discussion moved to power_systems; TEA papers PS003-PS004 added (Crossref-checked) | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | |
+| 2026-11-09 | (power supply) | power_systems/source_register.csv, source_archive/, BB_search.txt | local copies (direct or Wayback) and Wayback snapshots for D, T and S sources; cited values spot-checked in copies | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | |
+| 2026-11-10 | (power_systems) | source_register.csv, supply_maturity_niche.md, BB_search.txt | D11 copy (manual download by BB) hashed and registered; authors recorded; cost statements checked against copy (pp. 1, 9) | Claude Code 2.1.322 | claude-opus-5-5 | 088bb8d0 | |
+| 2026-11-10 | (power_systems) | source_register.csv, supply_maturity_niche.md, BB_search.txt | D5 Muegge datasheet (manual download by BB) hashed and registered; 2450 MHz / 15 kW checked; noted as magnetron head without efficiency or price | Claude Code 2.1.322 | claude-opus-5-5 | 088bb8d0 | |
+| 2026-11-10 | (power_systems) | supply_maturity_niche.md, source_register.csv, BB_search.txt, suggested_quote_requests.txt, README.md | D12 dropped (unverifiable price; BB decision); quote request Q1 (915 MHz 100 kW generator) added | Claude Code 2.1.322 | claude-opus-5-5 | 088bb8d0 | |
+| 2026-11-10 | PW001-PW049; RV005 | workflow.md (v0.1), README.md, source_register.csv, supply_values.csv, supply_classes.csv, notes/, scripts/, BB_search.txt, legacy/ | restructure at BB request: single PW ID series (duplicates merged), archive folders renamed, every value re-extracted from the archived copies with location and quote (96 values: 89 ai_checked, 7 unverified without copy); patent scans read from page images; class table rebuilt from value IDs; J1, M1, M2, P1, R1 ranges revised; wall-basis EC_CH4 recalculated; 2026-09 survey frozen in legacy/ | Claude Code 2.1.322 | claude-opus-5-5 | 088bb8d0 | |

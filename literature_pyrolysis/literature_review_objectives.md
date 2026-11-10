@@ -11,7 +11,7 @@ To benchmark plasma methane pyrolysis and non-oxidative coupling, using publishe
 The two parts mirror the reforming review:
 
 1. **Demonstrated performance.** A traceable comparison of what has been demonstrated, under which conditions, on a stated power boundary, and what information is missing.
-2. **Scale-up and whole-system view.** Each reactor type scaled up with representative industrial power supplies ([../power_systems/scaleup_sources.md](../power_systems/scaleup_sources.md)): supply and coupling losses, heat integration (hot H2 and carbon leave at high temperature), carbon handling, durability and cost. Unrecoverable delivery losses of ~20% are significant in an optimised plant.
+2. **Scale-up and whole-system view.** Each reactor type scaled up with representative industrial power supplies ([../power_systems/notes/scaleup_assessment.md](../power_systems/notes/scaleup_assessment.md)): supply and coupling losses, heat integration (hot H2 and carbon leave at high temperature), carbon handling, durability and cost. Unrecoverable delivery losses of ~20% are significant in an optimised plant.
 
 Pyrolysis is the topic in this review with the strongest industrial plasma precedent. Industrial data are therefore collected deliberately, not only as background:
 

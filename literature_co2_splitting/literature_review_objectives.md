@@ -13,7 +13,7 @@ To benchmark plasma CO2 splitting (CO2 -> CO + 1/2 O2), using published experime
 The two parts mirror the reforming review:
 
 1. **Demonstrated performance.** A traceable comparison of what has been demonstrated, under which conditions, on a stated power boundary, and what information is missing.
-2. **Scale-up and whole-system view.** Plasma reactors scaled up with representative industrial power supplies ([../power_systems/scaleup_sources.md](../power_systems/scaleup_sources.md)): supply and coupling losses, heat integration, CO/O2/CO2 separation (often omitted but energy-intensive at low conversion), durability and cost. Unrecoverable delivery losses of ~20% are significant in an optimised plant.
+2. **Scale-up and whole-system view.** Plasma reactors scaled up with representative industrial power supplies ([../power_systems/notes/scaleup_assessment.md](../power_systems/notes/scaleup_assessment.md)): supply and coupling losses, heat integration, CO/O2/CO2 separation (often omitted but energy-intensive at low conversion), durability and cost. Unrecoverable delivery losses of ~20% are significant in an optimised plant.
 
 CO2 splitting differs from the other two topics in its benchmark. Direct thermal splitting needs temperatures far above what Joule-heated reactors reach, so the electrified competitor is electrochemical (SOEC), not resistive heating. This tests whether the review's conclusions on supply losses and heat recovery hold against a non-thermal competitor.
 

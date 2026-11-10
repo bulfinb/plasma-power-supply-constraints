@@ -4,7 +4,7 @@ Started 2026-11-09. Prepared by Claude (AI) at BB's request; status: candidates,
 
 ## Purpose
 
-Academic papers only (manufacturer and other non-academic data are in [../power_systems/](../power_systems/)). Papers on how the power supply and its matching to the plasma affect the energy balance at scale: wall-plug vs plasma efficiency, supply topologies, numbering-up of reactors on shared supplies, and techno-economic studies showing the supply's share of capital cost. These support the scale-up assessment in each topic folder and complement the representative supply table in [../power_systems/scaleup_sources.md](../power_systems/scaleup_sources.md) (which holds supply efficiencies and costs, not plasma papers). One folder per paper, named FirstAuthor_Journal_Year_ShortTopic, with `manuscript.pdf`.
+Academic papers only (manufacturer and other non-academic data are in [../power_systems/](../power_systems/)). Papers on how the power supply and its matching to the plasma affect the energy balance at scale: wall-plug vs plasma efficiency, supply topologies, numbering-up of reactors on shared supplies, and techno-economic studies showing the supply's share of capital cost. These support the scale-up assessment in each topic folder and complement the representative supply table in [../power_systems/notes/scaleup_assessment.md](../power_systems/notes/scaleup_assessment.md) (which holds supply efficiencies and costs, not plasma papers). One folder per paper, named FirstAuthor_Journal_Year_ShortTopic, with `manuscript.pdf`.
 
 ## Papers
 
@@ -28,7 +28,7 @@ Academic studies that quantify plasma capital cost and the share taken by the po
 | (RV005) | Osorio-Tejada et al. (2024) Energy Environ. Sci. 17, 5833-5853, in [../literature_reviews/](../literature_reviews/reviews_shortlist.md) | Gliding arc power unit + reactor €1,085/kW from an industrial project; lab supplies costly because built for flexibility (p. 5842) | downloaded |
 | (RV017) | van Rooij et al. (2018) Plasma Phys. Control. Fusion 60, 014019, in [../literature_reviews/](../literature_reviews/reviews_shortlist.md) | Industrial microwave CO2-to-CO process design and cost, including supply | downloaded |
 
-Bogaerts (2025, RV015, p. 338) states that warm-plasma capital cost is mainly the power supply. The argument about whether supplies are a "niche product", with manufacturer data, is in [../power_systems/supply_maturity_niche.md](../power_systems/supply_maturity_niche.md).
+Bogaerts (2025, RV015, p. 338) states that warm-plasma capital cost is mainly the power supply. The argument about whether supplies are a "niche product", with manufacturer data, is in [../power_systems/notes/supply_maturity_niche.md](../power_systems/notes/supply_maturity_niche.md).
 
 ## Not retrieved / further candidates
 

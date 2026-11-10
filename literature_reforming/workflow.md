@@ -1,6 +1,6 @@
 # Literature extraction workflow
 
-Version 0.6 - 2026-11-10 (see Version history; the version that applied to an extraction is identified by its date in processing_log.md, and from the start of git tracking also by commit).
+Version 0.7 - 2026-11-10 (see Version history; the version that applied to an extraction is identified by its date in processing_log.md, and from the start of git tracking also by commit).
 
 The purpose, scope and comparison questions are in [literature_review_objectives.md](literature_review_objectives.md). Find and select papers using [literature_search_strategy.md](literature_search_strategy.md), then follow the steps below for each included paper. Extract what supports the review questions, rather than every available detail.
 
@@ -48,7 +48,7 @@ Make the source reference clear enough for a reviewer to find and check the valu
 3. Group matching conditions with operating-point IDs (e.g. SRC001-OP001); use source_wide or unknown where appropriate. Do not combine maxima from different conditions. A small condition table is sufficient; a separate index is optional.
 4. Separate reported values, author calculations and reviewer calculations. Preserve original values alongside conversions. Give calculations an ID, input evidence IDs, formula/units, assumptions and result. Record conflicts and user-selected assumptions explicitly without replacing source facts.
 5. Record only missing information that blocks a comparison (e.g. no power boundary, no feed flow, no conversion), as not_reported, unclear or not_applicable, in a short list in extraction.md. Check both available documents before declaring not_reported. Do not list every absent detail; NR entries in the summary tables cover the rest. Missing never means zero.
-6. Check used citations and calculation arithmetic. Record reviewer/date and status: unreviewed, ai_checked, human_verified or disputed. AI checks are not human verification. Preserve existing IDs when correcting records. Add a processing_log.md row for each extraction or revision; record human checks in the Human reviewer column of that row (section 3a).
+6. Check used citations and calculation arithmetic. Record reviewer/date and status: unreviewed, ai_checked, human_verified or disputed. AI checks are not human verification. Preserve existing IDs when correcting records. Add a processing_log.md row for each extraction or revision; record human checks in the Human reviewer column of that row (section 3a) and their findings in ../human_checks/ (section 3b).
 
 Use UTF-8 evidence.csv with the existing header for compatibility. Leave unused fields blank; source-wide reviewer/date defaults can be stated in extraction.md.
 
@@ -61,6 +61,47 @@ Availability: reported, not_reported, unclear, not_applicable. Origin: quoted_te
 ## 3a. Log AI tool and model versions
 
 Keep one top-level [processing_log.md](processing_log.md) as the single record of who or what processed each source. Add one row for every extraction and substantive revision, giving: date, source ID and folder, event, tool and tool version (e.g. Claude Code 2.1.318), exact model ID (e.g. claude-opus-5-5), session ID where available, and, in the Human reviewer column, "reviewed by <initials>, <date> (<status>)" once a human has checked that AI work. Do not add a separate human-check row with the AI fields blank: the AI tool and version stay on the row so the record shows both steps. In extraction.md, evidence.csv and short_summary.txt, "Claude (AI)" or "Codex AI" is sufficient; the log carries the versions. Record the model ID at the time of work: tool session logs are local and may be deleted. Where a version cannot be recovered, write "not recorded" rather than guessing.
+
+## 3b. Log human checks and AI errors
+
+Human checks are logged in two shared files in [../human_checks/](../human_checks/), for all topic folders. They record what the AI got wrong, so that error rates by type and severity can be reported.
+
+**findings.csv**, one row per problem found:
+
+```csv
+check_id,date,checker,source_id,record_id,error_type,severity,ai_value,corrected_value,action,note
+```
+
+- check_id: HC001, HC002, ... numbered globally.
+- record_id: the evidence ID, calculation ID, Q item or summary-table cell checked.
+- error_type:
+
+| Code | Type |
+|---|---|
+| V | wrong value or unit transcribed |
+| L | wrong locator or page (value correct) |
+| F | figure reading beyond its stated precision |
+| B | wrong basis or assumption (molar volume, LHV/HHV, power boundary) |
+| C | calculation error |
+| I | interpretation stronger than the source supports |
+| H | fabricated: no support in the source |
+| O | omission of a relevant value or condition |
+| S | eligibility or operating-point selection |
+| Q | appraisal disagreement (Q1-Q9 or confidence rating) |
+
+- severity: 1 cosmetic (no value changes); 2 minor (a value changes, no comparison changes); 3 major (a headline, energy-table value or conclusion changes).
+- action: corrected, disputed (left for discussion) or accepted (the AI was right after all).
+
+**summary.csv**, one row per source per check, with the denominator for error rates:
+
+```csv
+source_id,date,checker,scope,records_checked,records_total,findings,major_findings,minutes,status_after
+```
+
+- scope: core (all values in the short-summary tables: feed, power, conversion, SEI, SEI_CH4, EC_CH4), core+Q (plus the Q1-Q9 appraisal and confidence ratings) or full (every evidence row). core+Q is the minimum for human_verified.
+- minutes: time spent checking.
+
+Procedure: the human checker fills in findings.csv and the summary row. The AI then applies the corrections to the extraction files, preserving evidence IDs, and adds a processing_log.md row "revision after human check (HCxxx-HCyyy)". The source becomes human_verified only when every finding for it is corrected or resolved; the Human reviewer column of its extraction row then reads "reviewed by <initials>, <date> (human_verified)". A check with no findings still gets a summary row.
 
 ## 4. Record the power boundary and energy metrics
 
@@ -211,5 +252,6 @@ Renumbered 2026-11-10: each amendment is now its own version. Extraction files w
 | 0.4 | 2026-11-09 | workflow shared with the pyrolysis and CO2-splitting topic folders; global source IDs | 0.1 amendment |
 | 0.5 | 2026-11-10 | after an external LLM consistency review: human checks recorded on the AI row in processing_log.md (section 3a); one rule for flows without stated reference conditions (sections 4 and 6); versions renumbered | - |
 | 0.6 | 2026-11-10 | simplified (BB): core energy metrics SEI as reported, SEI_CH4, EC_CH4 plus the author's efficiency; eta_P,LHV and EY_H2 optional; eta_HHV and f_electric for benchmarks only; system boundary reduced to power boundary and external heat; hardware/cost and full missing-data checklist dropped; plasma diagnostics reduced to regime, gas temperature and a list; summary tables reduced from five to four. Extractions made under 0.1-0.5 are kept as they are | - |
+| 0.7 | 2026-11-10 | human-check and AI-error logs added (section 3b; ../human_checks/findings.csv and summary.csv) | - |
 
 Cite the version number in new extraction files.

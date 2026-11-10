@@ -22,6 +22,8 @@ Source documents (manuscripts, supplements) are not distributed with this folder
 
 ## Events
 
+Power-systems events are logged in [../power_systems/processing_log.md](../power_systems/processing_log.md) from 2026-11-10; earlier power-systems rows below are also copied there.
+
 Event types: extraction (initial), revision (substantive change to records), appraisal, summary update. A human check is recorded in the Human reviewer column of the AI row it reviewed (e.g. "reviewed by BB, date (human_verified)"), so each row shows both who extracted and who checked. The 2026-10-28 to 2026-11-04 rows were reconstructed on 2026-11-05 from the extraction files' revision notes and the session logs.
 
 | Date | Source ID | Folder | Event | Tool and version | Model ID | Session | Human reviewer |
@@ -56,3 +58,7 @@ Event types: extraction (initial), revision (substantive change to records), app
 | 2026-11-10 | (all) | workflow.md (v0.5), literature_search_strategy.md, processing_log.md | revision after external LLM consistency review: flow reference rule, human-check logging, version renumbering, checker definition | Claude Code 2.1.322 | claude-opus-5-5 | 088bb8d0 | |
 | 2026-11-10 | SRC010, SRC011 | Hrycak_SciRep_2023_Plasma_Biogas_SR; Kelly_JCOU_2023_Plasma_DRM | status revision: human_verified (BB, 2026-11-05, informal) withdrawn; ai_checked pending systematic human check | Claude Code 2.1.322 | claude-opus-5-5 | 088bb8d0 | |
 | 2026-11-10 | (all) | workflow.md (v0.6), _source_template.md, literature_review_objectives.md | simplification at BB request: core energy metrics, boundary/heat lines, eta_HHV for benchmarks only, fewer diagnostics, four summary tables | Claude Code 2.1.322 | claude-opus-5-5 | 088bb8d0 | |
+| 2026-11-10 | (all) | workflow.md (v0.7), human_checks/findings.csv, summary.csv | human-check and AI-error log set up | Claude Code 2.1.322 | claude-opus-5-5 | 088bb8d0 | |
+| 2026-11-10 | (power_systems) | source_register.csv, supply_maturity_niche.md, BB_search.txt | D11 copy (manual download by BB) hashed and registered; authors recorded; cost statements checked against copy (pp. 1, 9) | Claude Code 2.1.322 | claude-opus-5-5 | 088bb8d0 | |
+| 2026-11-10 | (power_systems) | source_register.csv, supply_maturity_niche.md, BB_search.txt | D5 Muegge datasheet (manual download by BB) hashed and registered; 2450 MHz / 15 kW checked; noted as magnetron head without efficiency or price | Claude Code 2.1.322 | claude-opus-5-5 | 088bb8d0 | |
+| 2026-11-10 | (power_systems) | supply_maturity_niche.md, source_register.csv, BB_search.txt, suggested_quote_requests.txt, README.md | D12 dropped (unverifiable price; BB decision); quote request Q1 (915 MHz 100 kW generator) added | Claude Code 2.1.322 | claude-opus-5-5 | 088bb8d0 | |

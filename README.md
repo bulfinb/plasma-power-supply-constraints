@@ -44,6 +44,9 @@ Cost (supply capital cost per kW, tube and electrode lifetimes) is the third con
 
 ```text
 README.md                         this file
+human_checks/
+  findings.csv                     each error found in a human check of AI extraction (type, severity, correction)
+  summary.csv                      one row per source checked: scope, records checked, findings, time
 literature_plasma_powersupply/
   README.md                        academic papers only: supply matching, wall-plug vs plasma efficiency, TEA of supply capex (PS001-)
 literature_reviews/
@@ -64,15 +67,18 @@ literature_reforming/
     outputs/extraction.md          full extraction, reporting quality, missing data
     outputs/evidence.csv           every value used, with page and locator
     outputs/calculations.py        reviewer calculations (where used)
-power_systems/                     all manufacturer and other non-academic supply data
-  supply_maturity_niche.md         are plasma supplies a "niche product"? maturity, physical limits, capex (D1-D12)
-  source_register.csv              every non-academic source: version, access date, SHA-256, Wayback snapshot
-  source_archive/                  local copies (not distributed)
+power_systems/                     manufacturer and other non-academic supply data
+  README.md, workflow.md           folder guide; how sources are registered and values extracted
+  processing_log.md                AI tool/model versions and human checks for this folder
+  source_register.csv              every source (PW001...): aliases, tier, date, SHA-256, Wayback snapshot
+  supply_values.csv                every value used, with page/location and verbatim quote
+  supply_classes.csv               representative supply classes (J1, K1, M1, ...) built from supply_values
+  notes/                           scale-up assessment, "niche product" discussion, reactor matching
+  scripts/, figures/               wall-basis EC_CH4 calculation and figures
   BB_search.txt                    sources that need manual retrieval
-  scaleup_supplies.csv             representative industrial supplies by plasma/Joule class
-  scaleup_sources.md               efficiency chain, sources (T01-T23), indicative wall-basis results
-  scaleup_wall_basis.py            applies supply efficiencies to the reviewed EC_CH4 values
-  power_sources.csv, sources.md, power_systems_report.*   earlier survey of MW-scale induction/RF/microwave supplies (S1-S17)
+  suggested_quote_requests.txt     vendor budgetary quotes to request (supply cost per kW)
+  source_archive/                  local copies (not distributed)
+  legacy/                          superseded 2026-09 survey and 2026-11-05 class table (not cited)
 ```
 
 Source manuscripts and supplements are not distributed. Each `extraction.md` records SHA-256 hashes of the documents used so readers can confirm they hold the same versions.
@@ -109,6 +115,6 @@ Review status of each source (AI-checked or human-verified) is in its `extractio
 ## Status (2026-11-09)
 
 - Reforming: 15 sources extracted, all ai_checked; systematic human verification to follow.
-- Representative industrial supply table drafted (`power_systems/scaleup_*`), AI-checked from source summaries; full texts to be confirmed.
+- Power systems restructured 2026-11-10: 49 sources registered (PW001-PW049), 96 values re-extracted from archived copies with quotes (89 ai_checked, 7 unverified pending retrieval); supply class table rebuilt from them.
 - Next: human verification of remaining sources; synthesis evidence table and conversion vs EC_CH4 plot; heat-recovery treatment for plasma cases; supply capital-cost data; database searches.
 - Pyrolysis and CO2 splitting: objectives, search strategies and empty logs set up 2026-11-09; searches not yet run.

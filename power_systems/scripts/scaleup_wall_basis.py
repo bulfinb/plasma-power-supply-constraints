@@ -1,15 +1,15 @@
 """Indicative wall-basis EC_CH4 for the review sources with representative
-industrial supplies (scaleup_supplies.csv). Not the authors' lab supplies.
+industrial supplies (../supply_classes.csv). Not the authors' lab supplies.
 
 EC_wall = EC_reported_basis / eta_supply, where eta_supply covers only the stages
-between the wall and the power boundary used in each paper (see scaleup_sources.md).
-Run: python3 scaleup_wall_basis.py   (writes figures/scaleup_wall_basis.csv)
+between the wall and the power boundary used in each paper (see notes/scaleup_assessment.md).
+Run from power_systems/: python3 scripts/scaleup_wall_basis.py   (writes figures/scaleup_wall_basis.csv)
 """
 import csv
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent
-sup = {r["id"]: r for r in csv.DictReader(open(ROOT / "scaleup_supplies.csv", encoding="utf-8"))}
+ROOT = Path(__file__).resolve().parent.parent
+sup = {r["class_id"]: r for r in csv.DictReader(open(ROOT / "supply_classes.csv", encoding="utf-8"))}
 
 # Literature EC_CH4 ranges (kJ/mol CH4 converted) from literature_reforming/*/short_summary.txt, table 4
 LIT = [
@@ -31,7 +31,7 @@ LIT = [
 rows = []
 for src, route, boundary, lo, hi, sid in LIT:
     s = sup[sid]
-    e_lo, e_hi = float(s["efficiency_low"]), float(s["efficiency_high"])
+    e_lo, e_hi = float(s["eta_low"]), float(s["eta_high"])
     w_lo, w_hi = lo / e_hi, hi / e_lo
     rows.append([src, route, boundary, lo, hi, sid, s["representative_supply"], e_lo, e_hi,
                  round(w_lo), round(w_hi)])

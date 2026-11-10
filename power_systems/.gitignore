@@ -1,3 +1,4 @@
 .python_packages/
 .venv/
 __pycache__/
+legacy/*/report_page_renders/

@@ -1,0 +1,32 @@
+suggested_quote_requests.txt - vendor quotes that would give current, well-defined supply costs
+Prepared by Claude (AI) on 2026-11-10 at BB's request. To be sent by BB; not yet sent.
+
+Why: published supply costs are sparse, old or unclear about what is included (see the capex table in
+notes/supply_maturity_niche.md). A budgetary quote states the date, currency and scope, so it can go
+directly onto a cost-per-kW figure.
+
+For every quote, ask for:
+  - budgetary (non-binding) price, currency and date
+  - price with and without the power supply, and what else is included (isolator/circulator,
+    tuner, controls, cooling, installation)
+  - output power basis (CW output at the waveguide flange) and wall-plug efficiency at rated power
+  - tube/component lifetime and replacement cost
+  - whether the price may be cited in a publication (and in what form, e.g. "vendor quote, 2026")
+
+When a quote arrives: register it under the next PW ID, save it in source_archive/<PW ID>/, tell Claude to hash and register it,
+and record any confidentiality terms in source_register.csv.
+
+------------------------------------------------------------------------------------------------
+Q1. 915 MHz, 100 kW CW magnetron microwave generator (largest magnetron class found)
+------------------------------------------------------------------------------------------------
+   Replaces:  PW049 (formerly D12; dropped, 30 kW head price could not be verified)
+   Context:   100 kW at 915 MHz is the largest single-magnetron unit found (Stellant CWM-100, PW017-V01,
+              efficiency approaching 86% for the tube). Current cost data for this class are an
+              undated estimate of 1-3 USD/W complete (PW020-V01), a 1999 figure (PW048-V01) and
+              tube-only prices of 0.1-0.3 USD/W (PW033-V01, PW020-V02).
+   Request:   complete CW generator at 100 kW (or the vendor's largest 915 MHz unit):
+              magnetron head + switch-mode power supply + circulator/isolator + controls.
+              Ask separately for the magnetron tube price (replacement item).
+   Vendors:   Muegge (muegge.de), SAIREM (sairem.com), Stellant Systems / CPI, Richardson Electronics
+              (check which of these offers a 100 kW 915 MHz system before writing).
+   Status:    not sent

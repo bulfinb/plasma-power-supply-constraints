@@ -1,12 +1,14 @@
 # Supply voltage and reactor compatibility
 
+Written 2026-09 as part of the earlier frequency survey (now in ../legacy/); data references updated 2026-11-10 to the PW value table. The calculations below are illustrative and use stated assumptions, not source values.
+
 The required selection space is frequency, real output power, voltage, current, load impedance, duty cycle and matching-network capability. A frequency-power chart alone cannot establish usability.
 
 ## Voltage boundaries
 
 Record mains AC input, internal DC link/beam supply, RF/AC output, and reactor electrode voltage separately. Keep RMS, peak, peak-to-peak and pulse quantities explicit. Transformer or resonant matching can change voltage and current; it does not create real power. Reactor electrode voltage can exceed generator terminal voltage with correspondingly changed impedance and component stress. At microwave frequencies, modal power and spatial electric field are more useful than a geometry-independent voltage.
 
-`voltage_sources.csv` contains sourced output limits and explicit missing values for every original dataset. F1-F4 are specific models, not the maximum-power F family. Manufacturer maxima do not imply simultaneous achievable voltage, current, power and frequency.
+Sourced output voltage and current limits are in [../supply_values.csv](../supply_values.csv) (`quantity` = voltage_rms or current_rms; e.g. TRUMPF MF 7240: 1,200 V, 1,120 A, PW004-V04/-V05; TruHeat HF tube generators: 5,000-7,000 V by model, PW007-V04). Model voltages apply to that model only, not to the maximum-power member of the family. Manufacturer maxima do not imply simultaneous achievable voltage, current, power and frequency.
 
 ## Linear sinusoidal load model
 
