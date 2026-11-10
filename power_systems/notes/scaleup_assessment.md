@@ -1,6 +1,6 @@
 # Industrial power supplies for scaled-up electrified reforming
 
-First drafted 2026-11-05; rebuilt 2026-11-10 from [../supply_values.csv](../supply_values.csv) after every value was re-extracted from the archived source copies (see [../workflow.md](../workflow.md)). Status: **ai_checked; human verification pending**. Class data: [../supply_classes.csv](../supply_classes.csv). Calculation: [../scripts/scaleup_wall_basis.py](../scripts/scaleup_wall_basis.py), output `../figures/scaleup_wall_basis.csv`. Source IDs (PWxxx) resolve in [../source_register.csv](../source_register.csv); value IDs (PWxxx-Vnn) in supply_values.csv.
+First drafted 2026-11-05; rebuilt 2026-11-10 from [../supply_values.csv](../supply_values.csv) after every value was re-extracted from the archived source copies (see [../workflow.md](../workflow.md)). Status: **ai_checked; human verification pending**. Class data: [../supply_classes.csv](../supply_classes.csv). Calculation: [../figures/scaleup_wall_basis.py](../figures/scaleup_wall_basis.py), output `../figures/scaleup_wall_basis.csv`. Source IDs (PWxxx) resolve in [../source_register.csv](../source_register.csv); value IDs (PWxxx-Vnn) in supply_values.csv.
 
 ## Purpose
 
@@ -50,7 +50,12 @@ Scale evidence: induction supplies of 16 MW per unit and 126 MW installed (PW001
 - **M1 cost:** van Rooij et al. (PW030, Faraday Discuss. 2015) say only that "power (e.g. microwave) supplies are cheap (0.1 euro per W)", without frequency, scale or reference. Moved to context.
 - **M2, M3:** a 2024 review table (PW046) gives magnetron ~70%, ~1,000 USD/kW, 1-3 years; LDMOS amplifier ~60%, ~3,000 USD/kW, ~10 years; GaN ~65% expected.
 
-## Indicative wall-basis EC_CH4 (scripts/scaleup_wall_basis.py)
+## Figures (figures/plot_supply_values.py)
+
+- `supply_class_map.png`: each class as a box of frequency band against unit power, coloured by its efficiency range. The usable design space is DC and kHz (MW units, 90-98.5%) and 915 MHz (100 kW, 80-86%). RF tube generators reach 100 kW but at 53-60%; RF solid-state and 2.45 GHz sources are limited to ~0.25-15 kW per unit at 56-80% (amplifier or generator). Only vacuum tubes give MW at GHz, at 40-63% tube efficiency.
+- `supply_cost_vs_unit_size.png`: cost per kW against unit or installation size. Published supply-only costs fall from ~1,200-5,000 EUR/kW at 10-150 kW (DBD, pulsed) to 85-160 EUR/kVA for 3 MW rectifiers; 915 MHz tubes are ~100-300 USD/kW at 100 kW. The TEA reactor cost functions (PS004) assume cost per kW falls as P^-0.47 from 3 to 100 MW (an electrolyser scaling), whereas the gliding arc manufacturer quoted in RV005 assumes constant cost per kW up to ~1,000 t CO2/y and an exponent of 0.9 beyond (cost per kW ~P^-0.1, RV005-V05). Whether plasma supplies follow either rule is not shown by any published data point above 144 kW.
+
+## Indicative wall-basis EC_CH4 (figures/scaleup_wall_basis.py)
 
 | Source | Paper boundary | Supply class | EC_CH4 reported (kJ/mol) | EC_CH4 wall (kJ/mol) |
 |---|---|---|---|---|

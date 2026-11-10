@@ -74,7 +74,8 @@ power_systems/                     manufacturer and other non-academic supply da
   supply_values.csv                every value used, with page/location and verbatim quote
   supply_classes.csv               representative supply classes (J1, K1, M1, ...) built from supply_values
   notes/                           scale-up assessment, "niche product" discussion, reactor matching
-  scripts/, figures/               wall-basis EC_CH4 calculation and figures
+  figures/                         figures with their plotting scripts; wall-basis EC_CH4 calculation
+  scripts/                         human-check worksheet generator
   BB_search.txt                    sources that need manual retrieval
   suggested_quote_requests.txt     vendor budgetary quotes to request (supply cost per kW)
   source_archive/                  local copies (not distributed)
@@ -115,6 +116,6 @@ Review status of each source (AI-checked or human-verified) is in its `extractio
 ## Status (2026-11-09)
 
 - Reforming: 15 sources extracted, all ai_checked; systematic human verification to follow.
-- Power systems restructured 2026-11-10: 50 sources registered (PW001-PW050), 133 values re-extracted from archived copies with quotes (131 ai_checked, 2 unverified pending retrieval); supply class table rebuilt from them.
+- Power systems restructured 2026-11-10: 50 sources registered (PW001-PW050), 141 values re-extracted from archived copies with quotes (139 ai_checked, 2 unverified pending retrieval); supply class table rebuilt from them.
 - Next: human verification of remaining sources; synthesis evidence table and conversion vs EC_CH4 plot; heat-recovery treatment for plasma cases; supply capital-cost data; database searches.
 - Pyrolysis and CO2 splitting: objectives, search strategies and empty logs set up 2026-11-09; searches not yet run.

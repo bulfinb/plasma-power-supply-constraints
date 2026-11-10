@@ -42,13 +42,14 @@ One row per quoted value. A row is extracted only from the local copy, never fro
 | `maker` | manufacturer or operator |
 | `supply_class` | class code from [supply_classes.csv](supply_classes.csv) (J1, J2, A1, K1, K2, R1, R2, M1-M3, P1, H1, X1), or `context` |
 | `freq_low_hz`, `freq_high_hz` | output frequency or band; DC = 0; blank if not stated |
-| `quantity` | `output_power`, `input_power`, `peak_power`, `average_power`, `installed_power`, `efficiency`, `coupling_efficiency`, `cost_per_kw`, `cost_ratio`, `cost_share`, `cost_ratio` (relative cost), `frequency_limit`, `duty_cycle`, `heat_rejected`, `lifetime_h`, `voltage_rms`, `current_rms`, `power_factor`, `specific_energy`, `capacity` (product rate) |
+| `quantity` | `output_power`, `input_power`, `peak_power`, `average_power`, `installed_power`, `efficiency`, `coupling_efficiency`, `cost_per_kw`, `cost_ratio`, `cost_share`, `cost_ratio` (relative cost), `frequency_limit`, `duty_cycle`, `heat_rejected`, `cost_scaling_exponent`, `lifetime_h`, `voltage_rms`, `current_rms`, `power_factor`, `specific_energy`, `capacity` (product rate) |
 | `qualifier` | `=`, `~`, `>`, `>=`, `<`, `<=`, `up_to`, `approaching`, `range` |
 | `value_low`, `value_high` | numbers as stated (same value in both for a single number) |
 | `unit` | `kW`, `kVA`, `fraction`, `EUR/kW`, `USD/kW`, `h`, `V`, `A`, `kWh/kg`, `kg/h`, ... Efficiencies are stored as fractions |
 | `basis` | what the value refers to. Efficiency: `device` (tube or transistor), `amplifier_or_head`, `generator` (mains input to rated output), `power_supply_stage` (HV or switch-mode supply feeding a separate head), `into_load` (measured into a stated load), `system`, `not_stated`. Power: `rated_output`, `rated_input`, `family_max`, `installed`, `average`, `peak` |
 | `cost_scope` | cost rows only: `tube_only`, `head_only`, `supply`, `turnkey_system`, `supply_plus_reactor`, `share_of_plant_capex`, `not_stated` |
 | `currency`, `price_year` | cost rows only; `price_year` is the year of the document if no other year is given, or `undated` |
+| `unit_size_kw`, `unit_size_qualifier`, `unit_size_ref` | cost rows only: the unit or installation size the price refers to, its qualifier, and where it comes from (a value ID, or "quote" if it is in the same quote). Blank if the source gives no size |
 | `data_type` | `vendor_spec` (datasheet value for a model), `vendor_claim` (marketing or family claim), `measured`, `requirement` (tender), `estimate` (author estimate), `projection`, `patent_background`, `secondary` (the source quotes another source), `reviewer_calc` |
 | `status` | `ai_checked`, `human_verified` or `unverified` |
 | `extracted` | date of extraction |
@@ -64,12 +65,12 @@ Rules:
 
 ## 5. Supply classes: supply_classes.csv
 
-[supply_classes.csv](supply_classes.csv) summarises each representative class (J1, A1, K1, ...) used in the scale-up assessment. Each efficiency, cost and lifetime range lists the `value_id`s it rests on. Where a range is a reviewer judgement (for example a lower bound allowing for transformer losses), say so in `range_basis`. The class table is derived from supply_values.csv and is never edited without updating the cited values.
+[supply_classes.csv](supply_classes.csv) summarises each representative class (J1, A1, K1, ...) used in the scale-up assessment. Each efficiency, cost and lifetime range lists the `value_id`s it rests on. Where a range is a reviewer judgement (for example a lower bound allowing for transformer losses), say so in `range_basis`. `map_value_ids` lists the industrial unit-power and frequency values that set the class box in the class map figure (lab prototypes excluded). The class table is derived from supply_values.csv and is never edited without updating the cited values.
 
 ## 6. Notes, scripts and figures
 
 - `notes/` holds the written analysis: [scaleup_assessment.md](notes/scaleup_assessment.md), [supply_maturity_niche.md](notes/supply_maturity_niche.md), [reactor_matching.md](notes/reactor_matching.md). Notes cite value IDs or source IDs, not search summaries.
-- `scripts/` reads supply_values.csv and supply_classes.csv and writes to `figures/`. Scripts do not contain data values except documented constants (e.g. currency conversion factors with their source).
+- `figures/` holds each figure together with the script that makes it; the scripts read supply_values.csv and supply_classes.csv and write to `figures/`. `scripts/` holds other tools (human-check worksheet). Scripts do not contain data values except documented constants (e.g. currency conversion factors with their source).
 - `legacy/` keeps superseded work unchanged for the record. Do not cite it; its sources have been re-registered.
 
 ## 7. Checks and logging

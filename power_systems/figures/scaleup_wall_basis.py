@@ -3,7 +3,7 @@ industrial supplies (../supply_classes.csv). Not the authors' lab supplies.
 
 EC_wall = EC_reported_basis / eta_supply, where eta_supply covers only the stages
 between the wall and the power boundary used in each paper (see notes/scaleup_assessment.md).
-Run from power_systems/: python3 scripts/scaleup_wall_basis.py   (writes figures/scaleup_wall_basis.csv)
+Run from power_systems/: python3 figures/scaleup_wall_basis.py   (writes figures/scaleup_wall_basis.csv)
 """
 import csv
 from pathlib import Path
