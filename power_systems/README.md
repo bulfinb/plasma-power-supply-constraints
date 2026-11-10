@@ -16,6 +16,7 @@ Industrial power-supply data for the scale-up assessment: efficiency, unit power
 | [notes/reactor_matching.md](notes/reactor_matching.md) | Voltage, impedance and matching between supply and reactor (illustrative calculations) |
 | [scripts/](scripts/) | `scaleup_wall_basis.py` (wall-basis EC_CH4), `plot_supply_values.py` (figures) |
 | [figures/](figures/) | Script outputs |
+| [human_check_checklist.md](human_check_checklist.md), [human_check_worksheet.csv](human_check_worksheet.csv) | Steps for the human check of each value; worksheet (one row per value, by priority), made by `scripts/make_check_worksheet.py` |
 | [BB_search.txt](BB_search.txt) | Sources that need manual retrieval |
 | [suggested_quote_requests.txt](suggested_quote_requests.txt) | Vendor budgetary quotes to request |
 | `source_archive/` | Local copies, one folder per PW ID (gitignored; not redistributed) |
