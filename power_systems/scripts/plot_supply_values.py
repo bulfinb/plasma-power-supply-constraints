@@ -61,7 +61,7 @@ SCOPE = {  # what the price covers -> (label, colour, marker)
     "supply_plus_reactor": ("supply + reactor", SLOT[3], "^"),
     "not_stated": ("scope not stated", SLOT[4], "v"),
 }
-CLASS_ORDER = ["K1", "M1", "P1", "H1"]
+CLASS_ORDER = ["J1", "K1", "M1", "M2", "M3", "P1", "H1", "context"]
 cost = [r for r in rows if r["quantity"] == "cost_per_kw" and num(r["value_low"])]
 cost.sort(key=lambda r: (CLASS_ORDER.index(r["supply_class"]) if r["supply_class"] in CLASS_ORDER else 99,
                          num(r["value_low"])))
@@ -74,29 +74,30 @@ for i, r in enumerate(cost):
     if hi > lo:
         ax.plot([lo, hi], [y, y], color=col, lw=2, solid_capstyle="round", zorder=2)
     x = math.sqrt(lo * hi)
-    hollow = r["qualifier"] in ONE_SIDED
+    hollow = r["qualifier"] in ONE_SIDED or r["data_type"] == "reviewer_calc"
     ax.plot(x, y, marker=mk, ms=8, color=col, mfc="white" if hollow else col, mew=2, zorder=3)
     if r["qualifier"] in ("<", "<="):
         ax.annotate("", xy=(x * 0.6, y), xytext=(x * 0.9, y), arrowprops=dict(arrowstyle="->", color=col, lw=1.5))
     if r["qualifier"] in (">", ">="):
         ax.annotate("", xy=(x * 1.65, y), xytext=(x * 1.1, y), arrowprops=dict(arrowstyle="->", color=col, lw=1.5))
     flag = " *" if r["status"] == "unverified" else ""
-    labels.append(f"{r['supply_class']}  {short(r['item'])} ({r['currency']}, {r['price_year']}){flag}  [{r['value_id']}]")
+    per = ", per kVA" if r["unit"].endswith("/kVA") else ""
+    labels.append(f"{r['supply_class']}  {short(r['item'])} ({r['currency']}{per}, {r['price_year']}){flag}  [{r['value_id']}]")
 ax.set_yticks(range(len(cost)))
 ax.set_yticklabels(labels[::-1], fontsize=7.5, color=INK)
 ax.set_xscale("log")
-ax.set_xlim(40, 60000)
+ax.set_xlim(30, 60000)
 ax.set_xlabel("Cost per kW of rated output (nominal currency, as stated; log scale)")
 ax.grid(axis="x", which="major", color=GRID, lw=0.8)
 ax.tick_params(axis="y", length=0)
 handles = [Line2D([], [], marker=m, color=c, ls="", ms=7, mew=2, label=l) for l, c, m in SCOPE.values()
            if any(SCOPE.get(r["cost_scope"], SCOPE["not_stated"])[0] == l for r in cost)]
-handles.append(Line2D([], [], marker="o", color=MUTED, mfc="white", ls="", ms=7, mew=2, label="one-sided value (<, >)"))
+handles.append(Line2D([], [], marker="o", color=MUTED, mfc="white", ls="", ms=7, mew=2, label="one-sided (<, >) or reviewer-calculated"))
 ax.legend(handles=handles, loc="upper left", bbox_to_anchor=(-0.02, -0.09), ncol=3, frameon=False, fontsize=7.5)
 ax.set_title("Published supply cost per kW: sparse, mixed scope, mostly not the supply alone",
              loc="left", fontsize=10, color=INK)
 ax.text(-0.02, -0.21, "Values from supply_values.csv (value ID in brackets). * unverified: no local copy of the source. "
-         "Not converted between USD and EUR or to a common year.", fontsize=7, color=MUTED,
+         "Not converted between USD and EUR or to a common year; per-kVA values (rectifiers) plotted as stated.", fontsize=7, color=MUTED,
         transform=ax.transAxes)
 save(fig, "supply_cost_per_kw")
 
@@ -144,8 +145,8 @@ axp.set_title("Supply unit power and efficiency by output frequency (published v
 # efficiency panel
 used = set()
 for r in rows:
-    if r["quantity"] != "efficiency":
-        continue
+    if r["quantity"] != "efficiency" or r["basis"] in ("power_supply_stage", "system"):
+        continue  # supply-stage-only efficiencies are not comparable with the other boundaries
     lo, hi = num(r["value_low"]), num(r["value_high"]) or num(r["value_low"])
     a, b, x = fmid(r)
     if x is None or lo is None:
@@ -168,5 +169,5 @@ handles = [Line2D([], [], marker=BASIS[k][2], color=BASIS[k][1], ls="", ms=7, me
 handles.append(Line2D([], [], marker="o", color=MUTED, mfc="white", ls="", ms=7, mew=2, label="one-sided, calculated or unverified"))
 axe.legend(handles=handles, loc="upper left", bbox_to_anchor=(-0.02, -0.13), frameon=False, fontsize=7.5, ncol=3)
 fig.text(0.0, -0.035, "Class codes as in supply_classes.csv. DC supplies (J1, A1) have no output frequency and are not shown. "
-         "Lines show stated frequency bands or value ranges.\nPulsed supplies (P1) have no carrier frequency and are not shown. Power panel: rated, family-maximum or installed output per unit.", fontsize=7, color=MUTED)
+         "Lines show stated frequency bands or value ranges.\nPulsed supplies (P1) have no carrier frequency and are not shown. Power panel: rated, family-maximum or installed output per unit. Supply-stage-only and pulsed-system estimates are not shown.", fontsize=7, color=MUTED)
 save(fig, "supply_power_efficiency_frequency")

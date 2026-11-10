@@ -23,10 +23,10 @@ Industrial power-supply data for the scale-up assessment: efficiency, unit power
 
 ## Status (2026-11-10)
 
-- 49 sources registered (PW049 dropped). 96 values extracted from archived copies, each with location and quote: 89 ai_checked, 7 unverified because no local copy is held yet (see BB_search.txt).
+- 50 sources registered (PW049 dropped). 133 values extracted from archived copies, each with location and quote: 131 ai_checked, 2 unverified because no local copy is held yet (see BB_search.txt).
 - Human verification not yet started (use [../human_checks/](../human_checks/)).
 - Re-extraction corrected several values cited before 2026-11-10; the changes are listed in [notes/scaleup_assessment.md](notes/scaleup_assessment.md).
-- Supply cost per kW is still sparse, especially for rectifiers, kHz inverters and RF generators.
+- Supply cost per kW is still sparse, especially for kHz inverters and RF generators.
 
 ## Reproduce
 

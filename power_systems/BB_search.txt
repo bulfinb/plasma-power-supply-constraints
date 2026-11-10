@@ -14,6 +14,11 @@ DONE
 ------------------------------------------------------------------------------------------------
 - PW044 (D5) Muegge MH015KS-310CN datasheet: saved by BB 2026-11-10; registered.
 - PW048 (D11) Hadidi & Woskov 1999, MIT PSFC JA-99-8: saved by BB 2026-11-10; registered.
+- PW050 SAIREM GMP100 10 kW datasheet: saved by BB 2026-11-10 (for item PW010); registered as its own
+  source. It gives no generator efficiency; calculated 0.63-0.70 from rated consumption. M2 now uses it.
+- PW015 CPI VPS3499 datasheet: saved by BB 2026-11-10; registered, 7 values (1 MW peak confirmed).
+- PW022, PW026, PW027, PW028, PW030, PW046 (former section B, academic single-value sources): saved
+  by BB 2026-11-10; registered and re-extracted.
 - PW049 (D12) Machineseeker listing: DROPPED 2026-11-10 by BB (price unverifiable); replaced by
   quote request Q1 in suggested_quote_requests.txt.
 
@@ -22,73 +27,31 @@ A. MANUFACTURER / NON-ACADEMIC SOURCES
 ------------------------------------------------------------------------------------------------
 
 1. PW010 (S10) - SAIREM, "MW technology guide for lab-grown diamonds applications" (2021)
-   Needed for: GMP100 10 kW 2450 MHz, 85% power efficiency, printed page 7 (upper bound of class M2)
+   OPTIONAL since 2026-11-10: the GMP100 datasheet (PW050) replaced it for class M2. The guide is only
+   needed to see what its "85% power efficiency" (printed page 7) refers to.
    URL:       https://www.sairem.com/wp-content/uploads/2021/01/SAIREM-MW-technology-guide-for-lab-grown-diamonds-applications.pdf
    Problem:   now HTTP 404; no Wayback snapshot.
    Try:       search sairem.com for the guide or the GMP 100 kW/10 kW generator datasheet.
    Save as:   PW010/original.pdf
 
-2. PW015 (S14) - CPI VPS3499 klystron transmitter datasheet (12-19-24)
-   Needed for: 2.7-3.0 GHz, 1 MW peak, duty 0.002 (context class H1). Low priority.
-   URL:       https://www.cpi-edb.com/docs/datasheets/163/VPS3499%20KLYSTRON%20TRANS%20%20NF%20FINAL%2012-19-24.pdf
-   Problem:   now HTTP 404; no Wayback snapshot.
-   Try:       search cpi-edb.com (or cpii.com) for VPS3499.
-   Save as:   PW015/original.pdf
+2. (PW015 done, see above)
 
 3. PW034 (T18) - PyroGenesis, TMS 2013 publications extract (local copy OK)
    Only the Wayback snapshot failed (HTTP 520). Optional: submit the URL at
    https://web.archive.org/save and send Claude the snapshot link.
    URL:       https://www.pyrogenesis.com/wp-content/uploads/2019/09/1.-TMS-2013-publications_Pyro-extract.pdf
 
-4. PW044 (D5) - optional: the URL the Muegge datasheet was downloaded from, for the register.
-
-------------------------------------------------------------------------------------------------
-B. ACADEMIC SOURCES USED FOR SINGLE VALUES (paywalled or bot-blocked)
-------------------------------------------------------------------------------------------------
-
-5. PW022 (T06) - Koponen et al., LUT, comparison of rectifier topologies for a 3 MW electrolyser
-   Needed for: converter ~15% of electrolyser capex (class J1 cost)
-   URL:       https://lutpub.lut.fi/bitstream/10024/162276/1/koponen_et_al_comparison_of_finaldraft.pdf
-   Problem:   bot check page. Also record the journal version (DOI) if you find it.
-   Save as:   PW022/original.pdf
-
-6. PW026 (T10) - IEEE, "Analysis and Assessment of Use of Voltage and Current Inverters Applied to the
-   Ozone Generation in High Frequency" (91% max inverter efficiency; class K1)
-   URL:       https://bvbvf1.bib-bvb.de/vufind/PrimoRecord/cdi_ieee_primary_9386269 (catalogue record)
-   Problem:   catalogue page timed out; full text is on IEEE Xplore (document 9386269?), needs UCC access.
-   Save as:   PW026/manuscript.pdf  (and note the DOI)
-
-7. PW027 (T11) - IEEE Open Journal of Power Electronics (2022), Class E DBD supply, 91.5% peak, 600 W,
-   12-15 MHz (class K1)
-   URL:       https://doaj.org/article/b984cca08c5c4d7aa7c3612b384ef606
-   Problem:   Cloudflare bot check. Journal is open access: follow the DOAJ link to IEEE Xplore.
-   Save as:   PW027/manuscript.pdf  (and note the DOI)
-
-8. PW030 (T14) - van Rooij et al., microwave plasma CO2 (microwave supplies ~0.1 EUR/W; class M1 cost)
-   URL:       https://core.ac.uk/download/43597104.pdf
-   Problem:   Cloudflare bot check. Note the exact paper and DOI; it may be a different paper from
-              van Rooij 2018 PPCF (RV017, already downloaded in literature_reviews/).
-   Save as:   PW030/original.pdf
-
-9. PW028 (T12) - Huiskamp et al., IEEE Trans. Plasma Sci. 48(1) 2020, DOI 10.1109/TPS.2019.2956548
-   Only the repository abstract page is held. The full text would clarify the "increase the system
-   efficiency by 95%-98%" wording (class P1). Needs UCC access.
-   Save as:   PW028/manuscript.pdf
-
-10. PW046 (D7) - IEICE Trans. Electron. E107-C(10) 2024, DOI 10.1587/transele.2024MMI0004
-   Only the abstract page is held. The full text may contain the magnetron/LDMOS/GaN efficiency
-   comparison cited before 2026-11-10 (not in the abstract). Low priority.
-   Save as:   PW046/manuscript.pdf
+4. PW044 (D5) and PW050 - optional: the URLs the Muegge and SAIREM datasheets were downloaded from.
 
 ------------------------------------------------------------------------------------------------
 C. ACADEMIC PAPERS FOR literature_plasma_powersupply/ (TEA, supply capex)
 ------------------------------------------------------------------------------------------------
 
-11. PS003 - Lamberts-Van Assche, Thomassen & Compernolle (2022) J. CO2 Util. 64, 102156
+11. PS003 - DONE (web page re-saved by BB 2026-11-10 without cut-off; extracted). Lamberts-Van Assche, Thomassen & Compernolle (2022) J. CO2 Util. 64, 102156
     DOI https://doi.org/10.1016/j.jcou.2022.102156 (Elsevier; UCC access)
     Save as: literature_plasma_powersupply/LambertsVanAssche_JCOU_2022_DBD_TEA/manuscript.pdf (+ ESI)
 
-12. PS004 - Kaufmann et al. (2023) Appl. Sci. 13, 4839 (open access, CC BY)
+12. PS004 - DONE (saved by BB 2026-11-10; extracted). Kaufmann et al. (2023) Appl. Sci. 13, 4839 (open access, CC BY)
     DOI https://doi.org/10.3390/app13084839 (MDPI blocks scripted download)
     Save as: literature_plasma_powersupply/Kaufmann_ApplSci_2023_PlasmaCO2_PtL_TEA/manuscript.pdf
 

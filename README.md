@@ -115,6 +115,6 @@ Review status of each source (AI-checked or human-verified) is in its `extractio
 ## Status (2026-11-09)
 
 - Reforming: 15 sources extracted, all ai_checked; systematic human verification to follow.
-- Power systems restructured 2026-11-10: 49 sources registered (PW001-PW049), 96 values re-extracted from archived copies with quotes (89 ai_checked, 7 unverified pending retrieval); supply class table rebuilt from them.
+- Power systems restructured 2026-11-10: 50 sources registered (PW001-PW050), 133 values re-extracted from archived copies with quotes (131 ai_checked, 2 unverified pending retrieval); supply class table rebuilt from them.
 - Next: human verification of remaining sources; synthesis evidence table and conversion vs EC_CH4 plot; heat-recovery treatment for plasma cases; supply capital-cost data; database searches.
 - Pyrolysis and CO2 splitting: objectives, search strategies and empty logs set up 2026-11-09; searches not yet run.

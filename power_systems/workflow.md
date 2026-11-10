@@ -42,11 +42,11 @@ One row per quoted value. A row is extracted only from the local copy, never fro
 | `maker` | manufacturer or operator |
 | `supply_class` | class code from [supply_classes.csv](supply_classes.csv) (J1, J2, A1, K1, K2, R1, R2, M1-M3, P1, H1, X1), or `context` |
 | `freq_low_hz`, `freq_high_hz` | output frequency or band; DC = 0; blank if not stated |
-| `quantity` | `output_power`, `input_power`, `peak_power`, `average_power`, `installed_power`, `efficiency`, `coupling_efficiency`, `cost_per_kw`, `cost_ratio`, `cost_share`, `cost_ratio` (relative cost), `frequency_limit`, `lifetime_h`, `voltage_rms`, `current_rms`, `power_factor`, `specific_energy`, `capacity` (product rate) |
+| `quantity` | `output_power`, `input_power`, `peak_power`, `average_power`, `installed_power`, `efficiency`, `coupling_efficiency`, `cost_per_kw`, `cost_ratio`, `cost_share`, `cost_ratio` (relative cost), `frequency_limit`, `duty_cycle`, `heat_rejected`, `lifetime_h`, `voltage_rms`, `current_rms`, `power_factor`, `specific_energy`, `capacity` (product rate) |
 | `qualifier` | `=`, `~`, `>`, `>=`, `<`, `<=`, `up_to`, `approaching`, `range` |
 | `value_low`, `value_high` | numbers as stated (same value in both for a single number) |
-| `unit` | `kW`, `fraction`, `EUR/kW`, `USD/kW`, `h`, `V`, `A`, `kWh/kg`, `kg/h`, ... Efficiencies are stored as fractions |
-| `basis` | what the value refers to. Efficiency: `device` (tube or transistor), `amplifier_or_head`, `generator` (mains input to rated output), `into_load` (measured into a stated load), `system`, `not_stated`. Power: `rated_output`, `rated_input`, `family_max`, `installed`, `average`, `peak` |
+| `unit` | `kW`, `kVA`, `fraction`, `EUR/kW`, `USD/kW`, `h`, `V`, `A`, `kWh/kg`, `kg/h`, ... Efficiencies are stored as fractions |
+| `basis` | what the value refers to. Efficiency: `device` (tube or transistor), `amplifier_or_head`, `generator` (mains input to rated output), `power_supply_stage` (HV or switch-mode supply feeding a separate head), `into_load` (measured into a stated load), `system`, `not_stated`. Power: `rated_output`, `rated_input`, `family_max`, `installed`, `average`, `peak` |
 | `cost_scope` | cost rows only: `tube_only`, `head_only`, `supply`, `turnkey_system`, `supply_plus_reactor`, `share_of_plant_capex`, `not_stated` |
 | `currency`, `price_year` | cost rows only; `price_year` is the year of the document if no other year is given, or `undated` |
 | `data_type` | `vendor_spec` (datasheet value for a model), `vendor_claim` (marketing or family claim), `measured`, `requirement` (tender), `estimate` (author estimate), `projection`, `patent_background`, `secondary` (the source quotes another source), `reviewer_calc` |

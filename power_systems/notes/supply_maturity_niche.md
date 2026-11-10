@@ -38,21 +38,29 @@ Industrial DBD with efficient power delivery therefore exists. The same patent a
 
 | Basis | Cost | Year | Value |
 |---|---|---|---|
+| MW rectifier system for electrolysis (thyristor; IGBT), incl. transformer, filter, compensation | 85-88 EUR/kVA; 154-158 EUR/kVA | 2021 | PW022-V01; -V02 (Table 3, 3 MW 10 kA) |
 | Gliding arc plasma, power unit + reactor body, industrial CO2 project basis | 1,085 EUR per kW plasma power | 2024 | RV005-V01 (p. 5842) |
 | Gliding arc 5.6 kW prototype, uninstalled power unit + reactor body | 2,400 EUR/kW | 2024 | RV005-V02 (p. 5842) |
+| DBD power supply alone, industry price estimates (12 x 12 kW; cost function) | ~1,200 EUR/kW; 1,500 EUR/kW + 900 EUR | 2022 | PS003-V02 (calculated); -V01 (Table 6) |
 | DBD plasma reactor (TEA) | 1,300 EUR/kW | 2022 | RV005-V04 (p. 5843, citing Lamberts-Van Assche 2022, PS003) |
+| DBD pilot plant, 144 kW, reactor + power supply: EUR 188,143 | ~1,300 EUR/kW | 2022 | PS004-V01 (Kaufmann et al. 2023, p. 6, summarising PS003) |
+| Plasma reactor cost functions (PEM electrolyser analogue), DBD; gliding arc, 3 MW | ~1,300; ~2,670 EUR/kW (scope not stated) | 2019 basis | PS004-V03; -V04 (calculated) |
+| Same cost functions extrapolated to 100 MW | 260-520 EUR/kW | 2019 basis | PS004-V05 (calculated) |
 | 915 MHz turnkey microwave transmitters | ~1,000-3,000 USD/kW | undated | PW020-V01 |
 | 915 MHz turnkey microwave systems incl. power supply | <1,000 USD/kW | 1999 | PW048-V01 (citing a vendor) |
 | Microwave torch above 75 kW (projection) | <1,000 USD/kW | 1999 | PW048-V02 |
 | 100 kW 915 MHz magnetron tube only | <100 USD/kW to ~300 USD/kW | 2022; undated | PW033-V01; PW020-V02 |
+| 2.45 GHz magnetron; LDMOS solid-state amplifier (scope not stated) | ~1,000 USD/kW; ~3,000 USD/kW | 2024 | PW046-V04; -V07 |
 | Klystrons | >5,000 USD/kW | undated | PW020-V03 |
 | Nanosecond pulsed modulator (estimate for a new design) | ~5,000 EUR/kW | 2009 | PW029-V02 |
 | State-of-the-art pulsed power | 20,000-30,000 EUR/kW | 2009 | PW029-V03 |
 
+The 1,300 EUR/kW DBD figure quoted by RV005 traces back to PS003 through PS004: EUR 188,143 for a 144 kW pilot, reactor and power supply together (PS004-V01). In PS003 Table 6 the power supply is EUR 173,000 of this (~92%, PS003-V03), from an industry price estimate for 12 x 12 kW units (~1,200 EUR/kW, PS003-V02); its cost function for other sizes is 1,500 EUR/kW + 900 EUR (PS003-V01). The "reactor" figure is therefore essentially a lab-derived supply price. PS004 then used it as the floor of its own reactor cost function, which is borrowed from PEM electrolyser manufacturing (PS004-V02) and falls to ~260 EUR/kW (DBD) at 100 MW only because of that assumed scaling exponent.
+
 RV005 also states (p. 5842) that at lab scale "the power supply unit is typically the most expensive component", *because* lab units are built to be flexible across plasma types (RV005-V03). Supplies designed for one industrial condition can be cheaper. This supports the "niche" reading only for the flexible lab units.
 
 **Still open:**
-- cost per kW of the mature classes (rectifiers, kHz inverters, RF tube generators) - the quote requests in [../suggested_quote_requests.txt](../suggested_quote_requests.txt) start this;
+- cost per kW of kHz inverters and RF tube generators - the quote requests in [../suggested_quote_requests.txt](../suggested_quote_requests.txt) start this;
 - RF tube generator efficiency measured at 100 kW+;
 - an independent (non-vendor) measurement of ozone-plant inverter efficiency at MW scale;
-- the primary DBD cost studies cited by RV005 (PS003, PS004).
+- a supplier quote for a MW-class DBD or gliding arc supply, to test the 1,200-1,500 EUR/kW industry estimates of PS003 at scale.

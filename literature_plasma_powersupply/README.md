@@ -19,12 +19,12 @@ Bogaerts (2025) Nat. Chem. Eng. 2, 336-340 ([../literature_reviews/Bogaerts_NatC
 
 ## Techno-economic assessments: capital cost and the power supply
 
-Academic studies that quantify plasma capital cost and the share taken by the power supply. Candidates, not yet extracted.
+Academic studies that quantify plasma capital cost and the share taken by the power supply. Values used are in [../power_systems/supply_values.csv](../power_systems/supply_values.csv) under the PS ID.
 
 | ID | Citation / DOI | Why | Copy |
 |---|---|---|---|
-| PS003 | Lamberts-Van Assche, Thomassen & Compernolle (2022) J. CO2 Util. 64, 102156. [10.1016/j.jcou.2022.102156](https://doi.org/10.1016/j.jcou.2022.102156) | Prospective TEA of DBD plasma CO2 conversion (144 kW); electricity price and power supply investment are the main cost factors (as summarised by Osorio-Tejada 2024); DBD reactor ~€1,300/kW | to download (Elsevier) |
-| PS004 | Kaufmann, Rößner, Renninger, Lambarth, Raab, Seithümmer, Birke & Stein (2023) Appl. Sci. 13, 4839. [10.3390/app13084839](https://doi.org/10.3390/app13084839) | TEA of plasma CO2 splitting in power-to-liquid plants (3 MW); plasma ~€1,300/kW; O2 separation ~70% of capex | to download (MDPI, CC BY) |
+| PS003 | Lamberts-Van Assche, Thomassen & Compernolle (2022) J. CO2 Util. 64, 102156. [10.1016/j.jcou.2022.102156](https://doi.org/10.1016/j.jcou.2022.102156) | Prospective TEA of DBD plasma CO2 conversion (144 kW); electricity price and power supply investment are the main cost factors (as summarised by Osorio-Tejada 2024); Table 6: power supply €173,000 of €188,143 CAPEX for a 144 kW pilot (~92%; the source of the "€1,300/kW DBD reactor"); supply cost function 1500·kW + 900 € from industry estimates; power source efficiency ~50% (source to plasma). Extracted 2026-11-10 (PS003-V01 to -V05) | browser print of the ScienceDirect full-text web page (`manuscript_html_save_to_pdf.pdf`, 26 pp., no journal page numbers; Elsevier PDF download failed); `a663cea79ac260cb9db7b36bcb783ead9fcf719a78b71e1261548bcd5b2df10f` |
+| PS004 | Kaufmann, Rößner, Renninger, Lambarth, Raab, Stein, Seithümmer & Birke (2023) Appl. Sci. 13, 4839. [10.3390/app13084839](https://doi.org/10.3390/app13084839) | TEA of plasma CO2 splitting in power-to-liquid plants (3 MW); Plasma reactor cost functions (DBD 0.05614·P^0.5331, GA 0.1123·P^0.5331 Mio EUR, from PEM electrolyser manufacturing); ~€1,300/kW DBD at 3 MW, taken from PS003; O2 separation (GDE) 30-70% of capex. Extracted 2026-11-10 (PS004-V01 to -V06) | published version (CC BY); `44cdf041db538e9adc37e9a110abeab209b25836472b8b087771532ff1cd24bb` |
 | (RV005) | Osorio-Tejada et al. (2024) Energy Environ. Sci. 17, 5833-5853, in [../literature_reviews/](../literature_reviews/reviews_shortlist.md) | Gliding arc power unit + reactor €1,085/kW from an industrial project; lab supplies costly because built for flexibility (p. 5842) | downloaded |
 | (RV017) | van Rooij et al. (2018) Plasma Phys. Control. Fusion 60, 014019, in [../literature_reviews/](../literature_reviews/reviews_shortlist.md) | Industrial microwave CO2-to-CO process design and cost, including supply | downloaded |
 
