@@ -96,4 +96,6 @@ Selection log columns:
 Record ID | Citation / DOI | Search IDs | Title/abstract decision | Full-text decision | Reason / qualifying experiments | Screener / date | Checker / date | Included source ID
 ```
 
+Screener / date is the person or tool that made the eligibility decision. Checker / date is a human check of that eligibility decision only; it is separate from human verification of the extraction, which is recorded in processing_log.md and extraction.md. A source can be human-verified with the checker field still blank.
+
 Record one main exclusion reason at full-text stage. Preserve pending decisions and retrieval issues. If a supplementary search screens only a fixed number of results, record the number and sort order so that the limit is visible. Summarise numbers found, duplicates removed, full texts assessed and papers included when writing the review methods.

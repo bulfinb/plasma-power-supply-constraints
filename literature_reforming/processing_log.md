@@ -18,11 +18,11 @@ Source documents (manuscripts, supplements) are not distributed with this folder
 | (not recorded) | Codex | 2026-10-28 | NA | not recorded |
 | 2fa545d5 | Claude Code | 2026-10-30 to 2026-11-04 | 2.1.312 (10-30, start), 2.1.314 (10-30 to 11-03), 2.1.317 (11-04), 2.1.318 (11-04, end) | claude-opus-5-5 |
 | 674ce652 | Claude Code | 2026-10-30 (brief) | 2.1.314 | claude-opus-5-5 |
-| 088bb8d0 | Claude Code | 2026-11-05 | 2.1.318 | claude-opus-5-5 |
+| 088bb8d0 | Claude Code | 2026-11-05 to 2026-11-10 | 2.1.318; 2.1.322 (2026-11-10) | claude-opus-5-5 |
 
 ## Events
 
-Event types: extraction (initial), revision (substantive change to records), appraisal, summary update, human check. The 2026-10-28 to 2026-11-04 rows were reconstructed on 2026-11-05 from the extraction files' revision notes and the session logs.
+Event types: extraction (initial), revision (substantive change to records), appraisal, summary update. A human check is recorded in the Human reviewer column of the AI row it reviewed (e.g. "reviewed by BB, date (human_verified)"), so each row shows both who extracted and who checked. The 2026-10-28 to 2026-11-04 rows were reconstructed on 2026-11-05 from the extraction files' revision notes and the session logs.
 
 | Date | Source ID | Folder | Event | Tool and version | Model ID | Session | Human reviewer |
 |---|---|---|---|---|---|---|---|
@@ -39,9 +39,7 @@ Event types: extraction (initial), revision (substantive change to records), app
 | 2026-11-05 | SRC008 | Akande_IJHE_2022_Plasma_SMR | extraction | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | |
 | 2026-11-05 | SRC009 | Song_CAP_2020_Plasma_DRM | extraction | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | |
 | 2026-11-05 | SRC010 | Hrycak_SciRep_2023_Plasma_Biogas_SR | extraction | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | |
-| 2026-11-05 | SRC010 | Hrycak_SciRep_2023_Plasma_Biogas_SR | human check (human_verified) | NA | NA | NA | BB |
 | 2026-11-05 | SRC011 | Kelly_JCOU_2023_Plasma_DRM | extraction | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | |
-| 2026-11-05 | SRC011 | Kelly_JCOU_2023_Plasma_DRM | human check (human_verified) | NA | NA | NA | BB |
 | 2026-11-05 | SRC012 | Zhu_CatToday_2019_GlidingArc_SMR | extraction | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | |
 | 2026-11-05 | SRC013 | Andersen_ChemEngJ_2020_DBD_DRM | extraction | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | |
 | 2026-11-05 | SRC014 | Kwon_JCOU_2023_GlidingArc_DRM | extraction | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | |
@@ -55,3 +53,6 @@ Event types: extraction (initial), revision (substantive change to records), app
 | 2026-11-09 | (power supply) | literature_plasma_powersupply/README.md (D1-D10) | web search for to-source items (ozone, magnetron, solid-state, capex); D1 and D10 checked in full text | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | |
 | 2026-11-09 | (power supply) | literature_plasma_powersupply/README.md; power_systems/supply_maturity_niche.md | restructure: manufacturer data and niche discussion moved to power_systems; TEA papers PS003-PS004 added (Crossref-checked) | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | |
 | 2026-11-09 | (power supply) | power_systems/source_register.csv, source_archive/, BB_search.txt | local copies (direct or Wayback) and Wayback snapshots for D, T and S sources; cited values spot-checked in copies | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | |
+| 2026-11-10 | (all) | workflow.md (v0.5), literature_search_strategy.md, processing_log.md | revision after external LLM consistency review: flow reference rule, human-check logging, version renumbering, checker definition | Claude Code 2.1.322 | claude-opus-5-5 | 088bb8d0 | |
+| 2026-11-10 | SRC010, SRC011 | Hrycak_SciRep_2023_Plasma_Biogas_SR; Kelly_JCOU_2023_Plasma_DRM | status revision: human_verified (BB, 2026-11-05, informal) withdrawn; ai_checked pending systematic human check | Claude Code 2.1.322 | claude-opus-5-5 | 088bb8d0 | |
+| 2026-11-10 | (all) | workflow.md (v0.6), _source_template.md, literature_review_objectives.md | simplification at BB request: core energy metrics, boundary/heat lines, eta_HHV for benchmarks only, fewer diagnostics, four summary tables | Claude Code 2.1.322 | claude-opus-5-5 | 088bb8d0 | |

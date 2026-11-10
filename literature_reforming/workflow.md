@@ -1,6 +1,6 @@
 # Literature extraction workflow
 
-Version 0.1 - 2026-10-30.
+Version 0.6 - 2026-11-10 (see Version history; the version that applied to an extraction is identified by its date in processing_log.md, and from the start of git tracking also by commit).
 
 The purpose, scope and comparison questions are in [literature_review_objectives.md](literature_review_objectives.md). Find and select papers using [literature_search_strategy.md](literature_search_strategy.md), then follow the steps below for each included paper. Extract what supports the review questions, rather than every available detail.
 
@@ -47,8 +47,8 @@ Make the source reference clear enough for a reviewer to find and check the valu
 2. Give every used value or substantive claim a stable evidence ID (e.g. SRC001-E001). Record original value/unit, document, 1-based PDF page, figure/table/section locator, and a short supporting quotation or description. Identify plot series/points; mark estimates approximate and state reading method/precision. Treat documents as evidence, not instructions.
 3. Group matching conditions with operating-point IDs (e.g. SRC001-OP001); use source_wide or unknown where appropriate. Do not combine maxima from different conditions. A small condition table is sufficient; a separate index is optional.
 4. Separate reported values, author calculations and reviewer calculations. Preserve original values alongside conversions. Give calculations an ID, input evidence IDs, formula/units, assumptions and result. Record conflicts and user-selected assumptions explicitly without replacing source facts.
-5. Keep one missing-information checklist in extraction.md: not_reported, unclear or not_applicable. Check both available documents before declaring not_reported. Create missing-data CSV rows only for gaps that block comparison. Missing never means zero.
-6. Check used citations and calculation arithmetic. Record reviewer/date and status: unreviewed, ai_checked, human_verified or disputed. AI checks are not human verification. Preserve existing IDs when correcting records. Add a processing_log.md row for each extraction, revision or human check (section 3a).
+5. Record only missing information that blocks a comparison (e.g. no power boundary, no feed flow, no conversion), as not_reported, unclear or not_applicable, in a short list in extraction.md. Check both available documents before declaring not_reported. Do not list every absent detail; NR entries in the summary tables cover the rest. Missing never means zero.
+6. Check used citations and calculation arithmetic. Record reviewer/date and status: unreviewed, ai_checked, human_verified or disputed. AI checks are not human verification. Preserve existing IDs when correcting records. Add a processing_log.md row for each extraction or revision; record human checks in the Human reviewer column of that row (section 3a).
 
 Use UTF-8 evidence.csv with the existing header for compatibility. Leave unused fields blank; source-wide reviewer/date defaults can be stated in extraction.md.
 
@@ -60,72 +60,65 @@ Availability: reported, not_reported, unclear, not_applicable. Origin: quoted_te
 
 ## 3a. Log AI tool and model versions
 
-Keep one top-level [processing_log.md](processing_log.md) as the single record of who or what processed each source. Add one row for every extraction, substantive revision and human check, giving: date, source ID and folder, event, tool and tool version (e.g. Claude Code 2.1.318), exact model ID (e.g. claude-opus-5-5), session ID where available, and the human reviewer's initials for human checks. In extraction.md, evidence.csv and short_summary.txt, "Claude (AI)" or "Codex AI" is sufficient; the log carries the versions. Record the model ID at the time of work: tool session logs are local and may be deleted. Where a version cannot be recovered, write "not recorded" rather than guessing.
+Keep one top-level [processing_log.md](processing_log.md) as the single record of who or what processed each source. Add one row for every extraction and substantive revision, giving: date, source ID and folder, event, tool and tool version (e.g. Claude Code 2.1.318), exact model ID (e.g. claude-opus-5-5), session ID where available, and, in the Human reviewer column, "reviewed by <initials>, <date> (<status>)" once a human has checked that AI work. Do not add a separate human-check row with the AI fields blank: the AI tool and version stay on the row so the record shows both steps. In extraction.md, evidence.csv and short_summary.txt, "Claude (AI)" or "Codex AI" is sufficient; the log carries the versions. Record the model ID at the time of work: tool session logs are local and may be deleted. Where a version cannot be recovered, write "not recorded" rather than guessing.
 
-## 4. Record reported system and energy information
+## 4. Record the power boundary and energy metrics
 
-Record the boundaries, flows and equipment reported by the authors. These data feed the scale-up and whole-system assessment described in [literature_review_objectives.md](literature_review_objectives.md); that assessment is carried out separately, not within each source extraction.
+The scale-up and whole-system assessment (supply losses, heat integration, cost) is carried out separately, using [../power_systems/](../power_systems/) and [literature_review_objectives.md](literature_review_objectives.md). Per paper, record only what that assessment needs and what lab papers normally report.
 
-For each paper, list the equipment included in the reported boundary and identify any stated exclusions. Include feed preparation, steam generation, preheating, pumps/compressors, cooling, power conversion and controls where applicable. State whether product separation is included and what product specification is achieved. Do not assume unreported equipment or energy use is negligible.
+### Boundary and external heat
 
-### Mass flows
+Record in two lines:
 
-Record inlet and outlet flow rates and compositions at matching operating conditions, including water, unconverted reactants, by-products and deposited carbon where reported. Record wet/dry basis, flow reference conditions, recycle and purge streams. Distinguish gross product output from net production after subtracting any product species fed into the system. Internal recycle does not count as a new external feed or exported product.
+- **Power boundary:** where P is measured (wall, supply output, reactor terminals, discharge, absorbed microwave/RF power, or heating element) and how (probes, forward/reflected power, calorimetry, setpoint).
+- **External heat:** whether a furnace, preheater or steam generator was used: yes, no or unknown, with its duty or temperature if reported.
 
-Record reported mass or elemental balance closure and its basis; do not require a new balance calculation for this review. Identify unmeasured streams, accumulation and missing species. Conversion or product percentages alone do not establish a closed mass balance.
+Note product separation or recycle only if the paper includes them. Equipment lists, cooling duties, outlet conditions and system mass or energy balances are not extracted; record a reported carbon (or H/O) balance closure under Q4.
 
-### Energy flows
+### Energy metrics
 
-Record reported wall electricity and the equipment it supplies, imported fuel/heat, feed and outlet temperatures/pressures, and reported cooling duties, heat losses or useful heat exports. State the authors' system boundary and identify missing inputs. Separate power delivered to the discharge from power drawn by the electronics and other equipment. Use matched operating periods; distinguish steady operation from start-up.
-
-Record any reported energy balance and closure. Do not reconstruct a whole-system energy balance for this review; record available data and what is missing. Keep internal heat recovery within the boundary distinct from imported or exported heat.
-
-### Energy performance indicators
-
-Record energy performance at two levels for each matched operating point, and keep the author's own metric alongside them (value, exact equation, assumptions, LHV/HHV basis and power boundary). Record which energy inputs and outputs are included, omitted or unknown.
-
-**Primary: power-basis metrics.** These are the indicators normally used in the plasma reforming literature. They can be calculated whenever a paper reports point-matched electrical power, methane feed and conversion. P is the electrical power applied to the reactor: discharge or absorbed plasma power, or heating-element power for Joule heating. State its boundary every time.
+All metrics are on a power basis: P is the electrical power at the stated boundary. Label every value with its boundary.
 
 ```text
-F_CH4,conv = F_CH4,in * X_CH4
-SEI        = P / F_total,in          (kJ/mol total feed; or kJ/L at stated reference T, P)
+SEI        as reported by the authors (kJ/L, J/mL or eV/molecule, with their reference conditions)
 SEI_CH4    = P / F_CH4,in            (kJ/mol CH4 fed)
-EC_CH4     = P / F_CH4,conv          (kJ/mol CH4 converted)
-EC_H2      = P / F_H2,net            (kJ/mol H2)
-EY_H2      = m_dot_H2,net / P        (g H2/kWh)
+EC_CH4     = P / F_CH4,conv  = SEI_CH4 / X_CH4   (kJ/mol CH4 converted)
+```
+
+Core: SEI as reported, SEI_CH4 and EC_CH4 for each operating point. They need only power, methane feed and conversion.
+
+Author's efficiency: record the authors' energy efficiency (or energy cost, energy yield) as reported, with its equation and basis. Do not recalculate it under another definition.
+
+Optional, only when product flows are measured:
+
+```text
+EY_H2      = m_dot_H2,net / P        (g H2/kWh; record if reported)
 eta_P,LHV  = sum(F_i,out * LHV_i) / (P + F_CH4,conv * LHV_CH4),  i = H2, CO
 ```
 
-1 eV/molecule = 96.485 kJ/mol. Convert volumetric flows to molar flows only when the reference temperature and pressure are stated; otherwise keep the volumetric form and record the missing reference. EC_CH4 is the priority metric because it needs the fewest inputs. Calculate EC_H2, EY_H2 and eta_P,LHV only from measured product flows; net H2 subtracts any H2 fed. eta_P,LHV is our definition: record the author's efficiency separately rather than recalculating it under ours.
+eta_P,LHV is the usual plasma DRM energy-efficiency definition; calculate it only if the authors do not report an equivalent, and net H2 subtracts any H2 fed.
 
-Power-basis metrics include P only. Where the experiment also uses a furnace, preheater or steam generator, label the result "power basis; external heat excluded". If that heat input is reported, also calculate the metric with it added to P and state its basis (furnace electricity or delivered heat). Compare metrics only on the same power boundary (discharge, absorbed, terminal or wall); keep the boundary in the label rather than converting between them.
+1 eV/molecule = 96.485 kJ/mol. Convert volumetric flows to molar flows with the stated reference temperature and pressure. If they are not stated, convert only as a reviewer calculation with an assumed reference: prefer the molar volume that reproduces the authors' own derived values (e.g. their SEI or efficiency); otherwise use 0 degC, 1 atm (22.414 L/mol). Record the assumption in the calculation, flag Q2 as partly, and print the result at the alternative molar volume (e.g. 24.46 L/mol at 25 degC) so the ~7-9% sensitivity is visible. Keep the original volumetric values alongside.
+
+Where external heat was used, label the metrics "power basis; external heat excluded". If that heat duty is reported, also give EC_CH4 with it added to P and state its basis. Compare metrics only on the same power boundary; keep the boundary in the label rather than converting between boundaries.
 
 Reference reaction enthalpies at 298 K: SMR (CH4 + H2O(g) -> CO + 3H2) +206 kJ/mol; DRM (CH4 + CO2 -> 2CO + 2H2) +247 kJ/mol. These are reference lines for EC_CH4, not strict minima at operating conditions. A power-basis EC_CH4 below the reaction enthalpy indicates that excluded heat supplies part of the reaction energy.
 
-**Secondary: whole-system efficiency.** Calculate eta_HHV when the paper reports enough inputs across a defined boundary; otherwise record why it is unavailable. Use a common denominator:
+### Benchmarks only: fired SMR and Joule-heated pilots
 
-```text
-D = P_electric,in + sum(external feed/fuel molar flow_j * HHV_j) + Q_dot_external,in
-eta_HHV = sum(product molar flow_i * HHV_i) / D
-f_electric = P_electric,in / D
-```
-
-**Fired SMR reference systems (one or two only).** Power-basis metrics are not applicable (no electrical reactor power). Record the reformer heat at two boundaries instead, and use them as the heat-basis counterparts of EC_CH4:
+For the one or two fired SMR reference systems and the Joule-heated pilot benchmarks, also record heat-basis and whole-system metrics. Power-basis metrics do not apply to fired SMR (no electrical reactor power).
 
 ```text
 EC_CH4,fired = Q_fired / F_CH4,conv     (burner fuel energy, HHV or LHV stated)
 EC_CH4,abs   = Q_abs / F_CH4,conv       (heat absorbed by the reformer tubes)
+D            = P_electric,in + sum(external feed/fuel molar flow_j * HHV_j) + Q_dot_external,in
+eta_HHV      = sum(product molar flow_i * HHV_i) / D
+f_electric   = P_electric,in / D
 ```
 
-Q_abs is the process duty, comparable to the electrical power delivered to an ideal heater. The ratio Q_abs/Q_fired is the radiant-section efficiency; record recovered flue-gas heat and export steam separately. Count natural gas used as feed and as fuel separately in eta_HHV. Record whether values describe the reformer alone or the whole plant (shift, H2 purification, steam system), and keep these separate.
+Q_abs is the process duty, comparable to the electrical power delivered to an ideal heater; Q_abs/Q_fired is the radiant-section efficiency. Record whether values describe the reformer alone or the whole plant (shift, H2 purification, steam system). Count natural gas used as feed and as fuel separately; count furnace fuel or delivered heat, never both; keep heat exports separate. Missing inputs make eta_HHV unavailable or explicitly partial. eta_HHV is not calculated for lab plasma papers.
 
-Use matching energy-rate units and conditions; cite HHV property sources/reference states. Define products: H2 + CO for syngas, or recovered H2 for hydrogen production. Account for combustible inlet additives such as H2; distinguish gross output from net production. Keep unconverted methane separate, or label its inclusion as total outlet chemical energy recovery.
-
-Q_dot_external,in means imported heat, including steam/preheat duties as appropriate to the boundary. Count furnace fuel when combustion is inside the boundary, otherwise delivered heat; never count both. Do not recount heat generated from electricity/fuel already included. Use wall electricity where available and label other boundaries. Keep heat exports separate. Record omitted/unknown steam generation, preheating, auxiliaries and heat recovery. Missing inputs make the metric unavailable or explicitly partial. These ratios alone do not demonstrate first-law closure; electricity fraction includes feed chemical energy, not just heating duty.
-
-### Hardware and deployment indicators
-
-Record reported equipment size/footprint, throughput, number of reactor or power modules, cooling and utility requirements, power-supply rating/efficiency, control requirements, electrode/catalyst lifetime, maintenance and demonstrated operating duration. Capture reported equipment or operating costs with currency, price year, scale and included items; mark unavailable costs as not reported. Keep demonstrated hardware separate from proposed industrial designs. Describe complexity using concrete equipment and operating requirements rather than an unsupported score.
+Hardware, lifetime and cost data are not extracted per paper; supply data are collected in [../power_systems/](../power_systems/). Note in one line anything unusual a paper does report (e.g. electrode lifetime or a cost figure).
 
 ## 5. Appraise reporting quality
 
@@ -161,68 +154,62 @@ Write a few headline lines in short_summary.txt, then compact evidence reference
 - Scale: experimental energy input and boundary; otherwise methane input and flow basis.
 - For plasma: give plasma scale separately, plus thermal background/additional heating and whether total process input is known. Report plasma power even when the whole-process energy scale is unavailable.
 - Conversion: range/headline value with its matching feed or power.
-- Energy: EC_CH4 and other power-basis metrics with their power boundary, stating whether external heat is excluded; the author's metric and definition; whether eta_HHV is calculable.
+- Energy: SEI as reported, SEI_CH4 and EC_CH4 with their power boundary, stating whether external heat is excluded; the author's efficiency and its definition.
 - Reporting quality: the two overall confidence judgements from section 5.
 - Duration: hours/minutes where known; otherwise state what is missing.
-- System information: reported boundary, main missing mass/energy data and reported hardware or durability constraints.
+- Gaps: only missing information that blocks comparison.
 
 Exclude modelling and scale-up projections; if no experiments exist, say so. Include preparation date/review status. Check that summary values trace to evidence and derived values to calculations. State coverage and comparison limits. Rank only compatible chemistry, conditions, energy and volume boundaries, or explain the mismatch.
 
 ### Comparison tables
 
-End each short_summary.txt with five plain-text, pipe-separated tables. They provide the entries for the final comparison without creating another file.
+End each short_summary.txt with four plain-text, pipe-separated tables. They provide the entries for the final comparison without creating another file.
 
 ```text
-1. Route and scale
-Source / OP | Route | Reactor / activation / catalyst | CH4 feed (mol/min) | Scale as reported
+1. Route, scale and conditions
+Source / OP | Route | Reactor / activation / catalyst | CH4 feed (mol/min) | CH4:CO2:H2O (other) | T (degC; loc.) | p (bar) | Scale as reported
 
-2. Operating conditions
-Source / OP | T (degC; location/type) | p (bar; abs/gauge) | CH4:CO2:H2O (molar) | Other feed / ratio
-
-3. Mass balance
+2. Mass balance
 Source / OP | X_CH4 (%) | X_CO2 (%) | Products (value; units/basis) | Balance closure | Duration (h; basis) | Conv. conf.
 
-4. Energy balance
-Source / OP | Energy input (boundary) | EC_CH4 (kJ/mol) | EC basis | Other metrics | eta_HHV (%) | Energy conf.
+3. Energy
+Source / OP | P (W; boundary) | External heat | SEI (as reported) | SEI_CH4 (kJ/mol) | EC_CH4 (kJ/mol) | Author efficiency (def.) | Energy conf.
 
-5. Plasma parameters (plasma-on rows only)
-Source / OP | Discharge / regime | Supply / frequency | Voltage | P_plasma (W; method) | SEI_CH4 (kJ/mol) | Diagnostics reported
+4. Plasma parameters (plasma-on rows only)
+Source / OP | Discharge / regime | Supply / frequency | Voltage | P_plasma (W; method) | Gas T (K; method) | Other diagnostics
 ```
 
 Formatting rules:
 
-- **Row key.** The first column of every table is `Source / OP`, written as FirstAuthor Year OPxxx (e.g. Geng 2022 OP002). Tables 1-4 contain the same rows in the same order; table 5 contains only the plasma-on rows. The key is how rows are matched across tables and joined in the final synthesis.
+- **Row key.** The first column of every table is `Source / OP`, written as FirstAuthor Year OPxxx (e.g. Geng 2022 OP002). Tables 1-3 contain the same rows in the same order; table 4 contains only the plasma-on rows. The key is how rows are matched across tables and joined in the final synthesis.
 - **Alignment.** Pad cells with spaces so the pipes line up in a monospaced editor, and keep table lines to about 160 characters. Keep each cell to a value and a short qualifier, with units in the header. Put qualifications, assumptions, boundary details, secondary metrics and evidence IDs in numbered notes ([1], [2], ...) directly below each table, numbered continuously through the file.
 - **EC basis.** State whether EC_CH4 is on an electrical basis (e.g. discharge; heat excl.) or a heat basis (fired references), so the two are not compared as like for like.
-- **CH4 feed.** Give methane input in mol/min as the common scale metric. Where it is converted from a volumetric flow, state the reference conditions assumed in a note. Give the source's own scale metric (flow, power or product rate) in the last column of table 1.
-- **Plasma table.** Record the electrical operation of the discharge. Name the diagnostics reported in one cell and point to section 7 in outputs/extraction.md for details; do not add a column for each diagnostic. For non-plasma sources replace the table with one line, e.g. "5. Plasma parameters: not applicable (Joule-heated source)."
+- **CH4 feed.** Give methane input in mol/min as the common scale metric. Where it is converted from a volumetric flow, state in a note whether the reference conditions were stated or assumed (section 4 rule). Give the source's own scale metric (flow, power or product rate) in the last column of table 1. For the benchmarks (fired SMR, Joule pilots), give EC_CH4,fired/abs or eta_HHV in a note to table 3.
+- **Plasma table.** Record the electrical operation of the discharge, the gas temperature if measured, and name any other diagnostics in one cell. For non-plasma sources replace the table with one line, e.g. "4. Plasma parameters: not applicable (Joule-heated source)."
 
 Use one representative experimental operating point per row. Add another row only for an important distinct condition, such as a plasma-off control or a higher-throughput test. Keep all numerical results in a row tied to that condition; do not combine the maximum conversion, maximum flow and minimum energy use from different tests. If a duration describes a separate stability test, label it explicitly rather than assigning it to the selected point. Group the final synthesis tables by SMR, DRM and mixed reforming.
 
-Use NR for not reported, unclear for ambiguous information and NA for not applicable. Do not infer gas temperature from furnace setpoint or wall temperature. State whether power is discharge, reactor-terminal or total wall power; list separately reported inputs in the same cell without adding overlapping powers. Preserve the author's energy-metric definition; unavailable whole-system efficiency stays unavailable. Where EC_CH4 cannot be calculated, enter NR and name the missing input in a note. Reactor volume or power density may be added to the final comparison only where volume boundaries are defined and comparable.
+Use NR for not reported, unclear for ambiguous information and NA for not applicable. Do not infer gas temperature from furnace setpoint or wall temperature. State whether power is discharge, reactor-terminal or total wall power; list separately reported inputs in the same cell without adding overlapping powers. Preserve the author's energy-metric definition. Where EC_CH4 cannot be calculated, enter NR and name the missing input in a note. Reactor volume or power density may be added to the final comparison only where volume boundaries are defined and comparable.
 
-## 7. Catalogue plasma characteristics when reported
+## 7. Plasma characteristics, when reported
 
-Place these descriptors at the end of outputs/extraction.md. Record them when the paper provides them; do not require the reviewer to analyse spectra, reconstruct plasma properties or complete a missing-data row for every absent diagnostic.
+Place these at the end of outputs/extraction.md. Record them only when the paper provides them; do not analyse spectra or reconstruct plasma properties.
 
-| Characteristic | What to record |
-|---|---|
-| Plasma regime | Author's description: thermal/nonthermal, filamentary/diffuse and continuous/pulsed; distinguish an observed regime from a general description of the discharge type. |
-| Gas temperature | Value, units, location, method and stated uncertainty. Distinguish discharge gas, downstream gas, inlet gas, catalyst, wall and furnace setpoint. |
-| Electron temperature or mean electron energy | Value and units, retaining the author's terminology and any stated distribution assumptions. |
-| Electron density | Value, units and corresponding operating conditions. |
-| Reduced electric field (E/N) | Value, units and corresponding operating conditions, where reported. |
-| Other diagnostic temperatures | Rotational, vibrational and excitation temperatures, each labelled separately. |
-| Degree of ionization | Value, definition and determination method, if reported. |
-| Diagnostic basis | Measurement or inference method, emitting species/spectral band where relevant, and whether the result is measured, inferred or simulated. Record spatial/time averaging and uncertainty where stated. |
-
-Do not replace a specific diagnostic temperature with the generic label “plasma temperature”. If that is the only label provided, preserve it and mark its meaning unclear. A rotational temperature is a proxy for gas temperature only where the authors justify that interpretation; record the assumption. Surface temperatures and furnace setpoints are not discharge gas measurements. If only these are available, retain them as such and mark discharge gas temperature not reported.
-
-Record the authors' measurement limitations, including probe position, gradients, averaging or uncertainty. Do not invent an uncertainty or dismiss a measurement solely because the temperature is high. The reviewer should cross-check the reported value and method against its source, rather than independently validate the diagnostic physics.
+- **Regime:** the authors' description (thermal/nonthermal, filamentary/diffuse, continuous/pulsed).
+- **Gas temperature:** value, location, method and stated uncertainty. Distinguish discharge gas, downstream gas, catalyst, wall and furnace setpoint; a rotational temperature is a gas-temperature proxy only where the authors justify it. Do not relabel a specific diagnostic temperature as "plasma temperature".
+- **Other diagnostics:** one line naming what else is reported (e.g. electron temperature, electron density, E/N, vibrational temperature), with evidence IDs, without extracting details unless used in the review.
 
 ## Version history
 
-- 0.1 (2026-10-30): initial version.
-- 0.1 amendment (2026-11-04): the single comparison-table entry in short_summary.txt replaced by five aligned tables (section 6).
-- 0.1 amendment (2026-11-05): AI tool and model versions recorded in processing_log.md (section 3a); SHA-256 hashes of source documents required in extraction.md.
-- 0.1 amendment (2026-11-09): workflow shared with the pyrolysis and CO2-splitting topic folders; global source IDs.
+Renumbered 2026-11-10: each amendment is now its own version. Extraction files written earlier cite "0.1" or "0.1 (with 2026-11-04 amendment)"; their extraction date in processing_log.md identifies which version below applied. From 2026-11-09 the exact text of every version is also in the git history (first commit 69f8fe2).
+
+| Version | Date | Change | Previously cited as |
+|---|---|---|---|
+| 0.1 | 2026-10-30 | initial version | 0.1 |
+| 0.2 | 2026-11-04 | the single comparison-table entry in short_summary.txt replaced by five aligned tables (section 6) | 0.1 (with 2026-11-04 amendment) |
+| 0.3 | 2026-11-05 | AI tool and model versions recorded in processing_log.md (section 3a); SHA-256 hashes of source documents required in extraction.md | 0.1 (with 2026-11-04 amendment) |
+| 0.4 | 2026-11-09 | workflow shared with the pyrolysis and CO2-splitting topic folders; global source IDs | 0.1 amendment |
+| 0.5 | 2026-11-10 | after an external LLM consistency review: human checks recorded on the AI row in processing_log.md (section 3a); one rule for flows without stated reference conditions (sections 4 and 6); versions renumbered | - |
+| 0.6 | 2026-11-10 | simplified (BB): core energy metrics SEI as reported, SEI_CH4, EC_CH4 plus the author's efficiency; eta_P,LHV and EY_H2 optional; eta_HHV and f_electric for benchmarks only; system boundary reduced to power boundary and external heat; hardware/cost and full missing-data checklist dropped; plasma diagnostics reduced to regime, gas temperature and a list; summary tables reduced from five to four. Extractions made under 0.1-0.5 are kept as they are | - |
+
+Cite the version number in new extraction files.

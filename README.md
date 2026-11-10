@@ -108,7 +108,7 @@ Review status of each source (AI-checked or human-verified) is in its `extractio
 
 ## Status (2026-11-09)
 
-- Reforming: 15 sources extracted; 2 human-verified (Hrycak 2023, Kelly 2023).
+- Reforming: 15 sources extracted, all ai_checked; systematic human verification to follow.
 - Representative industrial supply table drafted (`power_systems/scaleup_*`), AI-checked from source summaries; full texts to be confirmed.
 - Next: human verification of remaining sources; synthesis evidence table and conversion vs EC_CH4 plot; heat-recovery treatment for plasma cases; supply capital-cost data; database searches.
 - Pyrolysis and CO2 splitting: objectives, search strategies and empty logs set up 2026-11-09; searches not yet run.

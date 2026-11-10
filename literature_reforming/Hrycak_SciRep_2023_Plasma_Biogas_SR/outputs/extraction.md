@@ -5,7 +5,7 @@
 - Source ID: **SRC010**. Bartosz Hrycak, J. Mizeraczyk, D. Czylkowski, M. Dors, M. Budnarowska and M. Jasinski, "Hydrogen production by the steam reforming of synthetic biogas in atmospheric-pressure microwave (915 MHz) plasma," Scientific Reports 13 (2023) 2204. DOI: https://doi.org/10.1038/s41598-023-29433-y. Open access. Institute of Fluid Flow Machinery PAS (Gdansk) and Gdynia Maritime University.
 - Documents: [manuscript.pdf](../manuscript.pdf), 15 pages (printed page = PDF page for pp. 1-13). No ESI located; data "available on reasonable request" (E026). Retrieval date unknown.
 - SHA-256 manuscript.pdf: `97b3dba7e1dba374b1cd2cbb88aa1d8055bdab7ed809c7cde2f41a3d6755792a`
-- Protocol 0.1 (with 2026-11-04 amendment). Extractor: Claude (AI), 2026-11-05. Human check: BB, 2026-11-05. Status: **human_verified**.
+- Protocol 0.1 (with 2026-11-04 amendment). Extractor/reviewer: Claude (AI), 2026-11-05, same-extractor checks. Status: **ai_checked** (human_verified withdrawn 2026-11-10; human check pending).
 - Coverage: full text, Tables 1-4 and Figs. 4-9. Table 1 (three tabulated points) and Fig. 9 (power sweep) extracted as operating points; Figs. 4, 6-8 used for trends. Table 4 is a literature comparison (not extracted). The setup and power measurement are described in more detail in the authors' ref. 44 (Hrycak et al., Plasma Chem. Plasma Process. 39 (2019) 695), not obtained.
 - Records: [evidence.csv](evidence.csv), 34 records (SRC010-E001-E026 source; E041-E048 reviewer calculations). Calculations C001-C005 in [calculations.py](calculations.py).
 - Selection: record R004 in [../../search_and_selection_log.md](../../search_and_selection_log.md).
@@ -129,7 +129,8 @@ Comparison limits: mixed (CO2 + steam) route except OP002 (SMR). Headline maxima
 
 ## Revisions
 
-- 2026-11-05: extraction reviewed and marked human_verified by BB. Reviewer agreed the carbon-closure flag (66-73%) is sufficient; possible causes (soot, flow-marker or analysis error) not pursued further. No values changed.
+- 2026-11-05: extraction informally reviewed by BB and marked human_verified. Reviewer agreed the carbon-closure flag (66-73%) is sufficient; possible causes (soot, flow-marker or analysis error) not pursued further. No values changed.
+- 2026-11-10: human_verified status withdrawn at BB's request; returned to ai_checked pending a systematic human check. The 2026-11-05 BB review was informal. No values changed.
 
 ## Plasma characteristics
 

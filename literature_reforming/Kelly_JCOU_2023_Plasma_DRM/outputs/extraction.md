@@ -5,7 +5,7 @@
 - Source ID: **SRC011**. Sean Kelly, Elizabeth Mercer, Robin De Meyer, Radu-George Ciocarlan, Sara Bals and Annemie Bogaerts, "Microwave plasma-based dry reforming of methane: Reaction performance and carbon formation," Journal of CO2 Utilization 75 (2023) 102564. DOI: https://doi.org/10.1016/j.jcou.2023.102564. Open access (CC BY). University of Antwerp (PLASMANT, EMAT, LADCA) and University College Dublin.
 - Documents: [manuscript.pdf](../manuscript.pdf), 12 pages (printed = PDF page). No ESI located; data available on request (E022). Retrieval date unknown.
 - SHA-256 manuscript.pdf: `aff4decadf2631881e752644ece24056f6604e2fb04c13dcaca2a8f1efa7b0fe`
-- Protocol 0.1 (with 2026-11-04 amendment). Extractor: Claude (AI), 2026-11-05. Human check: BB, 2026-11-05. Status: **human_verified**.
+- Protocol 0.1 (with 2026-11-04 amendment). Extractor/reviewer: Claude (AI), 2026-11-05, same-extractor checks. Status: **ai_checked** (human_verified withdrawn 2026-11-10; human check pending).
 - Coverage: full text, Table 1 and Figs. 1-6. Numerical values taken from the text and Table 1 (which carry stated uncertainties); figures not digitised. Literature rows of Table 1 are not extracted as evidence, but identify further candidates (see search log).
 - Records: [evidence.csv](evidence.csv), 27 records (SRC011-E001-E022 source; E041-E045 reviewer calculations). Calculations C001-C002 in [calculations.py](calculations.py).
 - Selection: record R005 in [../../search_and_selection_log.md](../../search_and_selection_log.md).
@@ -115,7 +115,8 @@ Comparison limits: 1 kW lab scale (smallest on the shortlist); DRM only at a sin
 
 ## Revisions
 
-- 2026-11-05: extraction reviewed and marked human_verified by BB. No values changed.
+- 2026-11-05: extraction informally reviewed by BB and marked human_verified. No values changed.
+- 2026-11-10: human_verified status withdrawn at BB's request; returned to ai_checked pending a systematic human check. The 2026-11-05 BB review was informal. No values changed.
 
 ## Plasma characteristics
 

@@ -39,7 +39,7 @@ SRC010-E001-E026. Calculations SRC010-C001-C005, E041-E048;
 outputs/calculations.py. Details: outputs/extraction.md and
 outputs/evidence.csv.
 
-Prepared 2026-11-05 by Claude (AI); human_verified by BB 2026-11-05.
+Prepared 2026-11-05 by Claude (AI); ai_checked (human check pending).
 
 Comparison tables (experimental conditions)
 NR = not reported; NA = not applicable; ~ = approximate. Human verified (BB, 2026-11-05).
