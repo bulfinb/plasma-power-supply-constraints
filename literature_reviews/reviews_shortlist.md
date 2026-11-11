@@ -26,8 +26,8 @@ Automatic download worked only from repositories and some open publishers; RSC, 
 | Bogaerts_NatChemEng_2025_Plasma_Electrification | downloaded (published version, University of Antwerp repository) | `9afbd0184ce71f867c14d0b1db31914b33365a66efb852e53356481cf2d391a2` |
 | Li_FrontChemSciEng_2025_Plasma_Gas_Conversion | downloaded (publisher, CC BY) | `2cb7d774cc7a91df4bbc90e74e8dcae739758829dbd3861ba7ba40aa15427021` |
 | vanRooij_PPCF_2018_Plasma_Electrification | downloaded (**author manuscript**, DIFFER repository; not the typeset version) | `8f9dd10c6dfed07356e2974a91fb7bf6b2610dc717a017085a6d5f84653700b5` |
-| Snoeckx_ChemSocRev_2017_Plasma_CO2 | to download | |
-| Xu_GreenChem_2025_LTP_CO2_Dissociation | to download (access to check) | |
+| Snoeckx_ChemSocRev_2017_Plasma_CO2 | downloaded by BB 2026-11-11 (published version, 60 pp.) | `5d4c37c6d310da3ce742b6a8c826648b5f1da4524801b959424777fc525fe213` |
+| Xu_GreenChem_2025_LTP_CO2_Dissociation | downloaded by BB 2026-11-11 (published version, 25 pp.) | `6661f1473c769ffe021edca60c96e2f6e67fa0a38a8c59f197fedbde975026a8` |
 | Scapinello_CEP_2017_Plasma_NonOxidative_CH4 | to download (subscription) | |
 | Wnukowski_Energies_2023_Plasma_Pyrolysis | to download (open access) | |
 | Chen_EESCatal_2026_Plasma_CH4_Conversion | to download (open access) | |

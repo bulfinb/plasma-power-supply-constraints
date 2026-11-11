@@ -9,3 +9,7 @@ Source documents are not distributed. Each `outputs/extraction.md` records SHA-2
 | Date | Source ID | Folder | Event | Tool and version | Model ID | Session | Human reviewer |
 |---|---|---|---|---|---|---|---|
 | 2026-11-09 | (folder) | literature_co2_splitting | folder set up: objectives, search strategy, logs | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | |
+| 2026-11-11 | (folder) | literature_co2_splitting | searches CS001-CS018, records CR001-CR029, plasma_shortlist_2026-11-11.md (incl. RV001, RV002 check) | Claude Code 2.1.322 | claude-opus-5-5 | d3b811d6 | |
+| 2026-11-11 | SRC016-SRC024 | literature_co2_splitting | nine exemplars approved by BB; folders created; Kiefer, Bongers, Van Laer published versions and Yong preprint downloaded from repositories; five left for BB to download | Claude Code 2.1.322 | claude-opus-5-5 | d3b811d6 | |
+| 2026-11-11 | SRC017, SRC019-SRC023 | literature_co2_splitting | manuscripts and ESI downloaded by BB; checked by Claude (correct papers; Bryssinck is the accepted author version); hashes in plasma_shortlist_2026-11-11.md; OSTI preprint of SRC023 removed | Claude Code 2.1.322 | claude-opus-5-5 | d3b811d6 | |
+| 2026-11-11 | SRC016 | Kiefer_CEJ_2024_MW_CO2 | extraction (workflow 0.7 + CO2 metrics): extraction.md, evidence.csv (E001-E032, E041-E046), calculations.py (C001-C006), short_summary.txt; ai_checked | Claude Code 2.1.322 | claude-opus-5-5 | d3b811d6 | |

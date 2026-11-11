@@ -1,0 +1,88 @@
+Kiefer et al. (2024) - 2.45 GHz microwave plasma torch, CO2 splitting, ~3 kW, with wall-plug metering
+Source ID: SRC016. Chem. Eng. J. 481, 148326. Published version (Augsburg repository).
+Experimental results only. Pure CO2, no catalyst, no diluent.
+
+Scale: P_abs 0.6-2.7 kW (forward minus reflected microwave power); CO2
+3.7-18.6 slm (0 degC). Wall-plug active power of the microwave supply
+and vacuum pump measured with 3-phase energy meters (error 1.4%):
+3.3-4.2 kW at the selected points. Chiller excluded. No external heat.
+
+Conversion: up to 56.6% (cooling channels + reverse vortex, 3.7 slm,
+2.7 kW, 900 mbar). At the best wall-plug point, 34.4% at atmospheric
+pressure with no pump (9.3 slm, 2.7 kW). Standard torch near 1 bar
+stays below 20%; quenching (cooling channels, nozzle) or 150 mbar
+operation is needed for higher conversion. SRC016-E015, E018, E032.
+
+Energy (22.414 L/mol, the authors' basis):
+- Best wall-plug efficiency eta_tot 17.9% = EPC 19.6 kWh/Nm3 CO,
+  reached both at atmospheric pressure (cooling channels, X 34.4%) and
+  at 150 mbar (standard, X 38.6%, pump power included). Reproduced.
+- Same points on absorbed power: eta_p 24.9-27.9%; EC_CO2 1011-1135
+  kJ/mol (absorbed) vs 1579 kJ/mol (wall).
+- Losses at the best point: plasma ~14, magnetron source ~5.7,
+  reflected ~0 kWh/Nm3 CO. Magnetron efficiency 72% at 2.7 kW, ~53% at
+  0.9 kW, so wall-plug efficiency rises with power while eta_p falls.
+- Highest conversion costs energy: OP003 eta_p 16.4%, eta_tot ~10.5%
+  (figure), EPC ~33 kWh/Nm3.
+- Product is an unseparated CO2/CO/O2 mixture.
+
+Duration: 29 h 20 min durability test in four blocks (cooling channels,
+atmospheric, 10.2 slm, 2.25 kW): X ~27%, eta_p ~26%, eta_tot ~17-18%,
+stable; 2-3 min start-up. SRC016-E024, E025.
+
+Impurities: N2 up to ~5% helps (eta_p 33.2%); 2% humid air cuts X from
+~24% to 10.3% in the nozzle torch; authors call for <=100 ppm H2O.
+
+Reporting quality: conversion/product results moderate confidence (MS
+method and expansion handling only referenced, no balance); energy
+results higher confidence (absorbed and wall-plug power both measured,
+EPC reproduced).
+
+Traceability: manuscript.pdf PDF pp. 2-14 (printed = PDF - 1), Figs.
+5-15, 17-19; SRC016-E001-E032. Calculations SRC016-C001-C006,
+E041-E046; outputs/calculations.py. Details: outputs/extraction.md and
+outputs/evidence.csv.
+
+Prepared 2026-11-11 by Claude (AI); ai_checked by same extractor; human
+verification pending.
+
+Comparison tables (experimental conditions)
+NR = not reported; NA = not applicable; ~ = approximate (figure reading). Human verification pending.
+
+1. Route, scale and conditions
+Source / OP       | Reactor / activation                   | CO2 feed (mol/min) | Diluent | p (bar)          | Scale as reported
+Kiefer 2024 OP001 | MW torch, cooling channels + RV / none | 0.415 [1]          | none    | ~1.01, no pump   | 9.3 slm; P_abs 2.7 kW
+Kiefer 2024 OP002 | MW torch, standard / none              | 0.415 [1]          | none    | 0.15, pump       | 9.3 slm; P_abs 2.7 kW
+Kiefer 2024 OP003 | MW torch, cooling channels + RV / none | 0.165 [1]          | none    | 0.90, pump       | 3.7 slm; P_abs 2.7 kW
+Kiefer 2024 OP004 | MW torch, cooling channels + RV / none | 0.455 [1]          | none    | ~1.01, no pump   | 10.2 slm; P_abs 2.25 kW
+[1] slm at 0 degC, 1013 hPa (stated), 22.414 L/mol. SRC016-E006, E012.
+
+2. Mass balance
+Source / OP       | X_CO2 (%)    | Products (value; basis)          | Balance closure | Duration (h; basis)       | Conv. conf.
+Kiefer 2024 OP001 | 34.4 +/- 1.6 | CO2/CO/O2, unseparated           | NR              | >=2-5 min per point [2]   | moderate
+Kiefer 2024 OP002 | 38.6 +/- 1.6 | CO2/CO/O2, unseparated           | NR              | >=2-5 min per point [2]   | moderate
+Kiefer 2024 OP003 | 56.6 +/- 1.6 | CO2/CO/O2, unseparated           | NR              | >=2-5 min per point [2]   | moderate
+Kiefer 2024 OP004 | ~27 [3]      | CO ~2.75 slm out [3]             | NR              | 29.3 h, 4 blocks [3]      | moderate
+[2] Power-measurement window; run time per point NR. SRC016-E005.
+[3] Fig. 15 plateau, read by eye. SRC016-E024, E025.
+
+3. Energy
+Source / OP       | P (W; boundary)               | Ext. heat | SEI_CO2 (kJ/mol; abs) | EC_CO2 abs / wall (kJ/mol) | EC_CO (kWh/Nm3; wall) | Author eff. (%) | Energy conf.
+Kiefer 2024 OP001 | 2700 abs; 3757 wall [4]       | no        | 390 (4.05 eV)         | 1135 / 1579                | 19.6                  | p 24.9; tot 17.9 [5] | higher
+Kiefer 2024 OP002 | 2700 abs; 4216 wall+pump [4]  | no        | 390 (4.05 eV)         | 1011 / 1579                | 19.6                  | p 27.9; tot 17.9 [5] | higher
+Kiefer 2024 OP003 | 2700 abs; ~4190 wall+pump [4] | no        | 981 (10.1 eV)         | 1734 / ~2690               | ~33                   | p 16.4; tot ~10.5 [5] | higher
+Kiefer 2024 OP004 | 2250 abs; ~3270 wall [4]      | no        | 297 (3.07 eV)         | 1099 / ~1600               | ~20-21                | p ~26; tot ~17-18 [5] | higher
+[4] abs = forward minus reflected MW power; wall = active power of MW
+    supply (+ vacuum pump where marked), back-calculated from eta_tot
+    (C004). Chiller excluded. SRC016-E002-E004, E044.
+[5] eta_p, eta_tot = X * 2.93 eV / SEI on absorbed and wall-plug power
+    (= eta_dH). OP001-OP002 eta_p calculated (C002); OP003 reported;
+    OP003-OP004 eta_tot figure-read. SRC016-E011, E012, E018-E021, E025.
+
+4. Plasma parameters (plasma-on rows only)
+Source / OP       | Discharge / regime           | Supply / frequency        | Voltage | P_plasma (W; method)     | Gas T (K; method) | Other diagnostics
+Kiefer 2024 OP001 | MW torch; contracted, thermal | magnetron 3 kW / 2.45 GHz | NA      | 2700; P_in - P_ref        | NR [6]            | nozzle dp (Fig. 6)
+Kiefer 2024 OP002 | MW torch; near transition     | magnetron 3 kW / 2.45 GHz | NA      | 2700; P_in - P_ref        | NR [6]            | none
+Kiefer 2024 OP003 | MW torch; contracted, thermal | magnetron 3 kW / 2.45 GHz | NA      | 2700; P_in - P_ref        | NR [6]            | none
+Kiefer 2024 OP004 | MW torch; contracted, thermal | magnetron 3 kW / 2.45 GHz | NA      | 2250; P_in - P_ref        | NR [6]            | none
+[6] ~6000 K cited from literature, not measured. SRC016-E031.
