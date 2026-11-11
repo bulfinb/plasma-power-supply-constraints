@@ -28,6 +28,7 @@ PAPER_COPY = {
     "PS003": "../literature_plasma_powersupply/LambertsVanAssche_JCOU_2022_DBD_TEA/manuscript_html_save_to_pdf.pdf",
     "PS004": "../literature_plasma_powersupply/Kaufmann_ApplSci_2023_PlasmaCO2_PtL_TEA/manuscript.pdf",
     "RV005": "../literature_reviews/OsorioTejada_EES_2024_Plasma_vs_Electrolysis_CO/manuscript.pdf",
+    "SRC009": "../literature_reforming/Song_CAP_2020_Plasma_DRM/manuscript.pdf",
 }
 
 
@@ -47,7 +48,7 @@ def flags(r):
         f.append("SKIP: no local copy")
     if r["data_type"] == "reviewer_calc":
         f.append("recompute from notes")
-    if "image" in n or "scan" in n:
+    if "image" in n or "scan" in n or r["source_id"] == "PW055":
         f.append("read from page image")
     if r["data_type"] == "secondary":
         f.append("source quotes another source")

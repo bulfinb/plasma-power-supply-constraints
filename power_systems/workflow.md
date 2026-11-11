@@ -35,14 +35,14 @@ One row per quoted value. A row is extracted only from the local copy, never fro
 | Column | Content |
 |---|---|
 | `value_id` | `<source ID>-V01`, `-V02`, ... |
-| `source_id` | PWxxx, or a PS/RV ID for papers held in the literature folders |
+| `source_id` | PWxxx, or a PS/RV/SRC ID for papers held in the literature folders |
 | `location` | page (printed or PDF, say which), section, table or claim number |
 | `quote` | the shortest verbatim text that carries the value (original language if not English, with translation in `notes`) |
 | `item` | model, product family, installation or device as named in the source |
 | `maker` | manufacturer or operator |
 | `supply_class` | class code from [supply_classes.csv](supply_classes.csv) (J1, J2, A1, D1, K1, K2, R1, R2, M1-M3, P1, H1, X1), or `context` |
 | `freq_low_hz`, `freq_high_hz` | output frequency or band; DC = 0; blank if not stated |
-| `quantity` | `output_power`, `input_power`, `peak_power`, `average_power`, `installed_power`, `efficiency`, `coupling_efficiency`, `cost_per_kw`, `cost_ratio`, `cost_share`, `cost_ratio` (relative cost), `frequency_limit`, `duty_cycle`, `heat_rejected`, `cost_scaling_exponent`, `lifetime_h`, `voltage_rms`, `current_rms`, `voltage_dc`, `current_dc`, `power_loss`, `power_factor`, `units_in_service`, `specific_energy`, `capacity` (product rate) |
+| `quantity` | `output_power`, `input_power`, `peak_power`, `average_power`, `installed_power`, `efficiency`, `coupling_efficiency`, `cost_per_kw`, `cost_ratio`, `cost_share`, `cost_ratio` (relative cost), `frequency_limit`, `duty_cycle`, `heat_rejected`, `cost_scaling_exponent`, `lifetime_h`, `voltage_rms`, `current_rms`, `voltage_dc`, `current_dc`, `power_loss`, `power_factor`, `units_in_service`, `torch_diameter`, `skin_depth`, `coupling_parameter` (ratio), `minimum_sustaining_power`, `specific_energy`, `capacity` (product rate) |
 | `qualifier` | `=`, `~`, `>`, `>=`, `<`, `<=`, `up_to`, `approaching`, `range` |
 | `value_low`, `value_high` | numbers as stated (same value in both for a single number) |
 | `unit` | `kW`, `kVA`, `fraction`, `EUR/kW`, `USD/kW`, `h`, `V`, `A`, `kWh/kg`, `kg/h`, ... Efficiencies are stored as fractions |

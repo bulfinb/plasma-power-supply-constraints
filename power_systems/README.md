@@ -15,7 +15,7 @@ Industrial power-supply data for the scale-up assessment: efficiency, unit power
 | [notes/scaleup_assessment.md](notes/scaleup_assessment.md) | Efficiency chain, class table, indicative wall-basis EC_CH4 for the reforming sources |
 | [notes/supply_maturity_niche.md](notes/supply_maturity_niche.md) | Are plasma supplies a "niche product"? Maturity, physical limits, capital cost |
 | [notes/reactor_matching.md](notes/reactor_matching.md) | Voltage, impedance and matching between supply and reactor (illustrative calculations) |
-| [figures/](figures/) | Figures and the scripts that make them: `plot_supply_values.py` (cost per kW; power and efficiency vs frequency; cost vs unit size; class map), `scaleup_wall_basis.py` (wall-basis EC_CH4 table) |
+| [figures/](figures/) | Figures and the scripts that make them: `plot_supply_values.py` (cost per kW; power and efficiency vs frequency; cost vs unit size; class map), `scaleup_wall_basis.py` (wall-basis EC_CH4 table), `plot_icp_frequency_scale.py` (ICP torch frequency against diameter and power, supporting information) |
 | [scripts/](scripts/) | `make_check_worksheet.py` (human-check worksheet), `requirements.txt` |
 | [human_check_checklist.md](human_check_checklist.md), [human_check_worksheet.csv](human_check_worksheet.csv) | Steps for the human check of each value; worksheet (one row per value, by priority), made by `scripts/make_check_worksheet.py` |
 | [BB_search.txt](BB_search.txt) | Sources that need manual retrieval |
