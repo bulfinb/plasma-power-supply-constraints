@@ -43,6 +43,24 @@ A. MANUFACTURER / NON-ACADEMIC SOURCES
 
 4. PW044 (D5) and PW050 - optional: the URLs the Muegge and SAIREM datasheets were downloaded from.
 
+5. PW052 - Spellman High Voltage, ICESP paper on HV power supplies for electrostatic precipitators
+   (short version; 100 kV / 100 kW switch-mode supply). Added 2026-11-11 for class D1 (HV DC).
+   Wanted: the efficiency at full and part load (a search summary reports ~95% at full load and
+   >90% at 20% load; not used until a copy is held). Part-load efficiency matters for plasma arrays.
+   URL:       https://www.spellmanhv.com/-/media/en/Technical-Resources/Articles/ICESP-HVPScs-pap-short.pdf
+   Problem:   the site returns a bot-check page to scripted downloads; no Wayback snapshot.
+   Save as:   PW052/original.pdf
+
+6. PW051 (ANDRITZ SIR leaflet) - local copy OK; optional Wayback snapshot (Save Page Now was not
+   run from this session). Submit at https://web.archive.org/save and send Claude the link.
+   URL:       https://www.andritz.com/resource/blob/462248/4f4298207dba26b373b836328ef06819/andritz-sir-leaflet-a4-maerz22-web-data.pdf
+
+7. Optional, class D1 (HV DC) - a datasheet giving efficiency at PART load, or into an arc or glow
+   load rather than an ESP corona load, would close the main caveat on D1. Candidates seen in the
+   2026-11-11 search but not retrieved: KraftPowercon SmartKraft ESP supply datasheet (claims >=94%,
+   72-90 kV, 400-1800 mA); Siemens Energy SIPREC I leaflet (70 kV / 2800 mA unit); Glassman/XP
+   30 kV 16 kW lab-type supply (search summary: 85% at full load). Retrieve any one if convenient.
+
 ------------------------------------------------------------------------------------------------
 C. ACADEMIC PAPERS FOR literature_plasma_powersupply/ (TEA, supply capex)
 ------------------------------------------------------------------------------------------------

@@ -25,7 +25,8 @@ Indicative wall-basis EC_CH4 = reported EC_CH4 / eta_supply, using the class ran
 |---|---|---|---|---|---|
 | J1 | Low-voltage high-current AC/DC (Joule) | 0.97-0.985 (upper: IGBT rectifier ~98.5%; lower: reviewer allowance for transformer) | 85-88 EUR/kVA (thyristor) to 154-158 EUR/kVA (IGBT), 3 MW incl. transformer and compensation (2021 estimate); power management ~20% of electrolyser equipment capex | NR | PW021-V01, -V02, PW022-V01, -V02 |
 | A1 | MW DC rectifier for arc torches | 0.90-0.98 (lower: tender requirement) | no EUR/kW; ballast inductor a substantial share (qualitative) | torch electrodes >1,000 h (vendor) | PW023-V01, PW021-V01, PW038-V01, PW034-V02 |
-| K1 | kHz HV resonant inverter (gliding arc, DBD) | 0.90-0.92 (induction analogue 91%, tier 1 spec; 250 W ozone inverter 91%, others 69-70%) | DBD supply alone ~1,200-1,500 EUR/kW (industry estimates, 144 kW pilot, 2022); supply + reactor 1,085-2,400 EUR/kW (gliding arc) | NR | PW004-V02, PW026-V01 to -V03, PS003-V01, -V02, RV005-V01, -V02 |
+| D1 | HV DC switch-mode, current-controlled (glow, DC gliding arc) | 0.92-0.97 (lower: Technix SR >92% at full load, 1.5-8 kW, datasheet; NWL 70 kW ESP unit ~94.6% from stated losses; upper: ANDRITZ SIR >95%, >97% SiC, vendor claims). ESP corona loads; part load not stated | NR | NR | PW054-V01, PW053-V03, PW051-V01, -V02 |
+| K1 | kHz HV resonant inverter (AC gliding arc, DBD) | 0.90-0.92 (induction analogue 91%, tier 1 spec; 250 W ozone inverter 91%, others 69-70%) | DBD supply alone ~1,200-1,500 EUR/kW (industry estimates, 144 kW pilot, 2022); supply + reactor 1,085-2,400 EUR/kW (gliding arc) | NR | PW004-V02, PW026-V01 to -V03, PS003-V01, -V02, RV005-V01, -V02 |
 | K2 | Induction-heating inverter (analogue) | 0.91-0.98 | NR | NR | PW004-V02, PW005-V02, PW003-V02 |
 | R1 | RF tube oscillator (ICP) | 0.53-0.60 | NR | NR | PW024-V01, PW007-V03 |
 | R2 | Solid-state RF | 0.70-0.80 (vendor claims); Class E amplifier 91.5% at 600 W, 12-15 MHz (amplifier only) | NR | NR | PW008-V02, PW025-V01, PW027-V01 |
@@ -39,6 +40,8 @@ Scale evidence: induction supplies of 16 MW per unit and 126 MW installed (PW001
 
 ### Changes made when the values were re-extracted (2026-11-10)
 
+- **2026-11-11, class assignments checked against the extraction records:** Zhu 2019 (SRC012) is a DC gliding arc with a ballast resistor, not a kHz AC supply; Wanten 2022 (SRC015) uses a kV/mA HV DC supply, not a high-current arc rectifier. Both moved from K1 and A1 to the new class D1 (HV DC, current-controlled), which has no sourced values; the K1 range is used as an analogue. Later the same day D1 was given sourced values (PW051 ANDRITZ SIR leaflet, PW053 NWL ESP supply paper, PW054 Technix SR datasheet): range 0.92-0.97. Wall basis: Zhu 505-738, Wanten 838-1298 kJ/mol. A K2 sub-band row (solid-state, 100-400 kHz) added for Song 2020.
+
 - **J1:** the "thyristor rectifier 99.84%" value cited on 2026-11-05 is not in the archived article (PW021), which says thyristor rectifiers are the *less* efficient option. Upper bound lowered to 0.985 (IGBT).
 - **P1:** the 85.2% and 56.7% values attributed to the Acta Phys. Pol. paper are not in it (PW029). The range now rests on the TU/e abstract (45-85% energy transfer into the reactor, PW028) and PW029 (>90% at 20 kW; 92% ± 6%). The ~5 kEUR/kW cost is from PW029, not PW028, and the same paper gives 20-30 kEUR/kW for state-of-the-art pulsed power.
 - **M2:** the lower bound 0.80 had been set equal to the 915 MHz class by assumption. The archived sources give 65-70% for 2.45 GHz magnetron generators (tier 3); the only support for 0.85 (SAIREM guide, PW010) has no local copy. The SAIREM GMP100 10 kW datasheet (PW050) states no generator efficiency, but its rated consumption (15.8 kVA, power factor >0.9) for 10 kW output gives 0.63-0.70 (reviewer calculation, PW050-V05). Range set to 0.63-0.70; the 85% value is not used.
@@ -50,6 +53,25 @@ Scale evidence: induction supplies of 16 MW per unit and 126 MW installed (PW001
 - **M1 cost:** van Rooij et al. (PW030, Faraday Discuss. 2015) say only that "power (e.g. microwave) supplies are cheap (0.1 euro per W)", without frequency, scale or reference. Moved to context.
 - **M2, M3:** a 2024 review table (PW046) gives magnetron ~70%, ~1,000 USD/kW, 1-3 years; LDMOS amplifier ~60%, ~3,000 USD/kW, ~10 years; GaN ~65% expected.
 
+## Supply class by discharge type ([../discharge_supply_map.csv](../discharge_supply_map.csv))
+
+Added 2026-11-11. For each discharge type in the review, the map records the lab supply as given in the extraction records (literature_reforming/*/outputs/extraction.md, evidence IDs), the electrical requirement, the candidate industrial classes, the class used in the wall-basis calculation and the scale-up constraint, with value IDs. It is by discharge type, so it also applies to the pyrolysis and CO2-splitting sources when they are added.
+
+| Discharge | Review sources | Class | eta (wall to output) | Verdict on the supply |
+|---|---|---|---|---|
+| Thermal DC arc | SRC007 | A1 | 0.90-0.98 | not limiting; torch efficiency and electrode life are |
+| Gliding arc, AC (~20 kHz) | SRC014 | K1 | 0.90-0.92 | not limiting; ~600 arcs per MW at lab arc power (numbering-up) |
+| Gliding arc, DC | SRC012 | D1 | 0.92-0.97 | efficiency not limiting (ESP units 70-180 kW); ~4,000 arcs per MW, each needing its own current control in place of the lab ballast |
+| Glow, DC | SRC015 | D1 | 0.92-0.97 | efficiency not limiting; ~7,000-10,000 discharges per MW, each needing its own current control |
+| DBD | SRC013, SRC002 | K1 | 0.90-0.92 | efficiency not limiting (ozone units ~0.5 MW); load power factor 0.3-0.5 and supply cost (~1,200-1,500 EUR/kW) are |
+| Microwave 915 MHz | SRC008, SRC010 | M1 | 0.80-0.86 | not limiting (100 kW units); tube life <=6,000 h |
+| Microwave 2.45 GHz | SRC011 | M2 / M3 | 0.63-0.70 / 0.56-0.70 | limiting: <=15 kW units, ~70-170 units per MW |
+| RF ICP, 400 kHz | SRC009 | R1 / K2 | 0.53-0.60 / 0.91-0.96 | supply choice matters; solid-state route plausible, not shown for plasma loads |
+| ns pulsed | none yet | P1 | 0.45-0.92 | limiting: 1-20 kW units, 5-30 kEUR/kW (2009) |
+| Joule (benchmark) | SRC001, SRC005, SRC006 | J1 | 0.97-0.985 | not limiting; 85-158 EUR/kVA at 3 MW |
+
+Arcs or discharges per MW are reviewer arithmetic (1 MW divided by the lab power per arc or discharge); industrial designs may run larger arcs. Three groups follow: (i) supply not limiting: DC arc, kHz gliding arc and DBD, 915 MHz, Joule; (ii) supply limits efficiency or unit size: 2.45 GHz, tube RF, ns pulsed; (iii) supply efficient but the load is the problem: HV DC for glow and DC gliding arc. HV DC switch-mode supplies are a mature product (>5,500 ANDRITZ SIR units in electrostatic precipitators, PW051-V08) at >92-97% and up to ~180 kW per unit, but an ESP corona load shares current across many wires by itself, whereas glow discharges and arcs have negative differential resistance and need current control per discharge. For the low-power discharges (gliding arc, glow, DBD) the scale-up question is distribution and control of current over many parallel discharges more than the size of the supply.
+
 ## Figures (figures/plot_supply_values.py)
 
 - `supply_class_map.png`: each class as a box of frequency band against unit power, coloured by its efficiency range. The usable design space is DC and kHz (MW units, 90-98.5%) and 915 MHz (100 kW, 80-86%). RF tube generators reach 100 kW but at 53-60%; RF solid-state and 2.45 GHz sources are limited to ~0.25-15 kW per unit at 56-80% (amplifier or generator). Only vacuum tubes give MW at GHz, at 40-63% tube efficiency.
@@ -60,22 +82,22 @@ Scale evidence: induction supplies of 16 MW per unit and 126 MW installed (PW001
 | Source | Paper boundary | Supply class | EC_CH4 reported (kJ/mol) | EC_CH4 wall (kJ/mol) |
 |---|---|---|---|---|
 | Hrycak 2023 | absorbed MW (lower bounds) | M1 | 238-471 | 277-589 |
-| Zhu 2019 | discharge; steam excl. | K1 | 490-679 | 533-754 |
+| Zhu 2019 | discharge; steam and lab ballast excl. | D1 (HV DC) | 490-679 | 505-738 |
 | Akande 2022 | absorbed MW | M1 | 511-1078 | 594-1348 |
 | Kelly 2023 | absorbed MW | M2 magnetron / M3 solid-state | 581-723 | 830-1148 / 830-1291 |
 | Kwon 2023 | discharge | K1 | 740-948 | 804-1053 |
-| Wanten 2022 | plasma; lab ballast excl. | A1 (current-controlled DC) | 813-1194 | 830-1327 (lab ballast incl.: 2392-3490) |
-| Song 2020 | RF generator output | R2 solid-state / R1 tube | 1036-1510 | 1295-2157 / 1727-2849 |
+| Wanten 2022 | plasma; lab ballast excl. | D1 (HV DC) | 813-1194 | 838-1298 (lab ballast incl.: 2392-3490) |
+| Song 2020 | RF generator output | K2 solid-state 100-400 kHz / R2 solid-state / R1 tube | 1036-1510 | 1079-1659 / 1295-2157 / 1727-2849 |
 | Geng 2022 | discharge; furnace excl. | K1 | 1120-1490 | 1217-1656 |
 | Hrabovsky 2018 | arc power | A1 | 1149-2172 | 1172-2413 |
 | Andersen 2020 | discharge | K1 | 8103-9712 | 8808-10791 |
 
-Reference lines: SMR 206, DRM 247 kJ/mol CH4. Values exclude steam raising, furnace heat and heat recovery as in the papers. Wanten 2022 used a 300 kOhm series ballast resistor that dissipated 1.6-2.6x the plasma power (SRC015-C005); an industrial glow array would need active current control per discharge instead, so the A1 row assumes that.
+Reference lines: SMR 206, DRM 247 kJ/mol CH4. Values exclude steam raising, furnace heat and heat recovery as in the papers. Wanten 2022 used a 300 kOhm series ballast resistor that dissipated 1.6-2.6x the plasma power (SRC015-C005); an industrial glow array would need active current control per discharge instead, so the D1 row assumes that. The D1 range (0.92-0.97) is for full-load ESP and rack HV DC supplies; the efficiency of many small current-controlled channels at part load is not sourced, so the D1 rows are a lower bound on wall demand. The K2 row for Song uses 0.91-0.96 from solid-state induction generators covering 100-400 kHz (PW004-V02, PW005-V02); these efficiencies are for induction-heating loads, not plasma.
 
 ## Interpretation (for discussion; human check pending)
 
 1. With industrial supplies, the wall correction is modest (+2-25%) for DC arcs, 915 MHz magnetrons and kHz inverters. It is larger for RF tube oscillators (+67-89%), 2.45 GHz magnetrons (+43-59%) and 2.45 GHz solid-state (+43-79%). Supply efficiency therefore does not change the broad ranking; the plasma process (regime, heat losses, lack of heat recovery) dominates.
-2. The supply choice matters where frequency is forced: ICP torches and 2.45 GHz sources. Industrial microwave scale-up would favour 915 MHz magnetrons (100 kW units, ~80-86%) over 2.45 GHz sources, at the cost of tube replacement every few thousand hours.
+2. The supply choice matters where frequency is forced: ICP torches and 2.45 GHz sources. For the 400 kHz ICP torch, solid-state induction generators (50-100 kW at 100-400 kHz) would cut the wall correction from +67-89% (tube) to +4-10%, if their induction-heating efficiencies carry over to a plasma load. Industrial microwave scale-up would favour 915 MHz magnetrons (100 kW units, ~80-86%) over 2.45 GHz sources, at the cost of tube replacement every few thousand hours.
 3. All plasma wall-basis EC_CH4 values (≥ ~280 kJ/mol) lie above the reaction enthalpy, mainly because hot product heat is not recovered in the tests. Joule-heated eSMR (~81 kJ/mol H2 claimed, cf. plasma EC_H2 ~144-530 kJ/mol on discharge or absorbed basis) shows what heat integration plus a ~98% supply can achieve. Comparing like with like requires adding heat recovery to the plasma cases, which is the next step of the scale-up assessment.
 4. Costs are sparse and mostly not for the supply alone. MW rectifier systems for electrolysis cost ~85-160 EUR/kVA including transformer and compensation (2021 estimate). Microwave has the most points (turnkey 1-3 USD/W undated, <1 USD/W in 1999; tubes 0.1-0.3 USD/W; 2.45 GHz magnetron ~1 USD/W and LDMOS ~3 USD/W in 2024); pulsed power 5-30 kEUR/kW (2009); DBD supplies ~1,200-1,500 EUR/kW from industry price estimates for a 144 kW pilot (2022), ~92% of that pilot's capital cost; gliding arc supply + reactor 1,085-2,400 EUR/kW. The Joule-heating supply is therefore an order of magnitude cheaper per kW than any plasma supply with a published price. Lifetime is a real cost driver for magnetrons (≤6,000 h at 915 MHz) and torch electrodes (~1,000 h claimed).
 

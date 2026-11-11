@@ -10,7 +10,8 @@ Industrial power-supply data for the scale-up assessment: efficiency, unit power
 | [processing_log.md](processing_log.md) | AI tool and model versions, human checks |
 | [source_register.csv](source_register.csv) | One row per source (PW001...): earlier IDs (aliases), quality tier, document date, URL, local copy, SHA-256, Wayback snapshot, status |
 | [supply_values.csv](supply_values.csv) | One row per value used: location, verbatim quote, item, class, frequency, quantity, qualifier, basis, cost scope, data type, status |
-| [supply_classes.csv](supply_classes.csv) | Representative supply classes (J1, A1, K1, K2, R1, R2, M1-M3, P1, H1) with ranges and the value IDs behind them |
+| [supply_classes.csv](supply_classes.csv) | Representative supply classes (J1, A1, D1, K1, K2, R1, R2, M1-M3, P1, H1) with ranges and the value IDs behind them |
+| [discharge_supply_map.csv](discharge_supply_map.csv) | Discharge type in the review (DC arc, gliding arc, glow, DBD, microwave, RF ICP, pulsed, Joule) to supply class, with lab supply, electrical requirement and scale-up constraint |
 | [notes/scaleup_assessment.md](notes/scaleup_assessment.md) | Efficiency chain, class table, indicative wall-basis EC_CH4 for the reforming sources |
 | [notes/supply_maturity_niche.md](notes/supply_maturity_niche.md) | Are plasma supplies a "niche product"? Maturity, physical limits, capital cost |
 | [notes/reactor_matching.md](notes/reactor_matching.md) | Voltage, impedance and matching between supply and reactor (illustrative calculations) |

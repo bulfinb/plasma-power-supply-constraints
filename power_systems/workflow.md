@@ -40,9 +40,9 @@ One row per quoted value. A row is extracted only from the local copy, never fro
 | `quote` | the shortest verbatim text that carries the value (original language if not English, with translation in `notes`) |
 | `item` | model, product family, installation or device as named in the source |
 | `maker` | manufacturer or operator |
-| `supply_class` | class code from [supply_classes.csv](supply_classes.csv) (J1, J2, A1, K1, K2, R1, R2, M1-M3, P1, H1, X1), or `context` |
+| `supply_class` | class code from [supply_classes.csv](supply_classes.csv) (J1, J2, A1, D1, K1, K2, R1, R2, M1-M3, P1, H1, X1), or `context` |
 | `freq_low_hz`, `freq_high_hz` | output frequency or band; DC = 0; blank if not stated |
-| `quantity` | `output_power`, `input_power`, `peak_power`, `average_power`, `installed_power`, `efficiency`, `coupling_efficiency`, `cost_per_kw`, `cost_ratio`, `cost_share`, `cost_ratio` (relative cost), `frequency_limit`, `duty_cycle`, `heat_rejected`, `cost_scaling_exponent`, `lifetime_h`, `voltage_rms`, `current_rms`, `power_factor`, `specific_energy`, `capacity` (product rate) |
+| `quantity` | `output_power`, `input_power`, `peak_power`, `average_power`, `installed_power`, `efficiency`, `coupling_efficiency`, `cost_per_kw`, `cost_ratio`, `cost_share`, `cost_ratio` (relative cost), `frequency_limit`, `duty_cycle`, `heat_rejected`, `cost_scaling_exponent`, `lifetime_h`, `voltage_rms`, `current_rms`, `voltage_dc`, `current_dc`, `power_loss`, `power_factor`, `units_in_service`, `specific_energy`, `capacity` (product rate) |
 | `qualifier` | `=`, `~`, `>`, `>=`, `<`, `<=`, `up_to`, `approaching`, `range` |
 | `value_low`, `value_high` | numbers as stated (same value in both for a single number) |
 | `unit` | `kW`, `kVA`, `fraction`, `EUR/kW`, `USD/kW`, `h`, `V`, `A`, `kWh/kg`, `kg/h`, ... Efficiencies are stored as fractions |
@@ -65,7 +65,9 @@ Rules:
 
 ## 5. Supply classes: supply_classes.csv
 
-[supply_classes.csv](supply_classes.csv) summarises each representative class (J1, A1, K1, ...) used in the scale-up assessment. Each efficiency, cost and lifetime range lists the `value_id`s it rests on. Where a range is a reviewer judgement (for example a lower bound allowing for transformer losses), say so in `range_basis`. `map_value_ids` lists the industrial unit-power and frequency values that set the class box in the class map figure (lab prototypes excluded). The class table is derived from supply_values.csv and is never edited without updating the cited values.
+[supply_classes.csv](supply_classes.csv) summarises each representative class (J1, A1, K1, ...) used in the scale-up assessment. Each efficiency, cost and lifetime range lists the `value_id`s it rests on. Where a range is a reviewer judgement (for example a lower bound allowing for transformer losses), say so in `range_basis`. `map_value_ids` lists the industrial unit-power and frequency values that set the class box in the class map figure (lab prototypes excluded). The class table is derived from supply_values.csv and is never edited without updating the cited values. A class with no sourced values has blank eta and status `gap`; any analogue used for it in a calculation is stated in `range_basis` and in the script output.
+
+[discharge_supply_map.csv](discharge_supply_map.csv) assigns each discharge type in the review to candidate classes and the class used, with the lab supply as given in the extraction records (literature-folder evidence IDs), the scale-up constraint and the value IDs behind it. Arithmetic in it (e.g. discharges per MW) is labelled as reviewer arithmetic.
 
 ## 6. Notes, scripts and figures
 

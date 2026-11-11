@@ -119,6 +119,7 @@ BASIS = {  # what the efficiency refers to -> (label, colour, marker)
 
 
 DC_X = 10.0  # DC values are drawn in a separate band at this x position, labelled "DC"
+DC_SHIFT = {"A1": 0.6, "D1": 1.6}  # DC classes side by side within the band (J1 and context at DC_X)
 
 
 def fmid(r):
@@ -126,7 +127,8 @@ def fmid(r):
     if a is None and b is None:
         return None, None, None
     if a == 0 and (b is None or b == 0):
-        return DC_X, DC_X, DC_X
+        x = DC_X * DC_SHIFT.get(r["supply_class"], 1.0)
+        return x, x, x
     a = a if a else b
     b = b if b else a
     if not a or a <= 0:
@@ -156,6 +158,7 @@ axp.grid(which="major", color=GRID, lw=0.8)
 axp.set_title("Supply unit power and efficiency by output frequency (published values)", loc="left", fontsize=10, color=INK)
 # efficiency panel
 used = set()
+labelled = []
 for r in rows:
     if r["quantity"] != "efficiency" or r["basis"] in ("power_supply_stage", "system"):
         continue  # supply-stage-only efficiencies are not comparable with the other boundaries
@@ -171,7 +174,11 @@ for r in rows:
         axe.plot([x, x], [lo * 100, hi * 100], color=col, lw=2, zorder=1)
     hollow = r["qualifier"] in ONE_SIDED or r["status"] == "unverified" or r["data_type"] == "reviewer_calc"
     axe.plot(x, (lo + hi) / 2 * 100, marker=mk, ms=7, color=col, mfc="white" if hollow else col, mew=2, zorder=3)
-    axe.annotate(r["supply_class"], (x, (lo + hi) / 2 * 100), xytext=(5, -3), textcoords="offset points", fontsize=7, color=MUTED)
+    yl = (lo + hi) / 2 * 100
+    # one label per class where points sit within 2 points of each other at the same x; context rows unlabelled
+    if r["supply_class"] != "context" and not any(c == r["supply_class"] and xx == x and abs(yy - yl) < 2 for c, xx, yy in labelled):
+        axe.annotate(r["supply_class"], (x, yl), xytext=(5, -3), textcoords="offset points", fontsize=7, color=MUTED)
+        labelled.append((r["supply_class"], x, yl))
 axe.set_xscale("log")
 axe.set_xlim(4, 4e11)
 axe.set_ylim(35, 100)
@@ -188,8 +195,8 @@ axe.grid(which="major", color=GRID, lw=0.8)
 handles = [Line2D([], [], marker=BASIS[k][2], color=BASIS[k][1], ls="", ms=7, mew=2, label=BASIS[k][0]) for k in BASIS if k in used]
 handles.append(Line2D([], [], marker="o", color=MUTED, mfc="white", ls="", ms=7, mew=2, label="one-sided, calculated or unverified"))
 axe.legend(handles=handles, loc="upper left", bbox_to_anchor=(-0.02, -0.13), frameon=False, fontsize=7.5, ncol=3)
-fig.text(0.0, -0.035, "Class codes as in supply_classes.csv. DC supplies (J1 rectifiers, A1 torch supplies) are shown in the shaded band at left. "
-         "Lines show stated frequency bands or value ranges.\nPulsed supplies (P1) have no carrier frequency and are not shown. Power panel: rated, family-maximum or installed output per unit. Supply-stage-only and pulsed-system estimates are not shown.", fontsize=7, color=MUTED)
+fig.text(0.0, -0.035, "Class codes as in supply_classes.csv. DC supplies are shown side by side in the shaded band at left (A1 torch supplies, J1 rectifiers, D1 HV DC). "
+         "Lines show stated frequency bands or value ranges.\nPulsed supplies (P1) have no carrier frequency and are not shown. Power panel: rated, family-maximum or installed output per unit. Supply-stage-only and pulsed-system estimates are not shown; context values are drawn unlabelled.", fontsize=7, color=MUTED)
 save(fig, "supply_power_efficiency_frequency")
 
 # ---------- 3. cost per kW vs unit size ----------
