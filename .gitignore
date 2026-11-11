@@ -13,6 +13,9 @@ power_systems/source_archive/
 # Private planning notes
 notes_private/
 
+# Manuscript drafts (kept local, not in the repository)
+manuscript/
+
 # Local environment and build artefacts
 power_systems/.venv/
 **/__pycache__/
