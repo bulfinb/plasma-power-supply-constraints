@@ -1,0 +1,38 @@
+row_key,source_id,route,supply_class,eta_class_low,eta_class_high,p_bar,units,P_kW_at_boundary,power_boundary,X_CO2_pct,EC_CO_boundary_low,EC_CO_boundary_high,EC_CO_wall_measured_low,EC_CO_wall_measured_high,EC_CO_plasma_side_low,EC_CO_plasma_side_high,EC_CO_industrial_est_low,EC_CO_industrial_est_high,eta_wall_pct_low,eta_wall_pct_high,carbon_kg_per_Nm3_CO,CO_Nm3_per_h,duration,conv_confidence,energy_confidence,headline,evidence,notes
+Kiefer 2024 OP001,SRC016,MW 2.45 GHz,M2,0.63,0.7,~1.01,1,2.7,absorbed,34.4,14.07,14.07,19.6,19.6,14.07,14.07,20.09,22.33,17.88,17.88,,0.192,29 h at OP004,moderate,higher,yes,"SRC016-E011, E018, E044",best measured wall-plug result in the set; no pump
+Kiefer 2024 OP002,SRC016,MW 2.45 GHz,M2,0.63,0.7,0.15,1,2.7,absorbed,38.6,12.53,12.53,19.6,19.6,12.53,12.53,17.9,19.89,17.88,17.88,,0.215,,moderate,higher,,"SRC016-E012, E044",wall incl. vacuum pump
+Kiefer 2024 OP003,SRC016,MW 2.45 GHz,M2,0.63,0.7,0.90,1,2.7,absorbed,56.6,21.49,21.49,33,33,21.49,21.49,30.7,34.11,10.62,10.62,,0.126,,moderate,higher,yes,"SRC016-E019, E021, E044","highest conversion; wall incl. pump, figure read"
+Kiefer 2024 OP004,SRC016,MW 2.45 GHz,M2,0.63,0.7,~1.01,1,2.25,absorbed,~27,13.62,13.62,20,21,13.62,13.62,19.46,21.62,16.68,17.52,,0.165,29.3 h,moderate,higher,,"SRC016-E024, E025",durability test plateau
+Hecimovic 2023 OP001,SRC017,MW 2.45 GHz,M2,0.63,0.7,~1.01,1,2.7,absorbed,~34.5,14.0,14.0,,,14.0,14.0,20.0,22.22,15.77,17.52,,0.193,,higher,moderate,,"SRC017-E011, E041, E042",same torch as SRC016
+Hecimovic 2023 OP002,SRC017,MW 2.45 GHz,M2,0.63,0.7,0.90,1,2.7,absorbed,55,17.6,17.6,,,17.6,17.6,25.14,27.94,12.54,13.93,,0.153,,higher,moderate,yes,"SRC017-E015, E041, E042",cooled effluent channels
+Hecimovic 2023 OP003,SRC017,MW 2.45 GHz,M2,0.63,0.7,0.90,1,2.7,absorbed,~56.5,21.3,21.3,,,21.3,21.3,30.43,33.81,10.36,11.51,,0.127,,higher,moderate,,"SRC017-E015, E042",
+Bongers 2017 OP001,SRC018,MW 915 MHz,M1,0.8,0.8,0.20,1,8.1,MW power,83,14.8,14.8,,,14.8,14.8,18.5,18.5,18.94,18.94,,0.547,,moderate,lower,yes,"SRC018-E003, E041",highest conversion; pump excluded
+Bongers 2017 OP002,SRC018,MW 915 MHz,M1,0.8,0.8,0.20,1,3.1,MW power,47,10.0,10.0,,,10.0,10.0,12.5,12.5,28.03,28.03,,0.31,,moderate,lower,,SRC018-E041,
+Bongers 2017 OP003,SRC018,MW 915 MHz,M1,0.8,0.8,0.20,1,3.1,MW power,~10,6.9,6.9,,,6.9,6.9,8.62,8.62,40.62,40.62,,0.449,,moderate,lower,yes,SRC018-E041,best efficiency; pump excluded
+Bongers 2017 OP004,SRC018,MW 915 MHz,M1,0.8,0.8,0.20,1,10.0,MW power,~22.5,9.9,9.9,,,9.9,9.9,12.38,12.38,28.31,28.31,,1.01,,moderate,lower,,SRC018-E042,"text 40% eff., figure ~36%"
+Bongers 2017 OP005,SRC018,MW 2.45 GHz,M2,0.63,0.7,0.4-0.6,1,1.0,MW power,~12.5,7.7,7.7,,,7.7,7.7,11.0,12.22,28.67,31.85,,0.13,,moderate,lower,,SRC018-E013,
+Girard-Sahun 2022 OP001,SRC019,GA (AC),K1,0.9,0.92,~1.01,1,0.533,plasma,7.6,13.0,13.0,,,13.0,13.0,14.13,14.44,24.26,24.79,,0.041,0.23 h,higher,moderate,yes,SRC019-E041,no bed
+Girard-Sahun 2022 OP002,SRC019,GA (AC) + C bed,K1,0.9,0.92,~1.01,1,0.533,plasma,12.6,3.95,3.95,,,3.95,3.95,4.29,4.39,,,0.26,0.135,~1 min peak,higher,lower,yes,"SRC019-E043, E044",transient peak; half of CO from carbon
+Girard-Sahun 2022 OP003,SRC019,GA (AC) + C bed,K1,0.9,0.92,~1.01,1,0.533,plasma,~4.7,9.5,9.5,,,9.5,9.5,10.33,10.56,,,0.24,0.0561,14 min,higher,lower,yes,"SRC019-E013, E043",after 14 min
+O'Modhrain 2024 OP001,SRC020,GA (DC) x5,D1,0.92,0.97,~1.01,5,7.1,plug,8.7,17.9,17.9,17.9,17.9,13.78,14.86,14.21,16.15,19.57,19.57,,0.397,,moderate,higher,yes,"SRC020-E006, E010, E043",plug incl. PSU (77-83%)
+O'Modhrain 2024 OP002,SRC020,GA (DC) x3,D1,0.92,0.97,~1.01,3,4.3,plug,~7.6,16.5,16.5,16.5,16.5,12.71,13.69,13.1,14.89,21.23,21.23,,0.261,,moderate,higher,,SRC020-E042,
+O'Modhrain 2024 OP003,SRC020,GA (DC) x1,D1,0.92,0.97,~1.01,1,1.48,plug,~2.1,15.5,15.5,15.5,15.5,11.94,12.87,12.3,13.98,22.6,22.6,,0.0955,,moderate,higher,,SRC020-E042,
+Bryssinck 2025 OP001,SRC021,GA (DC) x7,D1,0.92,0.97,~1.01,7,8.5,plug,~6.4 (inconsistent),16.9,16.9,16.9,16.9,13.01,14.03,13.42,15.25,20.73,20.73,,0.503,200 s,lower,lower,,SRC021-E042,no bed; 12% CO implies ~12.8% conversion
+Bryssinck 2025 OP002,SRC021,GA (DC) x7 + C bed,D1,0.92,0.97,~1.01,7,8.5,plug,~16,7.0,7.0,7.0,7.0,5.39,5.81,5.56,6.32,,,0.27,1.21,200 s,moderate,moderate,,"SRC021-E041, E043",
+Bryssinck 2025 OP003,SRC021,GA (DC) x7 + C bed,D1,0.92,0.97,~1.01,7,8.1,plug,20,7.33,7.33,7.33,7.33,5.64,6.08,5.82,6.61,,,0.27,1.11,~0.15 h,moderate,moderate,yes,"SRC021-E015, E043",pilot best; semi-continuous carbon feed
+Bryssinck 2025 OP004,SRC021,GA (DC) x7 + C bed,D1,0.92,0.97,~1.01,7,9.5,plug,12.7 (total inlet),17.1,17.1,17.1,17.1,13.17,14.19,13.57,15.43,,,,0.556,~0.1 h,moderate,moderate,,SRC021-E043,50% recycle; carbon use NR
+Renninger 2022 OP001,SRC022,DC glow-to-arc,D1,0.92,0.97,~1.01,1,0.162,plasma,27.4,7.9,7.9,,,7.9,7.9,8.14,8.59,40.8,43.02,,0.0205,<10 h total,moderate,moderate,yes,"SRC022-E004, E005, E042",12.8 kWh/Nm3 at lab driver DC input (61-65%)
+Renninger 2022 OP002,SRC022,DC glow-to-arc,D1,0.92,0.97,~1.01,1,0.099,plasma,~17,7.8,7.8,,,7.8,7.8,8.04,8.48,41.32,43.57,,0.0127,,moderate,moderate,,SRC022-E042,
+Renninger 2022 OP003,SRC022,DC glow-to-arc,D1,0.92,0.97,~1.01,1,0.217,plasma,~28.8,19.3,19.3,,,19.3,19.3,19.9,20.98,16.7,17.61,,0.0112,,moderate,moderate,,SRC022-E041,
+Yong 2023 OP001,SRC023,NRP (batch),P1,0.45,0.92,5.8,1,0.021,deposited,14,15.1,16.3,,,15.1,16.3,16.41,36.22,9.67,21.35,,0.00134,420 s batch,higher,lower,yes,"SRC023-E041, E042",chamber volume per data set unclear
+Yong 2023 OP002,SRC023,NRP (batch),P1,0.45,0.92,5.0,1,0.024,deposited,3.3,13,13,,,13,13,14.13,28.89,12.13,24.79,,0.00185,120 s batch,higher,lower,,SRC023-E042,
+Van Laer 2015 OP001,SRC024,packed DBD,K1,0.9,0.92,~1.01,1,0.023,plasma (implied),37.8 (28.8 corr.),54,54,,,54,54,58.7,60.0,5.84,5.97,,0.000426,,moderate-lower,lower,yes,SRC024-E041-E043,X likely not expansion-corrected
+Van Laer 2015 OP002,SRC024,packed DBD,K1,0.9,0.92,~1.01,1,0.034,plasma (implied),42.0 (32.6 corr.),74,74,,,74,74,80.43,82.22,4.26,4.36,,0.000459,,moderate-lower,lower,,SRC024-E041-E043,
+Van Laer 2015 OP003,SRC024,packed DBD,K1,0.9,0.92,~1.01,1,0.02,plasma (implied),10.0 (6.9 corr.),36,36,,,36,36,39.13,40.0,8.76,8.95,,0.000556,,moderate-lower,lower,yes,SRC024-E041-E043,best efficiency
+Van Laer 2015 OP004,SRC024,DBD (empty),K1,0.9,0.92,~1.01,1,0.021,plasma (implied),~19.9 (14.2 corr.),98,98,,,98,98,106.52,108.89,3.22,3.29,,0.000214,,moderate-lower,lower,,SRC024-E041-E043,
+Kungas 2020 OP001,SRC025,SOEC stack,J1,0.97,0.98,NR,1,,stack DC,NR,2.5,2.7,,,2.5,2.7,2.54,2.78,,,,,,lower,moderate,yes,"SRC025-E007, E013, E041",best cell voltage; Table I vs text mismatch; heat NR
+Kungas 2020 OP002,SRC025,SOEC stack,J1,0.97,0.98,NR,1,,stack DC,NR,2.96,3.06,,,2.96,3.06,3.01,3.15,,,,,2000 h,lower,moderate,,SRC025-E041,start -> end of test
+Kungas 2020 OP003,SRC025,SOEC stack,J1,0.97,0.98,NR,1,,stack DC,NR,3.3,3.6,,,3.3,3.6,3.35,3.71,,,,,7600 h,lower,moderate,yes,SRC025-E041,system test; start -> end
+Hecimovic 2024 OP001,SRC026,SOEC system (calc.),J1,0.97,0.98,~1,1,69.6,stack DC,86 (utilisation),3.98,3.98,4.19,4.19,3.98,3.98,4.04,4.1,83.62,83.62,,17.5,,moderate,lower,yes,"SRC026-E009, E041",wall = stack / 0.95 rectifier (authors); 17.5 Nm3/h CO
+Hecimovic 2024 OP002,SRC026,SOEC eCOs (vendor),,,,~1,1,,"total, NR",>95 (vendor),6,8,,,,,,,,,,,8000 h (SOEC),moderate,lower,yes,"SRC026-E013, E014, E042",vendor web figure; boundary NR; inconsistent with stated 90%
+Hecimovic 2024 OP005,SRC026,MW 2.45 GHz + O2 membr.,,,,~1,1,3.0,total,up to 26,35,35,35,35,,,,,10.01,10.01,,0.0857,,moderate,moderate,yes,"SRC026-E016, E042",5% of O2 removed; not a matched point
