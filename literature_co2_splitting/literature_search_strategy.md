@@ -22,7 +22,7 @@ The field is large (hundreds of papers, mostly sub-kW). When choosing exemplars,
 |---|---|
 | Modelling only | Simulations or designs without a qualifying experiment. |
 | Co-reactant feeds | CO2 with CH4 (DRM: literature_reforming), H2 (hydrogenation/RWGS), H2O (co-splitting); record H2O co-splitting as pending for discussion. |
-| Non-plasma routes | Electrochemical and thermocatalytic routes (except the selected SOEC and H2 + RWGS benchmarks, chosen directly), photochemical, solar thermochemical, catalytic thermal. |
+| Non-plasma routes | Electrochemical and thermocatalytic routes (except the selected SOEC benchmarks, chosen directly; H2 + RWGS dropped as a literature benchmark 2026-11-12, see objectives), photochemical, solar thermochemical, catalytic thermal. |
 | Low pressure only | Sub-atmospheric results are eligible but flagged, since the vacuum-pumping energy is normally excluded; record pressure explicitly. |
 | No original demonstration | Reviews and perspectives (use to find primary papers). |
 | Duplicate evidence | As in the reforming strategy. |

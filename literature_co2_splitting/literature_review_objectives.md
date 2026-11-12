@@ -37,7 +37,7 @@ Recent critical reviews are used to locate candidates and the field's convention
 **Benchmarks** (selected directly, not searched; one or two only):
 
 - **SOEC CO2 electrolysis** at commercial or pilot scale (e.g. Topsoe eCOs on-site CO generation), with electricity per Nm3 CO, single-pass conversion and product purity; data type labelled (vendor, measured, design).
-- **Electrolytic H2 + RWGS** (CO2 + H2 -> CO + H2O, +41 kJ/mol): electricity for the H2 (electrolyser) plus RWGS heat, per mol CO, with conversion; from one design study or pilot report.
+- **Electrolytic H2 + RWGS** (CO2 + H2 -> CO + H2O, +41 kJ/mol): electricity for the H2 (electrolyser) plus RWGS heat, per mol CO, with conversion; from one design study or pilot report. **Amended 2026-11-12:** replaced by BB's own simplified process model (decision 2026-11-12): with excess H2 the product is syngas, not CO, so a literature design study per mol CO is not a like-for-like benchmark; not sourced from literature.
 - **Thermodynamic reference**: 283 kJ/mol enthalpy and the free-energy minimum (257 kJ/mol at 298 K) as reference lines.
 
 Industrial or pilot plasma data, if any, are collected as reference systems: e.g. D-CRBN (University of Antwerp spin-off, BluePlasma consortium). As standard practice, record declared competing interests and author affiliations with spin-offs in each extraction (no concern about any specific group is implied).
@@ -77,4 +77,5 @@ Same approach as [../literature_reforming/literature_review_objectives.md](../li
 ## Version history
 
 - 0.1 (2026-11-09): initial objectives.
+- 0.1 amendment (2026-11-12): H2 + RWGS benchmark replaced by BB's own simplified process model (decision 2026-11-12): with excess H2 the product is syngas, not CO, so a literature design study per mol CO is not a like-for-like benchmark; not sourced from literature; SOEC benchmarks extracted as SRC025-SRC026.
 - 0.1 amendment (2026-11-09): selective review of 5-10 exemplary studies against the benchmarks, not a comprehensive review; conversion made co-primary with energy efficiency; H2 + RWGS added as a benchmark; conflict-of-interest wording neutralised.

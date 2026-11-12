@@ -75,4 +75,4 @@ Suggested reading order: RV001, RV002 and RV003 for CO2 splitting; RV008, RV009 
 ## Still missing
 
 - A dedicated review or compilation of thermal-plasma/industrial methane pyrolysis energy data (Kvaerner, Monolith, Hüls acetylene). Fulcheri's group (Mines Paris) is the likely source; to search.
-- An H2 + RWGS design study with electricity per mol CO (RV007 covers catalysis, not system energy).
+- ~~An H2 + RWGS design study with electricity per mol CO~~ - dropped 2026-11-12: BB will use his own simplified process model (syngas with excess H2); RV007 not needed for the benchmark.
