@@ -60,3 +60,4 @@ Started 2026-11-09. First searches 2026-11-11 (Claude, general web search tool; 
 | CR027 | Pandiyan et al. (2022) J. CO2 Util. 57, 101904 | CS018 | benchmark context | - | Microwave plasma + SOEC hybrid | Claude (AI) / 2026-11-11 |  |  |
 | CR028 | Kelly, Verheyen, Cowley & Bogaerts (2022) Chem 8, 2797-2816 | CS018 | not shortlisted | - | Mars conditions, about 0.1 atm | Claude (AI) / 2026-11-11 |  |  |
 | CR029 | Indarto et al. (2006) Environ. Eng. Sci. 23, 1033-1043 | CS017 | exclude | - | N2 dilution | Claude (AI) / 2026-11-11 |  |  |
+| CR030 | Küngas (2020) J. Electrochem. Soc. 167, 044508. 10.1149/1945-7111/ab7099 | (RV006, chosen directly) | benchmark | include (approved by BB 2026-11-12) | SOEC benchmark: stack EPC and durability; conversion and purity not reported | Claude (AI) / 2026-11-12 | | SRC025 |

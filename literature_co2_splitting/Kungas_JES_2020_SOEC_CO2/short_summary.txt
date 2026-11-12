@@ -1,0 +1,70 @@
+Küngas (2020) - SOEC CO2 electrolysis to CO (benchmark), Topsoe stacks, 8250 cm2, 750 C
+Source ID: SRC025. J. Electrochem. Soc. 167, 044508. Review by a Topsoe author; SOEC data
+are the company's own stack tests (refs 57, 61, 62). Published version.
+
+Scale: 8250 cm2 stacks; 200-640 mA/cm2 in the reported tests (up to ~770 in
+Fig. 4). Commercial context: 12 Nm3/h CO demo (2016), two 96 Nm3/h eCOs
+plants contracted for 2020. No plant-level data (author's statement).
+
+Energy (stack DC electricity, Eq. 16; heat and balance of plant excluded):
+- EPC 2.5 kWh/Nm3 CO at 200 mA/cm2 (Table I; the text's 1.13 V gives 2.70);
+  2.96 -> 3.06 over a 2000 h test at 450 mA/cm2 (1.24 -> 1.28 V);
+  ~3.3 -> ~3.6 over a 7600 h system test at 640 mA/cm2 (figure).
+  = 202-290 kJ/mol CO, i.e. 71-103% of dH (283 kJ/mol) as electricity.
+- Stacks run below the thermoneutral voltage (1.465 V) at the lower
+  current densities, so the remaining reaction energy enters as heat;
+  its amount and the heater power are not reported.
+- Theoretical minimum 2.3 kWh/Nm3 at 800 C. FE 100% (chromatography).
+- For comparison, plasma (Kiefer 2024, SRC016) best wall-plug 19.6
+  kWh/Nm3 CO; not like for like (wall-plug vs stack DC, heat excluded).
+
+Conversion: not reported; single-pass utilisation and CO purity are needed
+from another source.
+
+Product: O2 leaves at the anode, so CO and O2 are separated in the cell;
+cathode product is CO + unconverted CO2, free of H2/H2O.
+
+Duration: 2000 h (2.2 %V/1000 h) and 7600 h (1.2-1.3 %V/1000 h).
+
+Reporting quality (benchmark R1-R4): measured stack data, second-hand;
+boundary stack DC only; basis partly stated; not independent of the vendor.
+Conversion/product results lower confidence (not reported); energy results
+moderate confidence (consistent and reproducible, but narrow boundary).
+
+Traceability: manuscript.pdf PDF pp. 2-11, Figs. 1, 4-5, Tables I-III;
+SRC025-E001-E022. Calculations SRC025-C001-C003, E041-E042;
+outputs/calculations.py. Details: outputs/extraction.md, outputs/evidence.csv.
+
+Prepared 2026-11-12 by Claude (AI); ai_checked by same extractor; human
+verification pending.
+
+Comparison tables (benchmark; stack data)
+NR = not reported; NA = not applicable; ~ = approximate (figure reading). Human verification pending.
+
+1. Route, scale and conditions
+Source / OP       | Reactor / activation                       | CO2 feed (mol/min) | Diluent | p (bar) | Scale as reported
+Kungas 2020 OP001 | SOEC stack 8250 cm2, 750 C / electrochem.  | NR                 | none    | NR      | 200 mA/cm2 (CO)
+Kungas 2020 OP002 | SOEC stack in furnace / electrochem.       | NR                 | none    | NR      | 450 mA/cm2; 2000 h
+Kungas 2020 OP003 | SOEC stack in 2-stack system / electrochem.| NR                 | none    | NR      | 640 mA/cm2; 7600 h
+
+2. Mass balance
+Source / OP       | X_CO2 (%)              | Products (value; basis)              | Balance closure | Duration (h; basis) | Conv. conf.
+Kungas 2020 OP001 | NR                     | CO + CO2 cathode; O2 anode; FE 100% [1] | NR              | NR                  | lower
+Kungas 2020 OP002 | NR                     | CO + CO2 cathode; O2 anode; FE 100%  | NR              | 2000; test          | lower
+Kungas 2020 OP003 | NR                     | CO + CO2 cathode; O2 anode; FE 100%  | NR              | 7600; system test   | lower
+[1] FE: SRC025-E006.
+
+3. Energy
+Source / OP       | P (boundary)       | Ext. heat       | SEI_CO2 | EC_CO2 (kJ/mol) | EC_CO (kWh/Nm3) | Author eff. (%)    | Energy conf.
+Kungas 2020 OP001 | stack DC [2]       | yes, NR [3]     | NA      | 202 [218] [4]   | 2.5 [2.70] [4]  | EE 91 (Gibbs, cell)| moderate
+Kungas 2020 OP002 | stack DC [2]       | yes, NR [3]     | NA      | 239 -> 247      | 2.96 -> 3.06    | NR                 | moderate
+Kungas 2020 OP003 | stack DC [2]       | heaters, NR [3] | NA      | ~266 -> ~290    | ~3.3 -> ~3.6    | NR                 | moderate
+[2] EPC = E n F / (FE Vm) from cell voltage; rectifier, heaters and balance
+    of plant excluded. SRC025-E011, E041.
+[3] Below the thermoneutral 1.465 V heat must be supplied (C002); the
+    system test used heaters and heat exchangers; duties NR. SRC025-E003,
+    E016, E042.
+[4] Table I 2.5 kWh/Nm3 at 1.1 V; text gives 1.13 V for the same stack
+    (2.70 kWh/Nm3). SRC025-E007, E013.
+
+4. Plasma parameters: not applicable (SOEC benchmark).
