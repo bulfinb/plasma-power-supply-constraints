@@ -264,6 +264,13 @@ dH (282.7 kJ/mol); {EC_DG:.2f} kWh/Nm3 = dG at 298 K (257 kJ/mol).
 [9] SOEC stack DC from cell voltage (Kungas: EPC = E n F / (FE Vm)). Below the thermoneutral 1.465 V heat must be
     supplied; heat duties are not reported and not included. Arrows give start -> end of the durability test.
 [10] Ind. supply = stack DC / J1 rectifier ({fmt(*ETA['J1'], 3)}). Hecimovic 2024 OP001 wall uses the authors' 0.95.
+     Like-for-like caveat: the FZJ system value (4.19 kWh/Nm3, 84% on LHV) is stack DC + rectifier only. At ~1.66 V
+     the stack releases ~37 kJ/mol CO above dH, about the ~42 kJ/mol needed to preheat the CO2 feed to 800 C, so
+     with recuperation sensible heat is not a large missing term. Not included: balance-of-plant electricity
+     (blowers, CO recycle, trim heaters), heat losses, hot standby, degradation (Kungas +3-9% over 2000-7600 h)
+     and CO purification. The vendor plant figure (eCOs, 6-8 kWh/Nm3, 44-58%) is the only wall-to-product number.
+     The plasma wall values have the same gap (chillers, pumps and CO separation excluded; product mostly CO2),
+     so the comparison is reactor + supply on both sides: the closest like-for-like the literature allows.
 [11] eCOs 6-8 kWh/Nm3 is a vendor web figure with no stated boundary (SRC026-E013).
 [12] The membrane demonstrator removed 5% of the O2; 35 kWh/Nm3 is the authors' total and not a matched point.
 

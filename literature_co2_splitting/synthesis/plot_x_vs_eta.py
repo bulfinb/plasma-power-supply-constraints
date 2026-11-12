@@ -9,6 +9,8 @@ eta_LHV = LHV of CO out / (wall electricity + LHV of carbon in), per Nm3 CO.
 Wall electricity: measured by the authors where available, else the industrial-supply estimate (bar = class range).
 SOEC system (Hecimovic 2024 OP001) at its 86% utilisation, wall incl. rectifier. The SOEC stack values (Kungas 2020)
 are not plotted: they exclude the heat supplied below the thermoneutral voltage and would give 97-140%.
+SOEC system point is stack DC + rectifier only (no balance of plant, heat losses, degradation or CO purification);
+the plasma wall values omit chillers, pumps and separation likewise. Caveat text: co2_synthesis_tables.md note [10].
 Van Laer (SRC024) conversions as reported; if not expansion-corrected they would fall by 3-9 points and
 eta_LHV by 1-3 points (synthesis table note [6]); not shown, as it does not move them out of the <10% corner.
 Rows not plotted: Bryssinck OP004 (carbon use NR), Hecimovic 2024 OP002/OP005 (vendor figure; not matched).
