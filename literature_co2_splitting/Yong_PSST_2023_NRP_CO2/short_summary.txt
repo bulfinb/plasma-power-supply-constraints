@@ -1,0 +1,61 @@
+Yong et al. (2023) - Nanosecond repetitively pulsed discharge, CO2 batch reactor, 3.5-12 bar
+Source ID: SRC023. Plasma Sources Sci. Technol. 32, 115012. Published version (IOP).
+Experimental + 0D kinetic model (model not used as evidence). Pure CO2. Stanford / EM2C.
+
+Scale: smallest energy input in the set: 300-1000 uJ pulses at 30 kHz
+(~9-30 W deposited) into a 200 (or 400) cm3 batch chamber; ~48 mmol CO2 per
+420 s batch (~0.007 mol/min equivalent). Power = energy deposited in the gap
+(V and I probes); pulser efficiency not reported. Not a flow reactor.
+
+Conversion: up to 14% at 23% efficiency (5.8 bar, 700 uJ, 420 s);
+saturates at ~18% over long times; falls with pressure at fixed energy
+(8% -> 2% from 3.5 to 12 bar). GC with N_CO ~ 2 N_O2, no by-products.
+
+Energy (deposited energy):
+- eta ~20% for conversion <15%, insensitive to pressure, pulse energy and
+  time; ~2x earlier NRP work. EC_CO ~15-16 kWh/Nm3 at the best point.
+- Volume question: the headline and 9 bar data recalculate with 200 cm3;
+  the 5 bar time series (incl. the 27% point) only with 400 cm3; the text's
+  best-efficiency inputs (Phi 4%, 865 uJ, 420 s) give 4-8%. Human check.
+
+Durability: electrode gap grew 150 -> 250 um in 240 s with carbon deposits.
+
+Reporting quality: conversion/product results higher confidence (calibrated
+GC, O/C closure); energy results lower confidence (deposited energy only;
+volume per data set unclear).
+
+Traceability: manuscript.pdf pp. 2-16, Figs. 3, 8, 11, 13; SRC023-E001-E015.
+Calculations SRC023-C001-C004, E041-E043; outputs/calculations.py.
+Details: outputs/extraction.md, outputs/evidence.csv.
+
+Prepared 2026-11-12 by Claude (AI); ai_checked by same extractor; human
+verification pending.
+
+Comparison tables (experimental conditions)
+NR = not reported; NA = not applicable; ~ = approximate (figure reading). Human verification pending.
+
+1. Route, scale and conditions
+Source / OP     | Reactor / activation                       | CO2 feed (mol/min)    | Diluent | p (bar) | Scale as reported
+Yong 2023 OP001 | NRP pin-to-plane, batch / none             | batch; ~0.007 eq. [1] | none    | 5.8     | 700 uJ x 30 kHz (21 W); 420 s
+Yong 2023 OP002 | NRP pin-to-plane, batch / none             | batch [1]             | none    | 5.0     | 800 uJ x 30 kHz (24 W); 120 s
+[1] Batch: 48 mmol (5.8 bar, 200 cm3) per run; per-minute equivalent only
+    for scale comparison. SRC023-E043.
+
+2. Mass balance
+Source / OP     | X_CO2 (%)      | Products (value; basis)          | Balance closure        | Duration (h; basis) | Conv. conf.
+Yong 2023 OP001 | 14             | CO, O2 (N_CO ~ 2 N_O2), CO2      | C and O closed (GC)    | 0.12 (batch)        | higher
+Yong 2023 OP002 | 3.3 [2]        | CO, O2, CO2                      | C and O closed (GC)    | 0.03 (batch)        | higher
+[2] Fig. 8b; text gives 4%. SRC023-E008, E011.
+
+3. Energy
+Source / OP     | P (W; boundary)    | Ext. heat | SEI_CO2 (kJ/mol; deposited) | EC_CO2 (kJ/mol) | EC_CO (kWh/Nm3; deposited) | Author eff. (%) | Energy conf.
+Yong 2023 OP001 | 21 deposited [3]   | no        | 184 (1.91 eV; 200 cm3) [4]  | ~1220-1310      | 15.1-16.3                  | 23              | lower
+Yong 2023 OP002 | 24 deposited [3]   | no        | 35 (0.36 eV; 400 cm3) [4]   | ~1040           | ~13                        | ~27             | lower
+[3] Energy deposited in the gap; pulser losses excluded. SRC023-E005.
+[4] Chamber volume per data set not stated; values shown at the volume
+    that reproduces the reported efficiency. SRC023-E041, E042.
+
+4. Plasma parameters (plasma-on rows only)
+Source / OP     | Discharge / regime       | Supply / frequency                    | Voltage       | P_plasma (W; method)     | Gas T (K; method)     | Other diagnostics
+Yong 2023 OP001 | NRP, pin-to-plane spark  | FID F1112, 10 ns, 30 kHz              | <=30 kV pulse | 21; V x I per pulse      | ~3000 peak (model)    | breakdown V vs p
+Yong 2023 OP002 | NRP, pin-to-plane spark  | FID F1112, 10 ns, 30 kHz              | <=30 kV pulse | 24; V x I per pulse      | ~3000 peak (model)    | breakdown V vs p
