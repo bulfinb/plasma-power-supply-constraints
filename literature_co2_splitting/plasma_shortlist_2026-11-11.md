@@ -120,7 +120,7 @@ Van Laer & Bogaerts. *Improving the conversion and energy efficiency of carbon d
 | Item | Source | Status |
 |---|---|---|
 | SOEC CO2 electrolysis | Küngas 2020 (RV006): **extracted as SRC025** (Kungas_JES_2020_SOEC_CO2, 2026-11-12; stack EPC 2.5-3.6 kWh/Nm3, stack DC, heat excluded; conversion and purity not reported); Topsoe slides, DOE HTE workshop 2022: 14,000 h stack test, 30,000 Nm3 CO at 3.44 kWh/Nm3 CO, Faradaic efficiency 99% (stack level, excludes balance of plant). eCOs purity up to 99.995% (Topsoe product page). | Check Küngas for a system-level value |
-| Microwave plasma vs LT and HT electrolysis | Hecimovic et al. (2024) J. CO2 Util. 83, 102825, https://doi.org/10.1016/j.jcou.2024.102825. Plasma at about 20 kWh/Nm3 CO, with an added O2-removal step. | Download (open access, KIT repository) |
+| Microwave plasma vs LT and HT electrolysis | Hecimovic et al. (2024) J. CO2 Util. 83, 102825: **extracted as SRC026** (Hecimovic_JCOU_2024_MW_vs_Electrolysis, 2026-11-12). SOEC: FZJ 70 kW design calc 86% utilisation, 3.98-4.19 kWh/Nm3 (calculated from stack power and rectifier; reported 3.89 taken as a typo); eCOs >95% utilisation, 99.0 vol% CO, 6-8 kWh/Nm3 (vendor, boundary unknown). | done |
 | Gliding arc plant TEA | Osorio-Tejada et al. 2024 (RV005, downloaded): 100 t CO/day, 19.5 GJ/t CO, assumes 80% plug-to-plasma efficiency. | Read; note it assumes the supply efficiency rather than measuring it |
 | H2 + RWGS | Not yet found: a design study with electricity per mol CO. | To search |
 | D-CRBN pilot | Bogaerts 2025: 7 gliding-arc reactors of about 1 kW, 100 L/min CO2; "pilot XL" with 18 reactors due 2025. No performance data published. | Reference system only |

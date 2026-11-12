@@ -1,0 +1,80 @@
+Hecimovic et al. (2024) - Microwave CO2 plasma vs LT and HT (SOEC) electrolysis (benchmark)
+Source ID: SRC026. J. CO2 Util. 83, 102825. Published version (KIT repository).
+Comparison paper (IPP, HZB, FZJ, KIT, Stuttgart); no vendor author, no competing interests.
+Plasma cooled-channel values duplicate SRC016/SRC017 and are not counted again.
+
+SOEC (benchmark values the review needs):
+- FZJ 70 kW system (calculation from measured 800 C short-stack IV, 1.0 A/cm2):
+  utilisation 86% (capped to avoid carbon), 17.5 Nm3/h CO, stack 69.6 kW.
+  Value used: 3.98 kWh/Nm3 (stack) to 4.19 kWh/Nm3 (with the assumed 0.95
+  rectifier), i.e. 88-84%. Reported EPC 3.89 is probably a 3.98 typo. Cell
+  ~1.66 V, above thermoneutral, so no external heat for the stack.
+- Topsoe eCOs (vendor): utilisation >95%, 99.0 vol% CO standard (up to
+  99.999%), 6-200 Nm3/h, EPC_tot 6-8 kWh/Nm3 (website; boundary unknown).
+  The 90% wall-plug efficiency in the same column contradicts 6-8 (authors'
+  own footnote): 6-8 kWh/Nm3 is 44-58%.
+- CO and O2 leave separately; no separation needed beyond CO/CO2.
+
+Plasma (new data only):
+- O2-membrane demonstrator (nozzle torch, 21 LCCF membranes at ~1000 C):
+  X up to 26%, EPC_tot 35 kWh/Nm3, only 5% of the O2 removed. No efficient
+  continuous route to <1% O2 exists yet (authors).
+- KEROGREEN 915 MHz, 6 kW, up to 60 slm, TRL 5: X 14%, EPC_process 11.4
+  kWh/Nm3; no wall-plug value; website data only.
+
+Other: PSA CO/CO2 separation ~0.25 kWh/Nm3 (cited, Jouny 2018). Magnetron
+lifetime 8000 h; solid-state supplies several years. SOEC cold start 4-6 h
+with hot standby; plasma minutes. Run-times: SOEC 8000 h, LT 4000 h,
+plasma 29.3 h.
+
+Reporting quality (R1-R4): mixed data types (design calculation, vendor,
+lab); EPC_total defined but boundaries differ; authors independent of the
+vendor. Conversion/product results moderate confidence; energy results
+lower confidence for the SOEC values (internal inconsistencies above).
+
+Traceability: manuscript.pdf pp. 1-13, Tables 1-2 (rendered); SRC026-E001-
+E021. Calculations SRC026-C001-C004, E041-E043; outputs/calculations.py.
+Details: outputs/extraction.md, outputs/evidence.csv.
+
+Prepared 2026-11-12 by Claude (AI); ai_checked by same extractor; human
+verification pending.
+
+Comparison tables (benchmark; mixed data types)
+NR = not reported; NA = not applicable. Human verification pending.
+
+1. Route, scale and conditions
+Source / OP          | Reactor / activation                    | CO2 feed (mol/min) | Diluent | p (bar) | Scale as reported
+Hecimovic 2024 OP001 | SOEC system (FZJ, calc.) / electrochem. | NR [1]             | CO recycle | ~1   | 70 kW; 17.5 Nm3/h CO
+Hecimovic 2024 OP002 | SOEC eCOs (Topsoe) / electrochem.       | NR                 | NR      | ~1      | 6-200 Nm3/h CO
+Hecimovic 2024 OP005 | MW torch + O2 membranes / plasma        | NR                 | none    | ~1      | 3 kW; 0.12 Nm3/h CO
+Hecimovic 2024 OP006 | MW torch 915 MHz (KEROGREEN) / plasma   | <=2.68 [2]         | none    | ~1      | 6 kW; <=60 slm
+[1] 17.5 Nm3/h CO at 86% utilisation implies ~20.3 Nm3/h CO2 (~15 mol/min).
+    SRC026-E009.
+[2] 60 slm at 0 degC, 22.414 L/mol (assumed). SRC026-E012.
+
+2. Mass balance
+Source / OP          | X_CO2 (%)      | Products (value; basis)                    | Balance closure | Duration (h; basis) | Conv. conf.
+Hecimovic 2024 OP001 | 86 (design)    | CO + CO2; O2 at anode                      | NA (calc.)      | NA (calc.)          | moderate
+Hecimovic 2024 OP002 | >95 (vendor)   | 99.0 vol% CO std; to 99.999                | NR              | SOEC tested 8000 h  | moderate
+Hecimovic 2024 OP005 | up to 26 [3]   | CO2/CO/O2; 5% of O2 removed                | NR              | NR                  | moderate
+Hecimovic 2024 OP006 | 14             | CO2/CO/O2                                  | NR              | NR                  | lower
+[3] Maximum, not matched with the efficiency values. SRC026-E016.
+
+3. Energy
+Source / OP          | P (boundary)             | Ext. heat | EC_CO2 = EC_CO (kJ/mol) | EC_CO (kWh/Nm3)        | Author eff. (%)        | Energy conf.
+Hecimovic 2024 OP001 | 69.6 kW stack; /0.95 [4] | none (stack above V_tn) | 321-338 [4] | 3.98-4.19 [4]          | wall-plug 84-88 [4] | lower
+Hecimovic 2024 OP002 | total, boundary NR [5]   | NR        | 484-646                 | 6-8 (vendor)           | 90 (inconsistent) [5]  | lower
+Hecimovic 2024 OP005 | total [6]                | none      | ~2824 [6]               | 35                     | wall-plug up to 10     | moderate
+Hecimovic 2024 OP006 | process only             | none      | NR                      | NR (process 11.4)      | EE 34                  | lower
+[4] Calculated: stack 69.6 kW / 17.5 Nm3/h (3.98) to /0.95 rectifier (4.19).
+    Reported 3.89 / 89.0% taken as a typo for 3.98. SRC026-E009, E041.
+[5] 6-8 kWh/Nm3 (Topsoe website) implies 44-58%, not 90%. SRC026-E013,
+    E014, E042.
+[6] EC per mol CO; for plasma EC_CO2 per mol converted equals EC_CO. Not a
+    matched point. SRC026-E016, E042.
+
+4. Plasma parameters (plasma rows only)
+Source / OP          | Discharge / regime          | Supply / frequency      | Voltage | P_plasma (W; method) | Gas T (K; method)           | Other diagnostics
+Hecimovic 2024 OP005 | MW torch + nozzle; thermal  | magnetron <=3 kW / 2.45 GHz | NA  | <=3000; NR           | ~1270 behind nozzle [7]     | none
+Hecimovic 2024 OP006 | MW torch; NR                | 6 kW / 915 MHz          | NA      | <=6000; NR           | NR                          | none
+[7] ~1000 C stated, method not given. SRC026-E006.
