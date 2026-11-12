@@ -1,0 +1,73 @@
+O'Modhrain et al. (2024) - Multi-reactor gliding arc plasmatron (5 x ~1 kW), plug-power basis, 1 bar
+Source ID: SRC020. ACS Eng. Au 4, 333-344. Published version + SI.
+Experimental. CO2 99.7%. Prototype built by D-CRBN (spin-off); PSUs from a D-CRBN-affiliated
+company; no competing interest declared.
+
+Scale: five reverse-vortex GAP nodes in one housing, one DC switching PSU
+(~1 kW, current-regulated, no ballast) per node; 30-80 L/min; up to 7.1 kW
+PLUG power (three-phase meter). PSU plug-to-plasma efficiency measured at
+77-83%. Auxiliaries (chiller, PLC, fan) on the meter: not stated.
+
+Conversion: low. 8.7% at 80 L/min with five nodes (best); ~7.6% with three;
+~2.1% with one. Conversion peaks at ~5.3 kJ/L plug SEI; parallel nodes add
+throughput (188 -> 779 g/h CO2 converted), not conversion. Hot post-plasma
+chamber (~600 C) limits conversion at low flow.
+
+Energy (plug power, 23.6 L/mol, recalculated):
+- OP001 (5 nodes): eta 19.6%, EC 1.44 MJ/mol = 17.9 kWh/Nm3 CO; plasma
+  basis (PSU 0.77-0.83) 23.6-25.4%, 13.8-14.9 kWh/Nm3.
+- Plug efficiency 20-23% across configurations; comparable wall-plug energy
+  per CO to the microwave torch of SRC016 (19.6 kWh/Nm3) but at a quarter
+  of its conversion (8.7% vs 34%).
+- Text gives the 1-node optimum as 23% at 1.4 kJ/L with 187 g/h; these do
+  not agree (17.9%); Fig. 3a power gives 1.11 kJ/L and 22.7% (used).
+
+Costs (author claims, one line): assembly ~3000 EUR/kW incl. PSU; PSU ~400
+EUR/kW (target 150, >90% efficient); separation excluded.
+
+Duration: not reported.
+
+Reporting quality: conversion/product results moderate confidence
+(calibrated O2/CO2 sensors, triplicates; CO not measured); energy results
+higher confidence (plug power metered, PSU efficiency measured).
+
+Traceability: manuscript.pdf pp. 2-10, Figs. 3-5, Table 1; ESI pp. s4-s9;
+SRC020-E001-E017. Calculations SRC020-C001-C003, E041-E043;
+outputs/calculations.py. Details: outputs/extraction.md, outputs/evidence.csv.
+
+Prepared 2026-11-12 by Claude (AI); ai_checked by same extractor; human
+verification pending.
+
+Comparison tables (experimental conditions)
+NR = not reported; NA = not applicable; ~ = approximate (figure reading). Human verification pending.
+
+1. Route, scale and conditions
+Source / OP           | Reactor / activation             | CO2 feed (mol/min) | Diluent | p (bar) | Scale as reported
+O'Modhrain 2024 OP001 | MRGAP, 5 nodes active / none     | 3.39 [1]           | none    | ~1.01   | 80 L/min; 7.1 kW plug
+O'Modhrain 2024 OP002 | MRGAP, 3 nodes active / none     | 2.54 [1]           | none    | ~1.01   | 60 L/min; ~4.3 kW plug
+O'Modhrain 2024 OP003 | MRGAP, 1 node active / none      | 3.39 [1]           | none    | ~1.01   | 80 L/min; ~1.48 kW plug
+[1] 23.6 L/mol (17 C, flow meter calibration). SRC020-E007.
+
+2. Mass balance
+Source / OP           | X_CO2 (%) | Products (value; basis)       | Balance closure        | Duration (h; basis) | Conv. conf.
+O'Modhrain 2024 OP001 | 8.7       | CO2/CO/O2; 779 g/h CO2 conv.  | CO2/O2 estimates avg.  | NR                  | moderate
+O'Modhrain 2024 OP002 | ~7.6 [2]  | CO2/CO/O2; 510 g/h            | CO2/O2 estimates avg.  | NR                  | moderate
+O'Modhrain 2024 OP003 | ~2.1 [2]  | CO2/CO/O2; ~188 g/h           | CO2/O2 estimates avg.  | NR                  | moderate
+[2] OP002 from SEI and conversion rate; OP003 Fig. 3a. SRC020-E014, E042.
+
+3. Energy
+Source / OP           | P (W; boundary)        | Ext. heat | SEI_CO2 (kJ/mol; plug) | EC_CO2 (kJ/mol; plug) | EC_CO plug / plasma est. (kWh/Nm3) | Author eff. (%)        | Energy conf.
+O'Modhrain 2024 OP001 | 7100 plug [3]          | no        | 126 (1.30 eV)          | 1444                  | 17.9 / 13.8-14.9                   | ~20 plug; 24 plasma [4] | higher
+O'Modhrain 2024 OP002 | ~4300 plug [3]         | no        | 101 (1.05 eV)          | ~1340                 | 16.5 / 12.7-13.7                   | ~21 plug               | higher
+O'Modhrain 2024 OP003 | ~1480 plug [3]         | no        | 26 (0.27 eV)           | ~1250                 | 15.5 / 11.9-12.9                   | 23 plug [5]            | higher
+[3] Three-phase meter, whole process; auxiliaries on circuit not stated.
+    PSU efficiency 77-83% measured. SRC020-E006, E010.
+[4] Plasma basis = plug x 0.8 (authors). SRC020-E043.
+[5] Text SEI 1.4 kJ/L inconsistent; Fig. 3a used. SRC020-E042.
+
+4. Plasma parameters (plasma-on rows only)
+Source / OP           | Discharge / regime             | Supply / frequency               | Voltage | P_plasma (W; method)        | Gas T (K; method)           | Other diagnostics
+O'Modhrain 2024 OP001 | GAP x5, reverse vortex; warm   | DC switching HV, current-reg. x5 | NR      | ~5700 est. (plug x 0.8)     | ~710 post-plasma; TC [6]    | none
+O'Modhrain 2024 OP002 | GAP x3, reverse vortex; warm   | DC switching HV, current-reg. x3 | NR      | ~3400 est. (plug x 0.8)     | NR                          | none
+O'Modhrain 2024 OP003 | GAP x1, reverse vortex; warm   | DC switching HV, current-reg. x1 | NR      | ~1180 est. (plug x 0.8)     | NR                          | none
+[6] ~440 C bulk gas in the post-plasma chamber, thermocouple. SRC020-E015.
