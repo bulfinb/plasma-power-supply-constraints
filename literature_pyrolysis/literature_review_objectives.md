@@ -2,6 +2,8 @@
 
 Version 0.1 - 2026-11-09.
 
+> **Descoped 2026-11-12 (BB).** The review now covers strongly endothermic gas-phase reactions that plasma reactors could electrify (methane reforming, CO2 splitting). Pyrolysis is mildly endothermic per mol CH4 (+75 kJ/mol) and gives a solid product; plasma's value there is mainly reaching high temperature and, for acetylene, selectivity. The industrial plasma plants (Hüls arc acetylene, Kvaerner/Karbomont, Monolith) are to be mentioned in the introduction only, once sourced. No extraction planned; this folder is kept for possible later use.
+
 Part of the electrified endothermic processes review (see [../README.md](../README.md)). Sibling topics: [../literature_reforming/](../literature_reforming/) and [../literature_co2_splitting/](../literature_co2_splitting/). Extraction follows the shared [../literature_reforming/workflow.md](../literature_reforming/workflow.md) and [../literature_reforming/_source_template.md](../literature_reforming/_source_template.md), with the route-specific metrics below.
 
 ## Main objective

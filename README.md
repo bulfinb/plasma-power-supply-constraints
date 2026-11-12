@@ -7,8 +7,8 @@ Literature review and evidence base on electrically driven endothermic chemical 
 | Topic | Reaction (298 K) | Electrified comparator | Folder | Status |
 |---|---|---|---|---|
 | Methane reforming | SMR +206, DRM +247 kJ/mol CH4 | Joule-heated eSMR; fired SMR reference | `literature_reforming/` | 15 sources extracted |
-| Methane pyrolysis and coupling | CH4 -> C + 2H2 +75 kJ/mol; 2CH4 -> C2H2 + 3H2 +376 kJ/mol | Joule-heated pyrolysis; industrial plasma plants (Monolith, Hüls); SMR hydrogen | `literature_pyrolysis/` | set up (selective: 5-10 exemplary studies); search not started |
-| CO2 splitting | CO2 -> CO + 1/2 O2 +283 kJ/mol | SOEC electrolysis; electrolytic H2 + RWGS | `literature_co2_splitting/` | set up (selective: 5-10 exemplary studies); search not started |
+| Methane pyrolysis and coupling | CH4 -> C + 2H2 +75 kJ/mol; 2CH4 -> C2H2 + 3H2 +376 kJ/mol | Joule-heated pyrolysis; industrial plasma plants (Monolith, Hüls); SMR hydrogen | `literature_pyrolysis/` | descoped 2026-11-12: industrial plasma plants mentioned in the introduction only; no extraction |
+| CO2 splitting | CO2 -> CO + 1/2 O2 +283 kJ/mol | SOEC electrolysis (H2 + RWGS: BB process model) | `literature_co2_splitting/` | 9 plasma exemplars + 2 SOEC benchmarks extracted |
 
 The sections below describe the reforming topic, where the method was developed; the other topics follow the same workflow and scale-up angle.
 
@@ -24,6 +24,13 @@ Fired SMR is the industrial reference that both must match or improve on.
 ## Novelty
 
 This study uses the scale and efficiency of commercially available power supplies to guide, and narrow, the design space of process-electrification pathways via plasma chemistry.
+
+Intended contributions (BB, 2026-11-12):
+
+1. **Power supplies.** A broad survey of the state of the art in power supplies for plasma systems, with current unit scale, efficiency and cost, and their trends.
+2. **Process benchmarks.** The plasma processes benchmarked against conventional and other electrified routes for the same endothermic conversions. Scope (BB, 2026-11-12): strongly endothermic gas-phase reactions that plasma reactors could electrify, i.e. methane reforming and CO2 splitting. CH4 pyrolysis is left out (mildly endothermic per mol CH4, solid product; plasma's role there is high temperature and, for acetylene, selectivity), but its industrial plasma plants are noted in the introduction.
+3. **Research directions.** Promising directions suggested by the trends in (1) and (2) together.
+4. **Scale-up feasibility.** An outsider's view (not from the plasma field) of scale-up feasibility, clearly labelled as opinion.
 
 Plasma studies usually optimise the discharge and treat the power supply as laboratory equipment. At industrial scale the supply is a design constraint in its own right. Each supply technology (DC rectifier, kHz inverter, RF generator, 915 MHz or 2.45 GHz microwave source, pulsed supply) comes in a limited range of unit powers, with a characteristic wall-plug efficiency, cost and lifetime. Together these fix how many modules a plant would need and how much electricity is lost before it reaches the plasma. Applying them to the demonstrated reactor performance shows which combinations of plasma type, frequency, pressure and scale are realistic for industrial endothermic processes, and which are ruled out before the plasma chemistry is considered. Supporting material: [power_systems/](power_systems/) (supply efficiencies, scales and costs) and [literature_plasma_powersupply/](literature_plasma_powersupply/) (measured wall-plug vs plasma efficiency and supply matching).
 
@@ -118,4 +125,5 @@ Review status of each source (AI-checked or human-verified) is in its `extractio
 - Reforming: 15 sources extracted, all ai_checked; systematic human verification to follow.
 - Power systems restructured 2026-11-10: 50 sources registered (PW001-PW050), 141 values re-extracted from archived copies with quotes (139 ai_checked, 2 unverified pending retrieval); supply class table rebuilt from them.
 - Next: human verification of remaining sources; synthesis evidence table and conversion vs EC_CH4 plot; heat-recovery treatment for plasma cases; supply capital-cost data; database searches.
-- Pyrolysis and CO2 splitting: objectives, search strategies and empty logs set up 2026-11-09; searches not yet run.
+- CO2 splitting: nine plasma exemplars (SRC016-SRC024) and two SOEC benchmarks (SRC025-SRC026) extracted 2026-11-12, all ai_checked.
+- Pyrolysis: descoped 2026-11-12 (see topic table); folder kept with its objectives and search strategy for possible later use.
