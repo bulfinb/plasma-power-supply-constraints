@@ -1,0 +1,79 @@
+Bryssinck et al. (2025) - 7-node gliding arc pilot (D-CRBN) with carbon bed and recirculation, ~8.5 kW plug
+Source ID: SRC021. React. Chem. Eng. 10, 1910-1923. Accepted author version (UAntwerp) + ESI.
+Experimental (plus a 2D post-plasma model, not used as evidence). CO2 99.7%.
+Pilot developed by D-CRBN; two authors at D-CRBN; no conflicts declared.
+
+Scale: seven ~1 kW DC switching supplies; 7.6-9.5 kW PLUG power ("total
+power of the system", in a 10 ft container); 50-110 L/min; 50 g activated
+carbon bed 35-65 mm after the nodes; silo feed; 50% recycle option.
+
+Conversion and products (bed at 35 mm):
+- Best: 50 L/min, semi-continuous feed: X 18-20%, CO up to 33 vol%, O2 <1%.
+- 70 L/min: X ~16%, CO 27%; at 65 mm only 8% (cooler bed).
+- Recycle 50%: X 10 -> 13% of total inlet, but CO output fell.
+- Runs of minutes only.
+
+Energy (plug power):
+- Reported EC 5.8 MWh/t CO (best) = 7.3 kWh/Nm3 CO (plug), plus 0.27 kg
+  carbon per Nm3 CO (~300 g C/h). Authors' plasma-basis 4.8 MWh/t.
+- Net reaction with the bed is CO2 + C -> 2CO: the reported EC values equal
+  two CO per CO2 converted. Efficiency on the reaction that occurs: ~15% at
+  the plug (vs 24% as 283 x X / SEI).
+- Recycle: EC 10.9 -> 13.7 MWh/t (+1 kW compressor).
+- Benchmark (no bed) is inconsistent: 12% CO needs ~12.8% conversion
+  without carbon; the reported 6.4% and 13.5 MWh/t both imply CO = 2X, as
+  if O2 were taken as zero. The claimed "6% -> 20%" gain is probably
+  ~13% -> 20%. Human check advised.
+
+Duration: ~200-560 s runs; no long-term test.
+
+Reporting quality: conversion/product results moderate confidence with the
+bed, lower for the benchmark; energy results moderate confidence (plug
+basis, reproducible arithmetic; carbon not counted; metered scope unclear).
+
+Traceability: manuscript.pdf (author version) pp. 3-30, Figs. 5-12;
+SRC021-E001-E018. Calculations SRC021-C001-C006, E041-E044;
+outputs/calculations.py. Details: outputs/extraction.md, outputs/evidence.csv.
+
+Prepared 2026-11-12 by Claude (AI); ai_checked by same extractor; human
+verification pending.
+
+Comparison tables (experimental conditions)
+NR = not reported; NA = not applicable; ~ = approximate (figure reading). Human verification pending.
+
+1. Route, scale and conditions
+Source / OP          | Reactor / activation                          | CO2 feed (mol/min) | Diluent | p (bar) | Scale as reported
+Bryssinck 2025 OP001 | 7-node GAP, no bed / none                     | 2.909 [1]          | none    | ~1.01   | 70 L/min; 8.5 kW plug
+Bryssinck 2025 OP002 | 7-node GAP + carbon bed 35 mm                 | 2.909 [1]          | none    | ~1.01   | 70 L/min; 8.5 kW plug; 50 g C
+Bryssinck 2025 OP003 | 7-node GAP + carbon bed, semi-cont. feed      | 2.078 [1]          | none    | ~1.01   | 50 L/min; 8.1 kW plug
+Bryssinck 2025 OP004 | 7-node GAP + carbon bed + 50% recycle         | 1.039 fresh [1]    | recycle | ~1.01   | 50 L/min total; 9.5 kW plug
+[1] Vm 24.06 L/mol (authors). SRC021-E007.
+
+2. Mass balance
+Source / OP          | X_CO2 (%)           | Products (value; basis)              | Balance closure          | Duration (h; basis)   | Conv. conf.
+Bryssinck 2025 OP001 | ~6.4 [2]            | CO 12% max; O2 NR                    | inconsistent [2]         | ~0.06 (200 s)         | lower
+Bryssinck 2025 OP002 | ~16                 | CO 27% max; C ~0.16 mol/mol fed [3]  | O balance; C by reviewer | ~0.06 (200 s)         | moderate
+Bryssinck 2025 OP003 | 20 (18-20)          | CO 33%; O2 <1%; C 0.20 mol/mol [3]   | O balance; C by reviewer | ~0.15 (single run)    | moderate
+Bryssinck 2025 OP004 | 12.7 (total inlet)  | CO 23%; O2 <1%                       | O balance                | ~0.1                  | moderate
+[2] 12% CO without carbon needs ~12.8% conversion; 6.4% = O balance with
+    O2 = 0. SRC021-E042.
+[3] Carbon consumed per mol CO2 fed, reviewer O/C balance. SRC021-E041, E043.
+
+3. Energy
+Source / OP          | P (W; boundary)  | Ext. heat       | SEI_CO2 (kJ/mol; plug) | EC_CO2 (kJ/mol; plug) | EC_CO (kWh/Nm3; plug)   | Author EC (MWh/t CO) | Energy conf.
+Bryssinck 2025 OP001 | 8500 plug [4]    | no              | 175                    | NR [2]                | ~16.9                   | ~13.5                | lower
+Bryssinck 2025 OP002 | 8500 plug [4]    | no; carbon [5]  | 175                    | ~1120                 | ~7.0 + 0.27 kg C        | 5.6                  | moderate
+Bryssinck 2025 OP003 | 8100 plug [4]    | no; carbon [5]  | 234                    | ~1180                 | 7.33 + 0.27 kg C        | 5.8 (plasma 4.8)     | moderate
+Bryssinck 2025 OP004 | 9500 plug [4]    | no; carbon [5]  | 274 (total inlet)      | NR                    | ~17.1                   | 13.7                 | moderate
+[4] Plug power, "total power of the system"; plasma 60-80% stated, 0.83
+    implied. SRC021-E006, E015.
+[5] Carbon co-reactant, not counted by the authors; ~0.27 kg/Nm3 CO.
+    SRC021-E043.
+
+4. Plasma parameters (plasma-on rows only)
+Source / OP          | Discharge / regime          | Supply / frequency        | Voltage | P_plasma (W; method)    | Gas T (K; method)              | Other diagnostics
+Bryssinck 2025 OP001 | GAP x7, reverse vortex; warm | DC switching HV x7       | NR      | NR (60-80% of plug)     | empty bed 940; thermocouple    | none
+Bryssinck 2025 OP002 | GAP x7, reverse vortex; warm | DC switching HV x7       | NR      | NR (60-80% of plug)     | bed 1400; thermocouple         | 2D model
+Bryssinck 2025 OP003 | GAP x7, reverse vortex; warm | DC switching HV x7       | NR      | ~6700 (0.83 x plug) [6] | bed 1300-1400; thermocouple    | 2D model
+Bryssinck 2025 OP004 | GAP x7, reverse vortex; warm | DC switching HV x7       | NR      | NR                      | NR                             | none
+[6] From the authors' plasma-based EC (4.8 vs 5.8 MWh/t). SRC021-E015.
