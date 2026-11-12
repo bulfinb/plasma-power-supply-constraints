@@ -103,7 +103,7 @@ All in outputs/calculations.py (run to reproduce). Inputs: flows and P_abs (E015
 
 ## Revisions
 
-None.
+- 2026-11-12: cross-reference added. SRC017 (Hecimovic et al. 2023) reports the same cooled-channel torch in ls/min at 20 C (10, 15, 4 ls/min = 9.3, 14.0, 3.7 slm here); conversions agree. SRC017's reported efficiencies are ~9-10% higher than its own X*dH/SEI (SRC017-E019); the efficiencies in this source are on a consistent 0 C basis and are preferred. Count the torch once in the synthesis.
 
 ## Plasma characteristics
 

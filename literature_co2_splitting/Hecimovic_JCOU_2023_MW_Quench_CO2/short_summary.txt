@@ -1,0 +1,76 @@
+Hecimovic et al. (2023) - 2.45 GHz microwave torch with water-cooled effluent channels, ~1 bar, <=2.7 kW
+Source ID: SRC017. J. CO2 Util. 71, 102473. Published version + ESI.
+Experimental. Pure CO2, no catalyst. Same torch as SRC016 (Kiefer 2024): count once.
+
+Scale: absorbed microwave power 0.8-2.7 kW; CO2 4-20 ls/min (20 C,
+1 atm; = SRC016's slm at 0 C x 1.073). Supply efficiency and auxiliaries
+out of scope; wall-plug values for this torch are in SRC016.
+
+Conversion: four 4 mm water-cooled off-axis Cu channels after a 5 mm
+constriction (4eff), with narrow 1.5 mm reverse-vortex inlets (NGI), give
+at 900 mbar the conversion the standard torch reaches at 200 mbar:
+~34.5% at 10 ls/min, 2.7 kW without a pump (atmospheric); 55% at 5 ls/min,
+2.7 kW; up to ~57% at SEI ~10 eV. Pump removal does not change
+conversion. Quenching helps only at low flow (no gain above 20 ls/min).
+CO output limited to ~3.5 ls/min by the 3 kW generator.
+
+Energy (absorbed power, reviewer recalculation, 24.055 L/mol):
+- eta = X x 2.9/SEI: 24.8% (OP001), 19.7% (OP002), 16.3% (OP003).
+- EC_CO2 1130-1722 kJ/mol; EC_CO 14.0-21.3 kWh/Nm3 (absorbed, not wall).
+- Reported efficiencies in Figs. 2, 6, 7, 10 and the conclusion (incl.
+  "30% at 12%" and "57% at 20%") are ~9-10% above X x dH/SEI with the
+  stated 20 C flows; flows taken at 0 C reproduce them. Figs. 8-9 and
+  SRC016 (27% at 12.3%) are consistent with the lower values. Use the
+  recalculated values. Human check advised.
+
+Duration: not reported (power scans only).
+
+Reporting quality: conversion/product results higher confidence
+(calibrated MS, expansion-corrected, reproduced in SRC016); energy results
+moderate confidence (absorbed power only; efficiency basis inconsistent).
+
+Traceability: manuscript.pdf pp. 1-7, Figs. 2-10; ESI p. 1; SRC017-E001-
+E022. Calculations SRC017-C001-C005, E041-E043; outputs/calculations.py.
+Details: outputs/extraction.md, outputs/evidence.csv.
+
+Prepared 2026-11-12 by Claude (AI); ai_checked by same extractor; human
+verification pending.
+
+Comparison tables (experimental conditions)
+NR = not reported; NA = not applicable; ~ = approximate (figure reading). Human verification pending.
+
+1. Route, scale and conditions
+Source / OP          | Reactor / activation                    | CO2 feed (mol/min) | Diluent | p (bar)        | Scale as reported
+Hecimovic 2023 OP001 | MW torch, 4effNGI cooled channels / none | 0.416 [1]          | none    | ~1.01, no pump | 10 ls/min; ~2.7 kW
+Hecimovic 2023 OP002 | MW torch, 4effNGI cooled channels / none | 0.208 [1]          | none    | 0.90           | 5 ls/min; 2.7 kW
+Hecimovic 2023 OP003 | MW torch, 4effNGI cooled channels / none | ~0.167 [1]         | none    | 0.90           | SEI 10.1 eV; 2.7 kW
+Hecimovic 2023 OP004 | MW torch, 4effNGI cooled channels / none | NR                 | none    | 0.90           | SEI ~1.2 eV
+[1] ls/min at 20 C, 1 atm (stated), 24.055 L/mol. OP003 flow from SEI and
+    power. SRC017-E006, E041.
+
+2. Mass balance
+Source / OP          | X_CO2 (%)  | Products (value; basis)       | Balance closure | Duration (h; basis) | Conv. conf.
+Hecimovic 2023 OP001 | ~34.5 [2]  | CO2/CO/O2; CO ~3.4 ls/min     | NR              | NR                  | higher
+Hecimovic 2023 OP002 | 55         | CO2/CO/O2; CO 2.75 ls/min     | NR              | NR                  | higher
+Hecimovic 2023 OP003 | ~56.5 [2]  | CO2/CO/O2                     | NR              | NR                  | higher
+Hecimovic 2023 OP004 | 12         | CO2/CO/O2                     | NR              | NR                  | higher
+[2] Figure readings (Fig. 2a; Figs. 8-9); abstract "up to 57%".
+    SRC017-E011, E015.
+
+3. Energy
+Source / OP          | P (W; boundary)  | Ext. heat | SEI_CO2 (kJ/mol) | EC_CO2 (kJ/mol) | EC_CO (kWh/Nm3; abs) | Author eff. (%)          | Energy conf.
+Hecimovic 2023 OP001 | ~2700 abs        | no        | 390 (4.04 eV)    | 1130            | 14.0                 | ~27 rep.; 24.8 recalc [3] | moderate
+Hecimovic 2023 OP002 | 2700 abs         | no        | 779 (8.08 eV)    | 1417            | 17.6                 | ~21.7 rep.; 19.7 recalc [3] | moderate
+Hecimovic 2023 OP003 | 2700 abs         | no        | 974 (10.1 eV)    | 1722            | 21.3                 | ~16.4; 16.3 recalc       | moderate
+Hecimovic 2023 OP004 | NR abs           | no        | ~112 (1.16 eV)   | NR              | NR                   | 30 rep.; ~27 (SRC016) [3] | moderate
+[3] eta = X x 2.9 eV/SEI. Reported values in Figs. 2, 6, 7, 10 and text are
+    ~9-10% higher than recalculation on the stated 20 C flow basis.
+    Wall-plug values: SRC016. SRC017-E019, E041, E042.
+
+4. Plasma parameters (plasma-on rows only)
+Source / OP          | Discharge / regime              | Supply / frequency        | Voltage | P_plasma (W; method) | Gas T (K; method) | Other diagnostics
+Hecimovic 2023 OP001 | MW torch; contracted, thermal   | MW <=3 kW / 2.45 GHz      | NA      | ~2700; coupled, NR   | NR [4]            | ICCD plasma length
+Hecimovic 2023 OP002 | MW torch; contracted, thermal   | MW <=3 kW / 2.45 GHz      | NA      | 2700; coupled, NR    | NR [4]            | ICCD plasma length
+Hecimovic 2023 OP003 | MW torch; contracted, thermal   | MW <=3 kW / 2.45 GHz      | NA      | 2700; coupled, NR    | NR [4]            | ICCD plasma length
+Hecimovic 2023 OP004 | MW torch; contracted, thermal   | MW <=3 kW / 2.45 GHz      | NA      | NR                   | NR [4]            | ICCD plasma length
+[4] ~6000 K cited from literature, not measured. SRC017-E020.
