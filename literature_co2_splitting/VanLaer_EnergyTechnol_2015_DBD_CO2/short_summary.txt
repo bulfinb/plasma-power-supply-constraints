@@ -1,0 +1,67 @@
+Van Laer & Bogaerts (2015) - ZrO2 packed-bed DBD, ~20-37 W plasma, 1 bar (DBD class representative)
+Source ID: SRC024. Energy Technol. 3, 1038-1044. Published version (UAntwerp repository).
+Experimental (plus 2D He fluid model, not used as evidence). Pure CO2.
+
+Scale: coaxial DBD, 15.9 cm3 discharge volume, 20-100 mL/min, "applied
+power" 60-100 W (meaning not defined); plasma power (V x I) used for
+efficiency but not reported per point; backed out at ~20-37 W, i.e. 33-46%
+of the applied power.
+
+Conversion: up to 42% (2.0-2.24 mm beads, 20 mL/min, 80 W); best combination
+37.8% at 6.4% (1.6-1.8 mm, 60 W, 20 mL/min), ~1.9x the empty reactor. Taken
+from the drop in GC CO2 signal without stated expansion correction; corrected
+values would be ~29% and ~33%.
+
+Energy (plasma power): efficiency 4.7-9.6%; 36-74 kWh/Nm3 CO (98 for the
+empty reactor), 3-5x the microwave and gliding-arc results; ~2-3% on applied
+power. DBD conversion is high only at very high specific energy.
+
+Duration: steady state after 20 min; no long test.
+
+Reporting quality: conversion/product results moderate-to-lower confidence
+(likely uncorrected for expansion); energy results lower confidence (plasma
+power not reported, molar volume not stated, applied power undefined).
+
+Traceability: manuscript.pdf pp. 1-5, Eqs. (1)-(4); SRC024-E001-E013.
+Calculations SRC024-C001-C004, E041-E043; outputs/calculations.py.
+Details: outputs/extraction.md, outputs/evidence.csv.
+
+Prepared 2026-11-12 by Claude (AI); ai_checked by same extractor; human
+verification pending.
+
+Comparison tables (experimental conditions)
+NR = not reported; NA = not applicable; ~ = approximate. Human verification pending.
+
+1. Route, scale and conditions
+Source / OP       | Reactor / activation                 | CO2 feed (mol/min) | Diluent | p (bar) | Scale as reported
+Van Laer 2015 OP001 | coaxial DBD / ZrO2 1.6-1.8 mm      | 0.00082 [1]        | none    | ~1.01   | 20 mL/min; 60 W applied
+Van Laer 2015 OP002 | coaxial DBD / ZrO2 2.0-2.24 mm     | 0.00082 [1]        | none    | ~1.01   | 20 mL/min; 80 W applied
+Van Laer 2015 OP003 | coaxial DBD / ZrO2 1.6-1.8 mm      | 0.0041 [1]         | none    | ~1.01   | 100 mL/min; 60 W applied
+Van Laer 2015 OP004 | coaxial DBD / empty                | 0.00082 [1]        | none    | ~1.01   | 20 mL/min; 60 W applied
+[1] At 24.5 L/mol (molar volume not stated). SRC024-E005, E008.
+
+2. Mass balance
+Source / OP       | X_CO2 (%)              | Products (value; basis)          | Balance closure      | Duration (h; basis) | Conv. conf.
+Van Laer 2015 OP001 | 37.8 (28.8 corr.) [2] | CO, O2 sel. ~50% each; CO2       | no numbers           | NR (>=20 min)       | moderate-lower
+Van Laer 2015 OP002 | 42.0 (32.6 corr.) [2] | CO, O2, CO2                      | no numbers           | NR                  | moderate-lower
+Van Laer 2015 OP003 | 10.0 (6.9 corr.) [2]  | CO, O2, CO2                      | no numbers           | NR                  | moderate-lower
+Van Laer 2015 OP004 | ~19.9 (14.2 corr.) [2] | CO, O2, CO2                     | no numbers           | NR                  | moderate-lower
+[2] Corrected = reviewer expansion correction, if the GC signal ratio was
+    used uncorrected. SRC024-E043.
+
+3. Energy
+Source / OP       | P (W; boundary)                | Ext. heat | SEI_CO2 (kJ/mol; plasma) | EC_CO2 (kJ/mol) | EC_CO (kWh/Nm3; plasma) | Author eff. (%) | Energy conf.
+Van Laer 2015 OP001 | 60 applied; ~23 plasma [3]   | no        | ~1650                    | 4372            | 54                      | 6.4             | lower
+Van Laer 2015 OP002 | 80 applied; ~34 plasma [3]   | no        | ~2500                    | 5953            | 74                      | 4.7             | lower
+Van Laer 2015 OP003 | 60 applied; ~20 plasma [3]   | no        | ~290                     | 2915            | 36                      | 9.6             | lower
+Van Laer 2015 OP004 | 60 applied; ~21 plasma [3]   | no        | ~1570                    | 7869            | 98                      | ~3.6            | lower
+[3] Plasma power backed out of reported X and eta (24.5 L/mol); 'applied
+    power' undefined. On applied power, efficiency 1.3-3.2%. SRC024-E041,
+    E042.
+
+4. Plasma parameters (plasma-on rows only)
+Source / OP       | Discharge / regime           | Supply / frequency     | Voltage | P_plasma (W; method)  | Gas T (K; method) | Other diagnostics
+Van Laer 2015 OP001 | packed-bed DBD, filamentary | AC HV (AFS) / NR       | NR      | ~23; V x I (implied)  | NR                | Lissajous charge; He model
+Van Laer 2015 OP002 | packed-bed DBD, filamentary | AC HV (AFS) / NR       | NR      | ~34; V x I (implied)  | NR                | Lissajous charge; He model
+Van Laer 2015 OP003 | packed-bed DBD, filamentary | AC HV (AFS) / NR       | NR      | ~20; V x I (implied)  | NR                | Lissajous charge; He model
+Van Laer 2015 OP004 | DBD (empty), filamentary    | AC HV (AFS) / NR       | NR      | ~21; V x I (implied)  | NR                | Lissajous charge
