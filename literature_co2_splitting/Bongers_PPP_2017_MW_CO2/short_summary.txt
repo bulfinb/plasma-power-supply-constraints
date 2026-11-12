@@ -1,0 +1,84 @@
+Bongers et al. (2017) - 915 MHz (up to 10 kW) and 2.45 GHz (1 kW) microwave CO2 plasmas, 200-600 mbar
+Source ID: SRC018. Plasma Process. Polym. 14, e1600126. Wiley Early View typeset version
+(cite by DOI). DIFFER / IGVP Stuttgart. Experimental. Pure CO2.
+
+Scale: 915 MHz system rated 3-30 kW, run at 3.1-10 kW, 11-75 slm, 200 mbar,
+nozzle quench with supersonic exhaust. 2.45 GHz system 1 kW. Power is "MW
+power" (forward/absorbed not defined). Sub-atmospheric: vacuum pumping
+excluded. No wall-plug data. No external heat.
+
+Conversion: highest single-pass conversion in the set so far: 83% at
+11 slm, 8.1 kW (SEI 10.3 eV), 200 mbar. 47% at 3.1 kW. At 75 slm, 10-23%.
+
+Energy (MW power basis, 22.414 L/mol; recalculated = alpha x 2.9/SEI):
+- 11 slm: eta 24% at 83% conversion (EC_CO 14.8 kWh/Nm3) to 35% at 47%
+  (10.0 kWh/Nm3).
+- 75 slm: eta 51% at ~10% (6.9 kWh/Nm3, lowest energy per CO so far) to
+  ~36% at ~22.5% (9.9 kWh/Nm3). Text gives 40% at 10 kW; Fig. 3b and the
+  paper's own alpha/SEI give ~36%.
+- 2.45 GHz reverse vortex: ~46% at ~12.5% conversion, 400-600 mbar.
+- Supersonic expansion at 1 mbar: at most 15%.
+
+Mechanism: OES Tg 4000-5700 K, Tvib 9000 K; dissociation mainly thermal;
+results near the thermal limit (~50% with ideal quenching). Early high
+efficiencies (Fridman, below 1 eV) not reproduced. Authors suggest
+coupling SOECs to microwave plasma to lift the conversion limit.
+
+Duration: not reported.
+
+Reporting quality: conversion/product results moderate confidence (MS
+against calibrated mixtures; expansion handling and balance not given);
+energy results lower confidence (power boundary undefined; pump excluded at
+200 mbar; one text value conflicts with the figure).
+
+Traceability: manuscript.pdf pp. 1-7, Figs. 3-9, Table 1; SRC018-E001-E017.
+Calculations SRC018-C001-C004, E041-E043; outputs/calculations.py.
+Details: outputs/extraction.md, outputs/evidence.csv.
+
+Prepared 2026-11-12 by Claude (AI); ai_checked by same extractor; human
+verification pending.
+
+Comparison tables (experimental conditions)
+NR = not reported; NA = not applicable; ~ = approximate (figure reading). Human verification pending.
+
+1. Route, scale and conditions
+Source / OP        | Reactor / activation                      | CO2 feed (mol/min) | Diluent | p (bar)   | Scale as reported
+Bongers 2017 OP001 | 915 MHz MW, FV + nozzle quench / none     | 0.491 [1]          | none    | 0.20 [2]  | 11 slm; 8.1 kW
+Bongers 2017 OP002 | 915 MHz MW, FV + nozzle quench / none     | 0.491 [1]          | none    | 0.20 [2]  | 11 slm; 3.1 kW
+Bongers 2017 OP003 | 915 MHz MW, FV + nozzle quench / none     | 3.346 [1]          | none    | 0.20 [2]  | 75 slm; 3.1 kW
+Bongers 2017 OP004 | 915 MHz MW, FV + nozzle quench / none     | 3.346 [1]          | none    | 0.20 [2]  | 75 slm; 10 kW
+Bongers 2017 OP005 | 2.45 GHz MW, RV + Cu quench tube / none   | NR                 | none    | ~0.4-0.6  | ~1 kW; SEI 0.8 eV
+[1] slm, reference not stated; 0 C (22.414 L/mol) reproduces the authors'
+    SEI. SRC018-E041.
+[2] Sub-atmospheric; vacuum pump power excluded.
+
+2. Mass balance
+Source / OP        | X_CO2 (%)        | Products (value; basis) | Balance closure | Duration (h; basis) | Conv. conf.
+Bongers 2017 OP001 | 83               | CO2/CO/O2               | NR              | NR                  | moderate
+Bongers 2017 OP002 | 47               | CO2/CO/O2               | NR              | NR                  | moderate
+Bongers 2017 OP003 | ~10 (text 11)    | CO2/CO/O2               | NR              | NR                  | moderate
+Bongers 2017 OP004 | ~22.5 (text 23)  | CO2/CO/O2               | NR              | NR                  | moderate
+Bongers 2017 OP005 | ~12.5 [3]        | CO2/CO/O2               | NR              | NR                  | moderate
+[3] Fig. 7b, Exp. 7. SRC018-E013.
+
+3. Energy
+Source / OP        | P (W; boundary) | Ext. heat | SEI_CO2 (kJ/mol) | EC_CO2 (kJ/mol) | EC_CO (kWh/Nm3; MW) | Author eff. (%)      | Energy conf.
+Bongers 2017 OP001 | 8100 MW [4]     | no        | 990 (10.3 eV)    | 1193            | 14.8                | 24                   | lower
+Bongers 2017 OP002 | 3100 MW [4]     | no        | 379 (3.9 eV)     | 806             | 10.0                | 35                   | lower
+Bongers 2017 OP003 | 3100 MW [4]     | no        | 56 (0.6 eV)      | ~556            | ~6.9                | 51                   | lower
+Bongers 2017 OP004 | 10000 MW [4]    | no        | 179 (1.9 eV)     | ~797            | ~9.9                | ~36 (text 40) [5]    | lower
+Bongers 2017 OP005 | ~1000 MW [4]    | no        | 77 (0.8 eV)      | ~618            | ~7.7                | ~46.5                | lower
+[4] "MW power", forward/absorbed undefined; vacuum pump and supply losses
+    excluded. SRC018-E003.
+[5] Fig. 3b and alpha x 2.9/SEI give ~36%. SRC018-E042.
+
+4. Plasma parameters (plasma-on rows only)
+Source / OP        | Discharge / regime         | Supply / frequency        | Voltage | P_plasma (W; method) | Gas T (K; method)          | Other diagnostics
+Bongers 2017 OP001 | MW, FV; contracted, thermal | magnetron 3-30 kW / 915 MHz | NA    | 8100; MW power       | ~5700 [6]                  | OES Tvib 9000 K
+Bongers 2017 OP002 | MW, FV; contracted, thermal | magnetron 3-30 kW / 915 MHz | NA    | 3100; MW power       | ~5700 [6]                  | OES Tvib 9000 K
+Bongers 2017 OP003 | MW, FV; contracted, thermal | magnetron 3-30 kW / 915 MHz | NA    | 3100; MW power       | ~5700 [6]                  | OES Tvib 9000 K
+Bongers 2017 OP004 | MW, FV; contracted, thermal | magnetron 3-30 kW / 915 MHz | NA    | 10000; MW power      | ~5700 [6]                  | OES Tvib 9000 K
+Bongers 2017 OP005 | MW, RV; contracted, thermal | 1 kW / 2.45 GHz           | NA      | ~1000; MW power      | ~4000 (Exp. 1, FV) [6]     | E/n 70-80 Td (sim.)
+[6] OES, C2 Swan bands, Trot taken as Tg; measured at 5 kW, 75 slm (915
+    MHz) and 1 kW, 14 slm (2.45 GHz), both 200 mbar, not at each OP.
+    SRC018-E015.
