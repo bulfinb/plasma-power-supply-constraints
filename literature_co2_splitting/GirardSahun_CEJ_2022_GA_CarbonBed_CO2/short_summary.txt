@@ -1,0 +1,76 @@
+Girard-Sahun et al. (2022) - Gliding arc plasmatron with a post-plasma charcoal bed, 0.53 kW, 1 bar
+Source ID: SRC019. Chem. Eng. J. 442, 136268. Published version + ESI.
+Experimental (plus a 0D gasification model, not used as evidence). Pure CO2.
+
+Scale: plasma power 0.533 kW (V x I; AC current-source supply), 10 Ln/min
+CO2, SEI 3.2 kJ/L. ~5 g charcoal bed at the anode exit, silo-fed. No
+supply efficiency. Carbon is a co-reactant.
+
+Conversion and products:
+- No bed: X 7.6%, CO 7.2%, O2 3.7%, steady.
+- With bed, maximum (first ~1 min): X 12.6%, CO 21.9%, O2 0.2%.
+- With bed after ~3.5 min the gain is gone; at 14 min X ~4.7% (below the
+  no-bed value) as oxygen complexes saturate the carbon; the silo does not
+  restore it. O2 stays below 0.8% throughout (O2 removal persists).
+
+Energy (plasma power):
+- Reported: eta 27.9% -> 45.4%, EC 41.9 -> 25.4 kJ/L. Calculated with
+  283 kJ/mol per CO2 converted (pure splitting) despite carbon consumption.
+- Reviewer O/C balance at the maximum: 0.121 mol C consumed and 0.246 mol CO
+  per mol CO2 fed = net CO2 + C -> 2 CO; half the CO comes from the carbon.
+  On the enthalpy of what actually reacted, eta = 28% (no bed 27%). At
+  14 min ~14%.
+- Electricity per CO: 13.0 (no bed), 3.95 (bed max), 9.5 (bed, 14 min)
+  kWh/Nm3 CO, plus 0.24-0.26 kg carbon per Nm3 CO (LHV ~2.4 kWh/Nm3).
+- SEI converted with 24.5 L/mol on Ln/min flows: values ~9% different if
+  Ln is 0 C.
+
+Duration: 14 min runs, triplicates; time-resolved data show the decay.
+
+Reporting quality: conversion/product results higher confidence
+(calibrated NDIR/O2/GC, expansion-corrected, triplicates, controls); energy
+results lower confidence as reported (pure-splitting enthalpy credited,
+transient maximum), moderate for the recalculated values.
+
+Traceability: manuscript.pdf pp. 3-14, Figs. 3-7; ESI Figs. S8-S9;
+SRC019-E001-E018. Calculations SRC019-C001-C005, E041-E044;
+outputs/calculations.py. Details: outputs/extraction.md, outputs/evidence.csv.
+
+Prepared 2026-11-12 by Claude (AI); ai_checked by same extractor; human
+verification pending.
+
+Comparison tables (experimental conditions)
+NR = not reported; NA = not applicable; ~ = approximate (figure reading). Human verification pending.
+
+1. Route, scale and conditions
+Source / OP             | Reactor / activation                    | CO2 feed (mol/min) | Diluent | p (bar) | Scale as reported
+Girard-Sahun 2022 OP001 | GAP / none                              | 0.408 [1]          | none    | ~1.01   | 10 Ln/min; 0.53 kW
+Girard-Sahun 2022 OP002 | GAP + charcoal bed (max, ~1 min)        | 0.408 [1]          | none    | ~1.01   | 10 Ln/min; 0.53 kW; ~5 g C
+Girard-Sahun 2022 OP003 | GAP + charcoal bed (14 min)             | 0.408 [1]          | none    | ~1.01   | 10 Ln/min; 0.53 kW; ~5 g C
+[1] 10 L/min at 24.5 L/mol (authors' Vm); 0.446 mol/min if Ln is 0 C.
+    SRC019-E005, E009.
+
+2. Mass balance
+Source / OP             | X_CO2 (%)  | Products (value; basis)              | Balance closure          | Duration (h; basis)      | Conv. conf.
+Girard-Sahun 2022 OP001 | 7.6        | CO 7.2%, O2 3.7%                     | O balance used           | 0.23; steady             | higher
+Girard-Sahun 2022 OP002 | 12.6       | CO 21.9%, O2 0.2%; C 0.12 mol/mol [2] | O; C by reviewer [2]    | transient max (~1 min)   | higher
+Girard-Sahun 2022 OP003 | ~4.7 [3]   | CO ~9.7%, O2 ~0.5%; C 0.05 mol/mol [2] | O; C by reviewer [2]   | 0.23 (14 min)            | higher
+[2] Carbon consumed per mol CO2 fed, reviewer O/C balance. SRC019-E042.
+[3] Fig. 6 reading; balance from Fig. 5B gives 5.6%. SRC019-E013, E014.
+
+3. Energy
+Source / OP             | P (W; boundary) | Ext. heat       | SEI_CO2 (kJ/mol) | EC_CO2 (kJ/mol) | EC_CO (kWh/Nm3; plasma) | Author eff. (%)      | Energy conf.
+Girard-Sahun 2022 OP001 | 533 plasma      | no              | 78.4 [4]         | 1032            | 13.0                    | 27.9                 | moderate
+Girard-Sahun 2022 OP002 | 533 plasma      | no; carbon [5]  | 78.4 [4]         | 622 [5]         | 3.95 + 0.26 kg C [5]    | 45.4 (28 recalc.) [5] | lower
+Girard-Sahun 2022 OP003 | 533 plasma      | no; carbon [5]  | 78.4 [4]         | ~1400 [5]       | ~9.5 + 0.24 kg C [5]    | NR (~14 recalc.) [5] | lower
+[4] Authors' Vm 24.5 L/mol; 71.7 kJ/mol at 22.414. SRC019-E041.
+[5] Carbon is a co-reactant (chemical energy not counted by the authors).
+    Efficiency recalculated on the overall reaction enthalpy. EC_CO2 per
+    mol CO2 converted; EC_CO per mol CO (half from carbon at OP002).
+    SRC019-E043, E044.
+
+4. Plasma parameters (plasma-on rows only)
+Source / OP             | Discharge / regime          | Supply / frequency     | Voltage | P_plasma (W; method) | Gas T (K; method)            | Other diagnostics
+Girard-Sahun 2022 OP001 | GAP, reverse vortex; warm   | AC current source (AFS) | NR     | 533; V x I           | ~850 at 15 mm; thermocouple  | arc ~3000 K (model)
+Girard-Sahun 2022 OP002 | GAP, reverse vortex; warm   | AC current source (AFS) | NR     | 533; V x I           | bed ~1700 K peak; thermocouple | BET, SEM, TGA-MS
+Girard-Sahun 2022 OP003 | GAP, reverse vortex; warm   | AC current source (AFS) | NR     | 533; V x I           | bed ~1200 K; thermocouple    | BET, SEM, TGA-MS
