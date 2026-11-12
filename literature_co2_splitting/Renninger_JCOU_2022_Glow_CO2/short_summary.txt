@@ -1,0 +1,67 @@
+Renninger et al. (2022) - DC glow-to-arc transition discharge, magnetically rotated, ~100-220 W, 1 bar
+Source ID: SRC022. J. CO2 Util. 58, 101919. Published version. Univ. Stuttgart.
+Experimental. CO2 (purity NR), ZrO2 packed bed in the ring electrode.
+
+Scale: smallest in the set: 0.65-1.25 SLM (0.03-0.06 mol/min CO2), plasma
+power ~100-220 W. Plasma power = V x I at the reactor; "system" power =
+DC output of a lab supply feeding a ZVS driver (61-65% efficient) - NOT
+wall plug (lab supply mains losses excluded).
+
+Conversion: 16-29%, set mainly by plasma power; plateau ~29%. Best at
+1.25 SLM: 27.4%. Without the ZrO2 bed only 7.5%; upward flow 10.5%.
+
+Energy (recalculated, 0 C standard, dH 12.6 J/SCC):
+- OP001 (1.25 SLM, ~162 W plasma, ~262 W supply): eta_plasma 44%,
+  eta_system 27.5%; 7.9 kWh/Nm3 CO (plasma), 12.8 (driver input).
+- OP002 (~99 W plasma): 17% at eta_plasma 45%, system 29%.
+- Best plasma-basis conversion+efficiency pair at 1 bar in the set so far,
+  but at ~160 W and with a packed bed of unknown role.
+- Text's "45% at 216 W supply" is the 21% point; the conclusion's 27.4% /
+  45% / 28% is at ~262 W supply.
+
+Duration: <10 h total; no electrode wear seen. Steady state after >=1 min.
+
+Reporting quality: conversion/product results moderate confidence (NDIR
+with GC confirmation; no repeats); energy results moderate confidence (both
+boundaries measured, but not wall plug; small scale).
+
+Traceability: manuscript.pdf pp. 1-6, Figs. 1-6; SRC022-E001-E015.
+Calculations SRC022-C001-C003, E041-E042; outputs/calculations.py.
+Details: outputs/extraction.md, outputs/evidence.csv.
+
+Prepared 2026-11-12 by Claude (AI); ai_checked by same extractor; human
+verification pending.
+
+Comparison tables (experimental conditions)
+NR = not reported; NA = not applicable; ~ = approximate (figure reading). Human verification pending.
+
+1. Route, scale and conditions
+Source / OP          | Reactor / activation                         | CO2 feed (mol/min) | Diluent | p (bar) | Scale as reported
+Renninger 2022 OP001 | DC glow-to-arc, 30 mT rotation / ZrO2 bed    | 0.0558 [1]         | none    | ~1.01   | 1.25 SLM; ~162 W plasma
+Renninger 2022 OP002 | DC glow-to-arc, 30 mT rotation / ZrO2 bed    | 0.0558 [1]         | none    | ~1.01   | 1.25 SLM; ~99 W plasma
+Renninger 2022 OP003 | DC glow-to-arc, 30 mT rotation / ZrO2 bed    | 0.0290 [1]         | none    | ~1.01   | 0.65 SLM; ~217 W plasma
+[1] SLM at 0 C (consistent with 12.6 J/SCC), 22.414 L/mol. SRC022-E007, E009.
+
+2. Mass balance
+Source / OP          | X_CO2 (%) | Products (value; basis)            | Balance closure         | Duration (h; basis)        | Conv. conf.
+Renninger 2022 OP001 | 27.4      | CO2/CO/O2; stoichiometric (GC)     | GC stoich., no number   | >=1 min per point; <10 h total | moderate
+Renninger 2022 OP002 | ~17 [2]   | CO2/CO/O2                          | NR                      | >=1 min per point           | moderate
+Renninger 2022 OP003 | ~28.8 [2] | CO2/CO/O2                          | NR                      | >=1 min per point           | moderate
+[2] Figure readings (Figs. 3-4). SRC022-E010, E012.
+
+3. Energy
+Source / OP          | P (W; boundary)                  | Ext. heat | SEI_CO2 (kJ/mol; plasma) | EC_CO2 (kJ/mol; plasma) | EC_CO plasma / driver-in (kWh/Nm3) | Author eff. (%)       | Energy conf.
+Renninger 2022 OP001 | ~162 plasma; ~262 driver-in [3]  | no        | 175 (1.81 eV)            | 636                     | 7.9 / 12.8                          | 45 plasma; 28 system  | moderate
+Renninger 2022 OP002 | ~99 plasma; ~153 driver-in [3]   | no        | 106 (1.10 eV)            | 627                     | 7.8 / 12.0                          | ~45; ~29              | moderate
+Renninger 2022 OP003 | ~217 plasma [3]                  | no        | 449 (4.65 eV)            | 1557                    | 19.3 / ~30-32 [4]                   | NR                    | moderate
+[3] Plasma = V x I at the reactor; driver-in = DC output of the lab supply
+    (mains losses excluded). Driver 61-65%. SRC022-E004, E005, E042.
+[4] At driver efficiency 0.61-0.65. SRC022-E041.
+
+4. Plasma parameters (plasma-on rows only)
+Source / OP          | Discharge / regime                | Supply / frequency                    | Voltage   | P_plasma (W; method) | Gas T (K; method)        | Other diagnostics
+Renninger 2022 OP001 | glow-to-arc transition, rotating  | DC (ZVS driver + rectifier + 3 H choke) | <2 kV op. | ~162; V x I          | bed >1070 (incandescence) [5] | V-I, rotation period
+Renninger 2022 OP002 | glow-to-arc transition, rotating  | DC (ZVS driver + rectifier + 3 H choke) | <2 kV op. | ~99; V x I           | NR                       | V-I, rotation period
+Renninger 2022 OP003 | glow-to-arc transition, rotating  | DC (ZVS driver + rectifier + 3 H choke) | <2 kV op. | ~217; V x I          | NR                       | V-I, rotation period
+[5] Red glow of the packed bed at 192 W (>800 C); not a gas temperature.
+    SRC022-E014.
