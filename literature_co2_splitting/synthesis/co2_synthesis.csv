@@ -13,7 +13,7 @@ Bongers 2017 OP004,SRC018,MW 915 MHz,M1,0.8,0.8,0.20,1,10.0,MW power,~22.5,9.9,9
 Bongers 2017 OP005,SRC018,MW 2.45 GHz,M2,0.63,0.7,0.4-0.6,1,,MW power,~12.5,7.7,7.7,,,7.7,7.7,11.0,12.22,28.67,31.85,,,,moderate,lower,,SRC018-E013,
 Girard-Sahun 2022 OP001,SRC019,GA (AC),K1,0.9,0.92,~1.01,1,0.533,plasma,7.6,13.0,13.0,,,13.0,13.0,14.13,14.44,24.26,24.79,,0.041,0.23 h,higher,moderate,yes,SRC019-E041,no bed
 Girard-Sahun 2022 OP002,SRC019,GA (AC) + C bed,K1,0.9,0.92,~1.01,1,0.533,plasma,12.6,3.95,3.95,,,3.95,3.95,4.29,4.39,,,0.26,0.135,~1 min peak,higher,lower,yes,"SRC019-E043, E044",transient peak; half of CO from carbon
-Girard-Sahun 2022 OP003,SRC019,GA (AC) + C bed,K1,0.9,0.92,~1.01,1,0.533,plasma,~4.7,9.5,9.5,,,9.5,9.5,10.33,10.56,,,0.24,0.0561,14 min,higher,lower,yes,"SRC019-E013, E043",after 14 min
+Girard-Sahun 2022 OP003,SRC019,GA (AC) + C bed,K1,0.9,0.92,~1.01,1,0.533,plasma,~4.7,12.8,12.8,,,12.8,12.8,13.91,14.22,,,0.21,0.0416,14 min,higher,lower,yes,"SRC019-E013, E043",after 14 min
 O'Modhrain 2024 OP001,SRC020,GA (DC) x5,D1,0.92,0.97,~1.01,5,7.1,plug,8.7,17.9,17.9,17.9,17.9,13.78,14.86,14.21,16.15,19.57,19.57,,0.397,,moderate,higher,yes,"SRC020-E006, E010, E043",plug incl. PSU (77-83%)
 O'Modhrain 2024 OP002,SRC020,GA (DC) x3,D1,0.92,0.97,~1.01,3,4.3,plug,~7.6,16.5,16.5,16.5,16.5,12.71,13.69,13.1,14.89,21.23,21.23,,0.261,,moderate,higher,,SRC020-E042,
 O'Modhrain 2024 OP003,SRC020,GA (DC) x1,D1,0.92,0.97,~1.01,1,1.48,plug,~2.1,15.5,15.5,15.5,15.5,11.94,12.87,12.3,13.98,22.6,22.6,,0.0955,,moderate,higher,,SRC020-E042,

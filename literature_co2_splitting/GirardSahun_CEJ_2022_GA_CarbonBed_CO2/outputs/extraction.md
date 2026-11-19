@@ -43,14 +43,14 @@ Pure CO2 (99.995%), 10 Ln/min, atmospheric pressure (E005); SEI ~3.2 kJ/L in all
 |---|---|---|---|---|---|---|---|
 | OP001 | 7.6 | 7.2 | 3.7 | 27.9 | 27.0 (29.5) | 13.0 (11.9) | 0 |
 | OP002 | 12.6 | 21.9 | 0.2 | 45.4 | 55.3 (58.4) | 3.95 (3.6) | 0.26 |
-| OP003 | ~4.7-5.6 | ~9.7 | ~0.5 | NR | 29.9 (32.2) | 9.5 (8.7) | 0.24 |
+| OP003 | ~4.6-4.7 | ~7.3 | ~0.75 | NR | 23.8 (25.7) | 12.8 (11.7) | 0.21 |
 
 Values from C001-C005 at Vm 24.5 L/mol (authors) with 22.414 L/mol in brackets.
 
 - **Author's efficiency** (E008): eta = 283 kJ/mol x X_CO2 / SEI, i.e. counted as pure CO2 splitting even with the carbon bed; the authors note that "this must however be kept in mind".
-- **Reviewer finding (C003, C004):** at the maximum, the O and C balances give 0.121 mol C consumed and 0.246 mol CO formed per mol CO2 fed, i.e. net CO2 + C -> 2 CO; half the CO comes from the bed. The authors' 45.4% credits 283 kJ/mol per CO2 converted and does not count the carbon. With the carbon counted as an energy input, eta_LHV = LHV of CO out / (plasma power + LHV of carbon consumed) = 55% at the maximum, against 27% without the bed: the bed converts carbon into CO efficiently, using plasma heat for the Boudouard reaction, but half the product comes from a solid feedstock (0.26 kg C per Nm3 CO).
-- **Transient:** the reported values are the maximum in the first ~1 min. Conversion falls to the benchmark at ~3.5 min and to ~4.7% at 14 min (below the benchmark) as the carbon surface saturates with oxygen; the silo does not restore it (E013, E016). At 14 min, eta_LHV is ~30% (carbon counted), close to the no-bed 27%.
-- **What persists:** O2 removal. O2 stays below 0.8% for the 14 min run (vs 3.7% without the bed) (E014). CO per unit plasma energy also remains higher than the benchmark (9.5 vs 13.0 kWh/Nm3), paid for with 0.24 kg carbon per Nm3 CO.
+- **Reviewer finding (C003, C004):** at the maximum, the O and C balances give 0.121 mol C consumed and 0.246 mol CO formed per mol CO2 fed, i.e. net CO2 + C -> 2 CO; net, the bed carbon equals half the CO formed (a balance result, not the atom origin: bed carbon may partly leave as CO2). The authors' 45.4% credits 283 kJ/mol per CO2 converted and does not count the carbon. With the carbon counted as an energy input, eta_LHV = LHV of CO out / (plasma power + LHV of carbon consumed) = 55% at the maximum, against 27% without the bed: the bed converts carbon into CO efficiently, using plasma heat for the Boudouard reaction, but half the product comes from a solid feedstock (0.26 kg C per Nm3 CO).
+- **Transient:** the reported values are the maximum in the first ~1 min. Conversion falls to the benchmark at ~3.5 min and to ~4.7% at 14 min (below the benchmark) as the carbon surface saturates with oxygen; the silo does not restore it (E013, E016). At 14 min, eta_LHV is ~24% (carbon counted), below the no-bed 27%; the Fig. 5B balance (4.6%) now agrees with Fig. 6 (4.7%).
+- **What persists:** O2 removal. O2 stays below 0.8% for the 14 min run (vs 3.7% without the bed) (E014). CO per unit plasma energy does not: at 14 min it is back to the no-bed level (12.8 vs 13.0 kWh/Nm3) while still consuming 0.21 kg carbon per Nm3 CO.
 - Temperatures: carbon bed peaks ~1700 K then ~1200 K; without bed ~850 K at 15 mm (E015).
 - Authors' outlook: extra heating (e.g. gas burner) or a thermal plasma to limit oxygen coverage, at extra energy cost; recycle of O2-free CO2/CO lowers overall efficiency (E016, E018).
 - Duration: 14 min runs; benchmark steady within 1 min; carbon bed not steady (E013).
@@ -75,7 +75,7 @@ Values from C001-C005 at Vm 24.5 L/mol (authors) with 22.414 L/mol in brackets.
 ## Gaps and comparison limits
 
 - The headline 45.4% (and 12.6%, 25.4 kJ/L) is a transient maximum on a pure-splitting enthalpy; it should not be compared with steady CO2-splitting results. Osorio-Tejada et al. 2024 (RV005) base a 100 t CO/day plant TEA on this point (RV005, Table 1).
-- Carbon is a feedstock: any comparison must include its supply (0.24-0.26 kg/Nm3 CO), its cost and its CO2 origin.
+- Carbon is a feedstock: any comparison must include its supply (0.21-0.26 kg/Nm3 CO), its cost and its CO2 origin. "Half the CO from carbon" is a net balance; the bed carbon may partly leave as CO2.
 - SEI molar basis: 24.5 L/mol applied to Ln/min flows (E009).
 - Carbon balance and carbon consumption rate not reported; reviewer values only.
 
@@ -92,6 +92,7 @@ All in outputs/calculations.py. Formation enthalpies (298 K): CO2 -393.5, CO -11
 ## Revisions
 
 - 2026-11-19: C004 changed from the efficiency on the overall reaction enthalpy (28% at the maximum, carbon treated as free) to eta_LHV with carbon counted as an energy input (workflow 1.1, section 4). E043, the performance table and the finding text updated; evidence IDs kept.
+- 2026-11-19, after GPT cross-check (cross_check_log.md XC005, XC007): net-carbon wording clarified; 14 min Fig. 5B reading corrected (CO ~7.3%, O2 ~0.75%; was ~9.7% and ~0.5%, read near 8 min). OP003 X 4.6%, EC_CO 12.8 kWh/Nm3, carbon 0.21 kg/Nm3 CO, eta_LHV 23.8%; "what persists" text revised. Evidence IDs kept.
 
 ## Plasma characteristics
 

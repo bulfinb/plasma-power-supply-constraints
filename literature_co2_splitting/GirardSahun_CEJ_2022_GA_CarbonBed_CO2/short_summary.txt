@@ -11,17 +11,19 @@ Conversion and products:
 - With bed, maximum (first ~1 min): X 12.6%, CO 21.9%, O2 0.2%.
 - With bed after ~3.5 min the gain is gone; at 14 min X ~4.7% (below the
   no-bed value) as oxygen complexes saturate the carbon; the silo does not
-  restore it. O2 stays below 0.8% throughout (O2 removal persists).
+  restore it. O2 stays below 0.8% throughout (O2 removal persists), but
+  by 14 min CO (7.3%) and energy per CO are back to the no-bed level.
 
 Energy (plasma power):
 - Reported: eta 27.9% -> 45.4%, EC 41.9 -> 25.4 kJ/L. Calculated with
   283 kJ/mol per CO2 converted (pure splitting) despite carbon consumption.
 - Reviewer O/C balance at the maximum: 0.121 mol C consumed and 0.246 mol CO
-  per mol CO2 fed = net CO2 + C -> 2 CO; half the CO comes from the carbon.
+  per mol CO2 fed = net CO2 + C -> 2 CO; net, carbon supplies half the CO
+  (a balance result; bed carbon may partly leave as CO2).
   With the carbon counted as an energy input, eta_LHV = 55% at the
-  maximum (no bed 27%), ~30% at 14 min.
-- Electricity per CO: 13.0 (no bed), 3.95 (bed max), 9.5 (bed, 14 min)
-  kWh/Nm3 CO, plus 0.24-0.26 kg carbon per Nm3 CO (LHV ~2.4 kWh/Nm3).
+  maximum (no bed 27%), ~24% at 14 min.
+- Electricity per CO: 13.0 (no bed), 3.95 (bed max), 12.8 (bed, 14 min)
+  kWh/Nm3 CO, plus 0.21-0.26 kg carbon per Nm3 CO (LHV ~2-2.4 kWh/Nm3).
 - SEI converted with 24.5 L/mol on Ln/min flows: values ~9% different if
   Ln is 0 C.
 
@@ -37,7 +39,7 @@ SRC019-E001-E018. Calculations SRC019-C001-C005, E041-E044;
 outputs/calculations.py. Details: outputs/extraction.md, outputs/evidence.csv.
 
 Prepared 2026-11-12 by Claude (AI); revised 2026-11-19 (eta_LHV with carbon
-counted); ai_checked by same extractor; human verification pending.
+counted; 14 min reading, XC005); ai_checked by same extractor; human verification pending.
 
 Comparison tables (experimental conditions)
 NR = not reported; NA = not applicable; ~ = approximate (figure reading). Human verification pending.
@@ -54,15 +56,15 @@ Girard-Sahun 2022 OP003 | GAP + charcoal bed (14 min)             | 0.408 [1]   
 Source / OP             | X_CO2 (%)  | Products (value; basis)              | Balance closure          | Duration (h; basis)      | Conv. conf.
 Girard-Sahun 2022 OP001 | 7.6        | CO 7.2%, O2 3.7%                     | O balance used           | 0.23; steady             | higher
 Girard-Sahun 2022 OP002 | 12.6       | CO 21.9%, O2 0.2%; C 0.12 mol/mol [2] | O; C by reviewer [2]    | transient max (~1 min)   | higher
-Girard-Sahun 2022 OP003 | ~4.7 [3]   | CO ~9.7%, O2 ~0.5%; C 0.05 mol/mol [2] | O; C by reviewer [2]   | 0.23 (14 min)            | higher
+Girard-Sahun 2022 OP003 | ~4.7 [3]   | CO ~7.3%, O2 ~0.75%; C 0.03 mol/mol [2] | O; C by reviewer [2]   | 0.23 (14 min)            | higher
 [2] Carbon consumed per mol CO2 fed, reviewer O/C balance. SRC019-E042.
-[3] Fig. 6 reading; balance from Fig. 5B gives 5.6%. SRC019-E013, E014.
+[3] Fig. 6 reading; balance from Fig. 5B gives 4.6%. SRC019-E013, E014.
 
 3. Energy
 Source / OP             | P (W; boundary) | Ext. heat       | SEI_CO2 (kJ/mol) | EC_CO2 (kJ/mol) | EC_CO (kWh/Nm3; plasma) | Author eff. (%)      | Energy conf.
 Girard-Sahun 2022 OP001 | 533 plasma      | no              | 78.4 [4]         | 1032            | 13.0                    | 27.9                 | moderate
 Girard-Sahun 2022 OP002 | 533 plasma      | no; carbon [5]  | 78.4 [4]         | 622 [5]         | 3.95 + 0.26 kg C [5]    | 45.4 (55 LHV) [5]    | lower
-Girard-Sahun 2022 OP003 | 533 plasma      | no; carbon [5]  | 78.4 [4]         | ~1400 [5]       | ~9.5 + 0.24 kg C [5]    | NR (~30 LHV) [5]     | lower
+Girard-Sahun 2022 OP003 | 533 plasma      | no; carbon [5]  | 78.4 [4]         | ~1700 [5]       | ~12.8 + 0.21 kg C [5]   | NR (~24 LHV) [5]     | lower
 [4] Authors' Vm 24.5 L/mol; 71.7 kJ/mol at 22.414. SRC019-E041.
 [5] Carbon is a co-reactant (chemical energy not counted by the authors).
     Recalculated as eta_LHV = LHV CO out / (P + LHV C consumed). EC_CO2 per

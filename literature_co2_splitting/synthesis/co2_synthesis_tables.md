@@ -19,7 +19,7 @@ Bongers 2017 OP001      | MW 915 MHz         | M1    | 0.20    | 8.10   | 0.55  
 Bongers 2017 OP003      | MW 915 MHz         | M1    | 0.20    | 3.10   | 0.45       | ~10               | 6.9 MW        | -       | 8.6       | 41           | -          | M/L
 Girard-Sahun 2022 OP001 | GA (AC)            | K1    | ~1.01   | 0.53   | 0.041      | 7.6               | 13.0 plasma   | -       | 14.1-14.4 | 24-25        | -          | H/M
 Girard-Sahun 2022 OP002 | GA (AC) + C bed    | K1    | ~1.01   | 0.53   | 0.13       | 12.6              | 4.0 plasma    | -       | 4.3-4.4   | -            | 0.26       | H/L
-Girard-Sahun 2022 OP003 | GA (AC) + C bed    | K1    | ~1.01   | 0.53   | 0.056      | ~4.7              | 9.5 plasma    | -       | 10.3-10.6 | -            | 0.24       | H/L
+Girard-Sahun 2022 OP003 | GA (AC) + C bed    | K1    | ~1.01   | 0.53   | 0.042      | ~4.7              | 12.8 plasma   | -       | 13.9-14.2 | -            | 0.21       | H/L
 O'Modhrain 2024 OP001   | GA (DC) x5         | D1    | ~1.01   | 7.10   | 0.40       | 8.7               | 17.9 plug     | 17.9    | 14.2-16.1 | 20           | -          | M/H
 Bryssinck 2025 OP003    | GA (DC) x7 + C bed | D1    | ~1.01   | 8.10   | 1.1        | 20                | 7.3 plug      | 7.3     | 5.8-6.6   | -            | 0.27       | M/M
 Renninger 2022 OP001    | DC glow-to-arc     | D1    | ~1.01   | 0.16   | 0.021      | 27.4              | 7.9 plasma    | -       | 8.1-8.6   | 41-43        | -          | M/M

@@ -35,8 +35,8 @@ CASES = {
     "benchmark (no bed)": (1 - 0.072 - 0.036, 0.072, 0.036),
     # with bed, maximum (Fig. 3, charcoal 1, E012): CO 21.9%, O2 0.2%
     "bed, maximum (Fig. 3)": (1 - 0.219 - 0.002, 0.219, 0.002),
-    # with bed, after 14 min (Fig. 5B reading, E014): CO2 ~90%, CO ~9.7%, O2 ~0.5%
-    "bed, 14 min (Fig. 5B)": (0.898, 0.097, 0.005),
+    # with bed, after 14 min (Fig. 5B/5C reading, E014): CO ~7.3%, O2 ~0.75%, CO2 by difference
+    "bed, 14 min (Fig. 5B)": (1 - 0.073 - 0.0075, 0.073, 0.0075),   # revised 2026-11-19 (XC005): CO ~7.3%, O2 ~0.75%
 }
 
 

@@ -151,7 +151,7 @@ handles = [Line2D([], [], marker=STYLE[k][1], color=STYLE[k][0], mec="white", ls
                   ms=11 if STYLE[k][1] == "*" else 7, label=k) for k in STYLE]
 handles += [Line2D([], [], marker="h", mfc=INK, mec="white", ls="none", ms=9, label="SOEC system (Hecimovic 2024)"),
             Line2D([], [], marker="o", mfc="white", mec=MUTED, mew=1.4, ls="none", ms=7,
-                   label="carbon bed (+0.24-0.27 kg C/Nm³ CO)"),
+                   label="carbon bed (+0.21-0.27 kg C/Nm³ CO)"),
             Line2D([], [], color=MUTED, lw=1.5, alpha=0.6, label="range (supply class / volume)"),
             Line2D([], [], color=MUTED, lw=1, ls=":", marker="o", mfc="white", ms=4,
                    label="if expansion-corrected")]

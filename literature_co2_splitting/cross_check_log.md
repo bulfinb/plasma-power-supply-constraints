@@ -14,6 +14,7 @@ It did not have our extractions or short summaries, the search and selection fil
 |---|---|---|---|---|---|
 | SRC018 Bongers 2017 | 2026-11-19 | Codex desktop (version not recorded) | GPT-6.1 Sol (confirmed by BB; not logged by the tool) | 1.0 (1.1 change not relevant: no carbon) | manuscript only (no ESI) |
 | SRC021 Bryssinck 2025 | 2026-11-19 | Codex desktop (version not recorded) | as above | 1.1 (solid-carbon rule given during the extraction) | manuscript and ESI |
+| SRC019 Girard-Sahun 2022 | 2026-11-19 | Codex desktop (version not recorded) | as above | 1.1 (text-vs-figure rule of 1.2 not yet given) | manuscript and PDF ESI |
 
 Each paper gets a one-line summary of what agreed, then one row per difference that matters. Every difference is checked against the PDF. Action: **corrected** (our extraction revised; see processing_log.md and the Revisions section of its extraction.md), **kept ours**, **workflow rule** (workflow.md changed), or **for human check** (not settled by the PDF). These checks are AI-to-AI. They do not change a source's status (ai_checked) and are not logged in ../human_checks/.
 
@@ -21,6 +22,7 @@ Each paper gets a one-line summary of what agreed, then one row per difference t
 
 - **SRC018 Bongers 2017** (2026-11-19): same five operating points; OP001-OP002 values identical (X 83% and 47%; 14.8 and 10.0 kWh/Nm3 CO); OP005 within reading precision. Differences XC001-XC003.
 - **SRC021 Bryssinck 2025** (2026-11-19): best point agrees (X 20%, EC_CO 7.33 vs 7.25 kWh/Nm3, carbon 0.268 kg/Nm3 CO in both, eta_LHV 35.9 vs 36.2%). Both found independently that the empty-reactor control is inconsistent (6.4% conversion and 13.5 MWh/t imply 2 CO per CO2 converted) and that recycle lowers CO output. Difference XC004.
+- **SRC019 Girard-Sahun 2022** (2026-11-19): no-bed and peak points agree (X 7.6% and 12.6%; EC_CO 13.0 and 3.95 kWh/Nm3; carbon 0.263 kg/Nm3 CO; eta_LHV 27.0% and 55.3% in both). Differences XC005-XC007.
 
 ## Differences
 
@@ -30,3 +32,6 @@ Each paper gets a one-line summary of what agreed, then one row per difference t
 | XC002 | 2026-11-19 | SRC018 gas temperature 5700 K | conditions from the Fig. 4 caption (5 kW, 75 slm), assigned to OP001-OP004 | caption and text conflict flagged; not assigned | GPT right: the text says the Fig. 2d setup (3.1 kW, 0.6 eV); the caption says 0.9 eV | corrected (conflict noted; not assigned to any OP) |
 | XC003 | 2026-11-19 | SRC018 OP003-OP004 (75 slm) | Fig. 3b values (X ~10%, ~22.5%; eta ~36% at 10 kW) | text values (X 11%, 23%; eta 40%) | both defensible; the figure agrees with the paper's own X x 2.9 / SEI | kept ours; workflow rule (text vs figure) |
 | XC004 | 2026-11-19 | SRC021 operating points | 4 OPs | 8 OPs, adding the 65 mm bed, 110 L/min, recycle off and 540 s; eta_LHV ~22-23% at 65 mm and 110 L/min | values consistent with our C001 | kept ours (noted: the carbon-bed benefit depends on bed temperature) |
+| XC005 | 2026-11-19 | SRC019 OP003 (bed, 14 min): Fig. 5B reading | CO ~9.7%, O2 ~0.5% (X 5.6%, EC_CO 9.5, eta_LHV 30%) | CO ~7.2%, O2 ~0.75% (X 4.6%, EC_CO 12.9, eta_LHV 23.7%) | GPT right: at 14 min CO is ~7.3% (Figs. 5B and 5C); ours was read near 8 min. Corrected balance now agrees with Fig. 6 (4.7%) | corrected (extraction, summary, synthesis, figures): at 14 min the bed is back to the no-bed energy per CO and below it on eta_LHV |
+| XC006 | 2026-11-19 | SRC019 operating points | no-bed, charcoal 1 peak, 14 min | adds charcoal 2 peak (X 11.3%, author eta 40.4%, eta_LHV 51.5%) | consistent with the paper | kept ours (noted) |
+| XC007 | 2026-11-19 | SRC019 "half the CO comes from the carbon" | stated as fact | net CO-equivalent only; bed carbon may partly leave as CO2 | GPT right: the O/C balance gives the net amount, not the atom origin | corrected (wording) |
