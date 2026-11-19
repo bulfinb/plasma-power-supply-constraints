@@ -8,7 +8,7 @@
 - Protocol version: workflow.md 0.7, with the CO2-splitting metrics of [../../literature_review_objectives.md](../../literature_review_objectives.md).
 - Extractor / date: Claude (AI), 2026-11-12.
 - Coverage: full manuscript and ESI; Figs. 3-7 read from rendered pages. The 0D carbon-gasification model (validated on literature data, Section 3, 4.6) is recorded only as the authors' explanation, not as evidence.
-- Reviewer / date / checks: Claude (AI), 2026-11-12; O and C balances and overall enthalpy recalculated (C001-C005).
+- Reviewer / date / checks: Claude (AI), 2026-11-12; O and C balances and efficiency recalculated (C001-C005).
 - Review status: ai_checked. Human verification pending (C004 changes the headline efficiency).
 
 ## Electricity supply
@@ -39,17 +39,17 @@ Pure CO2 (99.995%), 10 Ln/min, atmospheric pressure (E005); SEI ~3.2 kJ/L in all
 - **External heat:** no; but **solid carbon is a co-reactant** whose chemical energy is not counted by the authors (E008).
 - Product: OP001 CO2/CO/O2 (O2 3.7%); OP002-OP003 CO2/CO with O2 at 0.2-0.8%.
 
-| OP | X_CO2 (%) | CO (%) | O2 (%) | eta reported (%) | eta, overall enthalpy incl. carbon (%) | EC_CO, plasma (kWh/Nm3) | Carbon (kg/Nm3 CO) |
+| OP | X_CO2 (%) | CO (%) | O2 (%) | eta reported (%) | eta_LHV, carbon counted (%) | EC_CO, plasma (kWh/Nm3) | Carbon (kg/Nm3 CO) |
 |---|---|---|---|---|---|---|---|
 | OP001 | 7.6 | 7.2 | 3.7 | 27.9 | 27.0 (29.5) | 13.0 (11.9) | 0 |
-| OP002 | 12.6 | 21.9 | 0.2 | 45.4 | 28.2 (30.8) | 3.95 (3.6) | 0.26 |
-| OP003 | ~4.7-5.6 | ~9.7 | ~0.5 | NR | 13.9 (15.1) | 9.5 (8.7) | 0.24 |
+| OP002 | 12.6 | 21.9 | 0.2 | 45.4 | 55.3 (58.4) | 3.95 (3.6) | 0.26 |
+| OP003 | ~4.7-5.6 | ~9.7 | ~0.5 | NR | 29.9 (32.2) | 9.5 (8.7) | 0.24 |
 
 Values from C001-C005 at Vm 24.5 L/mol (authors) with 22.414 L/mol in brackets.
 
 - **Author's efficiency** (E008): eta = 283 kJ/mol x X_CO2 / SEI, i.e. counted as pure CO2 splitting even with the carbon bed; the authors note that "this must however be kept in mind".
-- **Reviewer finding (C003, C004):** at the maximum, the O and C balances give 0.121 mol C consumed and 0.246 mol CO formed per mol CO2 fed, i.e. net CO2 + C -> 2 CO; half the CO comes from the bed. On the enthalpy of the reactions that actually occurred (formation enthalpies, carbon at 0), the efficiency is 28%, essentially the benchmark's 27%. The reported rise from 27.9% to 45.4% is an accounting effect of crediting 283 kJ/mol per CO2 converted.
-- **Transient:** the reported values are the maximum in the first ~1 min. Conversion falls to the benchmark at ~3.5 min and to ~4.7% at 14 min (below the benchmark) as the carbon surface saturates with oxygen; the silo does not restore it (E013, E016). At 14 min, part of the carbon is burnt to CO2 and the overall-enthalpy efficiency is ~14%.
+- **Reviewer finding (C003, C004):** at the maximum, the O and C balances give 0.121 mol C consumed and 0.246 mol CO formed per mol CO2 fed, i.e. net CO2 + C -> 2 CO; half the CO comes from the bed. The authors' 45.4% credits 283 kJ/mol per CO2 converted and does not count the carbon. With the carbon counted as an energy input, eta_LHV = LHV of CO out / (plasma power + LHV of carbon consumed) = 55% at the maximum, against 27% without the bed: the bed converts carbon into CO efficiently, using plasma heat for the Boudouard reaction, but half the product comes from a solid feedstock (0.26 kg C per Nm3 CO).
+- **Transient:** the reported values are the maximum in the first ~1 min. Conversion falls to the benchmark at ~3.5 min and to ~4.7% at 14 min (below the benchmark) as the carbon surface saturates with oxygen; the silo does not restore it (E013, E016). At 14 min, eta_LHV is ~30% (carbon counted), close to the no-bed 27%.
 - **What persists:** O2 removal. O2 stays below 0.8% for the 14 min run (vs 3.7% without the bed) (E014). CO per unit plasma energy also remains higher than the benchmark (9.5 vs 13.0 kWh/Nm3), paid for with 0.24 kg carbon per Nm3 CO.
 - Temperatures: carbon bed peaks ~1700 K then ~1200 K; without bed ~850 K at 15 mm (E015).
 - Authors' outlook: extra heating (e.g. gas burner) or a thermal plasma to limit oxygen coverage, at extra energy cost; recycle of O2-free CO2/CO lowers overall efficiency (E016, E018).
@@ -86,12 +86,12 @@ All in outputs/calculations.py. Formation enthalpies (298 K): CO2 -393.5, CO -11
 - SRC019-C001 Plasma power and SEI at both molar volumes. Inputs E005, E010. Result E041.
 - SRC019-C002 Outlet flow and conversion from the O balance (2[O2]), compared with Eq. 5 as printed. Inputs E011, E012, E014. Result E042.
 - SRC019-C003 Carbon consumed and CO formed per mol CO2 fed. Result E042.
-- SRC019-C004 Efficiency on the overall reaction enthalpy (outlet minus inlet formation enthalpies) vs 283 x X. Result E043.
+- SRC019-C004 eta_LHV = LHV of CO out / (plasma power + LHV of carbon consumed), LHV_CO 283.0, LHV_C 393.5 kJ/mol; compared with the authors' 283 x X / SEI. Result E043.
 - SRC019-C005 Electricity per mol CO (plasma power) and carbon per Nm3 CO. Result E044.
 
 ## Revisions
 
-None.
+- 2026-11-19: C004 changed from the efficiency on the overall reaction enthalpy (28% at the maximum, carbon treated as free) to eta_LHV with carbon counted as an energy input (workflow 1.0, section 4). E043, the performance table and the finding text updated; evidence IDs kept.
 
 ## Plasma characteristics
 

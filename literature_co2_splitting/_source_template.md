@@ -29,7 +29,7 @@ Small table of operating points (OP ID, conditions, evidence IDs).
 - External heat or other inputs (heating, pumping, cooling, quench gas): pending
 - Per OP: X_CO2 (expansion correction), SEI_CO2, EC_CO2, EC_CO (kJ/mol and kWh/Nm3 CO): pending
 - Author's efficiency (value, equation, dH used): pending
-- Co-reactant consumed (e.g. carbon per mol CO), if any: pending
+- Solid carbon, if used: carbon per Nm3 CO, CO from carbon, eta_LHV (carbon counted): pending
 - Duration and any reported degradation: pending
 
 ## Reporting quality

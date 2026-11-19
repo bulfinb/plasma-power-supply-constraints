@@ -5,10 +5,13 @@ Basis: 1 mol CO2 fed. Inlet 10 Ln/min CO2 (E005); SEI 3.2 kJ/L (E010).
 The authors convert SEI to kJ/mol with Vm = 24.5 L/mol (E009); if 'Ln' means 0 degC,
 22.414 L/mol applies. Both are shown.
 Standard enthalpies of formation (kJ/mol, 298 K): CO2 -393.5, CO -110.5, O2 0, C(s) 0.
+C004 (revised 2026-11-19, workflow 1.0): eta_LHV = LHV of CO out / (electricity + LHV of carbon consumed),
+LHV_CO 283.0 kJ/mol, LHV_C 393.5 kJ/mol (graphite). Replaces the efficiency on the overall reaction enthalpy.
 """
 
 HF = {"CO2": -393.5, "CO": -110.5, "O2": 0.0, "C": 0.0}
 KWH_NM3 = 3.6e3 / (1000.0 / 22.414)    # 80.69 kJ/mol per kWh/Nm3
+LHV_CO, LHV_C = 283.0, 393.5           # kJ/mol
 
 
 def balance(y_co2, y_co, y_o2):
@@ -53,10 +56,10 @@ def run():
         for vm in (24.5, 22.414):
             sei = 3.2 * vm
             eta_auth = r["x"] * 283 / sei * 100              # authors' definition (283 x X / SEI)
-            eta_true = r["dh"] / sei * 100                    # C004: overall enthalpy incl. carbon
+            eta_lhv = r["n_co"] * LHV_CO / (sei + max(r["c"], 0.0) * LHV_C) * 100   # C004: eta_LHV, carbon counted
             ec_co = sei / r["n_co"]                           # C005: electricity per mol CO (plasma)
             c_per_co = r["c"] / r["n_co"]
-            print(f"    Vm {vm}: eta (283*X/SEI) {eta_auth:.1f}% | eta (overall dH incl. C) {eta_true:.1f}% | "
+            print(f"    Vm {vm}: eta (283*X/SEI) {eta_auth:.1f}% | eta_LHV (C counted) {eta_lhv:.1f}% | "
                   f"EC_CO {ec_co:.0f} kJ/mol = {ec_co/KWH_NM3:.2f} kWh/Nm3 | C {c_per_co:.2f} mol/mol CO "
                   f"= {c_per_co*12/22.414:.3f} kg C/Nm3 CO, LHV {c_per_co*393.5/KWH_NM3:.2f} kWh/Nm3 CO")
 

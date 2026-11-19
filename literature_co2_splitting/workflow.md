@@ -72,7 +72,7 @@ eta     the author's efficiency, with its equation and the dH value used; do not
 Reference: CO2 -> CO + 1/2 O2, dH = +283 kJ/mol (298 K) = 2.93 eV/molecule = 3.50 kWh/Nm3 CO. 1 eV/molecule = 96.485 kJ/mol.
 
 - **Flow reference conditions:** if not stated, convert as a reviewer calculation using the molar volume that reproduces the authors' own derived values; otherwise 22.414 L/mol (0 degC, 1 atm). Flag Q2 as partly.
-- **Co-reactants:** if carbon (e.g. a carbon bed) or another reactant is consumed, record the amount per mol CO and whether the author's efficiency counts it.
+- **Solid carbon (e.g. a carbon bed):** carbon is a feedstock. From the O and C balances, record the carbon consumed (kg per Nm3 CO) and how much CO comes from it. Give EC_CO = P / all CO out (electricity only) beside the carbon use. Reviewer efficiency: eta_LHV = LHV of CO out / (P + LHV of carbon consumed), LHV_CO = 283.0 kJ/mol, LHV_C = 393.5 kJ/mol (graphite); without carbon this equals 283 x X / SEI. Record the author's efficiency as reported.
 - **Durability:** record hours on stream and any reported drift or degradation (conversion, efficiency, voltage).
 - Component lifetime or cost figures: one line only, if the paper gives them.
 

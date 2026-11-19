@@ -47,7 +47,7 @@ CO2 99.7%, 50-110 L/min; Vm 24.06 L/mol (E004, E007). Runs of ~200-560 s (E018).
 | OP003 | 20 (18-20) | 33 (peak) | 5.8 (5.8-6.1) | 7.33 | 0.27 | 2.00 |
 | OP004 | 12.7 (total inlet) | 23 | 13.7 | ~17.1 | NR | 1.56 |
 
-kWh/Nm3 = MWh/t x 1.25 (1 t CO = 800 Nm3). OP003 details (C003, C004): per mol CO2 fed, 0.198 mol C consumed and 0.395 mol CO formed; ~296 g C/h; EC_CO 592 kJ/mol (plug); efficiency on the overall reaction enthalpy 14.6% at the plug (17.6% at 0.83 plug-to-plasma) vs 23.9% as 283 x X / SEI.
+kWh/Nm3 = MWh/t x 1.25 (1 t CO = 800 Nm3). OP003 details (C003, C004): per mol CO2 fed, 0.198 mol C consumed and 0.395 mol CO formed; ~296 g C/h; EC_CO 592 kJ/mol (plug); eta_LHV with the carbon counted as an energy input 35.9% at the plug (41.1% at 0.83 plug-to-plasma) vs 23.9% as 283 x X / SEI.
 
 - **Author's metric:** EC per tonne of CO in the outlet on plug power (E007). CO from the carbon is counted as product; the carbon is not counted as an input.
 - **Net reaction with the bed is CO2 + C -> 2CO** (E041): the reported EC values at 70 and 50 L/min correspond exactly to two CO per CO2 converted. At 90 and 110 L/min (1.70, 1.41) and with recycle (1.56) the ratio is lower, i.e. less carbon reacted or some O left the bed as O2/CO2.
@@ -89,13 +89,13 @@ All in outputs/calculations.py. Vm 24.06 L/mol; 1 t CO = 35,701 mol = 800 Nm3.
 - SRC021-C001 CO output implied by reported EC and power; ratio to converted CO2; EC if CO = X or 2X. Inputs E008, E011-E014. Result E041.
 - SRC021-C002 Benchmark: conversion from CO 12% with O2 6% vs 0. Input E009. Result E042.
 - SRC021-C003 Best point O/C balance (CO 33%, O2 0-1%). Input E014. Result E043.
-- SRC021-C004 EC_CO, carbon per CO, carbon rate, efficiency on overall enthalpy (plug and plasma basis). Result E043.
+- SRC021-C004 EC_CO, carbon per CO, carbon rate, eta_LHV = LHV of CO out / (electricity + LHV of carbon consumed), LHV_CO 283.0, LHV_C 393.5 kJ/mol (plug and plasma basis). Result E043.
 - SRC021-C005 Plug-to-plasma ratio implied by the authors' 4.8 vs 5.8 MWh/t. Input E015.
 - SRC021-C006 CO output before and with recycle. Input E013. Result E044.
 
 ## Revisions
 
-None.
+- 2026-11-19: C004 changed from the efficiency on the overall reaction enthalpy (14.6% at the plug, carbon treated as free) to eta_LHV with carbon counted as an energy input (workflow 1.0, section 4). E043 and the OP003 note updated; evidence IDs kept.
 
 ## Plasma characteristics
 

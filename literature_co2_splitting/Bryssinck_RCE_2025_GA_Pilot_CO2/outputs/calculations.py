@@ -2,12 +2,15 @@
 
 Run: python3 calculations.py
 Authors: Vm 24.06 L/mol (E007), plug power (E006), EC in MWh per tonne CO (E007).
-Basis per mol CO2 fed. Formation enthalpies (298 K): CO2 -393.5, CO -110.5 kJ/mol.
+Basis per mol CO2 fed.
+C004 (revised 2026-11-19, workflow 1.0): eta_LHV = LHV of CO out / (electricity + LHV of carbon consumed),
+LHV_CO 283.0 kJ/mol, LHV_C 393.5 kJ/mol (graphite). Replaces the efficiency on the overall reaction enthalpy.
 """
 
 VM = 24.06
 M_CO, M_CO2 = 28.01, 44.01
 KWH_NM3 = 3.6e3 / (1000.0 / 22.414)       # kJ/mol per kWh/Nm3 (Nm3 at 0 C)
+LHV_CO, LHV_C = 283.0, 393.5              # kJ/mol
 
 
 def outlet(y_co, y_o2=0.0):
@@ -55,12 +58,13 @@ def run():
     p = 8.1
     sei = p * 60 / f
     ec_co = sei / co                                 # kJ/mol CO (plug)
-    dh = co * (-110.5) + (1 - x) * (-393.5) - (-393.5)
+    def eta_lhv(power_per_mol):               # power_per_mol: electricity in kJ per mol CO2 fed
+        return co * LHV_CO / (power_per_mol + c * LHV_C) * 100
     print(f"C004 OP003: EC_CO {ec_co:.0f} kJ/mol = {ec_co/KWH_NM3:.2f} kWh/Nm3 CO (plug) | "
           f"carbon {c/co*12.011/22.414:.3f} kg/Nm3 CO | carbon feed {c*f*12.011*60:.0f} g/h | "
-          f"eta (overall dH incl. C, plug) {dh/sei*100:.1f}% | (283*X/SEI) {283*x/sei*100:.1f}%")
+          f"eta_LHV (C counted, plug) {eta_lhv(sei):.1f}% | (283*X/SEI) {283*x/sei*100:.1f}%")
     for e in (0.6, 0.8, 0.83):
-        print(f"    plasma basis (x{e}): EC_CO {ec_co*e/KWH_NM3:.2f} kWh/Nm3; eta overall {dh/(sei*e)*100:.1f}%")
+        print(f"    plasma basis (x{e}): EC_CO {ec_co*e/KWH_NM3:.2f} kWh/Nm3; eta_LHV {eta_lhv(sei*e):.1f}%")
     # C005: authors' plasma-based EC 4.8 vs plug 5.8 -> implied supply efficiency
     print(f"C005 implied plug-to-plasma ratio 4.8/5.8 = {4.8/5.8:.2f} (text: plasma generally 60-80% of plug)")
     # C006: recirculation CO output (from EC and power)
