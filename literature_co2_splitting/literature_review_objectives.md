@@ -2,7 +2,7 @@
 
 Version 0.1 - 2026-11-09.
 
-Part of the electrified endothermic processes review (see [../README.md](../README.md)). Sibling topics: [../literature_reforming/](../literature_reforming/) and [../literature_pyrolysis/](../literature_pyrolysis/). Extraction follows the shared [../literature_reforming/workflow.md](../literature_reforming/workflow.md) and [../literature_reforming/_source_template.md](../literature_reforming/_source_template.md), with the route-specific metrics below.
+Part of the electrified endothermic processes review (see [../README.md](../README.md)). Sibling topics: [../literature_reforming/](../literature_reforming/) and [../literature_pyrolysis/](../literature_pyrolysis/). Extraction follows [workflow.md](workflow.md) and [_source_template.md](_source_template.md).
 
 ## Main objective
 
@@ -10,7 +10,7 @@ To benchmark plasma CO2 splitting (CO2 -> CO + 1/2 O2), using published experime
 
 **Conversion is as important as energy efficiency here.** Single-pass CO2 conversion sets the size and energy of the downstream separation (CO from O2 and unconverted CO2) and recycle. A plasma result with good energy efficiency at 10-20% conversion is not equivalent to SOEC or RWGS at high conversion. Conversion and efficiency are therefore always reported and plotted together, never efficiency alone.
 
-The two parts mirror the reforming review:
+The review has two parts:
 
 1. **Demonstrated performance.** A traceable comparison of what has been demonstrated, under which conditions, on a stated power boundary, and what information is missing.
 2. **Scale-up and whole-system view.** Plasma reactors scaled up with representative industrial power supplies ([../power_systems/notes/scaleup_assessment.md](../power_systems/notes/scaleup_assessment.md)): supply and coupling losses, heat integration, CO/O2/CO2 separation (often omitted but energy-intensive at low conversion), durability and cost. Unrecoverable delivery losses of ~20% are significant in an optimised plant.
@@ -37,7 +37,7 @@ Recent critical reviews are used to locate candidates and the field's convention
 **Benchmarks** (selected directly, not searched; one or two only):
 
 - **SOEC CO2 electrolysis** at commercial or pilot scale (e.g. Topsoe eCOs on-site CO generation), with electricity per Nm3 CO, single-pass conversion and product purity; data type labelled (vendor, measured, design).
-- **Electrolytic H2 + RWGS** (CO2 + H2 -> CO + H2O, +41 kJ/mol): electricity for the H2 (electrolyser) plus RWGS heat, per mol CO, with conversion; from one design study or pilot report. **Amended 2026-11-12:** replaced by BB's own simplified process model (decision 2026-11-12): with excess H2 the product is syngas, not CO, so a literature design study per mol CO is not a like-for-like benchmark; not sourced from literature.
+- **Electrolytic H2 + RWGS** (CO2 + H2 -> CO + H2O, +41 kJ/mol): not sourced or extracted from the literature (decision 2026-11-12). With excess H2 the product is syngas, not CO, so a literature design study is not a like-for-like benchmark per mol CO; the route is treated separately in the synthesis. No RWGS source is to be extracted.
 - **Thermodynamic reference**: 283 kJ/mol enthalpy and the free-energy minimum (257 kJ/mol at 298 K) as reference lines.
 
 Industrial or pilot plasma data, if any, are collected as reference systems: e.g. D-CRBN (University of Antwerp spin-off, BluePlasma consortium). As standard practice, record declared competing interests and author affiliations with spin-offs in each extraction (no concern about any specific group is implied).
@@ -52,7 +52,7 @@ Industrial or pilot plasma data, if any, are collected as reference systems: e.g
 
 ## Energy performance indicators
 
-Use workflow.md section 4, with these route-specific definitions (the field's standard metrics, kept with our explicit boundary):
+Used in workflow.md section 4 (the field's standard metrics, kept with our explicit boundary):
 
 X_CO2 (expansion-corrected, single pass) is a co-primary metric with EC_CO2: record it at every operating point with its correction method. Where a paper reports product separation or recycle, record its energy and the resulting overall conversion.
 
@@ -68,14 +68,14 @@ Many papers report SEI per molecule of total gas including diluent; recalculate 
 
 ## Synthesis plan
 
-As in the reforming review: evidence table, X_CO2 vs EC_CO2 as the main plot (and eta_dH vs SEI) by plasma type and pressure, with SOEC and RWGS conversion/energy shown on the same axes, scale plot, whole-system table including separation where reported, reporting-quality summary, narrative. SOEC shown as a reference band with its data type.
+Evidence table, X_CO2 vs EC_CO2 as the main plot (and eta_dH vs SEI) by plasma type and pressure, with SOEC and RWGS conversion/energy shown on the same axes, scale plot, whole-system table including separation where reported, reporting-quality summary, narrative. SOEC shown as a reference band with its data type.
 
 ## Scale-up and whole-system assessment
 
-Same approach as [../literature_reforming/literature_review_objectives.md](../literature_reforming/literature_review_objectives.md): wall-basis EC_CO2 and EC_CO with representative supplies, then product separation and recycle as a function of single-pass conversion, then heat integration, then cost and durability. Demonstrated values and estimates stay separate.
+Wall-basis EC_CO2 and EC_CO with representative supplies, then product separation and recycle as a function of single-pass conversion, then heat integration, then cost and durability. Demonstrated values and estimates stay separate.
 
 ## Version history
 
 - 0.1 (2026-11-09): initial objectives.
-- 0.1 amendment (2026-11-12): H2 + RWGS benchmark replaced by BB's own simplified process model (decision 2026-11-12): with excess H2 the product is syngas, not CO, so a literature design study per mol CO is not a like-for-like benchmark; not sourced from literature; SOEC benchmarks extracted as SRC025-SRC026.
 - 0.1 amendment (2026-11-09): selective review of 5-10 exemplary studies against the benchmarks, not a comprehensive review; conversion made co-primary with energy efficiency; H2 + RWGS added as a benchmark; conflict-of-interest wording neutralised.
+- 0.1 amendment (2026-11-12): H2 + RWGS benchmark no longer sourced from literature (see Benchmarks); SOEC benchmarks extracted as SRC025-SRC026.

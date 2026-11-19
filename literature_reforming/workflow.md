@@ -1,12 +1,12 @@
 # Literature extraction workflow
 
-Version 0.7 - 2026-11-10 (see Version history; the version that applied to an extraction is identified by its date in processing_log.md, and from the start of git tracking also by commit).
+Version 0.8 - 2026-11-19 (see Version history; the version that applied to an extraction is identified by its date in processing_log.md, and from the start of git tracking also by commit).
 
 The purpose, scope and comparison questions are in [literature_review_objectives.md](literature_review_objectives.md). Find and select papers using [literature_search_strategy.md](literature_search_strategy.md), then follow the steps below for each included paper. Extract what supports the review questions, rather than every available detail.
 
 ## 1. Set up the source folder
 
-Use one folder per source under its topic folder (literature_reforming/, literature_pyrolysis/ or literature_co2_splitting/), named FirstAuthor_Journal_Year_ShortTopic (e.g. Geng_APC_2022_Plasma_SMR). Add a distinguishing word to the short topic when one author has several papers from the same year or journal. Keep the manuscript, supporting source documents and one short_summary.txt directly in each source folder. Put the detailed review files in outputs/:
+Use one folder per source in literature_reforming/, named FirstAuthor_Journal_Year_ShortTopic (e.g. Geng_APC_2022_Plasma_SMR). Add a distinguishing word to the short topic when one author has several papers from the same year or journal. Keep the manuscript, supporting source documents and one short_summary.txt directly in each source folder. Put the detailed review files in outputs/:
 
 ```text
 literature_reforming/<source>/
@@ -26,7 +26,7 @@ These are the three standard review files. Create outputs/operating_points.csv o
 
 ## 2. Extract the required values
 
-First identify the route: for reforming, SMR, DRM or mixed reforming; for the pyrolysis and CO2-splitting topics, the routes and route-specific energy metrics in that folder's literature_review_objectives.md, which replace the reforming-specific definitions in section 4 where they differ. Source IDs (SRCxxx) are numbered globally across all topic folders. Record whether the results are experimental, modelled or projected. Then use the four headings below to organise the extraction.
+First identify the route: SMR, DRM or mixed reforming. Source IDs (SRCxxx) are numbered globally across the project. Record whether the results are experimental, modelled or projected. Then use the four headings below to organise the extraction.
 
 | Heading | Look for |
 |---|---|
@@ -249,9 +249,10 @@ Renumbered 2026-11-10: each amendment is now its own version. Extraction files w
 | 0.1 | 2026-10-30 | initial version | 0.1 |
 | 0.2 | 2026-11-04 | the single comparison-table entry in short_summary.txt replaced by five aligned tables (section 6) | 0.1 (with 2026-11-04 amendment) |
 | 0.3 | 2026-11-05 | AI tool and model versions recorded in processing_log.md (section 3a); SHA-256 hashes of source documents required in extraction.md | 0.1 (with 2026-11-04 amendment) |
-| 0.4 | 2026-11-09 | workflow shared with the pyrolysis and CO2-splitting topic folders; global source IDs | 0.1 amendment |
+| 0.4 | 2026-11-09 | workflow shared with other topic folders; global source IDs | 0.1 amendment |
 | 0.5 | 2026-11-10 | after an external LLM consistency review: human checks recorded on the AI row in processing_log.md (section 3a); one rule for flows without stated reference conditions (sections 4 and 6); versions renumbered | - |
 | 0.6 | 2026-11-10 | simplified (BB): core energy metrics SEI as reported, SEI_CH4, EC_CH4 plus the author's efficiency; eta_P,LHV and EY_H2 optional; eta_HHV and f_electric for benchmarks only; system boundary reduced to power boundary and external heat; hardware/cost and full missing-data checklist dropped; plasma diagnostics reduced to regime, gas temperature and a list; summary tables reduced from five to four. Extractions made under 0.1-0.5 are kept as they are | - |
 | 0.7 | 2026-11-10 | human-check and AI-error logs added (section 3b; ../human_checks/findings.csv and summary.csv) | - |
+| 0.8 | 2026-11-19 | reforming only: references to other topic folders removed (each topic has its own workflow) | - |
 
 Cite the version number in new extraction files.

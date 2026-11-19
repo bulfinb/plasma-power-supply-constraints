@@ -2,7 +2,7 @@
 
 Version 0.1 - 2026-11-09.
 
-Objectives: [literature_review_objectives.md](literature_review_objectives.md). Extraction: [../literature_reforming/workflow.md](../literature_reforming/workflow.md). Search and selection procedure, record formats and exclusion logic follow [../literature_reforming/literature_search_strategy.md](../literature_reforming/literature_search_strategy.md) except where stated here.
+Objectives: [literature_review_objectives.md](literature_review_objectives.md). Extraction: [workflow.md](workflow.md). Searches and selection decisions are recorded in [search_and_selection_log.md](search_and_selection_log.md).
 
 ## Selection approach
 
@@ -25,7 +25,7 @@ The field is large (hundreds of papers, mostly sub-kW). When choosing exemplars,
 | Non-plasma routes | Electrochemical and thermocatalytic routes (except the selected SOEC benchmarks, chosen directly; H2 + RWGS dropped as a literature benchmark 2026-11-12, see objectives), photochemical, solar thermochemical, catalytic thermal. |
 | Low pressure only | Sub-atmospheric results are eligible but flagged, since the vacuum-pumping energy is normally excluded; record pressure explicitly. |
 | No original demonstration | Reviews and perspectives (use to find primary papers). |
-| Duplicate evidence | As in the reforming strategy. |
+| Duplicate evidence | Multiple records of the same paper, or repeated results without new relevant data. Link companion reports rather than counting the same experiment twice. |
 
 ## Search terms
 
