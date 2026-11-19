@@ -5,7 +5,7 @@
 - Source ID / citation / DOI: pending
 - Source files and document versions (with SHA-256): pending
 - Retrieval date: unknown
-- Protocol version: workflow.md 1.0
+- Protocol version: workflow.md 1.2
 - Extractor / date: pending
 - Coverage (documents, conditions, figures): pending
 - Reviewer / date / checks: pending

@@ -5,7 +5,7 @@ Basis: 1 mol CO2 fed. Inlet 10 Ln/min CO2 (E005); SEI 3.2 kJ/L (E010).
 The authors convert SEI to kJ/mol with Vm = 24.5 L/mol (E009); if 'Ln' means 0 degC,
 22.414 L/mol applies. Both are shown.
 Standard enthalpies of formation (kJ/mol, 298 K): CO2 -393.5, CO -110.5, O2 0, C(s) 0.
-C004 (revised 2026-11-19, workflow 1.0): eta_LHV = LHV of CO out / (electricity + LHV of carbon consumed),
+C004 (revised 2026-11-19, workflow 1.1): eta_LHV = LHV of CO out / (electricity + LHV of carbon consumed),
 LHV_CO 283.0 kJ/mol, LHV_C 393.5 kJ/mol (graphite). Replaces the efficiency on the overall reaction enthalpy.
 """
 

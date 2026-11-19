@@ -35,8 +35,8 @@ Traceability: manuscript.pdf pp. 1-7, Figs. 3-9, Table 1; SRC018-E001-E017.
 Calculations SRC018-C001-C004, E041-E043; outputs/calculations.py.
 Details: outputs/extraction.md, outputs/evidence.csv.
 
-Prepared 2026-11-12 by Claude (AI); ai_checked by same extractor; human
-verification pending.
+Prepared 2026-11-12 by Claude (AI); revised 2026-11-19 after GPT
+cross-check (XC001-XC002); ai_checked; human verification pending.
 
 Comparison tables (experimental conditions)
 NR = not reported; NA = not applicable; ~ = approximate (figure reading). Human verification pending.
@@ -47,7 +47,7 @@ Bongers 2017 OP001 | 915 MHz MW, FV + nozzle quench / none     | 0.491 [1]      
 Bongers 2017 OP002 | 915 MHz MW, FV + nozzle quench / none     | 0.491 [1]          | none    | 0.20 [2]  | 11 slm; 3.1 kW
 Bongers 2017 OP003 | 915 MHz MW, FV + nozzle quench / none     | 3.346 [1]          | none    | 0.20 [2]  | 75 slm; 3.1 kW
 Bongers 2017 OP004 | 915 MHz MW, FV + nozzle quench / none     | 3.346 [1]          | none    | 0.20 [2]  | 75 slm; 10 kW
-Bongers 2017 OP005 | 2.45 GHz MW, RV + Cu quench tube / none   | NR                 | none    | ~0.4-0.6  | ~1 kW; SEI 0.8 eV
+Bongers 2017 OP005 | 2.45 GHz MW, RV + Cu quench tube / none   | NR                 | none    | ~0.4-0.6  | SEI 0.8 eV; P NR 
 [1] slm, reference not stated; 0 C (22.414 L/mol) reproduces the authors'
     SEI. SRC018-E041.
 [2] Sub-atmospheric; vacuum pump power excluded.
@@ -67,18 +67,19 @@ Bongers 2017 OP001 | 8100 MW [4]     | no        | 990 (10.3 eV)    | 1193      
 Bongers 2017 OP002 | 3100 MW [4]     | no        | 379 (3.9 eV)     | 806             | 10.0                | 35                   | lower
 Bongers 2017 OP003 | 3100 MW [4]     | no        | 56 (0.6 eV)      | ~556            | ~6.9                | 51                   | lower
 Bongers 2017 OP004 | 10000 MW [4]    | no        | 179 (1.9 eV)     | ~797            | ~9.9                | ~36 (text 40) [5]    | lower
-Bongers 2017 OP005 | ~1000 MW [4]    | no        | 77 (0.8 eV)      | ~618            | ~7.7                | ~46.5                | lower
+Bongers 2017 OP005 | NR; MW [4]      | no        | 77 (0.8 eV)      | ~618            | ~7.7                | ~46.5                | lower
 [4] "MW power", forward/absorbed undefined; vacuum pump and supply losses
     excluded. SRC018-E003.
 [5] Fig. 3b and alpha x 2.9/SEI give ~36%. SRC018-E042.
 
 4. Plasma parameters (plasma-on rows only)
 Source / OP        | Discharge / regime         | Supply / frequency        | Voltage | P_plasma (W; method) | Gas T (K; method)          | Other diagnostics
-Bongers 2017 OP001 | MW, FV; contracted, thermal | magnetron 3-30 kW / 915 MHz | NA    | 8100; MW power       | ~5700 [6]                  | OES Tvib 9000 K
-Bongers 2017 OP002 | MW, FV; contracted, thermal | magnetron 3-30 kW / 915 MHz | NA    | 3100; MW power       | ~5700 [6]                  | OES Tvib 9000 K
-Bongers 2017 OP003 | MW, FV; contracted, thermal | magnetron 3-30 kW / 915 MHz | NA    | 3100; MW power       | ~5700 [6]                  | OES Tvib 9000 K
-Bongers 2017 OP004 | MW, FV; contracted, thermal | magnetron 3-30 kW / 915 MHz | NA    | 10000; MW power      | ~5700 [6]                  | OES Tvib 9000 K
-Bongers 2017 OP005 | MW, RV; contracted, thermal | 1 kW / 2.45 GHz           | NA      | ~1000; MW power      | ~4000 (Exp. 1, FV) [6]     | E/n 70-80 Td (sim.)
-[6] OES, C2 Swan bands, Trot taken as Tg; measured at 5 kW, 75 slm (915
-    MHz) and 1 kW, 14 slm (2.45 GHz), both 200 mbar, not at each OP.
+Bongers 2017 OP001 | MW, FV; contracted, thermal | magnetron 3-30 kW / 915 MHz | NA    | 8100; MW power       | NR at OP [6]               | OES Tvib 9000 K
+Bongers 2017 OP002 | MW, FV; contracted, thermal | magnetron 3-30 kW / 915 MHz | NA    | 3100; MW power       | NR at OP [6]               | OES Tvib 9000 K
+Bongers 2017 OP003 | MW, FV; contracted, thermal | magnetron 3-30 kW / 915 MHz | NA    | 3100; MW power       | NR at OP [6]               | OES Tvib 9000 K
+Bongers 2017 OP004 | MW, FV; contracted, thermal | magnetron 3-30 kW / 915 MHz | NA    | 10000; MW power      | NR at OP [6]               | OES Tvib 9000 K
+Bongers 2017 OP005 | MW, RV; contracted, thermal | 1 kW / 2.45 GHz           | NA      | NR at OP             | NR at OP [6]               | E/n 70-80 Td (sim.)
+[6] OES, C2 Swan bands, Trot taken as Tg: 5700 K (915 MHz; Fig. 4 caption
+    0.9 eV/5 kW/75 slm, text 3.1 kW/0.6 eV: conflict) and 4000 K (2.45 GHz,
+    Exp. 1, 1 kW, 14 slm), both 200 mbar; not at any listed OP.
     SRC018-E015.

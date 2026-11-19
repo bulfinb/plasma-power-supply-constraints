@@ -3,7 +3,7 @@
 Run: python3 calculations.py
 Authors: Vm 24.06 L/mol (E007), plug power (E006), EC in MWh per tonne CO (E007).
 Basis per mol CO2 fed.
-C004 (revised 2026-11-19, workflow 1.0): eta_LHV = LHV of CO out / (electricity + LHV of carbon consumed),
+C004 (revised 2026-11-19, workflow 1.1): eta_LHV = LHV of CO out / (electricity + LHV of carbon consumed),
 LHV_CO 283.0 kJ/mol, LHV_C 393.5 kJ/mol (graphite). Replaces the efficiency on the overall reaction enthalpy.
 """
 

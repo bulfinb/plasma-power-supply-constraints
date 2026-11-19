@@ -91,7 +91,7 @@ All in outputs/calculations.py. Formation enthalpies (298 K): CO2 -393.5, CO -11
 
 ## Revisions
 
-- 2026-11-19: C004 changed from the efficiency on the overall reaction enthalpy (28% at the maximum, carbon treated as free) to eta_LHV with carbon counted as an energy input (workflow 1.0, section 4). E043, the performance table and the finding text updated; evidence IDs kept.
+- 2026-11-19: C004 changed from the efficiency on the overall reaction enthalpy (28% at the maximum, carbon treated as free) to eta_LHV with carbon counted as an energy input (workflow 1.1, section 4). E043, the performance table and the finding text updated; evidence IDs kept.
 
 ## Plasma characteristics
 

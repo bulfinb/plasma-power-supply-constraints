@@ -63,7 +63,7 @@ ROWS = [
       conv="moderate", energy="lower", ev="SRC018-E041", head=True, note="best efficiency; pump excluded"),
     R("Bongers 2017 OP004", "SRC018", "MW 915 MHz", "M1", "0.20", 10.0, "MW power", "~22.5", (9.9, 9.9),
       conv="moderate", energy="lower", ev="SRC018-E042", note="text 40% eff., figure ~36%"),
-    R("Bongers 2017 OP005", "SRC018", "MW 2.45 GHz", "M2", "0.4-0.6", 1.0, "MW power", "~12.5", (7.7, 7.7),
+    R("Bongers 2017 OP005", "SRC018", "MW 2.45 GHz", "M2", "0.4-0.6", None, "MW power", "~12.5", (7.7, 7.7),
       conv="moderate", energy="lower", ev="SRC018-E013"),
     # --- gliding arc ---
     R("Girard-Sahun 2022 OP001", "SRC019", "GA (AC)", "K1", "~1.01", 0.533, "plasma", "7.6", (13.0, 13.0),

@@ -33,7 +33,7 @@ Pure CO2; flows in slm (reference not stated; 0 C reproduces the SEI values, C00
 | OP002 | 915 MHz, FV + nozzle quench | 200 | 11 | 3.1 | 3.9 | E009 |
 | OP003 | 915 MHz, FV + nozzle quench | 200 | 75 | 3.1 | 0.6 | E010, E011 |
 | OP004 | 915 MHz, FV + nozzle quench | 200 | 75 | 10 | 1.9 | E010, E011 |
-| OP005 | 2.45 GHz, RV, convective quench (Exp. 7) | ~400-600 | NR | NR (~1) | 0.8 | E013 |
+| OP005 | 2.45 GHz, RV, convective quench (Exp. 7) | ~400-600 | NR | NR | 0.8 | E013 |
 
 ## Performance indicators
 
@@ -94,10 +94,10 @@ All in outputs/calculations.py. 22.414 L/mol (0 C assumed; reproduces the report
 
 ## Revisions
 
-None.
+- 2026-11-19, after GPT cross-check (cross_check_log.md XC001-XC002): OP005 power changed from "~1 kW" to NR (the 1 kW / 14 slm belong to Exps. 1-2, not Exp. 7); 5700 K condition conflict (Fig. 4 caption vs text) noted, temperature no longer assigned to OP001-OP004. Evidence IDs kept.
 
 ## Plasma characteristics
 
 - Regime: microwave, forward or reverse vortex; contracted; dissociation mainly thermal (authors) (E015, E016).
-- Gas temperature: 5700 K (915 MHz, 5 kW, 75 slm, 200 mbar) and 4000 K (2.45 GHz, Exp. 1, 200 mbar), rotational temperature of C2 Swan bands taken as Tg, OES at the brightest point of the plasma core (E015). Tvib 9000 K in both.
+- Gas temperature: 5700 K (915 MHz, 200 mbar; conditions conflict: the Fig. 4 caption gives 0.9 eV, 5 kW, 75 slm, the text says the Fig. 2d setup, 3.1 kW, 75 slm, 0.6 eV; not assigned to any OP) and 4000 K (2.45 GHz, Exp. 1, 200 mbar), rotational temperature of C2 Swan bands taken as Tg, OES at the brightest point of the plasma core (E015). Tvib 9000 K in both.
 - Other diagnostics: E/n estimated 70-80 Td from HFSS field simulation (E014).

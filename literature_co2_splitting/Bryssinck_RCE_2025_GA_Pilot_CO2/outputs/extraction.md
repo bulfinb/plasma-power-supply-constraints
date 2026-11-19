@@ -95,7 +95,7 @@ All in outputs/calculations.py. Vm 24.06 L/mol; 1 t CO = 35,701 mol = 800 Nm3.
 
 ## Revisions
 
-- 2026-11-19: C004 changed from the efficiency on the overall reaction enthalpy (14.6% at the plug, carbon treated as free) to eta_LHV with carbon counted as an energy input (workflow 1.0, section 4). E043 and the OP003 note updated; evidence IDs kept.
+- 2026-11-19: C004 changed from the efficiency on the overall reaction enthalpy (14.6% at the plug, carbon treated as free) to eta_LHV with carbon counted as an energy input (workflow 1.1, section 4). E043 and the OP003 note updated; evidence IDs kept.
 
 ## Plasma characteristics
 
