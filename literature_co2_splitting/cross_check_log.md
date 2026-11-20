@@ -17,6 +17,7 @@ It did not have our extractions or short summaries, the search and selection fil
 | SRC019 Girard-Sahun 2022 | 2026-11-19 | Codex desktop (version not recorded) | as above | 1.1 (text-vs-figure rule of 1.2 not yet given) | manuscript and PDF ESI |
 | SRC017 Hecimovic 2023 | 2026-11-19 | Codex desktop (version not recorded) | as above | 1.2 | manuscript and ESI; length guidance given (shorter outputs) |
 | SRC026 Hecimovic 2024 | 2026-11-20 | Codex desktop (version not recorded) | as above | 1.2 | manuscript; benchmark (R1-R4) |
+| SRC016 Kiefer 2024 | 2026-11-20 | Codex desktop (version not recorded) | as above | 1.2 | manuscript (durability supplement not held by either) |
 
 Each paper gets a one-line summary of what agreed, then one row per difference that matters. Every difference is checked against the PDF. Action: **corrected** (our extraction revised; see processing_log.md and the Revisions section of its extraction.md), **kept ours**, **workflow rule** (workflow.md changed), or **for human check** (not settled by the PDF). These checks are AI-to-AI. They do not change a source's status (ai_checked) and are not logged in ../human_checks/.
 
@@ -27,6 +28,7 @@ Each paper gets a one-line summary of what agreed, then one row per difference t
 - **SRC019 Girard-Sahun 2022** (2026-11-19): no-bed and peak points agree (X 7.6% and 12.6%; EC_CO 13.0 and 3.95 kWh/Nm3; carbon 0.263 kg/Nm3 CO; eta_LHV 27.0% and 55.3% in both). Differences XC005-XC007.
 - **SRC017 Hecimovic 2023** (2026-11-20): the 55% headline point is identical (2.7 kW, 5 ls/min, SEI 779 kJ/mol, 17.6 kWh/Nm3 CO). Both found independently that the reported efficiencies are ~9-10% above X x 2.9 / SEI on the stated 20 degC flow basis, and that the 57% maximum pairs with ~16.5% efficiency (Figs. 8-9), not the ~20% in the conclusion. Difference XC008.
 - **SRC026 Hecimovic 2024** (2026-11-20): both found independently that the FZJ SOEC figure is 69.6 kW / 17.5 Nm3/h = 3.98 kWh/Nm3 (4.19 with the 0.95 rectifier), not the reported 3.89, and that the vendor 6-8 kWh/Nm3 implies 44-58%, not 90%. Cooled-channel plasma at 19.8 kWh/Nm3 (total) and membrane reactor at 35 kWh/Nm3 agree. Difference XC009.
+- **SRC016 Kiefer 2024** (2026-11-20): same four operating points (OP001/OP002 numbered the other way round). All headline values agree within figure-reading precision: wall-plug energy 19.6 kWh/Nm3 CO (17.9%) at both 9.3 slm points, wall power ~3760 W (no pump) and ~4220 W (with pump), 56.6% conversion at ~33 kWh/Nm3 (wall eta ~10.5-10.7%), durability 29 h 20 min in four blocks at ~27% and ~20 kWh/Nm3. No differences needing action; GPT rates figure-read energy points moderate rather than higher, and writes external heat as NR rather than no.
 
 ## Differences
 
