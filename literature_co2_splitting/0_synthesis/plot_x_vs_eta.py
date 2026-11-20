@@ -15,7 +15,7 @@ Van Laer (SRC024) conversions as reported; if not expansion-corrected they would
 eta_LHV by 1-3 points (synthesis table note [6]); not shown, as it does not move them out of the <10% corner.
 Rows not plotted: Bryssinck OP004 (carbon use NR), Hecimovic 2024 OP002/OP005 (vendor figure; not matched).
 
-Run from the repository root: ~/.venvs/science/bin/python literature_co2_splitting/synthesis/plot_x_vs_eta.py
+Run from the repository root: ~/.venvs/science/bin/python literature_co2_splitting/0_synthesis/plot_x_vs_eta.py
 """
 import csv
 import re

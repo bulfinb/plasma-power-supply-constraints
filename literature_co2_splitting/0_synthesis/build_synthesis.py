@@ -1,6 +1,6 @@
 """CO2 splitting synthesis: one row per extracted operating point (SRC016-SRC026).
 
-Run from the repository root:  python3 literature_co2_splitting/synthesis/build_synthesis.py
+Run from the repository root:  python3 literature_co2_splitting/0_synthesis/build_synthesis.py
 Writes co2_synthesis.csv (all rows) and co2_synthesis_tables.md (headline rows, aligned tables).
 
 Values are copied from each source's short_summary.txt comparison tables (evidence IDs given per row);

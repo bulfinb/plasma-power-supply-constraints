@@ -59,12 +59,17 @@ literature_plasma_powersupply/
 literature_reviews/
   reviews_shortlist.md             review papers used to pick exemplary studies and benchmarks (pyrolysis, CO2 splitting)
   <FirstAuthor_Journal_Year_Topic>/manuscript.pdf
-literature_pyrolysis/, literature_co2_splitting/
+literature_pyrolysis/
   literature_review_objectives.md, literature_search_strategy.md, search_and_selection_log.md, processing_log.md
+literature_co2_splitting/
+  0_synthesis/                     synthesis tables (co2_synthesis_tables.md), CSV and figures, with build scripts
+  literature_review_objectives.md, literature_search_strategy.md, search_and_selection_log.md, processing_log.md
+  workflow.md, _source_template.md  CO2-splitting extraction protocol and template (own workflow, version 1.2)
+  cross_check_log.md               independent GPT re-extraction: differences and actions
 literature_reforming/
   literature_review_objectives.md  aims, scope, comparison basis and synthesis plan
   literature_search_strategy.md    search terms, eligibility, screening
-  workflow.md                      extraction protocol (evidence IDs, metrics, reporting quality); shared by all topics
+  workflow.md                      reforming extraction protocol (evidence IDs, metrics, reporting quality)
   _source_template.md              template for each extraction
   search_and_selection_log.md      searches run and screening decisions
   plasma_shortlist_2026-11-05.md   current plasma shortlist and reserves

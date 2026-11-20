@@ -9,7 +9,7 @@ heat below V_tn excluded); SOEC system point at its 86% utilisation (Hecimovic 2
 wall incl. 0.95 rectifier in (b)).
 The O2-membrane demonstrator (Hecimovic 2024 OP005) and vendor eCOs figure are not plotted (not matched points).
 
-Run from the repository root: python3 literature_co2_splitting/synthesis/plot_x_vs_ec.py
+Run from the repository root: python3 literature_co2_splitting/0_synthesis/plot_x_vs_ec.py
 """
 import csv
 import re
