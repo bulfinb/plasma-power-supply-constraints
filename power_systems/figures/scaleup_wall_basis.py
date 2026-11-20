@@ -28,7 +28,7 @@ LIT = [
     ("Song 2020 (SRC009)", "DRM", "RF generator output", 1036, 1510, "R2"),
     ("Song 2020 (SRC009)", "DRM", "RF generator output", 1036, 1510, "K2@400kHz"),
     ("Akande 2022 (SRC008)", "SMR", "absorbed MW", 511, 1078, "M1"),
-    ("Hrycak 2023 (SRC010)", "mixed", "absorbed MW (lower bounds)", 238, 471, "M1"),
+    ("Hrycak 2023 (SRC010)", "mixed", "absorbed MW (lower bounds)", 258, 509, "M1"),  # revised 2026-11-20 (Vm 24.25, XR008)
     ("Kelly 2023 (SRC011)", "DRM", "absorbed MW", 581, 723, "M2"),
     ("Kelly 2023 (SRC011)", "DRM", "absorbed MW", 581, 723, "M3"),
     ("Kwon 2023 (SRC014)", "DRM", "discharge", 740, 948, "K1"),

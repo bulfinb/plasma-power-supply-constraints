@@ -4,7 +4,7 @@ SRC002. Experimental results only. Thermal background retained.
 Scale: 10-20 W reported discharge power, usually 15 W. Not total system
 electricity. Methane feed about 1.0e-3 mol/min (about 25 mL/min), derived
 from the water feed at S/C 4.4 (SRC002-C003; reviewer interpretation of
-the unclear feed wording, needs human confirmation).
+the unclear feed wording; confirmed by BB 2026-11-20).
 Thermal background: 300-440 degC; reactor heating and steam-generation
 duties not reported. Plasma-off controls remain heated.
 
@@ -54,7 +54,7 @@ Geng 2022 OP001 | SMR   | Packed quartz tube / plasma off / Ni-CaAl4O7 + alumina
 Geng 2022 OP002 | SMR   | Packed quartz tube / AC DBD / Ni-CaAl4O7 + alumina     | 1.0e-3 [1]         | ~25 mL/min CH4; 15 W discharge
 Geng 2022 OP008 | SMR   | Packed quartz tube / AC DBD / Ni-CaAl4O7 + alumina     | 1.0e-3 [1]         | ~25 mL/min CH4; 15 W discharge
 [1] Derived from 0.08 mL/min liquid water at S/C 4.4 (SRC002-C003); reviewer
-    reading of unclear feed wording, needs human confirmation. SRC002-E020-E023.
+    reading of unclear feed wording, confirmed by BB 2026-11-20. SRC002-E020-E023.
 
 2. Operating conditions
 Source / OP     | T (degC; location/type) | p (bar; abs/gauge) | CH4:CO2:H2O (molar) | Other feed / ratio

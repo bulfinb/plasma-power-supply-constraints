@@ -87,7 +87,7 @@ On the supply side the same patent states that >=95% solid-state supplies are co
 
 | Source | Paper boundary | Supply class | EC_CH4 reported (kJ/mol) | EC_CH4 wall (kJ/mol) |
 |---|---|---|---|---|
-| Hrycak 2023 | absorbed MW (lower bounds) | M1 | 238-471 | 298-589 |
+| Hrycak 2023 | absorbed MW (lower bounds) | M1 | 258-509 | 322-636 |
 | Zhu 2019 | discharge; steam and lab ballast excl. | D1 (HV DC) | 490-679 | 505-738 |
 | Akande 2022 | absorbed MW | M1 | 511-1078 | 639-1348 |
 | Kelly 2023 | absorbed MW | M2 magnetron / M3 solid-state | 581-723 | 830-1148 / 830-1291 |

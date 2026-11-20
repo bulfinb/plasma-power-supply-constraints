@@ -134,7 +134,7 @@ Inputs E021-E022: 0.08 mL/min liquid water at S/C 4.4 (0.08 to 0.12 mL/min corre
 
 `F_H2O = 0.08 * 0.997 / 18.015 = 4.427e-3 mol/min`; `F_CH4,in = 4.427e-3 / 4.4 = 1.006e-3 mol/min = 1.677e-5 mol/s` (E065).
 
-This equals about 22.6 mL/min at 0 degC/1 atm or 24.6 mL/min at 25 degC/1 atm. It supports reading the methods' "25 (+/-1) ml/min methane and steam" as 25 mL/min of methane, not of total feed; a total feed of 25 mL/min would imply only about 4.6 mL/min CH4. The interpretation is the reviewer's and needs human confirmation. The molar flow does not depend on the gas reference conditions.
+This equals about 22.6 mL/min at 0 degC/1 atm or 24.6 mL/min at 25 degC/1 atm. It supports reading the methods' "25 (+/-1) ml/min methane and steam" as 25 mL/min of methane, not of total feed; a total feed of 25 mL/min would imply only about 4.6 mL/min CH4. The interpretation is the reviewer's; BB confirmed it on 2026-11-20 against PDF pp. 2-6 (feed sentence, water feed 0.08-0.12 mL/min at S/C 4.4-6.6, S/C 4.4 baseline with the Fig. 3 caption giving 4.5). The GPT cross-check reached the same feed independently (XR006). The molar flow does not depend on the gas reference conditions.
 
 ### SRC002-C004: power-basis SEI and EC_CH4
 

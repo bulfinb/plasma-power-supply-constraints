@@ -29,7 +29,7 @@ Metal-cylinder microwave plasma source with a quartz discharge tube; four tangen
 
 ## Operating conditions
 
-Atmospheric pressure. Synthetic biogas = CH4 + CO2 only, 40-100% CH4, 3000-12,000 NL/h; steam 0.5-3 kg/h (E006). NL taken as 0 degC, 1 atm. Steam/CH4 molar ratio 0.8-1.7 at the extracted points (C001). 3000 NL/h is the minimum flow for safe operation at 6.5 kW (swirl cooling) (E018). No gas or wall temperatures reported apart from the steam temperature.
+Atmospheric pressure. Synthetic biogas = CH4 + CO2 only, 40-100% CH4, 3000-12,000 NL/h; steam 0.5-3 kg/h (E006). NL reference not stated; 24.25 L/mol (about 22 degC, 1 atm) is used because it reproduces the authors' own H2 rates and conversions in all three Table 1 rows (C002; XR008). Steam/CH4 molar ratio 0.9-1.8 at the extracted points (C001). 3000 NL/h is the minimum flow for safe operation at 6.5 kW (swirl cooling) (E018). No gas or wall temperatures reported apart from the steam temperature.
 
 Route: mixed (steam + CO2) reforming, except OP002 (100% CH4 + steam = SMR).
 
@@ -46,16 +46,16 @@ Duration: not reported; stability described only as soot-free operation without 
 
 | OP | X_CH4 (%) | X_CO2 (%) [ours] | H2 (g/h) | EY_H2 (g/kWh) | Outlet H2 / CO / CO2 / CH4 (vol%) | C closure [ours] | Evidence |
 |---|---|---|---|---|---|---|---|
-| OP001 | 48.9 | 47.7 | 239 | 36.8 | 40.0 / 14.3 / 11.8 / 32.0 | 68% | E010, E044-E045 |
-| OP002 | 66.1 | NA | 234 | 36.1 | 58.4 / 14.4 / 3.2 / 21.1 | 66% | E011, E044-E045 |
-| OP003 | 74.3 | 62.7 | 171.5 | 26.4 | 46.8 / 30.0 / 13.7 / 8.7 | 73% | E012, E044-E045 |
+| OP001 | 48.9 | 43.5 | 239 | 36.8 | 40.0 / 14.3 / 11.8 / 32.0 | 74% | E010, E044-E045 |
+| OP002 | 66.1 | NA | 234 | 36.1 | 58.4 / 14.4 / 3.2 / 21.1 | 71% | E011, E044-E045 |
+| OP003 | 74.3 | 59.7 | 171.5 | 26.4 | 46.8 / 30.0 / 13.7 / 8.7 | 79% | E012, E044-E045 |
 | OP004 | 40.5 | NR | 128.5 | 28.6 | H2 25.1% | NR | E020 |
 | OP005 | 42.3 | NR | 162.5 | 29.5 | H2 27.2% | NR | E020 |
 | OP006 | 49.4 | NR | 191 | 29.4 | H2 33.3% | NR | E020 |
 
 Table 1 compositions exclude the N2 marker and water (they sum to 100%). C2 hydrocarbons are 0.8-2.9% (mostly C2H2).
 
-**Consistency checks (C002-C003).** Taking the authors' H2 rate with the Table 1 composition gives an outlet flow and a CH4 conversion within 2-4 points of the authors' values (52.8/68.7/76.3% vs 48.9/66.1/74.3%), so H2 rate and conversion agree. **Carbon closes at only 66-73%**, however: about a third of the carbon fed is missing from the gas. The paper says operation was soot-free but also describes a separator to clean "soot formed during the methane conversion" (E023); unquantified solid carbon is one possible cause, an analysis or flow error another. The authors report no carbon balance. Water was not measured, so H and O balances cannot be checked.
+**Consistency checks (C002-C003).** Taking the authors' H2 rate with the Table 1 composition gives an outlet flow and a CH4 conversion that match the authors' values exactly at 24.25 L/mol (48.9/66.1/74.3%); at 22.414 L/mol they were 2-4 points higher. So H2 rate and conversion agree, and the authors' molar volume is ~24.25 L/mol. **Carbon closes at only 71-79%**, however: about a quarter of the carbon fed is missing from the gas. The paper says operation was soot-free but also describes a separator to clean "soot formed during the methane conversion" (E023); unquantified solid carbon is one possible cause, an analysis or flow error another. The authors report no carbon balance. Water was not measured, so H and O balances cannot be checked.
 
 Trends: steam above the minimum needed for soot-free operation does not change performance (E015-E016); H2 rate and EY are constant between 3000 and 12,000 NL/h while unconverted CH4 rises from 25 to 57% (E017); H2 rate rises with power while EY stays at ~29 g/kWh (E020). Without steam (dry reforming) the source was limited to 40% CH4 by soot (E024).
 
@@ -65,16 +65,16 @@ Trends: steam above the minimum needed for soot-free operation does not change p
 
 | OP | SEI_CH4 (kJ/mol) | EC_CH4 (kJ/mol) | EC_CH4 incl. indicative steam duty | EC_H2 (kJ/mol) | EY_H2 (g/kWh) | eta_P,LHV (%) |
 |---|---|---|---|---|---|---|
-| OP001 | 117 | 238 | ~329 | 197 | 36.8 | 39.8 |
-| OP002 | 175 | 264 | ~365 | 202 | 36.0 | 38.3 |
-| OP003 | 350 | 471 | ~590 | 275 | 26.4 | 56.9 |
-| OP004 | 121 | 299 | ~409 | 254 | 28.6 | NR |
-| OP005 | 148 | 350 | ~455 | 246 | 29.5 | NR |
-| OP006 | 175 | 354 | ~444 | 247 | 29.4 | NR |
+| OP001 | 126 | 258 | ~356 | 197 | 36.8 | 42.3 |
+| OP002 | 189 | 286 | ~395 | 202 | 36.0 | 40.6 |
+| OP003 | 378 | 509 | ~639 | 275 | 26.4 | 59.7 |
+| OP004 | 131 | 323 | ~442 | 254 | 28.6 | NR |
+| OP005 | 160 | 378 | ~492 | 246 | 29.5 | NR |
+| OP006 | 189 | 383 | ~480 | 247 | 29.4 | NR |
 
-  OP001-OP002 EC_CH4 is close to the 206-247 kJ/mol reaction enthalpies on microwave power alone. Two things make this optimistic: the steam carries unreported vaporizer energy (+25-38%), and the 30% carbon gap means part of the "converted" CH4 may have gone to solid carbon (pyrolysis needs only ~75 kJ/mol), which is not reforming. Treat these as lower bounds.
+  OP001-OP002 EC_CH4 is close to the 206-247 kJ/mol reaction enthalpies on microwave power alone. Two things make this optimistic: the steam carries unreported vaporizer energy (+25-38%), and the ~25% carbon gap means part of the "converted" CH4 may have gone to solid carbon (pyrolysis needs only ~75 kJ/mol), which is not reforming. Treat these as lower bounds.
 - **Author metrics:** energy yield = H2 rate / absorbed microwave power (g/kWh), best 36.8 (E003, E010). New "energy-CH4 feedstock consumption yield" = EY / CH4 feed (kNL/h), 17.6-4.9 (Table 3; caption says 6.5 kW, text says 4.5 kW; values match 6.5 kW) (E021, C005).
-- **eta_HHV (partial):** 22.7% (OP001), 28.9% (OP002), 47.9% (OP003); f_electric 0.12-0.28. Low because half the CH4 leaves unconverted; excludes vaporizer and generator losses (E047).
+- **eta_HHV (partial):** 24.3% (OP001), 30.9% (OP002), 50.6% (OP003); f_electric 0.12-0.30. Low because half the CH4 leaves unconverted; excludes vaporizer and generator losses (E047).
 - **Energy completeness:** included: absorbed microwave power. Omitted: induction vaporizer, generator wall losses, cooling water, gas-soot separator.
 
 ## Reporting quality
@@ -84,14 +84,14 @@ Trends: steam above the minimum needed for soot-free operation does not change p
 | Q1 Power measurement | partly | Absorbed power reported per point; measuring system named but method described only in ref. 44 (E001-E002). |
 | Q2 Feed definition | yes | CH4:CO2 flow in NL/h, CH4 fraction and steam kg/h stated per point (E006, E010-E012). |
 | Q3 Product analysis | partly | Two GCs; N2 flow marker handles volume change; calibration not described; water not measured (E007). |
-| Q4 Balance closure | no | No balance reported; reviewer carbon closure 66-73% (E045). |
+| Q4 Balance closure | no | No balance reported; reviewer carbon closure 71-79% (E045). |
 | Q5 Temperature | no | Only steam temperature (250-350 degC); no plasma, gas or wall temperatures (E004). |
 | Q6 Controls | partly | Dry reforming (no steam) at the same power and flows as a comparison; no thermal or equilibrium control (E024). |
 | Q7 Repeatability | partly | Error bars and "+/-5% measurement error", but repeat count not stated (E009). |
 | Q8 Stability | no | No time on stream (E025). |
 | Q9 Energy completeness | no | Vaporizer electricity and generator efficiency not reported (E002, E004). |
 
-- **Confidence in conversion/product results: moderate.** Tabulated matched points with a flow marker, and H2 rate and conversion agree, but the 66-73% carbon closure, unmeasured water and lack of temperatures limit CO/CO2 values.
+- **Confidence in conversion/product results: moderate.** Tabulated matched points with a flow marker, and H2 rate and conversion agree, but the 71-79% carbon closure, unmeasured water and lack of temperatures limit CO/CO2 values.
 - **Confidence in energy results: lower.** Absorbed power is per point, but the steam vaporizer (an estimated 25-38% of the microwave power) is unreported, and the carbon gap may flatter EC_CH4.
 
 ## Reported system information
@@ -110,7 +110,7 @@ Trends: steam above the minimum needed for soot-free operation does not change p
 | Generator wall power | not_reported |
 | Temperatures (plasma, gas, wall) | not_reported |
 | Water in product; solid carbon | not_reported |
-| Carbon/elemental balance | not_reported (reviewer 66-73%) |
+| Carbon/elemental balance | not_reported (reviewer 71-79%) |
 | Time on stream | not_reported |
 | Repeats | not_reported |
 | ESI | none located |
@@ -122,8 +122,8 @@ Comparison limits: mixed (CO2 + steam) route except OP002 (SMR). Headline maxima
 | ID | Inputs | Method | Result |
 |---|---|---|---|
 | C001 | E010-E012, E020 | SEI_CH4, EC_CH4, EC_H2, EY_H2, S/C | Energy table above |
-| C002 | E010-E012 | Outlet flow anchored on author H2 rate; H2-anchored X_CH4 | Within 2-4 points of authors |
-| C003 | C002 | Carbon closure; X_CO2; eta_P,LHV; partial eta_HHV | C closure 66-73% |
+| C002 | E010-E012 | Outlet flow anchored on author H2 rate; H2-anchored X_CH4 | Equal to the authors' values at 24.25 L/mol |
+| C003 | C002 | Carbon closure; X_CO2; eta_P,LHV; partial eta_HHV | C closure 71-79% |
 | C004 | E004 | Indicative steam duty (20 degC water to 300 degC steam) | 1.65-2.48 kW |
 | C005 | E021 | Back-calculate EY from Table 3 | 26-29 g/kWh, consistent with 6.5 kW |
 
@@ -131,6 +131,7 @@ Comparison limits: mixed (CO2 + steam) route except OP002 (SMR). Headline maxima
 
 - 2026-11-05: extraction informally reviewed by BB and marked human_verified. Reviewer agreed the carbon-closure flag (66-73%) is sufficient; possible causes (soot, flow-marker or analysis error) not pursued further. No values changed.
 - 2026-11-10: human_verified status withdrawn at BB's request; returned to ai_checked pending a systematic human check. The 2026-11-05 BB review was informal. No values changed.
+- 2026-11-20, after GPT cross-check (cross_check_log.md XR008): molar volume changed from 22.414 to 24.25 L/mol, which reproduces the authors' H2 rates and conversions in all three Table 1 rows. Volume-dependent values updated (+8.2% on SEI_CH4 and EC_CH4; carbon closure 71-79%, was 66-73%; X_CO2, eta_P,LHV, partial eta_HHV, S/C). Author-reported values, EC_H2 and EY unchanged. Evidence IDs kept.
 
 ## Plasma characteristics
 

@@ -1,11 +1,11 @@
 """Reviewer calculations SRC010-C001 to C005 for Hrycak et al. (2023).
 
 Inputs: Table 1 (three tabulated best points) and Fig. 9 (power sweep, graph-read).
-NL = normal litres, taken as 0 degC, 1 atm (22.414 L/mol). Evidence IDs in evidence.csv.
+NL = normal litres; reference not stated. Vm 24.25 L/mol reproduces the authors' derived values (XR008). Evidence IDs in evidence.csv.
 Run with: python3 calculations.py
 """
 
-VM = 22.414
+VM = 24.25   # L/mol; revised 2026-11-20 (XR008): reproduces the authors' H2 rate and conversion in all three Table 1 rows (was 22.414)
 M_H2 = 2.016
 LHV = {"H2": 241.8, "CO": 283.0, "CH4": 802.3}
 HHV = {"H2": 285.8, "CO": 283.0, "CH4": 890.6}

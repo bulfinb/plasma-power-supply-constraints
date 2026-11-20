@@ -1,1 +1,2 @@
 source_id,date,checker,scope,records_checked,records_total,findings,major_findings,minutes,status_after
+SRC002,2026-11-20,BB,partial: CH4 feed (E020-E022; C003; E065),5,70,0,0,NR,ai_checked (feed confirmed)

@@ -3,25 +3,27 @@ Source ID: SRC010. Sci. Rep. 13, 2204 (open access). Experimental results only;
 10 kW extrapolation excluded. No catalyst. No ESI located.
 
 Scale: Plasma scale 4.5-6.5 kW absorbed microwave power. CH4:CO2 3000-12,000
-NL/h (40-100% CH4; 1.1-3.4 mol/min CH4 at the extracted points) plus 2-3
+NL/h (40-100% CH4; 1.0-3.1 mol/min CH4 at the extracted points, Vm 24.25 L/mol) plus 2-3
 kg/h steam from an electric induction vaporizer (energy not reported;
 reviewer indicative estimate 1.7-2.5 kW, 25-38% of the microwave power).
 Generator wall power not reported.
 
 Conversion: CH4 49-74% at 6.5 kW (Table 1); 40-49% across 4.5-6.5 kW at
 6000 NL/h, 50% CH4. Best H2 rate 239 g/h (75% CH4, 6000 NL/h, conversion
-49%). H2 rate and conversion are consistent, but our carbon check closes
-at only 66-73% (authors report none; possible unquantified soot). Water
+49%). H2 rate and conversion agree exactly at 24.25 L/mol; our carbon check
+closes at only 71-79% (authors report none; possible unquantified soot). Water
 not measured.
 
 Energy (power basis = absorbed microwave power; steam generation excluded):
-- EC_CH4 238 kJ/mol (OP001) to 471 (OP003); 299-354 in the power sweep.
-  With the indicative steam duty, ~330-590 kJ/mol. Near the reaction
+- EC_CH4 258 kJ/mol (OP001) to 509 (OP003); 323-383 in the power sweep.
+  At 0 degC (22.414 L/mol), EC_CH4 would be 7.6% lower (238 / 264 / 471
+  kJ/mol); the flow reference is not stated.
+  With the indicative steam duty, ~356-639 kJ/mol. Near the reaction
   enthalpy, so treat as lower bounds (unreported steam heat; carbon gap).
-- EC_H2 197-275 kJ/mol; EY_H2 26-37 g/kWh; eta_P,LHV 38-57%.
+- EC_H2 197-275 kJ/mol; EY_H2 26-37 g/kWh; eta_P,LHV 41-60%.
 - Author metric: energy yield = H2 rate / absorbed microwave power, best
   36.8 g/kWh; also a new "energy-CH4 feedstock consumption yield".
-- eta_HHV (partial; vaporizer and generator excluded) 23-48%.
+- eta_HHV (partial; vaporizer and generator excluded) 24-51%.
 
 Duration: not reported; stability only described as soot-free operation.
 
@@ -31,7 +33,7 @@ vaporizer energy, lifetime and costs not reported.
 
 Reporting quality: conversion/product results moderate confidence
 (tabulated matched points, flow marker, consistent H2 and conversion;
-carbon closure 66-73%, no temperatures); energy results lower confidence
+carbon closure 71-79%, no temperatures); energy results lower confidence
 (steam vaporizer energy unreported; carbon gap may flatter EC_CH4).
 
 Traceability: manuscript.pdf pp. 3-12, Tables 1-3, Figs. 4-9;
@@ -39,53 +41,55 @@ SRC010-E001-E026. Calculations SRC010-C001-C005, E041-E048;
 outputs/calculations.py. Details: outputs/extraction.md and
 outputs/evidence.csv.
 
-Prepared 2026-11-05 by Claude (AI); ai_checked (human check pending).
+Prepared 2026-11-05 by Claude (AI); revised 2026-11-20 after GPT cross-check
+(XR008: Vm 24.25 L/mol); ai_checked (human check pending).
 
 Comparison tables (experimental conditions)
-NR = not reported; NA = not applicable; ~ = approximate. Human verified (BB, 2026-11-05).
+NR = not reported; NA = not applicable; ~ = approximate. Human verification pending.
 
 1. Route and scale
 Source / OP       | Route | Reactor / activation / catalyst            | CH4 feed (mol/min) | Scale as reported
-Hrycak 2023 OP001 | mixed | Quartz tube / 915 MHz MW plasma / none [1] | 3.35 [2]           | 6000 NL/h CH4:CO2; 6.5 kW
-Hrycak 2023 OP002 | SMR   | Quartz tube / 915 MHz MW plasma / none [1] | 2.23 [2]           | 3000 NL/h CH4; 6.5 kW
-Hrycak 2023 OP003 | mixed | Quartz tube / 915 MHz MW plasma / none [1] | 1.12 [2]           | 3000 NL/h CH4:CO2; 6.5 kW
-Hrycak 2023 OP004 | mixed | Quartz tube / 915 MHz MW plasma / none [1] | 2.23 [2]           | 6000 NL/h CH4:CO2; 4.5 kW
+Hrycak 2023 OP001 | mixed | Quartz tube / 915 MHz MW plasma / none [1] | 3.09 [2]           | 6000 NL/h CH4:CO2; 6.5 kW
+Hrycak 2023 OP002 | SMR   | Quartz tube / 915 MHz MW plasma / none [1] | 2.06 [2]           | 3000 NL/h CH4; 6.5 kW
+Hrycak 2023 OP003 | mixed | Quartz tube / 915 MHz MW plasma / none [1] | 1.03 [2]           | 3000 NL/h CH4:CO2; 6.5 kW
+Hrycak 2023 OP004 | mixed | Quartz tube / 915 MHz MW plasma / none [1] | 2.06 [2]           | 6000 NL/h CH4:CO2; 4.5 kW
 [1] Waveguide-supplied metal-cylinder microwave plasma source; swirl
     flow; steam from an electric induction vaporizer. SRC010-E001, E004-E005.
-[2] NL taken as 0 degC, 1 atm. SRC010-E006, E010-E012, E020.
+[2] NL reference NR; 24.25 L/mol reproduces the authors' H2 rates and
+    conversions (XR008). SRC010-E006, E010-E012, E020.
 
 2. Operating conditions
 Source / OP       | T (degC; location/type) | p (bar; abs/gauge) | CH4:CO2:H2O (molar) | Other feed / ratio
-Hrycak 2023 OP001 | NR; steam 250-350 [3]   | ~1.01 abs          | 1:0.33:0.83         | none
-Hrycak 2023 OP002 | NR; steam 250-350 [3]   | ~1.01 abs          | 1:0:1.24            | none
-Hrycak 2023 OP003 | NR; steam 250-350 [3]   | ~1.01 abs          | 1:1:1.66            | none
-Hrycak 2023 OP004 | NR; steam 250-350 [3]   | ~1.01 abs          | 1:1:0.83            | none
+Hrycak 2023 OP001 | NR; steam 250-350 [3]   | ~1.01 abs          | 1:0.33:0.90         | none
+Hrycak 2023 OP002 | NR; steam 250-350 [3]   | ~1.01 abs          | 1:0:1.35            | none
+Hrycak 2023 OP003 | NR; steam 250-350 [3]   | ~1.01 abs          | 1:1:1.79            | none
+Hrycak 2023 OP004 | NR; steam 250-350 [3]   | ~1.01 abs          | 1:1:0.90            | none
 [3] Only the steam temperature is reported; no plasma, gas or wall
     temperatures. SRC010-E004.
 
 3. Mass balance
 Source / OP       | X_CH4 (%) | X_CO2 (%) | Products (value; units/basis)       | Balance closure   | Duration (h; basis) | Conv. conf.
-Hrycak 2023 OP001 | 48.9      | ~48 [4]   | 239 g/h H2; H2 40.0, CO 14.3% [5]   | C ~68% (ours) [6] | NR                  | moderate
-Hrycak 2023 OP002 | 66.1      | NA        | 234 g/h H2; H2 58.4, CO 14.4% [5]   | C ~66% (ours) [6] | NR                  | moderate
-Hrycak 2023 OP003 | 74.3      | ~63 [4]   | 171.5 g/h H2; H2 46.8, CO 30.0% [5] | C ~73% (ours) [6] | NR                  | moderate
+Hrycak 2023 OP001 | 48.9      | ~44 [4]   | 239 g/h H2; H2 40.0, CO 14.3% [5]   | C ~74% (ours) [6] | NR                  | moderate
+Hrycak 2023 OP002 | 66.1      | NA        | 234 g/h H2; H2 58.4, CO 14.4% [5]   | C ~71% (ours) [6] | NR                  | moderate
+Hrycak 2023 OP003 | 74.3      | ~60 [4]   | 171.5 g/h H2; H2 46.8, CO 30.0% [5] | C ~79% (ours) [6] | NR                  | moderate
 Hrycak 2023 OP004 | ~40.5     | NR        | ~128.5 g/h H2; H2 ~25%              | NR                | NR                  | moderate
 [4] Reviewer calculation from Table 1 with outlet flow anchored on the
     author H2 rate. SRC010-E044; C002-C003.
 [5] Dry, N2-marker-free composition; C2 hydrocarbons 0.8-2.9%.
     SRC010-E010-E012.
-[6] Authors report no balance; one-third of carbon missing from the gas
+[6] Authors report no balance; about a quarter of the carbon missing from the gas
     (possible unquantified soot). Water not measured. SRC010-E023, E045.
 
 4. Energy balance
 Source / OP       | Energy input (boundary) | EC_CH4 (kJ/mol) | EC basis                 | Other metrics                  | eta_HHV (%)    | Energy conf.
-Hrycak 2023 OP001 | 6.5 kW absorbed MW [7]  | 238 [8]         | absorbed MW; steam excl. | EY 36.8 g/kWh; eta_P,LHV 39.8% | 22.7 part. [9] | lower
-Hrycak 2023 OP002 | 6.5 kW absorbed MW [7]  | 264 [8]         | absorbed MW; steam excl. | EY 36.1 g/kWh; eta_P,LHV 38.3% | 28.9 part. [9] | lower
-Hrycak 2023 OP003 | 6.5 kW absorbed MW [7]  | 471 [8]         | absorbed MW; steam excl. | EY 26.4 g/kWh; eta_P,LHV 56.9% | 47.9 part. [9] | lower
-Hrycak 2023 OP004 | 4.5 kW absorbed MW [7]  | 299 [8]         | absorbed MW; steam excl. | EY 28.6 g/kWh                  | NR             | lower
+Hrycak 2023 OP001 | 6.5 kW absorbed MW [7]  | 258 [8]         | absorbed MW; steam excl. | EY 36.8 g/kWh; eta_P,LHV 42.3% | 24.3 part. [9] | lower
+Hrycak 2023 OP002 | 6.5 kW absorbed MW [7]  | 286 [8]         | absorbed MW; steam excl. | EY 36.1 g/kWh; eta_P,LHV 40.6% | 30.9 part. [9] | lower
+Hrycak 2023 OP003 | 6.5 kW absorbed MW [7]  | 509 [8]         | absorbed MW; steam excl. | EY 26.4 g/kWh; eta_P,LHV 59.7% | 50.6 part. [9] | lower
+Hrycak 2023 OP004 | 4.5 kW absorbed MW [7]  | 323 [8]         | absorbed MW; steam excl. | EY 28.6 g/kWh                  | NR             | lower
 [7] Absorbed microwave power; generator wall power and vaporizer energy
     NR. Indicative steam duty 2.48 kW (3 kg/h) or 1.65 kW (2 kg/h).
     SRC010-E002, E004, E048; C004.
-[8] With indicative steam duty: ~329 / 365 / 590 / 409 kJ/mol. Possible
+[8] With indicative steam duty: ~356 / 395 / 639 / 442 kJ/mol. Possible
     solid-carbon formation (carbon gap) would also lower EC_CH4; treat as
     lower bounds. SRC010-E041-E042, E048; C001, C004.
 [9] (H2+CO HHV)/(P_abs + CH4 HHV); excludes vaporizer and generator.
@@ -93,10 +97,10 @@ Hrycak 2023 OP004 | 4.5 kW absorbed MW [7]  | 299 [8]         | absorbed MW; ste
 
 5. Plasma parameters (plasma-on rows only)
 Source / OP       | Discharge / regime      | Supply / frequency | Voltage | P_plasma (W; method) | SEI_CH4 (kJ/mol) | Diagnostics reported
-Hrycak 2023 OP001 | MW discharge; regime NR | 915 MHz            | NA      | 6,500; absorbed [10] | 117              | none
-Hrycak 2023 OP002 | MW discharge; regime NR | 915 MHz            | NA      | 6,500; absorbed [10] | 175              | none
-Hrycak 2023 OP003 | MW discharge; regime NR | 915 MHz            | NA      | 6,500; absorbed [10] | 350              | none
-Hrycak 2023 OP004 | MW discharge; regime NR | 915 MHz            | NA      | 4,500; absorbed [10] | 121              | none
+Hrycak 2023 OP001 | MW discharge; regime NR | 915 MHz            | NA      | 6,500; absorbed [10] | 126              | none
+Hrycak 2023 OP002 | MW discharge; regime NR | 915 MHz            | NA      | 6,500; absorbed [10] | 189              | none
+Hrycak 2023 OP003 | MW discharge; regime NR | 915 MHz            | NA      | 6,500; absorbed [10] | 378              | none
+Hrycak 2023 OP004 | MW discharge; regime NR | 915 MHz            | NA      | 4,500; absorbed [10] | 131              | none
 [10] Microwave power measuring system; method described in ref. 44 (not
      obtained). See outputs/extraction.md, "Plasma characteristics".
      SRC010-E001-E002.
