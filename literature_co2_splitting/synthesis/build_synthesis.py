@@ -103,10 +103,10 @@ ROWS = [
       conv="moderate", energy="moderate", ev="SRC022-E041"),
     # --- nanosecond pulsed ---
     R("Yong 2023 OP001", "SRC023", "NRP (batch)", "P1", "5.8", 0.021, "deposited", "14", (15.1, 16.3),
-      conv="higher", energy="lower", dur="420 s batch", ev="SRC023-E041, E042", head=True,
+      conv="moderate", energy="lower", dur="420 s batch", ev="SRC023-E041, E042", head=True,
       note="chamber volume per data set unclear"),
     R("Yong 2023 OP002", "SRC023", "NRP (batch)", "P1", "5.0", 0.024, "deposited", "3.3", (13, 13),
-      conv="higher", energy="lower", dur="120 s batch", ev="SRC023-E042"),
+      conv="moderate", energy="lower", dur="120 s batch", ev="SRC023-E042"),
     # --- DBD ---
     R("Van Laer 2015 OP001", "SRC024", "packed DBD", "K1", "~1.01", 0.023, "plasma (implied)", "37.8 (28.8 corr.)",
       (54, 54), conv="moderate-lower", energy="lower", ev="SRC024-E041-E043", head=True,

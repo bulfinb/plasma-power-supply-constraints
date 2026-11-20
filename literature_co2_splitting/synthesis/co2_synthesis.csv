@@ -24,8 +24,8 @@ Bryssinck 2025 OP004,SRC021,GA (DC) x7 + C bed,D1,0.92,0.97,~1.01,7,9.5,plug,12.
 Renninger 2022 OP001,SRC022,DC glow-to-arc,D1,0.92,0.97,~1.01,1,0.162,plasma,27.4,7.9,7.9,,,7.9,7.9,8.14,8.59,40.8,43.02,,0.0205,<10 h total,moderate,moderate,yes,"SRC022-E004, E005, E042",12.8 kWh/Nm3 at lab driver DC input (61-65%)
 Renninger 2022 OP002,SRC022,DC glow-to-arc,D1,0.92,0.97,~1.01,1,0.099,plasma,~17,7.8,7.8,,,7.8,7.8,8.04,8.48,41.32,43.57,,0.0127,,moderate,moderate,,SRC022-E042,
 Renninger 2022 OP003,SRC022,DC glow-to-arc,D1,0.92,0.97,~1.01,1,0.217,plasma,~28.8,19.3,19.3,,,19.3,19.3,19.9,20.98,16.7,17.61,,0.0112,,moderate,moderate,,SRC022-E041,
-Yong 2023 OP001,SRC023,NRP (batch),P1,0.45,0.92,5.8,1,0.021,deposited,14,15.1,16.3,,,15.1,16.3,16.41,36.22,9.67,21.35,,0.00134,420 s batch,higher,lower,yes,"SRC023-E041, E042",chamber volume per data set unclear
-Yong 2023 OP002,SRC023,NRP (batch),P1,0.45,0.92,5.0,1,0.024,deposited,3.3,13,13,,,13,13,14.13,28.89,12.13,24.79,,0.00185,120 s batch,higher,lower,,SRC023-E042,
+Yong 2023 OP001,SRC023,NRP (batch),P1,0.45,0.92,5.8,1,0.021,deposited,14,15.1,16.3,,,15.1,16.3,16.41,36.22,9.67,21.35,,0.00134,420 s batch,moderate,lower,yes,"SRC023-E041, E042",chamber volume per data set unclear
+Yong 2023 OP002,SRC023,NRP (batch),P1,0.45,0.92,5.0,1,0.024,deposited,3.3,13,13,,,13,13,14.13,28.89,12.13,24.79,,0.00185,120 s batch,moderate,lower,,SRC023-E042,
 Van Laer 2015 OP001,SRC024,packed DBD,K1,0.9,0.92,~1.01,1,0.023,plasma (implied),37.8 (28.8 corr.),54,54,,,54,54,58.7,60.0,5.84,5.97,,0.000426,,moderate-lower,lower,yes,SRC024-E041-E043,X likely not expansion-corrected
 Van Laer 2015 OP002,SRC024,packed DBD,K1,0.9,0.92,~1.01,1,0.034,plasma (implied),42.0 (32.6 corr.),74,74,,,74,74,80.43,82.22,4.26,4.36,,0.000459,,moderate-lower,lower,,SRC024-E041-E043,
 Van Laer 2015 OP003,SRC024,packed DBD,K1,0.9,0.92,~1.01,1,0.02,plasma (implied),10.0 (6.9 corr.),36,36,,,36,36,39.13,40.0,8.76,8.95,,0.000556,,moderate-lower,lower,yes,SRC024-E041-E043,best efficiency

@@ -9,7 +9,8 @@ Scale: smallest energy input in the set: 300-1000 uJ pulses at 30 kHz
 
 Conversion: up to 14% at 23% efficiency (5.8 bar, 700 uJ, 420 s);
 saturates at ~18% over long times; falls with pressure at fixed energy
-(8% -> 2% from 3.5 to 12 bar). GC with N_CO ~ 2 N_O2, no by-products.
+(8% -> 2% from 3.5 to 12 bar). GC with N_CO ~ 2 N_O2, no gas by-products;
+carbon balance assumed (electrode deposits not quantified).
 
 Energy (deposited energy):
 - eta ~20% for conversion <15%, insensitive to pressure, pulse energy and
@@ -20,16 +21,16 @@ Energy (deposited energy):
 
 Durability: electrode gap grew 150 -> 250 um in 240 s with carbon deposits.
 
-Reporting quality: conversion/product results higher confidence (calibrated
-GC, O/C closure); energy results lower confidence (deposited energy only;
-volume per data set unclear).
+Reporting quality: conversion/product results moderate confidence (calibrated
+GC, N_CO ~ 2 N_O2; carbon balance assumed); energy results lower
+confidence (deposited energy only; volume per data set unclear).
 
 Traceability: manuscript.pdf pp. 2-16, Figs. 3, 8, 11, 13; SRC023-E001-E015.
 Calculations SRC023-C001-C004, E041-E043; outputs/calculations.py.
 Details: outputs/extraction.md, outputs/evidence.csv.
 
-Prepared 2026-11-12 by Claude (AI); ai_checked by same extractor; human
-verification pending.
+Prepared 2026-11-12 by Claude (AI); revised 2026-11-20 after GPT
+cross-check (XC014); ai_checked; human verification pending.
 
 Comparison tables (experimental conditions)
 NR = not reported; NA = not applicable; ~ = approximate (figure reading). Human verification pending.
@@ -43,8 +44,8 @@ Yong 2023 OP002 | NRP pin-to-plane, batch / none             | batch [1]        
 
 2. Mass balance
 Source / OP     | X_CO2 (%)      | Products (value; basis)          | Balance closure        | Duration (h; basis) | Conv. conf.
-Yong 2023 OP001 | 14             | CO, O2 (N_CO ~ 2 N_O2), CO2      | C and O closed (GC)    | 0.12 (batch)        | higher
-Yong 2023 OP002 | 3.3 [2]        | CO, O2, CO2                      | C and O closed (GC)    | 0.03 (batch)        | higher
+Yong 2023 OP001 | 14             | CO, O2 (N_CO ~ 2 N_O2), CO2      | O checked; C assumed   | 0.12 (batch)        | moderate
+Yong 2023 OP002 | 3.3 [2]        | CO, O2, CO2                      | O checked; C assumed   | 0.03 (batch)        | moderate
 [2] Fig. 8b; text gives 4%. SRC023-E008, E011.
 
 3. Energy

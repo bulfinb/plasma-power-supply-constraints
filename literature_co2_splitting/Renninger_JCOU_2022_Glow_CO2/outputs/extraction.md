@@ -74,6 +74,7 @@ CO2 (purity not stated) at 0.65-1.25 SLM (0 C standard, consistent with 12.6 J/S
 - "System" efficiency is DC input to the driver, not wall plug; add the lab supply's mains-to-DC loss for a wall basis.
 - Scale ~160 W at 1.25 SLM (0.056 mol/min CO2), the smallest in the set; the authors argue multi-kW is feasible at constant current with larger gaps (E015), but not shown.
 - ZrO2 packed bed is essential (7.5% without it); mechanism unknown.
+- Fig. 4 at ~216 W supply gives eta_system ~25% and eta_plasma ~46%, i.e. a driver efficiency of ~54%, outside the stated 61-65% for all points; unresolved (E012).
 - No repeats or error bars.
 - Hardware note: driver 61-65% (lab ZVS circuit with 3 H choke) (E005).
 
@@ -87,7 +88,7 @@ All in outputs/calculations.py.
 
 ## Revisions
 
-None.
+- 2026-11-20, after GPT cross-check (cross_check_log.md XC012-XC013): Fig. 4 reading at ~300 W corrected to X ~28.8% (was 27.8%), and the ~265 W point noted as ~28.2% in the figure (text 27.4% kept, workflow 1.2 text-vs-figure rule); driver-efficiency inconsistency at ~216 W added to Gaps. Evidence IDs kept; no headline value changes.
 
 ## Plasma characteristics
 

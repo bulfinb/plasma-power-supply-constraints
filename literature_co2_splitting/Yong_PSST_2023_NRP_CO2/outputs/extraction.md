@@ -34,7 +34,7 @@ Pure CO2, 3.5-12.2 bar fill, 300 K, processing time 30-1500 s, 30 kHz (E009, E01
 
 - **Power boundary:** deposited pulse energy (plasma); pulser losses excluded.
 - **External heat:** no.
-- Product: CO, O2 (N_CO ~ 2 N_O2) and CO2; no other carbon species (E004).
+- Product: CO, O2 (N_CO ~ 2 N_O2) and CO2; no other gas-phase carbon species; solid carbon deposits not quantified (E004, E006).
 
 | OP | Phi = X_CO2 (%) | eta reported (%) | eta recalculated, 200 / 400 cm3 (%) | EC_CO deposited (kWh/Nm3) |
 |---|---|---|---|---|
@@ -55,14 +55,14 @@ Pure CO2, 3.5-12.2 bar fill, 300 K, processing time 30-1500 s, 30 kHz (E009, E01
 | Q1 Power measurement | yes | Deposited energy from synchronised V and I probes with stated uncertainty (E005). |
 | Q2 Feed definition | partly | Pure CO2, fill pressure and temperature stated; chamber volume per data set ambiguous (E003, E042). |
 | Q3 Product analysis | yes | Calibrated GC with two detectors; compressibility corrected (E004). |
-| Q4 Balance closure | yes | N_CO ~ 2 N_O2 and C balance with no other carbon species (E004). |
+| Q4 Balance closure | partly | GC confirms N_CO ~ 2 N_O2; the carbon balance is assumed (Phi = CO/(CO+CO2)), and carbon deposits on the electrode are observed but not quantified (E004, E006). |
 | Q5 Temperature | no | Gas temperature only from the model (E015). |
 | Q6 Controls | partly | Pressure, pulse energy and time scanned; no plasma-off control needed (batch). |
 | Q7 Repeatability | partly | Error bars on figures; repeat procedure not described. |
 | Q8 Stability | partly | Time dependence reported; electrode erosion and energy drift during runs (E006). |
 | Q9 Energy completeness | no | Pulser efficiency and auxiliaries not reported. |
 
-- Confidence in conversion/product results: higher. Calibrated GC with O/C closure.
+- Confidence in conversion/product results: moderate. Calibrated GC and N_CO ~ 2 N_O2, but the carbon balance is assumed and the deposits are not quantified.
 - Confidence in energy results: lower. Deposited energy only, and efficiencies depend on an unstated volume per data set; the best-efficiency statement does not match its inputs.
 
 ## Gaps and comparison limits
@@ -84,7 +84,7 @@ All in outputs/calculations.py.
 
 ## Revisions
 
-None.
+- 2026-11-20, after GPT cross-check (cross_check_log.md XC014): Q4 changed from yes to partly and conversion confidence from higher to moderate: only N_CO ~ 2 N_O2 is checked; the carbon balance is assumed and the electrode carbon deposits are not quantified. Summary table and synthesis confidence updated; no values change.
 
 ## Plasma characteristics
 

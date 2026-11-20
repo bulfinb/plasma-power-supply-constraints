@@ -23,7 +23,7 @@ Girard-Sahun 2022 OP003 | GA (AC) + C bed    | K1    | ~1.01   | 0.53   | 0.042 
 O'Modhrain 2024 OP001   | GA (DC) x5         | D1    | ~1.01   | 7.10   | 0.40       | 8.7               | 17.9 plug     | 17.9    | 14.2-16.1 | 20           | -          | M/H
 Bryssinck 2025 OP003    | GA (DC) x7 + C bed | D1    | ~1.01   | 8.10   | 1.1        | 20                | 7.3 plug      | 7.3     | 5.8-6.6   | -            | 0.27       | M/M
 Renninger 2022 OP001    | DC glow-to-arc     | D1    | ~1.01   | 0.16   | 0.021      | 27.4              | 7.9 plasma    | -       | 8.1-8.6   | 41-43        | -          | M/M
-Yong 2023 OP001         | NRP (batch)        | P1    | 5.8     | 0.02   | 0.0013     | 14                | 15.1-16.3 dep | -       | 16.4-36.2 | 10-21        | -          | H/L
+Yong 2023 OP001         | NRP (batch)        | P1    | 5.8     | 0.02   | 0.0013     | 14                | 15.1-16.3 dep | -       | 16.4-36.2 | 10-21        | -          | M/L
 Van Laer 2015 OP001     | packed DBD         | K1    | ~1.01   | 0.02   | 0.00043    | 37.8 (28.8 corr.) | 54.0 plasma*  | -       | 58.7-60.0 | 6            | -          | M-L/L
 Van Laer 2015 OP003     | packed DBD         | K1    | ~1.01   | 0.02   | 0.00056    | 10.0 (6.9 corr.)  | 36.0 plasma*  | -       | 39.1-40.0 | 9            | -          | M-L/L
 
