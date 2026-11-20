@@ -1,0 +1,30 @@
+row_key,source_id,route,activation,supply_class,CH4_feed_mol_min,CH4_CO2_H2O,T_degC_location,P_kW,power_boundary,external_heat,X_CH4_pct,X_CO2_pct,SEI_CH4_kJ_mol,EC_CH4_low,EC_CH4_high,EC_CH4_industrial_est_low,EC_CH4_industrial_est_high,duration,conv_confidence,energy_confidence,headline,evidence,notes
+Wismann 2019 OP004,SRC001,SMR,Joule (lab),J1,0.0046,1:0:2 +H2,~750 wall,,NR,"steam, preheat NR",92.7,NA,,,,,,>=0.75 h avg.,M,L,yes,SRC001-E050-E085,no electrical power reported
+Wismann 2019 OP012,SRC001,SMR,Joule (lab),J1,0.023,1:0:2 +H2,~780 wall,,NR,"steam, preheat NR",85.0,NA,,,,,,>=0.75 h avg.,M,L,,SRC001-E050-E085,no electrical power reported
+Hrabovsky 2018 OP001,SRC007,SMR,DC arc torch,A1,6.69,1:0:0.78,927-1127 reactor,120,arc,none (water evaporated by plasma),91.3,NA,1076,1179,1179,1203,1310,~4 min segment,M,M,yes,"SRC007-E041, E046",conversion from Ar tracer (reviewer; XR007 for human check)
+Hrabovsky 2018 OP002,SRC007,SMR,DC arc torch,A1,3.35,1:0:0.63,927-1127 reactor,120,arc,none (water evaporated by plasma),99.1,NA,2152,2172,2172,2216,2413,~4 min segment,M,M,,"SRC007-E042, E046",conversion from Ar tracer (reviewer)
+Akande 2022 OP003,SRC008,SMR,MW 915 MHz torch,M1,2.68,1:0:3,500-650 reformer,32,absorbed MW,steam generator NR,96.6,NA,717,742,742,928,928,NR,L,L,yes,"SRC008-E014, E046",reported H2 rate exceeds the stoichiometric limit; corrigendum composition gives ~83% (OP008)
+Akande 2022 OP001,SRC008,SMR,MW 915 MHz torch,M1,2.68,1:0:3,500-650 reformer,17,absorbed MW,steam generator NR,74.6,NA,381,511,511,639,639,NR,L,L,,SRC008-E014,
+Akande 2022 OP006,SRC008,SMR,MW 915 MHz torch,M1,2.68,1:0:3,500-650 reformer,47,absorbed MW,steam generator NR,97.7,NA,1053,1078,1078,1348,1348,NR,L,L,,SRC008-E014,
+Hrycak 2023 OP002,SRC010,SMR,MW 915 MHz,M1,2.06,1:0:1.35,NR (steam 250-350),6.5,absorbed MW,steam vaporizer NR,66.1,NA,189,286,286,358,358,NR,M,L,yes,SRC010-E041,Vm 24.25 L/mol (XR008); 7.6% lower at 0 degC; carbon closure ~71%
+Zhu 2019 OP004,SRC012,SMR,DC gliding arc + Ni cat.,D1,0.033,1:0:3,977-651 bed,0.246,discharge,steam generation excl.,90,NA,441,490,490,505,533,6 h,H,M,yes,SRC012-E042,plasma-catalytic; ~646 kJ/mol with indicative steam duty
+Zhu 2019 OP003,SRC012,SMR,DC gliding arc,D1,0.033,1:0:3,NR,0.246,discharge,steam generation excl.,65,NA,441,679,679,700,738,NR,H,M,,SRC012-E042,plasma alone
+Geng 2022 OP002,SRC002,SMR,DBD + Ni cat.,K1,0.001,1:0:4.4,300 bulk,0.015,discharge,"furnace 300 degC + steam, NR",~60,NA,894,1490,1490,1620,1656,~2 h series,M,L,yes,SRC002-E065-E067,feed confirmed by BB; plasma-off control ~7%
+Geng 2022 OP008,SRC002,SMR,DBD + Ni cat.,K1,0.001,1:0:4.4,440 bulk,0.015,discharge,"furnace 440 degC + steam, NR",~80,NA,894,1120,1120,1217,1244,NR,M,L,,SRC002-E068,
+Song 2020 OP013,SRC009,DRM,RF ICP torch 400 kHz,K2@400kHz,1.61,1:0.83:0,NR,22,RF generator,none,79.3,87.1,822,1036,1036,1079,1138,NR,M,M,yes,SRC009-E041,author efficiency 57% (headline); boundary contradictory (absorbed vs delivered)
+Song 2020 OP009,SRC009,DRM,RF ICP torch 400 kHz,K2@400kHz,1.34,1:1:0,NR,27,RF generator,none,94,94,1210,1288,1288,1342,1415,NR,M,M,,SRC009-E041,
+Song 2020 OP010,SRC009,DRM,RF ICP torch 400 kHz,K2@400kHz,0.89,1:1.5:0,NR,22,RF generator,none,98.0,88.7,1479,1510,1510,1573,1659,NR,M,M,,SRC009-E041,
+Kelly 2023 OP004,SRC011,DRM,MW 2.45 GHz,M2,0.187,1:1.22:0,~404 exhaust,1.0,absorbed MW,none,55.2,45.8,321,581,581,830,922,~0.25 h,H,H,yes,SRC011-E041,
+Kelly 2023 OP001,SRC011,DRM,MW 2.45 GHz,M2,0.125,1:2.33:0,~453 exhaust,1.0,absorbed MW,none,66.5,49.4,481,723,723,1033,1148,~0.25 h,H,H,,SRC011-E041,
+Kwon 2023 OP003,SRC014,DRM,AC rotating GA + quench,K1,0.268,1:1:0 (+50% N2),~370 TC1,1.668,discharge,none,50.5,40.3,374,740,740,804,822,~0.2 h,H,H,yes,SRC014-E042,author efficiency 53.2%
+Kwon 2023 OP002,SRC014,DRM,AC rotating GA + quench,K1,0.223,1:1.4:0 (+50% N2),~360 TC1,1.672,discharge,none,51.1,40.2,450,880,880,957,978,~0.2 h,H,H,,SRC014-E042,author efficiency 55.3%
+Wanten 2022 OP006,SRC015,DRM,DC confined glow,D1,0.0146,1:1.86:0,NR,0.145,plasma,none,~73.5,~54.8,598,813,813,838,884,NR,H,M,yes,SRC015-E042,300 kOhm lab ballast excluded (plasma 28-39% of supply output)
+Wanten 2022 OP003,SRC015,DRM,DC confined glow,D1,0.0052,1:3:0,NR,0.097,plasma,none,94.28,63.7,1126,1194,1194,1231,1298,NR,H,M,,SRC015-E042,highest CH4 conversion
+Andersen 2020 OP001,SRC013,DRM,DBD (no packing),K1,0.00102,1:1:0,ambient,0.045,discharge,none,32.6,22.4,2642,8103,8103,8808,9003,1 h,M,H,yes,SRC013-E042,best packed case (Cu) same EC_CH4
+Hrabovsky 2018 OP005,SRC007,mixed,DC arc torch,A1,5.58,1:0.81:0.18,927-1127 reactor,116,arc,none,95.3,91.0,1248,1309,1309,1336,1454,~2 min segment,M,M,yes,"SRC007-E043, E046",CO2 + torch steam (our DRM label); Ar tracer conversion (XR007)
+Hrabovsky 2018 OP008,SRC007,mixed,DC arc torch,A1,5.58,1:0.81:0.18,927-1127 reactor,89,arc,none,83.3,89.0,958,1149,1149,1172,1277,~6 min segment,M,M,,"SRC007-E044, E046",
+Hrycak 2023 OP001,SRC010,mixed,MW 915 MHz,M1,3.09,1:0.33:0.90,NR (steam 250-350),6.5,absorbed MW,steam vaporizer NR,48.9,~44,126,258,258,322,322,NR,M,L,yes,SRC010-E041,best H2 rate 239 g/h; Vm 24.25 (XR008); carbon closure ~74%
+Hrycak 2023 OP003,SRC010,mixed,MW 915 MHz,M1,1.03,1:1:1.79,NR (steam 250-350),6.5,absorbed MW,steam vaporizer NR,74.3,~60,378,509,509,636,636,NR,M,L,,SRC010-E041,
+From 2024 OP001,SRC005,mixed,Joule (eSMR pilot),J1,,biogas; S/C 2.7,900 cat. exit,,NR,"steam, preheat NR",97,NR,,,,,,~1 h steady,M,NA,yes,SRC005-E013,10 barg; equilibrium conversion
+From 2024 OP003,SRC005,mixed,Joule (eSMR pilot),J1,,biogas; S/C 2.1,950 cat. exit,,NR,"steam, preheat NR",94,NR,,,,,,1535 h TOS,M,NA,,SRC005-E016-E017,20 barg; no deactivation over 1050 h
+From 2025 OP002,SRC006,mixed,Joule (eSMR pilot),J1,2.55,biogas + H2; S/HC 2.3,900 exit gas,,NR,"steam, preheat NR",~98,~42-54,,,,,,80 h,M,NA,yes,"SRC006-E013, E042",6 barg; power confidential; conversion reviewer-calculated
