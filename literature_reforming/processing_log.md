@@ -73,3 +73,4 @@ Event types: extraction (initial), revision (substantive change to records), app
 | 2026-11-20 | SRC011, SRC014 | literature_reforming | GPT cross-check logged (cross_check_log.md XR009-XR010); headline values agree, no corrections | Claude Code 2.1.322 | claude-opus-5-5 | d3b811d6 | |
 | 2026-11-20 | SRC003, SRC009 | literature_reforming | GPT cross-check logged (cross_check_log.md); full agreement, no corrections | Claude Code 2.1.322 | claude-opus-5-5 | d3b811d6 | |
 | 2026-11-20 | SRC015, SRC001 | literature_reforming | GPT cross-check logged (cross_check_log.md); full agreement, no corrections | Claude Code 2.1.322 | claude-opus-5-5 | d3b811d6 | |
+| 2026-11-20 | SRC012, SRC013 | literature_reforming | GPT cross-check logged (Andersen not strictly blind); full agreement, no corrections; closing summary of the reforming cross-check added to cross_check_log.md | Claude Code 2.1.322 | claude-opus-5-5 | d3b811d6 | |

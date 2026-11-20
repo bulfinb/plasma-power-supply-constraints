@@ -38,6 +38,8 @@ These checks are AI-to-AI. They do not change a source's status (ai_checked), an
 | SRC009 Song 2020 | 2026-11-20 | Codex desktop (version not recorded) | as above | 0.9 | manuscript (no ESI) |
 | SRC015 Wanten 2022 | 2026-11-20 | Codex desktop (version not recorded) | as above | 0.9 | manuscript and SI (pdf, docx) |
 | SRC001 Wismann 2019 | 2026-11-20 | Codex desktop (version not recorded) | as above | 0.9 | manuscript and supplementary |
+| SRC012 Zhu 2019 | 2026-11-20 | Codex desktop (version not recorded) | as above | 0.9 | manuscript and ESI |
+| SRC013 Andersen 2020 | 2026-11-20 | Codex desktop (version not recorded) | as above | 0.9 | manuscript and ESI. Not strictly blind: our extraction was the worked example until its outputs were removed for this run |
 
 ## Summary by paper
 
@@ -65,6 +67,12 @@ These checks are AI-to-AI. They do not change a source's status (ai_checked), an
   - 25% CH4, 25 mA, 0.5 L/min: X 94.28 / 63.7%, ~96-97 W, EC_CH4 1173-1194 kJ/mol (the spread is the Fig. 4 SEI reading).
   Both note that the author cost is per CO2+CH4 converted (not EC_CH4), that the 300 kOhm ballast dissipates 188-368 W, outside the plasma power, and that water is inferred from the O balance. GPT rates conversion confidence moderate, ours higher. No differences needing action.
 - **SRC001 Wismann 2019** (2026-11-20): conversions agree: 92.7% at 340 and 85.0% at 1700 Nml/min total feed (CH4/H2O/H2 30/60/10, 50 mbarg); GPT adds 91.6% at 1020 Nml/min. CH4 feed is 4.6e-3 and 2.3e-2 mol/min at 22.414 L/mol; GPT notes that the authors' industrial 50,000 Nm3/h = 2230 kmol/h implies ~22.42 L/mol, supporting the 0 degC reference. Both find no point-matched electrical power, so energy metrics are NR, and both note the averaging over at least 45 min (not endurance). Exit wall temperature at 1700 Nml/min: ours ~780 degC, GPT ~775 degC (within reading precision). No differences needing action.
+- **SRC012 Zhu 2019** (2026-11-20): the two 246 W, 3 SLM, S/C 3 points agree: plasma alone X_CH4 65%, EC_CH4 679 kJ/mol; with the Ni-Ce catalyst X_CH4 90%, EC_CH4 490 kJ/mol; SEI_CH4 441 kJ/mol. Also identical: author efficiency 59% and 75% with 2.3 and 1.5 kWh/Nm3 (both on "total H2" = H2 + CO, not actual H2), bed temperature 977 -> 651 degC, and the 6 h stability test (ESI). Steam-vaporizer duty is excluded in both. Ours adds the 149 and 206 W points at 2.5 SLM. No differences needing action.
+- **SRC013 Andersen 2020** (2026-11-20): the shared Table 3 rows agree exactly at 45 W plasma power and 24.46 L/mol:
+  - plasma only: X 32.6 / 22.4%, EC_CH4 8103 kJ/mol, author E 0.206 mmol/kJ, eta 4.44%;
+  - Pt: X 32.5 / 22.1%, EC_CH4 8128 kJ/mol, author eta 4.39%;
+  - Cu: X 32.6 / 16.1%, EC_CH4 8103 kJ/mol, author eta 3.43%.
+  Also identical: the C/H/O closure ranges 88-90 / 83-88 / 88-92% and the 5 x 1 h cycling. GPT notes that the printed Eq. (7) seems to omit the factor 0.5 for the equimolar feed, although the reported values reproduce; author values are kept in both. No differences needing action.
 
 ## Differences
 
@@ -80,3 +88,23 @@ These checks are AI-to-AI. They do not change a source's status (ai_checked), an
 | XR008 | 2026-11-20 | SRC010 molar volume for NL flows | 22.414 L/mol (0 degC) assumed; EC_CH4 238 / 264 / 471 kJ/mol; H2-anchored X 2-4 points above the authors' | 24.25 L/mol inferred: the authors' H2 rate, composition and conversion imply 24.246 / 24.251 / 24.255 L/mol in the three rows; EC_CH4 258 / 286 / 509 | GPT right: at 24.25 L/mol our own H2-anchored conversion equals the authors' in all three rows; workflow section 4 prefers the molar volume that reproduces the authors' derived values | corrected (+8.2% on SEI_CH4 and EC_CH4; carbon closure 71-79%; also power_systems wall-basis table) |
 | XR009 | 2026-11-20 | SRC011 operating points and confidence | four points of the CH4:CO2 series; conversion and energy confidence higher | the two end points only; confidence moderate | consistent; confidence is a judgement call (no repeats count stated, water and carbon inferred) | kept ours (noted) |
 | XR010 | 2026-11-20 | SRC014 operating points and closure wording | adds the 0.92 kW quench point (X ~26%, EC_CH4 948); C closure "~100%"; pressure ~1.01 bar assumed | three 1.67 kW points; closure "partial" (sums use inferred water); pressure NR | consistent; GPT's closure wording is the more careful | kept ours (noted) |
+
+## Closing summary (reforming, 2026-11-20)
+
+- **Sources:** all 15 were extracted a second time by GPT-6.1 Sol (Codex) under workflow 0.9. Fourteen were blind; Andersen only partly, as it had been the worked example.
+- **Differences logged:** XR001-XR010.
+- **Corrections to our extractions:** two.
+  - Collodi: nickel catalyst added (XR003).
+  - Hrycak: molar volume changed from 22.414 to 24.25 L/mol, which reproduces the authors' own H2 rates and conversions. EC_CH4 rose ~8%, and the scale-up table was updated (XR008).
+- **For human check:**
+  - From 2024: assignment of the biogas flows to the Fig. 5 end points (XR004).
+  - Hrabovsky: tracer-based conversion behind the only large thermal-arc EC_CH4 (XR007).
+- **Kept ours:** the other differences were operating-point choices or labelled reviewer calculations (XR001, XR002, XR005, XR006, XR009, XR010).
+- **Confirmed independently:**
+  - Akande's H2 output exceeds what its methane feed can give.
+  - The From papers give no matched power and feed.
+  - Geng's feed is 25 mL/min CH4 (also confirmed by BB).
+  - Song's 57% efficiency goes with 79% conversion, not the abstract's 95%, and its power boundary is contradictory.
+  - Wismann reports no electrical power.
+- **Pattern:** GPT tends to rate confidence one level lower where water or carbon is inferred rather than measured. This is worth harmonising in the human checks.
+- **Status:** all sources remain ai_checked; human verification is still pending.
