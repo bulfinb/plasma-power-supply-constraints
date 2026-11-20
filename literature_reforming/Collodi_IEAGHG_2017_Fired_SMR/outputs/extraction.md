@@ -20,7 +20,7 @@ Not an electrically heated system. The reformer is fired with PSA tail gas and s
 
 - Hydrogen plant: feed preheat, sulphur absorber, adiabatic pre-reformer, **Foster Wheeler Terrace Wall** steam reformer, reformer waste heat boiler, high-temperature shift, syngas cooling, PSA (E004-E005).
 - Terrace Wall furnace: single row of catalyst tubes per firebox, two rows of burners on two levels firing upward along terraced walls; convective section on top with reformer feed preheat, pre-reformer feed preheat, steam superheater, feed preheat and steam generation coils (E005).
-- Tube count, tube dimensions, catalyst volume and furnace dimensions are not given; most duty and size cells in the equipment list are blank (E027).
+- Reformer and pre-reformer catalysts contain nickel (Annex I, PDF p. 259; E051). Tube count, tube dimensions, catalyst volume and furnace dimensions are not given; most duty and size cells in the equipment list are blank (E027).
 
 ## Operating conditions
 
@@ -133,3 +133,4 @@ Inputs E007-E008, E014-E016, E018.
 ## Revisions
 
 - 2026-10-30: initial extraction of the Base Case by Claude (AI). Evidence IDs E031-E040 unused; numbering gap is intentional.
+- 2026-11-20, after GPT cross-check (cross_check_log.md XR003): nickel catalyst added (E051); summary table catalyst cell changed from NR to Ni.

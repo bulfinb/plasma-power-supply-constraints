@@ -26,10 +26,12 @@ These checks are AI-to-AI. They do not change a source's status (ai_checked), an
 | Source | Date | Tool | Model | Workflow | Notes |
 |---|---|---|---|---|---|
 | SRC008 Akande 2022 | 2026-11-20 | Codex desktop (version not recorded) | GPT-6.1 Sol (confirmed by BB; not logged by the tool) | 0.9 | manuscript and corrigendum |
+| SRC004 Collodi (IEAGHG) 2017 | 2026-11-20 | Codex desktop (version not recorded) | as above | 0.9 | report incl. Annex I; fired reference (R1-R4) |
 
 ## Summary by paper
 
 - **SRC008 Akande 2022** (2026-11-20): the 32 kW / 60 lpm CH4 / S/C 3 point is identical: X_CH4 96.6%, SEI_CH4 717 kJ/mol and EC_CH4 742 kJ/mol on absorbed microwave power, with steam-generator duty not reported. The corrigendum composition point (62 lpm) is also identical, at SEI_CH4 694 kJ/mol. Both found independently that the reported 2247 g H2/h (and 70 g/kWh) exceeds what 60 lpm CH4 can give (~1190-1295 g/h at complete SMR + WGS). Both found that Fig. 10 conflicts with the reported conversion. Differences XR001-XR002.
+- **SRC004 Collodi (IEAGHG) 2017** (2026-11-20): Base Case design reference agrees on every value: 100,000 Nm3/h H2 (8,994 kg/h); CH4 feed ~21,600 mol/min; net CH4 conversion 84.6% over pre-reformer and reformer; radiant duty 96.1 MW, giving EC_CH4,abs 315-316 and EC_CH4,fired 574 kJ/mol (HHV); plant eta_HHV 81.1% (LHV ratio 75.9%); f_electric 0 with 9.918 MWe export; author metric 14.212 GJ LHV/1000 Nm3 H2. Both note that the 28 bar HTS-inlet pressure is not the tube pressure, and both label the case a design basis, not measured data. Difference XR003.
 
 ## Differences
 
@@ -37,3 +39,4 @@ These checks are AI-to-AI. They do not change a source's status (ai_checked), an
 |---|---|---|---|---|---|---|
 | XR001 | 2026-11-20 | SRC008 corrigendum composition point (62 lpm, 32 kW): conversion | 83.1%, from the carbon basis of the wet composition (no soot), EC_CH4 835 kJ/mol | unclear; residual CH4 fraction not taken as conversion, EC_CH4 NR | both defensible: ours is a labelled reviewer calculation that assumes no solid carbon (none observed) and no unmeasured carbon species | kept ours (conditional, labelled) |
 | XR002 | 2026-11-20 | SRC008 operating points | power scan 17, 32, 47 kW at S/C 3 (EC_CH4 511, 742, 1078 kJ/mol) | S/C 5 at 32 kW (X 99.8%, EC_CH4 719 kJ/mol) | different points from the same figures, consistent | kept ours (noted) |
+| XR003 | 2026-11-20 | SRC004 reformer catalyst | NR | nickel (Annex I) | GPT right: Annex I PDF p. 259 states the reformer and pre-reformer catalysts contain nickel | corrected (E051; summary table) |

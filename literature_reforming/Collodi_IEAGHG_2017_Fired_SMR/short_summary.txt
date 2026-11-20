@@ -49,9 +49,10 @@ NR = not reported; NA = not applicable; ~ = approximate. Human verification pend
 
 1. Route and scale
 Source / OP        | Route | Reactor / activation / catalyst                | CH4 feed (mol/min) | Scale as reported
-Collodi 2017 OP001 | SMR   | Terrace Wall tubular / fired / catalyst NR [1] | 2.2e4 [2]          | 8,994 kg/h H2; 437 MW NG HHV
+Collodi 2017 OP001 | SMR   | Terrace Wall tubular / fired / Ni [1]          | 2.2e4 [2]          | 8,994 kg/h H2; 437 MW NG HHV
 [1] Fired with PSA tail gas and NG; with pre-reformer, HT shift and PSA.
-    Engineering design by the reformer licensor, not measured.
+    Engineering design by the reformer licensor, not measured. Ni
+    catalyst in reformer and pre-reformer (Annex I). SRC004-E051.
 [2] 1,295.8 kmol/h CH4 at pre-reformer inlet. SRC004-E003, E011, E014.
 
 2. Operating conditions
