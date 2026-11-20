@@ -30,8 +30,8 @@ Indicative wall-basis EC_CH4 = reported EC_CH4 / eta_supply, using the class ran
 | K2 | Induction-heating inverter (analogue) | 0.91-0.98 | NR | NR | PW004-V02, PW005-V02, PW003-V02 |
 | R1 | RF tube oscillator (ICP) | 0.53-0.60 | NR | NR | PW024-V01, PW007-V03 |
 | R2 | Solid-state RF | 0.70-0.80 (vendor claims); Class E amplifier 91.5% at 600 W, 12-15 MHz (amplifier only) | NR | NR | PW008-V02, PW025-V01, PW027-V01 |
-| M1 | 915 MHz magnetron, 75-100 kW units | ~0.80 (generator; tubes alone approach 84-86%, not used) | turnkey ~1,000-3,000 USD/kW (undated); tube 100-300 USD/kW | tube <=6,000 h | PW009-V01, PW012-V01, PW020-V01, PW033-V01, -V02 |
-| M2 | 2.45 GHz magnetron, up to 15 kW | 0.63-0.70 (datasheet, calculated; ~70% in a 2024 review table) | ~1,000 USD/kW (2024, scope not stated) | >15,000 h expected (vendor); 6,000-15,000 h (tier 3); 1-3 years (2024 review) | PW050-V05, -V06, PW045-V01, PW046-V02, -V04, -V05, PW044-V01, PW031-V03 |
+| M1 | 915 MHz magnetron, 75-100 kW units | 0.74-0.84 (HV supply 0.90-0.95 x tube 0.82-0.88; vendor generator claims ~0.80 inside) | turnkey ~1,000-3,000 USD/kW (undated); tube 100-300 USD/kW | tube <=6,000 h | PW009-V01, PW012-V01, PW020-V01, PW033-V01, -V02 |
+| M2 | 2.45 GHz magnetron, up to 15 kW | 0.63-0.72 (datasheet rated input 0.63-0.70; supply x tube ~0.59-0.71; measured 0.72, Kiefer 2024) | ~1,000 USD/kW (2024, scope not stated) | >15,000 h expected (vendor); 6,000-15,000 h (tier 3); 1-3 years (2024 review) | PW050-V05, -V06, PW045-V01, PW046-V02, -V04, -V05, PW044-V01, PW031-V03 |
 | M3 | 2.45 GHz GaN solid-state | 0.56-0.70 (amplifier/head only); LDMOS ~60%, GaN ~65% expected | ~3,000 USD/kW (LDMOS, 2024); 5-10x magnetron per W (tier 3) | ~10 years | PW018-V01, PW019-V01, PW046-V01, -V06 to -V09, PW031-V01 |
 | P1 | Nanosecond pulsed | 0.45-0.92 (load-dependent) | ~5,000 EUR/kW (2009 estimate); 20,000-30,000 EUR/kW state of the art (2009) | NR | PW028-V01, PW029-V01, -V02, -V03, -V04 |
 | H1 | Klystron, gyrotron (context) | 0.40-0.63 (tube only); ~0.25 HV DC to average RF for a 1 MW-peak pulsed radar transmitter (PW015-V06, calculated) | >5 USD/W (klystrons) | NR | PW014, PW011-V01, PW016-V01, PW020-V03 |
@@ -46,6 +46,7 @@ Scale evidence: induction supplies of 16 MW per unit and 126 MW installed (PW001
 - **P1:** the 85.2% and 56.7% values attributed to the Acta Phys. Pol. paper are not in it (PW029). The range now rests on the TU/e abstract (45-85% energy transfer into the reactor, PW028) and PW029 (>90% at 20 kW; 92% ± 6%). The ~5 kEUR/kW cost is from PW029, not PW028, and the same paper gives 20-30 kEUR/kW for state-of-the-art pulsed power.
 - **M2:** the lower bound 0.80 had been set equal to the 915 MHz class by assumption. The archived sources give 65-70% for 2.45 GHz magnetron generators (tier 3); the only support for 0.85 (SAIREM guide, PW010) has no local copy. The SAIREM GMP100 10 kW datasheet (PW050) states no generator efficiency, but its rated consumption (15.8 kVA, power factor >0.9) for 10 kW output gives 0.63-0.70 (reviewer calculation, PW050-V05). Range set to 0.63-0.70; the 85% value is not used.
 - **M1 efficiency (2026-11-11, BB decision):** the upper bound 0.86 was a magnetron tube value (PW017-V01; PW020-V04 ~84% is also a tube value); M1 now uses the generator values only, ~0.80 (PW009-V01, PW012-V01). Wall basis: Akande 639-1348, Hrycak 298-589 kJ/mol.
+- **M1 and M2 (2026-11-20, BB decision after the GPT cross-check, XP002):** both classes now use one method, generator = HV supply stage x magnetron tube. M1: 0.90-0.95 x 0.82-0.88 (tube loss 15-18%, PW009-V03; 86%, PW017-V01; 84%, PW020-V04; up to 88%, PW045-V04) -> 0.74-0.84, with the vendor generator claims (~0.80) inside. M2: >0.90 x 0.65-0.75 (PW031-V04; ~70%, PW046-V02) -> ~0.59-0.71; the rated-input datasheet value 0.63-0.70 (PW050-V05) is a lower bound; upper 0.72 from Kiefer's measured wall-to-absorbed ratio (SRC016-V01). Rated input kVA is a sizing value, so kVA-based efficiencies are lower bounds (MTX100: >=0.67).
 - **M1:** tube lifetime "2,000-15,000 h" is not supported for 915 MHz; the archived source gives "6,000 hours or less" (PW033). New tube cost: <0.10 USD/W (PW033).
 - **R1:** a second, indicative lower bound from the TruHeat HF 7100 rated input (0.53, reviewer calculation) widens the range to 0.53-0.60.
 - **K1:** the 100 kW tender requirement (T07, now PW023) is a DC torch supply and moved to A1. K1 now rests on the induction-heating generator analogue (TRUMPF MF, 91%) and a 250 W ozone inverter study (PW026: 91% best case; the two modulated inverters 69-70%). The Class E DBD amplifier (PW027) runs at 12-15 MHz and is now under R2.
@@ -65,8 +66,8 @@ Added 2026-11-11. For each discharge type in the review, the map records the lab
 | Gliding arc, DC | SRC012 | D1 | 0.92-0.97 | efficiency not limiting (ESP units 70-180 kW); ~4,000 arcs per MW, each needing its own current control in place of the lab ballast |
 | Glow, DC | SRC015 | D1 | 0.92-0.97 | efficiency not limiting; ~7,000-10,000 discharges per MW, each needing its own current control |
 | DBD | SRC013, SRC002 | K1 | 0.90-0.92 | efficiency not limiting (ozone units ~0.5 MW); load power factor 0.3-0.5 and supply cost (~1,200-1,500 EUR/kW) are |
-| Microwave 915 MHz | SRC008, SRC010 | M1 | ~0.80 | not limiting (100 kW units); tube life <=6,000 h |
-| Microwave 2.45 GHz | SRC011 | M2 / M3 | 0.63-0.70 / 0.56-0.70 | limiting: <=15 kW units, ~70-170 units per MW |
+| Microwave 915 MHz | SRC008, SRC010 | M1 | 0.74-0.84 | not limiting (100 kW units); tube life <=6,000 h |
+| Microwave 2.45 GHz | SRC011 | M2 / M3 | 0.63-0.72 / 0.56-0.70 | limiting: <=15 kW units, ~70-170 units per MW |
 | RF ICP (9.6 kHz-40 MHz; SRC009 at 400 kHz) | SRC009 | K2 / R1 / R2 | 0.91-0.96 / 0.53-0.60 / 0.70-0.80 | depends on torch size: torches >=100 mm run at <=0.5 MHz, where >=95% solid-state supplies of >=100 kW exist; small MHz torches need tubes or solid-state units of <=~30 kW |
 | ns pulsed | none yet | P1 | 0.45-0.92 | limiting: 1-20 kW units, 5-30 kEUR/kW (2009) |
 | Joule (benchmark) | SRC001, SRC005, SRC006 | J1 | 0.97-0.985 | not limiting; 85-158 EUR/kVA at 3 MW |
@@ -87,10 +88,10 @@ On the supply side the same patent states that >=95% solid-state supplies are co
 
 | Source | Paper boundary | Supply class | EC_CH4 reported (kJ/mol) | EC_CH4 wall (kJ/mol) |
 |---|---|---|---|---|
-| Hrycak 2023 | absorbed MW (lower bounds) | M1 | 258-509 | 322-636 |
+| Hrycak 2023 | absorbed MW (lower bounds) | M1 | 258-509 | 307-688 |
 | Zhu 2019 | discharge; steam and lab ballast excl. | D1 (HV DC) | 490-679 | 505-738 |
-| Akande 2022 | absorbed MW | M1 | 511-1078 | 639-1348 |
-| Kelly 2023 | absorbed MW | M2 magnetron / M3 solid-state | 581-723 | 830-1148 / 830-1291 |
+| Akande 2022 | absorbed MW | M1 | 511-1078 | 608-1457 |
+| Kelly 2023 | absorbed MW | M2 magnetron / M3 solid-state | 581-723 | 807-1148 / 830-1291 |
 | Kwon 2023 | discharge | K1 | 740-948 | 804-1053 |
 | Wanten 2022 | plasma; lab ballast excl. | D1 (HV DC) | 813-1194 | 838-1298 (lab ballast incl.: 2392-3490) |
 | Song 2020 | RF generator output | K2 solid-state 100-400 kHz / R2 solid-state / R1 tube | 1036-1510 | 1079-1659 / 1295-2157 / 1727-2849 |

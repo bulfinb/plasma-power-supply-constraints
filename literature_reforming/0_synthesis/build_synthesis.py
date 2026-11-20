@@ -230,9 +230,9 @@ Conf. = confidence in conversion / energy results from the extraction (H higher,
 - Fired SMR needs 315-340 kJ of absorbed heat and ~575 kJ of fuel (HHV) per mol CH4 converted in the reformer
   (design studies); whole-plant H2 efficiency 76-81% HHV.
 - With an industrial supply, the kW-scale plasma headline points cost (kJ electricity per mol CH4 converted):
-  Hrycak ~320-360 (6.5 kW; steam generation excluded, ~25% carbon gap), Akande ~930 (32 kW; lower confidence,
+  Hrycak ~310-390 (6.5 kW; steam generation excluded, ~25% carbon gap), Akande ~880-1000 (32 kW; lower confidence,
   impossible H2 rate), Song ~1080-1140 (22 kW) and Hrabovsky ~1200-1310 (120 kW, the only process-complete
-  figure: the torch raises its own steam). Against fired SMR this is ~1-4x the absorbed heat and ~0.6-2.3x the
+  figure: the torch raises its own steam). Against fired SMR this is ~1-4x the absorbed heat and ~0.5-2.3x the
   fuel energy, but electricity against heat. Conversion 66-97% at these points; 94-99% costs ~1300-2400.
 - Lab-scale points (paper boundary): Zhu 490 (Ni catalyst, steam excluded), Kelly 581, Kwon 740, Wanten 813, Geng 1120-1490
   (furnace excluded), Andersen ~8100 kJ/mol (DBD).

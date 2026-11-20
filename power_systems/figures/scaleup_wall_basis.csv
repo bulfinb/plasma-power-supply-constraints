@@ -3,9 +3,9 @@ Hrabovsky 2018 (SRC007),SMR/DRM,arc power,1149,2172,A1,"IGBT or thyristor rectif
 Song 2020 (SRC009),DRM,RF generator output,1036,1510,R1,Triode/tetrode oscillator with tank circuit,0.53,0.6,R1 class range,1727,2849
 Song 2020 (SRC009),DRM,RF generator output,1036,1510,R2,Solid-state RF generator,0.7,0.8,R2 class range,1295,2157
 Song 2020 (SRC009),DRM,RF generator output,1036,1510,K2,IGBT/MOSFET resonant inverter,0.91,0.96,K2 sub-band 400kHz (PW004-V02; PW005-V02),1079,1659
-Akande 2022 (SRC008),SMR,absorbed MW,511,1078,M1,75-100 kW CW magnetron generator,0.8,0.8,M1 class range,639,1348
-Hrycak 2023 (SRC010),mixed,absorbed MW (lower bounds),258,509,M1,75-100 kW CW magnetron generator,0.8,0.8,M1 class range,322,636
-Kelly 2023 (SRC011),DRM,absorbed MW,581,723,M2,6-15 kW magnetron head + switch-mode supply,0.63,0.7,M2 class range,830,1148
+Akande 2022 (SRC008),SMR,absorbed MW,511,1078,M1,75-100 kW CW magnetron generator,0.74,0.84,M1 class range,608,1457
+Hrycak 2023 (SRC010),mixed,absorbed MW (lower bounds),258,509,M1,75-100 kW CW magnetron generator,0.74,0.84,M1 class range,307,688
+Kelly 2023 (SRC011),DRM,absorbed MW,581,723,M2,6-15 kW magnetron head + switch-mode supply,0.63,0.72,M2 class range,807,1148
 Kelly 2023 (SRC011),DRM,absorbed MW,581,723,M3,GaN SSPA generator,0.56,0.7,M3 class range,830,1291
 Kwon 2023 (SRC014),DRM,discharge,740,948,K1,Series/parallel resonant or current-fed inverter with HV transformer,0.9,0.92,K1 class range,804,1053
 Zhu 2019 (SRC012),SMR,"discharge (steam excl., lab ballast excl.)",490,679,D1,"Switch-mode HV DC supply (mains rectifier, 25-50 kHz IGBT inverter, HV transformer and rectifier), current-controlled",0.92,0.97,D1 class range,505,738

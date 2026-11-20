@@ -286,8 +286,8 @@ dH (282.7 kJ/mol); {EC_DG:.2f} kWh/Nm3 = dG at 298 K (257 kJ/mol).
 
 - Measured wall or plug energy for plasma without carbon is 15.5-33 kWh/Nm3 CO (Kiefer, O'Modhrain, Bryssinck
   no-bed, whose control is internally inconsistent; all rows in the CSV): about 4-8x the SOEC system value (4.2 incl. rectifier) and 4-9x the 100% line.
-- The industrial-supply estimate reproduces Kiefer's measured wall value (19.6 vs 20.1-22.3 kWh/Nm3 at OP001),
-  a check on the M2 class range.
+- Kiefer's measured wall value (19.6 kWh/Nm3 at OP001; absorbed/wall power 0.72) sets the upper end of the M2 range;
+  the independent supply x tube estimate (0.59-0.71) is consistent with it.
 - With industrial supplies, the lowest plasma results without carbon (Bongers OP003, Renninger OP001) would be
   ~8-9 kWh/Nm3, at 10-27% conversion and before separation and O2 removal; Bongers at 0.2 bar with the pump
   excluded, Renninger at 0.16 kW.
