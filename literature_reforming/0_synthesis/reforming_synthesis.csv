@@ -27,4 +27,5 @@ Hrycak 2023 OP001,SRC010,mixed,MW 915 MHz,M1,3.09,1:0.33:0.90,NR (steam 250-350)
 Hrycak 2023 OP003,SRC010,mixed,MW 915 MHz,M1,1.03,1:1:1.79,NR (steam 250-350),6.5,absorbed MW,steam vaporizer NR,74.3,~60,378,509,509,606,688,NR,M,L,,SRC010-E041,
 From 2024 OP001,SRC005,mixed,Joule (eSMR pilot),J1,,biogas; S/C 2.7,900 cat. exit,,NR,"steam, preheat NR",97,NR,,,,,,~1 h steady,M,NA,yes,SRC005-E013,10 barg; equilibrium conversion
 From 2024 OP003,SRC005,mixed,Joule (eSMR pilot),J1,,biogas; S/C 2.1,950 cat. exit,,NR,"steam, preheat NR",94,NR,,,,,,1535 h TOS,M,NA,,SRC005-E016-E017,20 barg; no deactivation over 1050 h
+From 2024 OP004-OP007,SRC005,mixed,Joule (eSMR pilot),J1,,biogas; S/C 2-2.2,900 cat. exit,,Q_in (PSU),"steam, preheat, compression excl.","94-97 (eq., est.)",NR,,388,485,394,500,NR,L,L,yes,SRC005-E043-E045,reviewer estimate C004: equilibrium Q_reaction / author efficiency 71.5-79.5%; ~23-35 kW if Fig. 5 axis is Q_in
 From 2025 OP002,SRC006,mixed,Joule (eSMR pilot),J1,2.55,biogas + H2; S/HC 2.3,900 exit gas,,NR,"steam, preheat NR",~98,~42-54,,,,,,80 h,M,NA,yes,"SRC006-E013, E042",6 barg; power confidential; conversion reviewer-calculated

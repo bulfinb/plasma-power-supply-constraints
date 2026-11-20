@@ -18,6 +18,9 @@ EC_CH4 and other power-basis metrics not calculable (no point-matched
 power, feed composition or conversion). eta_HHV not calculable (preheat,
 steam, compression and supply losses not reported). Modelled 99% and
 1.0 kWh/Nm3 at >=1 MW excluded.
+Reviewer estimate (2026-11-20): EC_CH4 about 390-485 kJ/mol at Q_in,
+from equilibrium Q_reaction (308-347 kJ/mol) / author efficiency
+(C004); pilot about 23-35 kW if Fig. 5 capacity is Q_in (C005).
 
 Duration: close to 2000 h total; matched stability points 1050 h apart.
 Start-up from idle to 900 degC in 2.6 h; heating up to 330 degC/h.

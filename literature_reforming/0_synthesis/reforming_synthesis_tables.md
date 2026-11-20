@@ -30,11 +30,12 @@ Andersen 2020 OP001 | DBD (no packing)        | K1    | 0.001         | 1:1:0   
 
 ## 3. Mixed reforming (CO2 + steam, biogas)
 
-Source / OP          | Activation         | Class | CH4 (mol/min) | CH4:CO2:H2O           | P (kW) | Boundary    | X_CH4 (%) | X_CO2 (%) | SEI_CH4 | EC_CH4 | EC ind.   | Duration       | Conf.
-Hrabovsky 2018 OP005 | DC arc torch       | A1    | 5.58          | 1:0.81:0.18           | 116    | arc         | 95.3      | 91.0      | 1248    | 1309   | 1336-1454 | ~2 min segment | M/M
-Hrycak 2023 OP001    | MW 915 MHz         | M1    | 3.09          | 1:0.33:0.90           | 6.5    | absorbed MW | 48.9      | ~44       | 126     | 258    | 307-349   | NR             | M/L
-From 2024 OP001      | Joule (eSMR pilot) | J1    | NR            | biogas; S/C 2.7       | NR     | NR          | 97        | NR        | -       | NR     | -         | ~1 h steady    | M/NA
-From 2025 OP002      | Joule (eSMR pilot) | J1    | 2.55          | biogas + H2; S/HC 2.3 | NR     | NR          | ~98       | ~42-54    | -       | NR     | -         | 80 h           | M/NA
+Source / OP           | Activation         | Class | CH4 (mol/min) | CH4:CO2:H2O           | P (kW) | Boundary    | X_CH4 (%)         | X_CO2 (%) | SEI_CH4 | EC_CH4  | EC ind.   | Duration       | Conf.
+Hrabovsky 2018 OP005  | DC arc torch       | A1    | 5.58          | 1:0.81:0.18           | 116    | arc         | 95.3              | 91.0      | 1248    | 1309    | 1336-1454 | ~2 min segment | M/M
+Hrycak 2023 OP001     | MW 915 MHz         | M1    | 3.09          | 1:0.33:0.90           | 6.5    | absorbed MW | 48.9              | ~44       | 126     | 258     | 307-349   | NR             | M/L
+From 2024 OP001       | Joule (eSMR pilot) | J1    | NR            | biogas; S/C 2.7       | NR     | NR          | 97                | NR        | -       | NR      | -         | ~1 h steady    | M/NA
+From 2024 OP004-OP007 | Joule (eSMR pilot) | J1    | NR            | biogas; S/C 2-2.2     | NR     | Q_in (PSU)  | 94-97 (eq., est.) | NR        | -       | 388-485 | 394-500   | NR             | L/L
+From 2025 OP002       | Joule (eSMR pilot) | J1    | 2.55          | biogas + H2; S/HC 2.3 | NR     | NR          | ~98               | ~42-54    | -       | NR      | -         | 80 h           | M/NA
 
 ## 4. Benchmarks
 
@@ -49,7 +50,7 @@ Collodi (IEAGHG) 2017 OP001 | 8,994 kg/h H2 (CH4 ~21,600 mol/min)  | ~900-950 ou
 
 Joule-heated benchmarks:
 
-- **From 2024 OP004 / OP007:** author reactor efficiency ~72% at ~25 kW and ~80% at ~35 kW (Fig. 5; includes sensible heating 400 -> 900 degC; I x V boundary); point-matched feed NR, so no EC_CH4 (SRC005-E019-E023).
+- **From 2024 OP004 / OP007:** author reactor efficiency ~72% at ~25 kW and ~80% at ~35 kW (Fig. 5; includes sensible heating 400 -> 900 degC; I x V boundary). Reviewer estimate EC_CH4 388-485 kJ/mol at Q_in from equilibrium Q_reaction / efficiency (SRC005-C004, E043-E045); not measured.
 - **Topsoe eREACT (vendor claim):** ~1 kWh/Nm3 H2 system electricity (~81 kJ/mol H2); boundary not stated (PW037-V01).
 
 ## 5. Not plotted
@@ -80,6 +81,6 @@ Joule-heated benchmarks:
 - Lab-scale points (paper boundary): Zhu 490 (Ni catalyst, steam excluded), Kelly 581, Kwon 740, Wanten 813, Geng 1120-1490
   (furnace excluded), Andersen ~8100 kJ/mol (DBD).
 - Joule heating converts at equilibrium (85-98%) and runs for 80-1535 h, but no paper gives power and feed at
-  the same operating point, so no electrical EC_CH4 exists for it in the evidence; the authors' reactor
-  efficiency is ~72-80% (From 2024).
+  the same operating point. A reviewer estimate from the From 2024 pilot efficiencies (72-80%, ~23-35 kW) gives
+  EC_CH4 ~390-485 kJ/mol at the supply output (SRC005-C004), below the kW-scale plasma torches.
 - Durations: plasma results are minutes to hours (longest 6 h, Zhu); Joule pilots run for weeks.

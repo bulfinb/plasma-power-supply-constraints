@@ -104,6 +104,10 @@ ROWS = [
     R("From 2024 OP003", "SRC005", "mixed", "Joule (eSMR pilot)", "J1", None, "biogas; S/C 2.1", "950 cat. exit", None, "NR",
       "steam, preheat NR", "94", "NR", None, None, "1535 h TOS", "M", "NA", False, "SRC005-E016-E017",
       "20 barg; no deactivation over 1050 h"),
+    R("From 2024 OP004-OP007", "SRC005", "mixed", "Joule (eSMR pilot)", "J1", None, "biogas; S/C 2-2.2", "900 cat. exit",
+      None, "Q_in (PSU)", "steam, preheat, compression excl.", "94-97 (eq., est.)", "NR", None, (388, 485), "NR", "L", "L",
+      True, "SRC005-E043-E045",
+      "reviewer estimate C004: equilibrium Q_reaction / author efficiency 71.5-79.5%; ~23-35 kW if Fig. 5 axis is Q_in"),
     R("From 2025 OP002", "SRC006", "mixed", "Joule (eSMR pilot)", "J1", 2.55, "biogas + H2; S/HC 2.3", "900 exit gas", None,
       "NR", "steam, preheat NR", "~98", "~42-54", None, None, "80 h", "M", "NA", True, "SRC006-E013, E042",
       "6 barg; power confidential; conversion reviewer-calculated"),
@@ -120,7 +124,8 @@ FIRED = [
 ]
 JOULE_BENCH = [
     ("From 2024 OP004 / OP007", "author reactor efficiency ~72% at ~25 kW and ~80% at ~35 kW (Fig. 5; includes sensible "
-     "heating 400 -> 900 degC; I x V boundary); point-matched feed NR, so no EC_CH4 (SRC005-E019-E023)"),
+     "heating 400 -> 900 degC; I x V boundary). Reviewer estimate EC_CH4 388-485 kJ/mol at Q_in from equilibrium "
+     "Q_reaction / efficiency (SRC005-C004, E043-E045); not measured"),
     ("Topsoe eREACT (vendor claim)", "~1 kWh/Nm3 H2 system electricity (~81 kJ/mol H2); boundary not stated (PW037-V01)"),
 ]
 NOT_PLOTTED = [
@@ -237,8 +242,8 @@ Conf. = confidence in conversion / energy results from the extraction (H higher,
 - Lab-scale points (paper boundary): Zhu 490 (Ni catalyst, steam excluded), Kelly 581, Kwon 740, Wanten 813, Geng 1120-1490
   (furnace excluded), Andersen ~8100 kJ/mol (DBD).
 - Joule heating converts at equilibrium (85-98%) and runs for 80-1535 h, but no paper gives power and feed at
-  the same operating point, so no electrical EC_CH4 exists for it in the evidence; the authors' reactor
-  efficiency is ~72-80% (From 2024).
+  the same operating point. A reviewer estimate from the From 2024 pilot efficiencies (72-80%, ~23-35 kW) gives
+  EC_CH4 ~390-485 kJ/mol at the supply output (SRC005-C004), below the kW-scale plasma torches.
 - Durations: plasma results are minutes to hours (longest 6 h, Zhu); Joule pilots run for weeks.
 """)
     (HERE / "reforming_synthesis_tables.md").write_text("\n".join(parts), encoding="utf-8")
