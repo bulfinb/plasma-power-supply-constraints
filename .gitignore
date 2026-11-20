@@ -27,5 +27,6 @@ tmp/
 # IDE settings
 **/.idea/
 
-# Independent GPT cross-check extraction (local only; see literature_co2_splitting/cross_check_log.md)
+# Independent GPT cross-check extractions (local only; see each topic's cross_check_log.md)
 literature_co2_splitting_GPT/
+literature_reforming_GPT/

@@ -5,7 +5,7 @@
 - Source ID / citation / DOI: pending
 - Source filenames and document versions: pending
 - Retrieval date: unknown
-- Protocol version: 0.6
+- Protocol version: 0.8
 - Extractor / date: pending
 - Coverage (documents, conditions, figures): pending
 - Reviewer / date / checks: pending
