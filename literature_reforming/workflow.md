@@ -1,6 +1,6 @@
 # Literature extraction workflow
 
-Version 0.8 - 2026-11-19 (see Version history; the version that applied to an extraction is identified by its date in processing_log.md, and from the start of git tracking also by commit).
+Version 0.9 - 2026-11-20 (see Version history; the version that applied to an extraction is identified by its date in processing_log.md, and from the start of git tracking also by commit).
 
 The purpose, scope and comparison questions are in [literature_review_objectives.md](literature_review_objectives.md). Find and select papers using [literature_search_strategy.md](literature_search_strategy.md), then follow the steps below for each included paper. Extract what supports the review questions, rather than every available detail.
 
@@ -114,7 +114,7 @@ Record in two lines:
 - **Power boundary:** where P is measured (wall, supply output, reactor terminals, discharge, absorbed microwave/RF power, or heating element) and how (probes, forward/reflected power, calorimetry, setpoint).
 - **External heat:** whether a furnace, preheater or steam generator was used: yes, no or unknown, with its duty or temperature if reported.
 
-Note product separation or recycle only if the paper includes them. Equipment lists, cooling duties, outlet conditions and system mass or energy balances are not extracted; record a reported carbon (or H/O) balance closure under Q4.
+Note product separation or recycle only if the paper includes them. Equipment lists and full system mass or energy balances are not extracted; record a reported carbon (or H/O) balance closure under Q4. If the paper reports outlet temperature, heat duties or heat recovery, note them in one line: the separate scale-up assessment (objectives) uses them.
 
 ### Energy metrics
 
@@ -200,7 +200,7 @@ Write a few headline lines in short_summary.txt, then compact evidence reference
 - Duration: hours/minutes where known; otherwise state what is missing.
 - Gaps: only missing information that blocks comparison.
 
-Exclude modelling and scale-up projections; if no experiments exist, say so. Include preparation date/review status. Check that summary values trace to evidence and derived values to calculations. State coverage and comparison limits. Rank only compatible chemistry, conditions, energy and volume boundaries, or explain the mismatch.
+Exclude modelling and scale-up projections; if no experiments exist, say so. Exception: the fired SMR references are design or simulation cases by nature; summarise them as labelled reference cases (data type stated). Include preparation date/review status. Check that summary values trace to evidence and derived values to calculations. State coverage and comparison limits. Rank only compatible chemistry, conditions, energy and volume boundaries, or explain the mismatch.
 
 ### Comparison tables
 
@@ -228,7 +228,7 @@ Formatting rules:
 - **CH4 feed.** Give methane input in mol/min as the common scale metric. Where it is converted from a volumetric flow, state in a note whether the reference conditions were stated or assumed (section 4 rule). Give the source's own scale metric (flow, power or product rate) in the last column of table 1. For the benchmarks (fired SMR, Joule pilots), give EC_CH4,fired/abs or eta_HHV in a note to table 3.
 - **Plasma table.** Record the electrical operation of the discharge, the gas temperature if measured, and name any other diagnostics in one cell. For non-plasma sources replace the table with one line, e.g. "4. Plasma parameters: not applicable (Joule-heated source)."
 
-Use one representative experimental operating point per row. Add another row only for an important distinct condition, such as a plasma-off control or a higher-throughput test. Keep all numerical results in a row tied to that condition; do not combine the maximum conversion, maximum flow and minimum energy use from different tests. If a duration describes a separate stability test, label it explicitly rather than assigning it to the selected point. Group the final synthesis tables by SMR, DRM and mixed reforming.
+Use one representative experimental operating point per row (for fired SMR references, one labelled reference case). Add another row only for an important distinct condition, such as a plasma-off control or a higher-throughput test. Keep all numerical results in a row tied to that condition; do not combine the maximum conversion, maximum flow and minimum energy use from different tests. If a duration describes a separate stability test, label it explicitly rather than assigning it to the selected point. Group the final synthesis tables by SMR, DRM and mixed reforming.
 
 Use NR for not reported, unclear for ambiguous information and NA for not applicable. Do not infer gas temperature from furnace setpoint or wall temperature. State whether power is discharge, reactor-terminal or total wall power; list separately reported inputs in the same cell without adding overlapping powers. Preserve the author's energy-metric definition. Where EC_CH4 cannot be calculated, enter NR and name the missing input in a note. Reactor volume or power density may be added to the final comparison only where volume boundaries are defined and comparable.
 
@@ -254,5 +254,6 @@ Renumbered 2026-11-10: each amendment is now its own version. Extraction files w
 | 0.6 | 2026-11-10 | simplified (BB): core energy metrics SEI as reported, SEI_CH4, EC_CH4 plus the author's efficiency; eta_P,LHV and EY_H2 optional; eta_HHV and f_electric for benchmarks only; system boundary reduced to power boundary and external heat; hardware/cost and full missing-data checklist dropped; plasma diagnostics reduced to regime, gas temperature and a list; summary tables reduced from five to four. Extractions made under 0.1-0.5 are kept as they are | - |
 | 0.7 | 2026-11-10 | human-check and AI-error logs added (section 3b; ../human_checks/findings.csv and summary.csv) | - |
 | 0.8 | 2026-11-19 | reforming only: references to other topic folders removed (each topic has its own workflow) | - |
+| 0.9 | 2026-11-20 | after an external LLM consistency review: reported heat data noted for the scale-up assessment (section 4); fired references allowed as labelled reference cases in summaries (section 6); template asks for SHA-256 | - |
 
 Cite the version number in new extraction files.

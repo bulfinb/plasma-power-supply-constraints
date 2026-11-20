@@ -3,9 +3,9 @@
 ## Source and review
 
 - Source ID / citation / DOI: pending
-- Source filenames and document versions: pending
+- Source filenames, document versions and SHA-256 hashes: pending
 - Retrieval date: unknown
-- Protocol version: 0.8
+- Protocol version: 0.9
 - Extractor / date: pending
 - Coverage (documents, conditions, figures): pending
 - Reviewer / date / checks: pending
