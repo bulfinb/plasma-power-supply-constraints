@@ -7,7 +7,8 @@ copied from build_synthesis.py FIRED). Two panels, same axes:
 Colour = route (SMR, DRM, mixed); marker = activation. External heat (furnace, steam generation) is excluded
 from every plasma point. References: reaction enthalpy at 298 K (SMR 206, DRM 247 kJ/mol); fired SMR design
 references (NETL, IEAGHG) on a heat basis: filled hexagon = burner fuel (HHV), open hexagon = heat absorbed by
-the tubes; heat, not electricity. Joule-heated sources have no point-matched power and are not plotted.
+the tubes; heat, not electricity. Joule-heated pilot (From 2024): reviewer estimate (SRC005-C004), open star with
+bars spanning the EC range and the equilibrium conversion range; other Joule rows have no energy value.
 
 Run from the repository root: ~/.venvs/science/bin/python literature_reforming/0_synthesis/plot_x_vs_ec.py
 """
@@ -66,6 +67,13 @@ for r in rows:
                     paper=(f(r["EC_CH4_low"]), f(r["EC_CH4_high"])),
                     est=(f(r["EC_CH4_industrial_est_low"]), f(r["EC_CH4_industrial_est_high"]))))
 
+JOULE_PTS = []   # Joule rows with an energy value (reviewer estimate); X given as a range "94-97 (...)"
+for r in rows:
+    if "Joule" in r["activation"] and f(r["EC_CH4_low"]):
+        xs = [float(v) for v in re.findall(r"[\d.]+", r["X_CH4_pct"])[:2]]
+        JOULE_PTS.append(dict(x=(min(xs), max(xs)), paper=(f(r["EC_CH4_low"]), f(r["EC_CH4_high"])),
+                              est=(f(r["EC_CH4_industrial_est_low"]), f(r["EC_CH4_industrial_est_high"]))))
+
 LABEL = {"Hrabovsky 2018 OP001": "Hrabovsky", "Akande 2022 OP003": "Akande", "Hrycak 2023 OP002": "Hrycak",
          "Zhu 2019 OP004": "Zhu (Ni cat.)", "Geng 2022 OP002": "Geng", "Song 2020 OP013": "Song",
          "Kelly 2023 OP004": "Kelly", "Kwon 2023 OP003": "Kwon", "Wanten 2022 OP006": "Wanten",
@@ -89,6 +97,15 @@ for ax, panel in zip(axes, ("paper", "est")):
         ax.plot(ec_abs, x, marker="h", ms=8, mfc="white", mec=INK, mew=1.2, ls="none", zorder=5)
     ax.text(292, 81.2, "fired SMR\n(heat basis)", fontsize=6.6, color=INK, ha="right", va="center",
             bbox=dict(boxstyle="round,pad=0.15", fc="white", ec="none", alpha=0.85), zorder=6)
+    for j in JOULE_PTS:
+        lo, hi = j["paper"] if panel == "paper" else j["est"]
+        xc, ym = (lo * hi) ** 0.5, sum(j["x"]) / 2
+        ax.plot([lo, hi], [ym, ym], color=INK, lw=1.2, zorder=4)
+        ax.plot([xc, xc], list(j["x"]), color=INK, lw=1.2, zorder=4)
+        ax.plot(xc, ym, marker="*", ms=12, mfc="white", mec=INK, mew=1.2, ls="none", zorder=5)
+        ax.annotate("Joule pilot\n(est.)", (lo, ym), xytext=(-5, 0), textcoords="offset points", fontsize=6.8,
+                    color=INK, ha="right", va="center",
+                    bbox=dict(boxstyle="round,pad=0.15", fc="white", ec="none", alpha=0.85), zorder=6)
     for p in pts:
         col = ROUTE[p["route"]]
         lo, hi = p["paper"] if panel == "paper" else p["est"]
@@ -123,6 +140,8 @@ for _, m, lab in ACT:
         handles.append(Line2D([], [], marker=m, color=MUTED, ls="none", ms=7, mec="white", label=lab))
 handles += [Line2D([], [], marker="h", mfc=INK, mec="white", ls="none", ms=8, label="fired SMR: fuel (HHV)"),
             Line2D([], [], marker="h", mfc="white", mec=INK, mew=1.2, ls="none", ms=8, label="fired SMR: absorbed heat"),
+            Line2D([], [], marker="*", mfc="white", mec=INK, mew=1.2, ls="none", ms=11,
+                   label="Joule-heated pilot (reviewer estimate)"),
             Line2D([], [], color=MUTED, lw=1.5, alpha=0.6, label="range (supply class)")]
 fig.legend(handles=handles, loc="lower center", ncol=7, frameon=False, fontsize=7.3, bbox_to_anchor=(0.5, -0.03))
 fig.tight_layout(rect=(0, 0.1, 1, 1))
