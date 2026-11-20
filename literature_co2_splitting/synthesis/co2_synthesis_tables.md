@@ -18,10 +18,10 @@ Hecimovic 2023 OP002    | MW 2.45 GHz        | M2    | 0.90    | 2.70   | 0.15  
 Bongers 2017 OP001      | MW 915 MHz         | M1    | 0.20    | 8.10   | 0.55       | 83                | 14.8 MW       | -       | 18.5      | 19           | -          | M/L
 Bongers 2017 OP003      | MW 915 MHz         | M1    | 0.20    | 3.10   | 0.45       | ~10               | 6.9 MW        | -       | 8.6       | 41           | -          | M/L
 Girard-Sahun 2022 OP001 | GA (AC)            | K1    | ~1.01   | 0.53   | 0.041      | 7.6               | 13.0 plasma   | -       | 14.1-14.4 | 24-25        | -          | H/M
-Girard-Sahun 2022 OP002 | GA (AC) + C bed    | K1    | ~1.01   | 0.53   | 0.13       | 12.6              | 4.0 plasma    | -       | 4.3-4.4   | -            | 0.26       | H/L
-Girard-Sahun 2022 OP003 | GA (AC) + C bed    | K1    | ~1.01   | 0.53   | 0.042      | ~4.7              | 12.8 plasma   | -       | 13.9-14.2 | -            | 0.21       | H/L
+Girard-Sahun 2022 OP002 | GA (AC) + C bed    | K1    | ~1.01   | 0.53   | 0.13       | 12.6              | 4.0 plasma    | -       | 4.3-4.4   | 52-53        | 0.26       | H/L
+Girard-Sahun 2022 OP003 | GA (AC) + C bed    | K1    | ~1.01   | 0.53   | 0.042      | ~4.7              | 12.8 plasma   | -       | 13.9-14.2 | 22           | 0.21       | H/L
 O'Modhrain 2024 OP001   | GA (DC) x5         | D1    | ~1.01   | 7.10   | 0.40       | 8.7               | 17.9 plug     | 17.9    | 14.2-16.1 | 20           | -          | M/H
-Bryssinck 2025 OP003    | GA (DC) x7 + C bed | D1    | ~1.01   | 8.10   | 1.1        | 20                | 7.3 plug      | 7.3     | 5.8-6.6   | -            | 0.27       | M/M
+Bryssinck 2025 OP003    | GA (DC) x7 + C bed | D1    | ~1.01   | 8.10   | 1.1        | 20                | 7.3 plug      | 7.3     | 5.8-6.6   | 36           | 0.27       | M/M
 Renninger 2022 OP001    | DC glow-to-arc     | D1    | ~1.01   | 0.16   | 0.021      | 27.4              | 7.9 plasma    | -       | 8.1-8.6   | 41-43        | -          | M/M
 Yong 2023 OP001         | NRP (batch)        | P1    | 5.8     | 0.02   | 0.0013     | 14                | 15.1-16.3 dep | -       | 16.4-36.2 | 10-21        | -          | M/L
 Van Laer 2015 OP001     | packed DBD         | K1    | ~1.01   | 0.02   | 0.00043    | 37.8 (28.8 corr.) | 54.0 plasma*  | -       | 58.7-60.0 | 6            | -          | M-L/L
@@ -36,9 +36,9 @@ Van Laer 2015 OP003     | packed DBD         | K1    | ~1.01   | 0.02   | 0.0005
     K1 0.90-0.92, P1 0.45-0.92. Plug-basis gliding-arc rows are first moved to the plasma side with
     the measured arc-supply efficiency 0.77-0.83 (SRC020-E010; SRC021 implies 0.83), so the
     estimate replaces the lab supply with a D1-class supply. Vacuum pumps, chillers and gas handling are not added.
-[4] eta_wall = 3.50 / EC_CO (measured wall where available, else the industrial-supply estimate). Not given for
-    carbon-bed rows, where carbon is a co-reactant: EC_CO there is electricity only and C (kg C per Nm3 CO) must be
-    added (overall reaction CO2 + C -> 2CO; see the extractions SRC019 and SRC021).
+[4] eta_wall = 3.50 / EC_CO (measured wall where available, else the industrial-supply estimate). Carbon-bed
+    rows: eta_LHV with the carbon counted as an energy input = LHV of CO / (EC_CO + C x LHV_C), LHV_CO 283.0 kJ/mol,
+    LHV_C 393.5 kJ/mol (graphite) (workflow 1.1). EC_CO there is electricity only. Not given where C is NR.
 [5] Bongers (SRC018) and Kiefer OP002-OP003 run below 1 bar; Bongers excludes the pump. Kiefer measured it
     (OP002 wall + pump 4.2 kW vs 3.8 kW without pump at OP001).
 [6] Van Laer (SRC024) conversions are likely not expansion-corrected (corrected values in brackets); EC_CO is on the
@@ -71,7 +71,7 @@ Hecimovic 2024 OP005 | MW 2.45 GHz + O2 membr. | 3.0    | up to 26              
 ## 3. Reading the tables (reviewer summary, for the narrative)
 
 - Measured wall or plug energy for plasma without carbon is 15.5-33 kWh/Nm3 CO (Kiefer, O'Modhrain, Bryssinck
-  no-bed; all rows in the CSV): about 4-8x the SOEC system value (4.2 incl. rectifier) and 4-9x the 100% line.
+  no-bed, whose control is internally inconsistent; all rows in the CSV): about 4-8x the SOEC system value (4.2 incl. rectifier) and 4-9x the 100% line.
 - The industrial-supply estimate reproduces Kiefer's measured wall value (19.6 vs 20.1-22.3 kWh/Nm3 at OP001),
   a check on the M2 class range.
 - With industrial supplies, the lowest plasma results without carbon (Bongers OP003, Renninger OP001) would be
@@ -80,5 +80,8 @@ Hecimovic 2024 OP005 | MW 2.45 GHz + O2 membr. | 3.0    | up to 26              
 - High conversion (55-83%) costs ~18-34 kWh/Nm3 on the wall or industrial-supply basis.
 - Carbon beds reach 7.3 kWh/Nm3 at the plug (Bryssinck OP003; ~5.8-6.6 with a D1 supply) plus 0.27 kg C per
   Nm3 CO.
+- Counting the carbon (eta_LHV), the Girard-Sahun bed reaches ~52% only at its ~1 min peak and falls to ~22%
+  after 14 min, below the no-bed value; Bryssinck's semi-continuous run holds ~36% at the plug over ~9 min. The
+  lasting benefit of a bed is O2 removal; half the CO comes, net, from consumed carbon.
 - Unit scale: largest plasma unit 10 kW (Bongers); largest CO output ~1.1-1.2 Nm3/h (Bryssinck, with carbon).
   The SOEC system case is 17.5 Nm3/h at 70 kW.

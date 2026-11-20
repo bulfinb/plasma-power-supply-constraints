@@ -18,6 +18,8 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent.parent
 KWH_NM3 = 3600 / (1000 / 22.414)          # kJ/mol per kWh/Nm3 (0 C, 1 atm) = 80.69
 EC_DH = 282.7 / KWH_NM3                   # 3.50 kWh/Nm3 CO = 100% on dH (282.7 kJ/mol)
+LHV_CO_KWH = 283.0 / KWH_NM3              # LHV of CO, kWh/Nm3 CO
+LHV_C_KWH_KG = 393.5 / 12.011 / 3.6       # LHV of carbon (graphite), kWh/kg
 EC_DG = 257.2 / KWH_NM3                   # 3.19 kWh/Nm3 CO = dG at 298 K (reference line)
 
 SUP = {r["class_id"]: r for r in csv.DictReader(open(ROOT / "power_systems/supply_classes.csv", encoding="utf-8"))}
@@ -167,8 +169,14 @@ def compute(r):
     r["co_rate"] = (r["P_kw"] / ((lo + hi) / 2)) if r["P_kw"] else None
     best_wall = r["ec_wall"] or est
     r["bed"] = "C bed" in r["route"]
-    r["eta_wall"] = None if (r["bed"] or best_wall is None or r["sid"] in ("SRC025",)) else \
-        (EC_DH / best_wall[1] * 100, EC_DH / best_wall[0] * 100)
+    if best_wall is None or r["sid"] in ("SRC025",):
+        r["eta_wall"] = None
+    elif r["bed"]:   # workflow 1.1: eta_LHV with the carbon counted as an energy input
+        c_in = r["carbon"] * LHV_C_KWH_KG if r["carbon"] else None
+        r["eta_wall"] = None if c_in is None else \
+            (LHV_CO_KWH / (best_wall[1] + c_in) * 100, LHV_CO_KWH / (best_wall[0] + c_in) * 100)
+    else:
+        r["eta_wall"] = (EC_DH / best_wall[1] * 100, EC_DH / best_wall[0] * 100)
     return r
 
 
@@ -242,9 +250,9 @@ dH (282.7 kJ/mol); {EC_DG:.2f} kWh/Nm3 = dG at 298 K (257 kJ/mol).
     K1 {fmt(*ETA['K1'], 2)}, P1 {fmt(*ETA['P1'], 2)}. Plug-basis gliding-arc rows are first moved to the plasma side with
     the measured arc-supply efficiency {GA_PSU[0]}-{GA_PSU[1]} (SRC020-E010; SRC021 implies 0.83), so the
     estimate replaces the lab supply with a D1-class supply. Vacuum pumps, chillers and gas handling are not added.
-[4] eta_wall = {EC_DH:.2f} / EC_CO (measured wall where available, else the industrial-supply estimate). Not given for
-    carbon-bed rows, where carbon is a co-reactant: EC_CO there is electricity only and C (kg C per Nm3 CO) must be
-    added (overall reaction CO2 + C -> 2CO; see the extractions SRC019 and SRC021).
+[4] eta_wall = {EC_DH:.2f} / EC_CO (measured wall where available, else the industrial-supply estimate). Carbon-bed
+    rows: eta_LHV with the carbon counted as an energy input = LHV of CO / (EC_CO + C x LHV_C), LHV_CO 283.0 kJ/mol,
+    LHV_C 393.5 kJ/mol (graphite) (workflow 1.1). EC_CO there is electricity only. Not given where C is NR.
 [5] Bongers (SRC018) and Kiefer OP002-OP003 run below 1 bar; Bongers excludes the pump. Kiefer measured it
     (OP002 wall + pump 4.2 kW vs 3.8 kW without pump at OP001).
 [6] Van Laer (SRC024) conversions are likely not expansion-corrected (corrected values in brackets); EC_CO is on the
@@ -277,7 +285,7 @@ dH (282.7 kJ/mol); {EC_DG:.2f} kWh/Nm3 = dG at 298 K (257 kJ/mol).
 ## 3. Reading the tables (reviewer summary, for the narrative)
 
 - Measured wall or plug energy for plasma without carbon is 15.5-33 kWh/Nm3 CO (Kiefer, O'Modhrain, Bryssinck
-  no-bed; all rows in the CSV): about 4-8x the SOEC system value (4.2 incl. rectifier) and 4-9x the 100% line.
+  no-bed, whose control is internally inconsistent; all rows in the CSV): about 4-8x the SOEC system value (4.2 incl. rectifier) and 4-9x the 100% line.
 - The industrial-supply estimate reproduces Kiefer's measured wall value (19.6 vs 20.1-22.3 kWh/Nm3 at OP001),
   a check on the M2 class range.
 - With industrial supplies, the lowest plasma results without carbon (Bongers OP003, Renninger OP001) would be
@@ -286,6 +294,9 @@ dH (282.7 kJ/mol); {EC_DG:.2f} kWh/Nm3 = dG at 298 K (257 kJ/mol).
 - High conversion (55-83%) costs ~18-34 kWh/Nm3 on the wall or industrial-supply basis.
 - Carbon beds reach 7.3 kWh/Nm3 at the plug (Bryssinck OP003; ~5.8-6.6 with a D1 supply) plus 0.27 kg C per
   Nm3 CO.
+- Counting the carbon (eta_LHV), the Girard-Sahun bed reaches ~52% only at its ~1 min peak and falls to ~22%
+  after 14 min, below the no-bed value; Bryssinck's semi-continuous run holds ~36% at the plug over ~9 min. The
+  lasting benefit of a bed is O2 removal; half the CO comes, net, from consumed carbon.
 - Unit scale: largest plasma unit 10 kW (Bongers); largest CO output ~1.1-1.2 Nm3/h (Bryssinck, with carbon).
   The SOEC system case is 17.5 Nm3/h at 70 kW.
 """
