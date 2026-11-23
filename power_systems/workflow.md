@@ -69,6 +69,12 @@ Rules:
 
 [discharge_supply_map.csv](discharge_supply_map.csv) assigns each discharge type in the review to candidate classes and the class used, with the lab supply as given in the extraction records (literature-folder evidence IDs), the scale-up constraint and the value IDs behind it. Arithmetic in it (e.g. discharges per MW) is labelled as reviewer arithmetic.
 
+Class `efficiency_stage` also identifies provisional mixed-stage evidence where no common
+mains-to-reactor boundary has been established (`mixed_stages_provisional`, currently P1).
+Its numerical range is a sensitivity assumption; it must not be described as a measured
+wall-to-plasma efficiency. Frequency-specific scenarios must state any extrapolation beyond
+the frequency rating of their supporting equipment (currently K2 at 400 kHz).
+
 ## 6. Notes, scripts and figures
 
 - `notes/` holds the written analysis: [scaleup_assessment.md](notes/scaleup_assessment.md), [supply_maturity_niche.md](notes/supply_maturity_niche.md), [reactor_matching.md](notes/reactor_matching.md). Notes cite value IDs or source IDs, not search summaries.

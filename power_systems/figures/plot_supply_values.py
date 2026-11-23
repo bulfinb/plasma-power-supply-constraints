@@ -155,7 +155,7 @@ for r in rows:
     axp.plot(x, v, "o", ms=6, color=INK, mfc="white" if r["status"] == "unverified" else INK, zorder=2)
     axp.annotate(r["supply_class"], (x, v), xytext=(4, 3), textcoords="offset points", fontsize=7, color=MUTED)
 axp.set_yscale("log")
-axp.set_ylabel("Unit output power (kW, log)")
+axp.set_ylabel("Output power: unit / installed (kW, log)")
 axp.grid(which="major", color=GRID, lw=0.8)
 axp.set_title("Supply unit power and efficiency by output frequency (published values)", loc="left", fontsize=10, color=INK)
 # efficiency panel
@@ -302,7 +302,7 @@ ax.set_xticks([DC_X] + [10.0 ** k for k in range(2, 12, 2)])
 ax.set_xticklabels(["DC"] + [f"$10^{{{k}}}$" for k in range(2, 12, 2)])
 ax.xaxis.set_minor_locator(matplotlib.ticker.NullLocator())
 ax.set_xlabel("Output frequency (Hz, log)")
-ax.set_ylabel("Unit output power (kW, log)")
+ax.set_ylabel("Output power: unit / installed (kW, log)")
 ax.grid(which="major", color=GRID, lw=0.8, zorder=0)
 ax.set_title("Supply classes: frequency, unit power and efficiency", loc="left", fontsize=10, color=INK)
 sm = matplotlib.cm.ScalarMappable(norm=NORM, cmap=SEQ)
@@ -310,8 +310,8 @@ cb = fig.colorbar(sm, ax=ax, fraction=0.035, pad=0.02)
 cb.set_label("Class efficiency, midpoint of range", fontsize=8, color=INK)
 cb.ax.yaxis.set_major_formatter(matplotlib.ticker.PercentFormatter(1.0, decimals=0))
 cb.outline.set_visible(False)
-fig.text(0.0, -0.05, "Boxes span the frequency and unit power of the values listed in supply_classes.csv (map_value_ids); "
-         "single values drawn with a small minimum size.\nEfficiency: wall to output unless marked. * amplifier, head or tube only "
-         "(wall-plug lower). Hatched: H1 klystron, context only.\nPulsed supplies (P1) have no carrier frequency and are "
+fig.text(0.0, -0.05, "Boxes span documented frequency and power extents (map_value_ids); maxima need not coincide. K2 includes installed system power; "
+         "single values have a small minimum size.\nEfficiency: nominally mains to output; M2 includes absorbed-power evidence. * amplifier, head or tube only "
+         "(mains efficiency lower). Hatched: H1, context only.\nPulsed supplies (P1) have no carrier frequency and are "
          "not shown. Lab prototypes are excluded from the boxes. M3 is drawn just right of M2; both are at 2.45 GHz.", fontsize=7, color=MUTED)
 save(fig, "supply_class_map")

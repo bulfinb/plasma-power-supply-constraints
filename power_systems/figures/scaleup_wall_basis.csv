@@ -1,7 +1,7 @@
 source,route,paper_power_boundary,EC_CH4_low,EC_CH4_high,supply_id,representative_supply,eta_low,eta_high,eta_basis,EC_CH4_wall_low,EC_CH4_wall_high
 Hrabovsky 2018 (SRC007),SMR/DRM,arc power,1149,2172,A1,"IGBT or thyristor rectifier + DC-DC/buck converter, current-controlled",0.9,0.98,A1 class range,1172,2413
 Song 2020 (SRC009),DRM,RF generator output,1036,1510,R1,Triode/tetrode oscillator with tank circuit,0.53,0.6,R1 class range,1727,2849
-Song 2020 (SRC009),DRM,RF generator output,1036,1510,K2,IGBT/MOSFET resonant inverter,0.91,0.96,K2 sub-band 400kHz (PW004-V02; PW005-V02),1079,1659
+Song 2020 (SRC009),DRM,RF generator output,1036,1510,K2,IGBT/MOSFET resonant inverter,0.91,0.96,K2 scenario at 400kHz (PW004-V02; PW005-V02); 0.91 extrapolated from 1-200 kHz; >0.96 claim at 100-400 kHz,1079,1659
 Akande 2022 (SRC008),SMR,absorbed MW,511,1078,M1,75-100 kW CW magnetron generator,0.74,0.82,M1 class range,623,1457
 Hrycak 2023 (SRC010),mixed,absorbed MW (lower bounds),258,509,M1,75-100 kW CW magnetron generator,0.74,0.82,M1 class range,315,688
 Kelly 2023 (SRC011),DRM,absorbed MW,581,723,M2,6-15 kW magnetron head + switch-mode supply,0.63,0.72,M2 class range,807,1148

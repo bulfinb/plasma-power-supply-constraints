@@ -14,9 +14,11 @@ sup = {r["class_id"]: r for r in csv.DictReader(open(ROOT / "supply_classes.csv"
 # Classes without sourced efficiency values use an analogue class for eta (reviewer judgement,
 # stated in supply_classes.csv range_basis). Written to the output as eta_basis.
 ANALOGUE = {}  # e.g. {"D1": "K1"} before D1 had sourced values (2026-11-11)
-# Sub-band ranges narrower than the class range: (eta_low, eta_high, value IDs). Values only from supply_values.csv.
+# Frequency-specific scenario: (eta_low, eta_high, supporting value IDs).
 SUBBAND = {
-    # K2 at 100-400 kHz: TruHeat MF 91% (1-200 kHz, spec, PW004-V02); Power Cube SA/400 >96% (100-400 kHz, claim, PW005-V02)
+    # K2 at 400 kHz: the 91% endpoint (PW004-V02, family rated 1-200 kHz)
+    # is extrapolated to 400 kHz; >96% is a 100-400 kHz claim (PW005-V02).
+    # PW005-V01 is a 100 kW INPUT rating; PW006-V01 documents 50 kW OUTPUT.
     "K2@400kHz": (0.91, 0.96, "PW004-V02; PW005-V02"),
 }
 
@@ -41,7 +43,8 @@ for src, route, boundary, lo, hi, sid in LIT:
     if sid in SUBBAND:
         cls = sid.split("@")[0]
         e_lo, e_hi, ids = SUBBAND[sid]
-        basis = f"{cls} sub-band {sid.split('@')[1]} ({ids})"
+        basis = (f"{cls} scenario at {sid.split('@')[1]} ({ids}); "
+                 "0.91 extrapolated from 1-200 kHz; >0.96 claim at 100-400 kHz")
     else:
         cls = sid
         src_cls = ANALOGUE.get(sid, sid)

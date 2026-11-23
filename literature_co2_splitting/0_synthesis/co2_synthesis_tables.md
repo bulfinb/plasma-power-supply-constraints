@@ -43,7 +43,9 @@ Van Laer 2015 OP003     | packed DBD         | K1    | ~1.01   | 0.02   | 0.0005
     (OP002 wall + pump 4.2 kW vs 3.8 kW without pump at OP001).
 [6] Van Laer (SRC024) conversions are likely not expansion-corrected (corrected values in brackets); EC_CO is on the
     reported conversion and would rise by ~30% if corrected. Plasma power implied from reported X and eta.
-[7] Yong (SRC023) is a batch reactor; P is deposited pulse power; P1 class range is wide and load-dependent.
+[7] Yong (SRC023) is a batch reactor; P is deposited pulse power. P1 is a provisional sensitivity range
+    combining source-to-reactor transfer and other system-efficiency measurements with different boundaries;
+    it is not a demonstrated mains-to-reactor range. Upstream conversion losses are unresolved.
 [8] Renninger (SRC022) is on plasma power; its lab driver DC input gives 12.8 kWh/Nm3 (driver 61-65%).
 
 ## 2. Benchmarks (SOEC and the plasma O2-membrane demonstrator)

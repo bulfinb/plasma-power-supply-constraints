@@ -63,7 +63,7 @@ Joule-heated benchmarks:
 
 ## Notes
 
-[1] Class efficiencies: J1 0.97-0.98, A1 0.90-0.98, D1 0.92-0.97, K1 0.90-0.92, M1 0.74-0.82, M2 0.63-0.72, K2@400kHz 0.91-0.96. RF ICP (Song) uses the K2 solid-state inverter sub-band at 100-400 kHz (PW004-V02, PW005-V02); a tube oscillator (R1, 0.53-0.60) would give ~1.6-1.8x higher values. Wanten and Zhu exclude their lab ballast resistors; the estimate replaces the ballasted lab supply with a D1 current-controlled supply.
+[1] Class efficiencies: J1 0.97-0.98, A1 0.90-0.98, D1 0.92-0.97, K1 0.90-0.92, M1 0.74-0.82, M2 0.63-0.72, K2@400kHz 0.91-0.96. RF ICP (Song) uses a K2 scenario at 400 kHz: 0.91 is extrapolated from a 1-200 kHz family (PW004-V02); >0.96 is a claim at 100-400 kHz (PW005-V02). CEIA's 100 kW is an input rating; PW006 documents 50 kW output. A tube oscillator (R1, 0.53-0.60) would give ~1.6-1.8x higher values. Wanten and Zhu exclude their lab ballast resistors; the estimate replaces the ballasted lab supply with a D1 current-controlled supply.
 [2] External heat is excluded from every EC_CH4: furnace (Geng), steam generation (Akande, Hrycak, Zhu, the From pilots) and feed preheat are not reported. These EC_CH4 are lower bounds on electricity per mol CH4; Hrabovsky's torch evaporates its own water, so arc power is its whole process heat.
 [3] Hrabovsky conversions are reviewer calculations from the Ar tracer; they match the authors' plotted points (cross-check XR007, for human check). Hrycak uses 24.25 L/mol (XR008).
 [4] Akande's reported H2 rate is impossible for the stated feed; its conversion and EC_CH4 are kept with lower confidence.

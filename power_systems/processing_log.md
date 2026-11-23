@@ -1,5 +1,12 @@
 # Processing log: power_systems
 
+Consistency review, 2026-11-23 (Codex Work Mode, GPT-6; changes requested by BB): SI_1 S1-S3,
+SI_2 boundary discussion, supply_type background notes, class/discharge metadata and calculation
+comments updated to distinguish P1 mixed-stage sensitivity, K2's 400 kHz extrapolation and
+input/output ratings, M1 reviewer assumptions, and documented A1/R1 scale. No efficiency
+endpoints changed and no source verification status was upgraded. Detailed inventory and AI
+checking history moved from SI_1 S1 to S7; the quality-tier table remains in S1.
+
 Record of the AI tools, model versions and human reviewers that processed the power-systems sources and values ([workflow.md](workflow.md) section 7). Notes and data files say only "Claude (AI)"; this log carries the versions. Session details are in [../literature_reforming/processing_log.md](../literature_reforming/processing_log.md) (Sessions table).
 
 Rows before 2026-11-10 (restructure) are copied from the reforming log, where they were first recorded, and use the IDs of the time (S, T, D series; see aliases in source_register.csv).
@@ -35,3 +42,4 @@ Rows before 2026-11-10 (restructure) are copied from the reforming log, where th
 | 2026-11-20 | PW001-PW009, PW011 | power_systems/cross_check_log.md | GPT cross-check batch 1 logged (XP001-XP002, both for decision); our values agree, no corrections | Claude Code 2.1.322 | claude-opus-5-5 | d3b811d6 | |
 | 2026-11-20 | 42 class-cited sources | supply_values.csv, supply_classes.csv, notes/scaleup_assessment.md, figures/, cross_check_log.md | GPT cross-check batch 2 and closing summary; applied after BB decision: PW002-V03, PW009-V03, PW045-V04, PW031-V04, PW022-V05, PW022-V06, SRC016-V01 added; M1 0.80 -> 0.74-0.84 and M2 0.63-0.70 -> 0.63-0.72 (supply x tube method, XP002); K2 4.5 MW, 600 kHz; J1 and A1 lifetimes; R1 note; figures and wall-basis table regenerated | Claude Code 2.1.322 | claude-opus-5-5 | d3b811d6 | |
 | 2026-11-23 | 15 sources; classes M1, M2, M3, H1, J2, X1 | source_register.csv, supply_classes.csv, workflow.md (0.2), notes/scaleup_assessment.md, figures/, scripts/make_check_worksheet.py, human_check_worksheet.csv | relevance review (Claude and GPT, notes/relevance_review_2026-11-23.md), BB decision: PW010, PW011, PW013, PW016, PW030, PW031, PW032, PW036, PW037, PW041, PW042, PW043, PW045, PW052, PW060 dropped; M1 0.74-0.84 -> 0.74-0.82; M2 basis restated; H1 klystrons only 0.60-0.63; J2, X1 dropped; scripts skip dropped sources; R2 and M3 alternatives removed from scaleup_wall_basis.py; PW060 removed from ICP figure; figures and worksheet regenerated | Claude Code 2.1.322 | claude-opus-5-5 | d3b811d6 | |
+| 2026-11-23 | figures | figures/plot_manuscript_figure.py, 0_manuscript_figure.png/.svg/.pdf, 0_manuscript_figure_caption.txt | manuscript version of the power/efficiency vs frequency figure: unit power only (installations in caption), adopted class ranges as boxes (K2 400 kHz range), context classes grey, tube/amplifier-only, torch thermal and projected values omitted | Claude Code 2.1.322 | claude-opus-5-5 | d3b811d6 | |

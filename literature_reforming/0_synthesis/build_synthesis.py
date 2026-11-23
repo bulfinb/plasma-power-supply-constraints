@@ -15,7 +15,9 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent.parent
 SUP = {r["class_id"]: r for r in csv.DictReader(open(ROOT / "power_systems" / "supply_classes.csv", encoding="utf-8"))}
 ETA = {k: (float(v["eta_low"]), float(v["eta_high"])) for k, v in SUP.items() if v["eta_low"]}
-ETA["K2@400kHz"] = (0.91, 0.96)      # TruHeat MF 91% (PW004-V02) and Power Cube SA/400 >96% (PW005-V02), 100-400 kHz
+# 400 kHz scenario: 0.91 extrapolated from the 1-200 kHz family (PW004-V02);
+# >0.96 is a claim for 100-400 kHz equipment (PW005-V02), not a matched measurement.
+ETA["K2@400kHz"] = (0.91, 0.96)
 DH = {"SMR": 206, "DRM": 247}         # kJ/mol at 298 K, reference lines
 
 
@@ -215,8 +217,10 @@ Conf. = confidence in conversion / energy results from the extraction (H higher,
                  "\n\nJoule-heated benchmarks:\n\n" + "\n".join(f"- **{k}:** {v}." for k, v in JOULE_BENCH) + "\n")
     parts.append("## 5. Not plotted\n\n" + "\n".join(f"- **{k}:** {v}." for k, v in NOT_PLOTTED) + "\n")
     notes = [f"[1] Class efficiencies: " + ", ".join(f"{k} {fmt(*v, 2)}" for k, v in ETA.items() if k in
-              {r['cls'] for r in rows}) + ". RF ICP (Song) uses the K2 solid-state inverter sub-band at 100-400 kHz "
-             "(PW004-V02, PW005-V02); a tube oscillator (R1, 0.53-0.60) would give ~1.6-1.8x higher values. "
+              {r['cls'] for r in rows}) + ". RF ICP (Song) uses a K2 scenario at 400 kHz: "
+             "0.91 is extrapolated from a 1-200 kHz family (PW004-V02); >0.96 is a claim at 100-400 kHz "
+             "(PW005-V02). CEIA's 100 kW is an input rating; PW006 documents 50 kW output. "
+             "A tube oscillator (R1, 0.53-0.60) would give ~1.6-1.8x higher values. "
              "Wanten and Zhu exclude their lab ballast resistors; the estimate replaces the ballasted lab supply "
              "with a D1 current-controlled supply.",
              "[2] External heat is excluded from every EC_CH4: furnace (Geng), steam generation (Akande, Hrycak, Zhu, "
