@@ -40,7 +40,7 @@ One row per quoted value. A row is extracted only from the local copy, never fro
 | `quote` | the shortest verbatim text that carries the value (original language if not English, with translation in `notes`) |
 | `item` | model, product family, installation or device as named in the source |
 | `maker` | manufacturer or operator |
-| `supply_class` | class code from [supply_classes.csv](supply_classes.csv) (J1, J2, A1, D1, K1, K2, R1, R2, M1-M3, P1, H1, X1), or `context` |
+| `supply_class` | class code from [supply_classes.csv](supply_classes.csv) (J1, A1, D1, K1, K2, R1, R2, M1-M3, P1, H1; J2 and X1 dropped 2026-11-23), or `context` |
 | `freq_low_hz`, `freq_high_hz` | output frequency or band; DC = 0; blank if not stated |
 | `quantity` | `output_power`, `input_power`, `peak_power`, `average_power`, `installed_power`, `efficiency`, `coupling_efficiency`, `cost_per_kw`, `cost_ratio`, `cost_share`, `cost_ratio` (relative cost), `frequency_limit`, `duty_cycle`, `heat_rejected`, `cost_scaling_exponent`, `lifetime_h`, `voltage_rms`, `current_rms`, `voltage_dc`, `current_dc`, `power_loss`, `power_factor`, `units_in_service`, `torch_diameter`, `skin_depth`, `coupling_parameter` (ratio), `minimum_sustaining_power`, `specific_energy`, `capacity` (product rate) |
 | `qualifier` | `=`, `~`, `>`, `>=`, `<`, `<=`, `up_to`, `approaching`, `range` |
@@ -73,6 +73,7 @@ Rules:
 
 - `notes/` holds the written analysis: [scaleup_assessment.md](notes/scaleup_assessment.md), [supply_maturity_niche.md](notes/supply_maturity_niche.md), [reactor_matching.md](notes/reactor_matching.md). Notes cite value IDs or source IDs, not search summaries.
 - `figures/` holds each figure together with the script that makes it; the scripts read supply_values.csv and supply_classes.csv and write to `figures/`. `scripts/` holds other tools (human-check worksheet). Scripts do not contain data values except documented constants (e.g. currency conversion factors with their source).
+- Dropped sources (status `dropped` in the register) keep their value rows for the record; the scripts skip them in figures and the check worksheet. A source is dropped when it is not used in a class range or projection, sets no class extreme in the figures, and is not needed for the cost or lifetime discussion.
 - `legacy/` keeps superseded work unchanged for the record. Do not cite it; its sources have been re-registered.
 
 ## 7. Checks and logging
@@ -85,3 +86,4 @@ Rules:
 | Version | Date | Change |
 |---|---|---|
 | 0.1 | 2026-11-10 | First version. Replaces the separate S, T and D series with PW IDs; one value table; legacy survey frozen |
+| 0.2 | 2026-11-23 | Relevance review: dropped sources kept but skipped by scripts; classes J2 and X1 dropped |

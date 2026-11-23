@@ -24,13 +24,11 @@ SUBBAND = {
 LIT = [
     # source, route, paper power boundary, EC low, EC high, supply class id
     ("Hrabovsky 2018 (SRC007)", "SMR/DRM", "arc power", 1149, 2172, "A1"),
-    ("Song 2020 (SRC009)", "DRM", "RF generator output", 1036, 1510, "R1"),
-    ("Song 2020 (SRC009)", "DRM", "RF generator output", 1036, 1510, "R2"),
+    ("Song 2020 (SRC009)", "DRM", "RF generator output", 1036, 1510, "R1"),   # sensitivity: RF tube oscillator
     ("Song 2020 (SRC009)", "DRM", "RF generator output", 1036, 1510, "K2@400kHz"),
     ("Akande 2022 (SRC008)", "SMR", "absorbed MW", 511, 1078, "M1"),
     ("Hrycak 2023 (SRC010)", "mixed", "absorbed MW (lower bounds)", 258, 509, "M1"),  # revised 2026-11-20 (Vm 24.25, XR008)
     ("Kelly 2023 (SRC011)", "DRM", "absorbed MW", 581, 723, "M2"),
-    ("Kelly 2023 (SRC011)", "DRM", "absorbed MW", 581, 723, "M3"),
     ("Kwon 2023 (SRC014)", "DRM", "discharge", 740, 948, "K1"),
     ("Zhu 2019 (SRC012)", "SMR", "discharge (steam excl., lab ballast excl.)", 490, 679, "D1"),
     ("Geng 2022 (SRC002)", "SMR", "discharge (furnace excl.)", 1120, 1490, "K1"),
@@ -53,9 +51,6 @@ for src, route, boundary, lo, hi, sid in LIT:
     rows.append([src, route, boundary, lo, hi, cls, sup[cls]["representative_supply"], e_lo, e_hi, basis,
                  round(w_lo), round(w_hi)])
     print(f"{src:24s} {sid:9s} eta {e_lo:.2f}-{e_hi:.2f}: EC_CH4 {lo}-{hi} -> wall {w_lo:.0f}-{w_hi:.0f} kJ/mol")
-
-# Joule benchmark (vendor claim, per mol H2): 1 kWh/Nm3 H2 at 0 degC
-print(f"\nJ2 Topsoe eREACT claim: {3600/(1000/22.414):.0f} kJ/mol H2 (system electricity, vendor claim)")
 
 out = ROOT / "figures" / "scaleup_wall_basis.csv"
 with out.open("w", newline="", encoding="utf-8") as f:

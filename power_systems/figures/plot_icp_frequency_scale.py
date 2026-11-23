@@ -55,7 +55,6 @@ TORCHES = [
     ("Trekhov (Boulos 1985)", "PW055-V10", "PW055-V11", True),
     ("Dresvin compilation (Boulos 1985)", "PW055-V12", "PW055-V13", True),
     ("Model torch (Boulos 1985)", "PW055-V14", None, True),
-    ("Baylor IPG6-B (low pressure)", "PW060-V02", "PW060-V01", False),
     ("ICP-OES (Thermo iCAP 7600)", None, "PW059-V01", True),
 ]
 DESIGN = ["PW058-V02", "PW058-V03", "PW058-V04"]  # patent design examples (minimum or optimum frequency for a diameter)
@@ -155,7 +154,7 @@ ax2.set_xlabel("Operating frequency (Hz, log)")
 ax2.set_ylabel("Torch or generator power (kW, log)")
 ax2.grid(which="major", color=GRID, lw=0.8)
 fig.text(0.0, 0.015, "Band in (a): r/δ = 1.5-4 with δ = (π f μ0 σ)^-1/2, σ = 10³ S/m (argon, 8000 K; PW055-V01, -V02), r = D/2; indicative only.\n"
-         "Power in (b): rated generator output (VKI, Song, Baylor, ICP-OES) or plasma/discharge power (others); line = stated range.\n"
+         "Power in (b): rated generator output (VKI, Song, ICP-OES) or plasma/discharge power (others); line = stated range.\n"
          "Values and quotes in supply_values.csv (PW055-PW061, SRC009).", fontsize=7, color=MUTED, va="top")
 for ext in ("png", "svg"):
     fig.savefig(ROOT / "figures" / f"icp_frequency_scale.{ext}", dpi=200, bbox_inches="tight")

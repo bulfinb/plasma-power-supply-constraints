@@ -15,8 +15,8 @@ Source / OP             | Route              | Class | p (bar) | P (kW) | CO (Nm
 Kiefer 2024 OP001       | MW 2.45 GHz        | M2    | ~1.01   | 2.70   | 0.19       | 34.4              | 14.1 abs      | 19.6    | 19.5-22.3 | 18           | -          | M/H
 Kiefer 2024 OP003       | MW 2.45 GHz        | M2    | 0.90    | 2.70   | 0.13       | 56.6              | 21.5 abs      | 33.0    | 29.8-34.1 | 11           | -          | M/H
 Hecimovic 2023 OP002    | MW 2.45 GHz        | M2    | 0.90    | 2.70   | 0.15       | 55                | 17.6 abs      | -       | 24.4-27.9 | 13-14        | -          | H/M
-Bongers 2017 OP001      | MW 915 MHz         | M1    | 0.20    | 8.10   | 0.55       | 83                | 14.8 MW       | -       | 17.6-20.0 | 18-20        | -          | M/L
-Bongers 2017 OP003      | MW 915 MHz         | M1    | 0.20    | 3.10   | 0.45       | ~10               | 6.9 MW        | -       | 8.2-9.3   | 38-43        | -          | M/L
+Bongers 2017 OP001      | MW 915 MHz         | M1    | 0.20    | 8.10   | 0.55       | 83                | 14.8 MW       | -       | 18.0-20.0 | 18-19        | -          | M/L
+Bongers 2017 OP003      | MW 915 MHz         | M1    | 0.20    | 3.10   | 0.45       | ~10               | 6.9 MW        | -       | 8.4-9.3   | 38-42        | -          | M/L
 Girard-Sahun 2022 OP001 | GA (AC)            | K1    | ~1.01   | 0.53   | 0.041      | 7.6               | 13.0 plasma   | -       | 14.1-14.4 | 24-25        | -          | H/M
 Girard-Sahun 2022 OP002 | GA (AC) + C bed    | K1    | ~1.01   | 0.53   | 0.13       | 12.6              | 4.0 plasma    | -       | 4.3-4.4   | 52-53        | 0.26       | H/L
 Girard-Sahun 2022 OP003 | GA (AC) + C bed    | K1    | ~1.01   | 0.53   | 0.042      | ~4.7              | 12.8 plasma   | -       | 13.9-14.2 | 22           | 0.21       | H/L
@@ -32,7 +32,7 @@ Van Laer 2015 OP003     | packed DBD         | K1    | ~1.01   | 0.02   | 0.0005
 [2] EC wall: wall or plug electricity measured by the authors (Kiefer: microwave supply active power,
     + vacuum pump at OP003; O'Modhrain and Bryssinck: plug, whole process). Only three sources measured it.
 [3] EC ind.: reviewer estimate = EC_CO at the plasma side / class efficiency (power_systems/
-    supply_classes.csv): M1 0.74-0.84, M2 0.63-0.72, D1 0.92-0.97,
+    supply_classes.csv): M1 0.74-0.82, M2 0.63-0.72, D1 0.92-0.97,
     K1 0.90-0.92, P1 0.45-0.92. Plug-basis gliding-arc rows are first moved to the plasma side with
     the measured arc-supply efficiency 0.77-0.83 (SRC020-E010; SRC021 implies 0.83), so the
     estimate replaces the lab supply with a D1-class supply. Vacuum pumps, chillers and gas handling are not added.

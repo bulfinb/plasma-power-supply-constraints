@@ -28,6 +28,8 @@ ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "figures"
 OUT.mkdir(exist_ok=True)
 rows = list(csv.DictReader(open(ROOT / "supply_values.csv", encoding="utf-8")))
+DROPPED = {r["source_id"] for r in csv.DictReader(open(ROOT / "source_register.csv", encoding="utf-8")) if r["status"] == "dropped"}
+rows = [r for r in rows if r["source_id"] not in DROPPED]   # dropped sources keep their rows for the record, not plotted
 
 # Reference categorical palette (dataviz skill, light mode), slots in fixed order.
 SLOT = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4"]
@@ -255,7 +257,7 @@ save(fig, "supply_cost_vs_unit_size")
 # ---------- 4. class map: frequency band x unit power, coloured by efficiency ----------
 # Box extents from the rows listed in supply_classes.csv map_value_ids (frequency from any listed row,
 # unit power from listed output_power rows). Colour = midpoint of eta_low-eta_high, one sequential hue.
-classes = list(csv.DictReader(open(ROOT / "supply_classes.csv", encoding="utf-8")))
+classes = [c for c in csv.DictReader(open(ROOT / "supply_classes.csv", encoding="utf-8")) if c["status"] != "dropped"]
 SEQ = matplotlib.colors.LinearSegmentedColormap.from_list("seq", ["#dbe8f8", "#2a78d6", "#0d2f5c"])
 NORM = matplotlib.colors.Normalize(vmin=0.4, vmax=1.0)
 fig, ax = plt.subplots(figsize=(7.2, 5.2))
@@ -310,6 +312,6 @@ cb.ax.yaxis.set_major_formatter(matplotlib.ticker.PercentFormatter(1.0, decimals
 cb.outline.set_visible(False)
 fig.text(0.0, -0.05, "Boxes span the frequency and unit power of the values listed in supply_classes.csv (map_value_ids); "
          "single values drawn with a small minimum size.\nEfficiency: wall to output unless marked. * amplifier, head or tube only "
-         "(wall-plug lower). Hatched: H1 klystron/gyrotron, context only.\nPulsed supplies (P1) have no carrier frequency and are "
+         "(wall-plug lower). Hatched: H1 klystron, context only.\nPulsed supplies (P1) have no carrier frequency and are "
          "not shown. Lab prototypes are excluded from the boxes. M3 is drawn just right of M2; both are at 2.45 GHz.", fontsize=7, color=MUTED)
 save(fig, "supply_class_map")

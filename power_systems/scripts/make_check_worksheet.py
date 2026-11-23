@@ -15,6 +15,8 @@ ROOT = Path(__file__).resolve().parent.parent
 values = list(csv.DictReader(open(ROOT / "supply_values.csv", encoding="utf-8")))
 classes = list(csv.DictReader(open(ROOT / "supply_classes.csv", encoding="utf-8")))
 register = {r["source_id"]: r for r in csv.DictReader(open(ROOT / "source_register.csv", encoding="utf-8"))}
+values = [v for v in values if register.get(v["source_id"], {}).get("status") != "dropped"]   # dropped sources are not checked
+classes = [c for c in classes if c["status"] != "dropped"]
 
 used = {}  # value_id -> (priority, "class:field" list)
 for c in classes:

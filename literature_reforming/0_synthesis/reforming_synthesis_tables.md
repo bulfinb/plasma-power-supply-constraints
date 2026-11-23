@@ -14,8 +14,8 @@ Conf. = confidence in conversion / energy results from the extraction (H higher,
 Source / OP          | Activation               | Class | CH4 (mol/min) | CH4:CO2:H2O | P (kW) | Boundary    | X_CH4 (%) | X_CO2 (%) | SEI_CH4 | EC_CH4 | EC ind.   | Duration       | Conf.
 Wismann 2019 OP004   | Joule (lab)              | J1    | 0.0046        | 1:0:2 +H2   | NR     | NR          | 92.7      | NA        | -       | NR     | -         | >=0.75 h avg.  | M/L
 Hrabovsky 2018 OP001 | DC arc torch             | A1    | 6.69          | 1:0:0.78    | 120    | arc         | 91.3      | NA        | 1076    | 1179   | 1203-1310 | ~4 min segment | M/M
-Akande 2022 OP003    | MW 915 MHz torch         | M1    | 2.68          | 1:0:3       | 32     | absorbed MW | 96.6      | NA        | 717     | 742    | 883-1003  | NR             | L/L
-Hrycak 2023 OP002    | MW 915 MHz               | M1    | 2.06          | 1:0:1.35    | 6.5    | absorbed MW | 66.1      | NA        | 189     | 286    | 340-386   | NR             | M/L
+Akande 2022 OP003    | MW 915 MHz torch         | M1    | 2.68          | 1:0:3       | 32     | absorbed MW | 96.6      | NA        | 717     | 742    | 905-1003  | NR             | L/L
+Hrycak 2023 OP002    | MW 915 MHz               | M1    | 2.06          | 1:0:1.35    | 6.5    | absorbed MW | 66.1      | NA        | 189     | 286    | 349-386   | NR             | M/L
 Zhu 2019 OP004       | DC gliding arc + Ni cat. | D1    | 0.033         | 1:0:3       | 0.246  | discharge   | 90        | NA        | 441     | 490    | 505-533   | 6 h            | H/M
 Geng 2022 OP002      | DBD + Ni cat.            | K1    | 0.001         | 1:0:4.4     | 0.015  | discharge   | ~60       | NA        | 894     | 1490   | 1620-1656 | ~2 h series    | M/L
 
@@ -32,7 +32,7 @@ Andersen 2020 OP001 | DBD (no packing)        | K1    | 0.001         | 1:1:0   
 
 Source / OP           | Activation         | Class | CH4 (mol/min) | CH4:CO2:H2O           | P (kW) | Boundary    | X_CH4 (%)         | X_CO2 (%) | SEI_CH4 | EC_CH4  | EC ind.   | Duration       | Conf.
 Hrabovsky 2018 OP005  | DC arc torch       | A1    | 5.58          | 1:0.81:0.18           | 116    | arc         | 95.3              | 91.0      | 1248    | 1309    | 1336-1454 | ~2 min segment | M/M
-Hrycak 2023 OP001     | MW 915 MHz         | M1    | 3.09          | 1:0.33:0.90           | 6.5    | absorbed MW | 48.9              | ~44       | 126     | 258     | 307-349   | NR             | M/L
+Hrycak 2023 OP001     | MW 915 MHz         | M1    | 3.09          | 1:0.33:0.90           | 6.5    | absorbed MW | 48.9              | ~44       | 126     | 258     | 315-349   | NR             | M/L
 From 2024 OP001       | Joule (eSMR pilot) | J1    | NR            | biogas; S/C 2.7       | NR     | NR          | 97                | NR        | -       | NR      | -         | ~1 h steady    | M/NA
 From 2024 OP004-OP007 | Joule (eSMR pilot) | J1    | NR            | biogas; S/C 2-2.2     | NR     | Q_in (PSU)  | 94-97 (eq., est.) | NR        | -       | 388-485 | 394-500   | NR             | L/L
 From 2025 OP002       | Joule (eSMR pilot) | J1    | 2.55          | biogas + H2; S/HC 2.3 | NR     | NR          | ~98               | ~42-54    | -       | NR      | -         | 80 h           | M/NA
@@ -63,7 +63,7 @@ Joule-heated benchmarks:
 
 ## Notes
 
-[1] Class efficiencies: J1 0.97-0.98, A1 0.90-0.98, D1 0.92-0.97, K1 0.90-0.92, M1 0.74-0.84, M2 0.63-0.72, K2@400kHz 0.91-0.96. RF ICP (Song) uses the K2 solid-state inverter sub-band at 100-400 kHz (PW004-V02, PW005-V02); a tube oscillator (R1, 0.53-0.60) would give ~1.6-1.8x higher values. Wanten and Zhu exclude their lab ballast resistors; the estimate replaces the ballasted lab supply with a D1 current-controlled supply.
+[1] Class efficiencies: J1 0.97-0.98, A1 0.90-0.98, D1 0.92-0.97, K1 0.90-0.92, M1 0.74-0.82, M2 0.63-0.72, K2@400kHz 0.91-0.96. RF ICP (Song) uses the K2 solid-state inverter sub-band at 100-400 kHz (PW004-V02, PW005-V02); a tube oscillator (R1, 0.53-0.60) would give ~1.6-1.8x higher values. Wanten and Zhu exclude their lab ballast resistors; the estimate replaces the ballasted lab supply with a D1 current-controlled supply.
 [2] External heat is excluded from every EC_CH4: furnace (Geng), steam generation (Akande, Hrycak, Zhu, the From pilots) and feed preheat are not reported. These EC_CH4 are lower bounds on electricity per mol CH4; Hrabovsky's torch evaporates its own water, so arc power is its whole process heat.
 [3] Hrabovsky conversions are reviewer calculations from the Ar tracer; they match the authors' plotted points (cross-check XR007, for human check). Hrycak uses 24.25 L/mol (XR008).
 [4] Akande's reported H2 rate is impossible for the stated feed; its conversion and EC_CH4 are kept with lower confidence.
