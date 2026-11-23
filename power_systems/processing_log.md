@@ -1,5 +1,11 @@
 # Processing log: power_systems
 
+Follow-up review, 2026-11-23 (Codex Work Mode, GPT-6; changes requested by BB): corrected
+P1 class power from the unsupported 1-20 kW to 10-20 kW average, based on PW029
+(10 kW demonstrator, PW029-V05; 20 kW system described in PW029-V01). Updated SI_1 and
+supply_type tables to match; reduced repetition and clarified prose in SI_1 S1-S3.
+Efficiency ranges, raw evidence records and source verification statuses are unchanged.
+
 Consistency review, 2026-11-23 (Codex Work Mode, GPT-6; changes requested by BB): SI_1 S1-S3,
 SI_2 boundary discussion, supply_type background notes, class/discharge metadata and calculation
 comments updated to distinguish P1 mixed-stage sensitivity, K2's 400 kHz extrapolation and
