@@ -99,7 +99,7 @@ ax1.set_yscale("log")
 ax1.set_ylim(8, 600)
 ax1.set_ylabel("Torch (tube) diameter (mm, log)")
 ax1.grid(which="major", color=GRID, lw=0.8)
-ax1.set_title("ICP torches: frequency falls as the torch grows", loc="left", fontsize=10, color=INK)
+ttl = ax1.set_title("ICP torches: frequency falls as the torch grows", loc="left", fontsize=10, color=INK)
 h1 = [Line2D([], [], marker="o", color=INK, ls="", ms=7, label="torch, atmospheric pressure"),
       Line2D([], [], marker="o", color=INK, mfc="white", ls="", ms=7, mew=1.6, label="torch, sub-atmospheric"),
       Line2D([], [], marker="D", color=ORANGE, mfc="white", ls="", ms=6, mew=1.6, label="design example (patent PW058)"),
@@ -153,9 +153,17 @@ ax2.set_ylim(0.3, 3e3)
 ax2.set_xlabel("Operating frequency (Hz, log)")
 ax2.set_ylabel("Torch or generator power (kW, log)")
 ax2.grid(which="major", color=GRID, lw=0.8)
-fig.text(0.0, 0.015, "Band in (a): r/δ = 1.5-4 with δ = (π f μ0 σ)^-1/2, σ = 10³ S/m (argon, 8000 K; PW055-V01, -V02), r = D/2; indicative only.\n"
+foot = fig.text(0.0, 0.015, "Band in (a): r/δ = 1.5-4 with δ = (π f μ0 σ)^-1/2, σ = 10³ S/m (argon, 8000 K; PW055-V01, -V02), r = D/2; indicative only.\n"
          "Power in (b): rated generator output (VKI, Song, ICP-OES) or plasma/discharge power (others); line = stated range.\n"
          "Values and quotes in supply_values.csv (PW055-PW061, SRC009).", fontsize=7, color=MUTED, va="top")
 for ext in ("png", "svg"):
     fig.savefig(ROOT / "figures" / f"icp_frequency_scale.{ext}", dpi=200, bbox_inches="tight")
 print("wrote figures/icp_frequency_scale.png/.svg")
+# Clean version for Supporting Information 1: no title or footnote (both go in the caption), panel labels.
+ttl.set_visible(False)
+foot.set_visible(False)
+for a, lab in ((ax1, "(a)"), (ax2, "(b)")):
+    a.text(-0.12, 1.0, lab, transform=a.transAxes, fontsize=9, color=INK, fontweight="bold")
+for ext in ("png", "pdf"):
+    fig.savefig(ROOT / "figures" / f"SI1_icp_frequency_scale.{ext}", dpi=300, bbox_inches="tight")
+print("wrote figures/SI1_icp_frequency_scale.png/.pdf")
