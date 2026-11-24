@@ -1,13 +1,12 @@
 """Manuscript figure: supply unit power and efficiency against output frequency (no data values in this script).
 
-Writes figures/0_manuscript_figure.png/.svg/.pdf and figures/0_manuscript_figure_caption.txt.
+Writes figures/0_manuscript_figure.png/.svg/.pdf (caption text is drafted in the manuscript).
 A simplified version of supply_power_efficiency_frequency (plot_supply_values.py, kept for the SI):
 - (a) unit power only: rated or family-maximum output of one supply unit. Installed systems, average power of
   pulsed transmitters, single devices and laboratory units are left out (installation sizes go in the caption).
-- (b) published efficiencies (points) with the adopted class ranges of supply_classes.csv (boxes) for the
-  classes used in the projections; the K2 box is the 400 kHz sub-band used for the ICP torch
-  (scaleup_wall_basis.py SUBBAND). Tube- and amplifier-only values (in the SI figure), torch thermal efficiencies (downstream of the supply) and supply-stage-only,
-  system and pulsed values are left out, as is PW019-V02 (not used in any range).
+- (b) published efficiencies only, labelled by class. The adopted class ranges are not drawn: they are in the
+  manuscript tables and SI 1 (Table S4). Tube- and amplifier-only values (in the SI figure), torch thermal efficiencies
+  (downstream of the supply), supply-stage-only, system and pulsed values are left out, as is PW019-V02 (not used in any range).
 - Context classes (R1, R2, M3, H1) in grey; M3 drawn just right of 2.45 GHz. Projections and dropped sources are skipped.
 
 Run from power_systems/: python3 figures/plot_manuscript_figure.py
@@ -21,7 +20,6 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import matplotlib.ticker
 from matplotlib.lines import Line2D
-from matplotlib.patches import Patch, Rectangle
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "figures"
@@ -31,8 +29,6 @@ classes = {c["class_id"]: c for c in csv.DictReader(open(ROOT / "supply_classes.
 
 SELECTED = ["J1", "A1", "D1", "K1", "K2", "M1", "M2"]   # P1 has no carrier frequency
 CONTEXT = {"R1", "R2", "M3", "H1"}
-SUBBAND = {"K2": (1e5, 4e5, 0.91, 0.96)}                 # 400 kHz case (scaleup_wall_basis.py)
-BAND = {"K1": (1e3, 3e4), "M1": (9.15e8, 9.15e8), "M2": (2.45e9, 2.45e9)}   # supply_classes.csv frequency column
 M3_SHIFT = 1.35   # M3 shares 2.45 GHz with M2: drawn just right of it
 NOT_UNIT = {"PW026-V04", "PW027-V02", "PW046-V10", "SRC020-V05"}   # lab inverters/amplifiers, a single device, a lab supply
 NOT_USED = {"PW019-V02"}
@@ -72,11 +68,13 @@ def style(cls):
     return (CTX, CTX) if cls in CONTEXT else (INK, MUTED)
 
 
-fig, (axp, axe) = plt.subplots(2, 1, figsize=(7.0, 6.4), sharex=True, gridspec_kw={"height_ratios": [1, 1.25]})
+fig, (axp, axe) = plt.subplots(2, 1, figsize=(5.95, 5.87), sharex=True, gridspec_kw={"height_ratios": [1, 1.06]})
 fig.subplots_adjust(hspace=0.08)
 
 # ---- (a) unit power ----
 top = {}
+K2_OFF = {"PW058-V06": ((-6, -3), "right"), "PW006-V01": ((0, -12), "center"),
+          "PW002-V02": ((-4, 2), "right")}   # clear of R1, of each other and of the 4.5 MW label
 for r in rows:
     if r["quantity"] != "output_power" or r["basis"] == "installed" or r["value_id"] in NOT_UNIT or r["unit"] != "kW":
         continue
@@ -91,35 +89,36 @@ for r in rows:
     if b > a:
         axp.plot([a, b], [v, v], color=col, lw=1.2, alpha=0.7, solid_capstyle="round", zorder=1)
     axp.plot(x, v, "o", ms=5.5, color=col, zorder=2)
-    if v > top.get(cls, (0,))[0]:
-        top[cls] = (v, x)
-for cls, (v, x) in top.items():
-    axp.annotate(cls, (x, v), xytext=(4, 2), textcoords="offset points", fontsize=7.5, color=style(cls)[1])
+    if cls == "K2":   # K2 points are spread over 0.2-600 kHz among K1 and R1: label each one
+        off, ha = K2_OFF.get(r["value_id"], ((4, 2), "left"))
+        axp.annotate("K2", (x, v), xytext=off, textcoords="offset points", fontsize=7.5, color=MUTED, ha=ha)
+        continue
+    key = "R2 VHF" if cls == "R2" and x > 1e7 else cls   # R2 has two frequency groups (1 MHz; 13.56-60 MHz)
+    if v > top.get(key, (0,))[0]:
+        top[key] = (v, x)
+ABOVE = {"J1", "A1", "D1", "H1", "R2 VHF"}   # centred directly above the uppermost point
+POFF = {"K1": ((-6, -3), "right")}           # left of its point: a K2 line (75-750 kW, 0.2-10 kHz) runs just above
+for key, (v, x) in top.items():
+    off, ha = (((3 if key == "A1" else 0), 6), "center") if key in ABOVE else POFF.get(key, ((4, 2), "left"))   # A1 nudged off the y-axis
+    axp.annotate(key.split()[0], (x, v), xytext=off, textcoords="offset points", fontsize=7.5,
+                 color=style(key.split()[0])[1], ha=ha)
 axp.set_yscale("log")
 axp.set_ylim(0.5, 1e4)
 axp.set_ylabel("Unit output power (kW)")
-axp.text(-0.1, 1.0, "(a)", transform=axp.transAxes, fontsize=9, color=INK, fontweight="bold")
+axp.text(-0.17, 1.0, "(a)", transform=axp.transAxes, fontsize=9, color=INK, fontweight="bold")
 
-# ---- (b) efficiency: adopted ranges (boxes) and published values (points) ----
-for cls in SELECTED:
-    c = classes[cls]
-    lo, hi = float(c["eta_low"]), float(c["eta_high"])
-    if cls in SUBBAND:
-        f0, f1, lo, hi = SUBBAND[cls]
-    elif cls in ("J1", "A1", "D1"):
-        f0 = f1 = DC_X * DC_SHIFT[cls]
-    else:
-        f0, f1 = BAND[cls]
-    w = 1.18 if f0 == f1 else 1.0   # minimum width for single frequencies (log axis)
-    x0, x1 = f0 / w, f1 * w
-    axe.add_patch(Rectangle((x0, lo * 100), x1 - x0, (hi - lo) * 100, facecolor=SLOT[0], alpha=0.16,
-                            edgecolor=SLOT[0], lw=0.8, zorder=1))
-    xc = math.sqrt(x0 * x1)
-    pos = {"A1": ((xc, lo * 100), (0, -13), "center"), "J1": ((xc, hi * 100), (0, 4), "center")}
-    xy, off, ha = pos.get(cls, ((x1, hi * 100), (3, 1), "left"))
-    axe.annotate(cls, xy, xytext=off, textcoords="offset points", fontsize=7.5, color=INK, fontweight="bold", ha=ha)
-
-ctx_lab = set()
+# ---- (b) efficiency: published values only (adopted class ranges are in the tables and SI 1) ----
+# Labels: one per class group, placed by value id where a class has separated groups or crowded neighbours.
+LAB = {"PW021-V01": ((-6, -3), "right"),    # J1, left of the point (top of axis above)
+       "PW054-V01": ((0, -12), "center"),   # D1 generator values, below the lowest (92%)
+       "PW023-V01": ((0, -13), "center"),   # A1
+       "SRC020-V01": ((-6, -3), "right"),   # D1 into an arc load, left (clear of the DC line)
+       "PW026-V01": ((-6, -3), "right"),    # K1 lab inverter at 10 kHz
+       "PW026-V03": ((6, -3), "left"),      # K1 lab inverters at 40-60 kHz
+       "PW003-V02": ((6, -3), "left"), "PW004-V02": ((6, -3), "left"),   # K2 values spread over 0.2-600 kHz
+       "PW005-V02": ((0, 6), "center"), "PW058-V08": ((6, -3), "left")}
+LAB_CLASSES = {"J1", "D1", "A1", "K1", "K2"}   # labelled via LAB only; other classes once, at their highest point
+pts, best = [], {}
 for r in rows:
     if r["quantity"] != "efficiency" or r["value_id"] in NOT_USED or r["data_type"] == "projection":
         continue
@@ -145,49 +144,38 @@ for r in rows:
     if hi > lo:
         axe.plot([x, x], [lo * 100, hi * 100], color=col, lw=1.6, zorder=2)
     axe.plot(x, y, marker=mk, ms=6, color=col, mfc=col if fill else "white", mew=1.6, zorder=3)
-    if cls in CONTEXT and cls not in ctx_lab:
-        axe.annotate(cls, (x, y), xytext=(4, -9), textcoords="offset points", fontsize=7, color=CTX)
-        ctx_lab.add(cls)
+    tcol = CTX if cls in CONTEXT else (SLOT[1] if basis == "into_load" else INK)
+    if r["value_id"] in LAB:
+        off, ha = LAB[r["value_id"]]
+        axe.annotate(cls, (x, y), xytext=off, textcoords="offset points", fontsize=7.5, color=tcol, ha=ha)
+    elif cls not in LAB_CLASSES and y > best.get(cls, (0, 0, 0))[1]:
+        best[cls] = (x, y, tcol)
+for cls, (x, y, tcol) in best.items():
+    axe.annotate(cls, (x, y), xytext=(6, -3), textcoords="offset points", fontsize=7.5 if tcol != CTX else 7, color=tcol)
 
 axe.set_xscale("log")
 axe.set_xlim(4, 1e10)
-axe.set_ylim(45, 100)
+axe.set_ylim(50, 100)
 ticks = [DC_X] + [10.0 ** k for k in range(2, 11, 2)]
 axe.set_xticks(ticks)
 axe.set_xticklabels(["DC"] + [f"$10^{{{k}}}$" for k in range(2, 11, 2)])
 axe.xaxis.set_minor_locator(matplotlib.ticker.NullLocator())
 axe.set_ylabel("Efficiency (%)")
 axe.set_xlabel("Output frequency (Hz)")
-axe.text(-0.1, 1.0, "(b)", transform=axe.transAxes, fontsize=9, color=INK, fontweight="bold")
+axe.text(-0.17, 1.0, "(b)", transform=axe.transAxes, fontsize=9, color=INK, fontweight="bold")
 for a in (axp, axe):
     a.axvspan(4, 30, color=GRID, alpha=0.35, lw=0, zorder=0)
     a.axvline(30, color=MUTED, lw=0.8, ls=(0, (2, 2)), zorder=0)
     a.grid(which="major", color=GRID, lw=0.7)
     a.set_axisbelow(True)
 
-handles = [Patch(facecolor=SLOT[0], alpha=0.3, edgecolor=SLOT[0], label="adopted class range"),
-           Line2D([], [], marker="o", color=SLOT[0], ls="", ms=6, label="complete generator"),
+handles = [Line2D([], [], marker="o", color=SLOT[0], ls="", ms=6, label="complete generator"),
            Line2D([], [], marker="o", color=SLOT[0], mfc="white", mew=1.6, ls="", ms=6, label="boundary not stated"),
            Line2D([], [], marker="^", color=SLOT[1], ls="", ms=6, label="measured into a plasma load"),
            Line2D([], [], marker="o", color=CTX, ls="", ms=6, label="context classes (grey)")]
-axe.legend(handles=handles, loc="upper left", bbox_to_anchor=(0.0, -0.13), ncol=3, frameon=False, fontsize=7.5)
+axe.legend(handles=handles, loc="upper left", bbox_to_anchor=(0.0, -0.17), ncol=2, frameon=False, fontsize=7, columnspacing=1.0, handletextpad=0.4)
 
 for ext in ("png", "svg", "pdf"):
     fig.savefig(OUT / f"0_manuscript_figure.{ext}", dpi=300, bbox_inches="tight")
 print("wrote", OUT / "0_manuscript_figure.png")
 
-inst = {r["value_id"]: r for r in rows if r["basis"] == "installed"}
-caption = (
-    "Published power supplies against output frequency. (a) Output power of a single supply unit (rated or "
-    "family maximum); lines show stated frequency bands. Installed systems built from several units are larger: "
-    "induction-heating supplies of 16-42 MW and an installation of 126 MW, a 1.76 MW precipitator installation of "
-    "32 high-voltage DC units, and 915 MHz microwave containers of several MW. (b) Published efficiencies (points) "
-    "and the ranges adopted for the projections (boxes; for K2, the 100-400 kHz range used for the ICP torch). "
-    "Efficiency is from mains input to generator output unless marked; values for the tube or amplifier alone are "
-    "not shown (Supporting Information 1). DC supplies are drawn side by side in the shaded band (A1 arc-torch supplies, J1 "
-    "rectifiers, D1 high-voltage DC). Grey: classes not used in the projections (R1 RF tube oscillator, R2 "
-    "solid-state RF, M3 solid-state microwave, drawn just right of 2.45 GHz; H1 klystron). Projected values are not shown. Nanosecond pulsed supplies (P1) have no carrier "
-    "frequency and are not shown. Data and sources: power_systems/supply_values.csv.")
-(OUT / "0_manuscript_figure_caption.txt").write_text(caption + "\n", encoding="utf-8")
-print(caption)
-print("installed rows (caption):", ", ".join(f"{k} {v['value_low']} {v['unit']}" for k, v in inst.items()))
