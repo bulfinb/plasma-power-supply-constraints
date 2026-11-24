@@ -40,8 +40,14 @@ plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 8.5, "axes.edgec
                      "axes.labelcolor": INK, "xtick.color": MUTED, "ytick.color": MUTED,
                      "axes.spines.top": False, "axes.spines.right": False,
                      "svg.fonttype": "none", "savefig.facecolor": "white"})
-DC_X = 10.0
-DC_SHIFT = {"A1": 0.55, "J1": 1.0, "D1": 1.8}
+# DC band: left of the 30 Hz divider. Widened in log units (DC_STRETCH) so it keeps its physical width when the
+# axes are narrowed; the DC positions are stretched about the divider by the same factor.
+DC_EDGE, DC_STRETCH = 30.0, 1.198
+def dcpos(x):
+    return DC_EDGE / (DC_EDGE / x) ** DC_STRETCH
+XLO = dcpos(4.0)
+DC_X = dcpos(10.0)
+DC_SHIFT = {k: dcpos(10.0 * v) / DC_X for k, v in {"A1": 0.55, "J1": 1.0, "D1": 1.8}.items()}
 
 
 def num(x):
@@ -68,7 +74,7 @@ def style(cls):
     return (CTX, CTX) if cls in CONTEXT else (INK, MUTED)
 
 
-fig, (axp, axe) = plt.subplots(2, 1, figsize=(5.95, 5.87), sharex=True, gridspec_kw={"height_ratios": [1, 1.06]})
+fig, (axp, axe) = plt.subplots(2, 1, figsize=(5.06, 5.87), sharex=True, gridspec_kw={"height_ratios": [1, 1.06]})
 fig.subplots_adjust(hspace=0.08)
 
 # ---- (a) unit power ----
@@ -154,7 +160,7 @@ for cls, (x, y, tcol) in best.items():
     axe.annotate(cls, (x, y), xytext=(6, -3), textcoords="offset points", fontsize=7.5 if tcol != CTX else 7, color=tcol)
 
 axe.set_xscale("log")
-axe.set_xlim(4, 1e10)
+axe.set_xlim(XLO, 1e10)
 axe.set_ylim(50, 100)
 ticks = [DC_X] + [10.0 ** k for k in range(2, 11, 2)]
 axe.set_xticks(ticks)
@@ -164,16 +170,37 @@ axe.set_ylabel("Efficiency (%)")
 axe.set_xlabel("Output frequency (Hz)")
 axe.text(-0.17, 1.0, "(b)", transform=axe.transAxes, fontsize=9, color=INK, fontweight="bold")
 for a in (axp, axe):
-    a.axvspan(4, 30, color=GRID, alpha=0.35, lw=0, zorder=0)
-    a.axvline(30, color=MUTED, lw=0.8, ls=(0, (2, 2)), zorder=0)
+    a.axvspan(XLO, DC_EDGE, color=GRID, alpha=0.35, lw=0, zorder=0)
+    a.axvline(DC_EDGE, color=MUTED, lw=0.8, ls=(0, (2, 2)), zorder=0)
     a.grid(which="major", color=GRID, lw=0.7)
     a.set_axisbelow(True)
 
-handles = [Line2D([], [], marker="o", color=SLOT[0], ls="", ms=6, label="complete generator"),
+# Right-hand column: class key (top), then the efficiency-basis legend. Boundary terms as in the manuscript
+# power_boundaries figure (P_mains, P_generator, P_absorbed).
+KEY = [("J1", "low-voltage rectifiers"), ("A1", "DC arc-torch supplies"), ("D1", "high-voltage DC"),
+       ("K1", "kHz high-voltage inverters"), ("K2", "induction-heating inverters"),
+       ("M1", "915 MHz magnetron generators"), ("M2", "2.45 GHz magnetron generators"),
+       ("R1", "RF tube oscillators"), ("R2", "solid-state RF"), ("M3", "solid-state microwave"),
+       ("H1", "klystrons")]
+DY = 0.034
+x0 = axp.get_position().x1 + 0.03
+y0 = axp.get_position().y1 - 0.01
+fig.text(x0, y0, "Supply classes", fontsize=7.5, color=INK, fontweight="bold", va="center")
+y = y0
+for cid, name in KEY:
+    col = "#878680" if cid in CONTEXT else INK   # a shade darker than CTX for small text
+    y -= DY + (0.02 if cid == "R1" else 0)       # small gap before the context classes
+    fig.text(x0, y, cid, fontsize=7.5, color=col, fontweight="bold", va="center")
+    fig.text(x0 + 0.045, y, name, fontsize=7.5, color=col, va="center")
+
+handles = [Line2D([], [], marker="o", color=SLOT[0], ls="", ms=6, label=r"$P_{\mathrm{generator}}/P_{\mathrm{mains}}$"),
+           Line2D([], [], marker="^", color=SLOT[1], ls="", ms=6, label=r"measured at $P_{\mathrm{absorbed}}$"),
            Line2D([], [], marker="o", color=SLOT[0], mfc="white", mew=1.6, ls="", ms=6, label="boundary not stated"),
-           Line2D([], [], marker="^", color=SLOT[1], ls="", ms=6, label="measured into a plasma load"),
-           Line2D([], [], marker="o", color=CTX, ls="", ms=6, label="context classes (grey)")]
-axe.legend(handles=handles, loc="upper left", bbox_to_anchor=(0.0, -0.17), ncol=2, frameon=False, fontsize=7, columnspacing=1.0, handletextpad=0.4)
+           Line2D([], [], marker="o", color=CTX, ls="", ms=6, label="context classes")]
+leg = fig.legend(handles=handles, loc="upper left", bbox_to_anchor=(x0 - 0.012, y - 0.045), ncol=1, frameon=False,
+                 fontsize=7.5, handletextpad=0.4, labelspacing=0.7, title="Efficiency (b)", alignment="left",
+                 title_fontproperties={"size": 7.5, "weight": "bold"})
+leg.get_title().set_color(INK)
 
 for ext in ("png", "svg", "pdf"):
     fig.savefig(OUT / f"0_manuscript_figure.{ext}", dpi=300, bbox_inches="tight")
