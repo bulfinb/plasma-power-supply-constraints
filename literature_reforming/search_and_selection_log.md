@@ -44,8 +44,11 @@ Discovery route: Claude's web search tool (a general web search engine, about 10
 | S030 | 2026-11-20 | Web search tool | UCLA electrically heated steam methane reformer experimental pilot Christofides Morales-Guio power consumption hydrogen | none | 10 | all 10 | R027 |
 | S031 | 2026-11-20 | Web search tool (extended) | EReTech Dollnstein e-SMR pilot results 2025 efficiency hydrogen biogas electrified reformer | none | 9 | all 9 | No pilot results found; R023 (Topsoe EUDP final report) |
 | S032 | 2026-11-20 | Web search tool (extended) | electrically heated reformer demonstration MW scale 2025 BASF OR Sinopec OR Linde OR Johnson Matthey OR Kanthal electrified steam methane reformer pilot | none | 10 | all 10 | R028 (e-cracker, not reforming); no MW-scale reformer found |
+| S033 | 2026-11-25 | Google Scholar (BB) | Several phrasings combining methane reforming (steam, dry) with plasma terms, and with Joule-heated / electrified reforming terms | Since 2026; sorted by relevance and by date | not recorded | first results page of each query | Recency check for 2026 demonstrations; nothing additional to include |
 
 Round 2 (2026-11-20) aim: a Joule-heated (electrified) reforming benchmark with electrical power at a defined operating point, at pilot scale if possible (BB). Same discovery route as round 1, plus Crossref and Unpaywall for DOIs and open-access copies.
+
+Round 3 (2026-11-25) aim: a recency check for 2026 plasma and Joule-heated reforming demonstrations missed by rounds 1-2. Searcher: BB (human), Google Scholar; screening by title/snippet against literature_search_strategy.md.
 
 ## Selection log
 

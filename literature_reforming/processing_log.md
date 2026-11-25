@@ -19,6 +19,7 @@ Source documents (manuscripts, supplements) are not distributed with this folder
 | 2fa545d5 | Claude Code | 2026-10-30 to 2026-11-04 | 2.1.312 (10-30, start), 2.1.314 (10-30 to 11-03), 2.1.317 (11-04), 2.1.318 (11-04, end) | claude-opus-5-5 |
 | 674ce652 | Claude Code | 2026-10-30 (brief) | 2.1.314 | claude-opus-5-5 |
 | 088bb8d0 | Claude Code | 2026-11-05 to 2026-11-10 | 2.1.318; 2.1.322 (2026-11-10) | claude-opus-5-5 |
+| 95037651 | Claude Code | 2026-11-24 to 2026-11-25 | 2.1.331 | claude-opus-5-5 |
 
 ## Events
 
@@ -82,3 +83,4 @@ Event types: extraction (initial), revision (substantive change to records), app
 | 2026-11-20 | SRC005 | 0_synthesis/ | From 2024 OP004-OP007 reviewer-estimate row (EC_CH4 388-485 kJ/mol, SRC005-C004) added to build_synthesis.py and to the LaTeX table as a Joule-heated pilot benchmark block; reading summary updated; figure unchanged (Joule not plotted) | Claude Code 2.1.322 | claude-opus-5-5 | d3b811d6 | |
 | 2026-11-20 | SRC005 | 0_synthesis/ | plot_x_vs_ec.py: Joule-heated pilot reviewer estimate (From 2024, SRC005-C004) added as open star with EC and conversion range bars, both panels | Claude Code 2.1.322 | claude-opus-5-5 | d3b811d6 | |
 | 2026-11-23 | (all) | 0_synthesis/ | rebuilt after the power-supply relevance review: M1 0.74-0.84 -> 0.74-0.82 (power_systems, PW045 dropped); M1 rows of the synthesis, table and figures updated | Claude Code 2.1.322 | claude-opus-5-5 | d3b811d6 | |
+| 2026-11-25 | (all) | search_and_selection_log.md | round 3 started: BB's Google Scholar recency search for 2026 plasma and Joule-heated reforming logged (S033, nothing additional); search terms and screening criteria prepared for BB | Claude Code 2.1.331 | claude-opus-5-5 | 95037651 | |
