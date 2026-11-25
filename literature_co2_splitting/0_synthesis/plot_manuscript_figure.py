@@ -6,7 +6,9 @@ reforming manuscript figure (literature_reforming/0_synthesis/plot_manuscript_fi
 - the plasma rows of the manuscript table (make_latex_table.py: headline rows minus SKIP);
 - open marker = EC_CO at the paper's power boundary; filled marker = at the wall (measured where the authors measured
   it, else EC_CO plasma side / supply-class efficiency, geometric mid; bar = class range); thin line joins the pair;
-- labels: author, reported power (W below 1 kW) and "C bed" for carbon-bed points (carbon not counted as energy);
+- labels: author and reported power (W below 1 kW);
+- carbon-bed points: grey halo behind the open/filled pair (carbon not counted as energy) (BB 2026-11-25);
+- Hecimovic 2023 OP002 not plotted: same torch as Kiefer 2024, whose wall-plug values are measured (BB 2026-11-25);
 - DBD conversions as reported (expansion-corrected values are in the table only);
 - SOEC: the system design point (Hecimovic 2024 OP001) at its 86% utilisation, open = stack DC, filled = wall; the
   stack-only band (Kungas 2020, no conversion, heat below V_tn excluded) is left to the table note (BB 2026-11-25);
@@ -30,10 +32,11 @@ HERE = Path(__file__).resolve().parent
 MS_FIG = HERE.parent.parent / "manuscript" / "figures"
 rows = list(csv.DictReader(open(HERE / "co2_synthesis.csv", encoding="utf-8")))
 BENCH = {"SRC025", "SRC026"}
-SKIP = {"Hecimovic 2024 OP005", "Girard-Sahun 2022 OP001"}   # as make_latex_table.py SKIP (plasma rows)
+SKIP = {"Hecimovic 2024 OP005", "Girard-Sahun 2022 OP001",   # as make_latex_table.py SKIP (plasma rows)
+        "Hecimovic 2023 OP002"}                              # same torch as Kiefer 2024 (measured wall): shown once
 
 SLOT = ["#2a78d6", "#eb6834", "#1baf7a"]
-INK, MUTED, GRID = "#1f1f1e", "#6b6a64", "#e4e3de"
+INK, MUTED, GRID, HALO = "#1f1f1e", "#6b6a64", "#e4e3de", "#d2d1cb"
 plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 8.5, "axes.edgecolor": MUTED,
                      "axes.labelcolor": INK, "xtick.color": MUTED, "ytick.color": MUTED,
                      "axes.spines.top": False, "axes.spines.right": False,
@@ -50,7 +53,6 @@ XMIN, XMAX, YMIN, YMAX = 3, 110, 0, 92
 OFFSET = {   # label position: (dx, dy) points, ha, va; anchor rule as in the reforming figure
     "Kiefer 2024 OP001": ((6, 0), "left", "center"),
     "Kiefer 2024 OP003": ((6, 0), "left", "center"),
-    "Hecimovic 2023 OP002": ((-7, 0), "right", "center"),
     "Bongers 2017 OP001": ((6, 0), "left", "center"),
     "Bongers 2017 OP003": ((0, -7), "center", "top"),        # below: Girard-Sahun to the left
     "Girard-Sahun 2022 OP002": ((-7, 4), "left", "bottom"),  # above the pair (from the open marker), clear of Bongers
@@ -99,9 +101,9 @@ for r in rows:
     wall = (wall_m, f(r["EC_CO_wall_measured_high"]) or wall_m) if wall_m else \
         (f(r["EC_CO_industrial_est_low"]), f(r["EC_CO_industrial_est_high"]))
     author = r["row_key"].rsplit(" ", 2)[0]
-    label = f"{author} {power_text(f(r['P_kW_at_boundary']))}" + (" (C bed)" if "C bed" in r["route"] else "")
+    label = f"{author} {power_text(f(r['P_kW_at_boundary']))}"
     pts.append(dict(key=r["row_key"], fam=fam, x=num(r["X_CO2_pct"]), paper=f(r["EC_CO_boundary_low"]),
-                    paper_hi=f(r["EC_CO_boundary_high"]), wall=wall, label=label))
+                    paper_hi=f(r["EC_CO_boundary_high"]), wall=wall, label=label, bed="C bed" in r["route"]))
 
 soec = {r["row_key"]: r for r in rows if r["source_id"] in BENCH}
 sys_row = soec["Hecimovic 2024 OP001"]
@@ -123,6 +125,9 @@ for p in pts:
     xe = (lo * hi) ** 0.5
     xp = (p["paper"] * p["paper_hi"]) ** 0.5
     ms = 9 if mk == "*" else (6.5 if mk == "p" else 5.5)
+    if p["bed"]:   # carbon bed: rounded grey halo behind the pair
+        ax.plot([min(xp, xe) / 1.003, max(xp, xe) * 1.003], [p["x"]] * 2, color=HALO, lw=13,
+                solid_capstyle="round", zorder=1.5)   # widened slightly so a single point (Bryssinck) still shows
     ax.plot([xp, xe], [p["x"]] * 2, color=col, lw=0.8, alpha=0.6, zorder=2)
     if hi / lo > 1.02:
         ax.errorbar(xe, p["x"], xerr=[[xe - lo], [hi - xe]], fmt="none", ecolor=col, elinewidth=0.9, capsize=2,
@@ -156,7 +161,8 @@ h_type = [Line2D([], [], marker=mk, color=col, ls="", ms=9 if mk == "*" else (6.
 h_basis = [Line2D([], [], marker="o", mfc="white", mec=MUTED, mew=1.2, ls="", ms=5.5, label="at reported power boundary"),
            Line2D([], [], marker="o", color=MUTED, ls="", ms=5.5, label="at the wall"),
            Line2D([], [], marker="h", mfc="white", mec=INK, mew=1.2, ls="", ms=7, label="SOEC system: stack DC"),
-           Line2D([], [], marker="h", color=INK, ls="", ms=7, label="SOEC system: wall")]
+           Line2D([], [], marker="h", color=INK, ls="", ms=7, label="SOEC system: wall"),
+           Line2D([], [], marker="o", color=HALO, ls="", ms=12, label="carbon bed (carbon consumed)")]
 y = ax.get_position().y1 + 0.02
 for title, h in (("Plasma type", h_type), ("Energy basis", h_basis)):
     leg = fig.legend(handles=h, loc="upper left", bbox_to_anchor=(x0, y), title=title, **kw)

@@ -9,7 +9,7 @@
 - Extractor / date: Claude (AI), 2026-11-12.
 - Coverage: full paper; Figs. 3 and 4 read from rendered pages.
 - Reviewer / date / checks: Claude (AI), 2026-11-12; plasma power behind Fig. 4 and energy metrics recalculated (C001-C003).
-- Review status: ai_checked. Human verification pending.
+- Review status: ai_checked; partial human check by BB, 2026-11-25: OP001 (E004, E005, E011, E012) confirmed; text values kept over the Fig. 4 reading; the ~54% vs stated 61-65% driver efficiency at ~216 W noted, unresolved (human_checks/summary.csv). Other records human verification pending.
 
 ## Electricity supply
 

@@ -9,7 +9,7 @@
 - Extractor / date: Claude (AI), 2026-11-12.
 - Coverage: full manuscript and ESI; Figs. 3-7 read from rendered pages. The 0D carbon-gasification model (validated on literature data, Section 3, 4.6) is recorded only as the authors' explanation, not as evidence.
 - Reviewer / date / checks: Claude (AI), 2026-11-12; O and C balances and efficiency recalculated (C001-C005).
-- Review status: ai_checked. Human verification pending (C004 changes the headline efficiency).
+- Review status: ai_checked; partial human check by BB, 2026-11-25: OP002 peak (E012) and OP003 at 14 min (E014) confirmed; CO 7.3% kept (the Fig. 5 CO2 curve does not close with CO + O2; noted in E014) (human_checks/summary.csv). Other records, including C004, human verification pending.
 
 ## Electricity supply
 

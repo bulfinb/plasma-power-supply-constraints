@@ -1,2 +1,6 @@
 source_id,date,checker,scope,records_checked,records_total,findings,major_findings,minutes,status_after
 SRC002,2026-11-20,BB,partial: CH4 feed (E020-E022; C003; E065),5,70,0,0,NR,ai_checked (feed confirmed)
+SRC016,2026-11-25,BB,"partial: figure points OP001 and OP003 (E003, E004, E010, E015, E018, E019, E021, E022); incl. checklist item 1",8,38,0,0,NR,ai_checked (figure points confirmed)
+SRC018,2026-11-25,BB,"partial: headline OP001 (E009) and OP003 (E010-E011; Fig. 3b point nearer 10% than the text's 11%, confirming the figure reading)",3,20,0,0,NR,ai_checked (OP001 and OP003 confirmed)
+SRC022,2026-11-25,BB,"partial: headline OP001 (E004, E005, E011, E012); text values kept; driver-efficiency inconsistency at ~216 W noted (E005)",4,17,0,0,NR,ai_checked (OP001 confirmed)
+SRC019,2026-11-25,BB,"partial: headline OP002 peak (E012) and OP003 at 14 min (E014); CO 7.3% kept, Fig. 5 CO2 curve (~91%) does not close with CO + O2 (noted in E014)",2,20,0,0,NR,ai_checked (OP002 and OP003 confirmed)

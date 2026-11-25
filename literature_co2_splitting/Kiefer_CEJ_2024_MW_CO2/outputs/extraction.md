@@ -9,7 +9,7 @@
 - Extractor / date: Claude (AI), 2026-11-11.
 - Coverage: full manuscript, Sections 1-7, Figs. 1-19, Tables 1-2. Figs. 11, 14 and 15 read from rendered pages.
 - Reviewer / date / checks: Claude (AI), 2026-11-11; arithmetic reproduced in outputs/calculations.py (reported EPC 19.6 kWh/Nm3 and eta_p 16.4% reproduced).
-- Review status: ai_checked. Human verification pending.
+- Review status: ai_checked; partial human check by BB, 2026-11-25: the figure points OP001 and OP003 (E003, E004, E010, E015, E018, E019, E021, E022) confirmed, no corrections (human_checks/summary.csv). Other records human verification pending.
 
 ## Electricity supply
 

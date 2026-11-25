@@ -20,6 +20,7 @@ SKIP = {"Hecimovic 2024 OP005",          # plasma + membrane demonstrator, not a
         "Girard-Sahun 2022 OP001",        # max two cases per paper: keep the bed peak and the 14 min point
         "Kungas 2020 OP001", "Kungas 2020 OP003"}   # no conversion reported (stack); given in the footnote
 SKIP |= {"Hecimovic 2024 OP002"}         # vendor eCOs figure: not in the manuscript figure
+SKIP |= {"Hecimovic 2023 OP002"}         # same torch as Kiefer 2024 (measured wall): shown once (BB 2026-11-25)
 
 
 def f(s):
