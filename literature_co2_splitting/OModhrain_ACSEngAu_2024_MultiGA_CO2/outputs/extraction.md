@@ -9,7 +9,7 @@
 - Extractor / date: Claude (AI), 2026-11-12.
 - Coverage: full manuscript and ESI; Figs. 3-5 read from rendered pages. Economics (Section 7) recorded in one line per the workflow.
 - Reviewer / date / checks: Claude (AI), 2026-11-12; efficiency, SEI and EC recalculated (C001-C003).
-- Review status: ai_checked. Human verification pending.
+- Review status: ai_checked; partial human check by BB, 2026-11-25: OP001 (E010, E011) confirmed, no changes (human_checks/summary.csv). Other records human verification pending.
 
 ## Electricity supply
 

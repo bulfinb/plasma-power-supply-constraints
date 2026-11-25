@@ -4,3 +4,6 @@ SRC016,2026-11-25,BB,"partial: figure points OP001 and OP003 (E003, E004, E010, 
 SRC018,2026-11-25,BB,"partial: headline OP001 (E009) and OP003 (E010-E011; Fig. 3b point nearer 10% than the text's 11%, confirming the figure reading)",3,20,0,0,NR,ai_checked (OP001 and OP003 confirmed)
 SRC022,2026-11-25,BB,"partial: headline OP001 (E004, E005, E011, E012); text values kept; driver-efficiency inconsistency at ~216 W noted (E005)",4,17,0,0,NR,ai_checked (OP001 confirmed)
 SRC019,2026-11-25,BB,"partial: headline OP002 peak (E012) and OP003 at 14 min (E014); CO 7.3% kept, Fig. 5 CO2 curve (~91%) does not close with CO + O2 (noted in E014)",2,20,0,0,NR,ai_checked (OP002 and OP003 confirmed)
+SRC021,2026-11-25,BB,"partial: headline OP003 (E014); benchmark (no-bed) inconsistency agreed (E009, E042)",3,22,0,0,NR,ai_checked (OP003 confirmed)
+SRC020,2026-11-25,BB,"partial: headline OP001 (E010, E011); Fig. 4 five-node power rises with flow (noted in E011, E015)",2,25,0,0,NR,ai_checked (OP001 confirmed)
+SRC026,2026-11-25,BB,"partial: SOEC benchmark OP001 (E009, E014, E041); reported 3.89 kWh/Nm3 judged a typo, conservative 3.98 kept",3,22,0,0,NR,ai_checked (OP001 confirmed)

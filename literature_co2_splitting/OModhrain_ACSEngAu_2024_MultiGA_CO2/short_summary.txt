@@ -35,11 +35,11 @@ Traceability: manuscript.pdf pp. 2-10, Figs. 3-5, Table 1; ESI pp. s4-s9;
 SRC020-E001-E017. Calculations SRC020-C001-C003, E041-E043;
 outputs/calculations.py. Details: outputs/extraction.md, outputs/evidence.csv.
 
-Prepared 2026-11-12 by Claude (AI); ai_checked by same extractor; human
-verification pending.
+Prepared 2026-11-12 by Claude (AI); ai_checked by same extractor; OP001
+human checked by BB 2026-11-25 (no changes); other rows pending.
 
 Comparison tables (experimental conditions)
-NR = not reported; NA = not applicable; ~ = approximate (figure reading). Human verification pending.
+NR = not reported; NA = not applicable; ~ = approximate (figure reading). OP001 human checked (BB, 2026-11-25); other rows pending.
 
 1. Route, scale and conditions
 Source / OP           | Reactor / activation             | CO2 feed (mol/min) | Diluent | p (bar) | Scale as reported

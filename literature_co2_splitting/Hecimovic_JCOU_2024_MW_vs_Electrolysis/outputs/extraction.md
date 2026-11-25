@@ -9,7 +9,7 @@
 - Extractor / date: Claude (AI), 2026-11-12.
 - Coverage: whole paper; Tables 1 and 2 read from rendered pages (images in the PDF).
 - Reviewer / date / checks: Claude (AI), 2026-11-12; Table 1 values cross-checked against EPC = 3.504 kWh/Nm3 / eta (C001-C004).
-- Review status: ai_checked. Human verification pending.
+- Review status: ai_checked; partial human check by BB, 2026-11-25: OP001 (E009, E014, E041) confirmed; reported 3.89 kWh/Nm3 taken as a typo and the more conservative 3.98 used (human_checks/summary.csv). Other records human verification pending.
 
 ## Role in the review
 
