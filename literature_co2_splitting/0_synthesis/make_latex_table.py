@@ -1,7 +1,9 @@
 """LaTeX (booktabs) table of the CO2-splitting headline points for the manuscript.
 
 Reads co2_synthesis.csv (run build_synthesis.py first); writes co2_table.tex for \\input{} in the manuscript.
-Plasma rows are sorted by decreasing power; the electrolysis benchmarks follow in a separate block.
+Since 2026-11-25 (BB) a supplement to the manuscript figure: reactor, power, pressure and the assumed supply class only
+(conversion and EC_CO are in the figure and SI 2). Plasma rows are sorted by decreasing power; the SOEC system design
+point (the benchmark in the figure) follows.
 Citation keys are AuthorYear from the row key (e.g. "Girard-Sahun 2022 OP002" -> GirardSahun2022).
 Needs \\usepackage{booktabs} and \\usepackage{adjustbox} in the manuscript.
 
@@ -17,8 +19,7 @@ BENCH = {"SRC025", "SRC026"}
 SKIP = {"Hecimovic 2024 OP005",          # plasma + membrane demonstrator, not a matched point
         "Girard-Sahun 2022 OP001",        # max two cases per paper: keep the bed peak and the 14 min point
         "Kungas 2020 OP001", "Kungas 2020 OP003"}   # no conversion reported (stack); given in the footnote
-BOUNDARY = {"absorbed": "abs.", "MW power": "MW", "plasma": "plasma", "plasma (implied)": "plasma",
-            "deposited": "dep.", "plug": "plug", "stack DC": "stack DC", "total, NR": "total"}
+SKIP |= {"Hecimovic 2024 OP002"}         # vendor eCOs figure: not in the manuscript figure
 
 
 def f(s):
@@ -30,65 +31,70 @@ def key(row_key):
     return re.sub(r"[^A-Za-z]", "", m.group(1).replace("ü", "u")) + m.group(2)
 
 
-def rng(lo, hi, nd=1):
-    if lo is None:
-        return "--"
-    a, b = f"{lo:.{nd}f}", f"{hi:.{nd}f}"
-    return a if a == b else f"{a}--{b}"
-
-
 def tex(s):
-    s = s.replace("~", r"$\sim$").replace("%", r"\%").replace(">", r"$>$").replace("<", r"$<$")
-    return s
+    return s.replace("~", r"$\sim$").replace("%", r"\%").replace(">", r"$>$").replace("<", r"$<$")
+
+
+def reactor(route):
+    s = route.replace(" + C bed", "")
+    s = re.sub(r"^GA \((AC|DC)\)", r"\1 gliding arc", s)
+    s = re.sub(r" x(\d)", r" $\\times$\1", s)
+    s = (s.replace("MW 915 MHz", "microwave, 915 MHz").replace("MW 2.45 GHz", "microwave, 2.45 GHz")
+          .replace("packed DBD", "packed-bed DBD").replace("NRP (batch)", "nanosecond pulsed (batch)"))
+    return s + (" + carbon bed" if "C bed" in route else "")
+
+
+def power(P):
+    """As the figure labels: 8.1, 0.533, 70."""
+    if P is None:
+        return "NR"
+    if P >= 10:
+        return f"{P:.0f}"
+    if P >= 1:
+        return f"{P:.1f}".rstrip("0").rstrip(".")
+    return f"{P:.3f}".rstrip("0")
+
+
+def pressure(s):
+    return r"$\sim$1" if s.startswith("~1") else tex(s)
+
+
+def eta_text(r):
+    if f(r["EC_CO_wall_measured_low"]):
+        return "measured at wall"
+    tag = r"$^{p}$" if r["supply_class"] == "P1" else ""
+    return f"{f(r['eta_class_low']):.2f}--{f(r['eta_class_high']):.2f} ({r['supply_class']}){tag}"
+
+
+NOTE = {"Girard-Sahun 2022 OP002": " (peak)", "Girard-Sahun 2022 OP003": " (after 14 min)"}   # same reactor, two times
 
 
 def row(r):
-    P = f(r["P_kW_at_boundary"])
-    ec = rng(f(r["EC_CO_boundary_low"]), f(r["EC_CO_boundary_high"]))
-    bnd = BOUNDARY.get(r["power_boundary"], r["power_boundary"])
-    eta_ps = rng(f(r["eta_class_low"]), f(r["eta_class_high"]), 2) + f" ({r['supply_class']})" if r["eta_class_low"] else "--"
-    if f(r["EC_CO_wall_measured_low"]) and r["source_id"] in BENCH:   # SOEC system: calculated incl. rectifier
-        wall = rng(f(r["EC_CO_wall_measured_low"]), f(r["EC_CO_wall_measured_high"]))
-    elif f(r["EC_CO_wall_measured_low"]):
-        wall = rng(f(r["EC_CO_wall_measured_low"]), f(r["EC_CO_wall_measured_high"])) + r"$^{m}$"
-    else:
-        wall = rng(f(r["EC_CO_industrial_est_low"]), f(r["EC_CO_industrial_est_high"]))
-    eta = rng(f(r["eta_wall_pct_low"]), f(r["eta_wall_pct_high"]), 0)
-    bed = r"$^{c}$" if "C bed" in r["route"] else ""
-    disc = tex(re.sub(r" x(\d)", r" $\\times$\1", r["route"].replace(" + C bed", "")) + bed)
-    return [rf"\citet{{{key(r['row_key'])}}}", disc, tex(r["p_bar"]), "NR" if P is None else f"{P:g}",
-            tex(re.sub(r" \(([\d.]+) corr\.\)", r" (\1$^{e}$)", r["X_CO2_pct"]).replace(" (utilisation)", r"$^{u}$").replace(" (vendor)", "")), f"{ec} ({bnd})", eta_ps,
-            wall, eta]
+    return [rf"\citet{{{key(r['row_key'])}}}", reactor(r["route"]) + NOTE.get(r["row_key"], ""), power(f(r["P_kW_at_boundary"])), pressure(r["p_bar"]),
+            eta_text(r)]
 
 
 plasma = sorted([r for r in rows if r["source_id"] not in BENCH and r["row_key"] not in SKIP],
                 key=lambda r: -(f(r["P_kW_at_boundary"]) or 0))
-bench = [r for r in rows if r["source_id"] in BENCH and r["row_key"] not in SKIP]
+system = next(r for r in rows if r["row_key"] == "Hecimovic 2024 OP001")   # the SOEC point in the figure
 
-head = [r"Source", r"Discharge", r"\shortstack{$p$\\(bar)}", r"\shortstack{$P$\\(kW)}", r"\shortstack{$X_{\mathrm{CO_2}}$\\(\%)}",
-        r"\shortstack{EC$_{\mathrm{CO}}$, paper\\(kWh\,Nm$^{-3}$)}", r"\shortstack{$\eta_{\mathrm{PS}}$\\(class)}",
-        r"\shortstack{EC$_{\mathrm{CO}}$, wall\\(kWh\,Nm$^{-3}$)}", r"\shortstack{$\eta_{\mathrm{LHV}}$\\wall (\%)}"]
+NCOL = 5
+head = ["Source", "Discharge / reactor", r"\shortstack{Power\\(kW)}", r"\shortstack{$p$\\(bar)}",
+        r"\shortstack{Assumed $\eta_{\mathrm{PS}}$\\(supply class)}"]
 L = [r"% Generated by literature_co2_splitting/0_synthesis/make_latex_table.py from co2_synthesis.csv. Do not edit by hand.",
-     r"\begin{table*}[t]", r"\centering", r"\footnotesize", r"\setlength{\tabcolsep}{3pt}",
-     r"\caption{Plasma CO$_2$ splitting: headline operating points, in order of decreasing power, and the electrolysis "
-     r"benchmarks. EC$_{\mathrm{CO}}$ = electricity per Nm$^3$ CO at each paper's power boundary (abs.\ = absorbed "
-     r"microwave, dep.\ = deposited pulse energy); wall = measured at the wall ($^{m}$) or with a representative "
-     r"industrial supply (EC$_{\mathrm{CO}}$ at the plasma side divided by the supply-class efficiency "
-     r"$\eta_{\mathrm{PS}}$). $\eta_{\mathrm{LHV,wall}}$ = LHV of CO / (wall electricity + LHV of consumed carbon); "
-     r"$^{c}$ carbon bed, carbon counted as an energy input; $^{u}$ CO$_2$ utilisation; $^{e}$ if expansion-corrected. 100\% on $\Delta H$ = "
-     r"3.50~kWh\,Nm$^{-3}$ CO. P1 wall values are provisional sensitivities based on mixed-stage efficiency evidence (SI\_1).}",
-     r"\label{tab:co2}", r"\begin{adjustbox}{max width=\textwidth}", r"\begin{tabular}{llrrrlllr}", r"\toprule", " & ".join(head) + r" \\", r"\midrule"]
+     r"\begin{table}[htbp]", r"\centering", r"\footnotesize", r"\setlength{\tabcolsep}{4pt}",
+     r"\caption{Plasma CO$_2$ splitting operating points shown in Fig.~\ref{fig:co2}, in order of decreasing power, "
+     r"with the SOEC benchmark. $\eta_{\mathrm{PS}}$ is the efficiency range of the industrial supply class used for "
+     r"the wall estimates (Supporting Information~1); where the authors measured wall-plug power, that value is used.}",
+     r"\label{tab:co2}", r"\begin{adjustbox}{max width=\textwidth}", r"\begin{tabular}{llrll}", r"\toprule",
+     " & ".join(head) + r" \\", r"\midrule"]
 L += [" & ".join(row(r)) + r" \\" for r in plasma]
-L += [r"\midrule", r"\multicolumn{9}{l}{\textit{Benchmarks: solid oxide CO$_2$ electrolysis (SOEC)}} \\"]
-for r in bench:
-    c = row(r)
-    c[1] = tex(r["route"].replace(" (calc.)", r"$^{d}$").replace(" (vendor)", r"$^{v}$"))
-    L.append(" & ".join(c) + r" \\")
-L += [r"\bottomrule", r"\end{tabular}", r"\end{adjustbox}", r"\par\smallskip{\raggedright\footnotesize $^{d}$ design calculation; $^{v}$ vendor figure, "
-      r"boundary not stated. Stack values exclude the heat supplied below the thermoneutral voltage and the balance "
-      r"of plant. SOEC stacks alone: 2.5--3.6~kWh\,Nm$^{-3}$ CO (stack DC, CO$_2$ utilisation not reported) "
-      r"\citep{Kungas2020}. At most two cases per paper; rows without both conversion and energy are omitted. "
-      r"NR = not reported.", r"\par}", r"\end{table*}"]
+L += [r"\midrule", rf"\multicolumn{{{NCOL}}}{{l}}{{\textit{{Benchmark}}}} \\",
+      " & ".join([rf"\citet{{{key(system['row_key'])}}}", r"SOEC system (design)", power(f(system["P_kW_at_boundary"])),
+                  pressure(system["p_bar"]), "0.95 (design rectifier)"]) + r" \\"]
+L += [r"\bottomrule", r"\end{tabular}", r"\end{adjustbox}",
+      r"\par\smallskip{\raggedright\footnotesize $^{p}$ Provisional range for nanosecond pulsed supplies "
+      r"(Supporting Information~1).\par}", r"\end{table}"]
 (HERE / "co2_table.tex").write_text("\n".join(L) + "\n", encoding="utf-8")
-print(f"wrote co2_table.tex: {len(plasma)} plasma rows, {len(bench)} benchmark rows")
-print("citation keys:", sorted({key(r['row_key']) for r in plasma + bench}))
+print(f"wrote co2_table.tex: {len(plasma)} plasma rows + SOEC system")
+print("citation keys:", sorted({key(r['row_key']) for r in plasma + [system]}))

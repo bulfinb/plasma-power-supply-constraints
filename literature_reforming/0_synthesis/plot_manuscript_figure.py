@@ -111,8 +111,8 @@ fig, ax = plt.subplots(figsize=(5.06, 3.6))
 
 for route, dh in DH.items():
     ax.axvline(dh, color=ROUTE[route], lw=0.9, ls=(0, (3, 2)), alpha=0.8, zorder=1)
-ax.text(DH["SMR"] * 0.975, YMIN + 1.5, "ΔH° SMR", rotation=90, fontsize=7, color=MUTED, ha="right", va="bottom")
-ax.text(DH["DRM"] * 1.025, YMIN + 1.5, "ΔH° DRM", rotation=90, fontsize=7, color=MUTED, ha="left", va="bottom")
+ax.text(DH["SMR"] * 0.975, YMIN + 1.5, r"$\Delta H^\circ$ SMR", rotation=90, fontsize=7, color=MUTED, ha="right", va="bottom")
+ax.text(DH["DRM"] * 1.025, YMIN + 1.5, r"$\Delta H^\circ$ DRM", rotation=90, fontsize=7, color=MUTED, ha="left", va="bottom")
 
 # Fired SMR references (heat basis)
 for name, x, ec_abs, ec_fired in FIRED:

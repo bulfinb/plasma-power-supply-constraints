@@ -1,8 +1,9 @@
 """LaTeX (booktabs) table of the reforming headline points for the manuscript.
 
 Reads reforming_synthesis.csv (run build_synthesis.py first) and the fired-SMR references from build_synthesis.FIRED;
-writes reforming_table.tex for \\input{} in the manuscript. Plasma rows are sorted by decreasing power; the Joule-heated
-and fired benchmarks follow in a separate block. Citation keys are AuthorYear from the row key.
+writes reforming_table.tex for \\input{} in the manuscript. Since 2026-11-25 (BB) a supplement to the manuscript figure:
+operating conditions and the assumed supply class only (conversion and EC_CH4 are in the figure and SI 2). Plasma rows
+are sorted by decreasing power; the Joule-heated and fired benchmarks follow in a separate block. Citation keys are AuthorYear from the row key.
 Needs \\usepackage{booktabs} and \\usepackage{adjustbox} in the manuscript.
 
 Pressure is not a column of the synthesis CSV; P_BAR below is copied from the short summaries (operating condition
@@ -26,9 +27,10 @@ P_BAR = {"SRC007": "$\\sim$1", "SRC008": "$\\sim$1", "SRC009": "$\\sim$1", "SRC0
 BOUNDARY = {"arc": "arc", "absorbed MW": "abs.", "RF generator": "RF gen.", "discharge": "disch.", "plasma": "plasma",
             "Q_in (PSU)": "PSU", "NR": "NR"}
 JOULE = {"SRC001", "SRC005", "SRC006"}
-SHORT = {"MW 915 MHz torch": "MW 915 MHz", "RF ICP torch 400 kHz": "RF ICP 400 kHz", "AC rotating GA + quench": "AC GA + quench",
-         "DC gliding arc + Ni cat.": "DC GA + Ni cat.", "DC confined glow": "DC glow", "DBD (no packing)": "DBD",
-         "DBD + Ni cat.": "DBD + Ni cat."}
+REACTOR = {"DC arc torch": "DC arc torch", "MW 915 MHz torch": "microwave torch, 915 MHz", "MW 915 MHz": "microwave, 915 MHz",
+           "RF ICP torch 400 kHz": "RF ICP torch, 400 kHz", "AC rotating GA + quench": "AC gliding arc + quench",
+           "MW 2.45 GHz": "microwave, 2.45 GHz", "DC gliding arc + Ni cat.": "DC gliding arc + Ni catalyst",
+           "DC confined glow": "DC glow", "DBD (no packing)": "DBD", "DBD + Ni cat.": "DBD + Ni catalyst"}
 
 
 def f(s):
@@ -40,78 +42,69 @@ def key(row_key):
     return re.sub(r"[^A-Za-z]", "", m.group(1)) + m.group(2)
 
 
-def rng(lo, hi, nd=0):
-    if lo is None:
-        return "--"
-    a, b = f"{lo:.{nd}f}", f"{hi:.{nd}f}"
-    return a if a == b else f"{a}--{b}"
-
-
 def tex(s):
     return s.replace("~", r"$\sim$").replace("%", r"\%").replace("->", r"$\to$")
 
 
 def temp(s):
     m = re.match(r"~?([\d]+(?:-[\d]+)?)\s*(.*)", s or "")
-    return (tex("~" if s.startswith("~") else "") + m.group(1).replace("-", "--")) if m else "NR"
+    if not m:
+        return "NR"
+    vals = sorted(int(v) for v in m.group(1).split("-"))   # low--high (Zhu reports 977 -> 651 along the bed)
+    return tex("~" if s.startswith("~") else "") + "--".join(str(v) for v in vals)
+
+
+def power(P):
+    """As the figure labels: 120, 6.5, 1.7, 0.246."""
+    if P is None:
+        return "NR"
+    if P >= 10:
+        return f"{P:.0f}"
+    if P >= 1:
+        return f"{P:.1f}".rstrip("0").rstrip(".")
+    return f"{P:.3f}".rstrip("0")
+
+
+def eta_text(supply_class):
+    eta = ETA.get(supply_class)
+    return f"{eta[0]:.2f}--{eta[1]:.2f} ({supply_class.split('@')[0]})" if eta else "--"
 
 
 def row(r):
     P = f(r["P_kW"])
-    cls = r["supply_class"].split("@")[0]
-    eta = ETA.get(r["supply_class"])
-    eta_s = f"{eta[0]:.2f}--{eta[1]:.2f} ({cls})" if eta else "--"
-    ec = rng(f(r["EC_CH4_low"]), f(r["EC_CH4_high"]))
-    return [rf"\citet{{{key(r['row_key'])}}}", r["route"], tex(SHORT.get(r["activation"], r["activation"])), temp(r["T_degC_location"]),
-            P_BAR.get(r["source_id"], "NR"), "NR" if P is None else f"{P:g}", tex(r["X_CH4_pct"]),
-            f"{ec} ({BOUNDARY.get(r['power_boundary'], r['power_boundary'])})" if ec != "--" else "NR", eta_s,
-            rng(f(r["EC_CH4_industrial_est_low"]), f(r["EC_CH4_industrial_est_high"]))]
+    return [rf"\citet{{{key(r['row_key'])}}}", r["route"], tex(REACTOR.get(r["activation"], r["activation"])),
+            power(P), temp(r["T_degC_location"]), P_BAR.get(r["source_id"], "NR"),
+            eta_text(r["supply_class"])]
 
 
 plasma = sorted([r for r in rows if r["source_id"] not in JOULE], key=lambda r: -(f(r["P_kW"]) or 0))
-joule = [r for r in rows if r["source_id"] in JOULE and r["EC_CH4_low"]]   # only rows with an energy value
+joule = [r for r in rows if r["source_id"] in JOULE and r["EC_CH4_low"]]   # the row plotted in the figure
 
-head = [r"Source", r"Route", r"Activation", r"\shortstack{$T$\\($^\circ$C)}", r"\shortstack{$p$\\(bar)}",
-        r"\shortstack{$P$\\(kW)}", r"\shortstack{$X_{\mathrm{CH_4}}$\\(\%)}",
-        r"\shortstack{EC$_{\mathrm{CH_4}}$, paper\\(kJ\,mol$^{-1}$)}", r"\shortstack{$\eta_{\mathrm{PS}}$\\(class)}",
-        r"\shortstack{EC$_{\mathrm{CH_4}}$, ind.\\(kJ\,mol$^{-1}$)}"]
+NCOL = 7
+head = ["Source", "Route", "Reactor / catalyst", r"\shortstack{Power\\(kW)}", r"\shortstack{$T$\\($^\circ$C)}",
+        r"\shortstack{$p$\\(bar)}", r"\shortstack{Assumed $\eta_{\mathrm{PS}}$\\(supply class)}"]
 L = [r"% Generated by literature_reforming/0_synthesis/make_latex_table.py from reforming_synthesis.csv. Do not edit by hand.",
-     r"\begin{table*}[t]", r"\centering", r"\footnotesize", r"\setlength{\tabcolsep}{3pt}",
-     r"\caption{Plasma methane reforming: headline operating points, in order of decreasing power, and the Joule-heated pilot and fired "
-     r"SMR benchmarks. EC$_{\mathrm{CH_4}}$ = electricity per mol CH$_4$ converted at each paper's power boundary "
-     r"(abs.\ = absorbed microwave, disch.\ = discharge); external heat (furnace, steam generation) is excluded. "
-     r"ind.\ = with a representative industrial supply, EC$_{\mathrm{CH_4}}$ divided by the supply-class efficiency "
-     r"$\eta_{\mathrm{PS}}$. $T$ is the reported reactor, bed or exhaust temperature, not the plasma temperature. "
-     r"$^{e}$ reviewer estimate (see note). "
-     r"Reaction enthalpies at 298~K: SMR 206, DRM 247~kJ\,mol$^{-1}$.}",
-     r"\label{tab:reforming}", r"\begin{adjustbox}{max width=\textwidth}", r"\begin{tabular}{lllllrrlll}", r"\toprule", " & ".join(head) + r" \\", r"\midrule"]
+     r"\begin{table}[htbp]", r"\centering", r"\footnotesize", r"\setlength{\tabcolsep}{4pt}",
+     r"\caption{Plasma methane reforming operating points shown in Fig.~\ref{fig:reforming}, in order of decreasing power, "
+     r"with the Joule-heated and fired SMR benchmarks. $T$ is the reported reactor, bed or exhaust temperature. "
+     r"$\eta_{\mathrm{PS}}$ is the efficiency range of the industrial supply class used for the wall estimates "
+     r"(Supporting Information~1).}",
+     r"\label{tab:reforming}", r"\begin{adjustbox}{max width=\textwidth}", r"\begin{tabular}{lllrlll}", r"\toprule",
+     " & ".join(head) + r" \\", r"\midrule"]
 L += [" & ".join(row(r)) + r" \\" for r in plasma]
-L += [r"\midrule", r"\multicolumn{10}{l}{\textit{Benchmark: Joule-heated reforming (pilot)}} \\"]
+L += [r"\midrule", rf"\multicolumn{{{NCOL}}}{{l}}{{\textit{{Benchmarks}}}} \\"]
 for r in joule:
     c = row(r)
-    c[2] = "Joule (pilot)"
-    c[5] = r"$\sim$23--35$^{e}$"
-    c[6] = r"94--97$^{e}$"
-    c[7] = c[7].replace(" (PSU)", r"$^{e}$ (PSU)")
+    c[2] = "Joule-heated (pilot)"
+    c[3] = r"$\sim$23--35$^{e}$"
     L.append(" & ".join(c) + r" \\")
-L += [r"\multicolumn{10}{l}{\textit{Benchmarks: fired SMR (design studies; heat basis, absorbed / fired HHV)}} \\"]
 for fr in FIRED:
     T = "871" if "Lewis" in fr["key"] else "900--950"
     p = "28.3" if "Lewis" in fr["key"] else "$\\sim$28"
-    x = re.match(r"[\d.]+", fr["x"]).group()
-    L.append(" & ".join([rf"\citet{{{key(fr['key'])}}}", "SMR", "fired furnace", T, p, "--", x,
-                         f"{fr['ec_abs']} / {fr['ec_fired']} (heat)", "--", "--"]) + r" \\")
-L += [r"\bottomrule", r"\end{tabular}", r"\end{adjustbox}", r"\par\smallskip{\raggedright\footnotesize Hrabovsky: conversion from the Ar tracer "
-      r"(reviewer calculation). Akande: reported H$_2$ output exceeds the stoichiometric limit; conversion kept with "
-      r"lower confidence. Hrycak: 24.25~L\,mol$^{-1}$ (7.6\% lower at 0~$^\circ$C). Joule-heated pilot \citep{From2024}: "
-      r"no paper reports electrical power and feed at the same operating point; EC$_{\mathrm{CH_4}}$ is our estimate, the "
-      r"equilibrium reaction heat at the reported conditions (900~$^\circ$C exit, 400~$^\circ$C inlet, 10~barg, S/C 2--2.2; "
-      r"308--347~kJ\,mol$^{-1}$, including heating the gas) divided by the measured reactor efficiencies (72--80\%). "
-      r"Power at the supply output, inferred from the paper's capacity axis; steam generation, preheat and compression "
-      r"excluded. Joule heating also reaches 85--98\% conversion over 80--1535~h \citep{Wismann2019,From2025}. "
-      r"At most two cases per paper; rows "
-      r"without both conversion and energy are omitted. NR = not reported.",
-      r"\par}", r"\end{table*}"]
+    L.append(" & ".join([rf"\citet{{{key(fr['key'])}}}", "SMR", "fired furnace (design)", "--", T, p, "--"]) + r" \\")
+L += [r"\bottomrule", r"\end{tabular}", r"\end{adjustbox}",
+      r"\par\smallskip{\raggedright\footnotesize $^{e}$ Our estimate from the reported capacity (Supporting Information~2). "
+      r"NR = not reported.\par}", r"\end{table}"]
 (HERE / "reforming_table.tex").write_text("\n".join(L) + "\n", encoding="utf-8")
 print(f"wrote reforming_table.tex: {len(plasma)} plasma, {len(joule)} Joule, {len(FIRED)} fired rows")
 print("citation keys:", sorted({key(r['row_key']) for r in plasma + joule} | {key(fr['key']) for fr in FIRED}))
