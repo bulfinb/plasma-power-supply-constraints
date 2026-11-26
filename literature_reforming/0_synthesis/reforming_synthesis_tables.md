@@ -14,7 +14,7 @@ Conf. = confidence in conversion / energy results from the extraction (H higher,
 Source / OP          | Activation               | Class | CH4 (mol/min) | CH4:CO2:H2O | P (kW) | Boundary    | X_CH4 (%) | X_CO2 (%) | SEI_CH4 | EC_CH4 | EC ind.   | Duration       | Conf.
 Wismann 2019 OP004   | Joule (lab)              | J1    | 0.0046        | 1:0:2 +H2   | NR     | NR          | 92.7      | NA        | -       | NR     | -         | >=0.75 h avg.  | M/L
 Hrabovsky 2018 OP001 | DC arc torch             | A1    | 6.69          | 1:0:0.78    | 120    | arc         | 91.3      | NA        | 1076    | 1179   | 1203-1310 | ~4 min segment | M/M
-Akande 2022 OP003    | MW 915 MHz torch         | M1    | 2.68          | 1:0:3       | 32     | absorbed MW | 96.6      | NA        | 717     | 742    | 905-1003  | NR             | L/L
+Akande 2022 OP008    | MW 915 MHz torch         | M1    | 2.77          | 1:0:2.9     | 32     | absorbed MW | 83.1      | NA        | 694     | 835    | 1018-1128 | NR             | L/L
 Hrycak 2023 OP002    | MW 915 MHz               | M1    | 2.06          | 1:0:1.35    | 6.5    | absorbed MW | 66.1      | NA        | 189     | 286    | 349-386   | NR             | M/L
 Zhu 2019 OP004       | DC gliding arc + Ni cat. | D1    | 0.033         | 1:0:3       | 0.246  | discharge   | 90        | NA        | 441     | 490    | 505-533   | 6 h            | H/M
 Geng 2022 OP002      | DBD + Ni cat.            | K1    | 0.001         | 1:0:4.4     | 0.015  | discharge   | ~60       | NA        | 894     | 1490   | 1620-1656 | ~2 h series    | M/L
@@ -67,7 +67,7 @@ Joule-heated benchmarks:
 [1] Class efficiencies: J1 0.97-0.98, A1 0.90-0.98, D1 0.92-0.97, K1 0.90-0.92, M1 0.74-0.82, M2 0.63-0.72, K2@400kHz 0.91-0.96. RF ICP (Song) uses a K2 scenario at 400 kHz: 0.91 is extrapolated from a 1-200 kHz family (PW004-V02); >0.96 is a claim at 100-400 kHz (PW005-V02). CEIA's 100 kW is an input rating; PW006 documents 50 kW output. A tube oscillator (R1, 0.53-0.60) would give ~1.6-1.8x higher values. Wanten and Zhu exclude their lab ballast resistors; the estimate replaces the ballasted lab supply with a D1 current-controlled supply. Kaufmann already uses a current-controlled driver (88-94% of the DC supply output reaches the plasma).
 [2] External heat is excluded from every EC_CH4: furnace (Geng), steam generation (Akande, Hrycak, Zhu, the From pilots) and feed preheat are not reported. These EC_CH4 are lower bounds on electricity per mol CH4; Hrabovsky's torch evaporates its own water, so arc power is its whole process heat.
 [3] Hrabovsky conversions are reviewer calculations from the Ar tracer; they match the authors' plotted points (cross-check XR007, for human check). Hrycak uses 24.25 L/mol (XR008).
-[4] Akande's reported H2 rate is impossible for the stated feed; its conversion and EC_CH4 are kept with lower confidence.
+[4] Akande's reported H2 rate is impossible for the stated feed, and its reported 96.6% conversion conflicts with the corrigendum composition; the headline uses the carbon-based 83.1% from that composition (OP008, 62 lpm, 32 kW; no soot assumed), lower confidence.
 [5] Kwon feeds 50% N2; Hrycak and Akande add steam from a separate vaporizer. Unit scale: Hrabovsky ~90-120 kW, Akande 17-47 kW, Song 22-27 kW, Hrycak 4.5-6.5 kW, Kwon ~1.7 kW, Kaufmann 0.5-1.4 kW, Kelly 1 kW; Zhu, Wanten, Geng and Andersen are 15-250 W lab reactors.
 
 ## 6. Reading the tables (reviewer summary, for the narrative)
@@ -75,7 +75,7 @@ Joule-heated benchmarks:
 - Fired SMR needs 315-340 kJ of absorbed heat and ~575 kJ of fuel (HHV) per mol CH4 converted in the reformer
   (design studies); whole-plant H2 efficiency 76-81% HHV.
 - With an industrial supply, the kW-scale plasma headline points cost (kJ electricity per mol CH4 converted):
-  Hrycak ~310-390 (6.5 kW; steam generation excluded, ~25% carbon gap), Akande ~880-1000 (32 kW; lower confidence,
+  Hrycak ~310-390 (6.5 kW; steam generation excluded, ~25% carbon gap), Akande ~1020-1130 (32 kW, 83% from the corrigendum composition; lower confidence,
   impossible H2 rate), Song ~1080-1140 (22 kW) and Hrabovsky ~1200-1310 (120 kW, the only process-complete
   figure: the torch raises its own steam). Against fired SMR this is ~1-4x the absorbed heat and ~0.5-2.3x the
   fuel energy, but electricity against heat. Conversion 66-97% at these points; 94-99% costs ~1300-2400.

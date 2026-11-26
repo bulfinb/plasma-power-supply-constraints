@@ -21,6 +21,8 @@ Conversion (as reported): 74.6% at 17 kW rising to 97.7% at 47 kW (S/C 3);
 No soot observed (qualitative).
 
 Energy (power basis = absorbed microwave power; steam generation excluded):
+- Synthesis headline (BB, 2026-11-26): 835 kJ/mol at 83.1% (corrigendum
+  composition, carbon basis, no soot; OP008), not the reported 96.6%.
 - EC_CH4 511 kJ/mol (17 kW) to 1078 (47 kW); 742 at the 32 kW author
   optimum, or ~835 if conversion is the 83% implied by the composition.
 - EC_H2/EY_H2 from the corrigendum composition (carbon-balance flows):

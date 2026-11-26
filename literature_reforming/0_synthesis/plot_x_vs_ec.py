@@ -74,14 +74,14 @@ for r in rows:
         JOULE_PTS.append(dict(x=(min(xs), max(xs)), paper=(f(r["EC_CH4_low"]), f(r["EC_CH4_high"])),
                               est=(f(r["EC_CH4_industrial_est_low"]), f(r["EC_CH4_industrial_est_high"]))))
 
-LABEL = {"Hrabovsky 2018 OP001": "Hrabovsky", "Akande 2022 OP003": "Akande", "Hrycak 2023 OP002": "Hrycak",
+LABEL = {"Hrabovsky 2018 OP001": "Hrabovsky", "Akande 2022 OP008": "Akande", "Hrycak 2023 OP002": "Hrycak",
          "Zhu 2019 OP004": "Zhu (Ni cat.)", "Geng 2022 OP002": "Geng", "Song 2020 OP013": "Song",
          "Kelly 2023 OP004": "Kelly", "Kwon 2023 OP003": "Kwon", "Wanten 2022 OP006": "Wanten", "Kaufmann 2026 OP002": "Kaufmann",
          "Andersen 2020 OP001": "Andersen", "Hrabovsky 2018 OP005": "Hrabovsky", "Hrycak 2023 OP001": "Hrycak"}
 OFFSET = {   # (dx, dy, ha, va) in points where the default collides
     "Hrabovsky 2018 OP001": (6, -4, "left", "top"),
     "Hrabovsky 2018 OP005": (7, 0, "left", "center"),
-    "Akande 2022 OP003": (-6, 0, "right", "center"),
+    "Akande 2022 OP008": (-6, 0, "right", "center"),
     "Kwon 2023 OP003": (5, -3, "left", "top"),
 }
 

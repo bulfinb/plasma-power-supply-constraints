@@ -134,7 +134,7 @@ All in [calculations.py](calculations.py).
 
 ## Revisions
 
-None.
+- 2026-11-26 (BB decision): the synthesis and manuscript figure use OP008 (carbon-based X_CH4 83.1% from the corrigendum composition, 62 lpm, 32 kW; EC_CH4 835 kJ/mol; E043, E044) in place of OP003 (reported 96.6%), because the reported conversion conflicts with the corrigendum composition and Fig. 10. No soot is assumed (authors report none); the H and O balances of the composition close at 88% and 68%. Evidence IDs kept.
 
 ## Plasma characteristics
 

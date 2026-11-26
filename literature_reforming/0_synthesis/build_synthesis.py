@@ -44,8 +44,12 @@ ROWS = [
       "SRC007-E042, E046", "conversion from Ar tracer (reviewer)"),
     # ---------- SMR: microwave ----------
     R("Akande 2022 OP003", "SRC008", "SMR", "MW 915 MHz torch", "M1", 2.68, "1:0:3", "500-650 reformer", 32, "absorbed MW",
-      "steam generator NR", "96.6", "NA", 717, (742, 742), "NR", "L", "L", True, "SRC008-E014, E046",
-      "reported H2 rate exceeds the stoichiometric limit; corrigendum composition gives ~83% (OP008)"),
+      "steam generator NR", "96.6", "NA", 717, (742, 742), "NR", "L", "L", False, "SRC008-E014, E046",
+      "reported conversion; conflicts with the corrigendum composition (OP008, 83%) and Fig. 10"),
+    R("Akande 2022 OP008", "SRC008", "SMR", "MW 915 MHz torch", "M1", 2.77, "1:0:2.9", "500-650 reformer", 32, "absorbed MW",
+      "steam generator NR", "83.1", "NA", 694, (835, 835), "NR", "L", "L", True, "SRC008-E043, E044",
+      "reviewer carbon-based conversion from the corrigendum composition (no soot); replaces the reported 96.6% "
+      "at the same power (BB 2026-11-26)"),
     R("Akande 2022 OP001", "SRC008", "SMR", "MW 915 MHz torch", "M1", 2.68, "1:0:3", "500-650 reformer", 17, "absorbed MW",
       "steam generator NR", "74.6", "NA", 381, (511, 511), "NR", "L", "L", False, "SRC008-E014", ""),
     R("Akande 2022 OP006", "SRC008", "SMR", "MW 915 MHz torch", "M1", 2.68, "1:0:3", "500-650 reformer", 47, "absorbed MW",
@@ -238,8 +242,9 @@ Conf. = confidence in conversion / energy results from the extraction (H higher,
              "CH4; Hrabovsky's torch evaporates its own water, so arc power is its whole process heat.",
              "[3] Hrabovsky conversions are reviewer calculations from the Ar tracer; they match the authors' plotted "
              "points (cross-check XR007, for human check). Hrycak uses 24.25 L/mol (XR008).",
-             "[4] Akande's reported H2 rate is impossible for the stated feed; its conversion and EC_CH4 are kept with "
-             "lower confidence.",
+             "[4] Akande's reported H2 rate is impossible for the stated feed, and its reported 96.6% conversion "
+             "conflicts with the corrigendum composition; the headline uses the carbon-based 83.1% from that "
+             "composition (OP008, 62 lpm, 32 kW; no soot assumed), lower confidence.",
              "[5] Kwon feeds 50% N2; Hrycak and Akande add steam from a separate vaporizer. Unit scale: Hrabovsky "
              "~90-120 kW, Akande 17-47 kW, Song 22-27 kW, Hrycak 4.5-6.5 kW, Kwon ~1.7 kW, Kaufmann 0.5-1.4 kW, Kelly 1 kW; Zhu, Wanten, "
              "Geng and Andersen are 15-250 W lab reactors."]
@@ -249,7 +254,7 @@ Conf. = confidence in conversion / energy results from the extraction (H higher,
 - Fired SMR needs 315-340 kJ of absorbed heat and ~575 kJ of fuel (HHV) per mol CH4 converted in the reformer
   (design studies); whole-plant H2 efficiency 76-81% HHV.
 - With an industrial supply, the kW-scale plasma headline points cost (kJ electricity per mol CH4 converted):
-  Hrycak ~310-390 (6.5 kW; steam generation excluded, ~25% carbon gap), Akande ~880-1000 (32 kW; lower confidence,
+  Hrycak ~310-390 (6.5 kW; steam generation excluded, ~25% carbon gap), Akande ~1020-1130 (32 kW, 83% from the corrigendum composition; lower confidence,
   impossible H2 rate), Song ~1080-1140 (22 kW) and Hrabovsky ~1200-1310 (120 kW, the only process-complete
   figure: the torch raises its own steam). Against fired SMR this is ~1-4x the absorbed heat and ~0.5-2.3x the
   fuel energy, but electricity against heat. Conversion 66-97% at these points; 94-99% costs ~1300-2400.
