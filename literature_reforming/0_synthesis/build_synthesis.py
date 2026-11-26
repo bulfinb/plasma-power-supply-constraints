@@ -5,7 +5,7 @@ Writes reforming_synthesis.csv (all rows) and reforming_synthesis_tables.md (tab
 
 Values are copied from each source's short summary, including the corrections from the GPT cross-check
 (cross_check_log.md). EC_CH4 is kJ per mol CH4 converted, at each paper's power boundary. The industrial-supply
-estimate is EC_CH4 / class efficiency from power_systems/supply_classes.csv (read at run time): the lab supply is
+estimate is EC_CH4 / class efficiency from power_systems/results/supply_classes.csv (read at run time): the lab supply is
 replaced by a representative industrial supply; steam generation, furnace heat, cooling and auxiliaries are not added.
 """
 import csv
@@ -13,7 +13,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent.parent
-SUP = {r["class_id"]: r for r in csv.DictReader(open(ROOT / "power_systems" / "supply_classes.csv", encoding="utf-8"))}
+SUP = {r["class_id"]: r for r in csv.DictReader(open(ROOT / "power_systems" / "results" / "supply_classes.csv", encoding="utf-8"))}
 ETA = {k: (float(v["eta_low"]), float(v["eta_high"])) for k, v in SUP.items() if v["eta_low"]}
 # 400 kHz scenario: 0.91 extrapolated from the 1-200 kHz family (PW004-V02);
 # >0.96 is a claim for 100-400 kHz equipment (PW005-V02), not a matched measurement.
@@ -214,7 +214,7 @@ rows in reforming_synthesis.csv. NR = not reported; NA = not applicable; ~ = app
 
 SEI_CH4 = kJ per mol CH4 fed; EC_CH4 = kJ per mol CH4 converted, both at each paper's power boundary (external heat
 excluded). EC ind. = EC_CH4 with a representative industrial supply = EC_CH4 / class efficiency
-(power_systems/supply_classes.csv) [1]. Reaction enthalpies at 298 K: SMR {DH['SMR']}, DRM {DH['DRM']} kJ/mol CH4.
+(power_systems/results/supply_classes.csv) [1]. Reaction enthalpies at 298 K: SMR {DH['SMR']}, DRM {DH['DRM']} kJ/mol CH4.
 Conf. = confidence in conversion / energy results from the extraction (H higher, M moderate, L lower).
 """]
     for route, title in (("SMR", "1. Steam methane reforming (SMR)"), ("DRM", "2. Dry reforming (DRM)"),

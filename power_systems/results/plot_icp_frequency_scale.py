@@ -20,7 +20,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parent   # power_systems/results: data, scripts; figures/ below
 V = {r["value_id"]: r for r in csv.DictReader(open(ROOT / "supply_values.csv", encoding="utf-8"))}
 
 INK, MUTED, GRID = "#1f1f1f", "#6b6b6b", "#e4e4e4"

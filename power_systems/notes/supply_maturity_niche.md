@@ -1,6 +1,6 @@
 # Are plasma power supplies a "niche product"? Supply maturity, limits and cost
 
-Added 2026-11-09 (BB, with Claude); rebuilt 2026-11-10 from [../supply_values.csv](../supply_values.csv) after every value was re-extracted from the archived source copies. Status: argument to develop; values ai_checked, human verification pending. Source IDs (PWxxx) resolve in [../source_register.csv](../source_register.csv) (earlier IDs D1-D12 are listed there as aliases); value IDs (PWxxx-Vnn) in supply_values.csv. Academic papers on the supply side are in [../../literature_plasma_powersupply/](../../literature_plasma_powersupply/README.md).
+Added 2026-11-09 (BB, with Claude); rebuilt 2026-11-10 from [supply_values.csv](../results/supply_values.csv) after every value was re-extracted from the archived source copies. Status: argument to develop; values ai_checked, human verification pending. Source IDs (PWxxx) resolve in [source_register.csv](../results/source_register.csv) (earlier IDs D1-D12 are listed there as aliases); value IDs (PWxxx-Vnn) in supply_values.csv. Academic papers on the supply side are in [../../literature_plasma_powersupply/](../../literature_plasma_powersupply/README.md).
 
 Bogaerts (2025, RV015, p. 338) says that plasma-reactor capital cost is mainly set by the power supply. She calls the supply "still quite expensive today because it is still a 'niche product'", and notes challenges in degradation, reproducibility, control and energy efficiency for MW supplies. The first part, that the supply dominates capital cost, strengthens the case for treating the supply as a design constraint (see Novelty in [../../README.md](../../README.md)). The "niche product" explanation holds only in part.
 
@@ -60,7 +60,7 @@ The 1,300 EUR/kW DBD figure quoted by RV005 traces back to PS003 through PS004: 
 RV005 also states (p. 5842) that at lab scale "the power supply unit is typically the most expensive component", *because* lab units are built to be flexible across plasma types (RV005-V03). Supplies designed for one industrial condition can be cheaper. This supports the "niche" reading only for the flexible lab units.
 
 **Still open:**
-- cost per kW of kHz inverters and RF tube generators - the quote requests in [../suggested_quote_requests.txt](../suggested_quote_requests.txt) start this;
+- cost per kW of kHz inverters and RF tube generators - the quote requests in [../suggested_quote_requests.txt](suggested_quote_requests.txt) start this;
 - RF tube generator efficiency measured at 100 kW+;
 - an independent (non-vendor) measurement of ozone-plant inverter efficiency at MW scale;
 - a supplier quote for a MW-class DBD or gliding arc supply, to test the 1,200-1,500 EUR/kW industry estimates of PS003 at scale.

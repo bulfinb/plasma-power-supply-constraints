@@ -11,7 +11,7 @@ Run from power_systems/: python3 scripts/make_check_worksheet.py
 import csv
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parent   # power_systems/results: data, scripts; figures/ below
 values = list(csv.DictReader(open(ROOT / "supply_values.csv", encoding="utf-8")))
 classes = list(csv.DictReader(open(ROOT / "supply_classes.csv", encoding="utf-8")))
 register = {r["source_id"]: r for r in csv.DictReader(open(ROOT / "source_register.csv", encoding="utf-8"))}
@@ -40,7 +40,7 @@ def copy_path(sid):
     r = register.get(sid)
     if not r or not r["local_copy"]:
         return "NO LOCAL COPY"
-    return " | ".join(f"source_archive/{sid}/{f.strip()}" for f in r["local_copy"].split("|"))
+    return " | ".join(f"../source_archive/{sid}/{f.strip()}" for f in r["local_copy"].split("|"))
 
 
 def flags(r):
@@ -72,7 +72,7 @@ for p, r, _ in rows:
     src_prio[r["source_id"]] = min(p, src_prio.get(r["source_id"], 9))
 rows.sort(key=lambda t: (src_prio[t[1]["source_id"]], t[1]["source_id"], t[1]["value_id"]))
 
-out = ROOT / "human_check_worksheet.csv"
+out = ROOT.parent / "logs" / "human_check_worksheet.csv"
 cols = ["order", "priority", "value_id", "source_id", "local_copy", "location", "quote", "value_as_extracted",
         "basis", "cost_scope", "supply_class", "data_type", "used_in_class_table", "flags", "checked", "finding_ids"]
 with open(out, "w", encoding="utf-8", newline="") as fh:

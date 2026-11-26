@@ -24,7 +24,7 @@ import matplotlib.colors
 import matplotlib.cm
 from matplotlib.lines import Line2D
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parent   # power_systems/results: data, scripts; figures/ below
 OUT = ROOT / "figures"
 OUT.mkdir(exist_ok=True)
 rows = list(csv.DictReader(open(ROOT / "supply_values.csv", encoding="utf-8")))

@@ -13,7 +13,7 @@ input/output ratings, M1 reviewer assumptions, and documented A1/R1 scale. No ef
 endpoints changed and no source verification status was upgraded. Detailed inventory and AI
 checking history moved from SI_1 S1 to S7; the quality-tier table remains in S1.
 
-Record of the AI tools, model versions and human reviewers that processed the power-systems sources and values ([workflow.md](workflow.md) section 7). Notes and data files say only "Claude (AI)"; this log carries the versions. Session details are in [../literature_reforming/processing_log.md](../literature_reforming/processing_log.md) (Sessions table).
+Record of the AI tools, model versions and human reviewers that processed the power-systems sources and values ([workflow.md](../workflow.md) section 7). Notes and data files say only "Claude (AI)"; this log carries the versions. Session details are in [../literature_reforming/processing_log.md](../../literature_reforming/processing_log.md) (Sessions table).
 
 Rows before 2026-11-10 (restructure) are copied from the reforming log, where they were first recorded, and use the IDs of the time (S, T, D series; see aliases in source_register.csv).
 

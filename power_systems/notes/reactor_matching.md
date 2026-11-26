@@ -8,7 +8,7 @@ The required selection space is frequency, real output power, voltage, current, 
 
 Record mains AC input, internal DC link/beam supply, RF/AC output, and reactor electrode voltage separately. Keep RMS, peak, peak-to-peak and pulse quantities explicit. Transformer or resonant matching can change voltage and current; it does not create real power. Reactor electrode voltage can exceed generator terminal voltage with correspondingly changed impedance and component stress. At microwave frequencies, modal power and spatial electric field are more useful than a geometry-independent voltage.
 
-Sourced output voltage and current limits are in [../supply_values.csv](../supply_values.csv) (`quantity` = voltage_rms or current_rms; e.g. TRUMPF MF 7240: 1,200 V, 1,120 A, PW004-V04/-V05; TruHeat HF tube generators: 5,000-7,000 V by model, PW007-V04). Model voltages apply to that model only, not to the maximum-power member of the family. Manufacturer maxima do not imply simultaneous achievable voltage, current, power and frequency.
+Sourced output voltage and current limits are in [supply_values.csv](../results/supply_values.csv) (`quantity` = voltage_rms or current_rms; e.g. TRUMPF MF 7240: 1,200 V, 1,120 A, PW004-V04/-V05; TruHeat HF tube generators: 5,000-7,000 V by model, PW007-V04). Model voltages apply to that model only, not to the maximum-power member of the family. Manufacturer maxima do not imply simultaneous achievable voltage, current, power and frequency.
 
 ## Linear sinusoidal load model
 

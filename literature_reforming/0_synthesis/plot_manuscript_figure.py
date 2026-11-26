@@ -2,7 +2,7 @@
 in this script except the fired-SMR references, copied from build_synthesis.py FIRED).
 
 Publication version of reforming_x_vs_ec (plot_x_vs_ec.py, kept as the working/SI figure). Same style as the
-power-supply manuscript figure (power_systems/figures/plot_manuscript_figure.py). One panel instead of two:
+power-supply manuscript figure (power_systems/results/plot_manuscript_figure.py). One panel instead of two:
 - headline rows only (the plasma rows of the manuscript table, max two per paper);
 - open marker = EC_CH4 at the paper's power boundary; filled marker = with a representative industrial supply
   (EC_CH4 / class efficiency, geometric mid of the class range; bar = range); thin line joins the pair;

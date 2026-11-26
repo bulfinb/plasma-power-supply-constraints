@@ -1,12 +1,12 @@
 # Human verification of supply_values.csv: checklist
 
-Prepared by Claude (AI) at BB's request, 2026-11-10. Follows [workflow.md](workflow.md) section 7 and the shared logging rules in [../literature_reforming/workflow.md](../literature_reforming/workflow.md) section 3b.
+Prepared by Claude (AI) at BB's request, 2026-11-10. Follows [workflow.md](../workflow.md) section 7 and the shared logging rules in [../literature_reforming/workflow.md](../../literature_reforming/workflow.md) section 3b.
 
 Work from [human_check_worksheet.csv](human_check_worksheet.csv). It has one row per value (195), grouped by source so each document is opened once. Sources are ordered by the most important use of any of their values:
 
 | Priority | Values | Meaning |
 |---|---|---|
-| 1 | 35 | cited in an efficiency range of [supply_classes.csv](supply_classes.csv); these feed the wall-basis EC_CH4 |
+| 1 | 35 | cited in an efficiency range of [supply_classes.csv](../results/supply_classes.csv); these feed the wall-basis EC_CH4 |
 | 2 | 34 | cited in a cost or lifetime entry of supply_classes.csv |
 | 3 | 126 | other values (context, unit power, frequency, qualitative statements) |
 
@@ -15,7 +15,7 @@ The first 27 sources in the worksheet (PW003 to PW054) contain at least one prio
 ## Before you start
 
 - [ ] Note the start time (minutes go into summary.csv).
-- [ ] Have [../human_checks/findings.csv](../human_checks/findings.csv) and [../human_checks/summary.csv](../human_checks/summary.csv) open. Next check ID: one after the last HC number in findings.csv.
+- [ ] Have [../human_checks/findings.csv](../../human_checks/findings.csv) and [../human_checks/summary.csv](../../human_checks/summary.csv) open. Next check ID: one after the last HC number in findings.csv.
 - [ ] Open the local copy given in the `local_copy` column (paths relative to power_systems/). Web pages are saved HTML; open in a browser and use find (Ctrl+F) on the quote.
 
 ## For each value (one worksheet row)
@@ -51,11 +51,11 @@ Severity: 1 cosmetic (no value changes); 2 minor (a value changes, no class rang
 
 ## Class table check (once, after the priority 1 and 2 sources)
 
-For each row of [supply_classes.csv](supply_classes.csv):
+For each row of [supply_classes.csv](../results/supply_classes.csv):
 
 - [ ] `eta_low` and `eta_high` follow from the cited `eta_value_ids` and the reasoning in `range_basis`; reviewer judgements (e.g. the J1 lower bound for transformer losses) are labelled as such. Log as record_id `<class_id>:eta` (I or C).
 - [ ] The `cost` and `lifetime` text matches the cited value IDs. Record_id `<class_id>:cost` or `<class_id>:lifetime`.
-- [ ] Spot-check the wall-basis table in [notes/scaleup_assessment.md](notes/scaleup_assessment.md) against `figures/scaleup_wall_basis.csv`.
+- [ ] Spot-check the wall-basis table in [notes/scaleup_assessment.md](../notes/scaleup_assessment.md) against `results/scaleup_wall_basis.csv`.
 
 ## When done
 

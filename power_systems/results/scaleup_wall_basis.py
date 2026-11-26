@@ -1,5 +1,5 @@
 """Indicative wall-basis EC_CH4 for the review sources with representative
-industrial supplies (../supply_classes.csv). Not the authors' lab supplies.
+industrial supplies (supply_classes.csv). Not the authors' lab supplies.
 
 EC_wall = EC_reported_basis / eta_supply, where eta_supply covers only the stages
 between the wall and the power boundary used in each paper (see notes/scaleup_assessment.md).
@@ -8,7 +8,7 @@ Run from power_systems/: python3 figures/scaleup_wall_basis.py   (writes figures
 import csv
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parent   # power_systems/results: data, scripts; figures/ below
 sup = {r["class_id"]: r for r in csv.DictReader(open(ROOT / "supply_classes.csv", encoding="utf-8"))}
 
 # Classes without sourced efficiency values use an analogue class for eta (reviewer judgement,
@@ -55,7 +55,7 @@ for src, route, boundary, lo, hi, sid in LIT:
                  round(w_lo), round(w_hi)])
     print(f"{src:24s} {sid:9s} eta {e_lo:.2f}-{e_hi:.2f}: EC_CH4 {lo}-{hi} -> wall {w_lo:.0f}-{w_hi:.0f} kJ/mol")
 
-out = ROOT / "figures" / "scaleup_wall_basis.csv"
+out = ROOT / "scaleup_wall_basis.csv"
 with out.open("w", newline="", encoding="utf-8") as f:
     w = csv.writer(f)
     w.writerow(["source", "route", "paper_power_boundary", "EC_CH4_low", "EC_CH4_high", "supply_id",

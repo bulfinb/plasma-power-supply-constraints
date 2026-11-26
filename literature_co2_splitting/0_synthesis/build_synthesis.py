@@ -8,7 +8,7 @@ nothing here is new evidence. Three energy columns are kept apart:
   EC_CO at the paper's own power boundary (as reported or reviewer-calculated in the extraction);
   EC_CO at a measured wall/plug boundary, where the paper measured one;
   EC_CO with a representative industrial supply = EC at the plasma-side boundary / class efficiency
-  (power_systems/supply_classes.csv), the same method as power_systems/figures/scaleup_wall_basis.py.
+  (power_systems/results/supply_classes.csv), the same method as power_systems/results/scaleup_wall_basis.py.
 The industrial-supply column is an estimate (reviewer calculation), never a demonstrated value.
 """
 import csv
@@ -22,7 +22,7 @@ LHV_CO_KWH = 283.0 / KWH_NM3              # LHV of CO, kWh/Nm3 CO
 LHV_C_KWH_KG = 393.5 / 12.011 / 3.6       # LHV of carbon (graphite), kWh/kg
 EC_DG = 257.2 / KWH_NM3                   # 3.19 kWh/Nm3 CO = dG at 298 K (reference line)
 
-SUP = {r["class_id"]: r for r in csv.DictReader(open(ROOT / "power_systems/supply_classes.csv", encoding="utf-8"))}
+SUP = {r["class_id"]: r for r in csv.DictReader(open(ROOT / "power_systems/results/supply_classes.csv", encoding="utf-8"))}
 ETA = {k: (float(v["eta_low"]), float(v["eta_high"])) for k, v in SUP.items() if v["eta_low"]}
 
 # Lab supply efficiency used to move plug-basis results to the plasma side (reviewer judgement, see note)

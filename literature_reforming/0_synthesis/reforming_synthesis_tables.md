@@ -6,7 +6,7 @@ rows in reforming_synthesis.csv. NR = not reported; NA = not applicable; ~ = app
 
 SEI_CH4 = kJ per mol CH4 fed; EC_CH4 = kJ per mol CH4 converted, both at each paper's power boundary (external heat
 excluded). EC ind. = EC_CH4 with a representative industrial supply = EC_CH4 / class efficiency
-(power_systems/supply_classes.csv) [1]. Reaction enthalpies at 298 K: SMR 206, DRM 247 kJ/mol CH4.
+(power_systems/results/supply_classes.csv) [1]. Reaction enthalpies at 298 K: SMR 206, DRM 247 kJ/mol CH4.
 Conf. = confidence in conversion / energy results from the extraction (H higher, M moderate, L lower).
 
 ## 1. Steam methane reforming (SMR)

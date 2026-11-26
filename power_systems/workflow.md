@@ -8,15 +8,15 @@ This folder holds data on industrial power supplies: efficiency, unit power, fre
 
 ## 2. Register the source
 
-1. Assign the next ID in [source_register.csv](source_register.csv): PW001, PW002, ... IDs are never reused. A dropped source keeps its ID with status `dropped`.
+1. Assign the next ID in [source_register.csv](results/source_register.csv): PW001, PW002, ... IDs are never reused. A dropped source keeps its ID with status `dropped`.
 2. Save a local copy in `source_archive/<ID>/` (gitignored, not redistributed): `original.<ext>` for a direct download, `wayback_<timestamp>.<ext>` for an archive copy, or the file name as downloaded for a manual download. Record the SHA-256 and size.
 3. Make a Wayback Machine snapshot where possible and record its URL.
 4. Fill the register columns:
    - `aliases`: IDs used for the same source in earlier notes (S, T and D series before 2026-11-10);
    - `doc_type` and `quality_tier` (section 3);
    - `document_date`: the date printed on the document or page, or `undated`;
-   - `status`: `active` (local copy held), `to_retrieve` (no copy yet; see [BB_search.txt](BB_search.txt)) or `dropped`.
-5. Sources that need a human to retrieve them go into BB_search.txt. Quotes to request from vendors go into [suggested_quote_requests.txt](suggested_quote_requests.txt).
+   - `status`: `active` (local copy held), `to_retrieve` (no copy yet; see [BB_search.txt](notes/BB_search.txt)) or `dropped`.
+5. Sources that need a human to retrieve them go into BB_search.txt. Quotes to request from vendors go into [suggested_quote_requests.txt](notes/suggested_quote_requests.txt).
 
 ## 3. Quality tiers
 
@@ -40,7 +40,7 @@ One row per quoted value. A row is extracted only from the local copy, never fro
 | `quote` | the shortest verbatim text that carries the value (original language if not English, with translation in `notes`) |
 | `item` | model, product family, installation or device as named in the source |
 | `maker` | manufacturer or operator |
-| `supply_class` | class code from [supply_classes.csv](supply_classes.csv) (J1, A1, D1, K1, K2, R1, R2, M1-M3, P1, H1; J2 and X1 dropped 2026-11-23), or `context` |
+| `supply_class` | class code from [supply_classes.csv](results/supply_classes.csv) (J1, A1, D1, K1, K2, R1, R2, M1-M3, P1, H1; J2 and X1 dropped 2026-11-23), or `context` |
 | `freq_low_hz`, `freq_high_hz` | output frequency or band; DC = 0; blank if not stated |
 | `quantity` | `output_power`, `input_power`, `peak_power`, `average_power`, `installed_power`, `efficiency`, `coupling_efficiency`, `cost_per_kw`, `cost_ratio`, `cost_share`, `cost_ratio` (relative cost), `frequency_limit`, `duty_cycle`, `heat_rejected`, `cost_scaling_exponent`, `lifetime_h`, `voltage_rms`, `current_rms`, `voltage_dc`, `current_dc`, `power_loss`, `power_factor`, `units_in_service`, `torch_diameter`, `skin_depth`, `coupling_parameter` (ratio), `minimum_sustaining_power`, `specific_energy`, `capacity` (product rate) |
 | `qualifier` | `=`, `~`, `>`, `>=`, `<`, `<=`, `up_to`, `approaching`, `range` |
@@ -65,9 +65,9 @@ Rules:
 
 ## 5. Supply classes: supply_classes.csv
 
-[supply_classes.csv](supply_classes.csv) summarises each representative class (J1, A1, K1, ...) used in the scale-up assessment. Each efficiency, cost and lifetime range lists the `value_id`s it rests on. Where a range is a reviewer judgement (for example a lower bound allowing for transformer losses), say so in `range_basis`. `map_value_ids` lists the industrial unit-power and frequency values that set the class box in the class map figure (lab prototypes excluded). The class table is derived from supply_values.csv and is never edited without updating the cited values. A class with no sourced values has blank eta and status `gap`; any analogue used for it in a calculation is stated in `range_basis` and in the script output.
+[supply_classes.csv](results/supply_classes.csv) summarises each representative class (J1, A1, K1, ...) used in the scale-up assessment. Each efficiency, cost and lifetime range lists the `value_id`s it rests on. Where a range is a reviewer judgement (for example a lower bound allowing for transformer losses), say so in `range_basis`. `map_value_ids` lists the industrial unit-power and frequency values that set the class box in the class map figure (lab prototypes excluded). The class table is derived from supply_values.csv and is never edited without updating the cited values. A class with no sourced values has blank eta and status `gap`; any analogue used for it in a calculation is stated in `range_basis` and in the script output.
 
-[discharge_supply_map.csv](discharge_supply_map.csv) assigns each discharge type in the review to candidate classes and the class used, with the lab supply as given in the extraction records (literature-folder evidence IDs), the scale-up constraint and the value IDs behind it. Arithmetic in it (e.g. discharges per MW) is labelled as reviewer arithmetic.
+[discharge_supply_map.csv](results/discharge_supply_map.csv) assigns each discharge type in the review to candidate classes and the class used, with the lab supply as given in the extraction records (literature-folder evidence IDs), the scale-up constraint and the value IDs behind it. Arithmetic in it (e.g. discharges per MW) is labelled as reviewer arithmetic.
 
 Class `efficiency_stage` also identifies provisional mixed-stage evidence where no common
 mains-to-reactor boundary has been established (`mixed_stages_provisional`, currently P1).
@@ -75,17 +75,17 @@ Its numerical range is a sensitivity assumption; it must not be described as a m
 wall-to-plasma efficiency. Frequency-specific scenarios must state any extrapolation beyond
 the frequency rating of their supporting equipment (currently K2 at 400 kHz).
 
-## 6. Notes, scripts and figures
+## 6. Folder layout, notes, scripts and figures
 
 - `notes/` holds the written analysis: [scaleup_assessment.md](notes/scaleup_assessment.md), [supply_maturity_niche.md](notes/supply_maturity_niche.md), [reactor_matching.md](notes/reactor_matching.md). Notes cite value IDs or source IDs, not search summaries.
-- `figures/` holds each figure together with the script that makes it; the scripts read supply_values.csv and supply_classes.csv and write to `figures/`. `scripts/` holds other tools (human-check worksheet). Scripts do not contain data values except documented constants (e.g. currency conversion factors with their source).
+- `results/` holds the data tables (source_register.csv, supply_values.csv, supply_classes.csv, discharge_supply_map.csv) and the scripts that read them; figures are written to `results/figures/`, and the human-check worksheet to `logs/`. Logs (processing, cross-check, human-check checklist and worksheet) are in `logs/`. Scripts do not contain data values except documented constants (e.g. currency conversion factors with their source).
 - Dropped sources (status `dropped` in the register) keep their value rows for the record; the scripts skip them in figures and the check worksheet. A source is dropped when it is not used in a class range or projection, sets no class extreme in the figures, and is not needed for the cost or lifetime discussion.
 - `legacy/` keeps superseded work unchanged for the record. Do not cite it; its sources have been re-registered.
 
 ## 7. Checks and logging
 
-- Log each extraction session in [processing_log.md](processing_log.md) (tool and model versions only there).
-- Human checks use the shared logs in [../human_checks/](../human_checks/), with `value_id` as the record ID, following section 3b of the literature workflow. Steps and priorities are in [human_check_checklist.md](human_check_checklist.md); the worksheet is generated by `scripts/make_check_worksheet.py`. A source becomes human_verified only when its rows have been checked and all findings resolved.
+- Log each extraction session in [processing_log.md](logs/processing_log.md) (tool and model versions only there).
+- Human checks use the shared logs in [../human_checks/](../human_checks/), with `value_id` as the record ID, following section 3b of the literature workflow. Steps and priorities are in [human_check_checklist.md](logs/human_check_checklist.md); the worksheet is generated by `scripts/make_check_worksheet.py`. A source becomes human_verified only when its rows have been checked and all findings resolved.
 
 ## Version history
 

@@ -19,7 +19,7 @@ Bogaerts (2025) Nat. Chem. Eng. 2, 336-340 ([../literature_reviews/Bogaerts_NatC
 
 ## Techno-economic assessments: capital cost and the power supply
 
-Academic studies that quantify plasma capital cost and the share taken by the power supply. Values used are in [../power_systems/supply_values.csv](../power_systems/supply_values.csv) under the PS ID.
+Academic studies that quantify plasma capital cost and the share taken by the power supply. Values used are in [../power_systems/results/supply_values.csv](../power_systems/results/supply_values.csv) under the PS ID.
 
 | ID | Citation / DOI | Why | Copy |
 |---|---|---|---|

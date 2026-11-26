@@ -21,7 +21,7 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker
 from matplotlib.lines import Line2D
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parent   # power_systems/results: data, scripts; figures/ below
 OUT = ROOT / "figures"
 DROPPED = {r["source_id"] for r in csv.DictReader(open(ROOT / "source_register.csv", encoding="utf-8")) if r["status"] == "dropped"}
 rows = [r for r in csv.DictReader(open(ROOT / "supply_values.csv", encoding="utf-8")) if r["source_id"] not in DROPPED]
