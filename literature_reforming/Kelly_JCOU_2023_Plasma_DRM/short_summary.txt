@@ -38,7 +38,7 @@ Traceability: manuscript.pdf pp. 3-9, Table 1, Figs. 1-6; SRC011-E001-E022.
 Calculations SRC011-C001-C002, E041-E045; outputs/calculations.py. Details:
 outputs/extraction.md and outputs/evidence.csv.
 
-Prepared 2026-11-05 by Claude (AI); ai_checked (human check pending).
+Prepared 2026-11-05 by Claude (AI); ai_checked; OP004 human checked by BB 2026-11-26 (no changes); other rows pending.
 
 Comparison tables (experimental conditions)
 NR = not reported; NA = not applicable; ~ = approximate. Human verified (BB, 2026-11-05).

@@ -40,11 +40,11 @@ ESI.pdf pp. 2-3; SRC012-E001-E021. Calculations SRC012-C001-C005,
 E041-E045; outputs/calculations.py. Details: outputs/extraction.md and
 outputs/evidence.csv.
 
-Prepared 2026-11-05 by Claude (AI); ai_checked by same extractor; human
-verification pending.
+Prepared 2026-11-05 by Claude (AI); ai_checked by same extractor; OP003-OP004
+human checked by BB 2026-11-26 (no changes); other rows pending.
 
 Comparison tables (experimental conditions)
-NR = not reported; NA = not applicable; ~ = approximate. Human verification pending.
+NR = not reported; NA = not applicable; ~ = approximate. OP003-OP004 human checked (BB, 2026-11-26); other rows pending.
 
 1. Route and scale
 Source / OP    | Route | Reactor / activation / catalyst                     | CH4 feed (mol/min) | Scale as reported

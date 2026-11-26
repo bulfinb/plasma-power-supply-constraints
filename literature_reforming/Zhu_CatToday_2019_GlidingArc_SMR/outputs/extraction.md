@@ -5,7 +5,7 @@
 - Source ID: **SRC012**. Xiaobing Zhu, Xiaoyu Liu, Hao-Yu Lian, Jing-Lin Liu and Xiao-Song Li, "Plasma catalytic steam methane reforming for distributed hydrogen production," Catalysis Today 337 (2019) 69-75. DOI: https://doi.org/10.1016/j.cattod.2019.05.015. Dalian University of Technology.
 - Documents: [manuscript.pdf](../manuscript.pdf), 7 pages (printed page = PDF page + 68); [ESI.pdf](../ESI.pdf), 3 pages (Figs. S1-S3). Retrieval date unknown.
 - SHA-256: manuscript.pdf `0a61242d63ad528d080aa7ad2fa1ebf6c746b9c45787fae2e8ec054a85ba7805`; ESI.pdf `c380e29d47bcfbc127d24604e9271bc06478afdd31fb575591dc7e6a93fc8169`.
-- Protocol 0.1 (with 2026-11-04 amendment). Extractor/reviewer: Claude (AI), 2026-11-05, same-extractor checks. Status: **ai_checked; human verification pending**.
+- Protocol 0.1 (with 2026-11-04 amendment). Extractor/reviewer: Claude (AI), 2026-11-05, same-extractor checks. Status: **ai_checked; partial human check by BB, 2026-11-26: headline OP003-OP004 conditions and conversions (E011, E013; plasma alone and plasma + catalyst) confirmed from the text; author efficiency definition (CO at the H2 LHV) confirmed (E006); no changes (human_checks/summary.csv). Other records human verification pending.**
 - Coverage: full manuscript and ESI read. Values taken from text and Table 1 (figures not digitised). Catalyst characterisation (XRD, XPS, EDS) recorded briefly. Table 2 / Fig. 8 literature comparison not extracted.
 - Records: [evidence.csv](evidence.csv), 26 records (SRC012-E001-E021 source; E041-E045 reviewer calculations). Calculations C001-C005 in [calculations.py](calculations.py).
 - Selection: record R007 in [../../search_and_selection_log.md](../../search_and_selection_log.md).

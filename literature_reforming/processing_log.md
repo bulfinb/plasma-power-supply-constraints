@@ -40,10 +40,10 @@ Event types: extraction (initial), revision (substantive change to records), app
 | 2026-11-05 | SRC001-SRC006 | (earlier sources) | summary update (five comparison tables) | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | |
 | 2026-11-05 | SRC007 | Hrabovsky_PCPP_2018_Plasma_SMR | extraction | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | reviewed by BB, 2026-11-26 (partial: OP001) |
 | 2026-11-05 | SRC008 | Akande_IJHE_2022_Plasma_SMR | extraction | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | reviewed by BB, 2026-11-26 (partial: OP003) |
-| 2026-11-05 | SRC009 | Song_CAP_2020_Plasma_DRM | extraction | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | |
-| 2026-11-05 | SRC010 | Hrycak_SciRep_2023_Plasma_Biogas_SR | extraction | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | |
-| 2026-11-05 | SRC011 | Kelly_JCOU_2023_Plasma_DRM | extraction | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | |
-| 2026-11-05 | SRC012 | Zhu_CatToday_2019_GlidingArc_SMR | extraction | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | |
+| 2026-11-05 | SRC009 | Song_CAP_2020_Plasma_DRM | extraction | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | reviewed by BB, 2026-11-26 (partial: OP013) |
+| 2026-11-05 | SRC010 | Hrycak_SciRep_2023_Plasma_Biogas_SR | extraction | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | reviewed by BB, 2026-11-26 (partial: OP001-OP002) |
+| 2026-11-05 | SRC011 | Kelly_JCOU_2023_Plasma_DRM | extraction | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | reviewed by BB, 2026-11-26 (partial: OP004) |
+| 2026-11-05 | SRC012 | Zhu_CatToday_2019_GlidingArc_SMR | extraction | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | reviewed by BB, 2026-11-26 (partial: OP003-OP004) |
 | 2026-11-05 | SRC013 | Andersen_ChemEngJ_2020_DBD_DRM | extraction | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | |
 | 2026-11-05 | SRC014 | Kwon_JCOU_2023_GlidingArc_DRM | extraction | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | |
 | 2026-11-05 | SRC015 | Wanten_JCOU_2022_GlowDischarge_DRM | extraction | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | |

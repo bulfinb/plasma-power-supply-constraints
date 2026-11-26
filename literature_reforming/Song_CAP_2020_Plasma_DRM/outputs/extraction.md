@@ -5,7 +5,7 @@
 - Source ID: **SRC009**. Hohyun Song, Yun-Seong Lee, Geunjae Kwak and Hong-Young Chang, "Study on CH4 dry reforming process by high power inductively coupled plasma torch at atmospheric pressure," Current Applied Physics 20 (2020) 196-204. DOI: https://doi.org/10.1016/j.cap.2019.10.023. KIMM, EN2CORE Technology, KRICT and KAIST.
 - Documents: [manuscript.pdf](../manuscript.pdf), 9 pages (PDF page = printed page - 195). No ESI located (search by BB, 2026-11-05). A related KAIST PhD thesis (2019) was not obtained. Retrieval date unknown.
 - SHA-256 manuscript.pdf: `052178b73a97cbf541fb012a5f3ccfecd5471da34345ac9f85195fa95a2e2556`
-- Protocol 0.1 (with 2026-11-04 amendment). Extractor/reviewer: Claude (AI), 2026-11-05, same-extractor checks. Status: **ai_checked; human verification pending**.
+- Protocol 0.1 (with 2026-11-04 amendment). Extractor/reviewer: Claude (AI), 2026-11-05, same-extractor checks. Status: **ai_checked; partial human check by BB, 2026-11-26: headline OP013 (E016-E019) confirmed; BB reads the 22 kW as power-supply (generator) output, as assumed here (E003); no changes (human_checks/summary.csv). Other records human verification pending.**
 - Coverage: full text and Figs. 1-9 read; CHEMKIN-PRO simulations (Section 3.4, Figs. 10-11) are modelling and excluded. Fig. 7 (selectivities) not digitised; selectivities can be recomputed from Fig. 6.
 - Records: [evidence.csv](evidence.csv), 34 records (SRC009-E001-E027 source; E041-E047 reviewer calculations). Calculations C001-C006 in [calculations.py](calculations.py). E001 = SRC009-E001 below.
 - Selection: record R003 in [../../search_and_selection_log.md](../../search_and_selection_log.md).
