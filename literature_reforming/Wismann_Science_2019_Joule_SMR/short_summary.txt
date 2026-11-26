@@ -33,12 +33,12 @@ Traceability:
 - Feed composition: manuscript.pdf, PDF p. 2; SRC001-E038.
 - Feed flows and conversion labels: supplementary.pdf, PDF pp. 11-13,
   Figs. S2-S4; SRC001-E050-E085. Methane flow calculated as 0.30 times
-  total normal feed; see SRC001-C006 in outputs/calculations.md.
+  total normal feed; see SRC001-C006 in outputs/extraction.md (Calculations).
 - Power/efficiency gaps: SRC001-E014-E015, E127-E130; SRC001-C003.
 - Sampling and averaging: supplementary.pdf, PDF pp. 2, 6-7;
   SRC001-E041-E042. Activity comparison: PDF p. 16, Fig. S7; SRC001-E086.
 - Reporting quality: outputs/extraction.md, "Reporting quality".
-- Full records: outputs/extraction.md, outputs/evidence.csv, outputs/operating_points.csv.
+- Full records: outputs/extraction.md (with operating points and calculations), outputs/evidence.csv.
 
 Prepared 2026-10-28; updated to the new summary format 2026-10-30.
 Extraction AI-checked; reporting-quality appraisal unreviewed; human

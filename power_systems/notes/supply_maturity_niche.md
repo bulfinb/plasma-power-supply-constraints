@@ -1,6 +1,6 @@
 # Are plasma power supplies a "niche product"? Supply maturity, limits and cost
 
-Added 2026-11-09 (BB, with Claude); rebuilt 2026-11-10 from [supply_values.csv](../results/supply_values.csv) after every value was re-extracted from the archived source copies. Status: argument to develop; values ai_checked, human verification pending. Source IDs (PWxxx) resolve in [source_register.csv](../results/source_register.csv) (earlier IDs D1-D12 are listed there as aliases); value IDs (PWxxx-Vnn) in supply_values.csv. Academic papers on the supply side are in [../../literature_plasma_powersupply/](../../literature_plasma_powersupply/README.md).
+Added 2026-11-09 (BB, with Claude); rebuilt 2026-11-10 from [supply_values.csv](../results/supply_values.csv) after every value was re-extracted from the archived source copies. Status: argument to develop; values ai_checked, human verification pending. Source IDs (PWxxx) resolve in [source_register.csv](../results/source_register.csv) (earlier IDs D1-D12 are listed there as aliases); value IDs (PWxxx-Vnn) in supply_values.csv. Academic papers on the supply side are in [plasma_powersupply_literature.md](plasma_powersupply_literature.md).
 
 Bogaerts (2025, RV015, p. 338) says that plasma-reactor capital cost is mainly set by the power supply. She calls the supply "still quite expensive today because it is still a 'niche product'", and notes challenges in degradation, reproducibility, control and energy efficiency for MW supplies. The first part, that the supply dominates capital cost, strengthens the case for treating the supply as a design constraint (see Novelty in [../../README.md](../../README.md)). The "niche product" explanation holds only in part.
 
@@ -30,7 +30,7 @@ Industrial DBD with efficient power delivery therefore exists. The same patent a
 - **Solid-state microwave efficiency.** At 2.45 GHz, GaN amplifiers reach 70% drain efficiency at 450 W (PW046-V01) and 70% for a 1 kW source (PW019-V01); a 6 kW GaN generator head reached 56% (PW018-V01). These are device or head values before the AC/DC stage, so wall-plug efficiency is lower.
 - **Lifetime of tubes and magnetrons.** 915 MHz industrial magnetrons: "6,000 hours or less" (PW033-V02). This is a known wear mechanism, not an immature product.
 
-**The genuinely plasma-specific part is matching and control.** Plasma loads have negative differential resistance, an impedance that jumps at ignition and, for a DBD, a capacitance that changes in operation. This leads to reflected power, reactive power and ballast losses (PS002 in [../../literature_plasma_powersupply/](../../literature_plasma_powersupply/README.md); Wanten 2022, SRC015, where the ballast dissipated 1.6-2.6 times the plasma power).
+**The genuinely plasma-specific part is matching and control.** Plasma loads have negative differential resistance, an impedance that jumps at ignition and, for a DBD, a capacitance that changes in operation. This leads to reflected power, reactive power and ballast losses (PS002 in [plasma_powersupply_literature.md](plasma_powersupply_literature.md); Wanten 2022, SRC015, where the ballast dissipated 1.6-2.6 times the plasma power).
 
 **Implication.** Supply cost and efficiency are partly set by physics that is already known from mature industries. They can therefore be used now to gate design options: frequency band, unit power, number of modules and wall-to-plasma efficiency can be fixed before the plasma chemistry is assessed. This contrasts with expecting supplies to improve once the market grows. "Niche" fits the coupling and control electronics better than the power-conversion stage.
 
@@ -60,7 +60,7 @@ The 1,300 EUR/kW DBD figure quoted by RV005 traces back to PS003 through PS004: 
 RV005 also states (p. 5842) that at lab scale "the power supply unit is typically the most expensive component", *because* lab units are built to be flexible across plasma types (RV005-V03). Supplies designed for one industrial condition can be cheaper. This supports the "niche" reading only for the flexible lab units.
 
 **Still open:**
-- cost per kW of kHz inverters and RF tube generators - the quote requests in [../suggested_quote_requests.txt](suggested_quote_requests.txt) start this;
+- cost per kW of kHz inverters and RF tube generators - the quote requests in [suggested_quote_requests.txt](suggested_quote_requests.txt) start this;
 - RF tube generator efficiency measured at 100 kW+;
 - an independent (non-vendor) measurement of ozone-plant inverter efficiency at MW scale;
 - a supplier quote for a MW-class DBD or gliding arc supply, to test the 1,200-1,500 EUR/kW industry estimates of PS003 at scale.

@@ -6,11 +6,11 @@
 - Citation: Sebastian T. Wismann et al., "Electrified methane reforming: A compact approach to greener industrial hydrogen production," Science 364(6442), 756-759 (24 May 2019).
 - DOI: https://doi.org/10.1126/science.aaw8775. Citation verified from supplied PDFs; no external literature was added to this extraction.
 - Inputs: [manuscript.pdf](../manuscript.pdf), 5 PDF pages (4 article pages plus publisher information); [supplementary.pdf](../supplementary.pdf), 25 PDF pages. Supplement pp. 23-25 contain references with printed page numbers restarting at 1. Use PDF page numbers for unambiguous lookup.
-- Original document versions, SHA-256 hashes and unknown retrieval dates: [source_manifest.json](source_manifest.json).
+- Document versions and SHA-256 hashes: manuscript.pdf (5 pp., Supplied local published article PDF), SHA-256 `3ab1991aa15a589446b52f2e1c5139666764876d8681212ba0dd2c40c34f3865`; supplementary.pdf (25 pp., Supplied local supplementary PDF; contains references pages labelled Submitted Manuscript: Confidential), SHA-256 `dab5db62e1c0e423633eeb2b90ed9fdf83405ef1820cfbef5ed65bfc182cb04e`. Retrieval date unknown.
 - Protocol: [../workflow.md](../../workflow.md), version 0.1.
 - Extraction/review date: 2026-10-28. Extractor: Codex AI. Review status: **ai_checked by the same extractor; human verification pending**.
 - Coverage: all supplied text read; labelled conversions in Figs. S2-S4 extracted; selected relevant figures visually inspected. Full curve digitization, full CFD reproduction, and extraction of every auxiliary plot coordinate were not performed. Plot temperatures are approximate visual readings, not author-tabulated data.
-- Outputs: [evidence.csv](evidence.csv), [operating_points.csv](operating_points.csv), [calculations.md](calculations.md). Individual claims below link by evidence ID to the CSV, where the original document/page/locator is recorded.
+- Outputs: [evidence.csv](evidence.csv); the operating points and calculations are in this file (sections Operating points and Calculations), merged here on 2026-11-26 from the former operating_points.csv and calculations.md to match the standard source layout. Individual claims below link by evidence ID to the CSV, where the original document/page/locator is recorded.
 
 **Pilot outcome:** the paper provides a useful reactor/conversion/design benchmark. It does not provide the point-matched electrical input and complete stream/duty data needed to calculate our HHV efficiency or electricity fraction. It must therefore remain incomplete for those comparisons.
 
@@ -149,7 +149,89 @@ Suggested refinements for subsequent sources:
 
 These are pilot findings; the shared protocol remains at version 0.1.
 
+## Operating points
+
+| OP | Label | Type | Conditions | Comparability | Evidence |
+|---|---|---|---|---|---|
+| OP001 | Lab 340 Nml/min, 58.0% CH4 conversion | experiment with fitted CFD temperature profile | CH4/H2O/H2 30/60/10; +50 mbar gauge; inlet 100 degC; wall exit about 600 degC | No point-matched electrical power; feed contains H2; flow reference T/P undefined; temperature approximate. | E038, E039, E040, E041, E031, E050, E051, E052, E137 |
+| OP002 | Lab 340 Nml/min, 75.3% CH4 conversion | experiment with fitted CFD temperature profile | CH4/H2O/H2 30/60/10; +50 mbar gauge; inlet 100 degC; wall exit about 650 degC | No point-matched electrical power; feed contains H2; flow reference T/P undefined; temperature approximate. | E038, E039, E040, E041, E031, E053, E054, E055, E139 |
+| OP003 | Lab 340 Nml/min, 86.5% CH4 conversion | experiment with fitted CFD temperature profile | CH4/H2O/H2 30/60/10; +50 mbar gauge; inlet 100 degC; wall exit about 700 degC | No point-matched electrical power; feed contains H2; flow reference T/P undefined; temperature approximate. | E038, E039, E040, E041, E031, E056, E057, E058, E141 |
+| OP004 | Lab 340 Nml/min, 92.7% CH4 conversion | experiment with fitted CFD temperature profile | CH4/H2O/H2 30/60/10; +50 mbar gauge; inlet 100 degC; wall exit about 750 degC | No point-matched electrical power; feed contains H2; flow reference T/P undefined; temperature approximate. | E038, E039, E040, E041, E031, E059, E060, E061, E143 |
+| OP005 | Lab 1020 Nml/min, 50.9% CH4 conversion | experiment with fitted CFD temperature profile | CH4/H2O/H2 30/60/10; +50 mbar gauge; inlet 100 degC; wall exit about 620 degC | No point-matched electrical power; feed contains H2; flow reference T/P undefined; temperature approximate. | E038, E039, E040, E041, E031, E062, E063, E064, E145 |
+| OP006 | Lab 1020 Nml/min, 62.9% CH4 conversion | experiment with fitted CFD temperature profile | CH4/H2O/H2 30/60/10; +50 mbar gauge; inlet 100 degC; wall exit about 650 degC | No point-matched electrical power; feed contains H2; flow reference T/P undefined; temperature approximate. | E038, E039, E040, E041, E031, E065, E066, E067, E147 |
+| OP007 | Lab 1020 Nml/min, 75.6% CH4 conversion | experiment with fitted CFD temperature profile | CH4/H2O/H2 30/60/10; +50 mbar gauge; inlet 100 degC; wall exit about 700 degC | No point-matched electrical power; feed contains H2; flow reference T/P undefined; temperature approximate. | E038, E039, E040, E041, E031, E068, E069, E070, E149 |
+| OP008 | Lab 1020 Nml/min, 82.2% CH4 conversion | experiment with fitted CFD temperature profile | CH4/H2O/H2 30/60/10; +50 mbar gauge; inlet 100 degC; wall exit about 720 degC | No point-matched electrical power; feed contains H2; flow reference T/P undefined; temperature approximate. | E038, E039, E040, E041, E031, E071, E072, E073, E151 |
+| OP009 | Lab 1020 Nml/min, 91.6% CH4 conversion | experiment with fitted CFD temperature profile | CH4/H2O/H2 30/60/10; +50 mbar gauge; inlet 100 degC; wall exit about 790 degC | No point-matched electrical power; feed contains H2; flow reference T/P undefined; temperature approximate. | E038, E039, E040, E041, E031, E074, E075, E076, E153 |
+| OP010 | Lab 1700 Nml/min, 61.1% CH4 conversion | experiment with fitted CFD temperature profile | CH4/H2O/H2 30/60/10; +50 mbar gauge; inlet 100 degC; wall exit about 680 degC | No point-matched electrical power; feed contains H2; flow reference T/P undefined; temperature approximate. | E038, E039, E040, E041, E031, E077, E078, E079, E155 |
+| OP011 | Lab 1700 Nml/min, 72.4% CH4 conversion | experiment with fitted CFD temperature profile | CH4/H2O/H2 30/60/10; +50 mbar gauge; inlet 100 degC; wall exit about 720 degC | No point-matched electrical power; feed contains H2; flow reference T/P undefined; temperature approximate. | E038, E039, E040, E041, E031, E080, E081, E082, E157 |
+| OP012 | Lab 1700 Nml/min, 85.0% CH4 conversion | experiment with fitted CFD temperature profile | CH4/H2O/H2 30/60/10; +50 mbar gauge; inlet 100 degC; wall exit about 780 degC | No point-matched electrical power; feed contains H2; flow reference T/P undefined; temperature approximate. | E038, E039, E040, E041, E031, E083, E084, E085, E087, E088, E089, E159 |
+| OP013 | Conventional side-fired reference design | industrial flowsheet/design reference | Reference: Tin 466 degC; Tout 920 degC; Pout 26.7 barg; S/C 1.8; 75.4% CH4 conversion | Not an experimental industrial demonstration. | E092, E093, E094, E095, E096, E097, E104, E105 |
+| OP014 | Resistance-heated 75.4% scale-up | CFD extrapolation/design projection | Reference: Tin 466 degC; Tout 920 degC; Pout 26.7 barg; S/C 1.8; 75.4% CH4 conversion | Not an experimental industrial demonstration. | E098, E099, E100, E101, E102, E103, E106, E107, E108, E161 |
+| OP015 | Resistance-heated 95% scale-up | CFD extrapolation/design projection | 95% conversion; 15 m3; capacity 2230 kmol H2/h; see Fig. 4 for scope | Not an experimental industrial demonstration. | E109, E110, E111 |
+| OP016 | Supplementary industrial 75.6% case | CFD extrapolation | 1000 Nml/min/tube; 26.7 barg; S/C 1.8; 75.6% CH4 conversion; 20 degC equilibrium approach | Not an experimental industrial demonstration. | E112, E113, E114, E115, E116, E117 |
+
+## Calculations
+
+Source: SRC001. Protocol 0.1. Reviewer: Codex AI; same extractor, not independent human review. Date: 2026-10-28.
+All results are AI-checked; none is human verified. IDs below reference evidence.csv.
+
+### SRC001-C001 - Coated-zone gas-channel volume using selected 5.3 mm ID
+
+Inputs: SRC001-E023 (5.2 mm bare ID), SRC001-E025 (5.3 mm alternate ID), SRC001-E022, SRC001-E024 (Fig. 2 geometry consistent with alternate ID), SRC001-E026 (280 mm coated length), SRC001-E027 (0.128 mm radial coat).
+
+Formula: V_gas = pi/4 * (D_bare - 2*delta)^2 * L. Divide mm3 by 1000 to obtain mL.
+
+- D_bare = 5.3 mm: V_gas = 5.594974 mL.
+
+Decision: the user instructed "Just take 5.3 mm" on 2026-10-28. Use 5.3 mm as the bare tube ID, consistent with Fig. 2 wall geometry and supplementary p. 9. Preserve the preparation-section value of 5.2 mm as source evidence but do not use it in calculations.
+
+Assumptions: uniform cylindrical channel and uniform radial coat. Excludes pore gas and the residual catalytically active outlet layer. This is a derived nominal volume, not a measured volume, complete active volume, or equipment volume. No dimensional uncertainty is reported. This user decision is not a human verification of all extracted evidence.
+
+### SRC001-C002 - Conditional space time at the unspecified normal-flow reference
+
+Inputs: SRC001-C001 and each operating point's total wet inlet flow evidence (linked in the Operating points table above). Formula: tau_N [s] = 60 * V_gas [mL] / F_N [Nml/min].
+
+| Total inlet flow (Nml/min) | tau_N, selected 5.3 mm ID (s) |
+|---|---:|
+| 340 | 0.9873 |
+| 1020 | 0.3291 |
+| 1700 | 0.1975 |
+
+These are nominal reference-flow space times, not reported author values and not actual hot residence times. Normal reference temperature/pressure is unspecified (SRC001-E045); gas expansion, reaction-induced mole changes, wall/gas temperature differences, and axial variations prevent conversion to an actual residence time from these data alone. Values are rounded for reporting; extra digits in CSV preserve the calculation, not measurement precision. No GHSV/WHSV is claimed.
+
+### SRC001-C003 - HHV efficiency and electricity fraction: not calculable
+
+eta_HHV = HHV_product_rate / D; f_electric = P_electric / D.
+D = P_electric + HHV_external_feed_and_fuel_rate + Q_external,in.
+
+Missing inputs: numerical point-matched power (SRC001-E014, SRC001-E015), external steam/preheat duty (SRC001-E049), complete product flows (SRC001-E122, SRC001-E124), and explicit normal-flow T/P (SRC001-E045). No numerical efficiency or electricity fraction is calculated. Heat flux in Fig. S5 cannot replace electrical input; ideal industrial insulation cannot be used as proof of complete measured energy closure.
+
+The 10 mol% inlet H2 (SRC001-E038) is a combustible feed contribution and belongs in feed HHV as well as any gross outlet-H2 accounting. If a later metric uses net H2 production, specify it separately and avoid silently subtracting inlet H2 from only one side of an otherwise gross-stream balance. No external HHV property values were introduced in this pilot.
+
+### SRC001-C004 - Laboratory steam-to-carbon ratio
+
+Input: SRC001-E038. On the stated molar composition, S/C = 60/(30*1) = 2 mol steam/mol carbon. Methane is the only carbon-containing inlet component reported. This is reviewer-derived; industrial S/C = 1.8 is a different case.
+
+### SRC001-C005 - Projected furnace/reformer volume ratio
+
+Inputs: SRC001-E104 (1140 m3, Fig. 4) and SRC001-E106 (4.9 m3, Fig. 4 at 75.4% conversion). Ratio = 1140/4.9 = 232.65, approximately 230-fold.
+
+This arithmetic uses printed figure values. Narrative values round to 1100 and approximately 5 m3. This is an industrial design/model comparison with furnace blowers/waste-heat equipment and electric wiring/power supply excluded. It is not a demonstrated full-plant size reduction. The abstract's potential 100-fold compactness statement is a broader rounded claim, not a separate measured benchmark. No uncertainty interval is supplied.
+
+### SRC001-C006 - Methane feed for the experimental short summary
+
+Inputs: SRC001-E038 (CH4 molar fraction 0.30) and the total normal feed flows in supplementary Figs. S2-S4 (SRC001-E050, SRC001-E062, SRC001-E077; each point also has its own flow record).
+
+Formula: F_CH4,N = 0.30 * F_total,N, using the same unspecified normal-flow reference for both streams.
+
+- 340 Nml/min total feed gives 102 Nml/min CH4; highest labelled conversion in Fig. S2 is 92.7% (SRC001-E060).
+- 1020 Nml/min total feed gives 306 Nml/min CH4; highest labelled conversion in Fig. S3 is 91.6% (SRC001-E075).
+- 1700 Nml/min total feed gives 510 Nml/min CH4; highest labelled conversion in Fig. S4 is 85.0% (SRC001-E084).
+
+This is a volumetric split on the common normal reference, not a conversion to mol/s. No reference temperature or pressure is assumed. Results support short_summary.txt; no modelled industrial capacities are included there.
+
 ## Reproducibility and revision record
 
 - Existing evidence IDs were preserved when the user selected 5.3 mm. Draft-only alternative-volume/lower-space-time IDs E134-E136, E138, E140, E142, E144, E146, E148, E150, E152, E154, E156 and E158 are retired, not reassigned; E135 is among the retired volume IDs. Current CSV contains 148 records; gaps in numbering are intentional. Selected volume is E162.
 - Changes: initial pilot extraction; applied user's 5.3 mm decision; retained source discrepancy and documented all missing energy inputs.
+- 2026-11-26: operating_points.csv, calculations.md and source_manifest.json merged into this file (Operating points, Calculations, Registration); no content changed.

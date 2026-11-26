@@ -4,7 +4,7 @@ Version 0.1 - 2026-11-09. Prepared by Claude (AI) at BB's request; candidates, n
 
 ## Purpose
 
-Review papers are used to choose the 5-10 exemplary primary studies per topic (see the "Review approach" sections of [../literature_pyrolysis/literature_review_objectives.md](../literature_pyrolysis/literature_review_objectives.md) and [../literature_co2_splitting/literature_review_objectives.md](../literature_co2_splitting/literature_review_objectives.md)), and to source benchmark data. They are not extracted as evidence. From each, record: the comparison figures or tables of conversion vs energy (by plasma type and scale), the leading primary studies they cite, and the metric conventions they use.
+Review papers are used to choose the 5-10 exemplary primary studies per topic (see the "Review approach" section of [../literature_co2_splitting/literature_review_objectives.md](../literature_co2_splitting/literature_review_objectives.md); the methane pyrolysis topic was dropped on 2026-11-26 and its reviews below are kept as introduction context only), and to source benchmark data. They are not extracted as evidence. From each, record: the comparison figures or tables of conversion vs energy (by plasma type and scale), the leading primary studies they cite, and the metric conventions they use.
 
 Each review has its own folder, named FirstAuthor_Journal_Year_ShortTopic, with `manuscript.pdf` when available.
 

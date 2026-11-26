@@ -8,7 +8,7 @@
 - Protocol 0.1 (with 2026-11-04 amendment). Extractor/reviewer: Claude (AI), 2026-11-05, same-extractor checks. Status: **ai_checked** (human_verified withdrawn 2026-11-10). Partial human check by BB, 2026-11-26: headline OP004 (E003, E004, E013; 1 kW fixed power, 10 nL/min, 45:55 results) confirmed; no changes (human_checks/summary.csv). Other records human verification pending.
 - Coverage: full text, Table 1 and Figs. 1-6. Numerical values taken from the text and Table 1 (which carry stated uncertainties); figures not digitised. Literature rows of Table 1 are not extracted as evidence, but identify further candidates (see search log).
 - Records: [evidence.csv](evidence.csv), 27 records (SRC011-E001-E022 source; E041-E045 reviewer calculations). Calculations C001-C002 in [calculations.py](calculations.py).
-- Selection: record R005 in [../../search_and_selection_log.md](../../search_and_selection_log.md).
+- Selection: record R005 in [search_and_selection_log.md](../../logs/search_and_selection_log.md).
 
 ## Electricity supply
 

@@ -1,8 +1,8 @@
 # Plasma CO2 splitting shortlist, round 1
 
-Prepared 2026-11-11 by Claude (AI). Candidates for the 5-10 exemplary studies ([literature_review_objectives.md](literature_review_objectives.md), "Review approach"). Searches CS001-CS018 and the record list are in [search_and_selection_log.md](search_and_selection_log.md).
+Prepared 2026-11-11 by Claude (AI). Candidates for the 5-10 exemplary studies ([literature_review_objectives.md](../literature_review_objectives.md), "Review approach"). Searches CS001-CS018 and the record list are in [search_and_selection_log.md](search_and_selection_log.md).
 
-Sources of candidates: the downloaded reviews in [../literature_reviews/](../literature_reviews/) (Bogaerts & Centi 2020, Bogaerts 2025, Osorio-Tejada et al. 2024 Table 1, Li et al. 2025) and a general web search tool (not Scopus or Web of Science). The two field-wide compilations, Snoeckx & Bogaerts 2017 (RV001) and Xu et al. 2025 (RV002), were downloaded by BB on 2026-11-11 and checked the same day (searches CS017-CS018; see "Check against RV001 and RV002" below).
+Sources of candidates: the downloaded reviews in [../literature_reviews/](../../literature_reviews/) (Bogaerts & Centi 2020, Bogaerts 2025, Osorio-Tejada et al. 2024 Table 1, Li et al. 2025) and a general web search tool (not Scopus or Web of Science). The two field-wide compilations, Snoeckx & Bogaerts 2017 (RV001) and Xu et al. 2025 (RV002), were downloaded by BB on 2026-11-11 and checked the same day (searches CS017-CS018; see "Check against RV001 and RV002" below).
 
 **Status of the numbers.** Every value below is from an abstract, a repository record, a search snippet or a review table. None has been extracted or checked against the full text. Values from snippets are often wrong (see the power-systems re-extraction). They are here only to explain why each candidate is on the list.
 

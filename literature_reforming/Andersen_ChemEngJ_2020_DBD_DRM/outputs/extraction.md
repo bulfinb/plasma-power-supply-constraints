@@ -8,7 +8,7 @@
 - Protocol 0.1 (with 2026-11-04 amendment). Extractor/reviewer: Claude (AI), 2026-11-05, same-extractor checks. Status: **ai_checked; human verification pending**.
 - Coverage: full manuscript and ESI read. Values from Table 3 and ESI Table S.2; Fig. 1(b) catalyst-only bars read approximately. XRD/SEM details recorded briefly. Table 4 literature comparison noted as context only.
 - Records: [evidence.csv](evidence.csv), 32 records (SRC013-E001-E026 source; E041-E046 reviewer calculations). Calculations C001-C005 in [calculations.py](calculations.py).
-- Selection: record R020 in [../../search_and_selection_log.md](../../search_and_selection_log.md).
+- Selection: record R020 in [search_and_selection_log.md](../../logs/search_and_selection_log.md).
 
 ## Electricity supply
 

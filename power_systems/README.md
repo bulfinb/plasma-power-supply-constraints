@@ -1,6 +1,6 @@
 # power_systems
 
-Industrial power-supply data for the scale-up assessment: efficiency, unit power, frequency, cost, lifetime and voltage of the supplies a scaled-up plasma or Joule-heated reactor would use. Sources are mainly manufacturer documents, patents, tenders and trade press; peer-reviewed papers assessed as a whole are in [../literature_plasma_powersupply/](../literature_plasma_powersupply/README.md). Restructured 2026-11-10; method in [workflow.md](workflow.md).
+Industrial power-supply data for the scale-up assessment: efficiency, unit power, frequency, cost, lifetime and voltage of the supplies a scaled-up plasma or Joule-heated reactor would use. Sources are mainly manufacturer documents, patents, tenders and trade press; peer-reviewed papers assessed as a whole are in [plasma_powersupply_literature.md](notes/plasma_powersupply_literature.md). Restructured 2026-11-10; method in [workflow.md](workflow.md).
 
 ## Structure
 

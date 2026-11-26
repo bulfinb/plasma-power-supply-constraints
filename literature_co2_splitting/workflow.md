@@ -49,7 +49,7 @@ evidence_id,source_id,operating_point_id,heading,field,availability,origin,repor
 
 Availability: reported, not_reported, unclear, not_applicable. Origin: quoted_text, table, figure_reading, author_calculation, reviewer_calculation, interpretation.
 
-**Processing log.** Add a row to [processing_log.md](processing_log.md) for each extraction or revision: date, source ID, folder, event, tool and version, exact model ID, session ID. In the review files the AI is named only (e.g. "Claude (AI)", "GPT (AI)"). Figure styling, manuscript tables and manuscript text are not logged here; git history records them (BB 2026-11-25).
+**Processing log.** Add a row to [processing_log.md](logs/processing_log.md) for each extraction or revision: date, source ID, folder, event, tool and version, exact model ID, session ID. In the review files the AI is named only (e.g. "Claude (AI)", "GPT (AI)"). Figure styling, manuscript tables and manuscript text are not logged here; git history records them (BB 2026-11-25).
 
 **Human checks** are logged in ../human_checks/findings.csv (one row per error found) and summary.csv (one row per check); the AI then corrects the files, keeping evidence IDs, and logs a revision row.
 

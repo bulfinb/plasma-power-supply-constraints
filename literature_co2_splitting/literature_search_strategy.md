@@ -2,7 +2,7 @@
 
 Version 0.1 - 2026-11-09.
 
-Objectives: [literature_review_objectives.md](literature_review_objectives.md). Extraction: [workflow.md](workflow.md). Searches and selection decisions are recorded in [search_and_selection_log.md](search_and_selection_log.md).
+Objectives: [literature_review_objectives.md](literature_review_objectives.md). Extraction: [workflow.md](workflow.md). Searches and selection decisions are recorded in [search_and_selection_log.md](logs/search_and_selection_log.md).
 
 ## Selection approach
 
@@ -38,7 +38,7 @@ Supplementary: "energy efficiency" AND "CO2" AND plasma AND (kW OR "high power" 
 
 ## Records
 
-Search and selection logs are in [search_and_selection_log.md](search_and_selection_log.md), with IDs prefixed CS (searches) and CR (records). Included sources take the next free global source ID (shared across all topic folders).
+Search and selection logs are in [search_and_selection_log.md](logs/search_and_selection_log.md), with IDs prefixed CS (searches) and CR (records). Included sources take the next free global source ID (shared across all topic folders).
 
 ## Version history
 

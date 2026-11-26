@@ -8,7 +8,7 @@
 - Protocol 0.1 (with 2026-11-04 amendment). Extractor/reviewer: Claude (AI), 2026-11-05, same-extractor checks. Status: **ai_checked; partial human check by BB, 2026-11-26: headline OP003-OP004 conditions and conversions (E011, E013; plasma alone and plasma + catalyst) confirmed from the text; author efficiency definition (CO at the H2 LHV) confirmed (E006); no changes (human_checks/summary.csv). Other records human verification pending.**
 - Coverage: full manuscript and ESI read. Values taken from text and Table 1 (figures not digitised). Catalyst characterisation (XRD, XPS, EDS) recorded briefly. Table 2 / Fig. 8 literature comparison not extracted.
 - Records: [evidence.csv](evidence.csv), 26 records (SRC012-E001-E021 source; E041-E045 reviewer calculations). Calculations C001-C005 in [calculations.py](calculations.py).
-- Selection: record R007 in [../../search_and_selection_log.md](../../search_and_selection_log.md).
+- Selection: record R007 in [search_and_selection_log.md](../../logs/search_and_selection_log.md).
 
 ## Electricity supply
 

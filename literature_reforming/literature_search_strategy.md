@@ -27,7 +27,7 @@ Papers combining experiments and modelling are eligible. Extract experimental re
 |---|---|
 | Modelling only | Simulations, thermodynamic calculations or proposed designs without a qualifying reforming experiment. |
 | Oxidative reforming | Autothermal reforming, partial oxidation, oxidative steam/dry reforming, oxidative coupling, and tri-reforming involving intentional oxygen addition. Electrical assistance does not make these eligible. |
-| Different reaction | Methane pyrolysis/decomposition, coupling or combustion without qualifying steam/CO2 reforming. Pyrolysis/coupling papers go to literature_pyrolysis; pure CO2 splitting to literature_co2_splitting. |
+| Different reaction | Methane pyrolysis/decomposition, coupling or combustion without qualifying steam/CO2 reforming. Pyrolysis/coupling papers are out of scope (topic descoped); pure CO2 splitting goes to literature_co2_splitting. |
 | Different feedstock | Reforming of methanol, ethanol or other fuels without a separately reported methane-reforming experiment. |
 | Other electrification method | Microwave dielectric heating (no discharge), induction heating, photochemical or electrochemical systems without Joule-heated or plasma activation. Microwave, RF and other electrically generated plasmas are plasma systems and remain eligible. Retain potentially useful references for a later category rather than adding them to this one. |
 | No original demonstration | Reviews, perspectives, patents or abstracts without sufficient original experimental results. Reviews may be used to find primary papers. |

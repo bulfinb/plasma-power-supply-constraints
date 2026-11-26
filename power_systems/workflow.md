@@ -4,7 +4,7 @@ Version 0.1 - 2026-11-10. Prepared by Claude (AI) at BB's request. It follows th
 
 ## 1. Scope
 
-This folder holds data on industrial power supplies: efficiency, unit power, frequency, cost, lifetime and voltage. Sources are mainly manufacturer documents, patents, tenders, trade press, project reports and conference abstracts. A peer-reviewed paper may be registered here when only one or two supply values are taken from it. Papers that are read and assessed as a whole belong in [../literature_plasma_powersupply/](../literature_plasma_powersupply/README.md) (supply side) or [../literature_reviews/](../literature_reviews/reviews_shortlist.md); values from them are cited in `supply_values.csv` by their PS or RV ID.
+This folder holds data on industrial power supplies: efficiency, unit power, frequency, cost, lifetime and voltage. Sources are mainly manufacturer documents, patents, tenders, trade press, project reports and conference abstracts. A peer-reviewed paper may be registered here when only one or two supply values are taken from it. Papers that are read and assessed as a whole belong in [plasma_powersupply_literature.md](notes/plasma_powersupply_literature.md) (supply side) or [../literature_reviews/](../literature_reviews/reviews_shortlist.md); values from them are cited in `supply_values.csv` by their PS or RV ID.
 
 ## 2. Register the source
 

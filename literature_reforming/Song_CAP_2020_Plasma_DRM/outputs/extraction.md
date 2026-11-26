@@ -8,7 +8,7 @@
 - Protocol 0.1 (with 2026-11-04 amendment). Extractor/reviewer: Claude (AI), 2026-11-05, same-extractor checks. Status: **ai_checked; partial human check by BB, 2026-11-26: headline OP013 (E016-E019) confirmed; BB reads the 22 kW as power-supply (generator) output, as assumed here (E003); no changes (human_checks/summary.csv). Other records human verification pending.**
 - Coverage: full text and Figs. 1-9 read; CHEMKIN-PRO simulations (Section 3.4, Figs. 10-11) are modelling and excluded. Fig. 7 (selectivities) not digitised; selectivities can be recomputed from Fig. 6.
 - Records: [evidence.csv](evidence.csv), 34 records (SRC009-E001-E027 source; E041-E047 reviewer calculations). Calculations C001-C006 in [calculations.py](calculations.py). E001 = SRC009-E001 below.
-- Selection: record R003 in [../../search_and_selection_log.md](../../search_and_selection_log.md).
+- Selection: record R003 in [search_and_selection_log.md](../../logs/search_and_selection_log.md).
 
 ## Electricity supply
 

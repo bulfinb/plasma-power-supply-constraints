@@ -4,7 +4,7 @@ Started 2026-11-09. Prepared by Claude (AI) at BB's request; status: candidates,
 
 ## Purpose
 
-Academic papers only (manufacturer and other non-academic data are in [../power_systems/](../power_systems/)). Papers on how the power supply and its matching to the plasma affect the energy balance at scale: wall-plug vs plasma efficiency, supply topologies, numbering-up of reactors on shared supplies, and techno-economic studies showing the supply's share of capital cost. These support the scale-up assessment in each topic folder and complement the representative supply table in [../power_systems/notes/scaleup_assessment.md](../power_systems/notes/scaleup_assessment.md) (which holds supply efficiencies and costs, not plasma papers). One folder per paper, named FirstAuthor_Journal_Year_ShortTopic, with `manuscript.pdf`.
+Academic papers only (manufacturer and other non-academic data are in [power_systems/](../)). Papers on how the power supply and its matching to the plasma affect the energy balance at scale: wall-plug vs plasma efficiency, supply topologies, numbering-up of reactors on shared supplies, and techno-economic studies showing the supply's share of capital cost. These support the scale-up assessment in each topic folder and complement the representative supply table in [scaleup_assessment.md](scaleup_assessment.md) (which holds supply efficiencies and costs, not plasma papers). One folder per paper, named FirstAuthor_Journal_Year_ShortTopic, with `manuscript.pdf`; the local copies are kept in `literature_plasma_powersupply/` at the repository root and are not distributed. This note was moved from that folder's README on 2026-11-26.
 
 ## Papers
 
@@ -15,20 +15,20 @@ Academic papers only (manufacturer and other non-academic data are in [../power_
 
 ## Related perspective
 
-Bogaerts (2025) Nat. Chem. Eng. 2, 336-340 ([../literature_reviews/Bogaerts_NatChemEng_2025_Plasma_Electrification](../literature_reviews/Bogaerts_NatChemEng_2025_Plasma_Electrification), RV015 in [../literature_reviews/reviews_shortlist.md](../literature_reviews/reviews_shortlist.md)) lists "power supply matching" alongside energy-efficiency optimisation as a reactor-design lever (Fig. 2), and states that overall energy efficiency should be optimised by matching the power supply to the plasma, together with heat recovery and gas recycling. It is a short comment, so it names the issue rather than quantifying it.
+Bogaerts (2025) Nat. Chem. Eng. 2, 336-340 ([../literature_reviews/Bogaerts_NatChemEng_2025_Plasma_Electrification](../../literature_reviews/Bogaerts_NatChemEng_2025_Plasma_Electrification), RV015 in [../literature_reviews/reviews_shortlist.md](../../literature_reviews/reviews_shortlist.md)) lists "power supply matching" alongside energy-efficiency optimisation as a reactor-design lever (Fig. 2), and states that overall energy efficiency should be optimised by matching the power supply to the plasma, together with heat recovery and gas recycling. It is a short comment, so it names the issue rather than quantifying it.
 
 ## Techno-economic assessments: capital cost and the power supply
 
-Academic studies that quantify plasma capital cost and the share taken by the power supply. Values used are in [../power_systems/results/supply_values.csv](../power_systems/results/supply_values.csv) under the PS ID.
+Academic studies that quantify plasma capital cost and the share taken by the power supply. Values used are in [../power_systems/results/supply_values.csv](../results/supply_values.csv) under the PS ID.
 
 | ID | Citation / DOI | Why | Copy |
 |---|---|---|---|
 | PS003 | Lamberts-Van Assche, Thomassen & Compernolle (2022) J. CO2 Util. 64, 102156. [10.1016/j.jcou.2022.102156](https://doi.org/10.1016/j.jcou.2022.102156) | Prospective TEA of DBD plasma CO2 conversion (144 kW); electricity price and power supply investment are the main cost factors (as summarised by Osorio-Tejada 2024); Table 6: power supply €173,000 of €188,143 CAPEX for a 144 kW pilot (~92%; the source of the "€1,300/kW DBD reactor"); supply cost function 1500·kW + 900 € from industry estimates; power source efficiency ~50% (source to plasma). Extracted 2026-11-10 (PS003-V01 to -V05) | browser print of the ScienceDirect full-text web page (`manuscript_html_save_to_pdf.pdf`, 26 pp., no journal page numbers; Elsevier PDF download failed); `a663cea79ac260cb9db7b36bcb783ead9fcf719a78b71e1261548bcd5b2df10f` |
 | PS004 | Kaufmann, Rößner, Renninger, Lambarth, Raab, Stein, Seithümmer & Birke (2023) Appl. Sci. 13, 4839. [10.3390/app13084839](https://doi.org/10.3390/app13084839) | TEA of plasma CO2 splitting in power-to-liquid plants (3 MW); Plasma reactor cost functions (DBD 0.05614·P^0.5331, GA 0.1123·P^0.5331 Mio EUR, from PEM electrolyser manufacturing); ~€1,300/kW DBD at 3 MW, taken from PS003; O2 separation (GDE) 30-70% of capex. Extracted 2026-11-10 (PS004-V01 to -V06) | published version (CC BY); `44cdf041db538e9adc37e9a110abeab209b25836472b8b087771532ff1cd24bb` |
-| (RV005) | Osorio-Tejada et al. (2024) Energy Environ. Sci. 17, 5833-5853, in [../literature_reviews/](../literature_reviews/reviews_shortlist.md) | Gliding arc power unit + reactor €1,085/kW from an industrial project; lab supplies costly because built for flexibility (p. 5842) | downloaded |
-| (RV017) | van Rooij et al. (2018) Plasma Phys. Control. Fusion 60, 014019, in [../literature_reviews/](../literature_reviews/reviews_shortlist.md) | Industrial microwave CO2-to-CO process design and cost, including supply | downloaded |
+| (RV005) | Osorio-Tejada et al. (2024) Energy Environ. Sci. 17, 5833-5853, in [../literature_reviews/](../../literature_reviews/reviews_shortlist.md) | Gliding arc power unit + reactor €1,085/kW from an industrial project; lab supplies costly because built for flexibility (p. 5842) | downloaded |
+| (RV017) | van Rooij et al. (2018) Plasma Phys. Control. Fusion 60, 014019, in [../literature_reviews/](../../literature_reviews/reviews_shortlist.md) | Industrial microwave CO2-to-CO process design and cost, including supply | downloaded |
 
-Bogaerts (2025, RV015, p. 338) states that warm-plasma capital cost is mainly the power supply. The argument about whether supplies are a "niche product", with manufacturer data, is in [../power_systems/notes/supply_maturity_niche.md](../power_systems/notes/supply_maturity_niche.md).
+Bogaerts (2025, RV015, p. 338) states that warm-plasma capital cost is mainly the power supply. The argument about whether supplies are a "niche product", with manufacturer data, is in [supply_maturity_niche.md](supply_maturity_niche.md).
 
 ## Not retrieved / further candidates
 

@@ -1,6 +1,6 @@
 # Processing log
 
-Single record of the AI tools, model versions and human reviewers that processed each source in this folder ([workflow.md](workflow.md) section 3). Review files name only the AI (e.g. "Claude (AI)"); this log carries the tool and exact model versions. Extractions dated before 2026-11-19 followed "workflow.md 0.7 + CO2 metrics", recorded in workflow.md 1.0.
+Single record of the AI tools, model versions and human reviewers that processed each source in this folder ([workflow.md](../workflow.md) section 3). Review files name only the AI (e.g. "Claude (AI)"); this log carries the tool and exact model versions. Extractions dated before 2026-11-19 followed "workflow.md 0.7 + CO2 metrics", recorded in workflow.md 1.0.
 
 Source documents are not distributed. Each `outputs/extraction.md` records SHA-256 hashes of the documents used.
 

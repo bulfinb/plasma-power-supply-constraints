@@ -2,7 +2,7 @@
 
 Version 0.1 - 2026-11-09.
 
-Part of the electrified endothermic processes review (see [../README.md](../README.md)). Sibling topics: [../literature_reforming/](../literature_reforming/) and [../literature_pyrolysis/](../literature_pyrolysis/). Extraction follows [workflow.md](workflow.md) and [_source_template.md](_source_template.md).
+Part of the electrified endothermic processes review (see [../README.md](../README.md)). Sibling topic: [../literature_reforming/](../literature_reforming/). Extraction follows [workflow.md](workflow.md) and [_source_template.md](_source_template.md).
 
 ## Main objective
 

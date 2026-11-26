@@ -8,7 +8,7 @@
 - Protocol 0.1 (with 2026-11-04 amendment). Extractor/reviewer: Claude (AI), 2026-11-05, same-extractor checks. Status: **ai_checked; partial human check by BB, 2026-11-26: headline OP006 Fig. 3 conversions (~73% CH4, ~55% CO2; E010) confirmed approximately; paper confirmed silent on the power method and ballast boundary (E004; exclusion inferred, C005); no changes (human_checks/summary.csv). Other records human verification pending.**
 - Coverage: full manuscript and ESI read. Most results are in figures only: Figs. 3, 4, 6 and 7 read by eye from the embedded 300 ppi images (~0.5-1 point for conversions, ~0.2-0.3 kJ/L for SEI, ~0.01 for H2/CO). The kinetic model (Sections 2.2, 3.5; ESI Section 2) is recorded as context only.
 - Records: [evidence.csv](evidence.csv), 33 records (SRC015-E001-E027 source; E041-E046 reviewer calculations). Calculations C001-C006 in [calculations.py](calculations.py).
-- Selection: record R009 in [../../search_and_selection_log.md](../../search_and_selection_log.md).
+- Selection: record R009 in [search_and_selection_log.md](../../logs/search_and_selection_log.md).
 
 ## Electricity supply
 

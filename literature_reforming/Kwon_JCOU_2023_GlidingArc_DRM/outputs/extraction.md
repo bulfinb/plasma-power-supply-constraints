@@ -8,7 +8,7 @@
 - Protocol 0.1 (with 2026-11-04 amendment). Extractor/reviewer: Claude (AI), 2026-11-05, same-extractor checks. Status: **ai_checked; human verification pending**.
 - Coverage: full manuscript and ESI read. Values from text and Table 1 where given; Figs. 2, 6, 9 and 11 read by eye from 250 dpi renders (~0.5 points, ~10 degC). Equilibrium modelling (Figs. 4-5) recorded as context only.
 - Records: [evidence.csv](evidence.csv), 28 records (SRC014-E001-E022 source; E041-E046 reviewer calculations). Calculations C001-C005 in [calculations.py](calculations.py).
-- Selection: record R008 in [../../search_and_selection_log.md](../../search_and_selection_log.md).
+- Selection: record R008 in [search_and_selection_log.md](../../logs/search_and_selection_log.md).
 
 ## Electricity supply
 

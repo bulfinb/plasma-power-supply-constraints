@@ -1,7 +1,7 @@
 # Reforming synthesis tables
 
 Built by build_synthesis.py from the short summaries (literature_reforming/*/short_summary.txt), including the
-corrections from the GPT cross-check (../cross_check_log.md). Headline rows first within each source; supporting
+corrections from the GPT cross-check (../logs/cross_check_log.md). Headline rows first within each source; supporting
 rows in reforming_synthesis.csv. NR = not reported; NA = not applicable; ~ = approximate.
 
 SEI_CH4 = kJ per mol CH4 fed; EC_CH4 = kJ per mol CH4 converted, both at each paper's power boundary (external heat

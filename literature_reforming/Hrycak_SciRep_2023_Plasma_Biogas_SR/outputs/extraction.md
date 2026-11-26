@@ -8,7 +8,7 @@
 - Protocol 0.1 (with 2026-11-04 amendment). Extractor/reviewer: Claude (AI), 2026-11-05, same-extractor checks. Status: **ai_checked** (human_verified withdrawn 2026-11-10). Partial human check by BB, 2026-11-26: headline OP001-OP002 (Table 1 rows 1-2, E010, E011) and the carbon gap (E045) confirmed; NL reference conditions not found in the paper (E044 stays a reviewer inference); no changes (human_checks/summary.csv). Other records human verification pending.
 - Coverage: full text, Tables 1-4 and Figs. 4-9. Table 1 (three tabulated points) and Fig. 9 (power sweep) extracted as operating points; Figs. 4, 6-8 used for trends. Table 4 is a literature comparison (not extracted). The setup and power measurement are described in more detail in the authors' ref. 44 (Hrycak et al., Plasma Chem. Plasma Process. 39 (2019) 695), not obtained.
 - Records: [evidence.csv](evidence.csv), 34 records (SRC010-E001-E026 source; E041-E048 reviewer calculations). Calculations C001-C005 in [calculations.py](calculations.py).
-- Selection: record R004 in [../../search_and_selection_log.md](../../search_and_selection_log.md).
+- Selection: record R004 in [search_and_selection_log.md](../../logs/search_and_selection_log.md).
 
 ## Electricity supply
 

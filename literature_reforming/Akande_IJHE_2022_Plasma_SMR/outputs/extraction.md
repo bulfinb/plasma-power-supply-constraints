@@ -8,7 +8,7 @@
 - Protocol 0.1 (with 2026-11-04 amendment). Extractor/reviewer: Claude (AI), 2026-11-05, same-extractor checks. Status: **ai_checked; partial human check by BB, 2026-11-26: headline OP003 (E012, E014, E015, E022, E041) confirmed: 96.6% at 32 kW, 60 lpm, S/C 3; H2 rate above the stoichiometric ceiling and the Fig. 10 conflict agreed; no changes (human_checks/summary.csv). Other records human verification pending.**
 - Coverage: full text, corrigendum and Figs. 6-10 read. ASPEN Plus simulations (Figs. 4, 6-9) are modelling and excluded. Table 2 is a literature comparison and is not extracted.
 - Records: [evidence.csv](evidence.csv), 38 records (SRC008-E001-E030 source; E041-E048 reviewer calculations). Calculations C001-C007 in [calculations.py](calculations.py). E001 = SRC008-E001 below.
-- Selection: record R002 in [../../search_and_selection_log.md](../../search_and_selection_log.md).
+- Selection: record R002 in [search_and_selection_log.md](../../logs/search_and_selection_log.md).
 
 **Headline caution.** The paper's main results are internally inconsistent and the corrigendum does not resolve this (section "Consistency checks"). The reported H2 production rate (2247 g/h) and energy yield (70 g H2/kWh) exceed the stoichiometric maximum for the stated methane feed by a factor of 1.7. Use the author's H2 and energy-yield values only with that flag.
 

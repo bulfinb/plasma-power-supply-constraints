@@ -23,7 +23,7 @@ Source documents (manuscripts, supplements) are not distributed with this folder
 
 ## Events
 
-Power-systems events are logged in [../power_systems/processing_log.md](../power_systems/processing_log.md) from 2026-11-10; earlier power-systems rows below are also copied there.
+Power-systems events are logged in [../power_systems/processing_log.md](../../power_systems/logs/processing_log.md) from 2026-11-10; earlier power-systems rows below are also copied there.
 
 Event types: extraction (initial), revision (substantive change to records), appraisal, summary update. A human check is recorded in the Human reviewer column of the AI row it reviewed (e.g. "reviewed by BB, date (human_verified)"), so each row shows both who extracted and who checked. The 2026-10-28 to 2026-11-04 rows were reconstructed on 2026-11-05 from the extraction files' revision notes and the session logs.
 

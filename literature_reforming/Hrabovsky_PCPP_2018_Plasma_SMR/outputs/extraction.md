@@ -8,7 +8,7 @@
 - Protocol 0.1 (with 2026-11-04 amendment). Extractor/reviewer: Claude (AI), 2026-11-05, same-extractor checks. Status: **ai_checked; partial human check by BB, 2026-11-26: headline OP001 feeds, arc power, Fig. 7 MS composition and Ar-tracer conversion (E013-E015, E017, E041) confirmed, no changes (human_checks/summary.csv). Other records human verification pending.**
 - Coverage: full text read; all figures inspected. Selected matched operating points from Figs. 7 and 8 (all eight segments) and the authors' plotted relations in Figs. 9-16. Section 2 (equilibrium calculations, Figs. 1-5) is modelling and is recorded only for the theoretical minimum energy.
 - Records: [evidence.csv](evidence.csv), 51 records (SRC007-E001-E039 source records; E041-E052 reviewer calculations). Reviewer calculations C001-C008 in [calculations.py](calculations.py). Evidence IDs below are abbreviated (E001 = SRC007-E001).
-- Selection: record R001 in [../../search_and_selection_log.md](../../search_and_selection_log.md). Folder renamed 2026-11-05 from `Harbovsky_2018_PCPP_Plasma_SMR_100kW` to the workflow naming convention.
+- Selection: record R001 in [search_and_selection_log.md](../../logs/search_and_selection_log.md). Folder renamed 2026-11-05 from `Harbovsky_2018_PCPP_Plasma_SMR_100kW` to the workflow naming convention.
 
 ## Electricity supply
 
