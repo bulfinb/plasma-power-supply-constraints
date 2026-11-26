@@ -20,7 +20,7 @@ Kwon 2023 OP003,SRC014,DRM,AC rotating GA + quench,K1,0.268,1:1:0 (+50% N2),~370
 Kwon 2023 OP002,SRC014,DRM,AC rotating GA + quench,K1,0.223,1:1.4:0 (+50% N2),~360 TC1,1.672,discharge,none,51.1,40.2,450,880,880,957,978,~0.2 h,H,H,,SRC014-E042,author efficiency 55.3%
 Wanten 2022 OP006,SRC015,DRM,DC confined glow,D1,0.0146,1:1.86:0,NR,0.145,plasma,none,~73.5,~54.8,598,813,813,838,884,NR,H,M,yes,SRC015-E042,300 kOhm lab ballast excluded (plasma 28-39% of supply output)
 Wanten 2022 OP003,SRC015,DRM,DC confined glow,D1,0.0052,1:3:0,NR,0.097,plasma,none,94.28,63.7,1126,1194,1194,1231,1298,NR,H,M,,SRC015-E042,highest CH4 conversion
-Kaufmann 2026 OP001,SRC027,DRM,DC rotating glow,D1,0.134,1:1:0,NR,0.54,plasma,none,~42,~38.5,241,574,574,592,624,2-5 min run,M,M,yes,SRC027-E042,"20 mm, 0.24 A; power-electronic current control, no ballast; supply output 640 kJ/mol (driver 88-94%)"
+Kaufmann 2026 OP001,SRC027,DRM,DC rotating glow,D1,0.134,1:1:0,NR,0.54,plasma,none,~42,~38.5,241,574,574,592,624,2-5 min run,M,M,,SRC027-E042,"20 mm, 0.24 A; power-electronic current control, no ballast; supply output 640 kJ/mol (driver 88-94%)"
 Kaufmann 2026 OP002,SRC027,DRM,DC rotating glow,D1,0.134,1:1:0,NR,1.43,plasma,none,~66,~70,641,971,971,1001,1055,2-5 min run,M,M,yes,SRC027-E043,"40 mm, 0.4 A; P = SEI x flow (text quotes 1660 W); supply output 1080 kJ/mol"
 Kaufmann 2026 OP003,SRC027,DRM,DC rotating glow,D1,0.107,1:1.5:0,NR,1.1,plasma,none,~52.5,~56,618,1178,1178,1214,1280,2-5 min run,M,M,,SRC027-E044,"60/40 CO2/CH4: little solid carbon (S_C,CO ~93%)"
 Andersen 2020 OP001,SRC013,DRM,DBD (no packing),K1,0.00102,1:1:0,ambient,0.045,discharge,none,32.6,22.4,2642,8103,8103,8808,9003,1 h,M,H,yes,SRC013-E042,best packed case (Cu) same EC_CH4

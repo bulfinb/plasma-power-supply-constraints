@@ -88,7 +88,7 @@ ROWS = [
     R("Wanten 2022 OP003", "SRC015", "DRM", "DC confined glow", "D1", 0.0052, "1:3:0", "NR", 0.097, "plasma",
       "none", "94.28", "63.7", 1126, (1194, 1194), "NR", "H", "M", False, "SRC015-E042", "highest CH4 conversion"),
     R("Kaufmann 2026 OP001", "SRC027", "DRM", "DC rotating glow", "D1", 0.134, "1:1:0", "NR", 0.54, "plasma",
-      "none", "~42", "~38.5", 241, (574, 574), "2-5 min run", "M", "M", True, "SRC027-E042",
+      "none", "~42", "~38.5", 241, (574, 574), "2-5 min run", "M", "M", False, "SRC027-E042",
       "20 mm, 0.24 A; power-electronic current control, no ballast; supply output 640 kJ/mol (driver 88-94%)"),
     R("Kaufmann 2026 OP002", "SRC027", "DRM", "DC rotating glow", "D1", 0.134, "1:1:0", "NR", 1.43, "plasma",
       "none", "~66", "~70", 641, (971, 971), "2-5 min run", "M", "M", True, "SRC027-E043",
@@ -253,7 +253,7 @@ Conf. = confidence in conversion / energy results from the extraction (H higher,
   impossible H2 rate), Song ~1080-1140 (22 kW) and Hrabovsky ~1200-1310 (120 kW, the only process-complete
   figure: the torch raises its own steam). Against fired SMR this is ~1-4x the absorbed heat and ~0.5-2.3x the
   fuel energy, but electricity against heat. Conversion 66-97% at these points; 94-99% costs ~1300-2400.
-- Lab-scale points (paper boundary): Zhu 490 (Ni catalyst, steam excluded), Kaufmann 574 (0.5 kW) to 971 (1.4 kW), Kelly 581,
+- Lab-scale points (paper boundary): Zhu 490 (Ni catalyst, steam excluded), Kaufmann 971 (1.4 kW; 574 at 0.5 kW and 42%), Kelly 581,
   Kwon 740, Wanten 813, Geng 1120-1490
   (furnace excluded), Andersen ~8100 kJ/mol (DBD).
 - Joule heating converts at equilibrium (85-98%) and runs for 80-1535 h, but no paper gives power and feed at

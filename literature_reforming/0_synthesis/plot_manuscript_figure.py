@@ -51,7 +51,7 @@ FIRED = [("NETL", 77.7, 340, 577), ("IEAGHG", 84.6, 315, 574)]   # name, X_CH4, 
 LABEL = {"Hrabovsky 2018 OP001": "Hrabovsky", "Hrabovsky 2018 OP005": "Hrabovsky", "Akande 2022 OP003": "Akande",
          "Hrycak 2023 OP002": "Hrycak", "Hrycak 2023 OP001": "Hrycak", "Zhu 2019 OP004": "Zhu",
          "Geng 2022 OP002": "Geng", "Song 2020 OP013": "Song", "Kelly 2023 OP004": "Kelly",
-         "Kwon 2023 OP003": "Kwon", "Wanten 2022 OP006": "Wanten", "Kaufmann 2026 OP001": "Kaufmann", "Kaufmann 2026 OP002": "Kaufmann", "Andersen 2020 OP001": "Andersen"}
+         "Kwon 2023 OP003": "Kwon", "Wanten 2022 OP006": "Wanten", "Kaufmann 2026 OP002": "Kaufmann", "Andersen 2020 OP001": "Andersen"}
 OFFSET = {   # label position relative to the filled (industrial-supply) marker: (dx, dy) points, ha, va
     "Hrabovsky 2018 OP001": ((6, -2), "left", "top"),
     "Hrabovsky 2018 OP005": ((6, 1), "left", "bottom"),

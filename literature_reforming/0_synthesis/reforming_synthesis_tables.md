@@ -26,7 +26,6 @@ Song 2020 OP013     | RF ICP torch 400 kHz    | K2    | 1.61          | 1:0.83:0
 Kelly 2023 OP004    | MW 2.45 GHz             | M2    | 0.187         | 1:1.22:0        | 1      | absorbed MW  | 55.2      | 45.8      | 321     | 581    | 807-922   | ~0.25 h     | H/H
 Kwon 2023 OP003     | AC rotating GA + quench | K1    | 0.268         | 1:1:0 (+50% N2) | 1.668  | discharge    | 50.5      | 40.3      | 374     | 740    | 804-822   | ~0.2 h      | H/H
 Wanten 2022 OP006   | DC confined glow        | D1    | 0.015         | 1:1.86:0        | 0.145  | plasma       | ~73.5     | ~54.8     | 598     | 813    | 838-884   | NR          | H/M
-Kaufmann 2026 OP001 | DC rotating glow        | D1    | 0.134         | 1:1:0           | 0.540  | plasma       | ~42       | ~38.5     | 241     | 574    | 592-624   | 2-5 min run | M/M
 Kaufmann 2026 OP002 | DC rotating glow        | D1    | 0.134         | 1:1:0           | 1.43   | plasma       | ~66       | ~70       | 641     | 971    | 1001-1055 | 2-5 min run | M/M
 Andersen 2020 OP001 | DBD (no packing)        | K1    | 0.001         | 1:1:0           | 0.045  | discharge    | 32.6      | 22.4      | 2642    | 8103   | 8808-9003 | 1 h         | M/H
 
@@ -80,7 +79,7 @@ Joule-heated benchmarks:
   impossible H2 rate), Song ~1080-1140 (22 kW) and Hrabovsky ~1200-1310 (120 kW, the only process-complete
   figure: the torch raises its own steam). Against fired SMR this is ~1-4x the absorbed heat and ~0.5-2.3x the
   fuel energy, but electricity against heat. Conversion 66-97% at these points; 94-99% costs ~1300-2400.
-- Lab-scale points (paper boundary): Zhu 490 (Ni catalyst, steam excluded), Kaufmann 574 (0.5 kW) to 971 (1.4 kW), Kelly 581,
+- Lab-scale points (paper boundary): Zhu 490 (Ni catalyst, steam excluded), Kaufmann 971 (1.4 kW; 574 at 0.5 kW and 42%), Kelly 581,
   Kwon 740, Wanten 813, Geng 1120-1490
   (furnace excluded), Andersen ~8100 kJ/mol (DBD).
 - Joule heating converts at equilibrium (85-98%) and runs for 80-1535 h, but no paper gives power and feed at
