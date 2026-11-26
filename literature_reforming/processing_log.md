@@ -38,8 +38,8 @@ Event types: extraction (initial), revision (substantive change to records), app
 | 2026-11-04 | SRC005 | From_CEJ_2024_eSMR_Biogas | extraction | Claude Code 2.1.317 | claude-opus-5-5 | 2fa545d5 | |
 | 2026-11-04 | SRC006 | From_CEJ_2025_eSMR_Biogas2 | extraction | Claude Code 2.1.318 | claude-opus-5-5 | 2fa545d5 | |
 | 2026-11-05 | SRC001-SRC006 | (earlier sources) | summary update (five comparison tables) | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | |
-| 2026-11-05 | SRC007 | Hrabovsky_PCPP_2018_Plasma_SMR | extraction | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | |
-| 2026-11-05 | SRC008 | Akande_IJHE_2022_Plasma_SMR | extraction | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | |
+| 2026-11-05 | SRC007 | Hrabovsky_PCPP_2018_Plasma_SMR | extraction | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | reviewed by BB, 2026-11-26 (partial: OP001) |
+| 2026-11-05 | SRC008 | Akande_IJHE_2022_Plasma_SMR | extraction | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | reviewed by BB, 2026-11-26 (partial: OP003) |
 | 2026-11-05 | SRC009 | Song_CAP_2020_Plasma_DRM | extraction | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | |
 | 2026-11-05 | SRC010 | Hrycak_SciRep_2023_Plasma_Biogas_SR | extraction | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | |
 | 2026-11-05 | SRC011 | Kelly_JCOU_2023_Plasma_DRM | extraction | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | |
@@ -81,5 +81,5 @@ Event types: extraction (initial), revision (substantive change to records), app
 | 2026-11-20 | SRC005 | 0_synthesis/ | From 2024 OP004-OP007 reviewer-estimate row (EC_CH4 388-485 kJ/mol, SRC005-C004) added to build_synthesis.py; reading summary updated | Claude Code 2.1.322 | claude-opus-5-5 | d3b811d6 | |
 | 2026-11-23 | (all) | 0_synthesis/ | rebuilt after the power-supply relevance review: M1 0.74-0.84 -> 0.74-0.82 (power_systems, PW045 dropped); M1 rows of the synthesis, table and figures updated | Claude Code 2.1.322 | claude-opus-5-5 | d3b811d6 | |
 | 2026-11-25 | (all) | search_and_selection_log.md | round 3 started: BB's Google Scholar recency search for 2026 plasma and Joule-heated reforming logged (S033, nothing additional); search terms and screening criteria prepared for BB | Claude Code 2.1.331 | claude-opus-5-5 | 95037651 | |
-| 2026-11-26 | SRC027 | Kaufmann_JCOU_2026_GlowArc_DRM | Screened (R030, S034; identified by BB) and extracted: OP001-OP003 from Fig. 13a/b (400 dpi render), evidence E001-E025, calculations C001-C004 (E041-E047, outputs/calculations.py); added to 0_synthesis (D1 class) | Claude Code 2.1.331 | claude-opus-5-5 | 95037651 || reviewed by BB, 2026-11-26 (partial: OP002) |
+| 2026-11-26 | SRC027 | Kaufmann_JCOU_2026_GlowArc_DRM | Screened (R030, S034; identified by BB) and extracted: OP001-OP003 from Fig. 13a/b (400 dpi render), evidence E001-E025, calculations C001-C004 (E041-E047, outputs/calculations.py); added to 0_synthesis (D1 class) | Claude Code 2.1.331 | claude-opus-5-5 | 95037651 | reviewed by BB, 2026-11-26 (partial: OP002) |
 | 2026-11-26 | SRC027 | Kaufmann_JCOU_2026_GlowArc_DRM | revision after GPT cross-check (XR011-XR015): Q4 partly -> no; no value changes; cross_check_log.md summary, XR rows and addendum | Claude Code 2.1.331 | claude-opus-5-5 | 95037651 | |

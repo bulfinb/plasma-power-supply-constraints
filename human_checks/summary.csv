@@ -8,3 +8,5 @@ SRC021,2026-11-25,BB,"partial: headline OP003 (E014); benchmark (no-bed) inconsi
 SRC020,2026-11-25,BB,"partial: headline OP001 (E010, E011); Fig. 4 five-node power rises with flow (noted in E011, E015)",2,25,0,0,NR,ai_checked (OP001 confirmed)
 SRC026,2026-11-25,BB,"partial: SOEC benchmark OP001 (E009, E014, E041); reported 3.89 kWh/Nm3 judged a typo, conservative 3.98 kept",3,22,0,0,NR,ai_checked (OP001 confirmed)
 SRC027,2026-11-26,BB,"partial: headline OP002 (E011, E014, E043); no changes",3,32,0,0,NR,ai_checked (OP002 confirmed)
+SRC007,2026-11-26,BB,"partial: headline OP001 (E013-E015, E017, E041); Fig. 7 feeds, arc power and MS composition confirmed, Ar-tracer mass balance agreed; arc-basis vs process-enthalpy gap explained (noted in E046)",5,51,0,0,NR,ai_checked (OP001 confirmed)
+SRC008,2026-11-26,BB,"partial: headline OP003 (E012, E014, E015, E022, E041); 96.6% at 32 kW confirmed; H2 rate above stoichiometric ceiling agreed (Fig. 7 axis label queried, read as g/h); Fig. 10 CH4 0.14 conflict agreed",5,38,0,0,NR,ai_checked (OP003 confirmed)
