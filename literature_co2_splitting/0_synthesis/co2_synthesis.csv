@@ -28,10 +28,10 @@ Renninger 2022 OP002,SRC022,DC glow-to-arc,D1,0.92,0.97,~1.01,1,0.099,plasma,~17
 Renninger 2022 OP003,SRC022,DC glow-to-arc,D1,0.92,0.97,~1.01,1,0.217,plasma,~28.8,19.3,19.3,,,19.3,19.3,19.9,20.98,16.7,17.61,,0.0112,,moderate,moderate,,SRC022-E041,
 Yong 2023 OP001,SRC023,NRP (batch),P1,0.45,0.92,5.8,1,0.021,deposited,14,15.1,16.3,,,15.1,16.3,16.41,36.22,9.67,21.35,,0.00134,420 s batch,moderate,lower,yes,"SRC023-E041, E042",chamber volume per data set unclear
 Yong 2023 OP002,SRC023,NRP (batch),P1,0.45,0.92,5.0,1,0.024,deposited,3.3,13,13,,,13,13,14.13,28.89,12.13,24.79,,0.00185,120 s batch,moderate,lower,,SRC023-E042,
-Van Laer 2015 OP001,SRC024,packed DBD,K1,0.9,0.92,~1.01,1,0.023,plasma (implied),37.8 (28.8 corr.),54,54,,,54,54,58.7,60.0,5.84,5.97,,0.000426,,moderate-lower,lower,yes,SRC024-E041-E043,X likely not expansion-corrected
-Van Laer 2015 OP002,SRC024,packed DBD,K1,0.9,0.92,~1.01,1,0.034,plasma (implied),42.0 (32.6 corr.),74,74,,,74,74,80.43,82.22,4.26,4.36,,0.000459,,moderate-lower,lower,,SRC024-E041-E043,
-Van Laer 2015 OP003,SRC024,packed DBD,K1,0.9,0.92,~1.01,1,0.02,plasma (implied),10.0 (6.9 corr.),36,36,,,36,36,39.13,40.0,8.76,8.95,,0.000556,,moderate-lower,lower,yes,SRC024-E041-E043,best efficiency
-Van Laer 2015 OP004,SRC024,DBD (empty),K1,0.9,0.92,~1.01,1,0.021,plasma (implied),~19.9 (14.2 corr.),98,98,,,98,98,106.52,108.89,3.22,3.29,,0.000214,,moderate-lower,lower,,SRC024-E041-E043,
+Van Laer 2015 OP001,SRC024,packed DBD,K1,0.9,0.92,~1.01,1,0.023,plasma (implied),28.8 (rep. 37.8),71.0,71.0,,,71.0,71.0,77.17,78.89,4.44,4.54,,0.000324,,moderate-lower,lower,yes,SRC024-E041-E043,X expansion-corrected by reviewer (E043-E044)
+Van Laer 2015 OP002,SRC024,packed DBD,K1,0.9,0.92,~1.01,1,0.034,plasma (implied),32.6 (rep. 42.0),95.2,95.2,,,95.2,95.2,103.48,105.78,3.31,3.39,,0.000357,,moderate-lower,lower,,SRC024-E041-E043,
+Van Laer 2015 OP003,SRC024,packed DBD,K1,0.9,0.92,~1.01,1,0.02,plasma (implied),6.9 (rep. 10.0),52.4,52.4,,,52.4,52.4,56.96,58.22,6.02,6.15,,0.000382,,moderate-lower,lower,yes,SRC024-E041-E043,best efficiency
+Van Laer 2015 OP004,SRC024,DBD (empty),K1,0.9,0.92,~1.01,1,0.021,plasma (implied),14.2 (rep. ~19.9),136.6,136.6,,,136.6,136.6,148.48,151.78,2.31,2.36,,0.000154,,moderate-lower,lower,,SRC024-E041-E043,
 Kungas 2020 OP001,SRC025,SOEC stack,J1,0.97,0.98,NR,1,,stack DC,NR,2.5,2.7,,,2.5,2.7,2.54,2.78,,,,,,lower,moderate,yes,"SRC025-E007, E013, E041",best cell voltage; Table I vs text mismatch; heat NR
 Kungas 2020 OP002,SRC025,SOEC stack,J1,0.97,0.98,NR,1,,stack DC,NR,2.96,3.06,,,2.96,3.06,3.01,3.15,,,,,2000 h,lower,moderate,,SRC025-E041,start -> end of test
 Kungas 2020 OP003,SRC025,SOEC stack,J1,0.97,0.98,NR,1,,stack DC,NR,3.3,3.6,,,3.3,3.6,3.35,3.71,,,,,7600 h,lower,moderate,yes,SRC025-E041,system test; start -> end

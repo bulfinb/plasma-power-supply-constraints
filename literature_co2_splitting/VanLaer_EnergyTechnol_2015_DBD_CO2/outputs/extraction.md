@@ -86,10 +86,11 @@ All in outputs/calculations.py.
 - SRC024-C002 EC_CO2 = dH/eta (plasma basis), in kWh/Nm3 CO. Result E042.
 - SRC024-C003 Expansion-corrected conversion if X = 1 - y_CO2,out. Result E043.
 - SRC024-C004 Efficiency on applied power. Result E042.
+- SRC024-C005 EC_CO on the expansion-corrected conversion: EC_CO2 x X_reported / X_corrected. Result E044 (OP001 71, OP002 95, OP003 52, OP004 137 kWh/Nm3 CO, plasma power).
 
 ## Revisions
 
-None.
+- 2026-11-26 (BB decision): the synthesis and manuscript figure use the expansion-corrected conversion and EC_CO (C005, E044), for consistency with Kim 2014 (SRC028); reported values kept in the tables here. Evidence IDs kept.
 
 ## Plasma characteristics
 

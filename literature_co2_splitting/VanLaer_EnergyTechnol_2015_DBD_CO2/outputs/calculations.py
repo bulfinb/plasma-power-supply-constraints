@@ -36,6 +36,7 @@ def run():
         out.append(f"EC_CO2 {ec:.0f} kJ/mol = {ec/KWH_NM3:.1f} kWh/Nm3 CO (plasma)")
         xc = expansion_corrected(x)                      # C003
         out.append(f"expansion-corrected X {xc*100:.1f}% (eta {eta*xc/x*100:.1f}%)")
+        out.append(f"EC_CO on corrected X {ec*x/xc/KWH_NM3:.1f} kWh/Nm3 (plasma)")   # C005
         f = q / 1000 / 24.5 / 60                         # mol/s at 24.5 L/mol
         out.append(f"eta on applied power {x*DH*1000*f/p_app*100:.1f}% (24.5 L/mol)")   # C004
         print("C00x " + " | ".join(out))

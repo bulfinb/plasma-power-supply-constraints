@@ -11,22 +11,22 @@ dH (282.7 kJ/mol); 3.19 kWh/Nm3 = dG at 298 K (257 kJ/mol).
 
 ## 1. Plasma exemplars (headline points)
 
-Source / OP             | Route              | Class | p (bar) | P (kW) | CO (Nm3/h) | X_CO2 (%)         | EC paper         | EC wall | EC ind.   | eta_wall (%) | C (kg/Nm3) | Conf.
-Kiefer 2024 OP001       | MW 2.45 GHz        | M2    | ~1.01   | 2.70   | 0.19       | 34.4              | 14.1 abs         | 19.6    | 19.5-22.3 | 18           | -          | M/H
-Kiefer 2024 OP003       | MW 2.45 GHz        | M2    | 0.90    | 2.70   | 0.13       | 56.6              | 21.5 abs         | 33.0    | 29.8-34.1 | 11           | -          | M/H
-Hecimovic 2023 OP002    | MW 2.45 GHz        | M2    | 0.90    | 2.70   | 0.15       | 55                | 17.6 abs         | -       | 24.4-27.9 | 13-14        | -          | H/M
-Bongers 2017 OP001      | MW 915 MHz         | M1    | 0.20    | 8.10   | 0.55       | 83                | 14.8 MW          | -       | 18.0-20.0 | 18-19        | -          | M/L
-Bongers 2017 OP003      | MW 915 MHz         | M1    | 0.20    | 3.10   | 0.45       | ~10               | 6.9 MW           | -       | 8.4-9.3   | 38-42        | -          | M/L
-Girard-Sahun 2022 OP001 | GA (AC)            | K1    | ~1.01   | 0.53   | 0.041      | 7.6               | 13.0 plasma      | -       | 14.1-14.4 | 24-25        | -          | H/M
-Girard-Sahun 2022 OP002 | GA (AC) + C bed    | K1    | ~1.01   | 0.53   | 0.13       | 12.6              | 4.0 plasma       | -       | 4.3-4.4   | 52-53        | 0.26       | H/L
-Girard-Sahun 2022 OP003 | GA (AC) + C bed    | K1    | ~1.01   | 0.53   | 0.042      | ~4.7              | 12.8 plasma      | -       | 13.9-14.2 | 22           | 0.21       | H/L
-O'Modhrain 2024 OP001   | GA (DC) x5         | D1    | ~1.01   | 7.10   | 0.40       | 8.7               | 17.9 plug        | 17.9    | 14.2-16.1 | 20           | -          | M/H
-Bryssinck 2025 OP003    | GA (DC) x7 + C bed | D1    | ~1.01   | 8.10   | 1.1        | 20                | 7.3 plug         | 7.3     | 5.8-6.6   | 36           | 0.27       | M/M
-Kim 2014 OP002          | GA (AC) 3-phase    | K1    | ~1 (NR) | 0.60   | 0.077      | 6.4 (CR ~10.3)    | 7.8 plasma input | -       | 8.5-8.7   | 40-41        | -          | L/L
-Renninger 2022 OP001    | DC glow-to-arc     | D1    | ~1.01   | 0.16   | 0.021      | 27.4              | 7.9 plasma       | -       | 8.1-8.6   | 41-43        | -          | M/M
-Yong 2023 OP001         | NRP (batch)        | P1    | 5.8     | 0.02   | 0.0013     | 14                | 15.1-16.3 dep    | -       | 16.4-36.2 | 10-21        | -          | M/L
-Van Laer 2015 OP001     | packed DBD         | K1    | ~1.01   | 0.02   | 0.00043    | 37.8 (28.8 corr.) | 54.0 plasma*     | -       | 58.7-60.0 | 6            | -          | M-L/L
-Van Laer 2015 OP003     | packed DBD         | K1    | ~1.01   | 0.02   | 0.00056    | 10.0 (6.9 corr.)  | 36.0 plasma*     | -       | 39.1-40.0 | 9            | -          | M-L/L
+Source / OP             | Route              | Class | p (bar) | P (kW) | CO (Nm3/h) | X_CO2 (%)        | EC paper         | EC wall | EC ind.   | eta_wall (%) | C (kg/Nm3) | Conf.
+Kiefer 2024 OP001       | MW 2.45 GHz        | M2    | ~1.01   | 2.70   | 0.19       | 34.4             | 14.1 abs         | 19.6    | 19.5-22.3 | 18           | -          | M/H
+Kiefer 2024 OP003       | MW 2.45 GHz        | M2    | 0.90    | 2.70   | 0.13       | 56.6             | 21.5 abs         | 33.0    | 29.8-34.1 | 11           | -          | M/H
+Hecimovic 2023 OP002    | MW 2.45 GHz        | M2    | 0.90    | 2.70   | 0.15       | 55               | 17.6 abs         | -       | 24.4-27.9 | 13-14        | -          | H/M
+Bongers 2017 OP001      | MW 915 MHz         | M1    | 0.20    | 8.10   | 0.55       | 83               | 14.8 MW          | -       | 18.0-20.0 | 18-19        | -          | M/L
+Bongers 2017 OP003      | MW 915 MHz         | M1    | 0.20    | 3.10   | 0.45       | ~10              | 6.9 MW           | -       | 8.4-9.3   | 38-42        | -          | M/L
+Girard-Sahun 2022 OP001 | GA (AC)            | K1    | ~1.01   | 0.53   | 0.041      | 7.6              | 13.0 plasma      | -       | 14.1-14.4 | 24-25        | -          | H/M
+Girard-Sahun 2022 OP002 | GA (AC) + C bed    | K1    | ~1.01   | 0.53   | 0.13       | 12.6             | 4.0 plasma       | -       | 4.3-4.4   | 52-53        | 0.26       | H/L
+Girard-Sahun 2022 OP003 | GA (AC) + C bed    | K1    | ~1.01   | 0.53   | 0.042      | ~4.7             | 12.8 plasma      | -       | 13.9-14.2 | 22           | 0.21       | H/L
+O'Modhrain 2024 OP001   | GA (DC) x5         | D1    | ~1.01   | 7.10   | 0.40       | 8.7              | 17.9 plug        | 17.9    | 14.2-16.1 | 20           | -          | M/H
+Bryssinck 2025 OP003    | GA (DC) x7 + C bed | D1    | ~1.01   | 8.10   | 1.1        | 20               | 7.3 plug         | 7.3     | 5.8-6.6   | 36           | 0.27       | M/M
+Kim 2014 OP002          | GA (AC) 3-phase    | K1    | ~1 (NR) | 0.60   | 0.077      | 6.4 (CR ~10.3)   | 7.8 plasma input | -       | 8.5-8.7   | 40-41        | -          | L/L
+Renninger 2022 OP001    | DC glow-to-arc     | D1    | ~1.01   | 0.16   | 0.021      | 27.4             | 7.9 plasma       | -       | 8.1-8.6   | 41-43        | -          | M/M
+Yong 2023 OP001         | NRP (batch)        | P1    | 5.8     | 0.02   | 0.0013     | 14               | 15.1-16.3 dep    | -       | 16.4-36.2 | 10-21        | -          | M/L
+Van Laer 2015 OP001     | packed DBD         | K1    | ~1.01   | 0.02   | 0.00032    | 28.8 (rep. 37.8) | 71.0 plasma*     | -       | 77.2-78.9 | 4-5          | -          | M-L/L
+Van Laer 2015 OP003     | packed DBD         | K1    | ~1.01   | 0.02   | 0.00038    | 6.9 (rep. 10.0)  | 52.4 plasma*     | -       | 57.0-58.2 | 6            | -          | M-L/L
 
 [1] P is at the paper's power boundary. CO (Nm3/h) =
     P / EC_CO at that boundary.
@@ -42,8 +42,9 @@ Van Laer 2015 OP003     | packed DBD         | K1    | ~1.01   | 0.02   | 0.0005
     LHV_C 393.5 kJ/mol (graphite) (workflow 1.1). EC_CO there is electricity only. Not given where C is NR.
 [5] Bongers (SRC018) and Kiefer OP002-OP003 run below 1 bar; Bongers excludes the pump. Kiefer measured it
     (OP002 wall + pump 4.2 kW vs 3.8 kW without pump at OP001).
-[6] Van Laer (SRC024) conversions are likely not expansion-corrected (corrected values in brackets); EC_CO is on the
-    reported conversion and would rise by ~30% if corrected. Plasma power implied from reported X and eta.
+[6] Van Laer (SRC024) conversions are likely not expansion-corrected; X and EC_CO are on the reviewer's
+    expansion-corrected conversion (reported X in brackets; EC_CO ~30% above the reported basis; SRC024-E044,
+    since 2026-11-26). Plasma power implied from reported X and eta.
 [7] Yong (SRC023) is a batch reactor; P is deposited pulse power. P1 is a provisional sensitivity range
     combining source-to-reactor transfer and other system-efficiency measurements with different boundaries;
     it is not a demonstrated mains-to-reactor range. Upstream conversion losses are unresolved.

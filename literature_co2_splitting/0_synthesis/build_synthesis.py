@@ -116,15 +116,15 @@ ROWS = [
     R("Yong 2023 OP002", "SRC023", "NRP (batch)", "P1", "5.0", 0.024, "deposited", "3.3", (13, 13),
       conv="moderate", energy="lower", dur="120 s batch", ev="SRC023-E042"),
     # --- DBD ---
-    R("Van Laer 2015 OP001", "SRC024", "packed DBD", "K1", "~1.01", 0.023, "plasma (implied)", "37.8 (28.8 corr.)",
-      (54, 54), conv="moderate-lower", energy="lower", ev="SRC024-E041-E043", head=True,
-      note="X likely not expansion-corrected"),
-    R("Van Laer 2015 OP002", "SRC024", "packed DBD", "K1", "~1.01", 0.034, "plasma (implied)", "42.0 (32.6 corr.)",
-      (74, 74), conv="moderate-lower", energy="lower", ev="SRC024-E041-E043"),
-    R("Van Laer 2015 OP003", "SRC024", "packed DBD", "K1", "~1.01", 0.020, "plasma (implied)", "10.0 (6.9 corr.)",
-      (36, 36), conv="moderate-lower", energy="lower", ev="SRC024-E041-E043", head=True, note="best efficiency"),
-    R("Van Laer 2015 OP004", "SRC024", "DBD (empty)", "K1", "~1.01", 0.021, "plasma (implied)", "~19.9 (14.2 corr.)",
-      (98, 98), conv="moderate-lower", energy="lower", ev="SRC024-E041-E043"),
+    R("Van Laer 2015 OP001", "SRC024", "packed DBD", "K1", "~1.01", 0.023, "plasma (implied)", "28.8 (rep. 37.8)",
+      (71.0, 71.0), conv="moderate-lower", energy="lower", ev="SRC024-E041-E043", head=True,
+      note="X expansion-corrected by reviewer (E043-E044)"),
+    R("Van Laer 2015 OP002", "SRC024", "packed DBD", "K1", "~1.01", 0.034, "plasma (implied)", "32.6 (rep. 42.0)",
+      (95.2, 95.2), conv="moderate-lower", energy="lower", ev="SRC024-E041-E043"),
+    R("Van Laer 2015 OP003", "SRC024", "packed DBD", "K1", "~1.01", 0.020, "plasma (implied)", "6.9 (rep. 10.0)",
+      (52.4, 52.4), conv="moderate-lower", energy="lower", ev="SRC024-E041-E043", head=True, note="best efficiency"),
+    R("Van Laer 2015 OP004", "SRC024", "DBD (empty)", "K1", "~1.01", 0.021, "plasma (implied)", "14.2 (rep. ~19.9)",
+      (136.6, 136.6), conv="moderate-lower", energy="lower", ev="SRC024-E041-E043"),
     # --- benchmarks: SOEC (stack DC; heat below V_tn not counted) and O2-membrane plasma demonstrator ---
     R("Kungas 2020 OP001", "SRC025", "SOEC stack", "J1", "NR", None, "stack DC", "NR", (2.5, 2.70),
       conv="lower", energy="moderate", ev="SRC025-E007, E013, E041", head=True,
@@ -261,8 +261,9 @@ dH (282.7 kJ/mol); {EC_DG:.2f} kWh/Nm3 = dG at 298 K (257 kJ/mol).
     LHV_C 393.5 kJ/mol (graphite) (workflow 1.1). EC_CO there is electricity only. Not given where C is NR.
 [5] Bongers (SRC018) and Kiefer OP002-OP003 run below 1 bar; Bongers excludes the pump. Kiefer measured it
     (OP002 wall + pump 4.2 kW vs 3.8 kW without pump at OP001).
-[6] Van Laer (SRC024) conversions are likely not expansion-corrected (corrected values in brackets); EC_CO is on the
-    reported conversion and would rise by ~30% if corrected. Plasma power implied from reported X and eta.
+[6] Van Laer (SRC024) conversions are likely not expansion-corrected; X and EC_CO are on the reviewer's
+    expansion-corrected conversion (reported X in brackets; EC_CO ~30% above the reported basis; SRC024-E044,
+    since 2026-11-26). Plasma power implied from reported X and eta.
 [7] Yong (SRC023) is a batch reactor; P is deposited pulse power. P1 is a provisional sensitivity range
     combining source-to-reactor transfer and other system-efficiency measurements with different boundaries;
     it is not a demonstrated mains-to-reactor range. Upstream conversion losses are unresolved.

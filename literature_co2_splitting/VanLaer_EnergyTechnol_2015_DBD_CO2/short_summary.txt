@@ -51,13 +51,14 @@ Van Laer 2015 OP004 | ~19.9 (14.2 corr.) [2] | CO, O2, CO2                     |
 
 3. Energy
 Source / OP       | P (W; boundary)                | Ext. heat | SEI_CO2 (kJ/mol; plasma) | EC_CO2 (kJ/mol) | EC_CO (kWh/Nm3; plasma) | Author eff. (%) | Energy conf.
-Van Laer 2015 OP001 | 60 applied; ~23 plasma [3]   | no        | ~1650                    | 4372            | 54                      | 6.4             | lower
-Van Laer 2015 OP002 | 80 applied; ~34 plasma [3]   | no        | ~2500                    | 5953            | 74                      | 4.7             | lower
-Van Laer 2015 OP003 | 60 applied; ~20 plasma [3]   | no        | ~290                     | 2915            | 36                      | 9.6             | lower
-Van Laer 2015 OP004 | 60 applied; ~21 plasma [3]   | no        | ~1570                    | 7869            | 98                      | ~3.6            | lower
+Van Laer 2015 OP001 | 60 applied; ~23 plasma [3]   | no        | ~1650                    | 4372            | 54 (71 corr.)           | 6.4             | lower
+Van Laer 2015 OP002 | 80 applied; ~34 plasma [3]   | no        | ~2500                    | 5953            | 74 (95 corr.)           | 4.7             | lower
+Van Laer 2015 OP003 | 60 applied; ~20 plasma [3]   | no        | ~290                     | 2915            | 36 (52 corr.)           | 9.6             | lower
+Van Laer 2015 OP004 | 60 applied; ~21 plasma [3]   | no        | ~1570                    | 7869            | 98 (137 corr.)          | ~3.6            | lower
 [3] Plasma power backed out of reported X and eta (24.5 L/mol); 'applied
     power' undefined. On applied power, efficiency 1.3-3.2%. SRC024-E041,
-    E042.
+    E042. corr. = on expansion-corrected X (E044); used in the synthesis
+    figure since 2026-11-26.
 
 4. Plasma parameters (plasma-on rows only)
 Source / OP       | Discharge / regime           | Supply / frequency     | Voltage | P_plasma (W; method)  | Gas T (K; method) | Other diagnostics

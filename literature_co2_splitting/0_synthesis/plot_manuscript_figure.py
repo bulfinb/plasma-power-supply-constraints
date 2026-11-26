@@ -62,8 +62,8 @@ OFFSET = {   # label position: (dx, dy) points, ha, va; anchor rule as in the re
     "Bryssinck 2025 OP003": ((6, 5), "left", "center"),
     "Yong 2023 OP001": ((-10, 3), "left", "bottom"),         # just above the end of the range bar
     "O'Modhrain 2024 OP001": ((6, 0), "left", "center"),     # right, two lines (see TWO_LINE)
-    "Van Laer 2015 OP001": ((0, 6), "center", "bottom"),     # above, centred on the pair
-    "Van Laer 2015 OP003": ((6, 0), "left", "center"),       # right of the pair
+    "Van Laer 2015 OP001": ((-6, 0), "right", "center"),     # left of the pair (corrected X moved it right, 2026-11-26)
+    "Van Laer 2015 OP003": ((0, 6), "center", "bottom"),     # above the pair, clear of O'Modhrain and Girard-Sahun
 }
 ANCHOR_OPEN = {"Girard-Sahun 2022 OP002"}   # label starts over the open marker, between the dH line and Bryssinck
 TWO_LINE = {"O'Modhrain 2024 OP001", "Girard-Sahun 2022 OP002"}   # name above power, to keep clear of Van Laer
