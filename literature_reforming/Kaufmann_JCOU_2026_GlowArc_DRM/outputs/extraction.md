@@ -9,7 +9,7 @@
 - Extractor / date: Claude (AI), 2026-11-26.
 - Coverage: full paper; Fig. 13a/b read from a 400 dpi render of p. 14. Pure-CO2 and pure-CH4 experiments noted but not extracted (out of scope, E020).
 - Reviewer / date / checks: Claude (AI), 2026-11-26; Fig. 13b groups matched to Fig. 13a and text values; author EC range and power checked (C001-C004).
-- Review status: ai_checked; human verification pending.
+- Review status: ai_checked; partial human check by BB, 2026-11-26: headline OP002 (E011, E014, E043) confirmed, no changes (human_checks/summary.csv). Other records human verification pending.
 
 ## Electricity supply
 
