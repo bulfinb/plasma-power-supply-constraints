@@ -1,0 +1,80 @@
+Kaufmann et al. (2026) - dry reforming in a rotating DC glow-to-arc discharge with big gap, ~0.5-1.7 kW
+Source ID: SRC027. J. CO2 Util. 105, 103347 (open access). Univ. Stuttgart; no ESI.
+Experimental. No catalyst. Pure-CO2 and pure-CH4 runs out of scope (not extracted).
+
+Scale: 6 SLM CO2/CH4 (50/50 or 60/40), no diluent; 0.11-0.13 mol/min CH4.
+Plasma ~540-1430 W at the selected points (SEI x flow); supply 400-1750 W
+(text; 1660 W plasma quoted at 40 mm). Single pin-ring discharge, gap
+20-40 mm, rotated by 21 mT magnets. Power-electronic current control, no
+ballast: plasma/supply 88-94%. Supply = DC supply output; not wall plug.
+
+Conversion: X_tot 40-68%, rising with gap and power. 50/50 at 40 mm:
+X_CH4 ~66%, X_CO2 ~70% (OP002). Carbon deposits at 50/50 (S_C,CO ~81%);
+60/40 suppresses it (S_C,CO ~93-96%).
+
+Energy (power basis; no external heat; 22.414 L/mol assumed):
+- EC_CH4 574 (OP001, ~540 W) to 971 kJ/mol (OP002, ~1430 W) at the plasma;
+  640-1080 at the supply. 60/40 OP003 1178 (EC_CH4 penalises CO2-rich feed).
+- +9% at 24.46 L/mol (SLM reference not stated).
+- Author EC 3.3-4.7 eV per CO2+CH4 converted (reproduced as 3.1-4.9);
+  eta_BGs (LHV) max 68% (60/40), 60% (50/50) on plasma power.
+- Text 1660 W vs ~1430 W from SEI x flow at the top point, unresolved.
+
+Duration: 2-5 min per CO2/CH4 run; no long-term test.
+
+Reporting quality: conversion/product results moderate confidence (bar-chart
+readings, alpha correlation, short runs); energy results moderate confidence
+(two measured boundaries; SLM reference and a power mismatch unresolved).
+
+Traceability: manuscript.pdf pp. 1-15, Figs. 13-14; SRC027-E001-E025.
+Calculations SRC027-C001-C004, E041-E047; outputs/calculations.py.
+Details: outputs/extraction.md, outputs/evidence.csv.
+
+Prepared 2026-11-26 by Claude (AI); ai_checked by same extractor; human
+verification pending.
+
+Comparison tables (experimental conditions)
+NR = not reported; NA = not applicable; ~ = approximate (figure reading). Human verification pending.
+
+1. Route, scale and conditions
+Source / OP         | Route | Reactor / activation / catalyst            | CH4 feed (mol/min) | CH4:CO2:H2O (other) | T (degC; loc.) | p (bar) | Scale as reported
+Kaufmann 2026 OP001 | DRM   | Pin-ring, 20 mm / DC rotating glow / none  | 0.134 [1]          | 1:1:0               | NR             | ~1.01   | 6 SLM; 0.24 A; ~540 W plasma [2]
+Kaufmann 2026 OP002 | DRM   | Pin-ring, 40 mm / DC rotating glow / none  | 0.134 [1]          | 1:1:0               | NR             | ~1.01   | 6 SLM; 0.4 A; ~1430 W plasma [2]
+Kaufmann 2026 OP003 | DRM   | Pin-ring, 40 mm / DC rotating glow / none  | 0.107 [1]          | 1:1.5:0             | NR             | ~1.01   | 6 SLM; 0.4 A; ~1100 W plasma [2]
+[1] SLM reference not stated; 22.414 L/mol assumed (8% lower at 24.46).
+    SRC027-E007, E047; C002.
+[2] SEI x 6 SLM. Text: supply 400-1750 W, 1660 W plasma at 40 mm (C004).
+    SRC027-E006, E041, E046.
+
+2. Mass balance
+Source / OP         | X_CH4 (%) | X_CO2 (%) | Products (value; units/basis)    | Balance closure     | Duration (h; basis)   | Conv. conf.
+Kaufmann 2026 OP001 | ~42       | ~38.5     | S_C,CO ~81% [3]                  | NR; solid C [4]     | 0.03-0.08 (run) [5]   | moderate
+Kaufmann 2026 OP002 | ~66       | ~70       | X_tot 68%; S_C,CO ~81% [3]       | NR; solid C [4]     | 0.03-0.08 (run) [5]   | moderate
+Kaufmann 2026 OP003 | ~52.5     | ~56       | X_tot ~55%; S_C,CO ~93% [3]      | NR                  | 0.03-0.08 (run) [5]   | moderate
+[3] Fig. 13b bar readings (+-1 point); alpha from a correlation. SRC027-E009,
+    E013-E015.
+[4] Carbon deposits on the electrodes at 50/50, not quantified. SRC027-E018.
+[5] 2-5 min per CO2/CH4 run. SRC027-E017.
+
+3. Energy
+Source / OP         | P (W; boundary)                 | External heat | SEI (as reported)          | SEI_CH4 (kJ/mol) | EC_CH4 (kJ/mol) | Author efficiency (def.)    | Energy conf.
+Kaufmann 2026 OP001 | ~540 plasma; ~600 supply [6]    | none          | ~6.0 kJ/L supply [7]       | 241              | 574 [8]         | eta_BGs ~57% supply [9]     | moderate
+Kaufmann 2026 OP002 | ~1430 plasma; ~1590 supply [6]  | none          | 15.9 supply; 14.3 plasma   | 641              | 971 [8]         | eta_BGs ~44.5% supply [9]   | moderate
+Kaufmann 2026 OP003 | ~1100 plasma; ~1230 supply [6]  | none          | ~12.3 kJ/L supply [7]      | 618              | 1178 [8]        | eta_BGs ~52.5% supply [9]   | moderate
+[6] Plasma = U x I at the reactor; supply = DC supply output feeding the
+    driver (88-94%); not wall plug. SRC027-E004-E006.
+[7] SEI_P = 0.897 x SEI_supply (text endpoints). SRC027-E041; C001.
+[8] Plasma basis, per mol CH4 converted; supply basis 640, 1080, 1313.
+    +9% at 24.46 L/mol. SRC027-E042-E044; C002.
+[9] (H2+CO LHV)/(SEI + converted CH4 LHV) on supply power; plasma-basis
+    maxima 60% (50/50), 68% (60/40). Author EC 3.3-4.7 eV per CO2+CH4
+    converted (reproduced 3.1-4.9). SRC027-E010, E011, E016, E045.
+
+4. Plasma parameters (plasma-on rows only)
+Source / OP         | Discharge / regime              | Supply / frequency               | Voltage       | P_plasma (W; method) | Gas T (K; method) | Other diagnostics
+Kaufmann 2026 OP001 | rotating glow / glow-to-arc     | DC, power-electronic current ctrl | ~2.2 kV [10]  | ~540; SEI x flow     | NR                | HS camera, U-I, PSD [11]
+Kaufmann 2026 OP002 | rotating glow / glow-to-arc     | DC, power-electronic current ctrl | ~3.6 kV [10]  | ~1430; SEI x flow    | NR                | HS camera, U-I, PSD [11]
+Kaufmann 2026 OP003 | rotating glow / glow-to-arc     | DC, power-electronic current ctrl | ~2.8 kV [10]  | ~1100; SEI x flow    | NR                | HS camera, U-I, PSD [11]
+[10] Reviewer P/I with the mean current; text gives 2200 V at 20 mm,
+     0.24 A and 1.5-4 kV over 15-40 mm. SRC027-E022.
+[11] No OES or temperature diagnostics. SRC027-E023.

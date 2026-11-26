@@ -87,6 +87,15 @@ ROWS = [
       "300 kOhm lab ballast excluded (plasma 28-39% of supply output)"),
     R("Wanten 2022 OP003", "SRC015", "DRM", "DC confined glow", "D1", 0.0052, "1:3:0", "NR", 0.097, "plasma",
       "none", "94.28", "63.7", 1126, (1194, 1194), "NR", "H", "M", False, "SRC015-E042", "highest CH4 conversion"),
+    R("Kaufmann 2026 OP001", "SRC027", "DRM", "DC rotating glow", "D1", 0.134, "1:1:0", "NR", 0.54, "plasma",
+      "none", "~42", "~38.5", 241, (574, 574), "2-5 min run", "M", "M", True, "SRC027-E042",
+      "20 mm, 0.24 A; power-electronic current control, no ballast; supply output 640 kJ/mol (driver 88-94%)"),
+    R("Kaufmann 2026 OP002", "SRC027", "DRM", "DC rotating glow", "D1", 0.134, "1:1:0", "NR", 1.43, "plasma",
+      "none", "~66", "~70", 641, (971, 971), "2-5 min run", "M", "M", True, "SRC027-E043",
+      "40 mm, 0.4 A; P = SEI x flow (text quotes 1660 W); supply output 1080 kJ/mol"),
+    R("Kaufmann 2026 OP003", "SRC027", "DRM", "DC rotating glow", "D1", 0.107, "1:1.5:0", "NR", 1.10, "plasma",
+      "none", "~52.5", "~56", 618, (1178, 1178), "2-5 min run", "M", "M", False, "SRC027-E044",
+      "60/40 CO2/CH4: little solid carbon (S_C,CO ~93%)"),
     R("Andersen 2020 OP001", "SRC013", "DRM", "DBD (no packing)", "K1", 1.02e-3, "1:1:0", "ambient", 0.045, "discharge",
       "none", "32.6", "22.4", 2642, (8103, 8103), "1 h", "M", "H", True, "SRC013-E042", "best packed case (Cu) same EC_CH4"),
     # ---------- mixed reforming ----------
@@ -222,7 +231,8 @@ Conf. = confidence in conversion / energy results from the extraction (H higher,
              "(PW005-V02). CEIA's 100 kW is an input rating; PW006 documents 50 kW output. "
              "A tube oscillator (R1, 0.53-0.60) would give ~1.6-1.8x higher values. "
              "Wanten and Zhu exclude their lab ballast resistors; the estimate replaces the ballasted lab supply "
-             "with a D1 current-controlled supply.",
+             "with a D1 current-controlled supply. Kaufmann already uses a current-controlled driver (88-94% of the DC supply"
+             " output reaches the plasma).",
              "[2] External heat is excluded from every EC_CH4: furnace (Geng), steam generation (Akande, Hrycak, Zhu, "
              "the From pilots) and feed preheat are not reported. These EC_CH4 are lower bounds on electricity per mol "
              "CH4; Hrabovsky's torch evaporates its own water, so arc power is its whole process heat.",
@@ -231,7 +241,7 @@ Conf. = confidence in conversion / energy results from the extraction (H higher,
              "[4] Akande's reported H2 rate is impossible for the stated feed; its conversion and EC_CH4 are kept with "
              "lower confidence.",
              "[5] Kwon feeds 50% N2; Hrycak and Akande add steam from a separate vaporizer. Unit scale: Hrabovsky "
-             "~90-120 kW, Akande 17-47 kW, Song 22-27 kW, Hrycak 4.5-6.5 kW, Kwon ~1.7 kW, Kelly 1 kW; Zhu, Wanten, "
+             "~90-120 kW, Akande 17-47 kW, Song 22-27 kW, Hrycak 4.5-6.5 kW, Kwon ~1.7 kW, Kaufmann 0.5-1.4 kW, Kelly 1 kW; Zhu, Wanten, "
              "Geng and Andersen are 15-250 W lab reactors."]
     parts.append("## Notes\n\n" + "\n".join(notes) + "\n")
     parts.append("""## 6. Reading the tables (reviewer summary, for the narrative)
@@ -243,7 +253,8 @@ Conf. = confidence in conversion / energy results from the extraction (H higher,
   impossible H2 rate), Song ~1080-1140 (22 kW) and Hrabovsky ~1200-1310 (120 kW, the only process-complete
   figure: the torch raises its own steam). Against fired SMR this is ~1-4x the absorbed heat and ~0.5-2.3x the
   fuel energy, but electricity against heat. Conversion 66-97% at these points; 94-99% costs ~1300-2400.
-- Lab-scale points (paper boundary): Zhu 490 (Ni catalyst, steam excluded), Kelly 581, Kwon 740, Wanten 813, Geng 1120-1490
+- Lab-scale points (paper boundary): Zhu 490 (Ni catalyst, steam excluded), Kaufmann 574 (0.5 kW) to 971 (1.4 kW), Kelly 581,
+  Kwon 740, Wanten 813, Geng 1120-1490
   (furnace excluded), Andersen ~8100 kJ/mol (DBD).
 - Joule heating converts at equilibrium (85-98%) and runs for 80-1535 h, but no paper gives power and feed at
   the same operating point. A reviewer estimate from the From 2024 pilot efficiencies (72-80%, ~23-35 kW) gives

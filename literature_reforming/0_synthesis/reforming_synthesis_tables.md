@@ -21,12 +21,14 @@ Geng 2022 OP002      | DBD + Ni cat.            | K1    | 0.001         | 1:0:4.
 
 ## 2. Dry reforming (DRM)
 
-Source / OP         | Activation              | Class | CH4 (mol/min) | CH4:CO2:H2O     | P (kW) | Boundary     | X_CH4 (%) | X_CO2 (%) | SEI_CH4 | EC_CH4 | EC ind.   | Duration | Conf.
-Song 2020 OP013     | RF ICP torch 400 kHz    | K2    | 1.61          | 1:0.83:0        | 22     | RF generator | 79.3      | 87.1      | 822     | 1036   | 1079-1138 | NR       | M/M
-Kelly 2023 OP004    | MW 2.45 GHz             | M2    | 0.187         | 1:1.22:0        | 1      | absorbed MW  | 55.2      | 45.8      | 321     | 581    | 807-922   | ~0.25 h  | H/H
-Kwon 2023 OP003     | AC rotating GA + quench | K1    | 0.268         | 1:1:0 (+50% N2) | 1.668  | discharge    | 50.5      | 40.3      | 374     | 740    | 804-822   | ~0.2 h   | H/H
-Wanten 2022 OP006   | DC confined glow        | D1    | 0.015         | 1:1.86:0        | 0.145  | plasma       | ~73.5     | ~54.8     | 598     | 813    | 838-884   | NR       | H/M
-Andersen 2020 OP001 | DBD (no packing)        | K1    | 0.001         | 1:1:0           | 0.045  | discharge    | 32.6      | 22.4      | 2642    | 8103   | 8808-9003 | 1 h      | M/H
+Source / OP         | Activation              | Class | CH4 (mol/min) | CH4:CO2:H2O     | P (kW) | Boundary     | X_CH4 (%) | X_CO2 (%) | SEI_CH4 | EC_CH4 | EC ind.   | Duration    | Conf.
+Song 2020 OP013     | RF ICP torch 400 kHz    | K2    | 1.61          | 1:0.83:0        | 22     | RF generator | 79.3      | 87.1      | 822     | 1036   | 1079-1138 | NR          | M/M
+Kelly 2023 OP004    | MW 2.45 GHz             | M2    | 0.187         | 1:1.22:0        | 1      | absorbed MW  | 55.2      | 45.8      | 321     | 581    | 807-922   | ~0.25 h     | H/H
+Kwon 2023 OP003     | AC rotating GA + quench | K1    | 0.268         | 1:1:0 (+50% N2) | 1.668  | discharge    | 50.5      | 40.3      | 374     | 740    | 804-822   | ~0.2 h      | H/H
+Wanten 2022 OP006   | DC confined glow        | D1    | 0.015         | 1:1.86:0        | 0.145  | plasma       | ~73.5     | ~54.8     | 598     | 813    | 838-884   | NR          | H/M
+Kaufmann 2026 OP001 | DC rotating glow        | D1    | 0.134         | 1:1:0           | 0.540  | plasma       | ~42       | ~38.5     | 241     | 574    | 592-624   | 2-5 min run | M/M
+Kaufmann 2026 OP002 | DC rotating glow        | D1    | 0.134         | 1:1:0           | 1.43   | plasma       | ~66       | ~70       | 641     | 971    | 1001-1055 | 2-5 min run | M/M
+Andersen 2020 OP001 | DBD (no packing)        | K1    | 0.001         | 1:1:0           | 0.045  | discharge    | 32.6      | 22.4      | 2642    | 8103   | 8808-9003 | 1 h         | M/H
 
 ## 3. Mixed reforming (CO2 + steam, biogas)
 
@@ -63,11 +65,11 @@ Joule-heated benchmarks:
 
 ## Notes
 
-[1] Class efficiencies: J1 0.97-0.98, A1 0.90-0.98, D1 0.92-0.97, K1 0.90-0.92, M1 0.74-0.82, M2 0.63-0.72, K2@400kHz 0.91-0.96. RF ICP (Song) uses a K2 scenario at 400 kHz: 0.91 is extrapolated from a 1-200 kHz family (PW004-V02); >0.96 is a claim at 100-400 kHz (PW005-V02). CEIA's 100 kW is an input rating; PW006 documents 50 kW output. A tube oscillator (R1, 0.53-0.60) would give ~1.6-1.8x higher values. Wanten and Zhu exclude their lab ballast resistors; the estimate replaces the ballasted lab supply with a D1 current-controlled supply.
+[1] Class efficiencies: J1 0.97-0.98, A1 0.90-0.98, D1 0.92-0.97, K1 0.90-0.92, M1 0.74-0.82, M2 0.63-0.72, K2@400kHz 0.91-0.96. RF ICP (Song) uses a K2 scenario at 400 kHz: 0.91 is extrapolated from a 1-200 kHz family (PW004-V02); >0.96 is a claim at 100-400 kHz (PW005-V02). CEIA's 100 kW is an input rating; PW006 documents 50 kW output. A tube oscillator (R1, 0.53-0.60) would give ~1.6-1.8x higher values. Wanten and Zhu exclude their lab ballast resistors; the estimate replaces the ballasted lab supply with a D1 current-controlled supply. Kaufmann already uses a current-controlled driver (88-94% of the DC supply output reaches the plasma).
 [2] External heat is excluded from every EC_CH4: furnace (Geng), steam generation (Akande, Hrycak, Zhu, the From pilots) and feed preheat are not reported. These EC_CH4 are lower bounds on electricity per mol CH4; Hrabovsky's torch evaporates its own water, so arc power is its whole process heat.
 [3] Hrabovsky conversions are reviewer calculations from the Ar tracer; they match the authors' plotted points (cross-check XR007, for human check). Hrycak uses 24.25 L/mol (XR008).
 [4] Akande's reported H2 rate is impossible for the stated feed; its conversion and EC_CH4 are kept with lower confidence.
-[5] Kwon feeds 50% N2; Hrycak and Akande add steam from a separate vaporizer. Unit scale: Hrabovsky ~90-120 kW, Akande 17-47 kW, Song 22-27 kW, Hrycak 4.5-6.5 kW, Kwon ~1.7 kW, Kelly 1 kW; Zhu, Wanten, Geng and Andersen are 15-250 W lab reactors.
+[5] Kwon feeds 50% N2; Hrycak and Akande add steam from a separate vaporizer. Unit scale: Hrabovsky ~90-120 kW, Akande 17-47 kW, Song 22-27 kW, Hrycak 4.5-6.5 kW, Kwon ~1.7 kW, Kaufmann 0.5-1.4 kW, Kelly 1 kW; Zhu, Wanten, Geng and Andersen are 15-250 W lab reactors.
 
 ## 6. Reading the tables (reviewer summary, for the narrative)
 
@@ -78,7 +80,8 @@ Joule-heated benchmarks:
   impossible H2 rate), Song ~1080-1140 (22 kW) and Hrabovsky ~1200-1310 (120 kW, the only process-complete
   figure: the torch raises its own steam). Against fired SMR this is ~1-4x the absorbed heat and ~0.5-2.3x the
   fuel energy, but electricity against heat. Conversion 66-97% at these points; 94-99% costs ~1300-2400.
-- Lab-scale points (paper boundary): Zhu 490 (Ni catalyst, steam excluded), Kelly 581, Kwon 740, Wanten 813, Geng 1120-1490
+- Lab-scale points (paper boundary): Zhu 490 (Ni catalyst, steam excluded), Kaufmann 574 (0.5 kW) to 971 (1.4 kW), Kelly 581,
+  Kwon 740, Wanten 813, Geng 1120-1490
   (furnace excluded), Andersen ~8100 kJ/mol (DBD).
 - Joule heating converts at equilibrium (85-98%) and runs for 80-1535 h, but no paper gives power and feed at
   the same operating point. A reviewer estimate from the From 2024 pilot efficiencies (72-80%, ~23-35 kW) gives

@@ -54,7 +54,7 @@ Screen molten-media hits for whether the heating is electrical and reported.
 
 ## Records
 
-Search and selection logs are in [search_and_selection_log.md](search_and_selection_log.md), with IDs prefixed PS (searches) and PR (records) to keep them distinct from the reforming logs. Included sources take the next free global source ID (shared across all topic folders; SRC016-SRC026 taken by CO2 splitting, next free SRC027).
+Search and selection logs are in [search_and_selection_log.md](search_and_selection_log.md), with IDs prefixed PS (searches) and PR (records) to keep them distinct from the reforming logs. Included sources take the next free global source ID (shared across all topic folders; SRC016-SRC026 taken by CO2 splitting, SRC027 by reforming (2026-11-26), next free SRC028).
 
 ## Version history
 

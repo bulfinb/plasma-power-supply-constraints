@@ -22,7 +22,7 @@ from build_synthesis import FIRED, ETA   # noqa: E402
 
 rows = [r for r in csv.DictReader(open(HERE / "reforming_synthesis.csv", encoding="utf-8")) if r["headline"] == "yes"]
 P_BAR = {"SRC007": "$\\sim$1", "SRC008": "$\\sim$1", "SRC009": "$\\sim$1", "SRC010": "$\\sim$1", "SRC011": "$\\sim$1",
-         "SRC012": "$\\sim$1", "SRC013": "1.18", "SRC014": "NR", "SRC015": "$\\sim$1", "SRC002": "$\\sim$1",
+         "SRC012": "$\\sim$1", "SRC013": "1.18", "SRC014": "NR", "SRC015": "$\\sim$1", "SRC027": "$\\sim$1", "SRC002": "$\\sim$1",
          "SRC001": "1.05", "SRC005": "11", "SRC006": "7"}      # From pilots: 10 and 6 barg; Wismann +50 mbar
 BOUNDARY = {"arc": "arc", "absorbed MW": "abs.", "RF generator": "RF gen.", "discharge": "disch.", "plasma": "plasma",
             "Q_in (PSU)": "PSU", "NR": "NR"}
@@ -30,7 +30,7 @@ JOULE = {"SRC001", "SRC005", "SRC006"}
 REACTOR = {"DC arc torch": "DC arc torch", "MW 915 MHz torch": "microwave torch, 915 MHz", "MW 915 MHz": "microwave, 915 MHz",
            "RF ICP torch 400 kHz": "RF ICP torch, 400 kHz", "AC rotating GA + quench": "AC gliding arc + quench",
            "MW 2.45 GHz": "microwave, 2.45 GHz", "DC gliding arc + Ni cat.": "DC gliding arc + Ni catalyst",
-           "DC confined glow": "DC glow", "DBD (no packing)": "DBD", "DBD + Ni cat.": "DBD + Ni catalyst"}
+           "DC confined glow": "DC glow", "DC rotating glow": "DC rotating glow", "DBD (no packing)": "DBD", "DBD + Ni cat.": "DBD + Ni catalyst"}
 
 
 def f(s):
