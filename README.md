@@ -2,133 +2,112 @@
 
 Brendan Bulfin, University College Cork.
 
-Literature review and evidence base on electrically driven endothermic chemical processes. Started October 2026 with methane reforming; extended in November 2026 to two further processes that are heavily investigated in plasma systems.
+Evidence base for a review of plasma reactors for two strongly endothermic gas-phase conversions, methane reforming and CO2 splitting, compared with fired, Joule-heated and electrochemical benchmarks. Every number used in the review can be traced from the manuscript figures to the synthesis tables, to an evidence record, and to a page of the source document.
 
-| Topic | Reaction (298 K) | Electrified comparator | Folder | Status |
+| Topic | Reaction (298 K) | Benchmarks | Folder | Sources |
 |---|---|---|---|---|
-| Methane reforming | SMR +206, DRM +247 kJ/mol CH4 | Joule-heated eSMR; fired SMR reference | `literature_reforming/` | 15 sources extracted |
-| Methane pyrolysis and coupling | CH4 -> C + 2H2 +75 kJ/mol; 2CH4 -> C2H2 + 3H2 +376 kJ/mol | Joule-heated pyrolysis; industrial plasma plants (Monolith, Hüls); SMR hydrogen | `literature_pyrolysis/` | descoped 2026-11-12: industrial plasma plants mentioned in the introduction only; no extraction |
-| CO2 splitting | CO2 -> CO + 1/2 O2 +283 kJ/mol | SOEC electrolysis (H2 + RWGS: BB process model) | `literature_co2_splitting/` | 9 plasma exemplars + 2 SOEC benchmarks extracted |
+| Methane reforming | SMR +206, DRM +247 kJ/mol CH4 | Joule-heated eSMR pilot; fired SMR design studies | [literature_reforming/](literature_reforming/) | 11 plasma studies, 5 benchmark sources |
+| CO2 splitting | CO2 -> CO + 1/2 O2, +283 kJ/mol | Solid oxide electrolysis (SOEC) | [literature_co2_splitting/](literature_co2_splitting/) | 10 plasma studies, 2 SOEC sources |
+| Power supplies | - | Industrial supplies by technology class | [power_systems/](power_systems/) | 45 supply sources, ~190 values |
 
-The sections below describe the reforming topic, where the method was developed; the other topics follow the same workflow and scale-up angle.
-
-## Context
-
-Steam methane reforming (SMR) is strongly endothermic (+206 kJ/mol CH4) and is conventionally driven by burning natural gas in a fired furnace. Electrifying the heat input could remove those combustion emissions and allow renewable electricity to drive the reaction. Two electrified routes are compared:
-
-- **Joule heating (eSMR):** electricity heats the catalyst structure directly, so a conventional catalytic reaction is fed electrically rather than by combustion (e.g. Topsoe eREACT).
-- **Plasma reforming:** electricity sustains a discharge (thermal arc, RF or microwave torch, gliding arc, dielectric barrier discharge) that activates the reactants, with or without a catalyst.
-
-Fired SMR is the industrial reference that both must match or improve on.
-
-## Novelty
-
-This study uses the scale and efficiency of commercially available power supplies to guide, and narrow, the design space of process-electrification pathways via plasma chemistry.
-
-Intended contributions (BB, 2026-11-12):
-
-1. **Power supplies.** A broad survey of the state of the art in power supplies for plasma systems, with current unit scale, efficiency and cost, and their trends.
-2. **Process benchmarks.** The plasma processes benchmarked against conventional and other electrified routes for the same endothermic conversions. Scope (BB, 2026-11-12): strongly endothermic gas-phase reactions that plasma reactors could electrify, i.e. methane reforming and CO2 splitting. CH4 pyrolysis is left out (mildly endothermic per mol CH4, solid product; plasma's role there is high temperature and, for acetylene, selectivity), but its industrial plasma plants are noted in the introduction.
-3. **Research directions.** Promising directions suggested by the trends in (1) and (2) together.
-4. **Scale-up feasibility.** An outsider's view (not from the plasma field) of scale-up feasibility, clearly labelled as opinion.
-
-Plasma studies usually optimise the discharge and treat the power supply as laboratory equipment. At industrial scale the supply is a design constraint in its own right. Each supply technology (DC rectifier, kHz inverter, RF generator, 915 MHz or 2.45 GHz microwave source, pulsed supply) comes in a limited range of unit powers, with a characteristic wall-plug efficiency, cost and lifetime. Together these fix how many modules a plant would need and how much electricity is lost before it reaches the plasma. Applying them to the demonstrated reactor performance shows which combinations of plasma type, frequency, pressure and scale are realistic for industrial endothermic processes, and which are ruled out before the plasma chemistry is considered. Supporting material: [power_systems/](power_systems/) (supply efficiencies, scales and costs) and [literature_plasma_powersupply/](literature_plasma_powersupply/) (measured wall-plug vs plasma efficiency and supply matching).
+Methane pyrolysis was considered and descoped (2026-11-12); its industrial plasma plants are mentioned in the manuscript introduction only.
 
 ## The angle of this review
 
-Most plasma reforming papers report energy at the discharge: the power absorbed by the plasma, measured with laboratory supplies, with no heat recovery. This review first benchmarks the demonstrated performance on that common basis, then asks a whole-system question:
+Plasma studies usually report energy at the discharge, measured with laboratory supplies and with no heat recovery. This review first puts the demonstrated results on a common basis (conversion against electricity per mole of methane converted, or per Nm3 of CO), then asks a scale-up question:
 
-> If each reactor type were scaled up with representative, industrially available power supplies, what would its wall-to-product energy balance and cost look like, compared with Joule-heated and fired SMR?
+> If each reactor type were built with representative, industrially available power supplies, what would its electricity demand at the wall be, compared with Joule-heated, fired and electrochemical routes?
 
-Two factors decide this beyond the plasma itself:
+Each supply technology (DC rectifier, kHz inverter, RF generator, 915 MHz or 2.45 GHz microwave source, pulsed supply) comes in a limited range of unit powers, with a characteristic wall-plug efficiency, cost and lifetime. Applying these to the reactor results shows how much electricity is lost before it reaches the plasma, and which combinations of plasma type, frequency and scale are realistic. Heat integration (steam raising, product heat, quenching) and product separation are the other terms that separate a laboratory result from a process; they are discussed but mostly not reported in the sources.
 
-1. **Power supply losses.** Industrial supplies range from ~98% (rectifiers for Joule heating or DC arcs) through ~80% (915 MHz magnetron generators) to ~60% (RF tube oscillators). In the present plasma results these losses are a small correction, because the plasma process itself dominates. In an optimised electrified plant, however, a 20% loss in the supply is significant: it means 25% more electricity per unit of power delivered, and it appears mostly as low-grade heat in cooling water, which cannot usefully drive a reaction at 700-900 degC. Competing against eSMR, with near-lossless power delivery, a plasma route must recover that margin elsewhere.
-2. **Heat integration.** Hot products leave lab plasma reactors unrecovered, whereas fired and Joule-heated SMR recover heat into steam and feed preheat. A fair comparison needs heat recovery applied to the plasma cases too.
-
-Cost (supply capital cost per kW, tube and electrode lifetimes) is the third consideration; published data are sparse.
+Intended contributions (BB, 2026-11-12): (1) a survey of power supplies for plasma systems, with unit scale, efficiency and cost; (2) plasma reforming and CO2 splitting benchmarked against conventional and electrified routes; (3) research directions that follow from (1) and (2); (4) an outsider's view of scale-up feasibility, labelled as opinion.
 
 ## Repository structure
 
 ```text
-README.md                         this file
+README.md                          this file
 human_checks/
-  findings.csv                     each error found in a human check of AI extraction (type, severity, correction)
-  summary.csv                      one row per source checked: scope, records checked, findings, time
-literature_plasma_powersupply/
-  README.md                        academic papers only: supply matching, wall-plug vs plasma efficiency, TEA of supply capex (PS001-)
-literature_reviews/
-  reviews_shortlist.md             review papers used to pick exemplary studies and benchmarks (pyrolysis, CO2 splitting)
-  <FirstAuthor_Journal_Year_Topic>/manuscript.pdf
-literature_pyrolysis/
-  literature_review_objectives.md, literature_search_strategy.md, search_and_selection_log.md, processing_log.md
-literature_co2_splitting/
-  0_synthesis/                     synthesis CSV, tables and build/plot scripts; figures/ holds the generated figures
-  literature_review_objectives.md, literature_search_strategy.md, search_and_selection_log.md, processing_log.md
-  workflow.md, _source_template.md  CO2-splitting extraction protocol and template (own workflow, version 1.2)
-  cross_check_log.md               independent GPT re-extraction: differences and actions
-literature_reforming/
-  literature_review_objectives.md  aims, scope, comparison basis and synthesis plan
+  summary.csv                      one row per human check (source, scope, records checked, findings)
+  findings.csv                     one row per error found in a human check (none so far)
+literature_reforming/              methane reforming
+  literature_review_objectives.md  aims, scope, metrics
   literature_search_strategy.md    search terms, eligibility, screening
-  workflow.md                      reforming extraction protocol (evidence IDs, metrics, reporting quality)
-  _source_template.md              template for each extraction
-  search_and_selection_log.md      searches run and screening decisions
-  plasma_shortlist_2026-11-05.md   current plasma shortlist and reserves
-  processing_log.md                AI tool/model versions and human checks for every source
+  workflow.md, _source_template.md extraction protocol and template
+  logs/                            processing log (tools, models, human checks), search and selection log,
+                                   independent cross-check log, shortlists
+  0_synthesis/                     reforming_synthesis.csv, tables, build and plot scripts; figures/ holds the figures
   <FirstAuthor_Journal_Year_Topic>/
-    short_summary.txt              headline results and five comparison tables
-    outputs/extraction.md          full extraction, reporting quality, missing data
-    outputs/evidence.csv           every value used, with page and locator
-    outputs/calculations.py        reviewer calculations (where used)
-power_systems/                     manufacturer and other non-academic supply data
-  README.md, workflow.md           folder guide; how sources are registered and values extracted
-  processing_log.md                AI tool/model versions and human checks for this folder
-  source_register.csv              every source (PW001...): aliases, tier, date, SHA-256, Wayback snapshot
-  supply_values.csv                every value used, with page/location and verbatim quote
-  supply_classes.csv               representative supply classes (J1, K1, M1, ...) built from supply_values
-  notes/                           scale-up assessment, "niche product" discussion, reactor matching
-  figures/                         figures with their plotting scripts; wall-basis EC_CH4 calculation
-  scripts/                         human-check worksheet generator
-  BB_search.txt                    sources that need manual retrieval
-  suggested_quote_requests.txt     vendor budgetary quotes to request (supply cost per kW)
-  source_archive/                  local copies (not distributed)
-  legacy/                          superseded 2026-09 survey and 2026-11-05 class table (not cited)
+    short_summary.txt              headline results and standard comparison tables
+    outputs/extraction.md          full extraction, reporting quality, gaps, calculations
+    outputs/evidence.csv           every value used, with document, page, locator and quote
+    outputs/calculations.py        reviewer calculations (reproduces the values in extraction.md)
+literature_co2_splitting/          CO2 splitting, same layout (co2_synthesis.csv in 0_synthesis/)
+power_systems/                     industrial power-supply data (mainly manufacturer and patent sources)
+  README.md, workflow.md           folder guide and extraction rules
+  results/                         source_register.csv, supply_values.csv, supply_classes.csv,
+                                   discharge_supply_map.csv and the scripts; figures/ holds the figures
+  logs/                            processing and cross-check logs, human-check checklist and worksheet
+  notes/                           scale-up assessment, supply maturity, reactor matching, related literature, to-do lists
+  legacy/                          superseded 2026-09 survey (not cited)
+literature_reviews/
+  reviews_shortlist.md             review papers used to locate studies and conventions (not extracted)
 ```
 
-Source manuscripts and supplements are not distributed. Each `extraction.md` records SHA-256 hashes of the documents used so readers can confirm they hold the same versions.
+Source documents (PDFs) and local copies of web sources are not distributed. Each `extraction.md` and `power_systems/results/source_register.csv` records SHA-256 hashes so that readers can confirm they hold the same versions.
 
-## Sources reviewed so far
+## Reproduce the synthesis and figures
 
-| ID | Source | Route | Activation | Role |
-|---|---|---|---|---|
-| SRC001 | Wismann et al. 2019, Science | SMR | Joule heating | lab benchmark |
-| SRC002 | Geng et al. 2022, Appl. Catal. A | SMR | DBD + catalyst | plasma |
-| SRC003 | Lewis et al. 2022, NETL report DOE/NETL-2022/3241 | SMR | fired | industrial reference |
-| SRC004 | IEAGHG 2017 (Collodi et al.), Report 2017-02 | SMR | fired | industrial reference |
-| SRC005 | From et al. 2024, Chem. Eng. J. | mixed (biogas) | Joule heating (eSMR pilot) | primary benchmark |
-| SRC006 | From et al. 2025, Chem. Eng. J. | mixed (biogas) | Joule heating (eSMR pilot) | benchmark |
-| SRC007 | Hrabovsky et al. 2018, Plasma Chem. Plasma Process. | SMR, DRM | DC thermal arc, ~120 kW | plasma |
-| SRC008 | Akande et al. 2022, Int. J. Hydrogen Energy | SMR | microwave torch, 17-47 kW | plasma |
-| SRC009 | Song et al. 2020, Curr. Appl. Phys. | DRM | RF induction torch, 21-27 kW | plasma |
-| SRC010 | Hrycak et al. 2023, Sci. Rep. | mixed | microwave, 915 MHz, 4.5-6.5 kW | plasma |
-| SRC011 | Kelly et al. 2023, J. CO2 Util. | DRM | microwave, 2.45 GHz, 1 kW | plasma |
-| SRC012 | Zhu et al. 2019, Catal. Today | SMR | gliding arc + Ni catalyst, 0.25 kW | plasma |
-| SRC013 | Andersen et al. 2020, Chem. Eng. J. | DRM | packed-bed DBD, 45 W | plasma |
-| SRC014 | Kwon et al. 2023, J. CO2 Util. | DRM | rotating gliding arc, ~1.7 kW | plasma |
-| SRC015 | Wanten et al. 2022, J. CO2 Util. | DRM | confined DC glow discharge, ~0.1 kW | plasma |
+From the repository root, with Python 3 and matplotlib:
 
-Review status of each source (AI-checked or human-verified) is in its `extraction.md` and in `literature_reforming/processing_log.md`.
+```text
+python3 literature_reforming/0_synthesis/build_synthesis.py
+python3 literature_reforming/0_synthesis/plot_manuscript_figure.py
+python3 literature_co2_splitting/0_synthesis/build_synthesis.py
+python3 literature_co2_splitting/0_synthesis/plot_manuscript_figure.py
+cd power_systems/results && python3 scaleup_wall_basis.py && python3 plot_supply_values.py && python3 plot_manuscript_figure.py
+```
+
+The synthesis builds read the supply-class efficiencies from `power_systems/results/supply_classes.csv`. Each source's reviewer calculations are reproduced by its `outputs/calculations.py`.
 
 ## Method and provenance
 
-- Extractions follow `literature_reforming/workflow.md`: every value carries an evidence ID, document page and locator; reviewer calculations are separate from reported values and reproducible from `calculations.py`.
-- The primary energy metric is EC_CH4, the electrical energy per mole of methane converted, always with its power boundary stated (discharge, absorbed, arc, generator or wall).
-- Extractions were prepared with AI assistance (Claude Code with Claude Opus 5.5; an initial pass on two sources with Codex). Tool and model versions for every source are recorded in `literature_reforming/processing_log.md`. AI checks are not treated as verification; human-verified sources are marked as such.
-- The literature search so far used a general web search tool, not Scopus or Web of Science; database searches are still to be run (see `literature_reforming/search_and_selection_log.md`).
+- **Extraction.** Each source is extracted under its topic's `workflow.md`: every value carries an evidence ID (e.g. SRC028-E012) with document, page and locator; reviewer calculations (e.g. SRC028-C002) are kept separate from reported values and are reproduced by script. Power is always given with its boundary (wall, supply output, absorbed or plasma power).
+- **AI assistance.** Extractions were prepared by an AI (Claude Code with Claude Opus; two early sources with Codex) and checked by the same AI against the source (status `ai_checked`). Tool and model versions per source are in each topic's `logs/processing_log.md`.
+- **Independent cross-check.** Every source was extracted a second time, blind, by a different AI (GPT), and each difference was checked against the source; differences and actions are in each topic's `logs/cross_check_log.md`.
+- **Human checks.** BB checked the headline operating points of most sources against the source documents (`human_checks/summary.csv`); no errors were found. These are partial checks of the points used in the manuscript, not of the full papers. Each extraction states which records were checked; "Human check: none" means none was made.
+- **Literature search.** Selective, not comprehensive: candidates were located through recent reviews and targeted web searches (not Scopus or Web of Science); searches and decisions are in each topic's search and selection log.
 
-## Status (2026-11-09)
+## Sources
 
-- Reforming: 15 sources extracted, all ai_checked; systematic human verification to follow.
-- Power systems restructured 2026-11-10: 50 sources registered (PW001-PW050), 141 values re-extracted from archived copies with quotes (139 ai_checked, 2 unverified pending retrieval); supply class table rebuilt from them.
-- Next: human verification of remaining sources; synthesis evidence table and conversion vs EC_CH4 plot; heat-recovery treatment for plasma cases; supply capital-cost data; database searches.
-- CO2 splitting: nine plasma exemplars (SRC016-SRC024) and two SOEC benchmarks (SRC025-SRC026) extracted 2026-11-12, all ai_checked.
-- Pyrolysis: descoped 2026-11-12 (see topic table); folder kept with its objectives and search strategy for possible later use.
+| ID | Source | Topic / route | Activation | Role | Human check |
+|---|---|---|---|---|---|
+| SRC001 | Wismann et al. 2019, Science | SMR | Joule heating (lab) | context (not plotted) | none |
+| SRC002 | Geng et al. 2022, Appl. Catal. A | SMR | DBD + Ni catalyst | plasma | partial (feed) |
+| SRC003 | Lewis et al. 2022, NETL report | SMR | fired | benchmark (design) | headline |
+| SRC004 | Collodi et al. 2017, IEAGHG report | SMR | fired | benchmark (design) | none |
+| SRC005 | From et al. 2024, Chem. Eng. J. | mixed (biogas) | Joule heating (pilot) | benchmark | none |
+| SRC006 | From et al. 2025, Chem. Eng. J. | mixed (biogas) | Joule heating (pilot) | benchmark (durability) | none |
+| SRC007 | Hrabovsky et al. 2018, Plasma Chem. Plasma Process. | SMR, mixed | DC arc torch, ~120 kW | plasma | headline |
+| SRC008 | Akande and Lee 2022, Int. J. Hydrogen Energy | SMR | microwave torch, 915 MHz, 15-50 kW | plasma | headline |
+| SRC009 | Song et al. 2020, Curr. Appl. Phys. | DRM | RF ICP torch, 22-27 kW | plasma | headline |
+| SRC010 | Hrycak et al. 2023, Sci. Rep. | SMR, mixed | microwave, 915 MHz, 6.5 kW | plasma | headline |
+| SRC011 | Kelly et al. 2023, J. CO2 Util. | DRM | microwave, 2.45 GHz, 1 kW | plasma | headline |
+| SRC012 | Zhu et al. 2019, Catal. Today | SMR | gliding arc + Ni catalyst, 0.25 kW | plasma | headline |
+| SRC013 | Andersen et al. 2020, Chem. Eng. J. | DRM | packed-bed DBD, 45 W | plasma | none |
+| SRC014 | Kwon et al. 2023, J. CO2 Util. | DRM | rotating gliding arc, 1.7 kW | plasma | none |
+| SRC015 | Wanten et al. 2022, J. CO2 Util. | DRM | confined DC glow, 0.15 kW | plasma | headline |
+| SRC027 | Kaufmann et al. 2026, J. CO2 Util. | DRM | rotating DC glow-to-arc, 0.5-1.4 kW | plasma | headline |
+| SRC016 | Kiefer et al. 2024, Chem. Eng. J. | CO2 splitting | microwave, 2.45 GHz, 2.7 kW (wall metered) | plasma | headline |
+| SRC017 | Hecimovic et al. 2023, J. CO2 Util. | CO2 splitting | microwave, 2.45 GHz (same torch as SRC016) | plasma | none |
+| SRC018 | Bongers et al. 2017, Plasma Process. Polym. | CO2 splitting | microwave, 915 MHz, 3-10 kW | plasma | headline |
+| SRC019 | Girard-Sahun et al. 2022, Chem. Eng. J. | CO2 splitting | AC gliding arc + carbon bed | plasma | headline |
+| SRC020 | O'Modhrain et al. 2024, ACS Eng. Au | CO2 splitting | five DC gliding arcs, 7.1 kW | plasma | headline |
+| SRC021 | Bryssinck et al. 2025, React. Chem. Eng. | CO2 splitting | seven DC gliding arcs + carbon bed, 8 kW | plasma | headline |
+| SRC022 | Renninger et al. 2022, J. CO2 Util. | CO2 splitting | DC glow-to-arc, 0.16 kW | plasma | headline |
+| SRC023 | Yong et al. 2023, Plasma Sources Sci. Technol. | CO2 splitting | nanosecond pulsed (batch) | plasma | none |
+| SRC024 | Van Laer and Bogaerts 2015, Energy Technol. | CO2 splitting | packed-bed DBD | plasma | none |
+| SRC028 | Kim et al. 2014, Plasma Chem. Plasma Process. | CO2 splitting | three-phase AC gliding arc, 0.6 kW | plasma | partial |
+| SRC025 | Küngas 2020, J. Electrochem. Soc. | CO2 splitting | SOEC stack | benchmark | none |
+| SRC026 | Hecimovic et al. 2024, J. CO2 Util. | CO2 splitting | SOEC system (design) vs microwave plasma | benchmark | headline |
+
+"Headline" means the operating points used in the manuscript were checked against the source; "partial" means selected records only. Details are in `human_checks/summary.csv` and in each extraction. The power-supply values (`power_systems/`) have no human check.
