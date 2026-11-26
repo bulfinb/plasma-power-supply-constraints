@@ -49,14 +49,15 @@ STYLE = {
     "NRP": (SLOT[2], "*", "nanosecond pulsed"), "DBD": (SLOT[2], "v", "packed-bed DBD"),
 }
 EC_DH = 3.50
-XMIN, XMAX, YMIN, YMAX = 3, 110, 0, 92
+XMIN, XMAX, YMIN, YMAX = 3, 100, 0, 92
 OFFSET = {   # label position: (dx, dy) points, ha, va; anchor rule as in the reforming figure
     "Kiefer 2024 OP001": ((6, 0), "left", "center"),
     "Kiefer 2024 OP003": ((6, 0), "left", "center"),
     "Bongers 2017 OP001": ((6, 0), "left", "center"),
-    "Bongers 2017 OP003": ((0, -7), "center", "top"),        # below: Girard-Sahun to the left
-    "Girard-Sahun 2022 OP002": ((-7, 4), "left", "bottom"),  # above the pair (from the open marker), clear of Bongers
-    "Girard-Sahun 2022 OP003": ((3, -3), "left", "center"),  # close to the markers, slightly down
+    "Bongers 2017 OP003": ((0, 6), "center", "bottom"),      # centred above the pair (BB 2026-11-26)
+    "Kim 2014 OP002": ((0, -7), "center", "top"),             # below, centred on the pair
+    "Girard-Sahun 2022 OP002": ((-7, 6), "left", "bottom"),  # two lines, just above the grey halo (BB 2026-11-26)
+    "Girard-Sahun 2022 OP003": ((7, -3), "left", "center"),  # close to the markers, slightly down
     "Renninger 2022 OP001": ((2, 5), "left", "center"),      # BB 2026-11-25: up about a marker width
     "Bryssinck 2025 OP003": ((6, 5), "left", "center"),
     "Yong 2023 OP001": ((-10, 3), "left", "bottom"),         # just above the end of the range bar
@@ -64,8 +65,8 @@ OFFSET = {   # label position: (dx, dy) points, ha, va; anchor rule as in the re
     "Van Laer 2015 OP001": ((0, 6), "center", "bottom"),     # above, centred on the pair
     "Van Laer 2015 OP003": ((6, 0), "left", "center"),       # right of the pair
 }
-ANCHOR_OPEN = {"Girard-Sahun 2022 OP002"}   # label anchored at the open marker
-TWO_LINE = {"O'Modhrain 2024 OP001"}   # name above power, to keep clear of Van Laer
+ANCHOR_OPEN = {"Girard-Sahun 2022 OP002"}   # label starts over the open marker, between the dH line and Bryssinck
+TWO_LINE = {"O'Modhrain 2024 OP001", "Girard-Sahun 2022 OP002"}   # name above power, to keep clear of Van Laer
 
 
 def family(route):

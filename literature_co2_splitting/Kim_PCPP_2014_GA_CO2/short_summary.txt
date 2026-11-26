@@ -4,8 +4,9 @@ Chosun University. Experimental. Pure CO2 (Case 1); CH4/H2O co-feed cases out of
 
 Scale: one plasmatron, three blade electrodes, 0.6 kW "plasma input power"
 at every point (boundary and method not stated; likely a setpoint). Supply
-frequency not stated. No wall-plug data. No external heat. Pressure not
-stated (~1 atm assumed).
+frequency not stated. No wall-plug data. External heat: feed preheated in
+a 400 C steam generator (Fig. 1, BB reading; not stated in the text), not
+counted below. Pressure not stated (~1 atm assumed).
 
 Conversion: reported CR up to 12.3% at 14 L/min. CR is the drop in CO2
 concentration, without gas-expansion correction; the paper's own CO
@@ -15,8 +16,9 @@ selectivity is only ~57%. Carbon-based conversion from the measured CO:
 Energy (plasma input power, 22.414 L/mol, carbon-based X):
 - 14 L/min: SEI 0.60 eV; eta 38%; EC_CO 9.1 kWh/Nm3.
 - 20 L/min: SEI 0.42 eV; eta 45%; EC_CO 7.8 kWh/Nm3 (best).
-- On the reported CR these would be 61% and 72%: the source of the
+- On the reported CR these would be 60% and 72%: the source of the
   ~61-65% gliding-arc efficiency quoted for this paper in reviews.
+- If the feed was preheated to 400 C: ~30-32% (indicative, C005).
 
 Duration: not reported.
 
@@ -25,15 +27,16 @@ Reporting quality: conversion/product results lower confidence
 ~0.4); energy results lower confidence (single fixed power of unstated
 boundary; flow reference not stated, +9% at 25 C).
 
-Traceability: manuscript.pdf pp. 1-9, Table 1, Fig. 2; SRC028-E001-E016.
-Calculations SRC028-C001-C004, E041-E044; outputs/calculations.py.
+Traceability: manuscript.pdf pp. 1-9, Table 1, Figs. 1-2; SRC028-E001-E018.
+Calculations SRC028-C001-C005, E041-E045; outputs/calculations.py.
 Details: outputs/extraction.md, outputs/evidence.csv.
 
-Prepared 2026-11-26 by Claude (AI); ai_checked by same extractor; human
-verification pending.
+Prepared 2026-11-26 by Claude (AI); revised 2026-11-26 after GPT
+cross-check (XC016-XC020); ai_checked; Eq. 1, Fig. 2b and the feed
+preheat human checked by BB 2026-11-26 (no value changes); other rows pending.
 
 Comparison tables (experimental conditions)
-NR = not reported; NA = not applicable; ~ = approximate (figure reading). Human verification pending.
+NR = not reported; NA = not applicable; ~ = approximate (figure reading). Eq. 1, Fig. 2b and preheat human checked (BB, 2026-11-26).
 
 1. Route, scale and conditions
 Source / OP    | Reactor / activation                    | CO2 feed (mol/min) | Diluent | p (bar)  | Scale as reported
@@ -52,19 +55,22 @@ Kim 2014 OP002 | 6.4 [3] (CR ~10.3)      | CO ~6.1, O2 ~2.5%; dry               
 
 3. Energy
 Source / OP    | P (W; boundary)    | Ext. heat | SEI_CO2 (kJ/mol) | EC_CO2 (kJ/mol) | EC_CO (kWh/Nm3; plasma input) | Author eff. (%) | Energy conf.
-Kim 2014 OP001 | 600 plasma input [5] | no      | 57.6 (0.60 eV)   | ~738 [6]        | ~9.1                          | NR [7]          | lower
-Kim 2014 OP002 | 600 plasma input [5] | no      | 40.3 (0.42 eV)   | ~630 [6]        | ~7.8                          | NR [7]          | lower
+Kim 2014 OP001 | 600 plasma input [5] | yes [8]  | 57.6 (0.60 eV)   | ~738 [6]        | ~9.1                          | NR [7]          | lower
+Kim 2014 OP002 | 600 plasma input [5] | yes [8]  | 40.3 (0.42 eV)   | ~630 [6]        | ~7.8                          | NR [7]          | lower
 [5] "Plasma input power", same at all points; method and boundary not
     stated. SRC028-E004.
-[6] On carbon-based X; 465 / 392 kJ/mol on the reported CR. 25 C flow basis
+[6] On carbon-based X; 469 / 392 kJ/mol on the reported CR. 25 C flow basis
     +9%. SRC028-E043.
 [7] Authors give EDE only (0.0029 / ~0.00347 L/min W). eta = X x 283/SEI is
-    38 / 45% on carbon-based X (61 / 72% on reported CR).
+    38 / 45% on carbon-based X (60 / 72% on reported CR).
+[8] Feed passes the 400 C steam generator (Fig. 1; BB reading, not stated for
+    Case 1); not counted in EC_CO. With ~16 kJ/mol preheat eta ~30 / 32%.
+    SRC028-E017, E045.
 
 4. Plasma parameters (plasma-on rows only)
 Source / OP    | Discharge / regime     | Supply / frequency        | Voltage | P_plasma (W; method) | Gas T (K; method)           | Other diagnostics
-Kim 2014 OP001 | 3-phase AC gliding arc | 3-phase AC, 15 kW / NR    | NR      | 600; method NR       | NR [8]                      | none
-Kim 2014 OP002 | 3-phase AC gliding arc | 3-phase AC, 15 kW / NR    | NR      | 600; method NR       | NR [8]                      | none
-[8] Not measured in the discharge. Case 1 reactor temperature 532-290 C
-    over 6-32 L/min (not given per flow); location and sensor not stated.
-    SRC028-E006.
+Kim 2014 OP001 | 3-phase AC gliding arc | 3-phase AC, 15 kW / NR    | NR      | 600; method NR       | NR [9]                      | none
+Kim 2014 OP002 | 3-phase AC gliding arc | 3-phase AC, 15 kW / NR    | NR      | 600; method NR       | NR [9]                      | none
+[9] Not measured in the discharge. Case 1 reactor temperature 532-290 C
+    over 6-32 L/min (not given per flow), thermocouple at the reactor
+    outlet. SRC028-E006.

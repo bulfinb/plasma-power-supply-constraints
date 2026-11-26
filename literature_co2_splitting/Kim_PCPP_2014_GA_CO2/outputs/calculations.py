@@ -32,6 +32,11 @@ FIG2 = {
     32: (5.0, 0.00267, 94.3, 2.8, 0.8),
 }
 OPS = {"OP001": 14, "OP002": 20}
+# Reported-basis CR per OP: text value where the text gives one (workflow 1.2; XC017)
+CR_REPORTED = {"OP001": 12.3, "OP002": 10.3}  # E013 (text); E011 (Fig. 2a)
+# C005 indicative feed preheat if the CO2 passed the steam generator at 400 degC (Fig. 1, E006):
+# H(673 K) - H(298 K) for CO2, NIST-JANAF ~16.0 kJ/mol (interpolated, 600 K 12.9; 700 K 17.8)
+DH_PREHEAT = 16.0
 
 
 def metrics(lpm, x, vm=VM):
@@ -55,7 +60,8 @@ def run():
               f"{xc*100:4.1f} {xexp*100:5.1f} | {sei:5.1f} {eta_rep:5.1f} {eta_c:5.1f} | {ec:5.0f} {ec/KWH_NM3:5.2f}")
     print()
     for op, lpm in OPS.items():
-        cr, ede, yco2, yco, yo2 = FIG2[lpm]
+        _, ede, yco2, yco, yo2 = FIG2[lpm]
+        cr = CR_REPORTED[op]
         xc = yco / (yco + yco2)
         sei, eta_rep, ec_rep = metrics(lpm, cr / 100)
         _, eta_c, ec_c = metrics(lpm, xc)
@@ -66,6 +72,8 @@ def run():
               f"(= 1.345/EDE: {VM*60/1000/ede:.0f})")
         print(f"  carbon-based X {xc*100:.1f}%: eta {eta_c:.1f}%, EC_CO2 = EC_CO {ec_c:.0f} kJ/mol = "
               f"{ec_c/KWH_NM3:.2f} kWh/Nm3 CO (25 C: {ec25:.0f} kJ/mol)")
+        print(f"  C005 if feed preheated to 400 C (+{DH_PREHEAT} kJ/mol, unconfirmed): eta on X_C "
+              f"{xc*DH/(sei+DH_PREHEAT)*100:.1f}%")
         print(f"  CO selectivity implied y_CO/CR = {yco/cr*100:.0f}%; O2/CO {yo2/yco:.2f} (0.5 expected); "
               f"dry sum {yco2+yco+yo2:.1f}%")
 

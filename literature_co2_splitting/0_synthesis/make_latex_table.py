@@ -41,7 +41,7 @@ def reactor(route):
     s = re.sub(r"^GA \((AC|DC)\)", r"\1 gliding arc", s)
     s = re.sub(r" x(\d)", r" $\\times$\1", s)
     s = (s.replace("MW 915 MHz", "microwave, 915 MHz").replace("MW 2.45 GHz", "microwave, 2.45 GHz")
-          .replace("packed DBD", "packed-bed DBD").replace("NRP (batch)", "nanosecond pulsed (batch)"))
+          .replace("AC gliding arc 3-phase", "3-phase AC gliding arc").replace("packed DBD", "packed-bed DBD").replace("NRP (batch)", "nanosecond pulsed (batch)"))
     return s + (" + carbon bed" if "C bed" in route else "")
 
 
