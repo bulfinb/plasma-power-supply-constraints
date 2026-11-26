@@ -35,12 +35,12 @@ Traceability: PDF pp. 69-95 (printed 51-77), Exhibits 3-1 to 3-16;
 SRC003-E001-E040. Calculations SRC003-C001-C006, E041-E050. Details:
 outputs/extraction.md and outputs/evidence.csv.
 
-Prepared 2026-10-30 by Claude (AI); ai_checked by same extractor; human
-verification pending.
+Prepared 2026-10-30 by Claude (AI); ai_checked by same extractor; Exhibit
+3-4/3-5 inputs human checked by BB 2026-11-26 (no changes); other rows pending.
 Comparison tables reformatted to the five-table layout 2026-11-04.
 
 Comparison tables (reference design, not experimental)
-NR = not reported; NA = not applicable. Human verification pending.
+NR = not reported; NA = not applicable. OP001 Exhibit 3-4/3-5 inputs human checked (BB, 2026-11-26); other rows pending.
 
 1. Route and scale
 Source / OP      | Route | Reactor / activation / catalyst                       | CH4 feed (mol/min) | Scale as reported

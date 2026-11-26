@@ -33,7 +33,7 @@ Event types: extraction (initial), revision (substantive change to records), app
 | 2026-10-28 | SRC002 | Geng_APC_2022_Plasma_SMR | extraction | Codex, not recorded | not recorded | not recorded | |
 | 2026-10-30 | SRC001 | Wismann_Science_2019_Joule_SMR | appraisal and summary update | Claude Code 2.1.314 | claude-opus-5-5 | 2fa545d5 | |
 | 2026-10-30 | SRC002 | Geng_APC_2022_Plasma_SMR | appraisal and revision | Claude Code 2.1.314 | claude-opus-5-5 | 2fa545d5 | |
-| 2026-10-30 | SRC003 | Lewis_NETL_2022_Fired_SMR | extraction | Claude Code 2.1.312-2.1.314 | claude-opus-5-5 | 2fa545d5 | |
+| 2026-10-30 | SRC003 | Lewis_NETL_2022_Fired_SMR | extraction | Claude Code 2.1.312-2.1.314 | claude-opus-5-5 | 2fa545d5 | reviewed by BB, 2026-11-26 (partial: OP001 Exhibits 3-4, 3-5) |
 | 2026-10-30 | SRC004 | Collodi_IEAGHG_2017_Fired_SMR | extraction | Claude Code 2.1.314 | claude-opus-5-5 | 2fa545d5 | |
 | 2026-11-04 | SRC005 | From_CEJ_2024_eSMR_Biogas | extraction | Claude Code 2.1.317 | claude-opus-5-5 | 2fa545d5 | |
 | 2026-11-04 | SRC006 | From_CEJ_2025_eSMR_Biogas2 | extraction | Claude Code 2.1.318 | claude-opus-5-5 | 2fa545d5 | |

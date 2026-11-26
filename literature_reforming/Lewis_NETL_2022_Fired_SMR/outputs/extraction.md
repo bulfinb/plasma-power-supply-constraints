@@ -9,7 +9,7 @@
 - Extractor / date: Claude (AI), 2026-10-30.
 - Coverage: front matter, contents, Sections 2.3 and 2.6, and Section 3.1-3.7 (Case 1 SMR without CO2 capture), PDF pp. 44, 47, 69-95. Exhibit 3-12 diagram inspected as an image. Case 2 (SMR with capture), Case 3 (ATR) and the gasification cases were not extracted.
 - Reviewer / checks: same extractor. Text extracted with pdftotext and checked against internal consistency: NETL's NG heating values, H2 HHV output, auxiliary-load sum, carbon balance and author efficiencies are all reproduced (C001, C006).
-- Review status: **ai_checked; human verification pending**.
+- Review status: **ai_checked; partial human check by BB, 2026-11-26: Exhibit 3-4 streams 7, 8 and 15 and Exhibit 3-5 values (E004, E008-E010, E014-E016, E025, E027) confirmed, so reformer conversion 77.7% stands; absorbed duty (E042, Aspen enthalpies) not checked; no changes (human_checks/summary.csv). Other records human verification pending.**
 
 ## Electricity supply
 
