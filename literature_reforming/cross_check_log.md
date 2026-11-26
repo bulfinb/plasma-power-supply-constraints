@@ -40,6 +40,7 @@ These checks are AI-to-AI. They do not change a source's status (ai_checked), an
 | SRC001 Wismann 2019 | 2026-11-20 | Codex desktop (version not recorded) | as above | 0.9 | manuscript and supplementary |
 | SRC012 Zhu 2019 | 2026-11-20 | Codex desktop (version not recorded) | as above | 0.9 | manuscript and ESI |
 | SRC013 Andersen 2020 | 2026-11-20 | Codex desktop (version not recorded) | as above | 0.9 | manuscript and ESI. Not strictly blind: our extraction was the worked example until its outputs were removed for this run |
+| SRC027 Kaufmann 2026 | 2026-11-26 | Codex desktop (version not recorded) | GPT-6.1 Sol (user specified) | 0.9 | manuscript (no ESI); DRM runs only; GPT saw Wanten SRC015 outputs as context, not our SRC027 files |
 
 ## Summary by paper
 
@@ -74,6 +75,8 @@ These checks are AI-to-AI. They do not change a source's status (ai_checked), an
   - Cu: X 32.6 / 16.1%, EC_CH4 8103 kJ/mol, author eta 3.43%.
   Also identical: the C/H/O closure ranges 88-90 / 83-88 / 88-92% and the 5 x 1 h cycling. GPT notes that the printed Eq. (7) seems to omit the factor 0.5 for the equimolar feed, although the reported values reproduce; author values are kept in both. No differences needing action.
 
+- **SRC027 Kaufmann 2026** (2026-11-26): the shared Fig. 13b points agree on supply-side values at 22.414 L/mol (both assumed; SLM reference not stated, +9.1% at 24.46): 50/50 low group X_CH4 ~42%, SEI_supply ~6.0 kJ/L, EC_CH4 640 kJ/mol; 50/50 top group X ~66 / ~70%, 15.9 kJ/L, EC_CH4 1080; 60/40 top group X_CH4 ~52-52.5%, 12.3 kJ/L, EC_CH4 1313-1325. Both read the author maxima 68 / 60% as plasma-basis (x ~1.06), the author 3.3-4.7 eV as per CO2 + CH4 converted (not EC_CH4), the driver efficiency 88-94% as source-wide, the supply boundary as not wall plug, alpha as a fitted correlation and the runs as 2-5 min. Both decline to equate the quoted 1660 W with the ~1590 W supply power implied by SEI x flow at the top point (our C004). Differences XR011-XR015.
+
 ## Differences
 
 | ID | Date | Source / record | Ours | GPT | Checked against PDF | Action |
@@ -88,6 +91,11 @@ These checks are AI-to-AI. They do not change a source's status (ai_checked), an
 | XR008 | 2026-11-20 | SRC010 molar volume for NL flows | 22.414 L/mol (0 degC) assumed; EC_CH4 238 / 264 / 471 kJ/mol; H2-anchored X 2-4 points above the authors' | 24.25 L/mol inferred: the authors' H2 rate, composition and conversion imply 24.246 / 24.251 / 24.255 L/mol in the three rows; EC_CH4 258 / 286 / 509 | GPT right: at 24.25 L/mol our own H2-anchored conversion equals the authors' in all three rows; workflow section 4 prefers the molar volume that reproduces the authors' derived values | corrected (+8.2% on SEI_CH4 and EC_CH4; carbon closure 71-79%; also power_systems wall-basis table) |
 | XR009 | 2026-11-20 | SRC011 operating points and confidence | four points of the CH4:CO2 series; conversion and energy confidence higher | the two end points only; confidence moderate | consistent; confidence is a judgement call (no repeats count stated, water and carbon inferred) | kept ours (noted) |
 | XR010 | 2026-11-20 | SRC014 operating points and closure wording | adds the 0.92 kW quench point (X ~26%, EC_CH4 948); C closure "~100%"; pressure ~1.01 bar assumed | three 1.67 kW points; closure "partial" (sums use inferred water); pressure NR | consistent; GPT's closure wording is the more careful | kept ours (noted) |
+| XR011 | 2026-11-26 | SRC027 power basis of the selected points | plasma basis as headline (EC_CH4 574 / 971 / 1178 kJ/mol); SEI_P text-reported at OP002 (14.3 kJ/L), interpolated at OP001/OP003 with the endpoint ratio 0.897 (C001) | supply basis only (640 / 1080 / 1325); no point plasma power inferred from the source-wide 88-94% | the text gives SEI_P only at the two SEI endpoints (p. 13); our ratio lies inside the stated driver range, and the headline OP002 needs no interpolation | kept ours (labelled reviewer calculation; supply values listed alongside) |
+| XR012 | 2026-11-26 | SRC027 OP001 geometry | 20 mm, 0.24 A | lower-power pairing of geometry and current with Fig. 13b not explicit; no per-OP voltage or current assigned | Fig. 13a inset '20 mm, 0.24 A' is joined by a leader line to the 50/50 point at ~6.0 kJ/L, X_tot ~40%, which Fig. 13b group 1 matches; P/I ~2.2 kV agrees with the 2200 V quoted for 20 mm at 0.24 A (p. 7) | kept ours |
+| XR013 | 2026-11-26 | SRC027 operating points | three points (50/50 low, 50/50 top, 60/40 top) | adds the 60/40 low group (SEI_supply ~6.5 kJ/L, X_CH4 ~43%, S_C,CO ~95%, EC_CH4 847 supply) | consistent with Fig. 13b | kept ours (noted) |
+| XR014 | 2026-11-26 | SRC027 bar readings | X_CO2 ~38.5% (50/50 low); X_CH4 ~52.5% (60/40 top) | ~38%; ~52% (EC_CH4 1325 vs 1313) | within the +-1 point reading precision both state | kept ours |
+| XR015 | 2026-11-26 | SRC027 appraisal | Q1 yes, Q4 partly, Q6 NA, Q8 no, Q9 yes | Q1 partly, Q4 no, Q6 no, Q8 partly, Q9 partly | Q4: S_C,CO is a selectivity, not a closure, and no C/H/O balance is reported, so GPT is right. Q6: no catalyst, so NA per workflow section 5. Q1, Q8, Q9 are judgement calls (both boundaries measured with probes; 2-5 min stated without a steady-state criterion; no external heat) | corrected Q4 to no; others kept ours |
 
 ## Closing summary (reforming, 2026-11-20)
 
@@ -108,3 +116,11 @@ These checks are AI-to-AI. They do not change a source's status (ai_checked), an
   - Wismann reports no electrical power.
 - **Pattern:** GPT tends to rate confidence one level lower where water or carbon is inferred rather than measured. This is worth harmonising in the human checks.
 - **Status:** all sources remain ai_checked; human verification is still pending.
+
+## Addendum (SRC027 Kaufmann 2026, 2026-11-26)
+
+- **Differences logged:** XR011-XR015.
+- **Corrections to our extraction:** one, in the appraisal: Q4 balance closure changed from partly to no (XR015). No values change.
+- **Kept ours:** plasma-basis headline with labelled interpolation at OP001/OP003 (XR011), OP001 geometry (XR012), point choice and readings (XR013, XR014).
+- **Confirmed independently:** EC_CH4 on the supply side (640 / 1080 / ~1320 kJ/mol), the plasma-basis reading of the author maxima, the combined-reactant author cost, and the unresolved 1660 W vs SEI x flow power.
+- **Status:** ai_checked; human verification pending.

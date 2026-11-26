@@ -60,7 +60,7 @@ OP001 is the lowest EC_CH4 in the paper; OP002 the highest power and conversion;
 | Q1 Power measurement | yes | Plasma U x I with HV and current probes; supply power also measured (E004-E006). |
 | Q2 Feed definition | partly | 6 SLM and molar ratios stated; SLM reference conditions and pressure value not stated (E007). |
 | Q3 Product analysis | partly | Calibrated IR/TCD analyser; volume change from an alpha correlation fitted in N2-tracer runs, not measured per run (E008, E009). |
-| Q4 Balance closure | partly | Carbon selectivity to CO reported (81-96%); no closure number; solid carbon not quantified (E013-E015, E018). |
+| Q4 Balance closure | no | Only the carbon selectivity to CO is reported (81-96%), which is not a closure; no C/H/O balance; solid carbon not quantified (E013-E015, E018). Changed from partly after GPT cross-check XR015. |
 | Q5 Temperature | no | No gas, wall or electrode temperature (E021). |
 | Q6 Controls | NA | No catalyst; geometry and mixture varied. |
 | Q7 Repeatability | partly | +-5% deviation estimated from sensor and probe accuracy; no repeats or error bars (E011). |
@@ -90,7 +90,7 @@ All in outputs/calculations.py (22.414 L/mol main basis; 24.46 printed).
 
 ## Revisions, if any
 
-None.
+- 2026-11-26, after GPT cross-check (../../cross_check_log.md XR011-XR015): Q4 changed from partly to no (XR015). No values changed; evidence IDs kept.
 
 ## Plasma characteristics, when reported
 
