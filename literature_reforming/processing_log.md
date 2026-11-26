@@ -46,7 +46,7 @@ Event types: extraction (initial), revision (substantive change to records), app
 | 2026-11-05 | SRC012 | Zhu_CatToday_2019_GlidingArc_SMR | extraction | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | reviewed by BB, 2026-11-26 (partial: OP003-OP004) |
 | 2026-11-05 | SRC013 | Andersen_ChemEngJ_2020_DBD_DRM | extraction | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | |
 | 2026-11-05 | SRC014 | Kwon_JCOU_2023_GlidingArc_DRM | extraction | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | |
-| 2026-11-05 | SRC015 | Wanten_JCOU_2022_GlowDischarge_DRM | extraction | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | |
+| 2026-11-05 | SRC015 | Wanten_JCOU_2022_GlowDischarge_DRM | extraction | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | reviewed by BB, 2026-11-26 (partial: OP006) |
 | 2026-11-05 | (all) | search_and_selection_log.md, plasma_shortlist_2026-11-05.md | literature search and screening | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | |
 | 2026-11-05 | (power_systems) | power_systems/scaleup_supplies.csv, scaleup_sources.md, scaleup_wall_basis.py | web search and representative supply table | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | |
 | 2026-11-09 | (all) | workflow.md, literature_review_objectives.md, literature_search_strategy.md, ../README.md | cross-references for new pyrolysis and CO2-splitting topic folders; folder renamed from literature/ | Claude Code 2.1.318 | claude-opus-5-5 | 088bb8d0 | |

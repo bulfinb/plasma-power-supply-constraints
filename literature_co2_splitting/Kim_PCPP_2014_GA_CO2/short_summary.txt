@@ -1,0 +1,70 @@
+Kim, Lim & Chun (2014) - 3-phase AC gliding arc plasmatron, 0.6 kW, pure CO2 6-32 L/min
+Source ID: SRC028. Plasma Chem. Plasma Process. 34, 125-143. Published version.
+Chosun University. Experimental. Pure CO2 (Case 1); CH4/H2O co-feed cases out of scope.
+
+Scale: one plasmatron, three blade electrodes, 0.6 kW "plasma input power"
+at every point (boundary and method not stated; likely a setpoint). Supply
+frequency not stated. No wall-plug data. No external heat. Pressure not
+stated (~1 atm assumed).
+
+Conversion: reported CR up to 12.3% at 14 L/min. CR is the drop in CO2
+concentration, without gas-expansion correction; the paper's own CO
+selectivity is only ~57%. Carbon-based conversion from the measured CO:
+7.8% at 14 L/min, 6.4% at 20 L/min.
+
+Energy (plasma input power, 22.414 L/mol, carbon-based X):
+- 14 L/min: SEI 0.60 eV; eta 38%; EC_CO 9.1 kWh/Nm3.
+- 20 L/min: SEI 0.42 eV; eta 45%; EC_CO 7.8 kWh/Nm3 (best).
+- On the reported CR these would be 61% and 72%: the source of the
+  ~61-65% gliding-arc efficiency quoted for this paper in reviews.
+
+Duration: not reported.
+
+Reporting quality: conversion/product results lower confidence
+(concentration-based conversion, no balance, ~2-3% unidentified gas, O2/CO
+~0.4); energy results lower confidence (single fixed power of unstated
+boundary; flow reference not stated, +9% at 25 C).
+
+Traceability: manuscript.pdf pp. 1-9, Table 1, Fig. 2; SRC028-E001-E016.
+Calculations SRC028-C001-C004, E041-E044; outputs/calculations.py.
+Details: outputs/extraction.md, outputs/evidence.csv.
+
+Prepared 2026-11-26 by Claude (AI); ai_checked by same extractor; human
+verification pending.
+
+Comparison tables (experimental conditions)
+NR = not reported; NA = not applicable; ~ = approximate (figure reading). Human verification pending.
+
+1. Route, scale and conditions
+Source / OP    | Reactor / activation                    | CO2 feed (mol/min) | Diluent | p (bar)  | Scale as reported
+Kim 2014 OP001 | 3-phase AC GA plasmatron / none         | 0.625 [1]          | none    | ~1 [2]   | 14 L/min; 0.6 kW
+Kim 2014 OP002 | 3-phase AC GA plasmatron / none         | 0.892 [1]          | none    | ~1 [2]   | 20 L/min; 0.6 kW
+[1] L/min, reference not stated; 0 C (22.414 L/mol) assumed. SRC028-E005.
+[2] Not stated; downstream suction pump, presumably ~1 atm.
+
+2. Mass balance
+Source / OP    | X_CO2 (%)               | Products (value; basis)              | Balance closure | Duration (h; basis) | Conv. conf.
+Kim 2014 OP001 | 7.8 [3] (CR 12.3)       | CO ~7.4, O2 ~2.8%; dry               | NR [4]          | NR                  | lower
+Kim 2014 OP002 | 6.4 [3] (CR ~10.3)      | CO ~6.1, O2 ~2.5%; dry               | NR [4]          | NR                  | lower
+[3] Reviewer carbon-based y_CO/(y_CO + y_CO2) from Fig. 2b; the authors' CR
+    is the CO2 concentration drop, uncorrected. SRC028-E042.
+[4] Reviewer: O2/CO 0.38-0.41 (0.5 expected); ~2.5% of dry gas unidentified.
+
+3. Energy
+Source / OP    | P (W; boundary)    | Ext. heat | SEI_CO2 (kJ/mol) | EC_CO2 (kJ/mol) | EC_CO (kWh/Nm3; plasma input) | Author eff. (%) | Energy conf.
+Kim 2014 OP001 | 600 plasma input [5] | no      | 57.6 (0.60 eV)   | ~738 [6]        | ~9.1                          | NR [7]          | lower
+Kim 2014 OP002 | 600 plasma input [5] | no      | 40.3 (0.42 eV)   | ~630 [6]        | ~7.8                          | NR [7]          | lower
+[5] "Plasma input power", same at all points; method and boundary not
+    stated. SRC028-E004.
+[6] On carbon-based X; 465 / 392 kJ/mol on the reported CR. 25 C flow basis
+    +9%. SRC028-E043.
+[7] Authors give EDE only (0.0029 / ~0.00347 L/min W). eta = X x 283/SEI is
+    38 / 45% on carbon-based X (61 / 72% on reported CR).
+
+4. Plasma parameters (plasma-on rows only)
+Source / OP    | Discharge / regime     | Supply / frequency        | Voltage | P_plasma (W; method) | Gas T (K; method)           | Other diagnostics
+Kim 2014 OP001 | 3-phase AC gliding arc | 3-phase AC, 15 kW / NR    | NR      | 600; method NR       | NR [8]                      | none
+Kim 2014 OP002 | 3-phase AC gliding arc | 3-phase AC, 15 kW / NR    | NR      | 600; method NR       | NR [8]                      | none
+[8] Not measured in the discharge. Case 1 reactor temperature 532-290 C
+    over 6-32 L/min (not given per flow); location and sensor not stated.
+    SRC028-E006.
