@@ -1,6 +1,6 @@
 """Manuscript figure: supply unit power and efficiency against output frequency (no data values in this script).
 
-Writes figures/0_manuscript_figure.png/.svg/.pdf (caption text is drafted in the manuscript).
+Writes figures/manuscript_figure.png/.svg/.pdf (caption text is drafted in the manuscript).
 A simplified version of supply_power_efficiency_frequency (plot_supply_values.py, kept for the SI):
 - (a) unit power only: rated or family-maximum output of one supply unit. Installed systems, average power of
   pulsed transmitters, single devices and laboratory units are left out (installation sizes go in the caption).
@@ -203,6 +203,6 @@ leg = fig.legend(handles=handles, loc="upper left", bbox_to_anchor=(x0 - 0.012, 
 leg.get_title().set_color(INK)
 
 for ext in ("png", "svg", "pdf"):
-    fig.savefig(OUT / f"0_manuscript_figure.{ext}", dpi=300, bbox_inches="tight")
-print("wrote", OUT / "0_manuscript_figure.png")
+    fig.savefig(OUT / f"manuscript_figure.{ext}", dpi=300, bbox_inches="tight")
+print("wrote", OUT / "manuscript_figure.png")
 

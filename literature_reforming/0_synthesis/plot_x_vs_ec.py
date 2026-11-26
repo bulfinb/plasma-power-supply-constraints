@@ -23,6 +23,8 @@ import matplotlib.ticker
 from matplotlib.lines import Line2D
 
 HERE = Path(__file__).resolve().parent
+FIG = HERE / "figures"   # figure outputs (scripts and data stay in this folder)
+FIG.mkdir(exist_ok=True)
 rows = list(csv.DictReader(open(HERE / "reforming_synthesis.csv", encoding="utf-8")))
 
 BLUE, ORANGE, AQUA = "#2a78d6", "#eb6834", "#1baf7a"
@@ -146,5 +148,5 @@ handles += [Line2D([], [], marker="h", mfc=INK, mec="white", ls="none", ms=8, la
 fig.legend(handles=handles, loc="lower center", ncol=7, frameon=False, fontsize=7.3, bbox_to_anchor=(0.5, -0.03))
 fig.tight_layout(rect=(0, 0.1, 1, 1))
 for ext in ("png", "svg"):
-    fig.savefig(HERE / f"reforming_x_vs_ec.{ext}", dpi=200, bbox_inches="tight")
+    fig.savefig(FIG / f"reforming_x_vs_ec.{ext}", dpi=200, bbox_inches="tight")
 print(f"{len(pts)} plasma points plotted")

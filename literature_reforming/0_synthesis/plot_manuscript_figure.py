@@ -14,7 +14,7 @@ power-supply manuscript figure (power_systems/figures/plot_manuscript_figure.py)
 - Joule-heated pilot (From 2024, reviewer estimate SRC005-C004): filled star at the industrial-supply value with bars
   for the EC and equilibrium-conversion ranges (supply efficiency 0.97-0.98, so the paper value is barely different).
 
-Writes 0_manuscript_figure.png/.svg/.pdf here and copies the pdf/png to manuscript/figures/reforming_figure.*.
+Writes figures/manuscript_figure.png/.svg/.pdf and copies the pdf/png to manuscript/figures/reforming_figure.*.
 Run from the repository root: ~/.venvs/science/bin/python literature_reforming/0_synthesis/plot_manuscript_figure.py
 """
 import csv
@@ -29,6 +29,8 @@ import matplotlib.ticker
 from matplotlib.lines import Line2D
 
 HERE = Path(__file__).resolve().parent
+FIG = HERE / "figures"   # figure outputs (scripts and data stay in this folder)
+FIG.mkdir(exist_ok=True)
 MS_FIG = HERE.parent.parent / "manuscript" / "figures"
 rows = list(csv.DictReader(open(HERE / "reforming_synthesis.csv", encoding="utf-8")))
 
@@ -197,7 +199,7 @@ for title, h in (("Reforming route", h_route), ("Plasma type", h_act), ("Energy 
     y = bb.y0 - 0.035
 
 for ext in ("png", "svg", "pdf"):
-    fig.savefig(HERE / f"0_manuscript_figure.{ext}", dpi=300, bbox_inches="tight")
+    fig.savefig(FIG / f"manuscript_figure.{ext}", dpi=300, bbox_inches="tight")
 for ext in ("png", "pdf"):
-    shutil.copy(HERE / f"0_manuscript_figure.{ext}", MS_FIG / f"reforming_figure.{ext}")
-print(f"{len(pts)} plasma points; wrote", HERE / "0_manuscript_figure.png")
+    shutil.copy(FIG / f"manuscript_figure.{ext}", MS_FIG / f"reforming_figure.{ext}")
+print(f"{len(pts)} plasma points; wrote", FIG / "manuscript_figure.png")

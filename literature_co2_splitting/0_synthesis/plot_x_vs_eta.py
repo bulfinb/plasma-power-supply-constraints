@@ -27,6 +27,8 @@ import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 
 HERE = Path(__file__).resolve().parent
+FIG = HERE / "figures"   # figure outputs (scripts and data stay in this folder)
+FIG.mkdir(exist_ok=True)
 rows = list(csv.DictReader(open(HERE / "co2_synthesis.csv", encoding="utf-8")))
 
 KWH_NM3 = 3600 / (1000 / 22.414)            # kJ/mol per kWh/Nm3
@@ -140,7 +142,7 @@ handles += [Line2D([], [], marker="h", mfc=INK, mec="white", ls="none", ms=9, la
 fig.legend(handles=handles, loc="lower center", ncol=3, frameon=False, fontsize=7.2, bbox_to_anchor=(0.5, -0.01))
 fig.tight_layout(rect=(0, 0.2, 1, 1))
 for ext in ("png", "svg"):
-    fig.savefig(HERE / f"co2_x_vs_eta_lhv.{ext}", dpi=200, bbox_inches="tight")
+    fig.savefig(FIG / f"co2_x_vs_eta_lhv.{ext}", dpi=200, bbox_inches="tight")
 for p in sorted(pts, key=lambda q: -sum(q["eta"])):
     print(f"{p['key']:26s} X {p['x']:5.1f}  eta_LHV {p['eta'][0]:5.1f}-{p['eta'][1]:5.1f}"
           + (f"  (electricity only {p['eta_el'][0]:.1f}-{p['eta_el'][1]:.1f})" if p["bed"] else ""))

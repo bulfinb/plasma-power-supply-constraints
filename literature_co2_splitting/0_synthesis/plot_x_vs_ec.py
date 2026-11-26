@@ -22,6 +22,8 @@ import matplotlib.ticker
 from matplotlib.lines import Line2D
 
 HERE = Path(__file__).resolve().parent
+FIG = HERE / "figures"   # figure outputs (scripts and data stay in this folder)
+FIG.mkdir(exist_ok=True)
 rows = list(csv.DictReader(open(HERE / "co2_synthesis.csv", encoding="utf-8")))
 
 # Reference categorical palette (dataviz skill, light mode), first three slots (validated all-pairs for scatter).
@@ -158,5 +160,5 @@ handles += [Line2D([], [], marker="h", mfc=INK, mec="white", ls="none", ms=9, la
 fig.legend(handles=handles, loc="lower center", ncol=5, frameon=False, fontsize=7.5, bbox_to_anchor=(0.5, -0.02))
 fig.tight_layout(rect=(0, 0.1, 1, 1))
 for ext in ("png", "svg"):
-    fig.savefig(HERE / f"co2_x_vs_ec.{ext}", dpi=200, bbox_inches="tight")
+    fig.savefig(FIG / f"co2_x_vs_ec.{ext}", dpi=200, bbox_inches="tight")
 print(f"{len(pts)} plasma points; SOEC stack {stack}, system {system}")

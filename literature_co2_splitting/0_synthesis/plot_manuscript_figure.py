@@ -14,7 +14,7 @@ reforming manuscript figure (literature_reforming/0_synthesis/plot_manuscript_fi
   stack-only band (Kungas 2020, no conversion, heat below V_tn excluded) is left to the table note (BB 2026-11-25);
   reaction enthalpy line at 3.50 kWh/Nm3 CO.
 
-Writes 0_manuscript_figure.png/.svg/.pdf here and copies the pdf/png to manuscript/figures/co2_figure.*.
+Writes figures/manuscript_figure.png/.svg/.pdf and copies the pdf/png to manuscript/figures/co2_figure.*.
 Run from the repository root: ~/.venvs/science/bin/python literature_co2_splitting/0_synthesis/plot_manuscript_figure.py
 """
 import csv
@@ -29,6 +29,8 @@ import matplotlib.ticker
 from matplotlib.lines import Line2D
 
 HERE = Path(__file__).resolve().parent
+FIG = HERE / "figures"   # figure outputs (scripts and data stay in this folder)
+FIG.mkdir(exist_ok=True)
 MS_FIG = HERE.parent.parent / "manuscript" / "figures"
 rows = list(csv.DictReader(open(HERE / "co2_synthesis.csv", encoding="utf-8")))
 BENCH = {"SRC025", "SRC026"}
@@ -172,7 +174,7 @@ for title, h in (("Plasma type", h_type), ("Energy basis", h_basis)):
     y = leg.get_window_extent().transformed(fig.transFigure.inverted()).y0 - 0.035
 
 for ext in ("png", "svg", "pdf"):
-    fig.savefig(HERE / f"0_manuscript_figure.{ext}", dpi=300, bbox_inches="tight")
+    fig.savefig(FIG / f"manuscript_figure.{ext}", dpi=300, bbox_inches="tight")
 for ext in ("png", "pdf"):
-    shutil.copy(HERE / f"0_manuscript_figure.{ext}", MS_FIG / f"co2_figure.{ext}")
+    shutil.copy(FIG / f"manuscript_figure.{ext}", MS_FIG / f"co2_figure.{ext}")
 print(f"{len(pts)} plasma points; SOEC system {sys_dc}->{sys_wall} at {sys_x}%")

@@ -62,7 +62,7 @@ literature_reviews/
 literature_pyrolysis/
   literature_review_objectives.md, literature_search_strategy.md, search_and_selection_log.md, processing_log.md
 literature_co2_splitting/
-  0_synthesis/                     synthesis tables (co2_synthesis_tables.md), CSV and figures, with build scripts
+  0_synthesis/                     synthesis CSV, tables and build/plot scripts; figures/ holds the generated figures
   literature_review_objectives.md, literature_search_strategy.md, search_and_selection_log.md, processing_log.md
   workflow.md, _source_template.md  CO2-splitting extraction protocol and template (own workflow, version 1.2)
   cross_check_log.md               independent GPT re-extraction: differences and actions
