@@ -47,7 +47,7 @@ Prepared 2026-11-11 by Claude (AI); ai_checked by same extractor; figure
 points OP001 and OP003 human checked by BB 2026-11-25 (no corrections).
 
 Comparison tables (experimental conditions)
-NR = not reported; NA = not applicable; ~ = approximate (figure reading). OP001, OP003 human checked (BB, 2026-11-25); other rows pending.
+NR = not reported; NA = not applicable; ~ = approximate (figure reading). OP001, OP003 human checked (BB, 2026-11-25); other rows: no human check.
 
 1. Route, scale and conditions
 Source / OP       | Reactor / activation                   | CO2 feed (mol/min) | Diluent | p (bar)          | Scale as reported

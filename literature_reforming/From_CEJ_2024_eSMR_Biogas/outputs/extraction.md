@@ -7,7 +7,7 @@
 - SHA-256:
   - manuscript.pdf: `752f830bde1f30f96c2d88e3fa001afdfed3e2594a0e0b5923ab9d314c29e34d`
   - supplementary.docx: `bf2cca1ca61fcc9b135540a8cf8b472841b04720ae6b8ad5e04c58093bb33981`
-- Protocol: 0.1. Extractor/reviewer: Claude (AI), 2026-11-04, same-extractor checks. Status: **ai_checked; human verification pending**.
+- Protocol: 0.1. Extractor/reviewer: Claude (AI), 2026-11-04, same-extractor checks. Status: **ai_checked; human check: none**.
 - Coverage: full manuscript and Supporting Information read; Figs. 3-5 inspected visually and Fig. 5 graph-read. Modelled scale-up results (Fig. 5 curves, Fig. 6 flowsheet, Section 3.4) recorded only as modelling.
 - Role in review: Joule-heated benchmark at pilot scale (primary electrified benchmark; Wismann 2019, SRC001, is the lab-scale complement).
 - Records: [evidence.csv](evidence.csv), 33 records (E001-E031, E041-E042); [calculations.py](calculations.py); [short_summary.txt](../short_summary.txt). Evidence IDs below abbreviated E001 = SRC005-E001.

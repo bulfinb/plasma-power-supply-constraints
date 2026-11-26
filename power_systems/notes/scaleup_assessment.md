@@ -1,6 +1,6 @@
 # Industrial power supplies for scaled-up electrified reforming
 
-First drafted 2026-11-05; rebuilt 2026-11-10 from [supply_values.csv](../results/supply_values.csv) after every value was re-extracted from the archived source copies (see [../workflow.md](../workflow.md)). Status: **ai_checked; human verification pending**. Class data: [../supply_classes.csv](../results/supply_classes.csv). Calculation: [../figures/scaleup_wall_basis.py](../results/scaleup_wall_basis.py), output `../figures/scaleup_wall_basis.csv`. Source IDs (PWxxx) resolve in [source_register.csv](../results/source_register.csv); value IDs (PWxxx-Vnn) in supply_values.csv.
+First drafted 2026-11-05; rebuilt 2026-11-10 from [supply_values.csv](../results/supply_values.csv) after every value was re-extracted from the archived source copies (see [../workflow.md](../workflow.md)). Status: **ai_checked; human check: none**. Class data: [../supply_classes.csv](../results/supply_classes.csv). Calculation: [../figures/scaleup_wall_basis.py](../results/scaleup_wall_basis.py), output `../figures/scaleup_wall_basis.csv`. Source IDs (PWxxx) resolve in [source_register.csv](../results/source_register.csv); value IDs (PWxxx-Vnn) in supply_values.csv.
 
 ## Purpose
 
@@ -102,7 +102,7 @@ On the supply side the same patent states that >=95% solid-state supplies are co
 
 Reference lines: SMR 206, DRM 247 kJ/mol CH4. Values exclude steam raising, furnace heat and heat recovery as in the papers. Wanten 2022 used a 300 kOhm series ballast resistor that dissipated 1.6-2.6x the plasma power (SRC015-C005); an industrial glow array would need active current control per discharge instead, so the D1 row assumes that. The D1 range (0.92-0.97) is for full-load ESP and rack HV DC supplies; the efficiency of many small current-controlled channels at part load is not sourced, so the D1 rows are a lower bound on wall demand. The K2 row for Song uses 0.91-0.96 from solid-state induction generators covering 100-400 kHz (PW004-V02, PW005-V02); these efficiencies are for induction-heating loads, not plasma.
 
-## Interpretation (for discussion; human check pending)
+## Interpretation (for discussion; human check: none)
 
 1. With industrial supplies, the wall correction is modest (+2-25%) for DC arcs, 915 MHz magnetrons and kHz inverters. It is larger for RF tube oscillators (+67-89%), 2.45 GHz magnetrons (+43-59%) and 2.45 GHz solid-state (+43-79%). Supply efficiency therefore does not change the broad ranking; the plasma process (regime, heat losses, lack of heat recovery) dominates.
 2. The supply choice matters where frequency is forced: ICP torches and 2.45 GHz sources. For the 400 kHz ICP torch, solid-state induction generators (50-100 kW at 100-400 kHz) would cut the wall correction from +67-89% (tube) to +4-10%, if their induction-heating efficiencies carry over to a plasma load. Industrial microwave scale-up would favour 915 MHz magnetrons (100 kW units, ~80%) over 2.45 GHz sources, at the cost of tube replacement every few thousand hours.

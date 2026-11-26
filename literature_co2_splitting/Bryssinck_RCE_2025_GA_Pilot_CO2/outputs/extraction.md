@@ -9,7 +9,7 @@
 - Extractor / date: Claude (AI), 2026-11-12.
 - Coverage: experimental sections, Figs. 5-12 (Figs. 5, 6, 12 read from rendered pages); the 2D post-plasma model (Section 3, 4.5, ESI) recorded only as the authors' interpretation.
 - Reviewer / date / checks: Claude (AI), 2026-11-12; EC, CR and O/C balances recalculated (C001-C006).
-- Review status: ai_checked; partial human check by BB, 2026-11-25: OP003 (E014) confirmed; the benchmark inconsistency (E009, E042) agreed (human_checks/summary.csv). Other records human verification pending.
+- Review status: ai_checked; partial human check by BB, 2026-11-25: OP003 (E014) confirmed; the benchmark inconsistency (E009, E042) agreed (human_checks/summary.csv). Other records: no human check.
 
 ## Electricity supply
 

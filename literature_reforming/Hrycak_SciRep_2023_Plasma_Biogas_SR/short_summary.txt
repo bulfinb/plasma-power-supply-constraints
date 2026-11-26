@@ -45,7 +45,7 @@ Prepared 2026-11-05 by Claude (AI); revised 2026-11-20 after GPT cross-check
 (XR008: Vm 24.25 L/mol); ai_checked; OP001-OP002 human checked by BB 2026-11-26 (no changes).
 
 Comparison tables (experimental conditions)
-NR = not reported; NA = not applicable; ~ = approximate. OP001-OP002 human checked (BB, 2026-11-26); other rows pending.
+NR = not reported; NA = not applicable; ~ = approximate. OP001-OP002 human checked (BB, 2026-11-26); other rows: no human check.
 
 1. Route and scale
 Source / OP       | Route | Reactor / activation / catalyst            | CH4 feed (mol/min) | Scale as reported

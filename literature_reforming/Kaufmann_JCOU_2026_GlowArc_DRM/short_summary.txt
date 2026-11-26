@@ -31,10 +31,10 @@ Calculations SRC027-C001-C004, E041-E047; outputs/calculations.py.
 Details: outputs/extraction.md, outputs/evidence.csv.
 
 Prepared 2026-11-26 by Claude (AI); ai_checked by same extractor; OP002
-human checked by BB 2026-11-26 (no changes); other rows pending.
+human checked by BB 2026-11-26 (no changes); other rows: no human check.
 
 Comparison tables (experimental conditions)
-NR = not reported; NA = not applicable; ~ = approximate (figure reading). OP002 human checked (BB, 2026-11-26); other rows pending.
+NR = not reported; NA = not applicable; ~ = approximate (figure reading). OP002 human checked (BB, 2026-11-26); other rows: no human check.
 
 1. Route, scale and conditions
 Source / OP         | Route | Reactor / activation / catalyst            | CH4 feed (mol/min) | CH4:CO2:H2O (other) | T (degC; loc.) | p (bar) | Scale as reported

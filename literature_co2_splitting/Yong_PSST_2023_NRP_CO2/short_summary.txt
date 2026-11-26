@@ -30,10 +30,10 @@ Calculations SRC023-C001-C004, E041-E043; outputs/calculations.py.
 Details: outputs/extraction.md, outputs/evidence.csv.
 
 Prepared 2026-11-12 by Claude (AI); revised 2026-11-20 after GPT
-cross-check (XC014); ai_checked; human verification pending.
+cross-check (XC014); ai_checked; human check: none.
 
 Comparison tables (experimental conditions)
-NR = not reported; NA = not applicable; ~ = approximate (figure reading). Human verification pending.
+NR = not reported; NA = not applicable; ~ = approximate (figure reading). Human check: none.
 
 1. Route, scale and conditions
 Source / OP     | Reactor / activation                       | CO2 feed (mol/min)    | Diluent | p (bar) | Scale as reported

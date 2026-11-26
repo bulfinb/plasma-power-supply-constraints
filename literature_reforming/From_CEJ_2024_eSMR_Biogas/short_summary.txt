@@ -41,10 +41,10 @@ SRC005-C001-C003, E041-E042; outputs/calculations.py. Details:
 outputs/extraction.md and outputs/evidence.csv.
 
 Prepared 2026-11-04 by Claude (AI); ai_checked by same extractor; human
-verification pending.
+check: none.
 
 Comparison tables (experimental conditions)
-NR = not reported; NA = not applicable; ~ = approximate. Human verification pending.
+NR = not reported; NA = not applicable; ~ = approximate. Human check: none.
 
 1. Route and scale
 Source / OP     | Route              | Reactor / activation / catalyst            | CH4 feed (mol/min) | Scale as reported

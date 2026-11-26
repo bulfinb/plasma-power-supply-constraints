@@ -9,7 +9,7 @@
 - Extractor / date: Claude (AI), 2026-11-12.
 - Coverage: experimental results and methods; the 2D helium fluid model recorded only as the authors' interpretation. Fig. 1 not digitised (headline values given in the text).
 - Reviewer / date / checks: Claude (AI), 2026-11-12; plasma power implied by the reported values, expansion correction and energy per CO calculated (C001-C004).
-- Review status: ai_checked. Human verification pending.
+- Review status: ai_checked. Human check: none.
 
 ## Role in the review
 

@@ -40,10 +40,10 @@ outputs/calculations.py. Details: outputs/extraction.md, outputs/evidence.csv.
 
 Prepared 2026-11-12 by Claude (AI); revised 2026-11-19 (eta_LHV with carbon
 counted; 14 min reading, XC005); ai_checked by same extractor; OP002 and OP003
-human checked by BB 2026-11-25 (no changes); other rows pending.
+human checked by BB 2026-11-25 (no changes); other rows: no human check.
 
 Comparison tables (experimental conditions)
-NR = not reported; NA = not applicable; ~ = approximate (figure reading). OP002, OP003 human checked (BB, 2026-11-25); other rows pending.
+NR = not reported; NA = not applicable; ~ = approximate (figure reading). OP002, OP003 human checked (BB, 2026-11-25); other rows: no human check.
 
 1. Route, scale and conditions
 Source / OP             | Reactor / activation                    | CO2 feed (mol/min) | Diluent | p (bar) | Scale as reported

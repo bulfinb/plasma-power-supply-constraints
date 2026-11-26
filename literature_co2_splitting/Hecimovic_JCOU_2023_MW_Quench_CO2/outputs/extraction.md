@@ -9,7 +9,7 @@
 - Extractor / date: Claude (AI), 2026-11-12.
 - Coverage: full manuscript and ESI; Figs. 2, 6-10 read from rendered pages.
 - Reviewer / date / checks: Claude (AI), 2026-11-12; efficiency recalculated from conversion and SEI (C002); flows cross-matched with SRC016 (C005).
-- Review status: ai_checked. Human verification pending (efficiency-basis finding E019 in particular).
+- Review status: ai_checked. Human check: none.
 
 ## Relation to SRC016 (same group, same torch)
 

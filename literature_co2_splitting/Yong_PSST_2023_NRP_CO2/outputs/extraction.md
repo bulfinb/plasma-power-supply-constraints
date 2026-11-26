@@ -9,7 +9,7 @@
 - Extractor / date: Claude (AI), 2026-11-12.
 - Coverage: full paper; Figs. 8 and 13 read from rendered pages. The 0D kinetic model is recorded only as the authors' interpretation.
 - Reviewer / date / checks: Claude (AI), 2026-11-12; SEI and efficiency recalculated from pulse energy, frequency, time, pressure and volume (C001-C003).
-- Review status: ai_checked. Human verification pending (volume question E042).
+- Review status: ai_checked. Human check: none.
 
 ## Electricity supply
 

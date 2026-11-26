@@ -9,7 +9,7 @@
 - Extractor / date: Claude (AI), 2026-11-26.
 - Coverage: full paper. Case 1 (pure CO2, Fig. 2) extracted; Fig. 2 read from the embedded 150 ppi image. Cases 2-4 and Refs. 1-2 (CH4 and/or H2O co-feed) are out of scope and only noted (E010).
 - Reviewer / date / checks: Claude (AI), 2026-11-26; EDE reproduced from CR, flow and power; carbon-based conversion, O2/CO ratio and SEI, efficiency and energy per CO recalculated (C001-C005). Blind GPT cross-check 2026-11-26 (cross_check_log.md XC016-XC020).
-- Review status: ai_checked; partial human check by BB, 2026-11-26: Eq. (1) without expansion factor (E008), Fig. 2b CO2 and CO readings (E012) and the feed preheat in Fig. 1 (E017) confirmed; low O2 queried and explained (E042); no value changes (human_checks/summary.csv). Other records human verification pending.
+- Review status: ai_checked; partial human check by BB, 2026-11-26: Eq. (1) without expansion factor (E008), Fig. 2b CO2 and CO readings (E012) and the feed preheat in Fig. 1 (E017) confirmed; low O2 queried and explained (E042); no value changes (human_checks/summary.csv). Other records: no human check.
 
 ## Electricity supply
 

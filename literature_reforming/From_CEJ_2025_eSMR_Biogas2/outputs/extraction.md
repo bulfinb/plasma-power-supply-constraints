@@ -7,7 +7,7 @@
 - SHA-256:
   - Manuscript.pdf: `f2017566703ceecf2c86719f69c8627ce3b1722e52f0ab6d5e83c257c2f4c088`
   - ESI.docx: `300d5197c47ebc8d7dee33d876908f8b176d8ae750ce817092c4f3991516f3f6`
-- Protocol: 0.1. Extractor/reviewer: Claude (AI), 2026-11-04, same-extractor checks. Status: **ai_checked; human verification pending**.
+- Protocol: 0.1. Extractor/reviewer: Claude (AI), 2026-11-04, same-extractor checks. Status: **ai_checked; human check: none**.
 - Coverage: full manuscript and ESI read; Fig. 5 inspected and graph-read for the CH4/CO2 ratio and flow ranges. Thermodynamic simulations (Figs. 1, S1-S3) recorded only as modelling.
 - Relation to other sources: same Topsoe/Aarhus eSMR pilot plant as From et al. (2024), SRC005. This paper adds point-matched feed flows and an outlet composition, but no energy data.
 - Records: [evidence.csv](evidence.csv), 25 records (E001-E021, E041-E044); [calculations.py](calculations.py); [short_summary.txt](../short_summary.txt). Evidence IDs below abbreviated E001 = SRC006-E001.

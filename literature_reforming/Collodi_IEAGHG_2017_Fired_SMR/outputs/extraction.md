@@ -10,7 +10,7 @@
 - Extractor / date: Claude (AI), 2026-10-30.
 - Coverage: IEAGHG overview (PDF pp. 3-21), Base Case sections 2.1-2.9 (PDF pp. 31-58), Reference Document sections 3.1-3.4 (PDF pp. 254-256), economic basis (PDF p. 236). Equipment list pages 53-54 inspected as images. Capture cases 1A-3 not extracted.
 - Reviewer / checks: same extractor. Component heating values reproduce the report's natural gas HHV and LHV; the H2 Nm3 flow reproduces the stream 12 molar flow at 0 degC; reformer outlet CH4 (3.36% dry) matches the stated 3.3-4% range (C001, C003).
-- Review status: **ai_checked; human verification pending**.
+- Review status: **ai_checked; human check: none**.
 
 ## Electricity supply
 

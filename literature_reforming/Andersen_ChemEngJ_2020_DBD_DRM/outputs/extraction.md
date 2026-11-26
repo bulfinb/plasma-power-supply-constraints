@@ -5,7 +5,7 @@
 - Source ID: **SRC013**. J.A. Andersen, J.M. Christensen, M. Østberg, A. Bogaerts and A.D. Jensen, "Plasma-catalytic dry reforming of methane: Screening of catalytic materials in a coaxial packed-bed DBD reactor," Chemical Engineering Journal 397 (2020) 125519. DOI: https://doi.org/10.1016/j.cej.2020.125519 (Crossref-confirmed). DTU, Haldor Topsøe and University of Antwerp.
 - Documents: [manuscript.pdf](../manuscript.pdf), 8 pages (printed page = PDF page); [ESI.pdf](../ESI.pdf), 8 pages, saved by the user from ESI.docx (same content; ESI.pdf used for locators). Retrieval date unknown.
 - SHA-256: manuscript.pdf `f6743c10942e865c9d2362771b00a00012a0f0bc61f960e68c8fa3e8db9ec737`; ESI.pdf `2c843efb30c64ca10efc0fb92a43bac0d70d4d8b9d906b392426396a3b153ecf`; ESI.docx `56574129bf55e2abe15d584f20d076c259de811e0f09121e86284b3e7f3c5ab5`.
-- Protocol 0.1 (with 2026-11-04 amendment). Extractor/reviewer: Claude (AI), 2026-11-05, same-extractor checks. Status: **ai_checked; human verification pending**.
+- Protocol 0.1 (with 2026-11-04 amendment). Extractor/reviewer: Claude (AI), 2026-11-05, same-extractor checks. Status: **ai_checked; human check: none**.
 - Coverage: full manuscript and ESI read. Values from Table 3 and ESI Table S.2; Fig. 1(b) catalyst-only bars read approximately. XRD/SEM details recorded briefly. Table 4 literature comparison noted as context only.
 - Records: [evidence.csv](evidence.csv), 32 records (SRC013-E001-E026 source; E041-E046 reviewer calculations). Calculations C001-C005 in [calculations.py](calculations.py).
 - Selection: record R020 in [search_and_selection_log.md](../../logs/search_and_selection_log.md).

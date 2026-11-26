@@ -33,7 +33,7 @@ Details: outputs/extraction.md, outputs/evidence.csv.
 
 Prepared 2026-11-26 by Claude (AI); revised 2026-11-26 after GPT
 cross-check (XC016-XC020); ai_checked; Eq. 1, Fig. 2b and the feed
-preheat human checked by BB 2026-11-26 (no value changes); other rows pending.
+preheat human checked by BB 2026-11-26 (no value changes); other rows: no human check.
 
 Comparison tables (experimental conditions)
 NR = not reported; NA = not applicable; ~ = approximate (figure reading). Eq. 1, Fig. 2b and preheat human checked (BB, 2026-11-26).

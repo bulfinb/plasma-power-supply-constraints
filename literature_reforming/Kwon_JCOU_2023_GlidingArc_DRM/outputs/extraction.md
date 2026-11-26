@@ -5,7 +5,7 @@
 - Source ID: **SRC014**. Hyoungjoon Kwon, Taewoo Kim and Soonho Song, "Dry reforming of methane in a rotating gliding arc plasma: Improving efficiency and syngas cost by quenching product gas," Journal of CO2 Utilization 70 (2023) 102448 (open access, CC BY). DOI: https://doi.org/10.1016/j.jcou.2023.102448. Yonsei University and University of Illinois.
 - Documents: [manuscript.pdf](../manuscript.pdf), 13 pages (printed page = PDF page); [ESI.pdf](../ESI.pdf), 2 pages (section S1, H2O calculation). ESI.docx has the same content; ESI.pdf used for locators. Retrieval date unknown.
 - SHA-256: manuscript.pdf `dd4b950d32cf6b36d95f281478c50568c5182ce6fec1170f34dae8db4482c0c0`; ESI.pdf `ada936305e0f66e58a03f7ac3a8e2ea96975a8a6c415c43c7243eba634532bec`; ESI.docx `0cf52bf5c5338934034b57549ebc93a77ac564b7faa041bd78e7b0c6bc5d49e5`.
-- Protocol 0.1 (with 2026-11-04 amendment). Extractor/reviewer: Claude (AI), 2026-11-05, same-extractor checks. Status: **ai_checked; human verification pending**.
+- Protocol 0.1 (with 2026-11-04 amendment). Extractor/reviewer: Claude (AI), 2026-11-05, same-extractor checks. Status: **ai_checked; human check: none**.
 - Coverage: full manuscript and ESI read. Values from text and Table 1 where given; Figs. 2, 6, 9 and 11 read by eye from 250 dpi renders (~0.5 points, ~10 degC). Equilibrium modelling (Figs. 4-5) recorded as context only.
 - Records: [evidence.csv](evidence.csv), 28 records (SRC014-E001-E022 source; E041-E046 reviewer calculations). Calculations C001-C005 in [calculations.py](calculations.py).
 - Selection: record R008 in [search_and_selection_log.md](../../logs/search_and_selection_log.md).

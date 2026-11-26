@@ -8,7 +8,7 @@
 - Inputs: [manuscript.pdf](../manuscript.pdf), 5 PDF pages (4 article pages plus publisher information); [supplementary.pdf](../supplementary.pdf), 25 PDF pages. Supplement pp. 23-25 contain references with printed page numbers restarting at 1. Use PDF page numbers for unambiguous lookup.
 - Document versions and SHA-256 hashes: manuscript.pdf (5 pp., Supplied local published article PDF), SHA-256 `3ab1991aa15a589446b52f2e1c5139666764876d8681212ba0dd2c40c34f3865`; supplementary.pdf (25 pp., Supplied local supplementary PDF; contains references pages labelled Submitted Manuscript: Confidential), SHA-256 `dab5db62e1c0e423633eeb2b90ed9fdf83405ef1820cfbef5ed65bfc182cb04e`. Retrieval date unknown.
 - Protocol: [../workflow.md](../../workflow.md), version 0.1.
-- Extraction/review date: 2026-10-28. Extractor: Codex AI. Review status: **ai_checked by the same extractor; human verification pending**.
+- Extraction/review date: 2026-10-28. Extractor: Codex AI. Review status: **ai_checked by the same extractor; human check: none**.
 - Coverage: all supplied text read; labelled conversions in Figs. S2-S4 extracted; selected relevant figures visually inspected. Full curve digitization, full CFD reproduction, and extraction of every auxiliary plot coordinate were not performed. Plot temperatures are approximate visual readings, not author-tabulated data.
 - Outputs: [evidence.csv](evidence.csv); the operating points and calculations are in this file (sections Operating points and Calculations), merged here on 2026-11-26 from the former operating_points.csv and calculations.md to match the standard source layout. Individual claims below link by evidence ID to the CSV, where the original document/page/locator is recorded.
 
@@ -113,7 +113,7 @@ SEI, EC_CH4, EC_H2, EY_H2 and eta_P,LHV are **not calculable**: no point-matched
 
 ## Reporting quality
 
-Appraised 2026-10-30 by Claude (AI) from the existing extraction records and evidence IDs, without re-reading the PDFs. Status: unreviewed; human check pending.
+Appraised 2026-10-30 by Claude (AI) from the existing extraction records and evidence IDs, without re-reading the PDFs. Status: unreviewed; human check: none.
 
 | Item | Answer | Reason and evidence IDs |
 |---|---|---|

@@ -44,10 +44,10 @@ outputs/calculations.py. Details: outputs/extraction.md and
 outputs/evidence.csv.
 
 Prepared 2026-11-05 by Claude (AI); ai_checked by same extractor; OP006
-conversions human checked by BB 2026-11-26 (no changes); other rows pending.
+conversions human checked by BB 2026-11-26 (no changes); other rows: no human check.
 
 Comparison tables (experimental conditions)
-NR = not reported; NA = not applicable; ~ = approximate. OP006 conversions human checked (BB, 2026-11-26); other rows pending.
+NR = not reported; NA = not applicable; ~ = approximate. OP006 conversions human checked (BB, 2026-11-26); other rows: no human check.
 
 1. Route and scale
 Source / OP       | Route | Reactor / activation / catalyst        | CH4 feed (mol/min) | Scale as reported

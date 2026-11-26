@@ -4,7 +4,7 @@
 
 - Source ID: **SRC002**. Feiyang Geng, Vasudev P. Haribal and Jason C. Hicks, "Non-thermal plasma-assisted steam methane reforming for electrically-driven hydrogen production," Applied Catalysis A, General 647 (2022), 118903. DOI: https://doi.org/10.1016/j.apcata.2022.118903.
 - Documents: supplied published [manuscript.pdf](../manuscript.pdf), 9 pages; [ESI.pdf](../ESI.pdf), 5 pages; original [ESI.docx](../ESI.docx). Retrieval/export dates unknown. PDF page numbers below are 1-based; ESI pages have no printed page numbers.
-- Protocol: 0.1, incorporating the user's request for separate plasma scale. Extractor/reviewer: Codex AI, 2026-10-28, same-extractor checks. Status: **ai_checked; human verification pending**.
+- Protocol: 0.1, incorporating the user's request for separate plasma scale. Extractor/reviewer: Codex AI, 2026-10-28, same-extractor checks. Status: **ai_checked; human check: none**.
 - Coverage: full manuscript and ESI text read; manuscript pp. 2-7 and ESI pp. 2, 3, 5 visually inspected; selected headline/control conditions extracted, not every plotted point. DOCX text has the same five figure captions and five embedded images, with no tables; the PDF is the citation reference. Image-by-image equivalence was not independently established.
 - SHA-256, original files unchanged:
   - manuscript.pdf: `9f074ebfc8c0ce9d3efca9d2de06997cc753e1d3d67c8b97a6a11bf92d03e5ce`
@@ -79,7 +79,7 @@ Plotted 370/440 degC thermal and 370 degC plasma values are visual estimates, ro
 
 ## Reporting quality
 
-Appraised 2026-10-30 by Claude (AI) from the existing extraction records and evidence IDs, without re-reading the PDFs. Status: unreviewed; human check pending.
+Appraised 2026-10-30 by Claude (AI) from the existing extraction records and evidence IDs, without re-reading the PDFs. Status: unreviewed; human check: none.
 
 | Item | Answer | Reason and evidence IDs |
 |---|---|---|

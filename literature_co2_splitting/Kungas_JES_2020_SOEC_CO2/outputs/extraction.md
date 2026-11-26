@@ -9,7 +9,7 @@
 - Extractor / date: Claude (AI), 2026-11-12.
 - Coverage: SOEC content of the whole review (thermodynamics, figures of merit, Figs. 4-5, Tables I-II, industrial perspective). Low-temperature and molten carbonate data recorded only as context (E018).
 - Reviewer / date / checks: Claude (AI), 2026-11-12; Eq. 16 reproduced against the reported voltage/EPC pairs (C001).
-- Review status: ai_checked. Human verification pending.
+- Review status: ai_checked. Human check: none.
 
 ## Role in the review
 

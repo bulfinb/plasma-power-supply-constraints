@@ -42,11 +42,11 @@ Traceability:
 
 Prepared 2026-10-28; updated to the new summary format 2026-10-30.
 Extraction AI-checked; reporting-quality appraisal unreviewed; human
-verification pending.
+check: none.
 Comparison tables reformatted to the five-table layout 2026-11-04.
 
 Comparison tables (experimental conditions)
-NR = not reported; NA = not applicable; ~ = approximate. Human verification pending.
+NR = not reported; NA = not applicable; ~ = approximate. Human check: none.
 
 1. Route and scale
 Source / OP        | Route | Reactor / activation / catalyst           | CH4 feed (mol/min) | Scale as reported
