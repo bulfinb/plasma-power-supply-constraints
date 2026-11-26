@@ -162,7 +162,7 @@ for p in pts:
 
 ax.set_xscale("log")
 ax.set_xlim(XMIN, XMAX)
-ax.set_ylim(YMIN, YMAX)
+ax.set_ylim(YMIN, 100)
 ax.set_xticks([200, 300, 500, 1000, 2000, 3000])
 ax.xaxis.set_major_formatter(matplotlib.ticker.FuncFormatter(lambda v, _: f"{v:,.0f}"))
 ax.xaxis.set_minor_formatter(matplotlib.ticker.NullFormatter())
