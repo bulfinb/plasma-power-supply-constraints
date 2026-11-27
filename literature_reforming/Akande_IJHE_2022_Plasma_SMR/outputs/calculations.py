@@ -84,6 +84,9 @@ for vm, lab in ((V0, "0 degC normal"), (32.3, "actual ~120 degC")):
     ec = (32 + q) / (mol_s(60) * 0.966)
     print(f"C005 steam duty ({lab} basis): {q:.1f} kW = {100*q/32:.0f}% of 32 kW; "
           f"OP003 EC_CH4 incl. this heat ~{ec:.0f} kJ/mol (indicative only)")
+    # added 2026-11-27: same duty at the adopted headline OP008 (62 lpm CH4, carbon-based X 83.1%)
+    ec8 = (32 + q) / (mol_s(62) * 0.831)
+    print(f"C005 ({lab} basis): OP008 EC_CH4 incl. this heat ~{ec8:.0f} kJ/mol (indicative only)")
 
 # ---------------------------------------------------------------- C006
 # Partial eta_HHV at OP008 (composition-derived flows; absorbed MW + CH4 HHV;

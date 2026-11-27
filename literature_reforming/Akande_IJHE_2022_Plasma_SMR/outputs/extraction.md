@@ -7,7 +7,7 @@
 - SHA-256: manuscript.pdf `c573b98c7c5199ef221ee826df66c889064907ff7c7d66b494cd86aa865f2798`; erratum.pdf `7157aecec222d0f093ef2aa727da1187627826bacd08ec9426cc7c188614fb16`.
 - Protocol 0.1 (with 2026-11-04 amendment). Extractor/reviewer: Claude (AI), 2026-11-05, same-extractor checks. Status: **ai_checked; partial human check by BB, 2026-11-26: headline OP003 (E012, E014, E015, E022, E041) confirmed: 96.6% at 32 kW, 60 lpm, S/C 3; H2 rate above the stoichiometric ceiling and the Fig. 10 conflict agreed; no changes (human_checks/summary.csv). Other records: no human check.**
 - Coverage: full text, corrigendum and Figs. 6-10 read. ASPEN Plus simulations (Figs. 4, 6-9) are modelling and excluded. Table 2 is a literature comparison and is not extracted.
-- Records: [evidence.csv](evidence.csv), 38 records (SRC008-E001-E030 source; E041-E048 reviewer calculations). Calculations C001-C007 in [calculations.py](calculations.py). E001 = SRC008-E001 below.
+- Records: [evidence.csv](evidence.csv), 39 records (SRC008-E001-E030 source; E041-E049 reviewer calculations). Calculations C001-C007 in [calculations.py](calculations.py). E001 = SRC008-E001 below.
 - Selection: record R002 in [search_and_selection_log.md](../../logs/search_and_selection_log.md).
 
 **Headline caution.** The paper's main results are internally inconsistent and the corrigendum does not resolve this (section "Consistency checks"). The reported H2 production rate (2247 g/h) and energy yield (70 g H2/kWh) exceed the stoichiometric maximum for the stated methane feed by a factor of 1.7. Use the author's H2 and energy-yield values only with that flag.
@@ -72,7 +72,7 @@ No outlet flow measurement is described (E008), so the method behind the H2 rate
 
 - **Power-basis EC_CH4 (absorbed microwave power; steam generation excluded, not reported) from the authors' conversions (C004, E046):** 511 (OP001, 17 kW), 706 (OP002), 742 (OP003), 852 (OP004), 1078 (OP006), 719 kJ/mol (OP007). These depend on the reported conversions, which checks 3 and 4 put in doubt. If conversion at 32 kW is nearer the 83% implied by the composition, EC_CH4 is about 835 kJ/mol (C002).
 - **EC_H2, EY_H2, eta_P,LHV:** not calculated from the author's H2 rate, which is physically impossible as stated. From the corrigendum composition with carbon-balance flows (OP008): H2 about 1055 g/h, EY_H2 33.0 g/kWh, EC_H2 220 kJ/mol, eta_P,LHV 66.8% (C002, E044). These rest on the no-soot assumption and a composition whose H and O balances do not close.
-- **External heat:** steam-generator duty not reported. Indicative 4.3-6.2 kW at 32 kW would raise OP003 EC_CH4 to about 840-890 kJ/mol (C005, E047; reviewer estimate only).
+- **External heat:** steam-generator duty not reported. Indicative 4.3-6.2 kW at 32 kW would raise OP003 EC_CH4 to about 840-890 kJ/mol and the adopted headline OP008 to about 950-1000 kJ/mol (C005, E047, E049; reviewer estimate only).
 - **Author metric:** energy yield = H2 production rate / absorbed microwave power (g H2/kWh); maximum 70 at 32 kW (E004, E016-E017). Compared by the authors with the DOE 60 g/kWh target; that comparison is not valid if the H2 rate is wrong.
 - **eta_HHV (partial):** 66.1% at OP008 on composition-derived flows, f_electric 0.44; excludes steam generation, generator losses and auxiliaries (C006, E048). Lower confidence.
 - **Energy completeness:** included: absorbed microwave power. Omitted: steam generator, generator (magnetron) losses, cooling, compressor/auxiliaries. Heat exchanger recovery not quantified.
@@ -128,13 +128,14 @@ All in [calculations.py](calculations.py).
 | C002 | E019-E020 | Carbon-basis conversion and flows from corrigendum composition | X_CH4 83.1%; H2 1055 g/h; EY 33.0 g/kWh; EC_CH4 835 kJ/mol; eta_P,LHV 66.8% |
 | C003 | E022 | Implied conversion from Fig. 10, 3-4 H2 per CH4 converted | 30-37 / 53-60 / 62-68 / 88-91% |
 | C004 | E003, E012-E014 | SEI_CH4, EC_CH4 on absorbed power | 511-1078 kJ/mol |
-| C005 | E006, E012 | Indicative steam-raising duty | 4.3-6.2 kW |
+| C005 | E006, E012 | Indicative steam-raising duty | 4.3-6.2 kW; EC_CH4 incl. steam ~842-886 (OP003), ~948-997 (OP008) |
 | C006 | C002 | Partial eta_HHV at OP008 | 66.1% |
 | C007 | E009 | Reformer volume and nominal space time | 140 L; ~35 s |
 
 ## Revisions
 
 - 2026-11-26 (BB decision): the synthesis and manuscript figure use OP008 (carbon-based X_CH4 83.1% from the corrigendum composition, 62 lpm, 32 kW; EC_CH4 835 kJ/mol; E043, E044) in place of OP003 (reported 96.6%), because the reported conversion conflicts with the corrigendum composition and Fig. 10. No soot is assumed (authors report none); the H and O balances of the composition close at 88% and 68%. Evidence IDs kept.
+- 2026-11-27: steam-duty sensitivity (C005) extended to the adopted headline OP008: EC_CH4 incl. steam ~948-997 kJ/mol (E049). The earlier 842-886 belongs to OP003; flagged in a GPT review of SI_2.
 
 ## Plasma characteristics
 
