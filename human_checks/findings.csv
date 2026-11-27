@@ -1,1 +1,2 @@
 check_id,date,checker,source_id,record_id,error_type,severity,ai_value,corrected_value,action,note
+HC001,2026-11-27,BB,PW028,PW028-V01,B,1,"source-to-reactor energy transfer 45-85%","reactor efficiency eta_reactor = E_plasma/E_pulse 45-85%; pulse-source efficiency not measured",corrected,"Boundary wording only; value unchanged. Record, P1 range_basis and SI_1 P1 paragraph corrected"
