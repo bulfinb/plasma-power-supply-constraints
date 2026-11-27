@@ -317,7 +317,7 @@ for c in classes:
     col = SEQ(NORM((eta_lo + eta_hi) / 2))
     ax.add_patch(matplotlib.patches.Rectangle((f0, p0), f1 - f0, p1 - p0, facecolor=col, alpha=0.35 if context else 0.85,
                                               edgecolor="white", lw=1.5, hatch="///" if context else None, zorder=2))
-    stage = {"amplifier_or_head": "*", "device": "*", "wall_to_plasma": "†"}.get(c["efficiency_stage"], "")
+    stage = {"amplifier_or_head": "*", "device": "*", "wall_to_plasma": "†", "mixed_wall_to_output_and_absorbed": "†"}.get(c["efficiency_stage"], "")
     eta_txt = f"~{eta_lo*100:.0f}%" if eta_hi == eta_lo else f"{eta_lo*100:.0f}-{eta_hi*100:.1f}%".replace(".0%", "%")
     ax.annotate(f"{c['class_id']}  {eta_txt}{stage}",
                 (math.sqrt(f0 * f1), p1), xytext=(0, 3), textcoords="offset points", ha="center", fontsize=7.5, color=INK,
@@ -339,7 +339,7 @@ cb.set_label("Class efficiency, midpoint of range", fontsize=8, color=INK)
 cb.ax.yaxis.set_major_formatter(matplotlib.ticker.PercentFormatter(1.0, decimals=0))
 cb.outline.set_visible(False)
 fig.text(0.0, -0.05, "Boxes span documented frequency and power extents (map_value_ids); maxima need not coincide. K2 includes installed system power; "
-         "single values have a small minimum size.\nEfficiency: nominally mains to output; M2 includes absorbed-power evidence. * amplifier, head or tube only "
+         "single values have a small minimum size.\nEfficiency: mains to output; † mixed, upper end mains to absorbed power (M2). * amplifier, head or tube only "
          "(mains efficiency lower). Hatched: H1, context only.\nPulsed supplies (P1) have no carrier frequency and are "
          "not shown. Lab prototypes are excluded from the boxes. M3 is drawn just right of M2; both are at 2.45 GHz.", fontsize=7, color=MUTED)
 save(fig, "supply_class_map")
