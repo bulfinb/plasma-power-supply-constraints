@@ -80,7 +80,6 @@ the frequency rating of their supporting equipment (currently K2 at 400 kHz).
 - `notes/` holds the written analysis: [scaleup_assessment.md](notes/scaleup_assessment.md), [supply_maturity_niche.md](notes/supply_maturity_niche.md), [reactor_matching.md](notes/reactor_matching.md). Notes cite value IDs or source IDs, not search summaries.
 - `results/` holds the data tables (source_register.csv, supply_values.csv, supply_classes.csv, discharge_supply_map.csv) and the scripts that read them; figures are written to `results/figures/`, and the human-check worksheet to `logs/`. Logs (processing, cross-check, human-check checklist and worksheet) are in `logs/`. Scripts do not contain data values except documented constants (e.g. currency conversion factors with their source).
 - Dropped sources (status `dropped` in the register) keep their value rows for the record; the scripts skip them in figures and the check worksheet. A source is dropped when it is not used in a class range or projection, sets no class extreme in the figures, and is not needed for the cost or lifetime discussion.
-- `legacy/` keeps superseded work unchanged for the record. Do not cite it; its sources have been re-registered.
 
 ## 7. Checks and logging
 

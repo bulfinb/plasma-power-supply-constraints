@@ -1,6 +1,6 @@
 # Supply voltage and reactor compatibility
 
-Written 2026-09 as part of the earlier frequency survey (now in ../legacy/); data references updated 2026-11-10 to the PW value table. The calculations below are illustrative and use stated assumptions, not source values.
+Written 2026-09 as part of the earlier frequency survey (not part of this repository); data references updated 2026-11-10 to the PW value table. The calculations below are illustrative and use stated assumptions, not source values.
 
 The required selection space is frequency, real output power, voltage, current, load impedance, duty cycle and matching-network capability. A frequency-power chart alone cannot establish usability.
 

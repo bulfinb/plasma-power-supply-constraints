@@ -1,26 +1,22 @@
-# Electrified endothermic processes: plasma and Joule heating at scale
+# Power-supply constraints in plasma-driven methane reforming and CO2 splitting: evidence base
 
 Brendan Bulfin, University College Cork.
 
-Evidence base for a review of plasma reactors for two strongly endothermic gas-phase conversions, methane reforming and CO2 splitting, compared with fired, Joule-heated and electrochemical benchmarks. Every number used in the review can be traced from the manuscript figures to the synthesis tables, to an evidence record, and to a page of the source document.
+Evidence base for an analysis of plasma reactors for two strongly endothermic gas-phase conversions, methane reforming and CO2 splitting, and of the power supplies needed to run them, compared with fired, Joule-heated and electrochemical benchmarks (B. Bulfin, manuscript in preparation). Every number used in the review can be traced from the manuscript figures to the synthesis tables, to an evidence record, and to a page of the source document.
 
 | Topic | Reaction (298 K) | Benchmarks | Folder | Sources |
 |---|---|---|---|---|
 | Methane reforming | SMR +206, DRM +247 kJ/mol CH4 | Joule-heated eSMR pilot; fired SMR design studies | [literature_reforming/](literature_reforming/) | 11 plasma studies, 5 benchmark sources |
 | CO2 splitting | CO2 -> CO + 1/2 O2, +283 kJ/mol | Solid oxide electrolysis (SOEC) | [literature_co2_splitting/](literature_co2_splitting/) | 10 plasma studies, 2 SOEC sources |
-| Power supplies | - | Industrial supplies by technology class | [power_systems/](power_systems/) | 45 supply sources, ~190 values |
+| Power supplies | - | Industrial supplies by technology class | [power_systems/](power_systems/) | 51 supply sources, 208 values |
 
-Methane pyrolysis was considered and descoped (2026-11-12); its industrial plasma plants are mentioned in the manuscript introduction only.
+## The angle of this analysis
 
-## The angle of this review
-
-Plasma studies usually report energy at the discharge, measured with laboratory supplies and with no heat recovery. This review first puts the demonstrated results on a common basis (conversion against electricity per mole of methane converted, or per Nm3 of CO), then asks a scale-up question:
+Plasma studies usually report energy at the discharge, measured with laboratory supplies and with no heat recovery. This analysis first puts the demonstrated results on a common basis (conversion against electricity per mole of methane converted, or per Nm3 of CO), then asks a scale-up question:
 
 > If each reactor type were built with representative, industrially available power supplies, what would its electricity demand at the wall be, compared with Joule-heated, fired and electrochemical routes?
 
 Each supply technology (DC rectifier, kHz inverter, RF generator, 915 MHz or 2.45 GHz microwave source, pulsed supply) comes in a limited range of unit powers, with a characteristic wall-plug efficiency, cost and lifetime. Applying these to the reactor results shows how much electricity is lost before it reaches the plasma, and which combinations of plasma type, frequency and scale are realistic. Heat integration (steam raising, product heat, quenching) and product separation are the other terms that separate a laboratory result from a process; they are discussed but mostly not reported in the sources.
-
-Intended contributions (BB, 2026-11-12): (1) a survey of power supplies for plasma systems, with unit scale, efficiency and cost; (2) plasma reforming and CO2 splitting benchmarked against conventional and electrified routes; (3) research directions that follow from (1) and (2); (4) an outsider's view of scale-up feasibility, labelled as opinion.
 
 ## Repository structure
 
@@ -28,7 +24,7 @@ Intended contributions (BB, 2026-11-12): (1) a survey of power supplies for plas
 README.md                          this file
 human_checks/
   summary.csv                      one row per human check (source, scope, records checked, findings)
-  findings.csv                     one row per error found in a human check (none so far)
+  findings.csv                     one row per error found in a human check (one so far, HC001)
 literature_reforming/              methane reforming
   literature_review_objectives.md  aims, scope, metrics
   literature_search_strategy.md    search terms, eligibility, screening
@@ -48,7 +44,6 @@ power_systems/                     industrial power-supply data (mainly manufact
                                    discharge_supply_map.csv and the scripts; figures/ holds the figures
   logs/                            processing and cross-check logs
   notes/                           scale-up assessment, supply maturity, reactor matching, related literature, to-do lists
-  legacy/                          superseded 2026-09 survey (not cited)
 literature_reviews/
   reviews_shortlist.md             review papers used to locate studies and conventions (not extracted)
 ```
@@ -111,3 +106,11 @@ The synthesis builds read the supply-class efficiencies from `power_systems/resu
 | SRC026 | Hecimovic et al. 2024, J. CO2 Util. | CO2 splitting | SOEC system (design) vs microwave plasma | benchmark | headline |
 
 "Headline" means the operating points used in the manuscript were checked against the source; "partial" means selected records only. Details are in `human_checks/summary.csv` and in each extraction. For the power-supply values (`power_systems/`), the headline values (adopted efficiency ranges and figure extremes) have a human check; the remaining values are AI-checked.
+
+## Licence
+
+The code (Python scripts) is released under the MIT licence (`LICENSE`); the data and text (evidence records, synthesis tables, logs, notes and figures) under CC BY 4.0 (`LICENSE-DATA.md`). Source documents are not included and remain under their own copyright.
+
+## How to cite
+
+Please cite the archived release of this repository (DOI to be added on release; see `CITATION.cff`) and the accompanying article (in preparation).

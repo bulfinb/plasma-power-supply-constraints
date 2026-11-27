@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this evidence base, please cite it as below."
+title: "Power-supply constraints in plasma-driven methane reforming and CO2 splitting: evidence base"
+authors:
+  - family-names: Bulfin
+    given-names: Brendan
+    affiliation: University College Cork
+type: dataset
+version: 1.0.0
+license: CC-BY-4.0
+repository-code: "https://github.com/bulfinb/plasma-power-supply-constraints"
+keywords:
+  - plasma
+  - electrification
+  - power supply
+  - methane reforming
+  - CO2 splitting

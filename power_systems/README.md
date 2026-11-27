@@ -22,7 +22,6 @@ Top level: README and workflow. `results/` holds the data tables, the scripts an
 | [notes/BB_search.txt](notes/BB_search.txt) | Sources that need manual retrieval |
 | [notes/suggested_quote_requests.txt](notes/suggested_quote_requests.txt) | Vendor budgetary quotes to request |
 | `source_archive/` | Local copies, one folder per PW ID (gitignored; not redistributed) |
-| [legacy/](legacy/) | Superseded work kept unchanged: the 2026-09 frequency survey (report, CSVs, figures) and the 2026-11-05 class table. Not cited; their sources are re-registered as PW IDs |
 
 ## Status (2026-11-10)
 
