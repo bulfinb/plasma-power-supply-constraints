@@ -26,3 +26,6 @@ PW053,2026-11-27,BB,"partial: D1 class evidence PW053-V01 (70 kW output), PW053-
 PW051,2026-11-27,BB,"partial: D1 class values PW051-V01 (standard SIR > 95%) and PW051-V02 (SiC SIR > 97%)",2,8,0,0,NR,human_verified (V01-V02)
 PW004,2026-11-27,BB,"partial: K1/K2 class values PW004-V01 (240 kW unit) and PW004-V02 (overall efficiency 91%)",2,5,0,0,NR,human_verified (V01-V02)
 PW026,2026-11-27,BB,"partial: K1 class values PW026-V01-V03 (inverters into an ozone DBD: 91%, 70%, 69%)",3,4,0,0,NR,human_verified (V01-V03)
+PW005,2026-11-27,BB,"partial: K2 class values PW005-V01 (max. input power table) and PW005-V02 (>96%, boundary not stated)",2,2,0,0,NR,human_verified (V01-V02)
+PW006,2026-11-27,BB,"partial: PW006-V01 (50 kW, input or output not stated)",1,1,0,0,NR,human_verified (V01)
+PW003,2026-11-27,BB,"partial: K2 class value PW003-V02 (around 98%)",1,2,0,0,NR,human_verified (V02)
