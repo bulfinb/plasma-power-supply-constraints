@@ -29,3 +29,8 @@ PW026,2026-11-27,BB,"partial: K1 class values PW026-V01-V03 (inverters into an o
 PW005,2026-11-27,BB,"partial: K2 class values PW005-V01 (max. input power table) and PW005-V02 (>96%, boundary not stated)",2,2,0,0,NR,human_verified (V01-V02)
 PW006,2026-11-27,BB,"partial: PW006-V01 (50 kW, input or output not stated)",1,1,0,0,NR,human_verified (V01)
 PW003,2026-11-27,BB,"partial: K2 class value PW003-V02 (around 98%)",1,2,0,0,NR,human_verified (V02)
+PW009,2026-11-27,BB,"partial: M1 class evidence PW009-V01 (generator approaching 80%) and PW009-V03 (tube losses 15-18%)",2,3,0,0,NR,human_verified (V01, V03)
+PW012,2026-11-27,BB,"partial: M1 class evidence PW012-V01 (EvoMag 915 guaranteed above 80%)",1,3,0,0,NR,human_verified (V01)
+PW017,2026-11-27,BB,"partial: M1 class evidence PW017-V01 (CWM-100 magnetron approaching 86%)",1,2,0,0,NR,human_verified (V01)
+PW020,2026-11-27,BB,"partial: M1 class evidence PW020-V04 (100 kW 915 MHz magnetrons approaching 84%)",1,4,0,0,NR,human_verified (V04)
+PW050,2026-11-27,BB,"partial: M1 class evidence PW050-V02 (switch-mode supply stage > 90%)",1,6,0,0,NR,human_verified (V02)
