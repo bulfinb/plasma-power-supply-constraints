@@ -20,3 +20,4 @@ SRC028,2026-11-26,BB,"partial: Eq. (1) without expansion factor (E008), Fig. 2b 
 SRC005,2026-11-27,BB,"decision on XR004: Fig. 5 flows 15-27 Nm3/h mapped in order to the end points (OP004, OP007) and read as total process gas, as the biogas-only reading is inconsistent with the energy balance (C005); text wording judged loose; capacity axis read as Q_in (C006, E046)",3,37,0,0,NR,ai_checked (flow basis decided)
 PW021,2026-11-27,BB,"partial: J1 class value PW021-V01 (IGBT rectifier ~98.5%, web page text)",1,2,0,0,NR,human_verified (PW021-V01)
 PW062,2026-11-27,BB,"partial: J1 class values PW062-V01 (thyristor rectifier >98.5%) and PW062-V03 (>97.5% with transformer)",2,8,0,0,NR,human_verified (V01 and V03)
+PW023,2026-11-27,BB,"partial: A1 class value PW023-V01 (tender requirement: efficiency of power supply unit 90% or higher)",1,2,0,0,NR,human_verified (PW023-V01)
