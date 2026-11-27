@@ -103,3 +103,14 @@ for label, steam_in_flow in (("(a) biogas", False), ("(b) process gas", True)):
             vals.append(f_ch4 * x * q / ETA_POINTS[op])  # kW
         print("C005 %s %d Nm3/h -> implied Q_in %.0f-%.0f kW (Fig. 5 axis at %s: %.1f kW)"
               % (label, flow, min(vals), max(vals), op, {"OP004": 23.5, "OP007": 34.8}[op]))
+
+# SRC005-C006 (2026-11-27, BB decision on XR004): adopted reading of the 15-27 Nm3/h flows (E018) as total
+# process gas (biogas + steam), mapped to the Fig. 5 end points in order (15 -> OP004, 27 -> OP007).
+# CH4 = flow x y / (1 + S/C x y), y = 0.50-0.75 (E010), S/C 2.0-2.2 (E018). Supersedes C002 (biogas-only reading).
+# Support: C005 (implied Q_in matches the axis) and the constant heat loss of the authors' model (SI Eq. S9,
+# eta = 1 - k/Q_in): k = Q_in (1 - eta) from the four C001 points.
+for flow, op in ((15, "OP004"), (27, "OP007")):
+    v = [flow * y / (1 + sc * y) / NM3_PER_KMOL * 1000 / 60 for y in (0.50, 0.75) for sc in (2.0, 2.2)]
+    print("C006 %d Nm3/h process gas (%s): CH4 feed %.1f-%.1f mol/min" % (flow, op, min(v), max(v)))
+for op, q_in, eta in (("OP004", 23.5, .715), ("OP005", 26.8, .739), ("OP006", 30.9, .774), ("OP007", 34.8, .795)):
+    print("C006 %s: k = Q_in (1 - eta) = %.1f kW" % (op, q_in * (1 - eta)))

@@ -3,10 +3,11 @@ Source ID: SRC005. Role: Joule-heating benchmark at pilot scale (primary;
 Wismann 2019, SRC001, is the lab-scale complement). Experimental results
 only; scale-up modelling excluded. Topsoe eSMR/eREACT, Aarhus University.
 
-Scale: Biogas 15-27 Nm3/h in the energy tests, about 5.6-15.1 mol/min CH4
-(CH4 content 50-75%, point values NR; SRC005-C002). Electrical power not
-tabulated; Fig. 5 capacity axis about 0.024-0.035 MW, undefined (if it is
-power input, roughly 24-35 kW).
+Scale: 15-27 Nm3/h in the energy tests, read as total process gas (biogas
++ steam; the text says biogas), about 2.7-6.0 mol/min CH4 (CH4 content
+50-75%, point values NR; SRC005-C006, BB decision 2026-11-27). Electrical
+power not tabulated; the Fig. 5 capacity axis (about 0.024-0.035 MW) is
+read as the power-supply input Q_in, i.e. about 23-35 kW (C005, C006).
 
 Conversion: 97% CH4 at 900 degC, 10 barg, S/C 2.7, at equilibrium. 94% at
 950 degC, 20 barg, S/C 2.1, unchanged between 485 h and 1535 h. Feed
@@ -50,14 +51,17 @@ NR = not reported; NA = not applicable; ~ = approximate. Human check: none.
 Source / OP     | Route              | Reactor / activation / catalyst            | CH4 feed (mol/min) | Scale as reported
 From 2024 OP001 | mixed (biogas SMR) | eSMR pilot / Joule heating / eREACT Ni [1] | NR                 | biogas flow NR
 From 2024 OP003 | mixed (biogas SMR) | eSMR pilot / Joule heating / eREACT Ni [1] | NR                 | biogas flow NR
-From 2024 OP004 | mixed (biogas SMR) | eSMR pilot / Joule heating / eREACT Ni [1] | 5.6-8.4 [2]        | 15 Nm3/h biogas; ~0.024 MW [3]
-From 2024 OP007 | mixed (biogas SMR) | eSMR pilot / Joule heating / eREACT Ni [1] | 10.0-15.1 [2]      | 27 Nm3/h biogas; ~0.035 MW [3]
+From 2024 OP004 | mixed (biogas SMR) | eSMR pilot / Joule heating / eREACT Ni [1] | 2.7-3.3 [2]        | 15 Nm3/h process gas; ~0.024 MW [3]
+From 2024 OP007 | mixed (biogas SMR) | eSMR pilot / Joule heating / eREACT Ni [1] | 4.8-6.0 [2]        | 27 Nm3/h process gas; ~0.035 MW [3]
 [1] Direct electrically heated catalytic structure, Ni active; prereformer
     upstream. Reactor size NR. SRC005-E003, E007, E029.
-[2] Biogas flow x 50-75% CH4 (general range), 0 degC normal reference
-    assumed (SRC005-C002; E010, E018, E041). Lowest flow assumed to match
-    the lowest-capacity point (reviewer interpretation).
-[3] Fig. 5 "Capacity" axis, undefined (SRC005-E024).
+[2] Flow read as biogas + steam at S/C 2.0-2.2, 50-75% CH4 (general
+    range), 0 degC normal reference assumed; flows mapped to the Fig. 5
+    end points in order (SRC005-C006, E046; BB decision on XR004,
+    2026-11-27). The biogas-only reading (C002, E041: 5.6-15.1 mol/min)
+    implies 43-96 kW, inconsistent with the axis (C005).
+[3] Fig. 5 "Capacity" axis, not defined in the paper; read as Q_in
+    (SRC005-E024, E045, E046).
 
 2. Operating conditions
 Source / OP     | T (degC; location/type) | p (bar; abs/gauge) | CH4:CO2:H2O (molar) | Other feed / ratio
