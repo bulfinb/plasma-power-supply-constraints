@@ -7,6 +7,7 @@ authors:
     affiliation: University College Cork
 type: dataset
 version: 1.0.0
+doi: 10.5281/zenodo.24597481
 license: CC-BY-4.0
 repository-code: "https://github.com/bulfinb/plasma-power-supply-constraints"
 keywords:

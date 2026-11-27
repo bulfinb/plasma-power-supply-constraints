@@ -113,4 +113,4 @@ The code (Python scripts) is released under the MIT licence (`LICENSE`); the dat
 
 ## How to cite
 
-Please cite the archived release of this repository (DOI to be added on release; see `CITATION.cff`) and the accompanying article (in preparation).
+Please cite the archived release of this repository, Bulfin, B. (2026), *Power-supply constraints in plasma-driven methane reforming and CO2 splitting: evidence base*, v1.0.0, Zenodo, https://doi.org/10.5281/zenodo.24597481 (see `CITATION.cff`), and the accompanying article (in preparation).
