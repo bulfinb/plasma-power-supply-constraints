@@ -9,7 +9,7 @@ Top level: README and workflow. `results/` holds the data tables, the scripts an
 | Path | Content |
 |---|---|
 | [workflow.md](workflow.md) | How sources are registered, values extracted and checked |
-| [logs/](logs/) | [processing_log.md](logs/processing_log.md) (AI tool and model versions, human checks), [cross_check_log.md](logs/cross_check_log.md) (independent GPT re-extraction), [human_check_checklist.md](logs/human_check_checklist.md) and [human_check_worksheet.csv](logs/human_check_worksheet.csv) (steps and worksheet for the human check of each value) |
+| [logs/](logs/) | [processing_log.md](logs/processing_log.md) (AI tool and model versions, human checks), [cross_check_log.md](logs/cross_check_log.md) (independent GPT re-extraction) |
 | [results/source_register.csv](results/source_register.csv) | One row per source (PW001...): earlier IDs (aliases), quality tier, document date, URL, local copy, SHA-256, Wayback snapshot, status |
 | [results/supply_values.csv](results/supply_values.csv) | One row per value used: location, verbatim quote, item, class, frequency, quantity, qualifier, basis, cost scope, data type, status |
 | [results/supply_classes.csv](results/supply_classes.csv) | Representative supply classes (J1, A1, D1, K1, K2, R1, R2, M1-M3, P1, H1) with ranges and the value IDs behind them |
@@ -17,7 +17,7 @@ Top level: README and workflow. `results/` holds the data tables, the scripts an
 | [notes/scaleup_assessment.md](notes/scaleup_assessment.md) | Efficiency chain, class table, indicative wall-basis EC_CH4 for the reforming sources |
 | [notes/supply_maturity_niche.md](notes/supply_maturity_niche.md) | Are plasma supplies a "niche product"? Maturity, physical limits, capital cost |
 | [notes/reactor_matching.md](notes/reactor_matching.md) | Voltage, impedance and matching between supply and reactor (illustrative calculations) |
-| [results/](results/) (scripts) | `plot_supply_values.py` (cost per kW; power and efficiency vs frequency; cost vs unit size; class map), `plot_manuscript_figure.py`, `plot_icp_frequency_scale.py` (ICP torch frequency against diameter and power), `scaleup_wall_basis.py` (writes `scaleup_wall_basis.csv`, the wall-basis EC_CH4 table), `make_check_worksheet.py` (writes `logs/human_check_worksheet.csv`), `requirements.txt` |
+| [results/](results/) (scripts) | `plot_supply_values.py` (cost per kW; power and efficiency vs frequency; cost vs unit size; class map), `plot_manuscript_figure.py`, `plot_icp_frequency_scale.py` (ICP torch frequency against diameter and power), `scaleup_wall_basis.py` (writes `scaleup_wall_basis.csv`, the wall-basis EC_CH4 table), `requirements.txt` |
 | [results/figures/](results/figures/) | Figures produced by the scripts |
 | [notes/BB_search.txt](notes/BB_search.txt) | Sources that need manual retrieval |
 | [notes/suggested_quote_requests.txt](notes/suggested_quote_requests.txt) | Vendor budgetary quotes to request |

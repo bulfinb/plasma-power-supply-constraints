@@ -46,7 +46,7 @@ power_systems/                     industrial power-supply data (mainly manufact
   README.md, workflow.md           folder guide and extraction rules
   results/                         source_register.csv, supply_values.csv, supply_classes.csv,
                                    discharge_supply_map.csv and the scripts; figures/ holds the figures
-  logs/                            processing and cross-check logs, human-check checklist and worksheet
+  logs/                            processing and cross-check logs
   notes/                           scale-up assessment, supply maturity, reactor matching, related literature, to-do lists
   legacy/                          superseded 2026-09 survey (not cited)
 literature_reviews/
