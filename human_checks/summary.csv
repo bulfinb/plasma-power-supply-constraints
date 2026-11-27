@@ -21,3 +21,6 @@ SRC005,2026-11-27,BB,"decision on XR004: Fig. 5 flows 15-27 Nm3/h mapped in orde
 PW021,2026-11-27,BB,"partial: J1 class value PW021-V01 (IGBT rectifier ~98.5%, web page text)",1,2,0,0,NR,human_verified (PW021-V01)
 PW062,2026-11-27,BB,"partial: J1 class values PW062-V01 (thyristor rectifier >98.5%) and PW062-V03 (>97.5% with transformer)",2,8,0,0,NR,human_verified (V01 and V03)
 PW023,2026-11-27,BB,"partial: A1 class value PW023-V01 (tender requirement: efficiency of power supply unit 90% or higher)",1,2,0,0,NR,human_verified (PW023-V01)
+PW054,2026-11-27,BB,"partial: D1 class value PW054-V01 (Technix SR series efficiency > 92% at full load)",1,4,0,0,NR,human_verified (PW054-V01)
+PW053,2026-11-27,BB,"partial: D1 class evidence PW053-V01 (70 kW output), PW053-V02 (4.0 kW losses) and reviewer calculation PW053-V03 (0.946)",3,7,0,0,NR,human_verified (V01-V03)
+PW051,2026-11-27,BB,"partial: D1 class values PW051-V01 (standard SIR > 95%) and PW051-V02 (SiC SIR > 97%)",2,8,0,0,NR,human_verified (V01-V02)
