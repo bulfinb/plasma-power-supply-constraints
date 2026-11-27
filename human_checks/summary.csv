@@ -24,3 +24,5 @@ PW023,2026-11-27,BB,"partial: A1 class value PW023-V01 (tender requirement: effi
 PW054,2026-11-27,BB,"partial: D1 class value PW054-V01 (Technix SR series efficiency > 92% at full load)",1,4,0,0,NR,human_verified (PW054-V01)
 PW053,2026-11-27,BB,"partial: D1 class evidence PW053-V01 (70 kW output), PW053-V02 (4.0 kW losses) and reviewer calculation PW053-V03 (0.946)",3,7,0,0,NR,human_verified (V01-V03)
 PW051,2026-11-27,BB,"partial: D1 class values PW051-V01 (standard SIR > 95%) and PW051-V02 (SiC SIR > 97%)",2,8,0,0,NR,human_verified (V01-V02)
+PW004,2026-11-27,BB,"partial: K1/K2 class values PW004-V01 (240 kW unit) and PW004-V02 (overall efficiency 91%)",2,5,0,0,NR,human_verified (V01-V02)
+PW026,2026-11-27,BB,"partial: K1 class values PW026-V01-V03 (inverters into an ozone DBD: 91%, 70%, 69%)",3,4,0,0,NR,human_verified (V01-V03)
