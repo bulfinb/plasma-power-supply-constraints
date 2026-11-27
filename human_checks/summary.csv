@@ -34,3 +34,6 @@ PW012,2026-11-27,BB,"partial: M1 class evidence PW012-V01 (EvoMag 915 guaranteed
 PW017,2026-11-27,BB,"partial: M1 class evidence PW017-V01 (CWM-100 magnetron approaching 86%)",1,2,0,0,NR,human_verified (V01)
 PW020,2026-11-27,BB,"partial: M1 class evidence PW020-V04 (100 kW 915 MHz magnetrons approaching 84%)",1,4,0,0,NR,human_verified (V04)
 PW050,2026-11-27,BB,"partial: M1 class evidence PW050-V02 (switch-mode supply stage > 90%)",1,6,0,0,NR,human_verified (V02)
+PW050,2026-11-27,BB,"partial: M2 class evidence PW050-V01 (10 kW output), -V03/-V04 (15 800 VA, PF > 0.9) and reviewer calculation -V05 (0.63-0.70)",4,6,0,0,NR,human_verified (V01, V03-V05)
+PW046,2026-11-27,BB,"partial: M2 class value PW046-V02 (magnetron ~70%, Table 1)",1,10,0,0,NR,human_verified (V02)
+SRC016-V01,2026-11-27,BB,"M2 upper bound: arithmetic 17.9 / 24.9 = 0.72 (mains to absorbed power; inputs checked 2026-11-25)",1,1,0,0,NR,human_verified
