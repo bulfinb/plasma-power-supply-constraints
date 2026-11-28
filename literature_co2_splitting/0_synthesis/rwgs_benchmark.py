@@ -12,6 +12,10 @@ syngas as product):
     EC_CO = W_PEM per mol H2 + (Q_RWGS + (1 - f) Q_preheat) / X
   W_PEM: 55.9 kWh/kg H2, full-system AC electricity at beginning of life (ITM Power NEPTUNE V specification
   sheet v2.8, p. 2; vendor figure, includes water purification and balance of plant; 30 bar(g) delivery).
+  This is 5.0 kWh/Nm3 H2, at the lower end of the 5.0-6.5 kWh/Nm3 (46-60% LHV) reported for state-of-the-art PEM
+  systems (Buttler & Spliethoff, Renew. Sustain. Energy Rev. 82 (2018) 2440-2454, Table 3; 55 kWh/kg as the 2017
+  state of the art, Table 1), so the benchmark is optimistic for the electrolytic route: at 6.5 kWh/Nm3, EC_CO
+  would be about a quarter higher.
   Q_RWGS, Q_preheat: reaction heat and feed preheat per mol CO2 fed, supplied as electric heat at 100%.
   f: fraction of the preheat recovered from the hot product; marker f = 0.5, range f = 0 to 1.
   X: single-pass CO2 conversion.
