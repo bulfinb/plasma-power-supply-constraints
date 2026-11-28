@@ -175,7 +175,7 @@ h_basis = [Line2D([], [], marker="o", mfc="white", mec=MUTED, mew=1.2, ls="", ms
            Line2D([], [], marker="o", color=MUTED, ls="", ms=5.5, label="at the wall"),
            Line2D([], [], marker="h", mfc="white", mec=INK, mew=1.2, ls="", ms=7, label="SOEC system: stack DC"),
            Line2D([], [], marker="h", color=INK, ls="", ms=7, label="SOEC system: wall"),
-           Line2D([], [], marker="d", color=INK, ls="", ms=7, label="PEM electrolysis + RWGS:\nwall (our estimate)"),
+           Line2D([], [], marker="d", color=INK, ls="", ms=7, label="PEM + RWGS: electricity\nallocated to CO"),
            Line2D([], [], marker="o", color=HALO, ls="", ms=12, label="carbon bed (carbon consumed)")]
 y = ax.get_position().y1 + 0.02
 for title, h in (("Plasma type", h_type), ("Energy basis", h_basis)):

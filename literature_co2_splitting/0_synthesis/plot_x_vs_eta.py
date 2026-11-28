@@ -153,7 +153,7 @@ kw = dict(frameon=False, fontsize=7.5, handletextpad=0.4, labelspacing=0.5, alig
 h_type = [Line2D([], [], marker=mk, color=col, ls="", ms=ms_of(mk), label=lab) for col, mk, lab in STYLE.values()]
 h_basis = [Line2D([], [], marker="o", color=MUTED, ls="", ms=5.5, label="plasma, at the wall"),
            Line2D([], [], marker="h", color=INK, ls="", ms=7, label="SOEC system, at the wall"),
-           Line2D([], [], marker="d", color=INK, ls="", ms=7, label="PEM electrolysis + RWGS,\nat the wall (our estimate)"),
+           Line2D([], [], marker="d", color=INK, ls="", ms=7, label="PEM + RWGS: electricity\nallocated to CO"),
            Line2D([], [], marker="o", color=HALO, ls="", ms=9.5, label="carbon bed (carbon LHV\ncounted as input)")]
 y = ax.get_position().y1 + 0.02
 for title, h in (("Plasma type", h_type), ("Energy basis", h_basis)):
