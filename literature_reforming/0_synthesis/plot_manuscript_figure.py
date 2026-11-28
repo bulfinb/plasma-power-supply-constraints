@@ -1,7 +1,7 @@
 """Manuscript figure: CH4 conversion vs energy per mol CH4 converted, plasma reforming headline points (no data values
 in this script except the fired-SMR references, copied from build_synthesis.py FIRED).
 
-Publication version of reforming_x_vs_ec (plot_x_vs_ec.py, kept as the working/SI figure). Same style as the
+Same style as the
 power-supply manuscript figure (power_systems/results/plot_manuscript_figure.py). One panel instead of two:
 - headline rows only (the plasma rows of the manuscript table, max two per paper);
 - open marker = EC_CH4 at the paper's power boundary; filled marker = with a representative industrial supply

@@ -1,8 +1,7 @@
 """Manuscript figure: CO2 conversion vs electricity per Nm3 CO, plasma CO2-splitting headline points against SOEC
 (no data values in this script; reads co2_synthesis.csv).
 
-Publication version of co2_x_vs_ec (plot_x_vs_ec.py, kept as the working/SI figure); same conventions as the
-reforming manuscript figure (literature_reforming/0_synthesis/plot_manuscript_figure.py):
+Same conventions as the reforming manuscript figure (literature_reforming/0_synthesis/plot_manuscript_figure.py):
 - the plasma rows of the manuscript table (make_latex_table.py: headline rows minus SKIP);
 - open marker = EC_CO at the paper's power boundary; filled marker = at the wall (measured where the authors measured
   it, else EC_CO plasma side / supply-class efficiency, geometric mid; bar = class range); thin line joins the pair;
