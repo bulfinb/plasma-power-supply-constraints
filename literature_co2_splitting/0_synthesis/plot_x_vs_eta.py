@@ -13,6 +13,8 @@ marker at the geometric mid of the electricity range, as in the manuscript figur
 SOEC: system design point (Hecimovic 2024 OP001) at its 86% utilisation, wall incl. the 0.95 design rectifier
 (stack DC + rectifier only; no balance of plant, heat losses or CO purification). The plasma wall values likewise
 omit chillers, pumps and separation.
+PEM electrolysis + RWGS: our estimate (rwgs_benchmark.py), eta_LHV on the CO only; marker 50% preheat recovered,
+bar 0-100%.
 
 Writes figures/co2_x_vs_eta_lhv.png/.svg.
 Run from the repository root: ~/.venvs/science/bin/python literature_co2_splitting/0_synthesis/plot_x_vs_eta.py
@@ -103,12 +105,20 @@ for r in rows:
     pts.append(dict(key=r["row_key"], fam=family(r["route"]), x=num(r["X_CO2_pct"]), eta=eta, bed=bed,
                     label=f"{author} {power_text(f(r['P_kW_at_boundary']))}"))
 
+rwgs = {r["quantity"]: float(r["value"]) for r in csv.DictReader(open(HERE / "rwgs_benchmark.csv", encoding="utf-8"))}
+rwgs_x = rwgs["X_CO2"]
+rwgs_eta = {k: LHV_CO / rwgs[f"EC_CO_preheat_recovered_{v}"] * 100 for k, v in (("mid", "0.5"), ("lo", "0"), ("hi", "1"))}
 s = {r["row_key"]: r for r in rows}["Hecimovic 2024 OP001"]
 soec_eta, soec_x = LHV_CO / f(s["EC_CO_wall_measured_low"]) * 100, num(s["X_CO2_pct"])
 
 fig, ax = plt.subplots(figsize=(5.06, 4.2))
 ax.plot(soec_eta, soec_x, marker="h", ms=7, mfc=INK, mec=INK, ls="none", zorder=4)
 ax.annotate("SOEC system", (soec_eta, soec_x), xytext=(-7, 0), textcoords="offset points", fontsize=7.5,
+            color=INK, ha="right", va="center")
+ax.errorbar(rwgs_eta["mid"], rwgs_x, xerr=[[rwgs_eta["mid"] - rwgs_eta["lo"]], [rwgs_eta["hi"] - rwgs_eta["mid"]]],
+            fmt="none", ecolor=INK, elinewidth=0.9, capsize=2, capthick=0.9, zorder=3)
+ax.plot(rwgs_eta["mid"], rwgs_x, marker="d", ms=7, mfc=INK, mec=INK, ls="none", zorder=4)
+ax.annotate("PEM + RWGS", (rwgs_eta["lo"], rwgs_x), xytext=(-6, 0), textcoords="offset points", fontsize=7.5,
             color=INK, ha="right", va="center")
 for p in pts:
     col, mk, _ = STYLE[p["fam"]]
@@ -143,6 +153,7 @@ kw = dict(frameon=False, fontsize=7.5, handletextpad=0.4, labelspacing=0.5, alig
 h_type = [Line2D([], [], marker=mk, color=col, ls="", ms=ms_of(mk), label=lab) for col, mk, lab in STYLE.values()]
 h_basis = [Line2D([], [], marker="o", color=MUTED, ls="", ms=5.5, label="plasma, at the wall"),
            Line2D([], [], marker="h", color=INK, ls="", ms=7, label="SOEC system, at the wall"),
+           Line2D([], [], marker="d", color=INK, ls="", ms=7, label="PEM electrolysis + RWGS,\nat the wall (our estimate)"),
            Line2D([], [], marker="o", color=HALO, ls="", ms=9.5, label="carbon bed (carbon LHV\ncounted as input)")]
 y = ax.get_position().y1 + 0.02
 for title, h in (("Plasma type", h_type), ("Energy basis", h_basis)):

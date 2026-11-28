@@ -58,6 +58,7 @@ From the repository root, with Python 3 and matplotlib:
 python3 literature_reforming/0_synthesis/build_synthesis.py
 python3 literature_reforming/0_synthesis/plot_manuscript_figure.py
 python3 literature_co2_splitting/0_synthesis/build_synthesis.py
+python3 literature_co2_splitting/0_synthesis/rwgs_benchmark.py   # PEM electrolysis + RWGS benchmark (our estimate; needs cantera)
 python3 literature_co2_splitting/0_synthesis/plot_manuscript_figure.py
 cd power_systems/results && python3 scaleup_wall_basis.py && python3 plot_supply_values.py && python3 plot_manuscript_figure.py
 ```

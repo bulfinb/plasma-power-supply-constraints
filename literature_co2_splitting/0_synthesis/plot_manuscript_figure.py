@@ -12,6 +12,8 @@ Same conventions as the reforming manuscript figure (literature_reforming/0_synt
 - SOEC: the system design point (Hecimovic 2024 OP001) at its 86% utilisation, open = stack DC, filled = wall; the
   stack-only band (Kungas 2020, no conversion, heat below V_tn excluded) is left to the table note (BB 2026-11-25);
   reaction enthalpy line at 3.50 kWh/Nm3 CO.
+- PEM electrolysis + RWGS: our estimate from rwgs_benchmark.py (rwgs_benchmark.csv); marker = 50% of the feed preheat
+  recovered, bar = 0-100%; electricity per CO charges only the H2 consumed to make CO.
 
 Writes figures/manuscript_figure.png/.svg/.pdf and copies the pdf/png to manuscript/figures/co2_figure.*.
 Run from the repository root: ~/.venvs/science/bin/python literature_co2_splitting/0_synthesis/plot_manuscript_figure.py
@@ -107,6 +109,9 @@ for r in rows:
     pts.append(dict(key=r["row_key"], fam=fam, x=num(r["X_CO2_pct"]), paper=f(r["EC_CO_boundary_low"]),
                     paper_hi=f(r["EC_CO_boundary_high"]), wall=wall, label=label, bed="C bed" in r["route"]))
 
+rwgs = {r["quantity"]: float(r["value"]) for r in csv.DictReader(open(HERE / "rwgs_benchmark.csv", encoding="utf-8"))}
+RWGS_X, RWGS_MID = rwgs["X_CO2"], rwgs["EC_CO_preheat_recovered_0.5"]
+RWGS_LO, RWGS_HI = rwgs["EC_CO_preheat_recovered_1"], rwgs["EC_CO_preheat_recovered_0"]
 soec = {r["row_key"]: r for r in rows if r["source_id"] in BENCH}
 sys_row = soec["Hecimovic 2024 OP001"]
 sys_dc, sys_wall, sys_x = f(sys_row["EC_CO_boundary_low"]), f(sys_row["EC_CO_wall_measured_low"]), num(sys_row["X_CO2_pct"])
@@ -119,6 +124,12 @@ ax.plot([sys_dc, sys_wall], [sys_x, sys_x], color=INK, lw=0.8, zorder=3)
 ax.plot(sys_dc, sys_x, marker="h", ms=7, mfc="white", mec=INK, mew=1.2, ls="none", zorder=4)
 ax.plot(sys_wall, sys_x, marker="h", ms=7, mfc=INK, mec=INK, ls="none", zorder=4)
 ax.annotate("SOEC system", (sys_wall, sys_x), xytext=(6, 0), textcoords="offset points", fontsize=7.5, color=INK,
+            ha="left", va="center")
+# PEM electrolysis + RWGS: our estimate (rwgs_benchmark.py); marker 50% preheat recovered, bar 0-100%
+ax.errorbar(RWGS_MID, RWGS_X, xerr=[[RWGS_MID - RWGS_LO], [RWGS_HI - RWGS_MID]], fmt="none", ecolor=INK,
+            elinewidth=0.9, capsize=2, capthick=0.9, zorder=3)
+ax.plot(RWGS_MID, RWGS_X, marker="d", ms=7, mfc=INK, mec=INK, ls="none", zorder=4)
+ax.annotate("PEM + RWGS", (RWGS_HI, RWGS_X), xytext=(6, 0), textcoords="offset points", fontsize=7.5, color=INK,
             ha="left", va="center")
 
 for p in pts:
@@ -164,6 +175,7 @@ h_basis = [Line2D([], [], marker="o", mfc="white", mec=MUTED, mew=1.2, ls="", ms
            Line2D([], [], marker="o", color=MUTED, ls="", ms=5.5, label="at the wall"),
            Line2D([], [], marker="h", mfc="white", mec=INK, mew=1.2, ls="", ms=7, label="SOEC system: stack DC"),
            Line2D([], [], marker="h", color=INK, ls="", ms=7, label="SOEC system: wall"),
+           Line2D([], [], marker="d", color=INK, ls="", ms=7, label="PEM electrolysis + RWGS:\nwall (our estimate)"),
            Line2D([], [], marker="o", color=HALO, ls="", ms=12, label="carbon bed (carbon consumed)")]
 y = ax.get_position().y1 + 0.02
 for title, h in (("Plasma type", h_type), ("Energy basis", h_basis)):

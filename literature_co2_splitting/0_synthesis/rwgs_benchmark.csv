@@ -1,0 +1,9 @@
+quantity,value,unit
+X_CO2,71.0,%
+dry_H2_CO,2.239,mol/mol
+W_PEM_per_mol_H2,405.7,kJ/mol H2
+Q_RWGS_per_mol_CO2_fed,23.83,kJ
+Q_preheat_per_mol_CO2_fed,96.36,kJ
+EC_CO_preheat_recovered_0,7.125,kWh/Nm3 CO
+EC_CO_preheat_recovered_0.5,6.284,kWh/Nm3 CO
+EC_CO_preheat_recovered_1,5.443,kWh/Nm3 CO
